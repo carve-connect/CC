@@ -25,11 +25,11 @@ const MediaCard = (props) => {
                             :{props.media.description}
                         </Row>
                         <Row style= {{marginTop: '1rem'}}>
-                            <Form onSubmit={props.submit}>
+                            <Form>
                                 <FormGroup>
                                     <Form.Row>
                                         <Col className="col-8">
-                                            <Form.Control onChange={props.changeComment} value={props.comment} size = "sm" type="text" placeholder="Say something interesting..." />
+                                            <Form.Control size = "sm" type="text" placeholder="Say something interesting..." />
                                         </Col>
                                         <Col className="col-1">
                                             <Button type = "submit" size = "sm">Enter</Button>

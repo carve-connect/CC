@@ -32,69 +32,11 @@ export default class MediaGroup extends Component {
             comment: "",
         };
 
-        this.onSetCarveID = this.onSetCarveID.bind(this);
-        this.onSetMediaID = this.onSetMediaID.bind(this);
-        this.onSetPosterID = this.onSetPosterID.bind(this);
-        this.onSetComment = this.onSetComment.bind(this);
-        this.onSetProfileID = this.onSetProfileID.bind(this);
 
     }
 
-    onSetCarveID = event => {
-        this.setState({
-            carve: event.target.value
-        });
-    }
 
-    onSetMediaID = event => {
-        this.setState({
-            carve: event.target.value
-        });
-    }
-
-    onSetPosterID = event => {
-        this.setState({
-            carve: event.target.value
-        });
-    }
-
-    onSetComment = event => {
-        this.setState({
-            carve: event.target.value
-        });
-    }
-
-    onSetProfileID = event => {
-        this.setState({
-            carve: event.target.value
-        });
-    }
-
-    onSubmit = event => {
-        event.preventDefault();
-
-        const newComment = {
-            carve: this.state.carve,
-            media: this.state.media_id,
-            poster: this.state.poster,
-            comment: this.state.comment,
-            profile: this.state.profile,
-        };
-
-        axios.post(`http://localhost:8000/comments/`, {newComment})
-            .then(res => {
-                console.log("res: " + res);
-                console.log("data: " + res.data);
-        });
-
-        this.setState({
-            carve: '',
-            media: '',
-            poster: '',
-            comment: '',
-            profile: '',
-        });
-    }
+  
 
     componentWillMount() {
         axios.get(`http://localhost:8000/media/${this.props.type}/${this.props.content_id}/`)
@@ -157,12 +99,10 @@ export default class MediaGroup extends Component {
                     });
                 }
                 return (
-                    //<ListGroup.Item key={index}>
                         <Container style={{display: 'flex', flexWrap: 'wrap'}}>
                             {this.createGrid(media, commentList)}
                         </Container>
                         
-                    //</ListGroup.Item>
                 ) //return
             });
         }
