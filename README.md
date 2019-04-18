@@ -10,7 +10,7 @@ Authors:
 - Brandon Wheeler
 - Sean Klinglesmith
 - Dylan Anderson
-- RJ Boucher
+-   RJ Boucher 
 - Md M Monir
 
 Instructions on how to run project locally:
