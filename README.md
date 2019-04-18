@@ -5,7 +5,7 @@ Action Sport/Film Social Platform.
 
 Authors:
 - Christian Marcy
-- Fred Budde
+- Fred Budde 
 - Dhruv Patel
 - Brandon Wheeler
 - Sean Klinglesmith
