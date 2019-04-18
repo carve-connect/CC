@@ -19,24 +19,50 @@ export default class MediaGroup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            media_id: 0,
             poster: 0,
             carve: 0, 
             profile: 0,
             venue: 0,
             url: "",
+            media: 0,
             mediaInfo: {},
             mediaComments: {},
             description: "", 
             time: "",
             comment: "",
         };
-
-
     }
 
+    //Make sure the comment has some text
+    //We don't want any empty comments to be pushed
+    validateForm() {
+		const {comment} = this.state;
+		return comment.length > 0;
+    }
+    
+    handleSubmit = e => {
+        e.preventDefault();
+        console.log('Submitted comment:', this.state);
 
-  
+        axios.post("http://localhost:8000/comments", {
+            poster: this.state.poster,
+            carve: null,
+            profile: null, 
+            media: this.state.media,
+            comment: this.state.comment
+        })
+    };
+
+    	// Handles state change for when a new comment is submitted
+	handleChange = event => {
+		this.setState({
+            comment: event.target.value,
+            poster: 3,
+            carve: null,
+            media: 54,
+            profile: null
+		});
+	};
 
     componentWillMount() {
         axios.get(`http://localhost:8000/media/${this.props.type}/${this.props.content_id}/`)
@@ -54,6 +80,8 @@ export default class MediaGroup extends Component {
             });
         }
 
+        //Stopped using this and now the mediacards don't autorefresh after each letter in comment
+        //Idk why
         createGrid = (media, commentList) => {
             let length = this.state.mediaInfo.length;
             let div = [];
@@ -62,7 +90,7 @@ export default class MediaGroup extends Component {
             for(let k =0 ; k < 1; k++){
                 row.push(
                     <Col key={k}>
-                        <MediaCard media={media} submit={this.onSubmit} changeComment={this.onSetComment} comment={this.state.comment} commentList={commentList}/>
+                        <MediaCard commentList={commentList} change={this.handleChange} media={media} comment={this.state.comment} submit={this.handleSubmit} validateForm={!this.validateForm()}/>
                     </Col>
                 );
             }
@@ -99,9 +127,9 @@ export default class MediaGroup extends Component {
                     });
                 }
                 return (
-                        <Container style={{display: 'flex', flexWrap: 'wrap'}}>
-                            {this.createGrid(media, commentList)}
-                        </Container>
+                        <Col style={{display: 'flex', flexWrap: 'wrap'}}>
+                            <MediaCard commentList={commentList} change={this.handleChange} media={media} comment={this.state.comment} submit={this.handleSubmit} validateForm={!this.validateForm()}/>
+                        </Col>
                         
                 ) //return
             });
