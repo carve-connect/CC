@@ -45,11 +45,11 @@ export default class MediaGroup extends Component {
         console.log('Submitted comment:', this.state);
 
         axios.post("http://localhost:8000/comments", {
+            comment: this.state.comment,
             poster: this.state.poster,
             carve: null,
-            profile: null, 
             media: this.state.media,
-            comment: this.state.comment
+            profile: null
         })
     };
 
@@ -57,7 +57,7 @@ export default class MediaGroup extends Component {
 	handleChange = event => {
 		this.setState({
             comment: event.target.value,
-            poster: 3,
+            poster: `${this.props.content_id}`,
             carve: null,
             media: 54,
             profile: null
@@ -127,7 +127,7 @@ export default class MediaGroup extends Component {
                     });
                 }
                 return (
-                        <Col style={{display: 'flex', flexWrap: 'wrap'}}>
+                        <Col sm={4}>
                             <MediaCard commentList={commentList} change={this.handleChange} media={media} comment={this.state.comment} submit={this.handleSubmit} validateForm={!this.validateForm()}/>
                         </Col>
                         
@@ -136,11 +136,7 @@ export default class MediaGroup extends Component {
         }
         return (
             <>
-    
-                <ListGroup variant="flush" defaultActiveKey="1" >
-                    {mediaList}
-                </ListGroup>
-    
+                {mediaList}
             </>
         )
     }

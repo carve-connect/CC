@@ -8,7 +8,7 @@ import CreateCarveModal from "../../../../components/CreateCarveModal";
 import BuddyRequestModal from "../../../../components/BuddyRequestModal";
 import MediaGroup from "../../../../components/MediaGroup";
 import ProfileInfoCard from './ProfileInfoCard';
-import CardColumns from 'react-bootstrap/CardColumns';
+import Container from 'react-bootstrap/Container';
 
 
 export default class ProfilePage extends Component {
@@ -100,16 +100,19 @@ export default class ProfilePage extends Component {
 				<div>
 					<ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleShow} close={this.handleClose} show={this.state.show} refresh= {this.getUserInfo} user={userInfo} firstName={userInfo.first_name} lastName={userInfo.last_name} img={this.state.pic} id = {isUserLoggedIn} username={userInfo.username} description={userInfo.description} type={userInfo.type} snow={userInfo.snow_sports} water={userInfo.water_sports} land={userInfo.land_sports}/>
 				</div>
+				
 
 				<Row>
+				<h2 style={{margin: '3rem'}}>My Media</h2>
 					{/* Row will hold all of the media and such that we grab from the api */}
-					<Col style = {{marginLeft: "3%", marginTop: '2%', marginBottom: '2%'}}>
-						<h2 >My Media</h2>
-						<CardColumns>
-							<MediaGroup type = "profile" content_id = {this.state.userId}/>
-						</CardColumns>                                                                                                 
+				<Container style={{display: 'flex', flexWrap: 'wrap', flexDirection: 'row'}}>
+							<Row>
+								<MediaGroup type = "profile" content_id = {this.state.userId}/>
+							</Row>
+						</Container> 
 
-					</Col>
+					
+
 					{/* <Col style = {{width: "100%"}}>
 						<Row>
 							<h2>Carves created by user</h2></Row> */}

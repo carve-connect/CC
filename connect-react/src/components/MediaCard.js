@@ -15,7 +15,7 @@ import CustomFormGroup from './CustomFormGroup';
 const MediaCard = (props) => {
     return (
         <>
-            <Card style = {{width: '25rem'}}>
+            <Card>
                 <container className="embed-responsive embed-responsive-16by9">
                     <iframe title="User Media" className="embed-responsive-item" src= {props.media.url} allowFullScreen > </iframe>
                 </container>
