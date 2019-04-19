@@ -120,7 +120,7 @@ app.use(bodyParser.urlencoded({extended: true}));			// Allows us to parse body o
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'shhsecret' }));
+app.use(session({resave: false, saveUninitialized: false, secret: 'shhsecret' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
