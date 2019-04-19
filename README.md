@@ -5,7 +5,7 @@ Action Sport/Film Social Platform.
 
 Authors:
 - Christian Marcy
-- Fred Budde
+- Fred Budde 
 - Dhruv Patel
 - Brandon Wheeler
 - Sean Klinglesmith
@@ -28,6 +28,6 @@ Node API (Back End)
 
 DATABASE
   - SQL FOLDER
-    1) run ccv4
+    1) run ccv5
 
     2) run RUNMETOFILL.sql 
