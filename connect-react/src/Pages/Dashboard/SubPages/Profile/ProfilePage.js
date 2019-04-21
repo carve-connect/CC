@@ -99,7 +99,7 @@ export default class ProfilePage extends Component {
 					
 				{/* This is the row that will hold the profile picture and the information */}
 				<div>
-					<ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleShow} close={this.handleClose} show={this.state.show} refresh= {this.getUserInfo} user={userInfo} firstName={userInfo.first_name} lastName={userInfo.last_name} img={this.state.pic} id = {isUserLoggedIn} username={userInfo.username} description={userInfo.description} type={userInfo.type} snow={userInfo.snow_sports} water={userInfo.water_sports} land={userInfo.land_sports}/>
+					<ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleShow} close={this.handleClose} show={this.state.show} refresh= {this.getUserInfo} user={userInfo} img={this.state.pic} id = {isUserLoggedIn}/>
 				</div>
 				
 

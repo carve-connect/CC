@@ -42,7 +42,6 @@ export default class MediaGroup extends Component {
     
     handleSubmit = e => {
         e.preventDefault();
-        console.log('Submitted comment:', this.state);
 
         axios.post("http://localhost:8000/comments", {
             comment: this.state.comment,
@@ -80,29 +79,6 @@ export default class MediaGroup extends Component {
             });
         }
 
-        //Stopped using this and now the mediacards don't autorefresh after each letter in comment
-        //Idk why
-        createGrid = (media, commentList) => {
-            let length = this.state.mediaInfo.length;
-            let div = [];
-            let row = [];
-
-            for(let k =0 ; k < 1; k++){
-                row.push(
-                    <Col key={k}>
-                        <MediaCard commentList={commentList} change={this.handleChange} media={media} comment={this.state.comment} submit={this.handleSubmit} validateForm={!this.validateForm()}/>
-                    </Col>
-                );
-            }
-            div.push(
-                    <Row key={Math.random(50)}>
-                        {row}
-                    </Row>  
-            );
-
-            return div;
-        };
-
 
     render() {
         let mediaList;
@@ -112,14 +88,18 @@ export default class MediaGroup extends Component {
             mediaList = this.state.mediaInfo.map((media, index) => {
                 
                 if(this.state.mediaComments.length > 0){
-                    commentList = this.state.mediaComments.map((com, index) => {
+                    commentList = this.state.mediaComments.map((com, index1) => {
                         if(com.media === media.media_id){
                             return (
                                 
-                                <tr key = {index}>
+                                <tr>
                                     <td>{com.poster}</td>
                                     <td>{com.comment}</td>
-                                    <td>3 mins ago</td>
+                                    <td>
+                                        <a href = "#">Like</a>
+                                        <br/>
+                                        <a href = "#">Dislike</a>
+                                        </td>
                                 </tr>
                             );
                             }else{
@@ -128,10 +108,10 @@ export default class MediaGroup extends Component {
                     });
                 }
                 return (
-                        <Col className="col-sm">
-                            <MediaCard commentList={commentList} change={this.handleChange} media={media} comment={this.state.comment} submit={this.handleSubmit} validateForm={!this.validateForm()}/>
+                    
+                    <Col className="col-sm">
+                            <MediaCard index = {index} commentList={commentList} change={this.handleChange} media={media} comment={this.state.comment} submit={this.handleSubmit} validateForm={!this.validateForm()}/>
                         </Col>
-                        
                 ) //return
             });
         }
