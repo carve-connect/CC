@@ -109,11 +109,11 @@ export default class VenuePage extends Component {
 
                     {/* Carves at the venue */}
                     <Row style={{marginTop: '2rem'}}>
-                        <Col>
-                        <CardColumns>
+                        <Container style={{display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <Row>
                                 <MediaGroup type = "venue" content_id = {this.state.venueId}/>
-                        </CardColumns>  
-                        </Col>
+                            </Row>
+                    </Container> 
   
                     {/* <Col style = {{width: "200%"}}>
                         <Row>
