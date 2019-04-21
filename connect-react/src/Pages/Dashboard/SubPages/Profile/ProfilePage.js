@@ -105,7 +105,7 @@ export default class ProfilePage extends Component {
 				<Row>
 				<h2 style={{margin: '3rem'}}>My Media</h2>
 					{/* Row will hold all of the media and such that we grab from the api */}
-				<Container style={{display: 'flex', flexWrap: 'wrap', flexDirection: 'row'}}>
+				<Container style={{display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-between'}}>
 							<Row>
 								<MediaGroup type = "profile" content_id = {this.state.userId}/>
 							</Row>

@@ -57,7 +57,7 @@ export default class MediaGroup extends Component {
 	handleChange = event => {
 		this.setState({
             comment: event.target.value,
-            poster: `${this.props.content_id}`,
+            poster: 3,
             carve: null,
             media: 54,
             profile: null
@@ -115,6 +115,7 @@ export default class MediaGroup extends Component {
                     commentList = this.state.mediaComments.map((com, index) => {
                         if(com.media === media.media_id){
                             return (
+                                
                                 <tr key = {index}>
                                     <td>{com.poster}</td>
                                     <td>{com.comment}</td>
@@ -127,7 +128,7 @@ export default class MediaGroup extends Component {
                     });
                 }
                 return (
-                        <Col sm={4}>
+                        <Col className="col-sm">
                             <MediaCard commentList={commentList} change={this.handleChange} media={media} comment={this.state.comment} submit={this.handleSubmit} validateForm={!this.validateForm()}/>
                         </Col>
                         

@@ -15,7 +15,7 @@ import CustomFormGroup from './CustomFormGroup';
 const MediaCard = (props) => {
     return (
         <>
-            <Card>
+            <Card style={{width: '30rem', marginBottom: '2rem'}}>
                 <container className="embed-responsive embed-responsive-16by9">
                     <iframe title="User Media" className="embed-responsive-item" src= {props.media.url} allowFullScreen > </iframe>
                 </container>
@@ -37,29 +37,6 @@ const MediaCard = (props) => {
                                     </Col>
                                     </Row>
                                 </Form.Row>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                {/* <FormGroup>
-                                    <Form.Row>
-                                        <Col className="col-8">
-                                            <Form.Control size = "sm" type="text" placeholder="Say something interesting..." />
-                                        </Col>
-                                        <Col className="col-1">
-                                            <Button type = "submit" size = "sm">Enter</Button>
-                                        </Col>
-                                    </Form.Row>
-                                </FormGroup> */}
                             </form>
 
                         </Row>
@@ -68,13 +45,13 @@ const MediaCard = (props) => {
                 <Table striped borderless hover size = "sm" style = {{marginTop: '-2rem'}}>
                     <thead>
                         <th>
-                        username
+                        Username
                         </th>
                         <th>
-                        comment
+                        Comment
                         </th>
                         <th>
-                        timestamp
+                        Action
                         </th>
                     </thead>
                     <tbody>
