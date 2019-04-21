@@ -114,6 +114,18 @@ export default class VenuePage extends Component {
                                 <MediaGroup type = "venue" content_id = {this.state.venueId}/>
                             </Row>
                     </Container> 
+                    </Row>
+                    <Row style={{marginLeft: '3rem', width: '100%'}}>
+					<Col>
+						<Row>
+							<h2>Carves at this venue</h2>
+						</Row>
+						 <Row>
+							<VenueCarveCard venue_id = {this.state.venueId}/>
+						</Row>
+					</Col>
+				</Row>
+                        
   
                     {/* <Col style = {{width: "200%"}}>
                         <Row>
@@ -123,7 +135,7 @@ export default class VenuePage extends Component {
                             <VenueCarveCard venue_id = {this.state.venueId} style = {{width:"100%"}}/>
                         </Row>
                     </Col> */}
-                    </Row>
+                    
                 </>
             );
         } else {
