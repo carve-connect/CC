@@ -31,6 +31,7 @@ export default class MediaGroup extends Component {
             time: "",
             comment: "",
         };
+        this.handleChange = this.handleChange.bind(this);
     }
 
     //Make sure the comment has some text
