@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import UserFigure from "./UserFigure";
+import UserApi from 'api/UserApi';
 
 //import axios from 'axios'
 
@@ -33,6 +34,8 @@ class UsersPage extends Component {
                     venuesLength: res.data.users[0].length
                 });
             })
+
+        UserApi.getUserInfo();
     }
 
     createDiv = () => {
