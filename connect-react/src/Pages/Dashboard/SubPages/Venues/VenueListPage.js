@@ -31,23 +31,21 @@ export default class VenueListPage extends Component {
 			})
     }
 
-    createDiv = () => {
+    createSnowRow = () => {
         const venues = this.state.venues;
         const length = this.state.venuesLength;
 
-        //let flag = false;
         let div = [];
-
-        // Guessing j represents how many rows we want? Not sure
-
             let row = [];
 
             for(let k =0 ; k < length; k++){
-                row.push(
-                    <Col key={k}>
-                        <VenueFigure name={venues[k].venue_name} img={Mount_Snow_BG} href={'/dashboard/venues/' + venues[k].venue_id}/>
-                    </Col>
-                );
+                if(venues[k].water_sports == null && venues[k].air_sports == null && venues[k].land_sports == null){
+                    row.push(
+                        <Col key={k}>
+                            <VenueFigure name={venues[k].venue_name} img={Mount_Snow_BG} href={'/dashboard/venues/' + venues[k].venue_id}/>
+                        </Col>
+                    );
+                }
             }
             div.push(
                 <Row key={Math.random(50)} style={{flex: '0 0 auto'}}>
@@ -57,9 +55,91 @@ export default class VenueListPage extends Component {
 
         return div;
     };
+
+    createWaterRow = () => {
+        const venues = this.state.venues;
+        const length = this.state.venuesLength;
+
+        let div = [];
+        let row = [];
+
+        for(let k =0 ; k < length; k++){
+            if(venues[k].snow_sports == null && venues[k].air_sports == null && venues[k].land_sports == null){
+                row.push(
+                    <Col key={k}>
+                        <VenueFigure name={venues[k].venue_name} img={Mount_Snow_BG} href={'/dashboard/venues/' + venues[k].venue_id}/>
+                    </Col>
+                );
+            }
+        }
+        div.push(
+            <Row key={Math.random(50)} style={{flex: '0 0 auto'}}>
+                {row}
+            </Row>
+        );
+
+        return div;
+    }
+
+    createLandRow = () => {
+        const venues = this.state.venues;
+        const length = this.state.venuesLength;
+
+        let div = [];
+        let row = [];
+
+        for(let k =0 ; k < length; k++){
+            if(venues[k].snow_sports == null && venues[k].air_sports == null && venues[k].water_sports == null){
+                row.push(
+                    <Col key={k}>
+                        <VenueFigure name={venues[k].venue_name} img={Mount_Snow_BG} href={'/dashboard/venues/' + venues[k].venue_id}/>
+                    </Col>
+                );
+            }
+        }
+        div.push(
+            <Row key={Math.random(50)} style={{flex: '0 0 auto'}}>
+                {row}
+            </Row>
+        );
+
+        return div;
+    }
+
+    createAirRow = () => {
+        const venues = this.state.venues;
+        const length = this.state.venuesLength;
+
+        let div = [];
+        let row = [];
+
+        for(let k =0 ; k < length; k++){
+            if(venues[k].snow_sports == null && venues[k].water_sports == null && venues[k].land_sports == null){
+                row.push(
+                    <Col key={k}>
+                        <VenueFigure name={venues[k].venue_name} img={Mount_Snow_BG} href={'/dashboard/venues/' + venues[k].venue_id}/>
+                    </Col>
+                );
+            }
+        }
+        div.push(
+            <Row key={Math.random(50)} style={{flex: '0 0 auto'}}>
+                {row}
+            </Row>
+        );
+
+        return div;
+    }
     
     render(){
+        let waterList;
+        let landList;
+        let snowList;
+        let airList;
+        const {venues} = this.state;
         if(this.state.venuesLength > 0){
+
+
             return (
                 <Container>
                     <Row style = {{marginTop: '40px'}}>
@@ -72,12 +152,28 @@ export default class VenueListPage extends Component {
                         <Button variant="link">+Filters</Button>
                     </Row>
 
-                    <div style = {{marginTop: '20px', borderBottom: '1px solid lightgray'}}> </div>
+                    <div style = {{marginTop: '20px', borderBottom: '1px solid lightgray'}}> </div> 
 
-                    {/* Horizontal scrolling effect */}
-                    <div style = {{}}>
-                        {this.createDiv()}
-                    </div>
+                    
+                    <h4 style = {{marginTop: '3rem'}}><u>Snow Venues</u></h4>
+                    <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
+                        {this.createSnowRow('')}
+                    </Row>
+
+                    <h4 style = {{marginTop: '3rem'}}><u>Water Venues</u></h4>
+                    <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
+                        {this.createWaterRow('')}
+                    </Row>
+
+                    <h4 style = {{marginTop: '3rem'}}><u>Land Venues</u></h4>
+                    <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
+                        {this.createLandRow('')}
+                    </Row>
+
+                    <h4 style = {{marginTop: '3rem'}}><u>Air Venues</u></h4>
+                    <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
+                        {this.createAirRow('')}
+                    </Row>
                 </Container>
             );
         }else{

@@ -8,7 +8,7 @@ const VenueFigure = (props) => {
         <Figure >
             <a href = {props.href}>
                 <Figure.Image 
-                    style = {{marginTop: '30px',border: '1px solid black'}} 
+                    style = {{border: '1px solid black'}} 
                     thumbnail
                     height={400}
                     width={400}
