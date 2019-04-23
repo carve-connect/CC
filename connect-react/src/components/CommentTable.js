@@ -6,6 +6,7 @@ import {Row} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
+import LikeBar from './LikeBar';
 
 
 
@@ -43,13 +44,6 @@ export default class CommentTable extends Component {
         })
     };
 
-    // Handles state change for when a new comment is submitted
-    // Error is here because ig you change the comment on one media card, it changes
-    // The comment in state here gets handed down to every comment box Im pretty sure...
-    //
-    // Fix Idea would be to have the component have its own state so that it can pass that
-    // individual data somewhere like the api and it does not affect every comment on the
-    // media post
     handleChange = event => {
 		this.setState({
             comment: event.target.value,
@@ -69,7 +63,6 @@ export default class CommentTable extends Component {
         });
     }
 
-
     render() {
         const {comment} = this.state;
         let commentList;
@@ -82,9 +75,7 @@ export default class CommentTable extends Component {
                             <td>{com.poster}</td>
                             <td>{com.comment}</td>
                             <td>
-                                <a href="#">Like</a>
-                                <br/>
-                                <a href="#">Dislike</a>
+                              <LikeBar media={this.props.media} comment={com}/>
                             </td>
                         </tr>
                     );
