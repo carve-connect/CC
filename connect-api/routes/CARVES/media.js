@@ -9,14 +9,9 @@ router.get('/', (req,res) => {
     // Find all medias from database
     media_list = "CALL get_carve_media(?)";
     carveId = req.params.carveId;
-
-    console.log(req.query);
-
     con.query(media_list,[carveId], (err, results) => {
         if (err) throw err;
-
         res.status(200).jsonp({results}).end;
-
     })
 });
 
@@ -24,28 +19,19 @@ router.get('/', (req,res) => {
 // Creates a new media
 router.post('/', (req,res) => {
     const {poster,url,description,carve,venue,profile} = req.body;
-
-    console.log(" new media sent from: " + poster);
-    if(false)
-    {
-
-    }else{
-        // The medianame wasn't found in the database
-        // Create insert query for new media
-        // Added a comment
-        new_media = "CALL add_media(?,?,?,?,?,?)";
-        // Execute the query to insert into the database
-        con.query(new_media,[poster,url,description,carve,venue,profile], (err, results) => {
-            if (err) throw err;
-            res.status(201).jsonp({results}).end;
-        })
-
-    }
+    // The medianame wasn't found in the database
+    // Create insert query for new media
+    // Added a comment
+    new_media = "CALL add_media(?,?,?,?,?,?)";
+    // Execute the query to insert into the database
+    con.query(new_media,[poster,url,description,carve,venue,profile], (err, results) => {
+        if (err) throw err;
+        res.status(201).jsonp({results}).end;
+    })
 });
 
 // updates all medias
 router.put('/', (req,res) => {
-
     // The medianame wasn't found in the database
     // Create insert query for new media
     // Added a comment
@@ -59,7 +45,6 @@ router.put('/', (req,res) => {
 
 // updates all medias
 router.patch('/', (req,res) => {
-
     // The medianame wasn't found in the database
     // Create insert query for new media
     // Added a comment
@@ -69,8 +54,6 @@ router.patch('/', (req,res) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
-
-
 });
 
 // deletes all medias
@@ -80,14 +63,11 @@ router.delete('/', (req,res) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
-
-
 });
 
 // Grab specific media by their id
 router.get('/:mediaId', (req,res) => {
     const mediaId = req.params.mediaId;
-
     get_media  = "call get_medi(?)";
     con.query(get_media, [mediaId],(err, results) => {
         if (err) throw err;
@@ -95,43 +75,36 @@ router.get('/:mediaId', (req,res) => {
     })
 });
 
-// updates media
+// updates a specific media resource
 router.put('/:mediaId', (req,res) => {
     const mediaId = req.params.mediaId;
     const {poster,url,description,carve,venue,profile} = req.body;
-    console.log("media updated via put with mediaId: " + mediaId);
     update_media = "CALL update_medi(?,?,?,?,?,?,?)";
-
     con.query(update_media,[mediaId,poster,url,description,carve,venue,profile],(err, results) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
 });
 
-// updates all medias
+// updates a specific media resource
 router.patch('/:mediaId', (req,res) => {
     const mediaId = req.params.mediaId;
     const {poster,url,description,carve,venue,profile} = req.body;
-    console.log("media updated via patch with mediaId: " + mediaId);
     update_media = "CALL update_medi(?,?,?,?,?,?,?)";
-
     con.query(update_media,[mediaId,poster,url,description,carve,venue,profile],(err, results) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
 });
 
-// deletes media
+// deletes a media specific media resource
 router.delete('/:mediaId', (req,res) => {
     const mediaId = req.params.mediaId;
-    console.log(" deleting media with media id: " + mediaId);
     delete_medias = "CALL delete_medi(?)";
     con.query(delete_medias, [mediaId],(err, results) => {
         if (err) throw err;
         res.status(201).jsonp({msg:'media deleted'}).end;
     })
-
-
 });
 
 
