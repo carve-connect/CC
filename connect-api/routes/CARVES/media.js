@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
     carveId = req.params.carveId;
     con.query(media_list,[carveId], (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -26,7 +26,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_media,[poster,url,description,carve,venue,profile], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -39,7 +39,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_media,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -52,7 +52,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_media,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -61,7 +61,7 @@ router.delete('/', (req,res) => {
     delete_medias = "CALL delete_media()";
     con.query(delete_medias, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -71,7 +71,7 @@ router.get('/:mediaId', (req,res) => {
     get_media  = "call get_medi(?)";
     con.query(get_media, [mediaId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -82,7 +82,7 @@ router.put('/:mediaId', (req,res) => {
     update_media = "CALL update_medi(?,?,?,?,?,?,?)";
     con.query(update_media,[mediaId,poster,url,description,carve,venue,profile],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -93,7 +93,7 @@ router.patch('/:mediaId', (req,res) => {
     update_media = "CALL update_medi(?,?,?,?,?,?,?)";
     con.query(update_media,[mediaId,poster,url,description,carve,venue,profile],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -103,7 +103,7 @@ router.delete('/:mediaId', (req,res) => {
     delete_medias = "CALL delete_medi(?)";
     con.query(delete_medias, [mediaId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'media deleted'}).end;
+        res.status(201).jsonp({msg:'media deleted'}).end();
     })
 });
 

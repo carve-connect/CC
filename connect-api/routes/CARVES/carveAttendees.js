@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
     carve_attendees_list = "CALL get_carves_attendees(?)";
     con.query(carve_attendees_list, [carveId], (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -26,7 +26,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_carve_attendees,[carve,user,userType[0]], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -39,7 +39,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_carve_attendees,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -52,7 +52,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_carve_attendees,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -61,7 +61,7 @@ router.delete('/', (req,res) => {
     delete_carve_attendeess = "CALL delete_carve_attendees()";
     con.query(delete_carve_attendeess, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -71,7 +71,7 @@ router.get('/:carve_attendeesId', (req,res) => {
     get_carve_attendees  = "call get_carve_attendee(?)";
     con.query(get_carve_attendees, [carve_attendeesId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -87,7 +87,7 @@ router.delete('/:carve_attendeesId', (req,res) => {
     delete_carve_attendeess = "CALL delete_carve_attendee(?)";
     con.query(delete_carve_attendeess, [carve_attendeesId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'carve_attendees deleted'}).end;
+        res.status(201).jsonp({msg:'carve_attendees deleted'}).end();
     })
 });
 

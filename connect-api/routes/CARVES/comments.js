@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
     carveId = req.params.carveId;
     con.query(comment_list,[carveId], (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -25,7 +25,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_comment,[poster,carve,media,profile,comment], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -38,7 +38,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_comment,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -51,7 +51,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_comment,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -60,7 +60,7 @@ router.delete('/', (req,res) => {
     delete_comments = "CALL delete_comments()";
     con.query(delete_comments, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -70,7 +70,7 @@ router.get('/:commentId', (req,res) => {
     get_comment  = "call get_comment(?)";
     con.query(get_comment, [commentId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -81,7 +81,7 @@ router.put('/:commentId', (req,res) => {
     update_comment = "CALL update_comment(?,?,?,?,?,?)";
     con.query(update_comment,[commentId,poster,carve,media,profile,comment],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -92,7 +92,7 @@ router.patch('/:commentId', (req,res) => {
     update_comment = "CALL update_comment(?,?,?,?,?,?)";
     con.query(update_comment,[commentId,poster,carve,media,profile,comment],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -102,7 +102,7 @@ router.delete('/:commentId', (req,res) => {
     delete_comments = "CALL delete_comment(?)";
     con.query(delete_comments, [commentId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'comment deleted'}).end;
+        res.status(201).jsonp({msg:'comment deleted'}).end();
     })
 });
 

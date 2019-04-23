@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
     carve_list = "CALL get_users_carves_attendee(?)";
 	con.query(carve_list,[carveId], (err, results) => {
 		if (err) throw err;
-		res.status(200).jsonp({results}).end;
+		res.status(200).jsonp({results}).end();
 	})
 });
 
@@ -26,7 +26,7 @@ router.post('/', (req,res) => {
 	// Execute the query to insert into the database
 	con.query(new_user,[username, email, password, first_name, last_name, description, type[0], snow_sports[0], water_sports[0], land_sports[0], air_sports[0]], (err, results) => {
 		if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
 	})
 });
 
@@ -39,7 +39,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_user,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -52,7 +52,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_user,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -61,7 +61,7 @@ router.delete('/', (req,res) => {
     delete_users = "CALL delete_users()";
     con.query(delete_users, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -72,7 +72,7 @@ router.get('/:userId', (req,res) => {
 	con.query(get_user, [userId],(err, results) => {
 		if (err) throw err;
 		console.log(results[0][0]);
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
 	})
 });
 
@@ -83,7 +83,7 @@ router.put('/:userId', (req,res) => {
     update_user = "CALL update_user(?,?,?,?,?,?,?,?,?,?,?,?)";
     con.query(update_user,[userId,username, email, password, first_name, last_name, description, type[0], snow_sports[0], water_sports[0], land_sports[0], air_sports[0]],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -94,7 +94,7 @@ router.patch('/:userId', (req,res) => {
     update_user = "CALL update_user(?,?,?,?,?,?,?,?,?,?,?,?)";
     con.query(update_user,[userId,username, email, password, first_name, last_name, description, type[0], snow_sports[0], water_sports[0], land_sports[0], air_sports[0]],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -104,7 +104,7 @@ router.delete('/:userId', (req,res) => {
     delete_users = "CALL delete_user(?)";
     con.query(delete_users, [userId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'user deleted'}).end;
+        res.status(201).jsonp({msg:'user deleted'}).end();
     })
 });
 
