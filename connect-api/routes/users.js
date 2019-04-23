@@ -10,13 +10,12 @@ const con = require('../db');
 router.get('/', (req,res) => {
 	// Find all users from database
 	user_list = "CALL get_users()";
-	username = req.query.username;
-	first_name = req.query.first_name;
-	last_name = req.query.last_name;
+	searchTerm = req.query.search;
+
+	console.log('Req query Parameters:', req.query);
 
 	con.query(user_list, (err, results) => {
 		if (err) throw err;
-
 		res.status(200).jsonp({users: results}).end;
 
 	})

@@ -109,9 +109,6 @@ router.get('/venues', (req,res) => {
 	userId = req.params.userId;
 	follow_list = "CALL get_venues_followed(?)";
 
-
-	console.log(req.query);
-
 	con.query(follow_list, [userId], (err, results) => {
 		if (err) throw err;
 

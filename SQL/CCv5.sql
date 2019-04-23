@@ -493,6 +493,22 @@ END$$
 DELIMITER ;
 
 -- -----------------------------------------------------
+-- procedure get_users_search
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`get_users_search`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `get_users_search` (in search VARCHAR(40))
+BEGIN
+    select * from users where username like '%' + search%';
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
 -- procedure get_user
 -- -----------------------------------------------------
 
@@ -1733,7 +1749,7 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_venues_followed` (in id int)
 BEGIN
-select venue_Id from follows where user_Id1 = 1 and venue_Id > 0;
+select venue_Id from follows where user_Id1 = id and venue_Id > 0;
 END$$
 
 DELIMITER ;

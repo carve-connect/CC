@@ -4,13 +4,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Figure from 'react-bootstrap/Figure';
 import Mount_Snow from '../../../../images/mount_snow_bg.png'
-//import VenueButtonMenu from './VenueButtonMenu';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import axios from 'axios';
-import VenueCarveCard from "../../../../components/VenueCarveCard";
 import MediaGroup from '../../../../components/MediaGroup';
 import CardColumns from 'react-bootstrap/CardColumns';
+import VenueApi from "../../../../api/VenueApi";
+import UserApi from "../../../../api/UserApi";
 
 
 export default class VenuePage extends Component {
@@ -22,7 +22,7 @@ export default class VenuePage extends Component {
             venueInfoLength: 0,
             followsVenue: false,
             venueLoading: true
-        }
+        };
 
         this.unFollowVenue = this.unFollowVenue.bind(this);
     }
@@ -37,7 +37,7 @@ export default class VenuePage extends Component {
         axios.post('http://localhost:8000/follows', {
             user1: localStorage.getItem('userId'),
             v: this.state.venueInfo.venue_id
-        }).then((res) => {
+        }).then(() => {
             this.getData();
         });
     };
@@ -114,15 +114,6 @@ export default class VenuePage extends Component {
                                 <MediaGroup type = "venue" content_id = {this.state.venueId}/>
                         </CardColumns>  
                         </Col>
-  
-                    {/* <Col style = {{width: "200%"}}>
-                        <Row>
-                            <h2>Carves at this venue</h2>
-                        </Row>
-                        <Row style = {{width:"100%"}}>
-                            <VenueCarveCard venue_id = {this.state.venueId} style = {{width:"100%"}}/>
-                        </Row>
-                    </Col> */}
                     </Row>
                 </>
             );
@@ -137,37 +128,29 @@ export default class VenuePage extends Component {
     }
 
     getVenueInfo() {
-        axios.get(`http://localhost:8000/venues/${this.state.venueId}`)
-          .then(res => {
-              // console.log('Venue:', res.data);
-              this.setState({
-                  venueInfo: res.data.venues[0][0],
-                  venueInfoLength: Object.keys(res.data.venues[0]).length
-              });
-          });
+        VenueApi.getVenueInfo(this.state.venueId)
+          .then(venue => {
+              this.setState({ venueInfo: venue, venueInfoLength: Object.keys(venue).length });
+          })
     }
 
     getFollowingVenues() {
-        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/venues`)
-          .then( (res) => {
-              let venues = res.data.results[0];
+        UserApi.getFollowingVenues(localStorage.getItem('userId'))
+          .then(venues => {
               let followsVenue = false;
-
-              // Iterate over venues that the user follows and check to see if it is the one we are on now
               venues.forEach((venue) => {
                   if(venue.venue_Id === this.state.venueId) {
                       followsVenue = true;
                   }
               });
-
-              // Set the state of the application to reflect the following of the user in relation to the venue
               this.setState({followsVenue, venueLoading: false});
-          });
+            });
     }
 
     getData() {
         this.getVenueInfo();
         this.getFollowingVenues();
+        console.log(this.state);
     }
 
 }

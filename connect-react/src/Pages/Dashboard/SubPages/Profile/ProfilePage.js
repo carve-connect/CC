@@ -9,6 +9,7 @@ import BuddyRequestModal from "../../../../components/BuddyRequestModal";
 import MediaGroup from "../../../../components/MediaGroup";
 import ProfileInfoCard from './ProfileInfoCard';
 import CardColumns from 'react-bootstrap/CardColumns';
+import UserApi from 'api/UserApi';
 
 
 export default class ProfilePage extends Component {
@@ -142,29 +143,14 @@ export default class ProfilePage extends Component {
 
 	getUserInfo() {
 		// Getting the user id from the url param
-		if(this.state.userId >0)
-			axios.get(`http://localhost:8000/users/${this.state.userId}`)
-				.then(res => {
-					this.setState({
-						userInfo: res.data.users[0][0],
-						userInfoLength: Object.keys(res.data.users[0][0]).length,
-						//pic: this.state.userInfo.photo
-					});
-
-					//alert(JSON.stringify(res.data.users[0][0]))
-				});
-		else {
-
-			axios.get(`http://localhost:8000/users/${0}`)
-				.then(res => {
-					this.setState({
-						userInfo: res.data.users[0][0],
-						userInfoLength: Object.keys(res.data.users[0][0]).length,
-						//pic: this.state.userInfo.photo
-					});
-				})
-			//window.location.reload();
+		let userId = 0;
+		if(this.state.userId > 0) {
+			userId = this.state.userId;
 		}
+
+		UserApi.getUserInfo(userId).then((userObj) => {
+			this.setState({ userInfo: userObj, userInfoLength: Object.keys(userObj).length });
+		});
 	}
 	getUserCounts() {
 		// Getting the user id from the url param

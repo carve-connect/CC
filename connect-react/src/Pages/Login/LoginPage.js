@@ -10,7 +10,7 @@ import './Login.css';
 import axios from "axios";
 import jwt from "jsonwebtoken";
 import {Cookies, withCookies} from 'react-cookie';
-import {instanceOf, propTypes} from 'prop-types';
+import {instanceOf} from 'prop-types';
 
 class LoginPage extends Component {
 
@@ -51,12 +51,6 @@ class LoginPage extends Component {
 	// and then if they do, redirect them to dashboard
 	handleSubmit = (event) => {
 		event.preventDefault();
-		//const user = { username: this.state.username, password: this.state.password ,id: this.state.userId};
-		//const user = { username: this.state.username, password: this.state.password, userId : this.state.userId };
-		//alert('User Info:'+ user);
-		//alert('a login was started: ' + this.state.username +" "+ this.state.password);
-		/*axios.get('http://localhost:8000/users')
-			.then( alert('i got'));*/
 
 		axios.post('http://localhost:8000/login', {
 						username: this.state.username,
@@ -94,7 +88,7 @@ class LoginPage extends Component {
 
 					this.setState({redirect: false});
 				}
-				else if(decoded.session.us == -2){
+				else if(decoded.session.us === -2){
 					alert("user is already logged in");
 
 					this.setState({redirect: false});

@@ -24,9 +24,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const { endpoint } = this.state;
-
-
     this.setState({socket: socket});
       socket.on("FromAPI", data => this.setState({ response: data }));
       socket.emit("I am alive");
@@ -38,21 +35,7 @@ class App extends Component {
         this.state.socket.disconnect();
     }
 
-
-    /*
-    <div style={{ textAlign: "center" , height: "15%"}}>
-
-                 <p>
-                  The temperature in Florence is: {response} °F
-                </p>
-                <p>Loading...</p>
-          </div>
-
-    */
   render() {
-
-
-    const { response } = this.state;
     return (
       <div className="App">
         {/* We keep the same navbar up top and we can change options based on where we are in sequence for user */}

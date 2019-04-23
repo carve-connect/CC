@@ -1,15 +1,8 @@
 import React, {Component} from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Form from 'react-bootstrap/Form';
-import CustomFormGroup from "./CustomFormGroup";
-import FormGroup from 'react-bootstrap/FormGroup';
-import Table from 'react-bootstrap/Table';
-import CardColumns from 'react-bootstrap/CardColumns'
 import { Container } from 'react-bootstrap';
 import MediaCard from './MediaCard';
 
@@ -29,7 +22,7 @@ export default class MediaGroup extends Component {
             mediaComments: {},
             description: "", 
             time: "",
-            comment: "",
+            comment: ""
         };
 
         this.onSetCarveID = this.onSetCarveID.bind(this);
@@ -113,7 +106,6 @@ export default class MediaGroup extends Component {
         }
 
         createGrid = (media, commentList) => {
-            let length = this.state.mediaInfo.length;
             let div = [];
             let row = [];
 
@@ -137,15 +129,16 @@ export default class MediaGroup extends Component {
     render() {
         let mediaList;
         let commentList;
+        console.log('State:', this.state);
         
         if(this.state.mediaInfo.length > 0){
             mediaList = this.state.mediaInfo.map((media, index) => {
                 
                 if(this.state.mediaComments.length > 0){
-                    commentList = this.state.mediaComments.map((com, index) => {
+                    commentList = this.state.mediaComments.map((com, index1) => {
                         if(com.media === media.media_id){
                             return (
-                                <tr key = {index}>
+                                <tr key={index1}>
                                     <td>{com.poster}</td>
                                     <td>{com.comment}</td>
                                     <td>3 mins ago</td>

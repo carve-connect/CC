@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from "react-bootstrap/Row";
-import axios from "axios";
 import pic1 from "../../images/snow.jpeg"
 import Image from 'react-bootstrap/Image'
+import UserApi from "../../api/UserApi";
 
 class SideMenu extends Component {
 	constructor(props) {
@@ -16,25 +16,15 @@ class SideMenu extends Component {
 
 	}
 
-
-
-
 	componentWillMount() {
-		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/buddies`)
-			.then(res => {
-				// console.log("results: ", res.data.results[0]);
-				//alert("Buddy list:"+ JSON.stringify(res.data.results[0][0].user_Id2));
-				this.setState({
-					buddies: res.data.results[0]
-				});
-			});
+		UserApi.getUsersBuddies(localStorage.getItem('userId'))
+			.then(buddies => {
+				this.setState({buddies});
+			})
 	}
 
 
 	render() {
-
-
-
 		const menuItems = {
 			'My Profile': {href: `/dashboard/profile/${localStorage.getItem('userId')}`},
 			'My Messages': {href: '/dashboard/inbox/ '},

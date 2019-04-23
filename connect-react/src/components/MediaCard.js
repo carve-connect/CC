@@ -2,24 +2,21 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Container from "react-bootstrap/Container";
-import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormGroup from 'react-bootstrap/FormGroup';
 import Table from 'react-bootstrap/Table';
-
-
+import Container from "react-bootstrap/Container";
 
 const MediaCard = (props) => {
     return (
         <>
             <Card style = {{width: '25rem'}}>
-                <container className="embed-responsive embed-responsive-16by9">
-                    <iframe title="User Media" className="embed-responsive-item" src= {props.media.url} allowFullScreen > </iframe>
-                </container>
+                <Container className="embed-responsive embed-responsive-16by9">
+                    <iframe title="User Media" className="embed-responsive-item" src={props.media.url} allowFullScreen></iframe>
+                </Container>
                 <Card.Body>
-                    <container>
+                    <Container>
                         <Row style = {{marginTop: '-1rem', borderBottom:'1px dashed lightgrey'}}>
                             <Card.Link href = "#">{props.media.poster}</Card.Link>
                             :{props.media.description}
@@ -39,7 +36,7 @@ const MediaCard = (props) => {
                             </Form>
 
                         </Row>
-                    </container>
+                    </Container>
                 </Card.Body>
                 <Table striped borderless hover size = "sm" style = {{marginTop: '-2rem'}}>
                     <thead>

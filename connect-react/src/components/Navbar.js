@@ -97,13 +97,12 @@ class TopNav extends Component {
 					<li>
 						<div style={{justify:"left"}}>
 							<Form inline style={{justify:"left"}} >
-								<CustomFormGroup value = {this.state.search} type="integer" placeholder="User Search" className=" mr-sm-2" controlId ="search" onChange={this.handleChange}  />
-								<Button type="submit" block disabled={!this.validateForm()} href = {'/dashboard/profile/'+ parseInt(this.state.search)} style = {{width: 50, color: "white"}}>Find</Button>
+								<CustomFormGroup value = {this.state.search} type="text" placeholder="User Search" className=" mr-sm-2" controlId ="search" onChange={this.handleChange}  />
+								<Button type="submit" block style={{width: 50, color: "white"}}>Find</Button>
 							</Form>
 						</div>
 					</li>
 						<li >
-
 							<ul className="navbar justify-content-end">
 								<div>
 
