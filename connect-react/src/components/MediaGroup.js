@@ -31,44 +31,9 @@ export default class MediaGroup extends Component {
             time: "",
             comment: "",
         };
-        this.handleChange = this.handleChange.bind(this);
     }
 
-    //Make sure the comment has some text
-    //We don't want any empty comments to be pushed
-    validateForm() {
-		const {comment} = this.state;
-		return comment.length > 0;
-    }
-    
-    handleSubmit = e => {
-        e.preventDefault();
 
-        axios.post("http://localhost:8000/comments", {
-            comment: this.state.comment,
-            poster: this.state.poster,
-            carve: null,
-            media: this.state.media,
-            profile: null
-        })
-    };
-
-    	// Handles state change for when a new comment is submitted
-    // Error is here because ig you change the comment on one media card, it changes
-    // The comment in state here gets handed down to every comment box Im pretty sure...
-    //
-    // Fix Idea would be to have the component have its own state so that it can pass that
-    // individual data somewhere like the api and it does not affect every comment on the
-    // media post
-	handleChange = event => {
-		this.setState({
-            comment: event.target.value,
-            poster: 3,
-            carve: null,
-            media: 54,
-            profile: null
-		});
-	};
 
     componentWillMount() {
         axios.get(`http://localhost:8000/media/${this.props.type}/${this.props.content_id}/`)
@@ -77,47 +42,20 @@ export default class MediaGroup extends Component {
                     mediaInfo: res.data.results[0],
                 });
             });
-
-        axios.get(`http://localhost:8000/comments`)
-            .then(res => {
-                this.setState({
-                    mediaComments: res.data.results[0]
-                });
-            });
         }
 
 
     render() {
         let mediaList;
-        let commentList;
         
         if(this.state.mediaInfo.length > 0){
             mediaList = this.state.mediaInfo.map((media, index) => {
-                if(this.state.mediaComments.length > 0){
-                    commentList = this.state.mediaComments.map((com, index1) => {
-                        if(com.media === media.media_id){
-                            return (
-                                <tr>
-                                    <td>{com.poster}</td>
-                                    <td>{com.comment}</td>
-                                    <td>
-                                        <a href="#">Like</a>
-                                        <br/>
-                                        <a href="#">Dislike</a>
-                                        </td>
-                                </tr>
-                            );
-                        } else{
-                            return(<></>)
-                        }
-                    });
-                }
                 return (
-                    
                     <Col className="col-sm">
-                            <MediaCard index={index} commentList={commentList} change={this.handleChange} media={media} comment={this.state.comment} submit={this.handleSubmit} validateForm={!this.validateForm()}/>
-                        </Col>
-                ) //return
+                            <MediaCard type={this.props.type} id={this.props.content_id} media={media}/>
+                            
+                    </Col>
+                )
             });
         }
         return (
@@ -127,4 +65,4 @@ export default class MediaGroup extends Component {
         )
     }
     
-}//class
+}

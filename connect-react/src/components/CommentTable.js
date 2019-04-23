@@ -1,15 +1,25 @@
 import React from 'react';
 import {Component} from 'react';
 import axios from 'axios';
+import {Form} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
+import {Table} from 'react-bootstrap';
+
 
 
 export default class CommentTable extends Component {
     constructor(props){
         super(props);
         this.state = {
-            comments: [],
-
+            contentID: 0,
+            comments: [], 
+            poster: 0,
+            comment: []
         }
+
+        this.handleChange = this.handleChange.bind(this);
     }
  
 
@@ -20,8 +30,6 @@ export default class CommentTable extends Component {
 		return comment.length > 0;
     }
 
-
-    
     handleSubmit = e => {
         e.preventDefault();
 
@@ -34,6 +42,13 @@ export default class CommentTable extends Component {
         })
     };
 
+    // Handles state change for when a new comment is submitted
+    // Error is here because ig you change the comment on one media card, it changes
+    // The comment in state here gets handed down to every comment box Im pretty sure...
+    //
+    // Fix Idea would be to have the component have its own state so that it can pass that
+    // individual data somewhere like the api and it does not affect every comment on the
+    // media post
     handleChange = event => {
 		this.setState({
             comment: event.target.value,
@@ -42,8 +57,8 @@ export default class CommentTable extends Component {
             media: 54,
             profile: null
 		});
-	};
-
+    };
+    
     componentDidMount(){
         axios.get(`http://localhost:8000/comments`)
         .then(res => {
@@ -55,11 +70,59 @@ export default class CommentTable extends Component {
 
 
     render() {
+        const {comment} = this.state;
+        let commentList;
 
+        if(this.state.comments.length > 0){
+            commentList = this.state.comments.map((com, index) => {
+                if(com.media == this.props.media.media_id){
+                    return (
+                        <tr>
+                            <td>{com.poster}</td>
+                            <td>{com.comment}</td>
+                            <td>
+                                <a href="#">Like</a>
+                                <br/>
+                                <a href="#">Dislike</a>
+                            </td>
+                        </tr>
+                    );
+                } else{
+                    return(<></>)
+                }
+            });
+        }
 
         return (
             <>
-
+                <form onSubmit={this.handleSubmit}>
+                    <Form.Row>
+                        <Row>
+                            <Col className="col-sm-auto" style={{marginLeft: '1rem',marginRight: '-1.5rem'}}>
+                                <Form.Control onChange={this.handleChange} size="sm" placeholder="Add comment..." type="text" value={comment}/>
+                            </Col>
+                            <Col>
+                                <Button type = "submit" size = "sm" block disabled={!this.validateForm()}>Enter</Button>
+                            </Col>
+                        </Row>
+                    </Form.Row>
+                </form>
+                <Table striped borderless hover size = "sm">
+                        <thead>
+                            <th>
+                            Username
+                            </th>
+                            <th>
+                            Comment
+                            </th>
+                            <th>
+                            Action
+                            </th>
+                        </thead>
+                        <tbody>
+                            {commentList}
+                        </tbody>
+                    </Table>
             </>
 
         );
