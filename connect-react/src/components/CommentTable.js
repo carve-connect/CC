@@ -13,10 +13,12 @@ export default class CommentTable extends Component {
     constructor(props){
         super(props);
         this.state = {
-            contentID: 0,
             comments: [], 
+            comment: [],
             poster: 0,
-            comment: []
+            carve: 0,
+            media: 0,
+            profile: 0
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -36,9 +38,9 @@ export default class CommentTable extends Component {
         axios.post("http://localhost:8000/comments", {
             comment: this.state.comment,
             poster: this.state.poster,
-            carve: null,
+            carve: this.state.carve,
             media: this.state.media,
-            profile: null
+            profile: this.state.profile
         })
     };
 
@@ -52,9 +54,9 @@ export default class CommentTable extends Component {
     handleChange = event => {
 		this.setState({
             comment: event.target.value,
-            poster: 3,
+            poster: localStorage.getItem('userId'),
             carve: null,
-            media: 54,
+            media: this.props.media.media_id,
             profile: null
 		});
     };

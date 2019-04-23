@@ -53,7 +53,6 @@ export default class MediaGroup extends Component {
                 return (
                     <Col className="col-sm">
                             <MediaCard type={this.props.type} id={this.props.content_id} media={media}/>
-                            
                     </Col>
                 )
             });

@@ -28,13 +28,10 @@ const MediaCard = (props) => {
                             <Card.Link href = "#">{props.media.poster}</Card.Link>
                             :{props.media.description}
                         </Row>
-                        <Row >
-                            {/* form control would be here */}
-                        </Row>
                     </container>
                 </Card.Body>
                {/* comment table would be here */}
-               <CommentTable position={props.position} media={props.media}/>
+               <CommentTable media={props.media}/>
                 <Card.Footer style = {{fontSize: '10px'}}><em>Create_Time: {props.media.time}</em></Card.Footer>
             </Card>
         </>
