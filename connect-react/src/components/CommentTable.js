@@ -20,7 +20,6 @@ export default class CommentTable extends Component {
             media: 0,
             profile: 0
         }
-
         this.handleChange = this.handleChange.bind(this);
     }
  
@@ -55,9 +54,9 @@ export default class CommentTable extends Component {
 		this.setState({
             comment: event.target.value,
             poster: localStorage.getItem('userId'),
-            carve: null,
+            carve: this.props.media.carve,
             media: this.props.media.media_id,
-            profile: null
+            profile: this.props.media.profile
 		});
     };
     
