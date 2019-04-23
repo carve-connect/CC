@@ -54,6 +54,12 @@ export default class MediaGroup extends Component {
     };
 
     	// Handles state change for when a new comment is submitted
+    // Error is here because ig you change the comment on one media card, it changes
+    // The comment in state here gets handed down to every comment box Im pretty sure...
+    //
+    // Fix Idea would be to have the component have its own state so that it can pass that
+    // individual data somewhere like the api and it does not affect every comment on the
+    // media post
 	handleChange = event => {
 		this.setState({
             comment: event.target.value,
@@ -87,31 +93,29 @@ export default class MediaGroup extends Component {
         
         if(this.state.mediaInfo.length > 0){
             mediaList = this.state.mediaInfo.map((media, index) => {
-                
                 if(this.state.mediaComments.length > 0){
                     commentList = this.state.mediaComments.map((com, index1) => {
                         if(com.media === media.media_id){
                             return (
-                                
                                 <tr>
                                     <td>{com.poster}</td>
                                     <td>{com.comment}</td>
                                     <td>
-                                        <a href = "#">Like</a>
+                                        <a href="#">Like</a>
                                         <br/>
-                                        <a href = "#">Dislike</a>
+                                        <a href="#">Dislike</a>
                                         </td>
                                 </tr>
                             );
-                            }else{
-                                return(<></>)
-                            }
+                        } else{
+                            return(<></>)
+                        }
                     });
                 }
                 return (
                     
                     <Col className="col-sm">
-                            <MediaCard index = {index} commentList={commentList} change={this.handleChange} media={media} comment={this.state.comment} submit={this.handleSubmit} validateForm={!this.validateForm()}/>
+                            <MediaCard index={index} commentList={commentList} change={this.handleChange} media={media} comment={this.state.comment} submit={this.handleSubmit} validateForm={!this.validateForm()}/>
                         </Col>
                 ) //return
             });
