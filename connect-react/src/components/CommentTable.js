@@ -50,7 +50,7 @@ export default class CommentTable extends Component {
             poster: localStorage.getItem('userId'),
             carve: this.props.media.carve,
             media: this.props.media.media_id,
-            profile: this.props.media.profile
+            profile: null
 		});
     };
     

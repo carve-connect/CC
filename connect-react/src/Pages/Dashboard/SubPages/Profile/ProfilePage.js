@@ -10,6 +10,7 @@ import MediaGroup from "../../../../components/MediaGroup";
 import ProfileInfoCard from './ProfileInfoCard';
 import Container from 'react-bootstrap/Container';
 import CarveCardUserCreate from '../../../../components/CarveCardUserCreate';
+import WallPost from '../../../../components/WallPost';
 
 
 export default class ProfilePage extends Component {
@@ -121,6 +122,11 @@ export default class ProfilePage extends Component {
 							<CarveCardUserCreate profile_id = {this.state.userId}/>
 						</Row>
 					</Col>
+				</Row>
+				<Row style={{justifyContent: 'center', marginTop: '20px'}}>
+					<h2>Wall Posts</h2>
+					<div style = {{borderBottom: '1px solid lightgray'}}> </div> 
+					<WallPost profile = {this.state.userId}/>
 				</Row>
 				</>
 			);
