@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import axios from "axios";
 import pic1 from "../../images/snow.jpeg"
 import Image from 'react-bootstrap/Image'
+import CreateMediaModal from '../../components/CreateMediaModal';
 
 class SideMenu extends Component {
 	constructor(props) {
@@ -94,6 +95,9 @@ class SideMenu extends Component {
 						<ListGroup variant="flush" defaultActiveKey="1" style ={{paddingTop:"0px"}}>
 							{buddiesList}
 						</ListGroup>
+					</Row>
+					<Row style={{marginTop: '1rem', marginLeft: '.5rem'}}>
+						<CreateMediaModal/>
 					</Row>
 				</Col>
 			</>

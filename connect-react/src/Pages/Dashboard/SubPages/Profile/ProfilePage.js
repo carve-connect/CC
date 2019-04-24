@@ -8,7 +8,9 @@ import CreateCarveModal from "../../../../components/CreateCarveModal";
 import BuddyRequestModal from "../../../../components/BuddyRequestModal";
 import MediaGroup from "../../../../components/MediaGroup";
 import ProfileInfoCard from './ProfileInfoCard';
-import CardColumns from 'react-bootstrap/CardColumns';
+import Container from 'react-bootstrap/Container';
+import CarveCardUserCreate from '../../../../components/CarveCardUserCreate';
+import WallPost from '../../../../components/WallPost';
 
 
 export default class ProfilePage extends Component {
@@ -98,25 +100,33 @@ export default class ProfilePage extends Component {
 					
 				{/* This is the row that will hold the profile picture and the information */}
 				<div>
-					<ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleShow} close={this.handleClose} show={this.state.show} refresh= {this.getUserInfo} user={userInfo} firstName={userInfo.first_name} lastName={userInfo.last_name} img={this.state.pic} id = {isUserLoggedIn} username={userInfo.username} description={userInfo.description} type={userInfo.type} snow={userInfo.snow_sports} water={userInfo.water_sports} land={userInfo.land_sports}/>
+					<ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleShow} close={this.handleClose} show={this.state.show} refresh= {this.getUserInfo} user={userInfo} img={this.state.pic} id = {isUserLoggedIn}/>
 				</div>
+				
 
 				<Row>
+				<h2 style={{margin: '3rem'}}>My Media</h2>
 					{/* Row will hold all of the media and such that we grab from the api */}
-					<Col style = {{marginLeft: "3%", marginTop: '2%', marginBottom: '2%'}}>
-						<h2 >My Media</h2>
-						<CardColumns>
-							<MediaGroup type = "profile" content_id = {this.state.userId}/>
-						</CardColumns>                                                                                                 
-
-					</Col>
-					{/* <Col style = {{width: "100%"}}>
+				<Container style={{display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-between'}}>
+					<Row>
+						<MediaGroup type = "profile" content_id = {this.state.userId}/>
+					</Row>
+				</Container> 
+				</Row>
+				<Row style={{marginLeft: '3rem', width: '100%'}}>
+					<Col>
 						<Row>
-							<h2>Carves created by user</h2></Row> */}
-						{/* <Row style = {{width:"100%"}}>
-							<CarveCardUserCreate profile_id = {this.state.userId} style = {{width:"100%"}}/>
+							<h2>Carves created by user</h2>
 						</Row>
-					</Col> */}
+						 <Row>
+							<CarveCardUserCreate profile_id = {this.state.userId}/>
+						</Row>
+					</Col>
+				</Row>
+				<Row style={{justifyContent: 'center', marginTop: '20px'}}>
+					<h2>Wall Posts</h2>
+					<div style = {{borderBottom: '1px solid lightgray'}}> </div> 
+					<WallPost profile = {this.state.userId}/>
 				</Row>
 				</>
 			);

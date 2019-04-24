@@ -10,13 +10,15 @@ import LikeBar from './LikeBar';
 
 
 
-export default class WallPost extends Component {
+export default class CommentTable extends Component {
     constructor(props){
         super(props);
         this.state = {
             comments: [], 
             comment: [],
             poster: 0,
+            carve: 0,
+            media: 0,
             profile: 0
         }
         this.handleChange = this.handleChange.bind(this);
@@ -36,6 +38,8 @@ export default class WallPost extends Component {
         axios.post("http://localhost:8000/comments", {
             comment: this.state.comment,
             poster: this.state.poster,
+            carve: this.state.carve,
+            media: this.state.media,
             profile: this.state.profile
         })
     };
@@ -44,7 +48,9 @@ export default class WallPost extends Component {
 		this.setState({
             comment: event.target.value,
             poster: localStorage.getItem('userId'),
-            profile: this.props.profile
+            carve: this.props.media.carve,
+            media: this.props.media.media_id,
+            profile: null
 		});
     };
     
@@ -63,13 +69,13 @@ export default class WallPost extends Component {
 
         if(this.state.comments.length > 0){
             commentList = this.state.comments.map((com, index) => {
-                if(com.profile == this.props.profile){
+                if(com.media == this.props.media.media_id){
                     return (
                         <tr>
                             <td>{com.poster}</td>
                             <td>{com.comment}</td>
                             <td>
-                              {/* <LikeBar media={this.props.media} comment={com}/> */}
+                              <LikeBar media={this.props.media} comment={com}/>
                             </td>
                         </tr>
                     );

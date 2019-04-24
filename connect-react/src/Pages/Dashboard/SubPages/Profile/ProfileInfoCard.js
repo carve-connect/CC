@@ -40,23 +40,23 @@ const ProfileInfoCard = (props) => {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td><h1>{props.firstName} {props.lastName}</h1></td>
-                                    <td><strong>@{props.username}</strong></td>
+                                    <td><h1>{props.user.first_name} {props.user.last_name}</h1></td>
+                                    <td><strong>@{props.user.username}</strong></td>
                                 </tr>
                                 <tr>
-                                    <td>{props.type}</td>
+                                    <td>{props.user.type}</td>
                                 </tr>
                                 <tr>
-                                    <td>{props.snow}</td>
+                                    <td>{props.user.snow_sports}</td>
                                 </tr>
                                 <tr>
-                                    <td>{props.water}</td>
+                                    <td>{props.user.water_sports}</td>
                                 </tr>
                                 <tr>
-                                    <td>{props.land}</td>
+                                    <td>{props.land_sports}</td>
                                 </tr>
                                 <tr>
-                                    <td><h3>About me:</h3> {props.description}</td>
+                                    <td><h3>About me:</h3> {props.user.description}</td>
                                 </tr>
                             </tbody>
                         </table>
