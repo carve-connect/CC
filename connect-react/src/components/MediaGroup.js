@@ -129,7 +129,6 @@ export default class MediaGroup extends Component {
     render() {
         let mediaList;
         let commentList;
-        console.log('State:', this.state);
         
         if(this.state.mediaInfo.length > 0){
             mediaList = this.state.mediaInfo.map((media, index) => {

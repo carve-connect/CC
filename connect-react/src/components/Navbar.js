@@ -3,11 +3,12 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import {link} from 'react-router'
+import { Link } from 'react-router-dom'
 
 import CustomFormGroup from "./CustomFormGroup";
 import NavbarBrand from "react-bootstrap/NavbarBrand";
 import axios from "axios";
+import UserApi from "../api/UserApi";
 
 class TopNav extends Component {
 	constructor(props){
@@ -41,32 +42,29 @@ class TopNav extends Component {
 
 	validateForm() {
 		const { search } = this.state;
-
 		return parseInt(search) > 0;
 	}
 
-	handleSubmit = e => {
+	// Searches the database for usernames, first names and last names LIKE the search term
+	handleSearch = e => {
 		e.preventDefault();
-		alert("submitting the form " + this.state.search);
-		console.log('Submitted form:', this.state);
-		var value = this.state.search;
-		parseInt(value);
-		if(value > 0) {
+		console.log('Submitted form');
+		UserApi.searchForUsers(this.state.search)
+			.then((users) => {
+				console.log('Searched users found:', users);
+				this.setState({redirect: true})
+			}).catch(err => {
+				console.log('Error', err);
+			});
+	}
 
-			this.setState({redirect : true});
-
-
-	}};
-	componentWillMount()
-	{
+	componentWillMount() {
 		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/notifications`)
 			.then(res => {
 				console.log("results: ", res.data.results[0]);
 				this.setState({
 					messages: res.data.results[0]
 				});
-				//alert("you have "+this.state.messages.length+" notifications");
-				//alert(JSON.stringify(res.data.users[0][0]))
 			});
 
 		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/inbox`)
@@ -75,7 +73,6 @@ class TopNav extends Component {
 				this.setState({
 					notifications: res.data.messages
 				});
-				//alert("you have "+this.state.messages.notifications+" messages");
 			});
 
 	}
@@ -83,26 +80,25 @@ class TopNav extends Component {
 
 	render(){
 
+		let toObj = { pathname: '/dashboard/users', state: { searchTerm: this.state.search } };
+		console.log('Is to Object changing', toObj);
 
-		let redirect = this.state.redirect;
-		if(redirect) {
-			return <link to={`/dashboard/profile/${this.state.userId}`}/>;
-		}
 
-	return (
-			<>
-				<Nav className="navbar navbar-dark bg-dark nav-fill" >
-				{/*<a className="navbar-brand" href="/">Carve Connect</a>*/}
-					<NavbarBrand href='/' style = {{color:'lightskyblue',textShadowColor:'black',fontWeight:'bold',fontFamily:'monospace'}}>Carve Connect</NavbarBrand>
-					<li>
-						<div style={{justify:"left"}}>
-							<Form inline style={{justify:"left"}} >
-								<CustomFormGroup value = {this.state.search} type="text" placeholder="User Search" className=" mr-sm-2" controlId ="search" onChange={this.handleChange}  />
-								<Button type="submit" block style={{width: 50, color: "white"}}>Find</Button>
-							</Form>
-						</div>
-					</li>
-						<li >
+
+		return (
+				<>
+					<Nav className="navbar navbar-dark bg-dark nav-fill" >
+					{/*<a className="navbar-brand" href="/">Carve Connect</a>*/}
+						<NavbarBrand href='/' style = {{color:'lightskyblue',textShadowColor:'black',fontWeight:'bold',fontFamily:'monospace'}}>Carve Connect</NavbarBrand>
+						<li>
+							<div style={{justify:"left"}}>
+								<Form onSubmit={this.handleSearch} inline style={{justify:"left"}} >
+									<CustomFormGroup value={this.state.search} type="text" placeholder="User Search" className="mr-sm-2" controlId="search" onChange={this.handleChange}  />
+									<Link to={toObj}><Button type="submit" block style={{width: 50, color: "white"}}>Find</Button></Link>
+								</Form>
+							</div>
+						</li>
+						<li>
 							<ul className="navbar justify-content-end">
 								<div>
 
@@ -144,9 +140,9 @@ class TopNav extends Component {
 
 						</li>
 
-					</Nav>
-				</>
-)}
+						</Nav>
+					</>
+	)}
 
 
 }

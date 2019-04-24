@@ -9,24 +9,35 @@ import Container from 'react-bootstrap/Container';
 import UserFigure from "./UserFigure";
 import UserApi from 'api/UserApi';
 
-//import axios from 'axios'
-
 class UsersPage extends Component {
-
-
 
     //I think i'll need the state information based on the future filtering options
     constructor(props){
         super(props);
+        console.log('Props', props);
         this.state = {
-            users: {},
+            users: (typeof props.location.state.searchTerm != 'undefined') ? props.location.state.searchTerm : {},
             isUserLoggedIn: props.match.params.number === localStorage.getItem('userId'),
             usersLength: 0
         }
     }
 
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if(nextProps.location.state.searchTerm !== prevState.users) {
+            return {}
+        }
+        console.log('Next Props', nextProps);
+        console.log('Previous State', prevState);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('Previous Props in component did update', prevProps);
+        console.log('Previous State in component did update', prevState);
+    }
+
     componentWillMount() {
         // Getting the user id from the url param
+        console.log('Inside component will mount');
         axios.get(`http://localhost:8000/users`)
             .then(res => {
                 this.setState({
@@ -35,7 +46,7 @@ class UsersPage extends Component {
                 });
             })
 
-        UserApi.getUserInfo();
+        // UserApi.getUserInfo();
     }
 
     createDiv = () => {
@@ -66,6 +77,7 @@ class UsersPage extends Component {
     };
 
     render(){
+        console.log('State:', this.state);
         if(this.state.usersLength > 0){
             return (
                 <Container>
@@ -95,7 +107,7 @@ class UsersPage extends Component {
             );
         }
     }
-}export default UsersPage;
+} export default UsersPage;
 
 
 

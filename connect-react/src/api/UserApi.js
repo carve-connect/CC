@@ -17,6 +17,17 @@ class UserApi {
 	}
 
 
+	// Search for users
+	static searchForUsers(searchTerm) {
+	 	return new Promise((resolve, reject) => {
+	 		axios.get(`${baseUrl}/users?search=${searchTerm}`)
+				.then(res => {
+					(res.data.users) ? resolve(res.data.users) : reject(Error("Api error"));
+				})
+		})
+	}
+
+
 	// Logs out the user currently logged in
 	static logoutUser(userId) {
 	 	axios.get(`${baseUrl}/users/${userId}/logout`);
