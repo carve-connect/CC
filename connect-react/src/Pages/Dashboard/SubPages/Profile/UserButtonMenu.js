@@ -1,29 +1,29 @@
 import React from 'react';
 
-import InfoButton from './VenueContent/InfoButton';
-import CarvesButton from './VenueContent/CarvesButton';
-import MediaButton from './VenueContent/MediaButton';
+import InfoButton from './UserContent/InfoButton';
+import CarvesButton from './UserContent/CarvesButton';
+import MediaButton from './UserContent/MediaButton';
 
 class VenueButtonMenu extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             name: 'info'
-    };
+        };
         this.handleInfo = this.handleInfo.bind(this);
         this.handleCarves = this.handleCarves.bind(this);
         this.handleMedia = this.handleMedia.bind(this);
     }
 
-    handleInfo(){
+    handleInfo() {
         this.setState({name: 'info'});
     }
 
-    handleCarves(){
+    handleCarves() {
         this.setState({name: 'carves'});
     }
 
-    handleMedia(){
+    handleMedia() {
         this.setState({name: 'media'});
     }
 
@@ -31,13 +31,11 @@ class VenueButtonMenu extends React.Component {
         const state = this.sel.state;
         let component;
 
-        if(state ==='info'){
+        if (state === 'info') {
             component = InfoButton;
-        }
-        else if(state === 'carves'){
+        } else if (state === 'carves') {
             component = CarvesButton;
-        }
-        else{
+        } else {
             component = MediaButton;
         }
 

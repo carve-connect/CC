@@ -17,7 +17,9 @@ import dogsurf from '../../images/dogsurf.jpeg';
 import FeaturedUserCard from '../../components/FeaturedUserCard';
 import CarouselCaption from 'react-bootstrap/CarouselCaption';
 import TopNav1 from "../../components/Navbarsplash";
-
+import beach from '../../images/beach.jpeg';
+import mountain from '../../images/mountain.jpeg';
+import skate from '../../images/skatedude.jpeg';
 
 class SplashPage extends Component {
     render() {
@@ -26,6 +28,7 @@ class SplashPage extends Component {
           <>
               <TopNav1/>
             {/* Sliding carousel */}
+
             <Carousel fade className="carousel" pauseOnHover={false}>
               <Carousel.Item>
                 <img
@@ -176,6 +179,29 @@ class SplashPage extends Component {
                 </Col>
               </Row>
             </Container>
+
+              <Container>
+                  <Row>
+                      <Col>
+                          <h1 style={{textAlign: 'left', marginTop: '30px'}}>Featured Venues</h1>
+                          <h1 className='border-bottom' style={{
+                              borderBottomColor: 'black',
+                              borderBottomWidth: "10px", width: '150%', borderThickness: "5px"
+                          }}></h1>
+                      </Col>
+                  </Row>
+                  <Row style={{marginLeft: '75px', marginTop: '20px'}}>
+                      <Col>
+                          <FeaturedUserCard title="Featured Venue 1" img={mountain} text="Great place to shred."/>
+                      </Col>
+                      <Col>
+                          <FeaturedUserCard title="Featured Venue 2" img={beach} text="Totally Tubular"/>
+                      </Col>
+                      <Col>
+                          <FeaturedUserCard title="Featured Venue 3" img={skate} text="Great place to skate."/>
+                      </Col>
+                  </Row>
+              </Container>
 
             {/* About and Tour Container */}
             <Container>

@@ -7,7 +7,6 @@ import {link} from 'react-router'
 
 import CustomFormGroup from "./CustomFormGroup";
 import NavbarBrand from "react-bootstrap/NavbarBrand";
-import axios from "axios";
 
 class TopNav extends Component {
 	constructor(props){
@@ -59,6 +58,7 @@ class TopNav extends Component {
 	}};
 	componentWillMount()
 	{
+		/*
 		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/notifications`)
 			.then(res => {
 				console.log("results: ", res.data.results[0]);
@@ -77,7 +77,7 @@ class TopNav extends Component {
 				});
 				//alert("you have "+this.state.messages.notifications+" messages");
 			});
-
+		*/
 	}
 
 
@@ -93,7 +93,12 @@ class TopNav extends Component {
 			<>
 				<Nav className="navbar navbar-dark bg-dark nav-fill" >
 				{/*<a className="navbar-brand" href="/">Carve Connect</a>*/}
-					<NavbarBrand href='/' style = {{color:'lightskyblue',textShadowColor:'black',fontWeight:'bold',fontFamily:'monospace'}}>Carve Connect</NavbarBrand>
+					<NavbarBrand href={`/dashboard/profile/${this.state.userId}`} style={{
+						color: 'lightskyblue',
+						textShadowColor: 'black',
+						fontWeight: 'bold',
+						fontFamily: 'monospace'
+					}}>Carve Connect</NavbarBrand>
 					<li>
 						<div style={{justify:"left"}}>
 							<Form inline style={{justify:"left"}} >
@@ -108,8 +113,7 @@ class TopNav extends Component {
 								<div>
 
 									<NavDropdown className ="fa fa-envelope text-white"  id="collapsible-nav-dropdown">
-										<h6>Messages: {this.state.messages.length}</h6>
-										<NavDropdown.Item href="/dashboard/messages">Messages</NavDropdown.Item>
+										<NavDropdown.Item href="/dashboard/messages/inbox">Messages</NavDropdown.Item>
 										<NavDropdown.Item href="/dashboard/messages/inbox">Inbox</NavDropdown.Item>
 										<NavDropdown.Item href="/dashboard/messages/outbox">Sent</NavDropdown.Item>
 										<NavDropdown.Divider />
@@ -120,7 +124,6 @@ class TopNav extends Component {
 
 
 									<NavDropdown className ="fa fa-bell text-danger"  id="collapsible-nav-dropdown" >
-										<h6>Notifications: {this.state.notifications.length}</h6>
 										<NavDropdown.Item href="/dashboard/notinbox">Notifications</NavDropdown.Item>
 										<NavDropdown.Item href="/dashboard/notoutbox">Sent</NavDropdown.Item>
 										<NavDropdown.Divider />
@@ -133,7 +136,7 @@ class TopNav extends Component {
 										<NavDropdown.Item href="#">Privacy</NavDropdown.Item>
 										<NavDropdown.Item href="#">Help</NavDropdown.Item>
 										<NavDropdown.Divider />
-										<NavDropdown.Item href="/">Contact Us</NavDropdown.Item>
+										<NavDropdown.Item href="#">Contact Us</NavDropdown.Item>
 									</NavDropdown>
 								</div>
 							<div>
