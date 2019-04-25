@@ -11,6 +11,7 @@ import ProfileInfoCard from './ProfileInfoCard';
 import Container from 'react-bootstrap/Container';
 import CarveCardUserCreate from '../../../../components/CarveCardUserCreate';
 import WallPost from '../../../../components/WallPost';
+import CreateMediaModal from "../../../../components/CreateMediaModal";
 
 
 export default class ProfilePage extends Component {
@@ -31,10 +32,12 @@ export default class ProfilePage extends Component {
 			carve: true,
 			media: false,
 			posts: false,
-			content: "carves"
+			content: "carves",
+			createMedia: false
 		};
 
 		this.handleShow = this.handleShow.bind(this);
+		this.handleCreateMedia = this.handleCreateMedia.bind(this);
 		this.handleClose = this.handleClose.bind(this);
 		this.handleClose2 = this.handleClose2.bind(this);
 		this.getUserInfo = this.getUserInfo.bind(this);
@@ -51,6 +54,10 @@ export default class ProfilePage extends Component {
 
 	handleClick = () => {
 		this.setState({ show1: !this.state.show1 });
+	};
+
+	handleCreateMedia = () => {
+		this.setState({createMedia: !this.state.createMedia});
 	};
 
 	handleClick2 = () => {
@@ -98,6 +105,7 @@ export default class ProfilePage extends Component {
 					<Row classname="justify-content-end" style={{paddingTop: "15px"}}>
 						<Button onClick={this.handleClick} style={{marginLeft: '50px', marginTop: '-7px'}}>Create
 							Carve</Button>
+						<CreateMediaModal show={this.state.createMedia} handleClose={this.handleCreateMedia}/>
 					</Row>
 			} else {
 				options =
@@ -155,6 +163,7 @@ export default class ProfilePage extends Component {
 				<>
 					<CreateCarveModal handleClose={this.handleClick} show={this.state.show1}/>
 					<BuddyRequestModal id ={this.state.userInfo.user_id} show={this.state.show2} handleClose={this.handleClose2}/>
+
 					<Row style={{marginLeft: "3%", marginTop: '2%', marginBottom: '2%'}}>
 						<div style={{ display: 'flex', marginTop: '8px', border: "0px solid slategrey" }}>
 							<h2>{profilePrefix} Profile</h2>

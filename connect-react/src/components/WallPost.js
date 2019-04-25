@@ -1,13 +1,6 @@
-import React from 'react';
-import {Component} from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
-import {Form} from 'react-bootstrap';
-import {Row} from 'react-bootstrap';
-import {Col} from 'react-bootstrap';
-import {Button} from 'react-bootstrap';
-import {Table} from 'react-bootstrap';
-import LikeBar from './LikeBar';
-
+import {Button, Col, Form, Row, Table} from 'react-bootstrap';
 
 
 export default class WallPost extends Component {
@@ -18,7 +11,7 @@ export default class WallPost extends Component {
             comment: [],
             poster: 0,
             profile: 0
-        }
+        };
         this.handleChange = this.handleChange.bind(this);
     }
  
@@ -81,6 +74,11 @@ export default class WallPost extends Component {
 
         return (
             <>
+                <Row>
+                    <h4>
+                        Wall post
+                    </h4>
+                </Row>
                 <form onSubmit={this.handleSubmit}>
                     <Form.Row>
                         <Row>
@@ -93,6 +91,7 @@ export default class WallPost extends Component {
                         </Row>
                     </Form.Row>
                 </form>
+
                 <Table striped borderless hover size = "sm">
                         <thead>
                             <th>

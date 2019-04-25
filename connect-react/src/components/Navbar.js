@@ -7,6 +7,11 @@ import {link} from 'react-router'
 
 import CustomFormGroup from "./CustomFormGroup";
 import NavbarBrand from "react-bootstrap/NavbarBrand";
+import Settings from './settings';
+import Help from './help';
+import Privacy from './privacy';
+import Contact from './contact';
+
 
 class TopNav extends Component {
 	constructor(props){
@@ -18,7 +23,17 @@ class TopNav extends Component {
 				show: false,
 				show1: false,
 				messages: [],
+				settings: false,
+				contact: false,
+				privacy: false,
+				help: false,
 				notifications: []};
+
+		this.handleSettings = this.handleSettings.bind(this);
+		this.handleContact = this.handleContact.bind(this);
+		this.handlePrivacy = this.handlePrivacy.bind(this);
+		this.handleHelp = this.handleHelp.bind(this);
+
 	}
 
 	handleClick() {
@@ -29,6 +44,22 @@ class TopNav extends Component {
 
 	handleClick1= () => {
 		this.setState({ show1: !this.state.show1 });
+	};
+
+	handleContact = () => {
+		this.setState({contact: !this.state.contact});
+	};
+
+	handleSettings = () => {
+		this.setState({settings: !this.state.settings});
+	};
+
+	handlePrivacy = () => {
+		this.setState({privacy: !this.state.privacy});
+	};
+
+	handleHelp = () => {
+		this.setState({help: !this.state.help});
 	};
 
 	// Handles state change for each input in the state object
@@ -91,6 +122,10 @@ class TopNav extends Component {
 
 	return (
 			<>
+				<Settings show={this.state.settings} handleClose={this.handleSettings}/>
+				<Help show={this.state.help} handleClose={this.handleHelp}/>
+				<Privacy show={this.state.privacy} handleClose={this.handlePrivacy}/>
+				<Contact show={this.state.contact} handleClose={this.handleContact}/>
 				<Nav className="navbar navbar-dark bg-dark nav-fill" >
 				{/*<a className="navbar-brand" href="/">Carve Connect</a>*/}
 					<NavbarBrand href={`/dashboard/profile/${this.state.userId}`} style={{
@@ -113,30 +148,32 @@ class TopNav extends Component {
 								<div>
 
 									<NavDropdown className ="fa fa-envelope text-white"  id="collapsible-nav-dropdown">
-										<NavDropdown.Item href="/dashboard/messages/inbox">Messages</NavDropdown.Item>
 										<NavDropdown.Item href="/dashboard/messages/inbox">Inbox</NavDropdown.Item>
+										<NavDropdown.Divider/>
 										<NavDropdown.Item href="/dashboard/messages/outbox">Sent</NavDropdown.Item>
 										<NavDropdown.Divider />
-
 										<NavDropdown.Item onClick={this.handleClick1}>Send Message</NavDropdown.Item>
 
 									</NavDropdown>
 
 
 									<NavDropdown className ="fa fa-bell text-danger"  id="collapsible-nav-dropdown" >
-										<NavDropdown.Item href="/dashboard/notinbox">Notifications</NavDropdown.Item>
-										<NavDropdown.Item href="/dashboard/notoutbox">Sent</NavDropdown.Item>
+										<NavDropdown.Item href="/dashboard/notinbox">Incoming</NavDropdown.Item>
+										<NavDropdown.Divider/>
+										<NavDropdown.Item href="/dashboard/notoutbox">Outgoing</NavDropdown.Item>
 										<NavDropdown.Divider />
 
 									</NavDropdown>
 
 									<NavDropdown className="fa fa-cogs text-secondary"  id="collapsible-nav-dropdown" >
 
-										<NavDropdown.Item href="#">Settings</NavDropdown.Item>
-										<NavDropdown.Item href="#">Privacy</NavDropdown.Item>
-										<NavDropdown.Item href="#">Help</NavDropdown.Item>
+										<NavDropdown.Item onClick={this.handleSettings}>Settings</NavDropdown.Item>
+										<NavDropdown.Divider/>
+										<NavDropdown.Item onClick={this.handlePrivacy}>Privacy</NavDropdown.Item>
+										<NavDropdown.Divider/>
+										<NavDropdown.Item onClick={this.handleHelp}>Help</NavDropdown.Item>
 										<NavDropdown.Divider />
-										<NavDropdown.Item href="#">Contact Us</NavDropdown.Item>
+										<NavDropdown.Item onClick={this.handleContact}>Contact Us</NavDropdown.Item>
 									</NavDropdown>
 								</div>
 							<div>
