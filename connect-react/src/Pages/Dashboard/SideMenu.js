@@ -83,7 +83,7 @@ class SideMenu extends Component {
 						backgroundColor: "seashell", color: "green",
 						fontFamily: 'monospace', paddingRight: '0px',width:"100%"
 					}}>
-                        {this.state.names[1] + " " + this.state.buddies[index].user_id2} <Image src={pic1}
+                        {this.state.names[0] + " " + this.state.buddies[index].user_id2} <Image src={pic1}
                                                                                                 roundedCircle
                                                                                                 style={{
 																										width: "20px",
