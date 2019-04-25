@@ -110,12 +110,12 @@ export default class ProfilePage extends Component {
             } else {
                 let budCheck = 0;
                 let followCheck = 0;
-
+                /*
                 if (this.state.buddies.some(v => (v.user_Id1 === localStorage.getItem('userId'))))
                     budCheck = 1;
                 if (this.state.followers.some(v => (v.user_Id1 === localStorage.getItem('userId'))))
                     followCheck = 1;
-
+        */
 
                 if (budCheck === 1) {
                     options = <div>
