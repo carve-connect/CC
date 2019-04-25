@@ -26,7 +26,7 @@ const ProfileInfoCard = (props) => {
                     width: '75%',
                     height:'50%',
                     border: 'solid 1px #555',
-                    backgroundColor: '#96d5fa',
+                    backgroundColor: "darkgrey",
                     boxShadow:  '0 0 10px 5px rgba(0,0,0,0.6)',
                     borderRadius: '10px',
                     padding: '.5rem',

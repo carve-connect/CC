@@ -27,13 +27,19 @@ export default class ProfilePage extends Component {
 			show1: false,
 			show2: false,
 			buddies: 0,
-			follows: 0
+			follows: 0,
+			carve: true,
+			media: false,
+			posts: false
 		};
 
 		this.handleShow = this.handleShow.bind(this);
 		this.handleClose = this.handleClose.bind(this);
 		this.handleClose2 = this.handleClose2.bind(this);
 		this.getUserInfo = this.getUserInfo.bind(this);
+		this.handleCarves = this.handleCarves.bind(this);
+		this.handleMedia = this.handleMedia.bind(this);
+		this.handlePosts = this.handlePosts.bind(this);
 	}
 
 	// Retrieves info before component is mounted to the DOM
@@ -60,6 +66,29 @@ export default class ProfilePage extends Component {
 		});
 	};
 
+	handleCarves = () => {
+		this.setState({
+			carves: true,
+			media: false,
+			posts: false
+		});
+	};
+
+	handleMedia = () => {
+		this.setState({
+			carves: false,
+			media: true,
+			posts: false
+		});
+	};
+
+	handlePosts = () => {
+		this.setState({
+			carves: false,
+			media: false,
+			posts: true
+		});
+	};
 	// We need to conditionally render things based on the user in relation to who is logged in
 	render() {
 		if(this.state.userInfoLength > 0) {
@@ -102,18 +131,39 @@ export default class ProfilePage extends Component {
 				<div>
 					<ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleShow} close={this.handleClose} show={this.state.show} refresh= {this.getUserInfo} user={userInfo} img={this.state.pic} id = {isUserLoggedIn}/>
 				</div>
-				
+					<Row>
+						<div style={{backgroundColor: "grey"}}>
 
-				<Row>
+						</div>
+					</Row>
+
+					<Row style={{paddingLeft: "40%", paddingBottom: "1%", paddingTop: "1%", border: "5px"}}>
+						<h3>Content
+
+						</h3>
+					</Row>
+					<Row style={{paddingLeft: "40%"}}>
+
+						<Button onClick={this.handleCarves}>Carves</Button>
+
+
+						<Button onClick={this.handleMedia}>Media</Button>
+
+
+						<Button onClick={this.handlePosts}>Wall Posts</Button>
+
+					</Row>
+
+					<Container show={this.state.media}>
 				<h2 style={{margin: '3rem'}}>My Media</h2>
 					{/* Row will hold all of the media and such that we grab from the api */}
 				<Container style={{display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-between'}}>
 					<Row>
 						<MediaGroup type = "profile" content_id = {this.state.userId}/>
 					</Row>
-				</Container> 
-				</Row>
-				<Row style={{marginLeft: '3rem', width: '100%'}}>
+				</Container>
+					</Container>
+					<Container style={{marginLeft: '3rem', width: '100%'}} show={this.state.carves}>
 					<Col>
 						<Row>
 							<h2>Carves created by user</h2>
@@ -122,12 +172,12 @@ export default class ProfilePage extends Component {
 							<CarveCardUserCreate profile_id = {this.state.userId}/>
 						</Row>
 					</Col>
-				</Row>
-				<Row style={{justifyContent: 'center', marginTop: '20px'}}>
+					</Container>
+					<Container style={{justifyContent: 'center', marginTop: '20px'}} show={this.state.posts}>
 					<h2>Wall Posts</h2>
 					<div style = {{borderBottom: '1px solid lightgray'}}> </div> 
 					<WallPost profile = {this.state.userId}/>
-				</Row>
+					</Container>
 				</>
 			);
 		} else {
@@ -161,6 +211,26 @@ export default class ProfilePage extends Component {
 						//pic: this.state.userInfo.photo
 					});
 
+
+					axios.get(`http://localhost:8000/users/${this.state.userId}/follows/buddies`)
+						.then(res => {
+							this.setState({
+								buddies: res.data[0][0].length,
+
+							});
+
+							//alert(JSON.stringify(res.data.users[0][0]))
+						});
+
+
+					axios.get(`http://localhost:8000/users/${this.state.userId}/follows/followers`)
+						.then(res => {
+							this.setState({
+								follows: res.data[0][0].length
+
+							});
+						})
+
 					//alert(JSON.stringify(res.data.users[0][0]))
 				});
 		else {
@@ -179,26 +249,7 @@ export default class ProfilePage extends Component {
 	getUserCounts() {
 		// Getting the user id from the url param
 
-			axios.get(`http://localhost:8000/users/${this.state.userId}/follows/buddies`)
-				.then(res => {
-					this.setState({
-						userInfo: res.data[0][0],
-						buddies: res.data[0][0].length,
 
-					});
-
-					//alert(JSON.stringify(res.data.users[0][0]))
-				});
-
-
-			axios.get(`http://localhost:8000/users/${this.state.userId}/follows/followers`)
-				.then(res => {
-					this.setState({
-						userInfo: res.data.users[0][0],
-						follows: res.data[0][0].length
-
-					});
-				})
 			//window.location.reload();
 
 	}
