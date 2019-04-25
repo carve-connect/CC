@@ -41,7 +41,7 @@ const ProfileInfoCard = (props) => {
                             <tbody>
                                 <tr>
                                     <td><h1>{props.user.first_name} {props.user.last_name}</h1></td>
-                                    <td><strong>@{props.user.username}</strong></td>
+                                    <td><h1>{props.user.username}</h1></td>
                                 </tr>
                                 <tr>
                                     <td>{props.user.type}</td>

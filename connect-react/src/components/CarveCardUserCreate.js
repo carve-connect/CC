@@ -9,7 +9,6 @@ import Form from 'react-bootstrap/Form';
 import CustomFormGroup from "./CustomFormGroup";
 import CarveAttendRequestModal from "./CarveAttendRequestModal";
 import CarveInviteModal from "./CarveInviteModal";
-import MediaGroup from './MediaGroup';
 
 
 export default class CarveCardUserCreate extends Component {
@@ -45,7 +44,7 @@ export default class CarveCardUserCreate extends Component {
     }
 
     componentWillMount() {
-        axios.get(`http://localhost:8000/users/${this.props.profile_id}/carves/`)
+        axios.get(`http://localhost:8000/users/${this.props.id}/carves/`)
             .then(res => {
                 // console.log("results: ", res.data.results[0]);
                 //alert(JSON.stringify(res.data.results[0]));

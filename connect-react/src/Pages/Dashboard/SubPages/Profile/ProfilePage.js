@@ -30,7 +30,8 @@ export default class ProfilePage extends Component {
 			follows: 0,
 			carve: true,
 			media: false,
-			posts: false
+			posts: false,
+			content: "carves"
 		};
 
 		this.handleShow = this.handleShow.bind(this);
@@ -68,49 +69,86 @@ export default class ProfilePage extends Component {
 
 	handleCarves = () => {
 		this.setState({
-			carves: true,
-			media: false,
-			posts: false
+			content: "carves"
 		});
 	};
 
 	handleMedia = () => {
 		this.setState({
-			carves: false,
-			media: true,
-			posts: false
+			content: "media"
 		});
 	};
 
 	handlePosts = () => {
 		this.setState({
-			carves: false,
-			media: false,
-			posts: true
+			content: "posts"
 		});
 	};
 	// We need to conditionally render things based on the user in relation to who is logged in
 	render() {
 		if(this.state.userInfoLength > 0) {
-			const { userInfo, isUserLoggedIn } = this.state;
+			const {userInfo, isUserLoggedIn} = this.state;
 			const profilePrefix = isUserLoggedIn ? 'My ' : `${this.state.userInfo.username}'s `;
 
 			// Make button options for top right corner
 			let options;
-			if(isUserLoggedIn) {
+			let content;
+			if (isUserLoggedIn) {
 				options =
-					<Row classname="justify-content-end" style ={{paddingTop:"15px"}}>
-						<Button onClick={this.handleClick} style={{ marginLeft: '50px', marginTop: '-7px' }}>Create Carve</Button>
+					<Row classname="justify-content-end" style={{paddingTop: "15px"}}>
+						<Button onClick={this.handleClick} style={{marginLeft: '50px', marginTop: '-7px'}}>Create
+							Carve</Button>
 					</Row>
 			} else {
-				options = 
-					<div style={{display:'flex'}}>
-						<Button style={{margin:'5px'}} variant="info" onClick = {this.onClick1}>Follow</Button>
-						<Button style={{margin:'5px'}} variant="info" onClick = {this.handleClick2}>Add Buddy</Button>
+				options =
+					<div style={{display: 'flex'}}>
+						<Button style={{margin: '5px'}} variant="info" onClick={this.onClick1}>Follow</Button>
+						<Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
 						<h3>state: {this.state.isUserLoggedIn}</h3>
 					</div>;
 
 
+			}
+
+			if (this.state.content === "media") {
+				content =
+
+
+					<Container show={this.state.media}>
+						<h2 style={{margin: '3rem'}}>My Media</h2>
+						{/* Row will hold all of the media and such that we grab from the api */}
+						<Container style={{
+							display: 'flex',
+							flexWrap: 'wrap',
+							flexDirection: 'row',
+							justifyContent: 'space-between'
+						}}>
+							<Row>
+								<MediaGroup type="profile" content_id={this.state.userId}/>
+							</Row>
+						</Container>
+					</Container>;
+			} else if (this.state.content === "carves") {
+				content =
+
+					<Container style={{marginLeft: '3rem', width: '100%'}} show={this.state.carves}>
+						<Col>
+							<Row>
+								<h2>Carves created by user</h2>
+							</Row>
+							<Row>
+								<CarveCardUserCreate id={this.state.userId}/>
+							</Row>
+						</Col>
+					</Container>;
+			} else {
+				content =
+
+					<Container style={{justifyContent: 'center', marginTop: '20px'}} show={this.state.posts}>
+						<h2>Wall Posts</h2>
+						<div style={{borderBottom: '1px solid lightgray'}}></div>
+						<WallPost profile={this.state.userId}/>
+					</Container>;
 			}
 
 			return (
@@ -153,31 +191,9 @@ export default class ProfilePage extends Component {
 						<Button onClick={this.handlePosts}>Wall Posts</Button>
 
 					</Row>
-
-					<Container show={this.state.media}>
-				<h2 style={{margin: '3rem'}}>My Media</h2>
-					{/* Row will hold all of the media and such that we grab from the api */}
-				<Container style={{display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-between'}}>
 					<Row>
-						<MediaGroup type = "profile" content_id = {this.state.userId}/>
+						{content}
 					</Row>
-				</Container>
-					</Container>
-					<Container style={{marginLeft: '3rem', width: '100%'}} show={this.state.carves}>
-					<Col>
-						<Row>
-							<h2>Carves created by user</h2>
-						</Row>
-						 <Row>
-							<CarveCardUserCreate profile_id = {this.state.userId}/>
-						</Row>
-					</Col>
-					</Container>
-					<Container style={{justifyContent: 'center', marginTop: '20px'}} show={this.state.posts}>
-					<h2>Wall Posts</h2>
-					<div style = {{borderBottom: '1px solid lightgray'}}> </div> 
-					<WallPost profile = {this.state.userId}/>
-					</Container>
 				</>
 			);
 		} else {
