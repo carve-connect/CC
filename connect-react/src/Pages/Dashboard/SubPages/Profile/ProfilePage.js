@@ -66,9 +66,9 @@ export default class ProfilePage extends Component {
 
 
 	onClick1 = () =>{
-
+        alert("Follow " + this.state.userId + " by " + localStorage.getItem('userId'));
 		axios.post('http://localhost:8000/follows', {
-			user1: this.state.isUserLoggedIn,
+            user1: localStorage.getItem('userId'),
 			user2: this.state.userId
 
 		});
@@ -108,7 +108,9 @@ export default class ProfilePage extends Component {
 						<CreateMediaModal show={this.state.createMedia} handleClose={this.handleCreateMedia}/>
 					</Row>
 			} else {
-				options =
+
+
+                options =
 					<div style={{display: 'flex'}}>
 						<Button style={{margin: '5px'}} variant="info" onClick={this.onClick1}>Follow</Button>
 						<Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
@@ -159,7 +161,8 @@ export default class ProfilePage extends Component {
 					</Container>;
 			}
 
-			return (
+
+            return (
 				<>
 					<CreateCarveModal handleClose={this.handleClick} show={this.state.show1}/>
 					<BuddyRequestModal id ={this.state.userInfo.user_id} show={this.state.show2} handleClose={this.handleClose2}/>
