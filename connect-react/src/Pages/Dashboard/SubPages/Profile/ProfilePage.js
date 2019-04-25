@@ -107,18 +107,36 @@ export default class ProfilePage extends Component {
 							Carve</Button>
 						<CreateMediaModal show={this.state.createMedia} handleClose={this.handleCreateMedia}/>
 					</Row>
-			} else {
+            } else {
+                let budCheck = 0;
+                let followCheck = 0;
+
+                if (this.state.buddies.some(v => (v.user_Id1 === localStorage.getItem('userId'))))
+                    budCheck = 1;
+                if (this.state.followers.some(v => (v.user_Id1 === localStorage.getItem('userId'))))
+                    followCheck = 1;
 
 
-                options =
-					<div style={{display: 'flex'}}>
-						<Button style={{margin: '5px'}} variant="info" onClick={this.onClick1}>Follow</Button>
-						<Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
-						<h3>state: {this.state.isUserLoggedIn}</h3>
-					</div>;
+                if (budCheck === 1) {
+                    options = <div>
+                        <h3>state: {this.state.isUserLoggedIn}</h3>
+                    </div>;
+                } else if (followCheck === 1) {
+                    options = <div>
+                        <Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
+                        <h3>state: {this.state.isUserLoggedIn}</h3>
+                    </div>;
+                } else {
+
+                    options =
+                        <div style={{display: 'flex'}}>
+                            <Button style={{margin: '5px'}} variant="info" onClick={this.onClick1}>Follow</Button>
+                            <Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
+                        </div>;
 
 
-			}
+                }
+            }
 
 			if (this.state.content === "media") {
 				content =

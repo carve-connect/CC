@@ -2005,7 +2005,15 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `buddy_list` (in id int)
 BEGIN
-select user_id2 from all_follows where type = 'buddy' and user_id1 = 1 union select user_id1 as user_id2 from all_follows where type = 'buddy' and user_id2 = 1 ;
+  select user_id2
+  from all_follows
+  where type = 'buddy'
+    and user_id1 = id
+  union
+  select user_id1 as user_id2
+  from all_follows
+  where type = 'buddy'
+    and user_id2 = id;
 END$$
 
 DELIMITER ;
