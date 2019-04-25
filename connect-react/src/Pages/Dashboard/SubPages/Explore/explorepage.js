@@ -17,7 +17,7 @@ class ExplorePage extends Component {
         return (
 
             <>
-
+                <h1 style={{color: "blue"}}>EXPLORE CARVE CONNECT</h1>
                 {/* Featured User Cards */}
                 <Container>
                     <Row>
@@ -31,14 +31,18 @@ class ExplorePage extends Component {
                     </Row>
                     <Row style={{marginLeft: '75px', marginTop: '20px'}}>
                         <Col>
-                            <FeaturedUserCard title="Featured User 1" img={dogskate} text="I love Carve Connect!"/>
+                            <FeaturedUserCard title="JRider" img={dogskate} text="Shredding is my life."/>
+                            <a href={'/dashboard/profile/3'}> profile</a>
                         </Col>
                         <Col>
-                            <FeaturedUserCard title="Featured User 2" img={dogphoto}
+                            <FeaturedUserCard title="Frosty" img={dogphoto}
                                               text="Filming is an art and it's my passion."/>
+                            <a href='/dashboard/profile/1'> profile</a>
                         </Col>
                         <Col>
-                            <FeaturedUserCard title="Featured User 3" img={dogsurf} text="Sports are cool."/>
+                            <FeaturedUserCard title="balthazar" img={dogsurf}
+                                              text="Shred the gnar man, shred the gnar."/>
+                            <a href={'/dashboard/profile/4'}> profile</a>
                         </Col>
                     </Row>
                 </Container>
@@ -55,13 +59,16 @@ class ExplorePage extends Component {
                     </Row>
                     <Row style={{marginLeft: '75px', marginTop: '20px'}}>
                         <Col>
-                            <FeaturedUserCard title="Featured Venue 1" img={mountain} text="Great place to shred."/>
+                            <FeaturedUserCard title="Mt Snow" img={mountain} text="Great place to shred."/>
+                            <a href={`/dashboard/venues/14`}> page</a>
                         </Col>
                         <Col>
-                            <FeaturedUserCard title="Featured Venue 2" img={beach} text="Totally Tubular"/>
+                            <FeaturedUserCard title="Waikiki Beach" img={beach} text="Totally Tubular"/>
+                            <a href={`/dashboard/venues/28`}> page</a>
                         </Col>
                         <Col>
-                            <FeaturedUserCard title="Featured Venue 3" img={skate} text="Great place to skate."/>
+                            <FeaturedUserCard title="Burnside Skate Park" img={skate} text="Great place to skate."/>
+                            <a href={`/dashboard/venues/46`}> page</a>
                         </Col>
                     </Row>
                 </Container>

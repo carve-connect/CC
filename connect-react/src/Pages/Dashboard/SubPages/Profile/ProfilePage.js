@@ -20,7 +20,7 @@ export default class ProfilePage extends Component {
 			userId: props.match.params.number,
 			userInfo: {},
 			userInfoLength: 0,
-            isUserLoggedIn: props.match.params.number = localStorage.getItem('userId'),
+			isUserLoggedIn: props.match.params.number === localStorage.getItem('userId'),
 			pic : SnowProfilePic,
 			check: true,
 			show: false,
