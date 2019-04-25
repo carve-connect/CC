@@ -11,11 +11,12 @@ class SideMenu extends Component {
 		super(props);
 		this.state = {
 			buddies:[] ,
-			user_Id2: 0
+			user_Id2: 0,
+			buddyname: [],
+			names: [""]
 		};
 
 	}
-
 
 
 
@@ -28,6 +29,18 @@ class SideMenu extends Component {
 					buddies: res.data.results[0]
 				});
 			});
+		/*
+                for(var c = 0; c< this.state.buddies.length; c++) {
+                    axios.get(`http://localhost:8000/users/${this.state.buddies[c].user_id2}`)
+                        .then(res1 => {
+                            // console.log("results: ", res.data.results[0]);
+                            this.setState(previousState => ({
+                                names: [...previousState.names, res1.data.users]
+                            }));
+                        });
+
+                }
+                alert(JSON.stringify(this.state.names))*/
 	}
 
 
@@ -64,12 +77,18 @@ class SideMenu extends Component {
 
 		if(this.state.buddies.length > 0) {
 			buddiesList = this.state.buddies.map((buddy, index) => {
+
 				return (
 					<ListGroup.Item key={index} action href={`/dashboard/profile/${this.state.buddies[index].user_id2}`} style={{
 						backgroundColor: "seashell", color: "green",
 						fontFamily: 'monospace', paddingRight: '0px',width:"100%"
 					}}>
-						{"username "+this.state.buddies[index].user_id2} <Image src={pic1} roundedCircle style = {{width:"20px",height:"20px"}}/>
+						{this.state.names[index] + " " + this.state.buddies[index].user_id2} <Image src={pic1}
+																									roundedCircle
+																									style={{
+																										width: "20px",
+																										height: "20px"
+																									}}/>
 					</ListGroup.Item>
 				)
 			});

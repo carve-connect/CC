@@ -110,21 +110,19 @@ export default class ProfilePage extends Component {
             } else {
                 let budCheck = 0;
                 let followCheck = 0;
-                /*
-                if (this.state.buddies.some(v => (v.user_Id1 === localStorage.getItem('userId'))))
-                    budCheck = 1;
-                if (this.state.followers.some(v => (v.user_Id1 === localStorage.getItem('userId'))))
-                    followCheck = 1;
-        */
+
+                for (var c = 0; c < this.state.buddies.length; c++) {
+                    if (this.state.buddies[0][c].user_Id2 === localStorage.getItem('userId'))
+                        budCheck = 1;
+                }
 
                 if (budCheck === 1) {
                     options = <div>
-                        <h3>state: {this.state.isUserLoggedIn}</h3>
+
                     </div>;
                 } else if (followCheck === 1) {
                     options = <div>
                         <Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
-                        <h3>state: {this.state.isUserLoggedIn}</h3>
                     </div>;
                 } else {
 
@@ -268,7 +266,7 @@ export default class ProfilePage extends Component {
 
                     });
 
-                    //alert("bud " + JSON.stringify(res1.data));
+                    // alert("bud " + JSON.stringify(res1.data.results));
                 });
 
 
@@ -278,7 +276,7 @@ export default class ProfilePage extends Component {
                         followers: res2.data.results[0].length
 
                     });
-                    //alert("fol " + JSON.stringify(res2.data));
+                    //alert("fol " + JSON.stringify(res2.data.results));
                 });
 
         }
@@ -290,7 +288,7 @@ export default class ProfilePage extends Component {
 					this.setState({
 						userInfo: res.data.users[0][0],
 						userInfoLength: Object.keys(res.data.users[0][0]).length,
-						//pic: this.state.userInfo.photo
+                        pic: this.state.userInfo.photo.toString()
 					});
 				})
 			//window.location.reload();
