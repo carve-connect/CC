@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 
-//import axios from 'axios'
 
 class UsersPage extends Component {
 
