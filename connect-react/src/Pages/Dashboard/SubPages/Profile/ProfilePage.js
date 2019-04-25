@@ -28,7 +28,7 @@ export default class ProfilePage extends Component {
 			show1: false,
 			show2: false,
 			buddies: 0,
-			follows: 0,
+            followers: 0,
 			carve: true,
 			media: false,
 			posts: false,
@@ -178,9 +178,10 @@ export default class ProfilePage extends Component {
 				<div>
 					<ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleShow} close={this.handleClose} show={this.state.show} refresh= {this.getUserInfo} user={userInfo} img={this.state.pic} id = {isUserLoggedIn}/>
 				</div>
-					<Row>
-						<div style={{backgroundColor: "grey"}}>
-
+                    <Row style={{width: "200%", backgroundColor: "grey"}}>
+                        <div style={{paddingLeft: "15%"}}>
+                            <Row> {this.state.userInfo.username} has {this.state.buddies} Buddies</Row>
+                            <Row> {this.state.userInfo.username} has {this.state.followers} Followers</Row>
 						</div>
 					</Row>
 
@@ -227,37 +228,40 @@ export default class ProfilePage extends Component {
 
 	getUserInfo() {
 		// Getting the user id from the url param
-		if(this.state.userId >0)
+        if (this.state.userId > 0) {
 			axios.get(`http://localhost:8000/users/${this.state.userId}`)
 				.then(res => {
 					this.setState({
-						userInfo: res.data.users[0][0],
-						userInfoLength: Object.keys(res.data.users[0][0]).length,
-						//pic: this.state.userInfo.photo
-					});
+                            userInfo: res.data.users[0][0],
+                            userInfoLength: Object.keys(res.data.users[0][0]).length,
+                            //pic: this.state.userInfo.photo
+                        }
+                    )
+                });
 
 
-					axios.get(`http://localhost:8000/users/${this.state.userId}/follows/buddies`)
-						.then(res => {
-							this.setState({
-								buddies: res.data[0][0].length,
+            axios.get(`http://localhost:8000/users/${this.state.userId}/follows/buddies`)
+                .then(res1 => {
+                    this.setState({
+                        buddies: res1.data.results[0].length,
 
-							});
+                    });
 
-							//alert(JSON.stringify(res.data.users[0][0]))
-						});
+                    //alert("bud " + JSON.stringify(res1.data));
+                });
 
 
-					axios.get(`http://localhost:8000/users/${this.state.userId}/follows/followers`)
-						.then(res => {
-							this.setState({
-								follows: res.data[0][0].length
+            axios.get(`http://localhost:8000/users/${this.state.userId}/follows/followers`)
+                .then(res2 => {
+                    this.setState({
+                        followers: res2.data.results[0].length
 
-							});
-						})
+                    });
+                    //alert("fol " + JSON.stringify(res2.data));
+                });
 
-					//alert(JSON.stringify(res.data.users[0][0]))
-				});
+        }
+
 		else {
 
 			axios.get(`http://localhost:8000/users/${0}`)
