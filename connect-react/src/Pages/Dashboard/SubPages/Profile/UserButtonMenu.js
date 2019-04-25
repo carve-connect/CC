@@ -1,43 +1,41 @@
 import React from 'react';
 
-import InfoButton from './VenueContent/InfoButton';
-import CarvesButton from './VenueContent/CarvesButton';
-import MediaButton from './VenueContent/MediaButton';
+import PostButton from './UserContent/PostButton';
+import CarvesButton from './UserContent/CarvesButton';
+import MediaButton from './UserContent/MediaButton';
 
-class VenueButtonMenu extends React.Component {
-    constructor(props){
+
+class UserButtonMenu extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
-            name: 'info'
-    };
+            name: 'carves'
+        };
         this.handleInfo = this.handleInfo.bind(this);
         this.handleCarves = this.handleCarves.bind(this);
         this.handleMedia = this.handleMedia.bind(this);
     }
 
-    handleInfo(){
+    handleInfo() {
         this.setState({name: 'info'});
     }
 
-    handleCarves(){
+    handleCarves() {
         this.setState({name: 'carves'});
     }
 
-    handleMedia(){
+    handleMedia() {
         this.setState({name: 'media'});
     }
 
     render() {
-        const state = this.sel.state;
         let component;
 
-        if(state ==='info'){
-            component = InfoButton;
-        }
-        else if(state === 'carves'){
+        if (this.state.name === 'post') {
+            component = PostButton;
+        } else if (this.state.name === 'carves') {
             component = CarvesButton;
-        }
-        else{
+        } else {
             component = MediaButton;
         }
 
@@ -55,4 +53,4 @@ class VenueButtonMenu extends React.Component {
     }
 }
 
-export default VenueButtonMenu;
+export default UserButtonMenu;

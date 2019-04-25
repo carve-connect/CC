@@ -26,7 +26,7 @@ const ProfileInfoCard = (props) => {
                     width: '75%',
                     height:'50%',
                     border: 'solid 1px #555',
-                    backgroundColor: '#96d5fa',
+                    backgroundColor: "darkgrey",
                     boxShadow:  '0 0 10px 5px rgba(0,0,0,0.6)',
                     borderRadius: '10px',
                     padding: '.5rem',
@@ -41,7 +41,7 @@ const ProfileInfoCard = (props) => {
                             <tbody>
                                 <tr>
                                     <td><h1>{props.user.first_name} {props.user.last_name}</h1></td>
-                                    <td><strong>@{props.user.username}</strong></td>
+                                    <td><h1>{props.user.username}</h1></td>
                                 </tr>
                                 <tr>
                                     <td>{props.user.type}</td>

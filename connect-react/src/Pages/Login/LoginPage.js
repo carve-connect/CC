@@ -119,7 +119,8 @@ class LoginPage extends Component {
 	render() {
 		const { redirect } = this.state;
 		if(redirect) {
-			return <Redirect id={this.state.cookiemonster}  to={`/dashboard/profile/${this.state.cookiemonster.get('id')}`}/>;
+            return <Redirect id={this.state.cookiemonster.get('id')}
+                             to={`/dashboard/profile/${this.state.cookiemonster.get('id')}`}/>;
 		}
 
 		return (

@@ -16,6 +16,7 @@ import MessagesPageOutbox from "./SubPages/Messages/MessagesPageOutbox";
 import NotificationsPage from "./SubPages/Notifications/NotificationsPage";
 import NotificationsPageInbox from "./SubPages/Notifications/NotificationsPageInbox";
 import NotificationsPageOutbox from "./SubPages/Notifications/NotificationsPageOutbox";
+import ExplorePage from "./SubPages/Explore/explorepage";
 
 export default class Container extends Component {
 	constructor(props) {
@@ -43,6 +44,7 @@ export default class Container extends Component {
 					<Route path = "/dashboard/feed" component={FeedPage} />
 					<Route path = "/dashboard/users" component={UsersPage} />
 					<Route path = "/dashboard/listings" component={ListingPage} />
+					<Route path="/dashboard/explore" component={ExplorePage}/>
 				</Switch>
 			</Col>
 		);

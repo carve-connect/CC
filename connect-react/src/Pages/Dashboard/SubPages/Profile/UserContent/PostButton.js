@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 
-const InfoButton = (props) => {
+const PostButton = (props) => {
 		return (
 			<div>
                 <h1>Information about this particular venue would appear here!</h1>
@@ -9,4 +9,4 @@ const InfoButton = (props) => {
 		);
 };
 
-export default InfoButton;
+export default PostButton;
