@@ -4,7 +4,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import {link} from 'react-router'
-
+import axios from 'axios';
 import CustomFormGroup from "./CustomFormGroup";
 import NavbarBrand from "react-bootstrap/NavbarBrand";
 import Settings from './settings';
@@ -89,26 +89,26 @@ class TopNav extends Component {
 	}};
 	componentWillMount()
 	{
-		/*
+
 		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/notifications`)
 			.then(res => {
 				console.log("results: ", res.data.results[0]);
 				this.setState({
-					messages: res.data.results[0]
+					notifications: res.data.results[0]
 				});
 				//alert("you have "+this.state.messages.length+" notifications");
 				//alert(JSON.stringify(res.data.users[0][0]))
 			});
 
-		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/inbox`)
+		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages`)
 			.then(res => {
 				console.log("Messages from inbox: ", res.data.messages);
 				this.setState({
-					notifications: res.data.messages
+					messages: res.data.results[0]
 				});
 				//alert("you have "+this.state.messages.notifications+" messages");
 			});
-		*/
+
 	}
 
 
@@ -148,6 +148,9 @@ class TopNav extends Component {
 								<div>
 
 									<NavDropdown className ="fa fa-envelope text-white"  id="collapsible-nav-dropdown">
+										<NavDropdown.Item
+											href="/dashboard/messages/inbox">Messages: {this.state.messages.length}</NavDropdown.Item>
+										<NavDropdown.Divider/>
 										<NavDropdown.Item href="/dashboard/messages/inbox">Inbox</NavDropdown.Item>
 										<NavDropdown.Divider/>
 										<NavDropdown.Item href="/dashboard/messages/outbox">Sent</NavDropdown.Item>
@@ -158,6 +161,9 @@ class TopNav extends Component {
 
 
 									<NavDropdown className ="fa fa-bell text-danger"  id="collapsible-nav-dropdown" >
+										<NavDropdown.Item
+											href="/dashboard/notinbox">Notifications: {this.state.notifications.length}</NavDropdown.Item>
+										<NavDropdown.Divider/>
 										<NavDropdown.Item href="/dashboard/notinbox">Incoming</NavDropdown.Item>
 										<NavDropdown.Divider/>
 										<NavDropdown.Item href="/dashboard/notoutbox">Outgoing</NavDropdown.Item>
