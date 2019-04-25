@@ -10,7 +10,6 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import axios from 'axios';
 import VenueCarveCard from "../../../../components/VenueCarveCard";
 import MediaGroup from '../../../../components/MediaGroup';
-import CardColumns from 'react-bootstrap/CardColumns';
 
 
 export default class VenuePage extends Component {
@@ -21,8 +20,9 @@ export default class VenuePage extends Component {
             venueInfo: {},
             venueInfoLength: 0,
             followsVenue: false,
-            venueLoading: true
-        }
+            venueLoading: true,
+            content: "carves"
+        };
 
         this.unFollowVenue = this.unFollowVenue.bind(this);
     }
@@ -52,7 +52,27 @@ export default class VenuePage extends Component {
           });
     }
 
+    handleInfo = () => {
+        this.setState({
+            content: "info"
+        });
+
+    };
+
+
+    handleCarves = () => {
+        this.setState({
+            content: "carves"
+        });
+    };
+
+    handleMedia = () => {
+        this.setState({
+            content: "media"
+        });
+    };
     render() {
+        let content;
         // If we have the venue information, fill in the page with the information
         if(this.state.venueInfoLength > 0){
             // const venueInfo = this.state.venueInfo;
@@ -72,8 +92,34 @@ export default class VenuePage extends Component {
                 followButton = <div><i className="fa fa-spinner fa-spin"></i></div>;
             }
 
-
-
+            if (this.state.content === "carves") {
+                content =
+                    <Container>
+                        <Col>
+                            <Row>
+                                <Row><h2>Carves at {this.state.venueInfo.venue_name}</h2></Row>
+                            </Row>
+                            <Row>
+                                <VenueCarveCard venue_id={this.state.venueId}/>
+                            </Row>
+                        </Col>
+                    </Container>
+            } else if (this.state.content === "media") {
+                content =
+                    <Container style={{}}>
+                        <h2>MEDIA for {this.state.venueInfo.venue_name}</h2>
+                        <Row>
+                            <MediaGroup type="venue" content_id={this.state.venueId}/>
+                        </Row>
+                    </Container>
+            } else if (this.state.content === "info") {
+                content =
+                    <Container>
+                        <div>
+                            <h2>Venue Information goes here</h2>
+                        </div>
+                    </Container>
+            }
             return (
                 <>
                     {/* Follow button, image, and info about sports at the venue */}
@@ -101,30 +147,19 @@ export default class VenuePage extends Component {
                     {/* Row of buttons for navigation */}
                     <Row className = 'justify-content-center'>
                         <ButtonGroup size = 'lg' aria-label="Venue button group">
-                            <Button variant="secondary">Information</Button>
-                            <Button variant="secondary">Carves</Button>
-                            <Button variant="secondary">Media</Button>
+                            <Button variant="secondary" onClick={this.handleInfo}>Information</Button>
+                            <Button variant="secondary" onClick={this.handleCarves}>Carves</Button>
+                            <Button variant="secondary" onClick={this.handleMedia}>Media</Button>
                         </ButtonGroup>
                     </Row>
 
                     {/* Carves at the venue */}
                     <Row style={{marginTop: '2rem'}}>
-                        <Container style={{display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-between'}}>
-                            <Row>
-                                <MediaGroup type = "venue" content_id = {this.state.venueId}/>
-                            </Row>
-                    </Container> 
+                        {content}
                     </Row>
                     <Row style={{marginLeft: '3rem', width: '100%'}}>
-					<Col>
-						<Row>
-							<h2>Carves at this venue</h2>
-						</Row>
-						 <Row>
-							<VenueCarveCard venue_id = {this.state.venueId}/>
-						</Row>
-					</Col>
-				</Row>
+
+                    </Row>
                         
   
                     {/* <Col style = {{width: "200%"}}>
