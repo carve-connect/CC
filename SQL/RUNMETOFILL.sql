@@ -1341,6 +1341,15 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (5,65,'normal','hello there','normal',NULL);
 
+
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (150, 1, 'buddyRequest', 'be my buddy', 'buddyRequest', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (151, 1, 'buddyRequest', 'be my buddy', 'buddyRequest', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (152, 1, 'buddyRequest', 'be my buddy', 'buddyRequest', NULL);
+
+
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (1,3,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (2,5,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (3,7,'buddyRequest','be my buddy','buddyRequest',NULL);

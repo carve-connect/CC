@@ -110,25 +110,27 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `CCv5`.`FOLLOWS` ;
 
 CREATE TABLE IF NOT EXISTS `CCv5`.`FOLLOWS` (
-  `follow_id` INT NOT NULL AUTO_INCREMENT,
-  `user_id1` INT NOT NULL,
-  `user_id2` INT NULL,
-  `venue_id` INT NULL,
-  `type` SET('buddy', 'follow', 'block') NULL,
-  INDEX `venue9_idx` (`venue_id` ASC) VISIBLE,
-  PRIMARY KEY (`follow_id`),
-  UNIQUE INDEX `follow_id_UNIQUE` (`follow_id` ASC) VISIBLE,
-  CONSTRAINT `user5`
+                                              `follow_id`  INT                             NOT NULL AUTO_INCREMENT,
+                                              `user_id1`   INT                             NOT NULL,
+                                              `user_id2`   INT                             NULL,
+                                              `venue_id`   INT                             NULL,
+                                              `type`       SET('buddy', 'follow', 'block') NULL,
+                                              `username_1` VARCHAR(45)                     NULL,
+                                              `username2`  VARCHAR(45)                     NULL,
+                                              INDEX `venue9_idx` (`venue_id` ASC) VISIBLE,
+                                              PRIMARY KEY (`follow_id`),
+                                              UNIQUE INDEX `follow_id_UNIQUE` (`follow_id` ASC) VISIBLE,
+                                              CONSTRAINT `user5`
     FOREIGN KEY (`user_id1`)
     REFERENCES `CCv5`.`USERS` (`user_id`)
     ON DELETE CASCADE
-    ON UPDATE NO ACTION,
-  CONSTRAINT `user6`
+      ON UPDATE CASCADE,
+                                              CONSTRAINT `user6`
     FOREIGN KEY (`user_id2`)
     REFERENCES `CCv5`.`USERS` (`user_id`)
     ON DELETE CASCADE
-    ON UPDATE NO ACTION,
-  CONSTRAINT `venue9`
+      ON UPDATE CASCADE,
+                                              CONSTRAINT `venue9`
     FOREIGN KEY (`venue_id`)
     REFERENCES `CCv5`.`VENUES` (`venue_id`)
     ON DELETE NO ACTION
@@ -357,7 +359,16 @@ CREATE TABLE IF NOT EXISTS `CCv5`.`all_carve_attendees` (`id` INT);
 -- -----------------------------------------------------
 -- Placeholder table for view `CCv5`.`all_follows`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `CCv5`.`all_follows` (`follow_id` INT, `user_id1` INT, `user_id2` INT, `venue_id` INT, `type` INT);
+CREATE TABLE IF NOT EXISTS `CCv5`.`all_follows`
+(
+  `follow_id`  INT,
+  `user_id1`   INT,
+  `user_id2`   INT,
+  `venue_id`   INT,
+  `type`       INT,
+  `username_1` INT,
+  `username2`  INT
+);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `CCv5`.`all_comments`
@@ -2311,7 +2322,7 @@ select type from likes;
 SET SQL_MODE = '';
 DROP USER IF EXISTS nodeuser;
 SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-CREATE USER 'nodeuser' IDENTIFIED BY 'nodeuser@1234';
+CREATE USER 'nodeuser' IDENTIFIED BY 'Nodeuser@1234';
 
 GRANT ALL ON `CCv5`.* TO 'nodeuser';
 
@@ -2319,5 +2330,5 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- begin attached script 'script'
-ALTER USER 'nodeuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'nodeuser@1234';
+ALTER USER 'nodeuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Nodeuser@1234';
 -- end attached script 'script'
