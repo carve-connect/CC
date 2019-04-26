@@ -10,6 +10,9 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import axios from 'axios';
 import VenueCarveCard from "../../../../components/VenueCarveCard";
 import MediaGroup from '../../../../components/MediaGroup';
+import Map from "../../../../components/Map";
+import WeatherForecast from "../../../../components/WeatherForecast";
+import WeatherHistory from "../../../../components/WeatherHistory";
 
 
 export default class VenuePage extends Component {
@@ -72,6 +75,8 @@ export default class VenuePage extends Component {
         });
     };
     render() {
+        //<WeatherHistory id ={this.state.venueId}/>
+
         let content;
         // If we have the venue information, fill in the page with the information
         if(this.state.venueInfoLength > 0){
@@ -113,11 +118,21 @@ export default class VenuePage extends Component {
                         </Row>
                     </Container>
             } else if (this.state.content === "info") {
+
                 content =
                     <Container>
-                        <div>
-                            <h2>Venue Information goes here</h2>
-                        </div>
+                        <Row>
+                            <Col style={{backgroundColor: "cadetblue"}}>
+                                <h2>Map of area around Venue</h2>
+                                <Map latitude={this.state.venueInfo.lattitude}
+                                     longitude={this.state.venueInfo.longitude}/>
+                            </Col>
+                            <Col style={{backgroundColor: "grey"}}>
+
+                                <WeatherForecast id={this.state.venueId}/>
+                                <WeatherHistory id={this.state.venueId}/>
+                            </Col>
+                        </Row>
                     </Container>
             }
             return (
@@ -191,6 +206,7 @@ export default class VenuePage extends Component {
                   venueInfo: res.data.venues[0][0],
                   venueInfoLength: Object.keys(res.data.venues[0]).length
               });
+              //alert(JSON.stringify(this.state.venueInfo));
           });
     }
 

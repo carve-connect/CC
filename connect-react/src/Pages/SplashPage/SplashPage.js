@@ -241,6 +241,8 @@ class SplashPage extends Component {
               <Nav className="mr-auto" style = {{height: '60px'}}>
               </Nav>
             </Navbar>
+
+
           </>
         );
     }

@@ -109,6 +109,10 @@ const venCarRoutes = require('./routes/venues/carves');
 const venUfRoutes = require('./routes/venues/follows');
 const venComRoutes = require('./routes/venues/comments');
 const venMedRoutes = require('./routes/venues/media');
+const utilityRoutes = require('./routes/utilities');
+
+
+
 //const handshake = require('socket.io-handshake');
 
 
@@ -151,10 +155,7 @@ io.on("connection", socket => {
 const getApiAndEmit = async socket => {
 	try {
 
-		const res = await axios.get(
-			`https://api.darksky.net/forecast/${process.env.DS_API}/43.7695,11.2558`
-		);
-		socket.emit("FromAPI", res.data.currently.temperature);
+		socket.emit("FromAPI");
 	} catch (error) {
 		//console.error(`Error: ${error.code}`);
 	}
@@ -197,6 +198,7 @@ app.use('/media', medRoutes);
 app.use('/likes', likRoutes);
 app.use('/login', logRoutes);
 app.use('/carveAt', carAtRoutes);
+app.use('/utilities', utilityRoutes);
 app.use('/carves/:carveId/users', carUsrRoutes);
 app.use('/carves/:carveId/carveAttendees', cAtRoutes);
 app.use('/carves/:carveId/comments', cCRoutes);
