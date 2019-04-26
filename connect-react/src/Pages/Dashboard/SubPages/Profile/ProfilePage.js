@@ -13,7 +13,6 @@ import CarveCardUserCreate from '../../../../components/CarveCardUserCreate';
 import WallPost from '../../../../components/WallPost';
 import CreateMediaModal from "../../../../components/CreateMediaModal";
 
-
 export default class ProfilePage extends Component {
 	constructor(props) {
 		super(props);
@@ -139,7 +138,7 @@ export default class ProfilePage extends Component {
 				content =
 
 
-					<Container show={this.state.media}>
+                    <Container show={this.state.media} style={{paddingLeft: "15%", width: "150%", paddingTop: "1%"}}>
 						<h2 style={{margin: '3rem'}}>My Media</h2>
 						<CreateMediaModal show={this.state.createMedia} handleClose={this.handleCreateMedia}/>
 						{/* Row will hold all of the media and such that we grab from the api */}
@@ -157,7 +156,7 @@ export default class ProfilePage extends Component {
 			} else if (this.state.content === "carves") {
 				content =
 
-					<Container style={{marginLeft: '3rem', width: '100%'}} show={this.state.carves}>
+                    <Container style={{paddingTop: "1%"}} show={this.state.carves}>
 						<Col>
 							<Row>
 								<h2>Carves created by user</h2>
@@ -172,7 +171,7 @@ export default class ProfilePage extends Component {
 			} else {
 				content =
 
-					<Container style={{justifyContent: 'center', marginTop: '20px'}} show={this.state.posts}>
+                    <Container style={{marginTop: '20px'}} show={this.state.posts}>
 						<h2>Wall Posts</h2>
 						<div style={{borderBottom: '1px solid lightgray'}}></div>
 						<WallPost profile={this.state.userId}/>
@@ -185,9 +184,9 @@ export default class ProfilePage extends Component {
 					<CreateCarveModal handleClose={this.handleClick} show={this.state.show1}/>
 					<BuddyRequestModal id ={this.state.userInfo.user_id} show={this.state.show2} handleClose={this.handleClose2}/>
 
-					<Row style={{marginLeft: "3%", marginTop: '2%', marginBottom: '2%'}}>
-						<div style={{ display: 'flex', marginTop: '8px', border: "0px solid slategrey" }}>
-							<h2>{profilePrefix} Profile</h2>
+                    <Row style={{backgroundColor: "gainsboro", height: "1%"}}>
+                        <div style={{marginLeft: "3%", marginTop: '2%', marginBottom: '2%'}}>
+                            <h1>{profilePrefix} Profile</h1>
 						</div>
 						<div >
 							{options}
@@ -196,33 +195,39 @@ export default class ProfilePage extends Component {
 
 					
 				{/* This is the row that will hold the profile picture and the information */}
-				<div>
-					<ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleShow} close={this.handleClose} show={this.state.show} refresh= {this.getUserInfo} user={userInfo} img={this.state.pic} id = {isUserLoggedIn}/>
-				</div>
-                    <Row style={{width: "200%", backgroundColor: "grey"}}>
-                        <div style={{paddingLeft: "15%"}}>
-                            <Row> {this.state.userInfo.username} has {this.state.buddies} Buddies</Row>
-                            <Row> {this.state.userInfo.username} has {this.state.followers} Followers</Row>
-						</div>
-					</Row>
+                    <Row style={{width: "100%", backgroundColor: "gainsboro", paddingTop: "1%"}}>
 
-					<Row style={{paddingLeft: "40%", paddingBottom: "1%", paddingTop: "1%", border: "5px"}}>
+                        <ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleShow} close={this.handleClose}
+                                         show={this.state.show} refresh={this.getUserInfo} user={userInfo}
+                                         img={this.state.pic} id={isUserLoggedIn} bud={this.state.buddies}
+                                         fol={this.state.followers}/>
+
+                    </Row>
+
+                    <Row style={{
+                        paddingLeft: "40%",
+                        paddingBottom: "1%",
+                        paddingTop: "1%",
+                        width: "200%",
+                        backgroundColor: "silver",
+                        color: "black"
+                    }}>
 						<h3>Content
 
 						</h3>
 					</Row>
-					<Row style={{paddingLeft: "40%"}}>
+                    <Row style={{paddingLeft: "40%", width: "200%", backgroundColor: "silver", paddingBottom: "1%"}}>
 
-						<Button onClick={this.handleCarves}>Carves</Button>
-
-
-						<Button onClick={this.handleMedia}>Media</Button>
+                        <Button variant={"dark"} onClick={this.handleCarves}>Carves</Button>
 
 
-						<Button onClick={this.handlePosts}>Wall Posts</Button>
+                        <Button variant={"dark"} onClick={this.handleMedia}>Media</Button>
+
+
+                        <Button variant={"dark"} onClick={this.handlePosts}>Wall Posts</Button>
 
 					</Row>
-					<Row>
+                    <Row style={{backgroundColor: "lightsteelblue"}}>
 						{content}
 					</Row>
 				</>

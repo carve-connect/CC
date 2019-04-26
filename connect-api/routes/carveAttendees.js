@@ -10,7 +10,7 @@ router.get('/', (req,res) => {
     // Execute the query to pull from the database
     con.query(carve_attendees_list, (err, results) => {
         if (err) throw err;
-        console.log(results);
+
         res.status(200).jsonp({results}).end;
     })
 });

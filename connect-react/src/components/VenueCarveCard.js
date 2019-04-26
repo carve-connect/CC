@@ -191,7 +191,11 @@ export default class VenueCarveCard extends Component {
                         if(attender.carve === carve.carve_id)
                             return (
 
-                                <ListGroup.Item tag="div" key={index1} style={{fontFamily: 'monospace', paddingRight: '0px', width: "100%"}}>
+                                <ListGroup.Item tag="div" key={index1} style={{
+                                    paddingRight: '0px',
+                                    width: "100%",
+                                    backgroundColor: "lightgrey"
+                                }}>
                                     {attender.user} {attender.type}
                                 </ListGroup.Item>
                             );
@@ -205,7 +209,7 @@ export default class VenueCarveCard extends Component {
                         if(com.carve === carve.carve_id) {
                           return (
                             <ListGroup.Item tag="div" key={index}
-                                            style={{fontFamily: 'monospace', paddingRight: '0px', width: "100%"}}>
+                                            style={{paddingRight: '0px', width: "100%", backgroundColor: "lightgrey"}}>
                               {com.comment} by: {com.poster}
                             </ListGroup.Item>
                           );
@@ -220,7 +224,11 @@ export default class VenueCarveCard extends Component {
                         if(med.carve === carve.carve_id)
                             return (
 
-                                <ListGroup.Item tag="div" key={index} style={{fontFamily: 'monospace', paddingRight: '0px', width: "100%"}}>
+                                <ListGroup.Item tag="div" key={index} style={{
+                                    paddingRight: '0px',
+                                    width: "100%",
+                                    backgroundColor: "lightgrey"
+                                }}>
                                     <Row>Media Post:</Row>
                                     <Row><iframe title="Prof vid2" className="embed-responsive-item" src={med.url} allowFullScreen></iframe></Row>
                                 </ListGroup.Item>
@@ -237,15 +245,22 @@ export default class VenueCarveCard extends Component {
                     att = <div></div>;
                 }
                 else {
-                    color = "lightskyblue";
+                    color = "grey";
                     act = "Request to Attend";
                     no = "Upcoming";
-                    att =<Button variant="info" style = {{ paddingTop:"10px"}} onClick = {() => this.handleClick5(carve.carve_id,carve.creator)} >{act}</Button>;
+                    att = <Button variant="dark" style={{paddingTop: "10px"}}
+                                  onClick={() => this.handleClick5(carve.carve_id, carve.creator)}>{act}</Button>;
                 }
 
                 return (
 
-                    <ListGroup.Item key={index} style={{fontFamily: 'monospace', paddingRight: '0px', paddingLeft: '0px',paddingTop: '0px',paddingBottom: '10px', width: "100%"}}>
+                    <ListGroup.Item key={index} style={{
+                        paddingRight: '0px',
+                        paddingLeft: '0px',
+                        paddingTop: '0px',
+                        paddingBottom: '10px',
+                        width: "100%"
+                    }}>
                         <CarveAttendRequestModal cid ={this.state.cId} cre = {this.state.cRe} handleClose={this.handleClick5} show={this.state.show5} />
                         <CarveInviteModal cid ={this.state.currentCid} handleClose={this.handleClick5} show={this.state.show5} />
                         <Card style = {{width: '100%', backgroundColor: [color]}}>
@@ -261,7 +276,13 @@ export default class VenueCarveCard extends Component {
                                     <Col>
                                         <Card.Text>
                                             <Row>Carve is {no}</Row>
-                                            <Row style={{position: 'left'}} ><h5>Location: {carve.venue}</h5></Row>
+                                            <Row style={{position: 'left'}}>
+                                                <h5>Location: {carve.venue_name} </h5>
+
+                                            </Row>
+                                            <Row>
+                                                <h5>{carve.city},{carve.state}</h5>
+                                            </Row>
                                             <Row>Creator: {carve.creator}</Row>
                                             <Row>Description: {carve.description}</Row>
                                             <Row>Sports: {carve.sports} {/*can't do sports by itself */}</Row>
@@ -273,16 +294,10 @@ export default class VenueCarveCard extends Component {
                                         <h3>Attendees:</h3>
                                         {carveAttendList}
                                     </Col>
-{/*<<<<<<< HEAD*/}
+
                                     <Col><box style = {{color:"red", paddingTop:"10px"}}><i className ="fa fa-thumbs-o-down text-danger"  /> Dislikes: {dlik}</box></Col>
                                     <Col><box style = {{color:"blue", paddingTop:"10px"}}><i className ="fa fa-hand-rock-o " style = {{color:"blue"}} /> Likes: {lik}</box></Col>
-{/*=======*/}
-{/*                                </Row>*/}
-{/*                                <Row style = {{paddingTop:"5%",bordered:"5px solid black"}}>*/}
-{/*                                    <Col>{att}</Col>*/}
-{/*                                    <Col><div style = {{color:"red", paddingTop:"10px"}}><i className ="fa fa-thumbs-o-down text-danger" /> Dislikes: {dlik}</div></Col>*/}
-{/*                                    <Col><div style = {{color:"blue", paddingTop:"10px"}}><i className ="fa fa-hand-rock-o " style = {{color:"blue"}} /> Likes: {lik}</div></Col>*/}
-{/*>>>>>>> followButtonFix*/}
+
                                 </Row>
                             </Card.Body>
                             <Card.Footer className="text-primary text-info">

@@ -3,6 +3,73 @@ var router = express.Router({mergeParams: true});
 const con = require('../../db');
 
 
+//get /followed
+router.get('/buddies/media', (req, res) => {
+	// Find all follows from database
+	userId = req.params.userId;
+	follow_list = "CALL get_buddy_media(?)";
+	con.query(follow_list, [userId], (err, results) => {
+		if (err) throw err;
+		res.status(200).jsonp({results}).end();
+	})
+});
+
+// Returns all venues followed by a specific user
+router.get('/venues/media', (req, res) => {
+	// Find all follows from database
+	userId = req.params.userId;
+	follow_list = "CALL get_venue_followed_media(?)";
+	con.query(follow_list, [userId], (err, results) => {
+		if (err) throw err;
+		res.status(200).jsonp({results}).end();
+	})
+});
+
+
+// Grabs all follows from db; needs get_all_user_follows procedure
+router.get('/media', (req, res) => {
+	// Find all follows from database
+	userId = req.params.userId;
+	follow_list = "CALL get_followed_media(?)";
+	con.query(follow_list, [userId], (err, results) => {
+		if (err) throw err;
+		res.status(200).jsonp({results}).end();
+	})
+});
+
+//get /followed
+router.get('/buddies/carves', (req, res) => {
+	// Find all follows from database
+	userId = req.params.userId;
+	follow_list = "CALL get_buddy_carves(?)";
+	con.query(follow_list, [userId], (err, results) => {
+		if (err) throw err;
+		res.status(200).jsonp({results}).end();
+	})
+});
+
+// Returns all venues followed by a specific user
+router.get('/venues/carves', (req, res) => {
+	// Find all follows from database
+	userId = req.params.userId;
+	follow_list = "CALL get_venue_followed_carves(?)";
+	con.query(follow_list, [userId], (err, results) => {
+		if (err) throw err;
+		res.status(200).jsonp({results}).end();
+	})
+});
+
+
+// Grabs all follows from db; needs get_all_user_follows procedure
+router.get('/carves', (req, res) => {
+	// Find all follows from database
+	userId = req.params.userId;
+	follow_list = "CALL get_followed_carves(?)";
+	con.query(follow_list, [userId], (err, results) => {
+		if (err) throw err;
+		res.status(200).jsonp({results}).end();
+	})
+});
 
 // Grabs all follows from db; needs get_all_user_follows procedure
 router.get('/', (req,res) => {
@@ -87,6 +154,7 @@ router.get('/venues', (req,res) => {
 		res.status(200).jsonp({results}).end();
 	})
 });
+
 
 // Grabs all follows from db; needs get_all_user_follows procedure
 router.get('/followers', (req,res) => {

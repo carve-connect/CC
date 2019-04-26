@@ -5,6 +5,11 @@ import Button from "react-bootstrap/Button";
 import Container from 'react-bootstrap/Container';
 import MediaGroup from "../../../../components/MediaGroup";
 import Row from "react-bootstrap/Row";
+import CarveCardUserFollowed from "../../../../components/CarveCardUserFollowed.js";
+import CarveCardBuddies from "../../../../components/CarveCardBuddies.js";
+import CarveCardVenuesFollowed from '../../../../components/CarveCardVenuesFollowed.js';
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
 export default class FeedPage extends Component {
 	constructor(props) {
@@ -63,18 +68,18 @@ export default class FeedPage extends Component {
 		let content;
 		/*
 
-		<CarveCardBuddies id={localStorage.getItem('userID')}/>
 
-		<CarveCardVenuesFollowed id={localStorage.getItem('userID')} />
 
-		<CarveCardUserFollowed id={localStorage.getItem('userID')}/>
+		<CarveCardVenuesFollowed.js id={localStorage.getItem('userID')} />
+
+
 
 		 */
 
 		if (this.state.content === "carveAttend") {
 			content =
 				<Container style={{}}>
-					<h2>Carves User is/has attending/ed </h2>
+					<h2>Carves where user is an attendee </h2>
 					<Row>
 						<CarveCardUserAttend>Carves:</CarveCardUserAttend>
 					</Row>
@@ -84,7 +89,7 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Buddies' Carves </h2>
 					<Row>
-
+						<CarveCardBuddies id={localStorage.getItem('userID')}/>
 					</Row>
 				</Container>;
 		} else if (this.state.content === "venuesFollowedCarves") {
@@ -92,7 +97,7 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Followed Venues' Carves </h2>
 					<Row>
-
+						<CarveCardVenuesFollowed id={localStorage.getItem('userID')}/>
 					</Row>
 				</Container>;
 		} else if (this.state.content === "usersFollowedCarves") {
@@ -100,7 +105,9 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Followed Users' Carves </h2>
 					<Row>
-
+						<div>
+							<CarveCardUserFollowed></CarveCardUserFollowed>
+						</div>
 					</Row>
 				</Container>;
 		} else if (this.state.content === "buddiesMedia") {
@@ -138,27 +145,36 @@ export default class FeedPage extends Component {
 				<CreateCarveModal handleClose={this.handleClick} show={this.state.show}/>
 				<Row>
 					<h1>User's Feed</h1>
-					<Button onClick={this.handleClick} style={{ margin: '5px' }}>Create Carve</Button>
+					<Button onClick={this.handleClick} variant="success" style={{margin: '5px',}}>Create Carve</Button>
 				</Row>
 				<Row>
-					<Button onClick={this.handleUserAttend}>Carves Attended</Button>
-					<Button onClick={this.handleBuddies}>Buddies' Carves</Button>
-					<Button onClick={this.handleVenuesFollowed}>Venues' Followed Carves</Button>
-					<Button onClick={this.handleUsersFollowed}>Users' Followed Carves</Button>
-					<Button onClick={this.handleBuddiesMedia}>Buddies' Media</Button>
-					<Button onClick={this.handleVenuesFollowedMedia}>Venues' Followed Media</Button>
-					<Button onClick={this.handleUsersFollowedMedia}>Users' Followed Media</Button>
+					<ToggleButtonGroup
+						name={"Carves"}
+
+					>
+						<ToggleButton variant="secondary" onClick={this.handleUserAttend}>Carves Attended</ToggleButton>
+						<ToggleButton variant="secondary" onClick={this.handleBuddies}>Buddies' Carves</ToggleButton>
+						<ToggleButton variant="secondary" onClick={this.handleVenuesFollowed}>Venues' Followed
+							Carves</ToggleButton>
+						<ToggleButton variant="secondary" onClick={this.handleUsersFollowed}>Users' Followed
+							Carves</ToggleButton>
+					</ToggleButtonGroup>
+
+				</Row>
+				<Row>
+					<ToggleButtonGroup name={"media"}
+
+					>
+						<ToggleButton variant="dark" onClick={this.handleBuddiesMedia}>Buddies' Media</ToggleButton>
+						<ToggleButton variant="dark" onClick={this.handleVenuesFollowedMedia}>Venues' Followed
+							Media</ToggleButton>
+						<ToggleButton variant="dark" onClick={this.handleUsersFollowedMedia}>Users' Followed
+							Media</ToggleButton>
+					</ToggleButtonGroup>
 				</Row>
 				<Row>
 					{content}
 				</Row>
-
-
-
-
-
-
-
 				</>
 		);
 	}

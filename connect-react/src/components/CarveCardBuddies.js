@@ -7,15 +7,15 @@ import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Form from 'react-bootstrap/Form';
 import CustomFormGroup from "./CustomFormGroup";
-import CarveAttendRequestModal from "./CarveAttendRequestModal";
+
 import CarveInviteModal from "./CarveInviteModal";
+import CarveAttendRequestModal from "./CarveAttendRequestModal";
 
-
-export default class CarveCardVenuesFollowed extends Component {
+export default class CarveCardBuddies extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            carveId: 0,
+            carve_id: 0,
             name: "",
             creator: 0,
             venue: 0,
@@ -25,8 +25,8 @@ export default class CarveCardVenuesFollowed extends Component {
             description: null,
             date: "",
             carveInfo: {},
-            carveAtten: {},
             carveAt1: {},
+            carveAtten: {},
             carveComm: {},
             carveMed: {},
             carveLik: {},
@@ -41,12 +41,14 @@ export default class CarveCardVenuesFollowed extends Component {
             cId: 0,
             cRe: 0
         };
+
+
     }
 
     componentWillMount() {
-        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/carves/`)
+        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/buddies/carves`)
             .then(res => {
-                // console.log("results: ", res.data.results[0]);
+                console.log("results bud carve: ", res.data.results[0]);
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveInfo: res.data.results[0]
@@ -57,7 +59,7 @@ export default class CarveCardVenuesFollowed extends Component {
         axios.get(`http://localhost:8000/comments`)
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
-                // console.log("results: ", res.data.results[0]);
+                console.log("results: ", res.data.results[0]);
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveComm: res.data.results[0]
@@ -69,7 +71,7 @@ export default class CarveCardVenuesFollowed extends Component {
         axios.get(`http://localhost:8000/media`)
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
-                // console.log("results: ", res.data.results[0]);
+                console.log("results: ", res.data.results[0]);
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveMed: res.data.results[0]
@@ -81,7 +83,7 @@ export default class CarveCardVenuesFollowed extends Component {
         axios.get(`http://localhost:8000/carveAt`)
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
-                // console.log("results: ", res.data.results[0]);
+                console.log("results: ", res.data.results[0]);
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveAt1: res.data.results
@@ -91,10 +93,10 @@ export default class CarveCardVenuesFollowed extends Component {
 
 
         //currently only gets attendees for carve1. not dynamic per carve
-        axios.get(`http://localhost:8000/carves/${1}/likes`)
+        axios.get(`http://localhost:8000/likes`)
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
-                // console.log("results: ", res.data.results[0]);
+                console.log("results: ", res.data.results[0]);
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveLik: res.data.results[0]
@@ -104,19 +106,21 @@ export default class CarveCardVenuesFollowed extends Component {
 
 
         //currently only gets attendees for carve1. not dynamic per carve
-        axios.get(`http://localhost:8000/carves/${1}/likes/dislike`)
+        axios.get(`http://localhost:8000/likes/dislikes`)
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
-                // console.log("results: ", res.data.results[0]);
+                console.log("results: ", res.data.results[0]);
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveDlik: res.data.results[0]
                 });
 
             });
+
     }
 
     like(e) {
+        this.preventDefault(e);
         //currently only gets attendees for carve1. not dynamic per carve
         axios.post(`http://localhost:8000/carves/${1}/likes`,
             {
@@ -133,6 +137,7 @@ export default class CarveCardVenuesFollowed extends Component {
     }
 
     dislike = (e) => {
+        this.preventDefault(e);
         //currently only gets attendees for carve1. not dynamic per carve
         axios.post(`http://localhost:8000/carves/${1}/likes/dislikes`,
             {
@@ -147,6 +152,7 @@ export default class CarveCardVenuesFollowed extends Component {
 
             });
     };
+
     handleClick5 = (e, e2) => {
 
         this.setState({
@@ -156,13 +162,9 @@ export default class CarveCardVenuesFollowed extends Component {
         });
     };
 
-    handleClick6 = (e1) => {
+    handleClick6 = () => {
 
-        this.setState({
-            show6: !this.state.show6,
-            cId: e1
-        });
-
+        this.setState({show6: !this.state.show6});
     };
 
 
@@ -189,9 +191,13 @@ export default class CarveCardVenuesFollowed extends Component {
 
                         if (attender.carve === carve.carve_id)
                             return (
-                                <ListGroup.Item key={index1}
-                                                style={{fontFamily: 'monospace', paddingRight: '0px', width: "100%"}}>
+
+                                <ListGroup.Item key={index1} style={{
+
+                                    backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
+                                }}>
                                     {attender.user} {attender.type}
+
                                 </ListGroup.Item>
                             );
                         else
@@ -203,9 +209,13 @@ export default class CarveCardVenuesFollowed extends Component {
                     carveComments = this.state.carveComm.map((com, index) => {
                         if (com.carve === carve.carve_id)
                             return (
-                                <ListGroup.Item key={index}
-                                                style={{fontFamily: 'monospace', paddingRight: '0px', width: "100%"}}>
+
+                                <ListGroup.Item key={index} style={{
+
+                                    backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
+                                }}>
                                     {com.comment} by: {com.poster}
+
                                 </ListGroup.Item>
                             );
                         else
@@ -219,7 +229,7 @@ export default class CarveCardVenuesFollowed extends Component {
 
                                 <ListGroup.Item key={index} style={{
 
-                                    fontFamily: 'monospace', paddingRight: '0px', width: "100%"
+                                    backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
                                 }}>
                                     <Row>Media Post:</Row>
                                     <Row>
@@ -241,11 +251,11 @@ export default class CarveCardVenuesFollowed extends Component {
                     no = "Completed";
                     att = <div></div>;
                 } else {
-                    color = "lightskyblue";
-                    act = "Invite Buddy";
+                    color = "grey";
+                    act = "Request to Attend";
                     no = "Upcoming";
-                    att = <Button variant="info" style={{paddingTop: "10px"}}
-                                  onClick={() => this.handleClick6(carve.carve_id)}>{act}</Button>;
+                    att = <Button variant="dark" style={{paddingTop: "10px"}}
+                                  onClick={() => this.handleClick5(carve.carve_id, carve.creator)}>{act}</Button>;
 
                 }
 
@@ -253,12 +263,7 @@ export default class CarveCardVenuesFollowed extends Component {
 
                     <ListGroup.Item key={index} style={{
 
-                        fontFamily: 'monospace',
-                        paddingRight: '0px',
-                        paddingLeft: '0px',
-                        paddingTop: '0px',
-                        paddingBottom: '10px',
-                        width: "60%"
+                        paddingRight: '0px', paddingLeft: '0px', paddingTop: '0px', paddingBottom: '10px'
                     }}>
                         <CarveAttendRequestModal cid={this.state.cId} cre={this.state.cRe}
                                                  handleClose={this.handleClick5} show={this.state.show5}/>
@@ -283,8 +288,11 @@ export default class CarveCardVenuesFollowed extends Component {
                                             </Row>
 
                                             <Row style={{position: 'left'}}>
-                                                <h5>Location: {carve.venue}</h5>
+                                                <h5>Location: {carve.venue_name} </h5>
 
+                                            </Row>
+                                            <Row>
+                                                <h5>{carve.city},{carve.state}</h5>
                                             </Row>
                                             <Row><p>Creator: {carve.creator}</p></Row>
                                             <Row>
@@ -345,9 +353,7 @@ export default class CarveCardVenuesFollowed extends Component {
                                         <Row>{carveComments}</Row>
 
                                     </Col>
-                                    <Col>
-                                        {carveMedia}
-                                        {/* <MediaCard type = "carves" content_id = {this.props.carveId}/> */}
+                                    <Col>{carveMedia}
                                     </Col>
 
 

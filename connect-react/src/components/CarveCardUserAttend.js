@@ -7,6 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import CustomFormGroup from "./CustomFormGroup";
+import box from 'react-bootstrap'
 
 export default class CarveCardUserAttend extends Component {
     constructor(props) {
@@ -172,7 +173,7 @@ export default class CarveCardUserAttend extends Component {
 
                                 <ListGroup.Item key={index1} style={{
 
-                                    fontFamily: 'monospace', paddingRight: '0px', width: "100%"
+                                    backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
                                 }}>
                                     {attender.user} {attender.type}
 
@@ -190,7 +191,7 @@ export default class CarveCardUserAttend extends Component {
 
                                 <ListGroup.Item key={index} style={{
 
-                                    fontFamily: 'monospace', paddingRight: '0px', width: "100%"
+                                    backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
                                 }}>
                                     {com.comment} by: {com.poster}
 
@@ -207,7 +208,12 @@ export default class CarveCardUserAttend extends Component {
 
                                 <ListGroup.Item key={index} style={{
 
-                                    fontFamily: 'monospace', paddingRight: '0px', paddingLeft: '0px',paddingTop: '0px',paddingBottom: '10px', width: "100%"
+                                    backgroundColor: "lightgrey",
+                                    paddingRight: '0px',
+                                    paddingLeft: '0px',
+                                    paddingTop: '0px',
+                                    paddingBottom: '10px',
+                                    width: "100%"
                                 }}>
                                     <Row>Media Post:</Row>
                                     <Row><iframe title="Prof vid2" className="embed-responsive-item"
@@ -228,7 +234,7 @@ export default class CarveCardUserAttend extends Component {
                     //att = <div></div>;
                 }
                 else {
-                    color = "lightskyblue";
+                    color = "grey";
                     //act = "Request to Attend";
                     no = "Upcoming";
                     //att =<Button variant="info" style = {{ paddingTop:"10px"}}  >{act}</Button>;
@@ -237,7 +243,7 @@ export default class CarveCardUserAttend extends Component {
 
                     <ListGroup.Item key={index} style={{
 
-                        fontFamily: 'monospace', paddingRight: '0px', width: "100%"
+                        paddingRight: '0px', width: "100%"
                     }}>
 
                         <Card style = {{width: '100%', backgroundColor: [color]}}>
@@ -259,8 +265,11 @@ export default class CarveCardUserAttend extends Component {
                                             </Row>
 
                                             <Row style = {{position: 'left'}} >
-                                                <h5>Location: {carve.venue}</h5>
+                                                <h5>Location: {carve.venue_name} </h5>
 
+                                            </Row>
+                                            <Row>
+                                                <h5>{carve.city},{carve.state}</h5>
                                             </Row>
                                             <Row><p>Creator: {carve.creator}</p></Row>
                                             <Row>

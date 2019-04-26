@@ -11,7 +11,7 @@ import CarveAttendRequestModal from "./CarveAttendRequestModal";
 import CarveInviteModal from "./CarveInviteModal";
 
 
-export default class CarveCardUserFollowed extends Component {
+export default class CarveCardVenuesFollowed extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,9 +44,10 @@ export default class CarveCardUserFollowed extends Component {
     }
 
     componentWillMount() {
-        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/carves/`)
+        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/venues/carves/`)
             .then(res => {
-                // console.log("results: ", res.data.results[0]);
+                console.log("results ven carve: ", res.data.results[0]);
+
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveInfo: res.data.results[0]
@@ -190,7 +191,11 @@ export default class CarveCardUserFollowed extends Component {
                         if (attender.carve === carve.carve_id)
                             return (
                                 <ListGroup.Item key={index1}
-                                                style={{fontFamily: 'monospace', paddingRight: '0px', width: "100%"}}>
+                                                style={{
+                                                    backgroundColor: "lightgrey",
+                                                    paddingRight: '0px',
+                                                    width: "100%"
+                                                }}>
                                     {attender.user} {attender.type}
                                 </ListGroup.Item>
                             );
@@ -204,7 +209,11 @@ export default class CarveCardUserFollowed extends Component {
                         if (com.carve === carve.carve_id)
                             return (
                                 <ListGroup.Item key={index}
-                                                style={{fontFamily: 'monospace', paddingRight: '0px', width: "100%"}}>
+                                                style={{
+                                                    backgroundColor: "lightgrey",
+                                                    paddingRight: '0px',
+                                                    width: "100%"
+                                                }}>
                                     {com.comment} by: {com.poster}
                                 </ListGroup.Item>
                             );
@@ -219,7 +228,7 @@ export default class CarveCardUserFollowed extends Component {
 
                                 <ListGroup.Item key={index} style={{
 
-                                    fontFamily: 'monospace', paddingRight: '0px', width: "100%"
+                                    paddingRight: '0px', width: "100%", backgroundColor: "lightgrey"
                                 }}>
                                     <Row>Media Post:</Row>
                                     <Row>
@@ -241,10 +250,10 @@ export default class CarveCardUserFollowed extends Component {
                     no = "Completed";
                     att = <div></div>;
                 } else {
-                    color = "lightskyblue";
+                    color = "grey";
                     act = "Invite Buddy";
                     no = "Upcoming";
-                    att = <Button variant="info" style={{paddingTop: "10px"}}
+                    att = <Button variant="dark" style={{paddingTop: "10px"}}
                                   onClick={() => this.handleClick6(carve.carve_id)}>{act}</Button>;
 
                 }
@@ -253,12 +262,11 @@ export default class CarveCardUserFollowed extends Component {
 
                     <ListGroup.Item key={index} style={{
 
-                        fontFamily: 'monospace',
+
                         paddingRight: '0px',
                         paddingLeft: '0px',
                         paddingTop: '0px',
-                        paddingBottom: '10px',
-                        width: "60%"
+                        paddingBottom: '10px'
                     }}>
                         <CarveAttendRequestModal cid={this.state.cId} cre={this.state.cRe}
                                                  handleClose={this.handleClick5} show={this.state.show5}/>
@@ -283,8 +291,11 @@ export default class CarveCardUserFollowed extends Component {
                                             </Row>
 
                                             <Row style={{position: 'left'}}>
-                                                <h5>Location: {carve.venue}</h5>
+                                                <h5>Location: {carve.venue_name} </h5>
 
+                                            </Row>
+                                            <Row>
+                                                <h5>{carve.city},{carve.state}</h5>
                                             </Row>
                                             <Row><p>Creator: {carve.creator}</p></Row>
                                             <Row>

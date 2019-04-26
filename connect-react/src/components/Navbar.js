@@ -131,8 +131,7 @@ class TopNav extends Component {
 					<NavbarBrand href={`/dashboard/profile/${this.state.userId}`} style={{
 						color: 'lightskyblue',
 						textShadowColor: 'black',
-						fontWeight: 'bold',
-						fontFamily: 'monospace'
+                        fontWeight: 'bold'
 					}}>Carve Connect</NavbarBrand>
 					<li>
 						<div style={{justify:"left"}}>
