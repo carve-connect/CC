@@ -1,0 +1,18 @@
+import React, {Component} from 'react';
+
+
+class CarveCardBuddies extends Component {
+
+
+    render() {
+        return (
+            <>
+
+                <h2>Hello from CarveCardBuddies</h2>
+
+            </>
+        )
+    };
+}
+
+export default CarveCardBuddies;

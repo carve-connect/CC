@@ -103,9 +103,8 @@ export default class ProfilePage extends Component {
 			if (isUserLoggedIn) {
 				options =
 					<Row classname="justify-content-end" style={{paddingTop: "15px"}}>
-						<Button onClick={this.handleClick} style={{marginLeft: '50px', marginTop: '-7px'}}>Create
-							Carve</Button>
-						<CreateMediaModal show={this.state.createMedia} handleClose={this.handleCreateMedia}/>
+
+
 					</Row>
             } else {
                 let budCheck = 0;
@@ -142,6 +141,7 @@ export default class ProfilePage extends Component {
 
 					<Container show={this.state.media}>
 						<h2 style={{margin: '3rem'}}>My Media</h2>
+						<CreateMediaModal show={this.state.createMedia} handleClose={this.handleCreateMedia}/>
 						{/* Row will hold all of the media and such that we grab from the api */}
 						<Container style={{
 							display: 'flex',
@@ -161,6 +161,8 @@ export default class ProfilePage extends Component {
 						<Col>
 							<Row>
 								<h2>Carves created by user</h2>
+								<Button onClick={this.handleClick} style={{marginLeft: '50px', marginTop: '-7px'}}>Create
+									Carve</Button>
 							</Row>
 							<Row>
 								<CarveCardUserCreate id={this.state.userId}/>
