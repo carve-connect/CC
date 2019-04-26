@@ -18,11 +18,18 @@ router.get('/darkSky/:venueId', (req, res) => {
 
         console.log("https://api.darksy.net/forecast/" + process.env.DS_API + "/" + lat + "/" + long);
 
-        const results = axios.get(
-            `https://api.darksky.net/forecast/${process.env.DS_API}/${lat}/${long}`
-    );
 
-    res.status(201).jsonp({results}).end;
+        try {
+            const results = axios.get(
+                `https://api.darksky.net/forecast/${process.env.DS_API}/${lat}/${long}`);
+            console.log(JSON.stringify(results));
+            res.status(201).jsonp({results}).end;
+
+        } catch (error) {
+            console.error(`Error: ${error.code}`);
+        }
+
+
     //results.data.currently.temperature
     //my ds api key is  place in .env if you get your own it might be better though
     //DS_API=bbff14bd3175f4c57780384515a1ceb3
