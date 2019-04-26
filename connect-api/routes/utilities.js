@@ -10,8 +10,8 @@ router.get('/darkSky/:venueId', (req, res) => {
     con.query(get_venue, [venueId], (err, venue) => {
         if (err) throw err;
 
-        console.log(" venue? la " + JSON.stringify(parseInt(venue[0][0].lattitude, 10)));
-        console.log(" venue? lo " + JSON.stringify(parseInt(venue[0][0].longitude, 10)));
+        console.log(" venue? la " + JSON.stringify(parseFloat(venue[0][0].lattitude, 10)));
+        console.log(" venue? lo " + JSON.stringify(parseFloat(venue[0][0].longitude, 10)));
         let lat = parseInt(venue[0][0].lattitude, 10);
         let long = parseInt(venue[0][0].longitude, 10);
         let response;

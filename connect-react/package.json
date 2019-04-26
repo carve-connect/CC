@@ -21,6 +21,7 @@
     "react-cookie": "^3.1.2",
     "react-datepicker": "^2.4.0",
     "react-dom": "^16.8.4",
+    "react-map-gl": "^4.1.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.8",

@@ -10,6 +10,9 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import axios from 'axios';
 import VenueCarveCard from "../../../../components/VenueCarveCard";
 import MediaGroup from '../../../../components/MediaGroup';
+import Map from "../../../../components/Map";
+import WeatherForecast from "../../../../components/WeatherForecast";
+import WeatherHistory from "../../../../components/WeatherHistory";
 
 
 export default class VenuePage extends Component {
@@ -72,6 +75,8 @@ export default class VenuePage extends Component {
         });
     };
     render() {
+        //<WeatherHistory id ={this.state.venueId}/>
+
         let content;
         // If we have the venue information, fill in the page with the information
         if(this.state.venueInfoLength > 0){
@@ -115,9 +120,18 @@ export default class VenuePage extends Component {
             } else if (this.state.content === "info") {
                 content =
                     <Container>
-                        <div>
-                            <h2>Venue Information goes here</h2>
-                        </div>
+                        <Row>
+                            <Col style={{backgroundColor: "cadetblue"}}>
+                                <h2>Map of area around Venue</h2>
+                                <Map latitude={this.state.venueInfo.latitude}
+                                     longitude={this.state.venueInfo.longitutde}/>
+                            </Col>
+                            <Col style={{backgroundColor: "grey"}}>
+
+                                <WeatherForecast id={this.state.venueId}/>
+                                <WeatherHistory id={this.state.venueId}/>
+                            </Col>
+                        </Row>
                     </Container>
             }
             return (
