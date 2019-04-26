@@ -47,7 +47,7 @@ export default class CarveCardUserCreate extends Component {
         axios.get(`http://localhost:8000/users/${this.props.id}/carves/`)
             .then(res => {
                 // console.log("results: ", res.data.results[0]);
-                alert(JSON.stringify(res.data.results[0]));
+                // alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveInfo: res.data.results[0]
                 });

@@ -14,7 +14,9 @@ export default class MediaGroup extends Component {
             venue: 0,
             url: "",
             media: 0,
-            mediaInfo: {},
+            mediaInfoB: {},
+            mediaInfoVF: {},
+            mediaInfoUF: {},
             mediaComments: {},
             description: "",
             time: "",
@@ -24,32 +26,87 @@ export default class MediaGroup extends Component {
 
 
     componentWillMount() {
-        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/`)
+        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/buddies/media`)
             .then(res => {
                 this.setState({
-                    mediaInfo: res.data.results[0],
+                    mediaInfoB: res.data.results[0],
+                });
+
+            });
+        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/venues/media`)
+            .then(res => {
+                this.setState({
+                    mediaInfoVF: res.data.results[0],
                 });
             });
+        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/media`)
+            .then(res => {
+                this.setState({
+                    mediaInfoUF: res.data.results[0],
+                });
+            });
+
+
     }
 
 
     render() {
-        let mediaList;
+        let mediaListB;
+        let mediaListVF;
+        let mediaListUF;
 
-        if (this.state.mediaInfo.length > 0) {
-            mediaList = this.state.mediaInfo.map((media, index) => {
-                return (
-                    <Col className="col-sm">
-                        <MediaCard type={this.props.type} id={this.props.content_id} media={media}/>
-                    </Col>
-                )
-            });
-        }
+        if (this.props.med === "buddy") {
+            if (this.state.mediaInfoB.length > 0) {
+                mediaListB = this.state.mediaInfoB.map((media, index) => {
+                    return (
+                        <Col className="col-sm">
+                            <MediaCard type={this.props.type} id={this.props.content_id} media={media}/>
+                        </Col>
+                    )
+                });
+            }
+            return (
+                <>
+                    {mediaListB}
+                </>
+            );
+        } else if (this.props.med === "venue") {
+
+
+            if (this.state.mediaInfoVF.length > 0) {
+                mediaListVF = this.state.mediaInfoVF.map((media, index) => {
+                    return (
+                        <Col className="col-sm">
+                            <MediaCard type={this.props.type} id={this.props.content_id} media={media}/>
+                        </Col>
+                    )
+                });
+            }
         return (
             <>
-                {mediaList}
+                {mediaListVF}
             </>
         )
+        } else if (this.props.med === "user") {
+
+            if (this.state.mediaInfoUF.length > 0) {
+                mediaListUF = this.state.mediaInfoUF.map((media, index) => {
+                    return (
+                        <Col className="col-sm">
+                            <MediaCard type={this.props.type} id={this.props.content_id} media={media}/>
+                        </Col>
+                    )
+                });
+            }
+            return (
+                <>
+                    {mediaListUF}
+                </>
+            )
+        }
+
+
     }
+
 
 }
