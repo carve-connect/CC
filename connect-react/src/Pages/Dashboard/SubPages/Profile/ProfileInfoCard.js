@@ -23,13 +23,12 @@ const ProfileInfoCard = (props) => {
         <EditProfileModal handleRefresh={props.refresh} id={props.id} user={props.user} show={props.show} handleClose={props.close} />
             <Container  
                 style= {{
-                    width: '75%',
-                    height:'50%',
+                    width: '150%',
+                    height: '70%',
                     border: 'solid 1px #555',
                     backgroundColor: "darkgrey",
                     boxShadow:  '0 0 10px 5px rgba(0,0,0,0.6)',
                     borderRadius: '10px',
-                    padding: '.5rem',
                     justifyContent: 'center'
                 }}>
                 <Row>
@@ -39,9 +38,12 @@ const ProfileInfoCard = (props) => {
                     <Col style={{marginLeft: '12rem'}}>
                         <table>
                             <tbody>
-                                <tr>
-                                    <td><h1>{props.user.first_name} {props.user.last_name}</h1></td>
-                                    <td><h1>{props.user.username}</h1></td>
+                            <tr>
+                                <td><h1>{props.user.username}</h1></td>
+                            </tr>
+                            <tr>
+                                <td><h2>{props.user.first_name} {props.user.last_name}</h2></td>
+
                                 </tr>
                                 <tr>
                                     <td>{props.user.type}</td>
@@ -60,6 +62,15 @@ const ProfileInfoCard = (props) => {
                                 </tr>
                             </tbody>
                         </table>
+                    </Col>
+                    <Col>
+                        <Row>
+                            <div style={{paddingTop: "50%"}}>
+                                <Row> {props.user.username} has {props.bud} Buddies</Row>
+                                <Row> and has {props.fol} Followers</Row>
+                            </div>
+                        </Row>
+
                     </Col>
                     {editButton}
 

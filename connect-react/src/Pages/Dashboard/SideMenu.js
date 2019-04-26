@@ -66,7 +66,7 @@ class SideMenu extends Component {
 			return (
 				<ListGroup.Item key={index} action href={menuItems[name].href} style={{
 					backgroundColor: "slategrey", color: "white", fontWeight: 'bold',
-					fontFamily: 'monospace', paddingRight: '0px'
+                    paddingRight: '0px'
 				}}>
 					{name}
 				</ListGroup.Item>
@@ -81,9 +81,9 @@ class SideMenu extends Component {
 				return (
 					<ListGroup.Item key={index} action href={`/dashboard/profile/${this.state.buddies[index].user_id2}`} style={{
 						backgroundColor: "seashell", color: "green",
-						fontFamily: 'monospace', paddingRight: '0px',width:"100%"
+                        paddingRight: '0px', width: "100%"
 					}}>
-                        {this.state.names[0] + " " + this.state.buddies[index].user_id2} <Image src={pic1}
+                        {this.state.names[0] + " " + this.state.buddies[index].username} <Image src={pic1}
                                                                                                 roundedCircle
                                                                                                 style={{
 																										width: "20px",
@@ -105,7 +105,7 @@ class SideMenu extends Component {
 					<Row style={{paddingBottom:"0px"}}>
 						<h5 style={{
 							color: "black", paddingLeft: "10%", fontWeight: 'bold',
-							fontFamily: 'monospace', paddingTop:"10%", backgroundColor:"seashell", width: "90%", paddingBottom:"0px"
+                            paddingTop: "10%", backgroundColor: "seashell", width: "90%", paddingBottom: "0px"
 						}}>Buddy List</h5>
 					</Row>
 					<Row style={{paddingTop: "0px"}}>
