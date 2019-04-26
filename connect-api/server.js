@@ -109,6 +109,10 @@ const venCarRoutes = require('./routes/venues/carves');
 const venUfRoutes = require('./routes/venues/follows');
 const venComRoutes = require('./routes/venues/comments');
 const venMedRoutes = require('./routes/venues/media');
+const utilityRoutes = require('./routes/utilities');
+
+
+
 //const handshake = require('socket.io-handshake');
 
 
@@ -147,7 +151,7 @@ io.on("connection", socket => {
 	);
 	socket.on("disconnect", () => console.log("Client disconnected"));
 });
-
+/*
 const getApiAndEmit = async socket => {
 	try {
 
@@ -159,7 +163,7 @@ const getApiAndEmit = async socket => {
 		//console.error(`Error: ${error.code}`);
 	}
 };
-
+*/
 const messageNot = async socket => {
 
     socket.emit("testing1")
@@ -197,6 +201,7 @@ app.use('/media', medRoutes);
 app.use('/likes', likRoutes);
 app.use('/login', logRoutes);
 app.use('/carveAt', carAtRoutes);
+app.use('/utilities', utilityRoutes);
 app.use('/carves/:carveId/users', carUsrRoutes);
 app.use('/carves/:carveId/carveAttendees', cAtRoutes);
 app.use('/carves/:carveId/comments', cCRoutes);
