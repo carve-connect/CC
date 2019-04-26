@@ -13,11 +13,11 @@ export default class Map extends Component {
         super(props);
         this.state = {
             viewport: {
-                latitude: this.props.latitude,
-                longitude: this.props.longitiude,
-                zoom: 12,
-                bearing: 0,
-                pitch: 0,
+                latitude: 42.968908,
+                longitude: -72.890199,
+                zoom: 14.73,
+                bearing: -100.80,
+                pitch: 60.00,
                 width: 500,
                 height: 500,
             }
@@ -27,6 +27,8 @@ export default class Map extends Component {
     render() {
 
         const {viewport} = this.state;
+        //viewport.latitude = this.props.latitude;
+        //viewport.longitude = this.props.longitude;
         return (
             <MapGL
                 {...viewport}

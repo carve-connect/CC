@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+const Skycons = require("skycons");
+
 const navStyle = {
     position: 'absolute',
     top: 0,
@@ -14,7 +16,9 @@ export default class WeatherForecast extends Component {
             weather: [],
             current: []
         };
+
     }
+
 
     componentWillMount() {
         this.getData();
@@ -33,6 +37,7 @@ export default class WeatherForecast extends Component {
 
 
     render() {
+
         return (
             <>
 
@@ -40,6 +45,7 @@ export default class WeatherForecast extends Component {
                 <div>
                     <h2 style={{}}>Current Weather: {this.state.current.summary}</h2>
                     <h2>Current Temperature: {this.state.current.temperature}</h2>
+
                 </div>
 
 

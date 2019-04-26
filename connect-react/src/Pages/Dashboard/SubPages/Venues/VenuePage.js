@@ -118,13 +118,14 @@ export default class VenuePage extends Component {
                         </Row>
                     </Container>
             } else if (this.state.content === "info") {
+
                 content =
                     <Container>
                         <Row>
                             <Col style={{backgroundColor: "cadetblue"}}>
                                 <h2>Map of area around Venue</h2>
-                                <Map latitude={this.state.venueInfo.latitude}
-                                     longitude={this.state.venueInfo.longitutde}/>
+                                <Map latitude={this.state.venueInfo.lattitude}
+                                     longitude={this.state.venueInfo.longitude}/>
                             </Col>
                             <Col style={{backgroundColor: "grey"}}>
 
@@ -205,6 +206,7 @@ export default class VenuePage extends Component {
                   venueInfo: res.data.venues[0][0],
                   venueInfoLength: Object.keys(res.data.venues[0]).length
               });
+              //alert(JSON.stringify(this.state.venueInfo));
           });
     }
 
