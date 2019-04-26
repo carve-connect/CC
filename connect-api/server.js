@@ -151,19 +151,16 @@ io.on("connection", socket => {
 	);
 	socket.on("disconnect", () => console.log("Client disconnected"));
 });
-/*
+
 const getApiAndEmit = async socket => {
 	try {
 
-		const res = await axios.get(
-			`https://api.darksky.net/forecast/${process.env.DS_API}/43.7695,11.2558`
-		);
-		socket.emit("FromAPI", res.data.currently.temperature);
+		socket.emit("FromAPI");
 	} catch (error) {
 		//console.error(`Error: ${error.code}`);
 	}
 };
-*/
+
 const messageNot = async socket => {
 
     socket.emit("testing1")
