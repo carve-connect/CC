@@ -3,7 +3,7 @@ import CarveCardUserAttend from "../../../../components/CarveCardUserAttend";
 import CreateCarveModal from "../../../../components/CreateCarveModal";
 import Button from "react-bootstrap/Button";
 import Container from 'react-bootstrap/Container';
-import MediaGroup from "../../../../components/MediaGroup";
+import MediaGroupFeed from "../../../../components/MediaGroupFeed";
 import Row from "react-bootstrap/Row";
 import CarveCardUserFollowed from "../../../../components/CarveCardUserFollowed.js";
 import CarveCardBuddies from "../../../../components/CarveCardBuddies.js";
@@ -115,7 +115,7 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Buddies' Media </h2>
 					<Row>
-						<MediaGroup type="profile" content_id={1}/>
+						<MediaGroupFeed med="buddy" type="profile" content_id={1}/>
 					</Row>
 				</Container>;
 		} else if (this.state.content === "venuesFollowedMedia") {
@@ -123,7 +123,7 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Followed Venues' Media </h2>
 					<Row>
-						<MediaGroup type="venue" content_id={1}/>
+						<MediaGroupFeed med="venue" type="venue" content_id={1}/>
 					</Row>
 				</Container>;
 		} else if (this.state.content === "usersFollowedMedia") {
@@ -131,7 +131,7 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Followed Users' Media </h2>
 					<Row>
-						<MediaGroup type="profile" content_id={1}/>
+						<MediaGroupFeed med="user" type="profile" content_id={1}/>
 					</Row>
 				</Container>;
 		} else {
