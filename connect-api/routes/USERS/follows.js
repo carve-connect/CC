@@ -149,6 +149,7 @@ router.get('/venues', (req,res) => {
 	// Find all follows from database
 	userId = req.params.userId;
 	follow_list = "CALL get_venues_followed(?)";
+
 	con.query(follow_list, [userId], (err, results) => {
 		if (err) throw err;
 		res.status(200).jsonp({results}).end();

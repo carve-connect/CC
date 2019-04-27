@@ -233,9 +233,39 @@ INSERT INTO USERS(username,email,password,first_name,last_name,description,photo
 INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('VPVXPGG83','eu.odio.tristique@dictumPhasellus.ca','PHM86MYD2JM','Samantha','Dotson','Something about the user goes here',NULL,('athlete'),('snowboard'),('waterSki'),('BMX,skateboard'),(NULL));
 INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('MHWEOGQ85','vitae.orci.Phasellus@quismassa.edu','OFK60JCK6JJ','Christopher','Vargas','Something about the user goes here',NULL,('photographer'),('ski'),('surf'),(NULL),(NULL));
 
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 2, 'normal', 'hello there', 'normal', NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (2,1,'reply','im getting back to you','reply',1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 2, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (2, 1, 'reply', 'im getting back to you', 'reply', 3);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (2, 1, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 2, 'reply', 'im getting back to you', 'reply', 5);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (2, 1, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 2, 'reply', 'im getting back to you', 'reply', 7);
 
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (2,1,'reply','im getting back to you','reply',1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 3, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (3, 1, 'reply', 'im getting back to you', 'reply', 9);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (2, 3, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (3, 2, 'reply', 'im getting back to you', 'reply', 11);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (3, 1, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 3, 'reply', 'im getting back to you', 'reply', 13);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (3, 2, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (2, 3, 'reply', 'im getting back to you', 'reply', 15);
+
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (1,2,'normal','hello there','normal',NULL);
 
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (1,6,'normal','hello there','normal',NULL);
@@ -266,6 +296,8 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (54,48,'normal','hello there','normal',NULL);
 
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (95,26,'normal','hello there','normal',NULL);
+
+
 
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (7,47,'normal','hello there','normal',NULL);
 

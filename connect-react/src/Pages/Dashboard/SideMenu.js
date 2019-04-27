@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from "react-bootstrap/Row";
-import axios from "axios";
 import pic1 from "../../images/snow.jpeg"
 import Image from 'react-bootstrap/Image'
+import axios from 'axios';
 
 class SideMenu extends Component {
 	constructor(props) {
@@ -41,13 +41,11 @@ class SideMenu extends Component {
 
                 }
                 alert(JSON.stringify(this.state.names))*/
+
 	}
 
 
 	render() {
-
-
-
 		const menuItems = {
 			'My Profile': {href: `/dashboard/profile/${localStorage.getItem('userId')}`},
 			'My Messages': {href: '/dashboard/inbox/ '},

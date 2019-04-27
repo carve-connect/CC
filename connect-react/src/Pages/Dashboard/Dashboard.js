@@ -7,12 +7,11 @@ import Navbar from "../../components/Navbar";
 const Dashboard = () => {
 	return (
 		<>
-		<Navbar />
-		<Row style={{ height: '1000%', width:'105%',backgroundColor:"white" }}>
-
-			<SideMenu />
-			<Container />
-		</Row>
+			<Navbar />
+			<Row style={{ height: '1000%', width:'105%',backgroundColor:"white" }}>
+				<SideMenu />
+				<Container />
+			</Row>
 		</>
 	);
 };

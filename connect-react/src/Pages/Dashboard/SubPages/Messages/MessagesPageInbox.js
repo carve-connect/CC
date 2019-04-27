@@ -4,13 +4,13 @@ import MessagesSidebar from "./MessagesSidebar";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ReplyMsgModal from "../../../../components/ReplyMsgModal";
+import UserApi from "../../../../api/UserApi";
 
 
 class MessagesPageInbox extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userId: props.match.params.number,
             isUserLoggedIn: props.match.params.number === localStorage.getItem('userId'),
             message_id: "",
             message_subject: "",
@@ -25,29 +25,25 @@ class MessagesPageInbox extends Component {
             replyId: 0,
             replier: 0
         };
-
     }
+
+    // Fetches data before component will mount to the dom
     componentWillMount() {
-        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages`)
-            .then(res => {
-                console.log("results: ", res.data.results[0]);
-                this.setState({
-                    messages: res.data.results[0]
-                });
-                alert("you have "+this.state.messages.length+" messages");
-                //alert(JSON.stringify(res.data.users[0][0]))
-            });
-
+        UserApi.getUsersInbox(localStorage.getItem('userId'))
+          .then(messages => {
+            this.setState({ messages });
+        }).catch(err => {
+            console.log('API error', err);
+        });
     }
-//onClick={this.onClick(message.message_id)}
+
+    // No clue who named this
     onClick2 = (e) =>{
         console.log(" delete:" +e);
         axios.delete(`http://localhost:8000/messages/${e}`)
-
-
-
     };
-//show: false
+
+    // Forget what this does
     onClick1 =(e,e1) => {
         this.setState({
             replyId: e,
@@ -65,7 +61,7 @@ class MessagesPageInbox extends Component {
             messageRows = this.state.messages.map((message, index) => {
 
                 return (
-                    <tr>
+                    <tr key={index}>
                         <th>{message.message_subject}</th>
                         <td>{message.sender_Id}</td>
                         <td>{message.create_time}</td>
