@@ -61,7 +61,6 @@ class TopNav extends Component {
 	componentWillMount() {
 		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/notifications`)
 			.then(res => {
-				console.log("results: ", res.data.results[0]);
 				this.setState({
 					messages: res.data.results[0]
 				});
@@ -69,7 +68,6 @@ class TopNav extends Component {
 
 		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/inbox`)
 			.then(res => {
-				console.log("Messages from inbox: ", res.data.messages);
 				this.setState({
 					notifications: res.data.messages
 				});
@@ -79,12 +77,6 @@ class TopNav extends Component {
 
 
 	render(){
-
-		let toObj = { pathname: '/dashboard/users', state: { searchTerm: this.state.search } };
-		console.log('Is to Object changing', toObj);
-
-
-
 		return (
 				<>
 					<Nav className="navbar navbar-dark bg-dark nav-fill" >
@@ -94,7 +86,7 @@ class TopNav extends Component {
 							<div style={{justify:"left"}}>
 								<Form onSubmit={this.handleSearch} inline style={{justify:"left"}} >
 									<CustomFormGroup value={this.state.search} type="text" placeholder="User Search" className="mr-sm-2" controlId="search" onChange={this.handleChange}  />
-									<Link to={toObj}><Button type="submit" block style={{width: 50, color: "white"}}>Find</Button></Link>
+									<Link to={`/dashboard/users?search=${this.state.search}`}><Button type="submit" block style={{width: 50, color: "white"}}>Find</Button></Link>
 								</Form>
 							</div>
 						</li>

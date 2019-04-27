@@ -9,8 +9,8 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import axios from 'axios';
 import MediaGroup from '../../../../components/MediaGroup';
 import CardColumns from 'react-bootstrap/CardColumns';
-import VenueApi from "../../../../api/VenueApi";
-import UserApi from "../../../../api/UserApi";
+import VenueApi from "api/VenueApi";
+import UserApi from "api/UserApi";
 
 
 export default class VenuePage extends Component {

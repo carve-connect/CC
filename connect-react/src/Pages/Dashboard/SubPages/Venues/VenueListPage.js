@@ -13,9 +13,9 @@ export default class VenueListPage extends Component {
     //I think i'll need the state information based on the future filtering options
     constructor(props){
         super(props);
+        console.log('Props in VenueListPage component', props);
         this.state = {
             venues: {},
-            isUserLoggedIn: props.match.params.number === localStorage.getItem('userId'),
             venuesLength: 0
         }
     }
