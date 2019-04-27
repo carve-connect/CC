@@ -40,23 +40,22 @@ router.get('/darkSky/:venueId', (req, res) => {
 router.get('/darkSky/past/:venueId', (req, res) => {
 
     const venueId = req.params.venueId;
+    var time = req.query.time;
     get_venue = "call get_venue(?)";
     con.query(get_venue, [venueId], (err, venue) => {
         if (err) throw err;
 
         let lat = venue[0][0].lattitude;
         let long = venue[0][0].longitude;
+        let response;
 
+        console.log("https://api.darksy.net/forecast/" + process.env.DS_API + "/" + lat + "/" + long + "/" + time);
 
-        //[YYYY]-[MM]-[DD]T[HH]:[MM]:[SS]
-        let time = "255657600";
-        console.log("https://api.darksy.net/forecast/" + process.env.DS_API + "/" + lat + "/" + long);
+        axios.get(`https://api.darksky.net/forecast/${process.env.DS_API}/${lat},${long},${time}?`)
+            .then(response => {
 
-        axios.get(`https://api.darksky.net/forecast/${process.env.DS_API}/${lat},${long},${time}`)
-            .then(response1 => {
-
-                //console.log(response);
-                res.status(201).json(response1.data).end();
+                console.log(response);
+                res.status(201).json(response.data).end();
             })
             .catch(error => {
                 console.log(error);
