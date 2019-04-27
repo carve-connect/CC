@@ -2035,12 +2035,12 @@ BEGIN
          inner join(select user_id2
                     from all_follows as bud
                     where type = 'buddy'
-                      and user_id1 = 1
+                      and user_id1 = id
                     union
                     select user_id1 as user_id2
                     from all_follows
                     where type = 'buddy'
-                      and user_id2 = 1) as budList on (user_id2 = all_users.user_id);
+                      and user_id2 = id) as budList on (user_id2 = all_users.user_id);
 END$$
 
 DELIMITER ;
