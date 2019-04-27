@@ -20,6 +20,7 @@ export default class Map extends Component {
                 pitch: 60.00,
                 width: 500,
                 height: 500,
+
             }
         };
     }

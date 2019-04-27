@@ -11,6 +11,7 @@ import Table from 'react-bootstrap/Table';
 import CustomFormGroup from './CustomFormGroup';
 import ListGroup from 'react-bootstrap/ListGroup';
 import CommentTable from './CommentTable';
+import MediaLikes from './MediaLikes';
 
 
 
@@ -27,6 +28,9 @@ const MediaCard = (props) => {
                         <Row style = {{marginTop: '-1rem', borderBottom:'1px dashed lightgrey'}}>
                             <Card.Link href = "#">{props.media.poster}</Card.Link>
                             :{props.media.description}
+                        </Row>
+                        <Row>
+                            <MediaLikes media={props.media}/>
                         </Row>
                     </container>
                 </Card.Body>

@@ -66,7 +66,7 @@ class SideMenu extends Component {
 			return (
 				<ListGroup.Item key={index} action href={menuItems[name].href} style={{
 					backgroundColor: "slategrey", color: "white", fontWeight: 'bold',
-                    paddingRight: '0px'
+					paddingRight: '0px', width: "100%"
 				}}>
 					{name}
 				</ListGroup.Item>
@@ -98,19 +98,19 @@ class SideMenu extends Component {
 				{/* First column that holds the menu items */}
 				<Col xs={1} style={{paddingRight: '0px', backgroundColor: "slategrey"}}>
 					<Row>
-						<ListGroup variant="flush" defaultActiveKey="1">
+						<ListGroup variant="flush" defaultActiveKey="1" style={{width: "100%"}}>
 							{listItems}
 						</ListGroup>
 					</Row>
 					<Row style={{paddingBottom:"0px"}}>
 						<h5 style={{
-							color: "black", paddingLeft: "10%", fontWeight: 'bold',
-                            paddingTop: "10%", backgroundColor: "seashell", width: "90%", paddingBottom: "0px"
-						}}>Buddy List</h5>
+							color: "green", paddingLeft: "10%", fontWeight: 'bold',
+							paddingTop: "10%", backgroundColor: "seashell", width: "100%", paddingBottom: "0px"
+						}}>Buddies <i className="fa fa-users " style={{color: "green"}}/></h5>
 					</Row>
 					<Row style={{paddingTop: "0px"}}>
 
-						<ListGroup variant="flush" defaultActiveKey="1" style ={{paddingTop:"0px"}}>
+						<ListGroup variant="flush" defaultActiveKey="1" style={{paddingTop: "0px", width: "100%"}}>
 							{buddiesList}
 						</ListGroup>
 					</Row>

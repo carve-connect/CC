@@ -2035,12 +2035,12 @@ BEGIN
          inner join(select user_id2
                     from all_follows as bud
                     where type = 'buddy'
-                      and user_id1 = 1
+                      and user_id1 = id
                     union
                     select user_id1 as user_id2
                     from all_follows
                     where type = 'buddy'
-                      and user_id2 = 1) as budList on (user_id2 = all_users.user_id);
+                      and user_id2 = id) as budList on (user_id2 = all_users.user_id);
 END$$
 
 DELIMITER ;
@@ -2476,5 +2476,5 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- begin attached script 'script'
-ALTER USER 'nodeuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'nodeuser@1234';
+ALTER USER 'nodeuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Nodeuser@1234';
 -- end attached script 'script'

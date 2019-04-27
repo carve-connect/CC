@@ -4,9 +4,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import VenueFigure from './VenueFigure';
-import Mount_Snow_BG from '../../../../images/mount_snow_bg.png';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import beach from "../../../../images/beach.jpeg";
+import mountain from "../../../../images/mountain.jpeg";
+import skatedude from "../../../../images/skatedude.jpeg";
+import para from "../../../../images/para.jpeg";
 
 
 export default class VenueListPage extends Component {
@@ -42,7 +45,8 @@ export default class VenueListPage extends Component {
                 if(venues[k].water_sports == null && venues[k].air_sports == null && venues[k].land_sports == null){
                     row.push(
                         <Col key={k}>
-                            <VenueFigure name={venues[k].venue_name} img={Mount_Snow_BG} href={'/dashboard/venues/' + venues[k].venue_id}/>
+                            <VenueFigure name={venues[k].venue_name} img={mountain}
+                                         href={'/dashboard/venues/' + venues[k].venue_id}/>
                         </Col>
                     );
                 }
@@ -67,7 +71,8 @@ export default class VenueListPage extends Component {
             if(venues[k].snow_sports == null && venues[k].air_sports == null && venues[k].land_sports == null){
                 row.push(
                     <Col key={k}>
-                        <VenueFigure name={venues[k].venue_name} img={Mount_Snow_BG} href={'/dashboard/venues/' + venues[k].venue_id}/>
+                        <VenueFigure name={venues[k].venue_name} img={beach}
+                                     href={'/dashboard/venues/' + venues[k].venue_id}/>
                     </Col>
                 );
             }
@@ -79,7 +84,7 @@ export default class VenueListPage extends Component {
         );
 
         return div;
-    }
+    };
 
     createLandRow = () => {
         const venues = this.state.venues;
@@ -92,7 +97,8 @@ export default class VenueListPage extends Component {
             if(venues[k].snow_sports == null && venues[k].air_sports == null && venues[k].water_sports == null){
                 row.push(
                     <Col key={k}>
-                        <VenueFigure name={venues[k].venue_name} img={Mount_Snow_BG} href={'/dashboard/venues/' + venues[k].venue_id}/>
+                        <VenueFigure name={venues[k].venue_name} img={skatedude}
+                                     href={'/dashboard/venues/' + venues[k].venue_id}/>
                     </Col>
                 );
             }
@@ -104,7 +110,7 @@ export default class VenueListPage extends Component {
         );
 
         return div;
-    }
+    };
 
     createAirRow = () => {
         const venues = this.state.venues;
@@ -117,7 +123,8 @@ export default class VenueListPage extends Component {
             if(venues[k].snow_sports == null && venues[k].water_sports == null && venues[k].land_sports == null){
                 row.push(
                     <Col key={k}>
-                        <VenueFigure name={venues[k].venue_name} img={Mount_Snow_BG} href={'/dashboard/venues/' + venues[k].venue_id}/>
+                        <VenueFigure name={venues[k].venue_name} img={para}
+                                     href={'/dashboard/venues/' + venues[k].venue_id}/>
                     </Col>
                 );
             }
@@ -129,7 +136,7 @@ export default class VenueListPage extends Component {
         );
 
         return div;
-    }
+    };
     
     render(){
         let waterList;

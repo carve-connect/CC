@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
     "dot-env": "0.0.1",
@@ -23,7 +23,7 @@
     "flash": "^1.1.0",
     "http": "0.0.0",
     "jsonwebtoken": "^8.5.1",
-    "mysql": "^2.16.0",
+    "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "nodemon": "^1.18.11",
     "npm": "^6.9.0",
@@ -31,7 +31,7 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "react-routing": "0.0.7",
-    "sequelize": "^5.6.1",
+    "sequelize": "^5.7.6",
     "socket.io": "^2.2.0",
     "socket.io-handshake": "0.0.10"
   },
