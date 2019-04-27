@@ -8,52 +8,35 @@ import FormGroup from 'react-bootstrap/FormGroup';
 import Table from 'react-bootstrap/Table';
 import Container from "react-bootstrap/Container";
 
+import CustomFormGroup from './CustomFormGroup';
+import ListGroup from 'react-bootstrap/ListGroup';
+import CommentTable from './CommentTable';
+import MediaLikes from './MediaLikes';
+
+
+
 const MediaCard = (props) => {
     return (
         <>
-            <Card style = {{width: '25rem'}}>
-                <Container className="embed-responsive embed-responsive-16by9">
-                    <iframe title="User Media" className="embed-responsive-item" src={props.media.url} allowFullScreen></iframe>
-                </Container>
+        
+            <Card style={{width: '30rem', marginBottom: '2rem'}}>
+                <container className="embed-responsive embed-responsive-16by9">
+                    <iframe title="User Media" className="embed-responsive-item" src= {props.media.url} allowFullScreen > </iframe>
+                </container>
+
                 <Card.Body>
                     <Container>
                         <Row style = {{marginTop: '-1rem', borderBottom:'1px dashed lightgrey'}}>
                             <Card.Link href = "#">{props.media.poster}</Card.Link>
                             :{props.media.description}
                         </Row>
-                        <Row style= {{marginTop: '1rem'}}>
-                            <Form onSubmit={props.submit}>
-                                <FormGroup>
-                                    <Form.Row>
-                                        <Col className="col-8">
-                                            <Form.Control onChange={props.changeComment} value={props.comment} size = "sm" type="text" placeholder="Say something interesting..." />
-                                        </Col>
-                                        <Col className="col-1">
-                                            <Button type = "submit" size = "sm">Enter</Button>
-                                        </Col>
-                                    </Form.Row>
-                                </FormGroup>
-                            </Form>
-
+                        <Row>
+                            <MediaLikes media={props.media}/>
                         </Row>
                     </Container>
                 </Card.Body>
-                <Table striped borderless hover size = "sm" style = {{marginTop: '-2rem'}}>
-                    <thead>
-                        <th>
-                        username
-                        </th>
-                        <th>
-                        comment
-                        </th>
-                        <th>
-                        timestamp
-                        </th>
-                    </thead>
-                    <tbody>
-                        {props.commentList}
-                    </tbody>
-                </Table>
+               {/* comment table would be here */}
+               <CommentTable media={props.media}/>
                 <Card.Footer style = {{fontSize: '10px'}}><em>Create_Time: {props.media.time}</em></Card.Footer>
             </Card>
         </>

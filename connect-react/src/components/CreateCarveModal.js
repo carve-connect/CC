@@ -17,7 +17,7 @@ export default class CreateCarveModal extends Component {
 			type: {},
 			venue: {},
 			startDate: new Date(),
-			description: 'Helllllloooooooo'
+			description: 'Shred the gnar!'
 		};
 
 		this.createCarve = this.createCarve.bind(this);

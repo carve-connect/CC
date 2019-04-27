@@ -23,14 +23,14 @@ const ProfileInfoCard = (props) => {
         <EditProfileModal handleRefresh={props.refresh} id={props.id} user={props.user} show={props.show} handleClose={props.close} />
             <Container  
                 style= {{
-                    width: '75%',
-                    height:'50%',
+                    width: '150%',
+                    height: '90%',
                     border: 'solid 1px #555',
-                    backgroundColor: '#96d5fa',
+                    backgroundColor: "darkgrey",
                     boxShadow:  '0 0 10px 5px rgba(0,0,0,0.6)',
                     borderRadius: '10px',
-                    padding: '.5rem',
                     justifyContent: 'center'
+
                 }}>
                 <Row>
                     <Col className="col-3">
@@ -39,27 +39,39 @@ const ProfileInfoCard = (props) => {
                     <Col style={{marginLeft: '12rem'}}>
                         <table>
                             <tbody>
-                                <tr>
-                                    <td><h1>{props.firstName} {props.lastName}</h1></td>
-                                    <td><strong>@{props.username}</strong></td>
+                            <tr>
+                                <td><h1>{props.user.username}</h1></td>
+                            </tr>
+                            <tr>
+                                <td><h2>{props.user.first_name} {props.user.last_name}</h2></td>
+
                                 </tr>
                                 <tr>
-                                    <td>{props.type}</td>
+                                    <td>{props.user.type}</td>
                                 </tr>
                                 <tr>
-                                    <td>{props.snow}</td>
+                                    <td>{props.user.snow_sports}</td>
                                 </tr>
                                 <tr>
-                                    <td>{props.water}</td>
+                                    <td>{props.user.water_sports}</td>
                                 </tr>
                                 <tr>
-                                    <td>{props.land}</td>
+                                    <td>{props.land_sports}</td>
                                 </tr>
                                 <tr>
-                                    <td><h3>About me:</h3> {props.description}</td>
+                                    <td><h3>About me:</h3> {props.user.description}</td>
                                 </tr>
                             </tbody>
                         </table>
+                    </Col>
+                    <Col>
+                        <Row>
+                            <div style={{paddingTop: "50%"}}>
+                                <Row> {props.user.username} has {props.bud} Buddies</Row>
+                                <Row> and has {props.fol} Followers</Row>
+                            </div>
+                        </Row>
+
                     </Col>
                     {editButton}
 

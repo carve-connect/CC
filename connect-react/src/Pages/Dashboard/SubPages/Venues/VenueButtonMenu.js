@@ -1,10 +1,8 @@
 import React from 'react';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Button from 'react-bootstrap/Button';
 
-import InfoButton from './VenueOptions/InfoButton';
-import CarvesButton from './VenueOptions/CarvesButton';
-import MediaButton from './VenueOptions/MediaButton';
+import InfoButton from './VenueContent/InfoButton';
+import CarvesButton from './VenueContent/CarvesButton';
+import MediaButton from './VenueContent/MediaButton';
 
 class VenueButtonMenu extends React.Component {
     constructor(props){

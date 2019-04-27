@@ -197,7 +197,7 @@ export default class CarveCard extends Component {
 
                         <ListGroup.Item key={index1} style={{
 
-                            fontFamily: 'monospace', paddingRight: '0px', width: "100%"
+                            backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
                         }}>
                             {attender.user} {attender.type}
 
@@ -215,7 +215,7 @@ export default class CarveCard extends Component {
 
                             <ListGroup.Item key={index} style={{
 
-                                fontFamily: 'monospace', paddingRight: '0px', width: "100%"
+                                backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
                             }}>
                                  {com.comment} by: {com.poster}
 
@@ -232,7 +232,7 @@ export default class CarveCard extends Component {
 
                             <ListGroup.Item key={index} style={{
 
-                                fontFamily: 'monospace', paddingRight: '0px', width: "100%"
+                                backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
                             }}>
                                 <Row>Media Post:</Row>
                                 <Row><iframe title="Prof vid2" className="embed-responsive-item"
@@ -253,10 +253,11 @@ export default class CarveCard extends Component {
                     att = <div></div>;
                 }
                 else {
-                    color = "lightskyblue";
+                    color = "grey";
                     act = "Request to Attend";
                     no = "Upcoming";
-                    att =<Button variant="info" style = {{ paddingTop:"10px"}} onClick = {() => this.handleClick5(carve.carve_id,carve.creator)} >{act}</Button>;
+                    att = <Button variant="success" style={{paddingTop: "10px"}}
+                                  onClick={() => this.handleClick5(carve.carve_id, carve.creator)}>{act}</Button>;
 
                 }
 
@@ -264,7 +265,7 @@ export default class CarveCard extends Component {
 
                     <ListGroup.Item key={index} style={{
 
-                        fontFamily: 'monospace', paddingRight: '0px', paddingLeft: '0px',paddingTop: '0px',paddingBottom: '10px',width: "100%"
+                        paddingRight: '0px', paddingLeft: '0px', paddingTop: '0px', paddingBottom: '10px', width: "100%"
                     }}>
                         <CarveAttendRequestModal cid ={this.state.cId} cre = {this.state.cRe} handleClose={this.handleClick5} show={this.state.show5} />
                         <CarveInviteModal cid ={this.state.currentCid} handleClose={this.handleClick6} show={this.state.show6} />

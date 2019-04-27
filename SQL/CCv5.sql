@@ -110,30 +110,34 @@ CREATE TABLE IF NOT EXISTS `CCv5`.`CARVES` (
 DROP TABLE IF EXISTS `CCv5`.`FOLLOWS` ;
 
 CREATE TABLE IF NOT EXISTS `CCv5`.`FOLLOWS` (
-                                                `follow_id` INT NOT NULL AUTO_INCREMENT,
-                                                `user_id1` INT NOT NULL,
-                                                `user_id2` INT NULL,
-                                                `venue_id` INT NULL,
-                                                `type` SET('buddy', 'follow', 'block') NULL,
-                                                INDEX `venue9_idx` (`venue_id` ASC) VISIBLE,
-                                                PRIMARY KEY (`follow_id`),
-                                                UNIQUE INDEX `follow_id_UNIQUE` (`follow_id` ASC) VISIBLE,
-                                                CONSTRAINT `user5`
-                                                    FOREIGN KEY (`user_id1`)
-                                                        REFERENCES `CCv5`.`USERS` (`user_id`)
-                                                        ON DELETE CASCADE
-                                                        ON UPDATE NO ACTION,
-                                                CONSTRAINT `user6`
-                                                    FOREIGN KEY (`user_id2`)
-                                                        REFERENCES `CCv5`.`USERS` (`user_id`)
-                                                        ON DELETE CASCADE
-                                                        ON UPDATE NO ACTION,
-                                                CONSTRAINT `venue9`
-                                                    FOREIGN KEY (`venue_id`)
-                                                        REFERENCES `CCv5`.`VENUES` (`venue_id`)
-                                                        ON DELETE NO ACTION
-                                                        ON UPDATE NO ACTION)
-    ENGINE = InnoDB;
+
+                                              `follow_id`  INT                              NOT NULL AUTO_INCREMENT,
+                                              `user_id1`   INT                              NOT NULL,
+                                              `user_id2`   INT                              NULL,
+                                              `venue_id`   INT                              NULL,
+                                              `type`       SET ('buddy', 'follow', 'block') NULL,
+                                              `username_1` VARCHAR(45)                      NULL,
+                                              `username2`  VARCHAR(45)                      NULL,
+                                              INDEX `venue9_idx` (`venue_id` ASC) VISIBLE,
+                                              PRIMARY KEY (`follow_id`),
+                                              UNIQUE INDEX `follow_id_UNIQUE` (`follow_id` ASC) VISIBLE,
+                                              CONSTRAINT `user5`
+    FOREIGN KEY (`user_id1`)
+    REFERENCES `CCv5`.`USERS` (`user_id`)
+    ON DELETE CASCADE
+      ON UPDATE CASCADE,
+                                              CONSTRAINT `user6`
+    FOREIGN KEY (`user_id2`)
+    REFERENCES `CCv5`.`USERS` (`user_id`)
+    ON DELETE CASCADE
+      ON UPDATE CASCADE,
+                                              CONSTRAINT `venue9`
+    FOREIGN KEY (`venue_id`)
+    REFERENCES `CCv5`.`VENUES` (`venue_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 
 
 -- -----------------------------------------------------
@@ -357,7 +361,16 @@ CREATE TABLE IF NOT EXISTS `CCv5`.`all_carve_attendees` (`id` INT);
 -- -----------------------------------------------------
 -- Placeholder table for view `CCv5`.`all_follows`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `CCv5`.`all_follows` (`follow_id` INT, `user_id1` INT, `user_id2` INT, `venue_id` INT, `type` INT);
+CREATE TABLE IF NOT EXISTS `CCv5`.`all_follows`
+(
+  `follow_id`  INT,
+  `user_id1`   INT,
+  `user_id2`   INT,
+  `venue_id`   INT,
+  `type`       INT,
+  `username_1` INT,
+  `username2`  INT
+);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `CCv5`.`all_comments`
@@ -735,7 +748,11 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_carve` (in id int)
 BEGIN
-    select * from carves where carve_id = id;
+
+  select *
+  from carves
+         inner join all_venues as car on all_carves.venue = all_venues.venue_id
+  where carve_id = id;
 END$$
 
 DELIMITER ;
@@ -1797,7 +1814,12 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_users_created_carves` (in id int)
 BEGIN
-    select * from carves where creator = id;
+
+  select *
+  from carves
+         left join (all_venues) on (carves.venue = all_venues.venue_id)
+  where creator = id;
+
 END$$
 
 DELIMITER ;
@@ -1861,7 +1883,11 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_open_carves` ()
 BEGIN
-    select * from all_carves where type = 'open';
+
+  select *
+  from all_carves
+         left join (all_venues) on (all_carves.venue = all_venues.venue_id)
+  where type = 'open';
 END$$
 
 DELIMITER ;
@@ -1941,7 +1967,8 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_carve1` (in id int)
 BEGIN
-    select * from carves where carve_id = id;
+select * from carves where carve_id = id;
+
 END$$
 
 DELIMITER ;
@@ -1957,7 +1984,12 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_user_attended` (in id int)
 BEGIN
-    select * from carves where carve_id  in (select carve from carve_attendees where user = 1);
+
+  select *
+  from carves
+         inner join (all_venues) on (carves.venue = all_venues.venue_id)
+  where carve_id in (select carve from carve_attendees where user = id);
+
 END$$
 
 DELIMITER ;
@@ -2005,7 +2037,19 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `buddy_list` (in id int)
 BEGIN
-    select user_id2 from all_follows where type = 'buddy' and user_id1 = 1 union select user_id1 as user_id2 from all_follows where type = 'buddy' and user_id2 = 1 ;
+
+  select *
+  from all_users
+         inner join(select user_id2
+                    from all_follows as bud
+                    where type = 'buddy'
+                      and user_id1 = id
+                    union
+                    select user_id1 as user_id2
+                    from all_follows
+                    where type = 'buddy'
+                      and user_id2 = id) as budList on (user_id2 = all_users.user_id);
+
 END$$
 
 DELIMITER ;
@@ -2212,6 +2256,136 @@ END$$
 DELIMITER ;
 
 -- -----------------------------------------------------
+-- procedure get_buddy_carves
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`get_buddy_carves`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `get_buddy_carves`(in id int)
+BEGIN
+
+  select distinct all_carves.*, all_venues.*
+  from all_carves
+         left join (all_carve_attendees, all_follows, all_venues)
+                   on (all_carves.carve_id = all_carve_attendees.carve and
+                       all_carve_attendees.user = all_follows.user_id2 and all_carves.venue = all_venues.venue_id)
+  where (all_follows.user_id1 = id and all_follows.type = 'buddy');
+
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure get_followed_carves
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`get_followed_carves`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `get_followed_carves`(in id int)
+BEGIN
+
+  select distinct all_carves.*, all_venues.*
+  from all_carves
+         left join (all_carve_attendees, all_follows, all_venues)
+                   on (all_carves.carve_id = all_carve_attendees.carve and
+                       all_carve_attendees.user = all_follows.user_id2 and all_carves.venue = all_venues.venue_id)
+  where (all_follows.user_id1 = id and all_follows.type = 'follow');
+
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure get_venue_followed_carves
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`get_venue_followed_carves`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `get_venue_followed_carves`(in id int)
+BEGIN
+  select distinct all_carves.*, all_venues.*
+  from all_carves
+         left join ( all_follows, all_venues)
+                   on (all_carves.venue = all_follows.venue_id and all_carves.venue = all_venues.venue_id)
+  where (all_follows.user_id1 = id);
+
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure get_venue_followed_media
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`get_venue_followed_media`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `get_venue_followed_media`(in id int)
+BEGIN
+
+  select distinct all_media.*
+  from all_media
+         left join ( all_follows) on (all_media.venue = all_follows.venue_id)
+  where (all_follows.user_id1 = id);
+
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure get_followed_media
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`get_followed_media`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `get_followed_media`(in id int)
+BEGIN
+
+  select distinct all_media.*
+  from all_media
+         left join (all_follows) on (all_media.poster = all_follows.user_id2)
+  where (all_follows.user_id1 = id and all_follows.type = 'follow');
+
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure get_buddy_media
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`get_buddy_media`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `get_buddy_media`(in id int)
+BEGIN
+
+  select distinct all_media.*
+  from all_media
+         left join (all_follows) on (all_media.poster = all_follows.user_id2)
+  where (all_follows.user_id1 = id and all_follows.type = 'buddy');
+
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
 -- View `CCv5`.`all_users`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `CCv5`.`all_users`;
@@ -2303,7 +2477,7 @@ select type from likes;
 SET SQL_MODE = '';
 DROP USER IF EXISTS nodeuser;
 SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-CREATE USER 'nodeuser' IDENTIFIED BY 'nodeuser@1234';
+CREATE USER 'nodeuser' IDENTIFIED BY 'Nodeuser@1234';
 
 GRANT ALL ON `CCv5`.* TO 'nodeuser';
 
@@ -2311,5 +2485,7 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- begin attached script 'script'
-ALTER USER 'nodeuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'nodeuser@1234';
+
+ALTER USER 'nodeuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Nodeuser@1234';
 -- end attached script 'script'
+

@@ -63,21 +63,21 @@ class LoginPage extends Component {
 					token: results.data.token
 				});
 				const decoded = jwt.verify(this.state.token, 'wowwow');
-				alert("decoded " + JSON.stringify(decoded));
+				//alert("decoded " + JSON.stringify(decoded));
 				if(decoded.session.us > 0) {
 
-					alert("decoded " + JSON.stringify(decoded));
+					//alert("decoded " + JSON.stringify(decoded));
 					const us = decoded.session.us;
 
 					this.setState({
 						userId: us
 
 					});
-					alert("logging in succesful userId: " + this.state.userId);
+					//alert("logging in succesful userId: " + this.state.userId);
 					//alert("cookie monster1: " + this.state.cookiemonster.get('id'));
 					this.state.cookiemonster.set('id',us,{ path: '/' });
 
-					alert("cookie monster: " + this.state.cookiemonster.get('id'));
+					//alert("cookie monster: " + this.state.cookiemonster.get('id'));
 					localStorage.setItem('userId', us);
 					this.setState({redirect: true});
 
@@ -113,7 +113,8 @@ class LoginPage extends Component {
 	render() {
 		const { redirect } = this.state;
 		if(redirect) {
-			return <Redirect id={this.state.cookiemonster}  to={`/dashboard/profile/${this.state.cookiemonster.get('id')}`}/>;
+            return <Redirect id={this.state.cookiemonster.get('id')}
+                             to={`/dashboard/profile/${this.state.cookiemonster.get('id')}`}/>;
 		}
 
 		return (

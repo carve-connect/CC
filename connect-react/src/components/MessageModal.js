@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import axios from 'axios'
 import "react-datepicker/dist/react-datepicker.css";
 
+
 export default class MessageModal extends Component {
     constructor(props) {
         super(props);
@@ -47,8 +48,10 @@ export default class MessageModal extends Component {
          this.props.handleClose();
        }
 
-
     }
+
+
+
 
 
     // Make sure that all fields are filled in

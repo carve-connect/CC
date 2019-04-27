@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
 import Col from "react-bootstrap/Col";
 import Mount_Snow_BG from "../../../../images/mount_snow_bg.png";
+
+import axios from "axios";
+
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+
 import UserFigure from "./UserFigure";
 import UserApi from 'api/UserApi';
 import queryString from 'query-string';
+
 
 class UsersPage extends Component {
 
@@ -58,6 +63,7 @@ class UsersPage extends Component {
         this.fetchUsers(this.state.searchTerm);
     }
 
+
     createDiv = () => {
         const users = this.state.users;
         const length = this.state.users.length;
@@ -103,6 +109,7 @@ class UsersPage extends Component {
                 <div style = {{marginTop: '20px', borderBottom: '1px solid lightgray'}}> </div>
 
                 {/* Horizontal scrolling effect */}
+
                 <div>
                     {(this.state.users.length > 0) ? this.createDiv() : 'No users found...'}
                 </div>

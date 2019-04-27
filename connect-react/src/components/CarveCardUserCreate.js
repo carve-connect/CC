@@ -9,7 +9,6 @@ import Form from 'react-bootstrap/Form';
 import CustomFormGroup from "./CustomFormGroup";
 import CarveAttendRequestModal from "./CarveAttendRequestModal";
 import CarveInviteModal from "./CarveInviteModal";
-import MediaGroup from './MediaGroup';
 
 
 export default class CarveCardUserCreate extends Component {
@@ -45,10 +44,10 @@ export default class CarveCardUserCreate extends Component {
     }
 
     componentWillMount() {
-        axios.get(`http://localhost:8000/users/${this.props.profile_id}/carves/`)
+        axios.get(`http://localhost:8000/users/${this.props.id}/carves/`)
             .then(res => {
                 // console.log("results: ", res.data.results[0]);
-                //alert(JSON.stringify(res.data.results[0]));
+                // alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveInfo: res.data.results[0]
                 });
@@ -190,7 +189,11 @@ export default class CarveCardUserCreate extends Component {
 
                         if(attender.carve === carve.carve_id)
                             return (
-                                <ListGroup.Item key={index1} style={{fontFamily: 'monospace', paddingRight: '0px', width: "100%"}}>
+                                <ListGroup.Item key={index1} style={{
+                                    backgroundColor: "lightgrey",
+                                    paddingRight: '0px',
+                                    width: "100%"
+                                }}>
                                     {attender.user} {attender.type}
                                 </ListGroup.Item>
                             );
@@ -203,7 +206,11 @@ export default class CarveCardUserCreate extends Component {
                     carveComments = this.state.carveComm.map((com, index) => {
                         if(com.carve === carve.carve_id)
                             return (
-                                <ListGroup.Item key={index} style={{fontFamily: 'monospace', paddingRight: '0px', width: "100%"}}>
+                                <ListGroup.Item key={index} style={{
+                                    backgroundColor: "lightgrey",
+                                    paddingRight: '0px',
+                                    width: "100%"
+                                }}>
                                     {com.comment} by: {com.poster}
                                 </ListGroup.Item>
                             );
@@ -218,7 +225,7 @@ export default class CarveCardUserCreate extends Component {
 
                                 <ListGroup.Item key={index} style={{
 
-                                    fontFamily: 'monospace', paddingRight: '0px', width: "100%"
+                                    backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
                                 }}>
                                     <Row>Media Post:</Row>
                                     <Row><iframe title="Prof vid2" className="embed-responsive-item"
@@ -239,10 +246,11 @@ export default class CarveCardUserCreate extends Component {
                     att = <div></div>;
                 }
                 else {
-                    color = "lightskyblue";
+                    color = "grey";
                     act = "Invite Buddy";
                     no = "Upcoming";
-                    att =<Button variant="info" style = {{ paddingTop:"10px"}} onClick = {() => this.handleClick6(carve.carve_id)} >{act}</Button>;
+                    att = <Button variant="dark" style={{paddingTop: "10px"}}
+                                  onClick={() => this.handleClick6(carve.carve_id)}>{act}</Button>;
 
                 }
 
@@ -250,7 +258,7 @@ export default class CarveCardUserCreate extends Component {
 
                     <ListGroup.Item key={index} style={{
 
-                        fontFamily: 'monospace', paddingRight: '0px', paddingLeft: '0px',paddingTop: '0px',paddingBottom: '10px', width: "100%"
+                        paddingRight: '0px', paddingLeft: '0px', paddingTop: '0px', paddingBottom: '10px', width: "150%"
                     }}>
                         <CarveAttendRequestModal cid ={this.state.cId} cre = {this.state.cRe} handleClose={this.handleClick5} show={this.state.show5} />
                         <CarveInviteModal cid ={this.state.currentCid} handleClose={this.handleClick6} show={this.state.show6} />
@@ -273,8 +281,11 @@ export default class CarveCardUserCreate extends Component {
                                             </Row>
 
                                             <Row style = {{position: 'left'}} >
-                                                <h5>Location: {carve.venue}</h5>
+                                                <h5>Location: {carve.venue_name} </h5>
 
+                                            </Row>
+                                            <Row>
+                                                <h5>{carve.city},{carve.state}</h5>
                                             </Row>
                                             <Row><p>Creator: {carve.creator}</p></Row>
                                             <Row>

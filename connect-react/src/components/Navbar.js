@@ -3,12 +3,16 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
 
+import { Link } from 'react-router-dom'
+import UserApi from "../api/UserApi";
+import axios from 'axios';
 import CustomFormGroup from "./CustomFormGroup";
 import NavbarBrand from "react-bootstrap/NavbarBrand";
-import axios from "axios";
-import UserApi from "../api/UserApi";
+import Settings from './settings';
+import Help from './help';
+import Privacy from './privacy';
+import Contact from './contact';
 
 class TopNav extends Component {
 	constructor(props){
@@ -20,7 +24,17 @@ class TopNav extends Component {
 				show: false,
 				show1: false,
 				messages: [],
+				settings: false,
+				contact: false,
+				privacy: false,
+				help: false,
 				notifications: []};
+
+		this.handleSettings = this.handleSettings.bind(this);
+		this.handleContact = this.handleContact.bind(this);
+		this.handlePrivacy = this.handlePrivacy.bind(this);
+		this.handleHelp = this.handleHelp.bind(this);
+
 	}
 
 	handleClick() {
@@ -31,6 +45,22 @@ class TopNav extends Component {
 
 	handleClick1= () => {
 		this.setState({ show1: !this.state.show1 });
+	};
+
+	handleContact = () => {
+		this.setState({contact: !this.state.contact});
+	};
+
+	handleSettings = () => {
+		this.setState({settings: !this.state.settings});
+	};
+
+	handlePrivacy = () => {
+		this.setState({privacy: !this.state.privacy});
+	};
+
+	handleHelp = () => {
+		this.setState({help: !this.state.help});
 	};
 
 	// Handles state change for each input in the state object
@@ -58,18 +88,21 @@ class TopNav extends Component {
 			});
 	}
 
-	componentWillMount() {
+	}};
+	componentWillMount()
+	{
+
 		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/notifications`)
 			.then(res => {
 				this.setState({
-					messages: res.data.results[0]
+					notifications: res.data.results[0]
 				});
 			});
 
-		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/inbox`)
+		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages`)
 			.then(res => {
 				this.setState({
-					notifications: res.data.messages
+					messages: res.data.results[0]
 				});
 			});
 
@@ -77,6 +110,7 @@ class TopNav extends Component {
 
 
 	render(){
+
 		return (
 				<>
 					<Nav className="navbar navbar-dark bg-dark nav-fill" >
@@ -91,36 +125,73 @@ class TopNav extends Component {
 							</div>
 						</li>
 						<li>
+
+
+
+		let redirect = this.state.redirect;
+		if(redirect) {
+			return <link to={`/dashboard/profile/${this.state.userId}`}/>;
+		}
+
+	return (
+			<>
+				<Settings show={this.state.settings} handleClose={this.handleSettings}/>
+				<Help show={this.state.help} handleClose={this.handleHelp}/>
+				<Privacy show={this.state.privacy} handleClose={this.handlePrivacy}/>
+				<Contact show={this.state.contact} handleClose={this.handleContact}/>
+				<Nav className="navbar navbar-dark bg-dark nav-fill" >
+				{/*<a className="navbar-brand" href="/">Carve Connect</a>*/}
+					<NavbarBrand href={`/dashboard/profile/${this.state.userId}`} style={{
+						color: 'lightskyblue',
+						textShadowColor: 'black',
+                        fontWeight: 'bold'
+					}}>Carve Connect</NavbarBrand>
+					<li>
+						<div style={{justify:"left"}}>
+							<Form inline style={{justify:"left"}} >
+								<CustomFormGroup value = {this.state.search} type="integer" placeholder="User Search" className=" mr-sm-2" controlId ="search" onChange={this.handleChange}  />
+								<Button type="submit" block disabled={!this.validateForm()} href = {'/dashboard/profile/'+ parseInt(this.state.search)} style = {{width: 50, color: "white"}}>Find</Button>
+							</Form>
+						</div>
+					</li>
+						<li >
+
 							<ul className="navbar justify-content-end">
 								<div>
 
 									<NavDropdown className ="fa fa-envelope text-white"  id="collapsible-nav-dropdown">
-										<h6>Messages: {this.state.messages.length}</h6>
-										<NavDropdown.Item href="/dashboard/messages">Messages</NavDropdown.Item>
+										<NavDropdown.Item
+											href="/dashboard/messages/inbox">Messages: {this.state.messages.length}</NavDropdown.Item>
+										<NavDropdown.Divider/>
 										<NavDropdown.Item href="/dashboard/messages/inbox">Inbox</NavDropdown.Item>
+										<NavDropdown.Divider/>
 										<NavDropdown.Item href="/dashboard/messages/outbox">Sent</NavDropdown.Item>
 										<NavDropdown.Divider />
-
 										<NavDropdown.Item onClick={this.handleClick1}>Send Message</NavDropdown.Item>
 
 									</NavDropdown>
 
 
 									<NavDropdown className ="fa fa-bell text-danger"  id="collapsible-nav-dropdown" >
-										<h6>Notifications: {this.state.notifications.length}</h6>
-										<NavDropdown.Item href="/dashboard/notinbox">Notifications</NavDropdown.Item>
-										<NavDropdown.Item href="/dashboard/notoutbox">Sent</NavDropdown.Item>
+										<NavDropdown.Item
+											href="/dashboard/notinbox">Notifications: {this.state.notifications.length}</NavDropdown.Item>
+										<NavDropdown.Divider/>
+										<NavDropdown.Item href="/dashboard/notinbox">Incoming</NavDropdown.Item>
+										<NavDropdown.Divider/>
+										<NavDropdown.Item href="/dashboard/notoutbox">Outgoing</NavDropdown.Item>
 										<NavDropdown.Divider />
 
 									</NavDropdown>
 
 									<NavDropdown className="fa fa-cogs text-secondary"  id="collapsible-nav-dropdown" >
 
-										<NavDropdown.Item href="#">Settings</NavDropdown.Item>
-										<NavDropdown.Item href="#">Privacy</NavDropdown.Item>
-										<NavDropdown.Item href="#">Help</NavDropdown.Item>
+										<NavDropdown.Item onClick={this.handleSettings}>Settings</NavDropdown.Item>
+										<NavDropdown.Divider/>
+										<NavDropdown.Item onClick={this.handlePrivacy}>Privacy</NavDropdown.Item>
+										<NavDropdown.Divider/>
+										<NavDropdown.Item onClick={this.handleHelp}>Help</NavDropdown.Item>
 										<NavDropdown.Divider />
-										<NavDropdown.Item href="/">Contact Us</NavDropdown.Item>
+										<NavDropdown.Item onClick={this.handleContact}>Contact Us</NavDropdown.Item>
 									</NavDropdown>
 								</div>
 							<div>

@@ -9,14 +9,9 @@ router.get('/', (req,res) => {
     // Find all messages from database
     message_list = "CALL get_users_inbox(?)";
     userId = req.params.userId;
-
-    console.log(req.params);
-
     con.query(message_list, [userId], (err, results) => {
         if (err) throw err;
-
         res.status(200).jsonp({results}).end;
-
     })
 });
 
@@ -102,22 +97,17 @@ function findReplyMessages(messages, userId) {
 // Grabs all messages for a user that require them to respond ( INBOX )
 router.get('/inbox', (req,res) => {
     sql = "CALL get_users_inbox(?)";
-
-    tempSql = "select * from messages where (rec_id = 1 or sender_Id = 1) and (type = 'normal' or type = 'reply') order by message_id desc;"
+    tempSql = "select * from messages where (rec_id = 1 or sender_Id = 1) and (type = 'normal' or type = 'reply') order by message_id desc;";
     userId = Number(req.params.userId);
-
     // Query the db for the rows that have a receiver_id equal to the userId
     con.query(tempSql, (err, results) => {
         // Strips packet of junk
         let data = stripResults(results);
-
         // Finds all the messages that need to be replied to
         data = findReplyMessages(data, userId);
-
         // Returns the final data set to the user
         res.status(200).json({messages: data});
     });
-
 });
 
 
@@ -126,18 +116,11 @@ router.get('/sent', (req,res) => {
     // Find all messages from database
     message_list = "CALL get_users_sent(?)";
     userId = req.params.userId;
-
-    console.log(req.params);
-
     con.query(message_list, [userId], (err, results) => {
         if (err) throw err;
-
         res.status(200).jsonp({results}).end;
-
     })
 });
-
-
 
 
 // Grabs all messages from db
@@ -145,57 +128,42 @@ router.get('/notifications', (req,res) => {
     // Find all messages from database
     message_list = "CALL get_user_notifications(?)";
     userId = req.params.userId;
-
-    console.log(req.params);
-
     con.query(message_list, [userId], (err, results) => {
         if (err) throw err;
-        console.log(results);
         res.status(200).jsonp({results}).end;
-
     })
 });
+
 
 // Grabs all messages from db
 router.get('/notifications/sent', (req,res) => {
     // Find all messages from database
     message_list = "CALL get_user_sent_notifications(?)";
     userId = req.params.userId;
-
-    console.log(req.params);
-
     con.query(message_list, [userId], (err, results) => {
         if (err) throw err;
-
         res.status(200).jsonp({results}).end;
-
     })
 });
+
+
 // Creates a new message
 router.post('/', (req,res) => {
     const {sender,reciever,subject,body, msgType} = req.body;
-
-    console.log(" new message sent from: " + sender + "to: "+reciever);
-    if(false)
-    {
-
-    }else{
-        // The messagename wasn't found in the database
-        // Create insert query for new message
-        // Added a comment
-        new_message = "CALL add_message(?,?,?,?,?)";
-        // Execute the query to insert into the database
-        con.query(new_message,[sender,reciever,subject,body, msgType[0]], (err, results) => {
-            if (err) throw err;
-            res.status(201).jsonp({results}).end;
-        })
-
-    }
+    // The messagename wasn't found in the database
+    // Create insert query for new message
+    // Added a comment
+    new_message = "CALL add_message(?,?,?,?,?)";
+    // Execute the query to insert into the database
+    con.query(new_message,[sender,reciever,subject,body, msgType[0]], (err, results) => {
+        if (err) throw err;
+        res.status(201).jsonp({results}).end;
+    })
 });
+
 
 // updates all messages
 router.put('/', (req,res) => {
-
     // The messagename wasn't found in the database
     // Create insert query for new message
     // Added a comment
@@ -206,10 +174,10 @@ router.put('/', (req,res) => {
         res.status(201).jsonp({results}).end;
     })
 });
+
 
 // updates all messages
 router.patch('/', (req,res) => {
-
     // The messagename wasn't found in the database
     // Create insert query for new message
     // Added a comment
@@ -219,9 +187,8 @@ router.patch('/', (req,res) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
-
-
 });
+
 
 // deletes all messages
 router.delete('/', (req,res) => {
@@ -230,14 +197,12 @@ router.delete('/', (req,res) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
-
-
 });
+
 
 // Grab specific message by their id
 router.get('/:messageId', (req,res) => {
     const messageId = req.params.messageId;
-
     get_message  = "call get_message(?)";
     con.query(get_message, [messageId],(err, results) => {
         if (err) throw err;
@@ -245,43 +210,39 @@ router.get('/:messageId', (req,res) => {
     })
 });
 
+
 // updates message
 router.put('/:messageId', (req,res) => {
     const messageId = req.params.messageId;
     const {sender,reciever,subject,body, msgType} = req.body;
-    console.log("message updated via put with messageId: " + messageId);
     update_message = "CALL update_message(?,?,?,?,?,?)";
-
     con.query(update_message,[messageId,sender,reciever,subject,body, msgType[0]],(err, results) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
 });
+
 
 // updates all messages
 router.patch('/:messageId', (req,res) => {
     const messageId = req.params.messageId;
     const {sender,reciever,subject,body, msgType} = req.body;
-    console.log("message updated via patch with messageId: " + messageId);
     update_message = "CALL update_message(?,?,?,?,?,?)";
-
     con.query(update_message,[messageId,sender,reciever,subject,body, msgType[0]],(err, results) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
 });
 
+
 // deletes message
 router.delete('/:messageId', (req,res) => {
     const messageId = req.params.messageId;
-    console.log(" deleting message with message id: " + messageId);
     delete_messages = "CALL delete_message(?)";
     con.query(delete_messages, [messageId],(err, results) => {
         if (err) throw err;
         res.status(201).jsonp({msg:'message deleted'}).end;
     })
-
-
 });
 
 

@@ -11,16 +11,37 @@ class SideMenu extends Component {
 		super(props);
 		this.state = {
 			buddies:[] ,
-			user_Id2: 0
+			user_Id2: 0,
+			buddyname: [],
+			names: [""]
 		};
 
 	}
 
+
+
 	componentWillMount() {
-		UserApi.getUsersBuddies(localStorage.getItem('userId'))
-			.then(buddies => {
-				this.setState({buddies});
-			})
+		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/buddies`)
+			.then(res => {
+				// console.log("results: ", res.data.results[0]);
+				//alert("Buddy list:"+ JSON.stringify(res.data.results[0][0].user_Id2));
+				this.setState({
+					buddies: res.data.results[0]
+				});
+			});
+		/*
+                for(var c = 0; c< this.state.buddies.length; c++) {
+                    axios.get(`http://localhost:8000/users/${this.state.buddies[c].user_id2}`)
+                        .then(res1 => {
+                            // console.log("results: ", res.data.results[0]);
+                            this.setState(previousState => ({
+                                names: [...previousState.names, res1.data.users]
+                            }));
+                        });
+
+                }
+                alert(JSON.stringify(this.state.names))*/
+
 	}
 
 
@@ -43,7 +64,7 @@ class SideMenu extends Component {
 			return (
 				<ListGroup.Item key={index} action href={menuItems[name].href} style={{
 					backgroundColor: "slategrey", color: "white", fontWeight: 'bold',
-					fontFamily: 'monospace', paddingRight: '0px'
+					paddingRight: '0px', width: "100%"
 				}}>
 					{name}
 				</ListGroup.Item>
@@ -54,12 +75,18 @@ class SideMenu extends Component {
 
 		if(this.state.buddies.length > 0) {
 			buddiesList = this.state.buddies.map((buddy, index) => {
+
 				return (
 					<ListGroup.Item key={index} action href={`/dashboard/profile/${this.state.buddies[index].user_id2}`} style={{
 						backgroundColor: "seashell", color: "green",
-						fontFamily: 'monospace', paddingRight: '0px',width:"100%"
+                        paddingRight: '0px', width: "100%"
 					}}>
-						{"username "+this.state.buddies[index].user_id2} <Image src={pic1} roundedCircle style = {{width:"20px",height:"20px"}}/>
+                        {this.state.names[0] + " " + this.state.buddies[index].username} <Image src={pic1}
+                                                                                                roundedCircle
+                                                                                                style={{
+																										width: "20px",
+																										height: "20px"
+																									}}/>
 					</ListGroup.Item>
 				)
 			});
@@ -69,19 +96,19 @@ class SideMenu extends Component {
 				{/* First column that holds the menu items */}
 				<Col xs={1} style={{paddingRight: '0px', backgroundColor: "slategrey"}}>
 					<Row>
-						<ListGroup variant="flush" defaultActiveKey="1">
+						<ListGroup variant="flush" defaultActiveKey="1" style={{width: "100%"}}>
 							{listItems}
 						</ListGroup>
 					</Row>
 					<Row style={{paddingBottom:"0px"}}>
 						<h5 style={{
-							color: "black", paddingLeft: "10%", fontWeight: 'bold',
-							fontFamily: 'monospace', paddingTop:"10%", backgroundColor:"seashell", width: "90%", paddingBottom:"0px"
-						}}>Buddy List</h5>
+							color: "green", paddingLeft: "10%", fontWeight: 'bold',
+							paddingTop: "10%", backgroundColor: "seashell", width: "100%", paddingBottom: "0px"
+						}}>Buddies <i className="fa fa-users " style={{color: "green"}}/></h5>
 					</Row>
 					<Row style={{paddingTop: "0px"}}>
 
-						<ListGroup variant="flush" defaultActiveKey="1" style ={{paddingTop:"0px"}}>
+						<ListGroup variant="flush" defaultActiveKey="1" style={{paddingTop: "0px", width: "100%"}}>
 							{buddiesList}
 						</ListGroup>
 					</Row>

@@ -12,6 +12,17 @@ import CardColumns from 'react-bootstrap/CardColumns';
 import VenueApi from "api/VenueApi";
 import UserApi from "api/UserApi";
 
+import Map from "../../../../components/Map";
+import WeatherForecast from "../../../../components/WeatherForecast";
+import WeatherHistory from "../../../../components/WeatherHistory";
+import beach from "../../../../images/beach.jpeg";
+import mountain from "../../../../images/mountain.jpeg";
+import skatedude from "../../../../images/skatedude.jpeg";
+import MB from "../../../../images/MB.jpeg";
+import para from "../../../../images/para.jpeg";
+import skydive from "../../../../images/skydive.jpeg";
+
+
 
 export default class VenuePage extends Component {
     constructor(props){
@@ -21,7 +32,9 @@ export default class VenuePage extends Component {
             venueInfo: {},
             venueInfoLength: 0,
             followsVenue: false,
-            venueLoading: true
+            venueLoading: true,
+            content: "carves"
+
         };
 
         this.unFollowVenue = this.unFollowVenue.bind(this);
@@ -52,11 +65,53 @@ export default class VenuePage extends Component {
           });
     }
 
+    handleInfo = () => {
+        this.setState({
+            content: "info"
+        });
+
+    };
+
+
+    handleCarves = () => {
+        this.setState({
+            content: "carves"
+        });
+    };
+
+    handleMedia = () => {
+        this.setState({
+            content: "media"
+        });
+    };
     render() {
+        //<WeatherHistory id ={this.state.venueId}/>
+
+
+        let content;
         // If we have the venue information, fill in the page with the information
         if(this.state.venueInfoLength > 0){
+
+
             // const venueInfo = this.state.venueInfo;
             const { venueInfo, venueLoading, followsVenue } = this.state;
+
+            let pic;
+            if (venueInfo.picture === "beach")
+                pic = beach;
+            else if (venueInfo.picture === "mountain")
+                pic = mountain;
+            else if (venueInfo.picture === "mount_snow")
+                pic = Mount_Snow;
+            else if (venueInfo.picture === "skatedude")
+                pic = skatedude;
+            else if (venueInfo.picture === "para")
+                pic = para;
+            else if (venueInfo.picture === "MB")
+                pic = MB;
+            else if (venueInfo.picture === "skydive")
+                pic = skydive;
+
             let followButton;
 
             // Checks to see if we are loading the venues that the user follows
@@ -72,8 +127,44 @@ export default class VenuePage extends Component {
                 followButton = <div><i className="fa fa-spinner fa-spin"></i></div>;
             }
 
+            if (this.state.content === "carves") {
+                content =
+                    <Container>
+                        <Col>
+                            <Row>
+                                <Row><h2>Carves at {this.state.venueInfo.venue_name}</h2></Row>
+                            </Row>
+                            <Row>
+                                <VenueCarveCard venue_id={this.state.venueId}/>
+                            </Row>
+                        </Col>
+                    </Container>
+            } else if (this.state.content === "media") {
+                content =
+                    <Container style={{}}>
+                        <h2>MEDIA for {this.state.venueInfo.venue_name}</h2>
+                        <Row>
+                            <MediaGroup type="venue" content_id={this.state.venueId}/>
+                        </Row>
+                    </Container>
+            } else if (this.state.content === "info") {
 
+                content =
+                    <Container>
+                        <Row>
+                            <Col style={{backgroundColor: "cadetblue"}}>
+                                <h2>Map of area around Venue</h2>
+                                <Map latitude={this.state.venueInfo.lattitude}
+                                     longitude={this.state.venueInfo.longitude}/>
+                            </Col>
+                            <Col style={{backgroundColor: "grey"}}>
 
+                                <WeatherForecast id={this.state.venueId}/>
+                                <WeatherHistory id={this.state.venueId}/>
+                            </Col>
+                        </Row>
+                    </Container>
+            }
             return (
                 <>
                     {/* Follow button, image, and info about sports at the venue */}
@@ -89,7 +180,7 @@ export default class VenuePage extends Component {
                                         {/*<Button style={{margin:'5px'}} variant="info" onClick={this.onClick1}>Follow</Button>*/}
                                         {followButton}
 
-                                        <Figure.Image rounded src={Mount_Snow} />
+                                        <Figure.Image rounded src={pic}/>
                                         <h4>{venueInfo.about}</h4>
                                         <h5>Sports: {venueInfo.snow_sports} {venueInfo.land_sports} {venueInfo.air_sports}</h5>
                                     </Figure>
@@ -101,20 +192,31 @@ export default class VenuePage extends Component {
                     {/* Row of buttons for navigation */}
                     <Row className = 'justify-content-center'>
                         <ButtonGroup size = 'lg' aria-label="Venue button group">
-                            <Button variant="secondary">Information</Button>
-                            <Button variant="secondary">Carves</Button>
-                            <Button variant="secondary">Media</Button>
+                            <Button variant="secondary" onClick={this.handleInfo}>Information</Button>
+                            <Button variant="secondary" onClick={this.handleCarves}>Carves</Button>
+                            <Button variant="secondary" onClick={this.handleMedia}>Media</Button>
                         </ButtonGroup>
                     </Row>
 
                     {/* Carves at the venue */}
                     <Row style={{marginTop: '2rem'}}>
-                        <Col>
-                        <CardColumns>
-                                <MediaGroup type = "venue" content_id = {this.state.venueId}/>
-                        </CardColumns>  
-                        </Col>
+                        {content}
                     </Row>
+                    <Row style={{marginLeft: '3rem', width: '100%'}}>
+
+                    </Row>
+                        
+  
+                    {/* <Col style = {{width: "200%"}}>
+                        <Row>
+                            <h2>Carves at this venue</h2>
+                        </Row>
+                        <Row style = {{width:"100%"}}>
+                            <VenueCarveCard venue_id = {this.state.venueId} style = {{width:"100%"}}/>
+                        </Row>
+                    </Col> */}
+                    
+
                 </>
             );
         } else {
@@ -132,6 +234,7 @@ export default class VenuePage extends Component {
           .then(venue => {
               this.setState({ venueInfo: venue, venueInfoLength: Object.keys(venue).length });
           })
+
     }
 
     getFollowingVenues() {
