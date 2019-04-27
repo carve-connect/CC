@@ -31,9 +31,11 @@ class MessagesPageInbox extends Component {
     componentWillMount() {
         UserApi.getUsersInbox(localStorage.getItem('userId'))
           .then(messages => {
-            this.setState({ messages });
+              //alert("messages " + JSON.stringify(messages.data));
+              this.setState({messages: messages.data[0]});
         }).catch(err => {
             console.log('API error', err);
+            //alert("error " );
         });
     }
 

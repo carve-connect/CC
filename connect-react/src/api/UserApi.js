@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { baseUrl } from './config';
+import {baseUrl} from './config';
 
 class UserApi {
 	// Returns user info based on the user Id passed in
@@ -39,7 +39,7 @@ class UserApi {
 	 	return new Promise((resolve, reject) => {
 	 		axios.get(`${baseUrl}/users/${userId}/messages/inbox`)
 				.then(res => {
-					(res.data.messages) ? resolve(res.data.messages) : reject(Error("API Error"))
+					(res.data) ? resolve(res.data) : reject(Error("API Error"))
 				});
 		})
 	}
