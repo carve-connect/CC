@@ -13,6 +13,12 @@ import MediaGroup from '../../../../components/MediaGroup';
 import Map from "../../../../components/Map";
 import WeatherForecast from "../../../../components/WeatherForecast";
 import WeatherHistory from "../../../../components/WeatherHistory";
+import beach from "../../../../images/beach.jpeg";
+import mountain from "../../../../images/mountain.jpeg";
+import skatedude from "../../../../images/skatedude.jpeg";
+import MB from "../../../../images/MB.jpeg";
+import para from "../../../../images/para.jpeg";
+import skydive from "../../../../images/skydive.jpeg";
 
 
 export default class VenuePage extends Component {
@@ -77,11 +83,31 @@ export default class VenuePage extends Component {
     render() {
         //<WeatherHistory id ={this.state.venueId}/>
 
+
         let content;
         // If we have the venue information, fill in the page with the information
         if(this.state.venueInfoLength > 0){
+
+
             // const venueInfo = this.state.venueInfo;
             const { venueInfo, venueLoading, followsVenue } = this.state;
+
+            let pic;
+            if (venueInfo.picture === "beach")
+                pic = beach;
+            else if (venueInfo.picture === "mountain")
+                pic = mountain;
+            else if (venueInfo.picture === "mount_snow")
+                pic = Mount_Snow;
+            else if (venueInfo.picture === "skatedude")
+                pic = skatedude;
+            else if (venueInfo.picture === "para")
+                pic = para;
+            else if (venueInfo.picture === "MB")
+                pic = MB;
+            else if (venueInfo.picture === "skydive")
+                pic = skydive;
+
             let followButton;
 
             // Checks to see if we are loading the venues that the user follows
@@ -150,7 +176,7 @@ export default class VenuePage extends Component {
                                         {/*<Button style={{margin:'5px'}} variant="info" onClick={this.onClick1}>Follow</Button>*/}
                                         {followButton}
 
-                                        <Figure.Image rounded src={Mount_Snow} />
+                                        <Figure.Image rounded src={pic}/>
                                         <h4>{venueInfo.about}</h4>
                                         <h5>Sports: {venueInfo.snow_sports} {venueInfo.land_sports} {venueInfo.air_sports}</h5>
                                     </Figure>

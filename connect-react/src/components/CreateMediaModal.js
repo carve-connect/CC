@@ -1,7 +1,5 @@
-import React from 'react';
-import {Component} from 'react';
-import {Button, Container, FormGroup, Form} from 'react-bootstrap';
-import {Modal} from 'react-bootstrap';
+import React, {Component} from 'react';
+import {Button, Container, Form, FormGroup, Modal} from 'react-bootstrap';
 import axios from 'axios';
 
 export default class CreateMediaModal extends Component {
@@ -12,7 +10,7 @@ export default class CreateMediaModal extends Component {
             show: false,
             url: "",
             description: ""
-        }
+        };
         this.createMedia = this.createMedia.bind(this);
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -28,7 +26,7 @@ export default class CreateMediaModal extends Component {
         this.setState({
 			[event.target.id]: event.target.value
 		});
-    }
+    };
 
     handleClose() {
         this.setState({ show: false });
@@ -56,7 +54,7 @@ export default class CreateMediaModal extends Component {
 
         return (
             <>
-                <Button onClick={this.handleShow} size="sm" variant="info">Add Media</Button>
+                <Button onClick={this.handleShow} style={{height: "30%"}} size="sm" variant="info">Add Media</Button>
 
                 <Modal centered show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header closeButton>

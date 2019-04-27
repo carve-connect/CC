@@ -24,12 +24,13 @@ const ProfileInfoCard = (props) => {
             <Container  
                 style= {{
                     width: '150%',
-                    height: '70%',
+                    height: '90%',
                     border: 'solid 1px #555',
                     backgroundColor: "darkgrey",
                     boxShadow:  '0 0 10px 5px rgba(0,0,0,0.6)',
                     borderRadius: '10px',
                     justifyContent: 'center'
+
                 }}>
                 <Row>
                     <Col className="col-3">
