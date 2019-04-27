@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
-
 // Styles at app level
 import './App.css';
 // Pages and components
@@ -42,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
         {/* We keep the same navbar up top and we can change options based on where we are in sequence for user */}
-        <BrowserRouter>
+        <Router>
         {/* Main routing methods can be found here */}
 
         <Switch>
@@ -53,7 +51,7 @@ class App extends Component {
           <Route path='/sign-up' component={SignUpPage} />
           <Route path='/error' component={ErrorPage} />
         </Switch>
-        </BrowserRouter>
+        </Router>
       </div>
 
     );

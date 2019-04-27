@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import CarouselCaption from 'react-bootstrap/CarouselCaption';
-import UserApi from 'api/UserApi';
+import UserApi from '../../api/UserApi';
 
 class LogoutPage extends Component {
     componentWillMount() {

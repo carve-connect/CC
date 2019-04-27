@@ -4,7 +4,7 @@ import MessagesSidebar from "./MessagesSidebar";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ReplyMsgModal from "../../../../components/ReplyMsgModal";
-import UserApi from "api/UserApi";
+import UserApi from "../../../../api/UserApi";
 
 
 class MessagesPage extends Component {

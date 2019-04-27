@@ -8,10 +8,9 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import axios from 'axios';
 import MediaGroup from '../../../../components/MediaGroup';
-import CardColumns from 'react-bootstrap/CardColumns';
-import VenueApi from "api/VenueApi";
-import UserApi from "api/UserApi";
-
+import VenueApi from "../../../../api/VenueApi";
+import UserApi from "../../../../api/UserApi";
+import VenueCarveCard from '../../../../components/VenueCarveCard'
 import Map from "../../../../components/Map";
 import WeatherForecast from "../../../../components/WeatherForecast";
 import WeatherHistory from "../../../../components/WeatherHistory";
@@ -21,7 +20,6 @@ import skatedude from "../../../../images/skatedude.jpeg";
 import MB from "../../../../images/MB.jpeg";
 import para from "../../../../images/para.jpeg";
 import skydive from "../../../../images/skydive.jpeg";
-
 
 
 export default class VenuePage extends Component {

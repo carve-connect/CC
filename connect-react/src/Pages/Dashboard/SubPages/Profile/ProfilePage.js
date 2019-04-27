@@ -8,7 +8,6 @@ import CreateCarveModal from "../../../../components/CreateCarveModal";
 import BuddyRequestModal from "../../../../components/BuddyRequestModal";
 import MediaGroup from "../../../../components/MediaGroup";
 import ProfileInfoCard from './ProfileInfoCard';
-
 import Container from 'react-bootstrap/Container';
 import CarveCardUserCreate from '../../../../components/CarveCardUserCreate';
 import WallPost from '../../../../components/WallPost';
@@ -24,7 +23,6 @@ import helmPhoto from '../../../../images/helmPhoto.jpeg';
 import upsidedown_snow from '../../../../images/upsidedown_snow.jpeg';
 import photosnow from '../../../../images/photosnow.jpeg';
 import droneguy from '../../../../images/drone guy.jpeg'
-
 
 
 export default class ProfilePage extends Component {
@@ -353,16 +351,16 @@ export default class ProfilePage extends Component {
 					this.setState({
 						userInfo: res.data.users[0][0],
 						userInfoLength: Object.keys(res.data.users[0][0]).length,
-                        pic: this.state.userInfo.photo.toString()
+
 					});
 				})
 			//window.location.reload();
 
 		}
-
-		UserApi.getUserInfo(userId).then((userObj) => {
-			this.setState({ userInfo: userObj, userInfoLength: Object.keys(userObj).length });
-		});
+		/*
+                UserApi.getUserInfo(userId).then((userObj) => {
+                    this.setState({ userInfo: userObj, userInfoLength: Object.keys(userObj).length });
+                });*/
 	}
 
 	setProfilePic() {

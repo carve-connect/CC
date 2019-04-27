@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import Row from "react-bootstrap/Row";
 import pic1 from "../../images/snow.jpeg"
 import Image from 'react-bootstrap/Image'
-import UserApi from "../../api/UserApi";
+import axios from 'axios';
 
 class SideMenu extends Component {
 	constructor(props) {

@@ -4,7 +4,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import UserApi from "../api/UserApi";
 import axios from 'axios';
 import CustomFormGroup from "./CustomFormGroup";
@@ -86,9 +86,9 @@ class TopNav extends Component {
 			}).catch(err => {
 				console.log('Error', err);
 			});
-	}
+	};
 
-	}};
+
 	componentWillMount()
 	{
 
@@ -113,6 +113,10 @@ class TopNav extends Component {
 
 		return (
 				<>
+					<Settings show={this.state.settings} handleClose={this.handleSettings}/>
+					<Help show={this.state.help} handleClose={this.handleHelp}/>
+					<Privacy show={this.state.privacy} handleClose={this.handlePrivacy}/>
+					<Contact show={this.state.contact} handleClose={this.handleContact}/>
 					<Nav className="navbar navbar-dark bg-dark nav-fill" >
 					{/*<a className="navbar-brand" href="/">Carve Connect</a>*/}
 						<NavbarBrand href='/' style = {{color:'lightskyblue',textShadowColor:'black',fontWeight:'bold',fontFamily:'monospace'}}>Carve Connect</NavbarBrand>
@@ -125,37 +129,6 @@ class TopNav extends Component {
 							</div>
 						</li>
 						<li>
-
-
-
-		let redirect = this.state.redirect;
-		if(redirect) {
-			return <link to={`/dashboard/profile/${this.state.userId}`}/>;
-		}
-
-	return (
-			<>
-				<Settings show={this.state.settings} handleClose={this.handleSettings}/>
-				<Help show={this.state.help} handleClose={this.handleHelp}/>
-				<Privacy show={this.state.privacy} handleClose={this.handlePrivacy}/>
-				<Contact show={this.state.contact} handleClose={this.handleContact}/>
-				<Nav className="navbar navbar-dark bg-dark nav-fill" >
-				{/*<a className="navbar-brand" href="/">Carve Connect</a>*/}
-					<NavbarBrand href={`/dashboard/profile/${this.state.userId}`} style={{
-						color: 'lightskyblue',
-						textShadowColor: 'black',
-                        fontWeight: 'bold'
-					}}>Carve Connect</NavbarBrand>
-					<li>
-						<div style={{justify:"left"}}>
-							<Form inline style={{justify:"left"}} >
-								<CustomFormGroup value = {this.state.search} type="integer" placeholder="User Search" className=" mr-sm-2" controlId ="search" onChange={this.handleChange}  />
-								<Button type="submit" block disabled={!this.validateForm()} href = {'/dashboard/profile/'+ parseInt(this.state.search)} style = {{width: 50, color: "white"}}>Find</Button>
-							</Form>
-						</div>
-					</li>
-						<li >
-
 							<ul className="navbar justify-content-end">
 								<div>
 

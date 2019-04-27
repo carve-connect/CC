@@ -2,15 +2,13 @@ import React, {Component} from 'react';
 import Col from "react-bootstrap/Col";
 import Mount_Snow_BG from "../../../../images/mount_snow_bg.png";
 
-import axios from "axios";
-
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 
 import UserFigure from "./UserFigure";
-import UserApi from 'api/UserApi';
+import UserApi from '../../../../api/UserApi';
 import queryString from 'query-string';
 
 
@@ -22,7 +20,7 @@ class UsersPage extends Component {
         this.state = {
             users: [],
             searchTerm: queryString.parse(props.location.search).search
-        }
+        };
 
         this.fetchUsers = this.fetchUsers.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -56,7 +54,7 @@ class UsersPage extends Component {
     // Handle state change of the searchTerm and the enter key
     handleChange = e => {
         this.setState({ searchTerm: e.target.value });
-    }
+    };
 
     onSubmit(e) {
         e.preventDefault();
