@@ -9,14 +9,17 @@ const con = require('../db');
 // Gets users based on the query parameters, if no parameters are given, it gets all users from db
 router.get('/', (req,res) => {
 	// Find all users from database
-	user_list = "CALL get_users()";
-	username = req.query.username;
-	first_name = req.query.first_name;
-	last_name = req.query.last_name;
+	let sql = "CALL get_users()";
+	const searchTerm = req.query.search;
 
-	con.query(user_list, (err, results) => {
+	// If we are querying something to search for, lets make a custom sql statement
+	if(typeof searchTerm != 'undefined') {
+    sql =  `select * from USERS where username like \'%${searchTerm}%\' or first_name like \'%${searchTerm}%\' or last_name like \'%${searchTerm}%\'`;
+  }
+
+
+	con.query(sql, (err, results) => {
 		if (err) throw err;
-
 		res.status(200).jsonp({users: results}).end;
 
 	})
@@ -105,6 +108,7 @@ router.delete('/', (req,res) => {
 
 // Grab specific user by their id
 router.get('/:userId', (req,res) => {
+    console.log('We are in here!')
 	const userId = req.params.userId;
 
 	get_user  = "call get_user(?)";

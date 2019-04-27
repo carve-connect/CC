@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import CarveCardUserAttend from "../../../../components/CarveCardUserAttend";
 import CreateCarveModal from "../../../../components/CreateCarveModal";
 import Button from "react-bootstrap/Button";
+
 import Container from 'react-bootstrap/Container';
 import MediaGroupFeed from "../../../../components/MediaGroupFeed";
 import Row from "react-bootstrap/Row";
@@ -10,6 +11,7 @@ import CarveCardBuddies from "../../../../components/CarveCardBuddies.js";
 import CarveCardVenuesFollowed from '../../../../components/CarveCardVenuesFollowed.js';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+
 
 export default class FeedPage extends Component {
 	constructor(props) {
@@ -144,6 +146,7 @@ export default class FeedPage extends Component {
 			<>
 				<CreateCarveModal handleClose={this.handleClick} show={this.state.show}/>
 				<Row>
+
 					<h1>User's Feed</h1>
 					<Button onClick={this.handleClick} variant="success" style={{margin: '5px',}}>Create Carve</Button>
 				</Row>
@@ -176,6 +179,7 @@ export default class FeedPage extends Component {
 					{content}
 				</Row>
 				</>
+
 		);
 	}
 }

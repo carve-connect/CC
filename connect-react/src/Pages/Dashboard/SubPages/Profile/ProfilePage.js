@@ -8,6 +8,7 @@ import CreateCarveModal from "../../../../components/CreateCarveModal";
 import BuddyRequestModal from "../../../../components/BuddyRequestModal";
 import MediaGroup from "../../../../components/MediaGroup";
 import ProfileInfoCard from './ProfileInfoCard';
+
 import Container from 'react-bootstrap/Container';
 import CarveCardUserCreate from '../../../../components/CarveCardUserCreate';
 import WallPost from '../../../../components/WallPost';
@@ -23,6 +24,7 @@ import helmPhoto from '../../../../images/helmPhoto.jpeg';
 import upsidedown_snow from '../../../../images/upsidedown_snow.jpeg';
 import photosnow from '../../../../images/photosnow.jpeg';
 import droneguy from '../../../../images/drone guy.jpeg'
+
 
 
 export default class ProfilePage extends Component {
@@ -307,6 +309,7 @@ export default class ProfilePage extends Component {
 
 	getUserInfo() {
 		// Getting the user id from the url param
+
         if (this.state.userId > 0) {
 			axios.get(`http://localhost:8000/users/${this.state.userId}`)
 				.then(res => {
@@ -354,7 +357,12 @@ export default class ProfilePage extends Component {
 					});
 				})
 			//window.location.reload();
+
 		}
+
+		UserApi.getUserInfo(userId).then((userObj) => {
+			this.setState({ userInfo: userObj, userInfoLength: Object.keys(userObj).length });
+		});
 	}
 
 	setProfilePic() {
