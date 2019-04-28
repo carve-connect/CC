@@ -13,13 +13,13 @@ import UserApi from "../../../../api/UserApi";
 import VenueCarveCard from '../../../../components/VenueCarveCard'
 import Map from "../../../../components/Map";
 import WeatherForecast from "../../../../components/WeatherForecast";
-import WeatherHistory from "../../../../components/WeatherHistory";
 import beach from "../../../../images/beach.jpeg";
 import mountain from "../../../../images/mountain.jpeg";
 import skatedude from "../../../../images/skatedude.jpeg";
 import MB from "../../../../images/MB.jpeg";
 import para from "../../../../images/para.jpeg";
 import skydive from "../../../../images/skydive.jpeg";
+import WeatherForecast1 from "../../../../components/WeatherForecast1";
 
 
 export default class VenuePage extends Component {
@@ -132,7 +132,7 @@ export default class VenuePage extends Component {
                             <Row>
                                 <Row><h2>Carves at {this.state.venueInfo.venue_name}</h2></Row>
                             </Row>
-                            <Row>
+                            <Row style={{borderTop: "5px solid black", width: "200%"}}>
                                 <VenueCarveCard venue_id={this.state.venueId}/>
                             </Row>
                         </Col>
@@ -141,24 +141,30 @@ export default class VenuePage extends Component {
                 content =
                     <Container style={{}}>
                         <h2>MEDIA for {this.state.venueInfo.venue_name}</h2>
-                        <Row>
+                        <Row style={{borderTop: "5px solid black", width: "200%"}}>
                             <MediaGroup type="venue" content_id={this.state.venueId}/>
                         </Row>
                     </Container>
             } else if (this.state.content === "info") {
-
+//<WeatherHistory id={this.state.venueId}/>
                 content =
                     <Container>
-                        <Row>
+                        <Row style={{width: "180%"}}>
                             <Col style={{backgroundColor: "cadetblue"}}>
-                                <h2>Map of area around Venue</h2>
+                                <h2>Map of area around Venue <i className="fa fa-globe fa-spin"
+                                                                style={{color: "white"}}/></h2>
                                 <Map latitude={this.state.venueInfo.lattitude}
                                      longitude={this.state.venueInfo.longitude}/>
                             </Col>
-                            <Col style={{backgroundColor: "grey"}}>
+                            <Col style={{backgroundColor: "grey", width: "50%"}}>
 
                                 <WeatherForecast id={this.state.venueId}/>
-                                <WeatherHistory id={this.state.venueId}/>
+
+                            </Col>
+                            <Col style={{backgroundColor: "slate", width: "50%"}}>
+                                <Container>
+                                    <WeatherForecast1 id={this.state.venueId}/>
+                                </Container>
                             </Col>
                         </Row>
                     </Container>
@@ -166,30 +172,36 @@ export default class VenuePage extends Component {
             return (
                 <>
                     {/* Follow button, image, and info about sports at the venue */}
-                    <Row>
-                        <Container>
-                            <Row>
-                                <Col>
+                    <Row style={{backgroundColor: "grey", width: "120%"}}>
+
+                        <Row style={{paddingLeft: "2%", width: "80%"}}>
+                            <Col style={{width: "100%"}}>
                                     <Figure>
                                         <h1>{venueInfo.venue_name}</h1>
-                                        <h4><em>{venueInfo.city}, {venueInfo.state}</em></h4>
+
 
                                         {/* Conditionally Render this button if we follow the venue already */}
                                         {/*<Button style={{margin:'5px'}} variant="info" onClick={this.onClick1}>Follow</Button>*/}
                                         {followButton}
 
                                         <Figure.Image rounded src={pic}/>
-                                        <h4>{venueInfo.about}</h4>
-                                        <h5>Sports: {venueInfo.snow_sports} {venueInfo.land_sports} {venueInfo.air_sports}</h5>
+
                                     </Figure>
+                                <div style={{backgroundColor: "cadetblue", paddingTop: "0px"}}>
+                                    <h3><em>{venueInfo.city}, {venueInfo.state}</em></h3>
+                                    <h3>About {venueInfo.venue_name}: {venueInfo.about}</h3>
+                                    <h3>Sports: {venueInfo.snow_sports} {venueInfo.water_sports} {venueInfo.land_sports} {venueInfo.air_sports}</h3>
+                                    <h3>Website with info for venue: <a href={venueInfo.url}>{venueInfo.url}</a></h3>
+                                </div>
                                 </Col>
                             </Row>
-                        </Container>
+
                     </Row>
 
                     {/* Row of buttons for navigation */}
-                    <Row className = 'justify-content-center'>
-                        <ButtonGroup size = 'lg' aria-label="Venue button group">
+                    <Row style={{backgroundColor: "gainsboro", width: "150%"}}>
+                        <ButtonGroup size='lg' aria-label="Venue button group"
+                                     style={{width: "80%", paddingBottom: "0px"}}>
                             <Button variant="secondary" onClick={this.handleInfo}>Information</Button>
                             <Button variant="secondary" onClick={this.handleCarves}>Carves</Button>
                             <Button variant="secondary" onClick={this.handleMedia}>Media</Button>
@@ -197,10 +209,12 @@ export default class VenuePage extends Component {
                     </Row>
 
                     {/* Carves at the venue */}
-                    <Row style={{marginTop: '2rem'}}>
+                    <Row style={{backgroundColor: "gainsboro", width: "150%"}}>
+                        <div>
                         {content}
+                        </div>
                     </Row>
-                    <Row style={{marginLeft: '3rem', width: '100%'}}>
+                    <Row style={{marginLeft: '3rem', width: '100%', backgroundColor: "gainsboro"}}>
 
                     </Row>
                         

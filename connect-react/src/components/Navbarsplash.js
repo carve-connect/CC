@@ -16,8 +16,6 @@ const TopNav1 = () => {
 				fontWeight:'bold',
 				fontFamily: 'monospace'}}>Carve Connect
 			</a>
-			<i className="fa fa-picture-o text-white"> </i>
-			<i className="fa fa-map text-white"> </i>
 
 		</nav>
 	);

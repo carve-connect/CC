@@ -9,7 +9,7 @@ const navStyle = {
     left: 0,
     padding: '10px'
 };
-export default class WeatherForecast extends Component {
+export default class WeatherForecast1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -46,7 +46,7 @@ export default class WeatherForecast extends Component {
             // console.log('Venue:', res.data);
             this.setState({
                 weather: res.data,
-                current: res.data.currently,
+                current: res.data.daily,
 
             });
         });
@@ -78,8 +78,7 @@ export default class WeatherForecast extends Component {
                         color='black'
                         icon={this.state.icon}
                         autoplay={true}/>
-                    <h2 style={{}}>Current Weather: {this.state.current.summary}</h2>
-                    <h2>Current Temperature: {this.state.current.temperature} °F</h2>
+                    <h2 style={{}}>Weekly Weather: {this.state.current.summary}</h2>
 
 
                 </div>
