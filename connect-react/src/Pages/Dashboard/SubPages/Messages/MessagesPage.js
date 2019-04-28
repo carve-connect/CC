@@ -47,7 +47,8 @@ class MessagesPage extends Component {
     // Deletes a specific message when the trash can icon is clicked
     deleteMessage = (e) =>{
         console.log(" delete:" +e);
-        axios.delete(`http://localhost:8000/messages/${e}`)
+        axios.delete(`http://localhost:8000/messages/${e}`);
+        window.location.reload();
     };
 
     // This function passes the data to the Reply Message Modal
@@ -66,6 +67,7 @@ class MessagesPage extends Component {
     handleModalClose() {
       this.setState({replyModalShow: false});
       this.fetchMessages();
+        window.location.reload();
     }
 
     render() {

@@ -47,13 +47,13 @@ class SideMenu extends Component {
 
 	render() {
 		const menuItems = {
-			'My Profile': {href: `/dashboard/profile/${localStorage.getItem('userId')}`},
-			'My Messages': {href: '/dashboard/inbox/ '},
-			'Venues': {href: '/dashboard/venues'},
-			'Users': {href: '/dashboard/users'},
-			'Explore': {href: '/dashboard/explore'},
-			'My Feed': {href: '/dashboard/feed'},
-			'Listings': {href: '/dashboard/listings'}
+			'My Profile ': {href: `/dashboard/profile/${localStorage.getItem('userId')}`, icon: "fa fa-id-card"},
+			'My Messages ': {href: '/dashboard/inbox/ ', icon: "fa fa-envelope-open"},
+			'Venues ': {href: '/dashboard/venues', icon: "fa fa-globe"},
+			'Users ': {href: '/dashboard/users', icon: "fa fa-user-circle"},
+			'Explore ': {href: '/dashboard/explore', icon: "fa fa-compass"},
+			'My Feed ': {href: '/dashboard/feed', icon: "fa fa-rss-square"},
+			'Listings ': {href: '/dashboard/listings', icon: "fa fa-list-alt"}
 		};
 
 		let listItems;
@@ -66,7 +66,7 @@ class SideMenu extends Component {
 					backgroundColor: "slategrey", color: "white", fontWeight: 'bold',
 					paddingRight: '0px', width: "100%"
 				}}>
-					{name}
+					{name}<i className={menuItems[name].icon} style={{color: "white"}}/>
 				</ListGroup.Item>
 			)
 		});

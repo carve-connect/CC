@@ -42,7 +42,8 @@ class MessagesPageInbox extends Component {
     // No clue who named this
     onClick2 = (e) =>{
         console.log(" delete:" +e);
-        axios.delete(`http://localhost:8000/messages/${e}`)
+        axios.delete(`http://localhost:8000/messages/${e}`);
+        window.location.reload();
     };
 
     // Forget what this does
@@ -51,6 +52,7 @@ class MessagesPageInbox extends Component {
             replyId: e,
             replier: e1,
             show1: !this.state.show1 });
+        window.location.reload();
 
     };
 

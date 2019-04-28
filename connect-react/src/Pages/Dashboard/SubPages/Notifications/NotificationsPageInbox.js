@@ -56,7 +56,8 @@ class NotificationsPageInbox extends Component {
     //onClick={this.onClick(message.message_id)}
     onClick2 = (e) =>{
         console.log(" delete:" +e);
-        axios.delete(`http://localhost:8000/messages/${e}`)
+        axios.delete(`http://localhost:8000/messages/${e}`);
+        window.location.reload();
 
 
 
@@ -64,13 +65,16 @@ class NotificationsPageInbox extends Component {
 
     handleClose2() {
         this.setState({ show2: false });
+        window.location.reload();
     };
     handleClose3() {
         this.setState({ show3: false });
+        window.location.reload();
     };
 
     handleClose4() {
         this.setState({show4: false});
+        window.location.reload();
     };
     br = (e,e1,e2,e3) => {
         this.setState({
@@ -79,7 +83,8 @@ class NotificationsPageInbox extends Component {
             typ: e2,
             show2: !this.state.show2
         });
-        axios.delete(`http://localhost:8000/messages/${e3}`)
+        axios.delete(`http://localhost:8000/messages/${e3}`);
+
     };
 
 
@@ -91,7 +96,8 @@ class NotificationsPageInbox extends Component {
             carI: e4,
             show3: !this.state.show3
         });
-        axios.delete(`http://localhost:8000/messages/${e3}`)
+        axios.delete(`http://localhost:8000/messages/${e3}`);
+
     };
 
     ca = (e, e1, e2, e3, e4) => {
@@ -102,7 +108,8 @@ class NotificationsPageInbox extends Component {
             carI: e4,
             show4: !this.state.show4
         });
-        axios.delete(`http://localhost:8000/messages/${e3}`)
+        axios.delete(`http://localhost:8000/messages/${e3}`);
+
     };
 
     render() {

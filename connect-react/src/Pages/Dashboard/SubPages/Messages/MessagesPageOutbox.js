@@ -34,7 +34,8 @@ class MessagesPageOutbox extends Component {
     //onClick={this.onClick(message.message_id)}
     onClick2 = (e) =>{
         console.log(" delete:" +e);
-        axios.delete(`http://localhost:8000/messages/${e}`)
+        axios.delete(`http://localhost:8000/messages/${e}`);
+        window.location.reload();
     };
 
 

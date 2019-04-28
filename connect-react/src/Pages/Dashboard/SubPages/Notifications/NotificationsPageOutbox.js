@@ -37,6 +37,14 @@ class NotificationsPageOutbox extends Component {
             });
 
     }
+
+    onClick2 = (e) => {
+        console.log(" delete:" + e);
+        axios.delete(`http://localhost:8000/messages/${e}`);
+        window.location.reload();
+
+
+    };
     render() {
         let messageRows;
 
@@ -50,7 +58,9 @@ class NotificationsPageOutbox extends Component {
                         <td>{message.type}</td>
                         <td>{message.carve}</td>
                         <td>{message.message_body}</td>
-                        <td><i className ="fa fa-trash-o text-white" /></td>
+                        <td><i className="fa fa-trash-o text-white" onClick={() => {
+                            this.onClick2(message.message_id)
+                        }}> </i></td>
                     </tr>
                 )
             });
