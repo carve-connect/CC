@@ -119,21 +119,25 @@ class NotificationsPageInbox extends Component {
                               onClick={() => this.br(message.message_id, message.sender_id, 'buddyAccept', message.message_id)}/>;
                     but2 = <i className="fa fa-thumbs-o-down text-danger"
                               onClick={() => this.br(message.message_id, message.sender_id, 'buddyDecline', message.message_id)}/>;
+
                 }
                 else if(message.type === 'invite') {
                     but1 = <i className="fa fa-thumbs-o-up text-success"
                               onClick={() => this.ci(message.message_id, message.sender_id, 'inviteAccept', message.message_id, message.carve)}/>;
                     but2 = <i className="fa fa-thumbs-o-down text-danger"
                               onClick={() => this.ci(message.message_id, message.sender_id, 'inviteDeny', message.message_id, message.carve)}/>;
+
                 }
                 else if(message.type === 'attendRequest') {
                     but1 = <i className="fa fa-thumbs-o-up text-success"
                               onClick={() => this.ca(message.message_id, message.sender_id, 'attendAccept', message.message_id, message.carve)}/>;
                     but2 = <i className="fa fa-thumbs-o-down text-danger"
                               onClick={() => this.ca(message.message_id, message.sender_id, 'attendDeny', message.message_id, message.carve)}/>;
+
                 } else {
                     but1 = <i/>;
                     but2 = <i/>;
+
                 }
 
                 return (
@@ -142,6 +146,7 @@ class NotificationsPageInbox extends Component {
                         <td>{message.sender_id}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
+                        <td>{message.carve}</td>
                         <td>{message.message_body}</td>
                         <td>{but1}</td>
                         <td>{but2}</td>
@@ -178,6 +183,7 @@ class NotificationsPageInbox extends Component {
                                     <th scope="col" style={{width:"6%"}}>Sender</th>
                                     <th scope="col" style={{width:"4%"}}>Timestamp</th>
                                     <th scope="col" style={{width:"4%"}}>Type</th>
+                                    <th scope="col" style={{width: "4%"}}>Carve</th>
                                     <th scope="col">Body</th>
                                     <th scope="col" style={{width:"1%"}}>Approve</th>
                                     <th scope="col" style={{width:"1%"}}>Deny</th>

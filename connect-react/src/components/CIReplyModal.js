@@ -35,7 +35,7 @@ export default class CIReplyModal extends Component {
         {
             axios.post('http://localhost:8000/carveAt', {
                 carve: this.props.carve,
-                user: this.props.sender,
+                user: this.props.replier,
 
                 type: this.props.ty
             });}

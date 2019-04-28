@@ -40,7 +40,8 @@ export default class CarveAttendRequestModal extends Component {
             subject: 'Attend Carve Request ',
             body: this.state.body,
             msgType: 'attendRequest',
-            carve: this.props.cid
+            carve: this.props.cid,
+            type: ['athlete']
         });
         this.props.handleClose();
     }

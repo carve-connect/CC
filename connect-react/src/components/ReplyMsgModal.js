@@ -44,7 +44,7 @@ export default class ReplyMsgModal extends Component {
         // Post message body to api
         axios.post('http://localhost:8000/messages', message)
           .then(() => {
-              this.props.refresh();
+              //this.props.refresh;
               this.props.handleClose();
           });
     }

@@ -48,6 +48,7 @@ class NotificationsPageOutbox extends Component {
                         <td>{message.rec_id}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
+                        <td>{message.carve}</td>
                         <td>{message.message_body}</td>
                         <td><i className ="fa fa-trash-o text-white" /></td>
                     </tr>
@@ -76,6 +77,7 @@ class NotificationsPageOutbox extends Component {
                                     <th scope="col" style={{width:"6%"}}>To</th>
                                     <th scope="col" style={{width:"4%"}}>Timestamp</th>
                                     <th scope="col" style={{width:"4%"}}>Type</th>
+                                    <th scope="col" style={{width: "4%"}}>Carve</th>
                                     <th scope="col">Body</th>
                                     <th scope="col" style={{width:"1%"}}>Delete</th>
                                 </tr>
