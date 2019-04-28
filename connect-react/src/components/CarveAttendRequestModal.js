@@ -16,7 +16,7 @@ export default class CarveAttendRequestModal extends Component {
             type: 'attendRequest',
             body: '',
             sender: localStorage.getItem('userId'),
-            carve: 0
+            carve: 1
         };
 
         this.sendMessage = this.sendMessage.bind(this);

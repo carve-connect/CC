@@ -65,11 +65,12 @@ class MessagesPageInbox extends Component {
                 return (
                     <tr key={index}>
                         <th>{message.message_subject}</th>
-                        <td>{message.sender_Id}</td>
+                        <td>{message.sender_id}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
                         <td>{message.message_body}</td>
-                        <td><i onClick={() => this.onClick1(message.message_id,message.sender_Id)} className ="fa fa-inbox text-white"> </i></td>
+                        <td><i onClick={() => this.onClick1(message.message_id, message.sender_id)}
+                               className="fa fa-inbox text-white"> </i></td>
                         <td > <i  className ="fa fa-trash-o text-white" onClick={ () => { this.onClick2(message.message_id) } }> </i></td>
                     </tr>
                 )

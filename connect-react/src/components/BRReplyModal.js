@@ -30,8 +30,8 @@ export default class BRReplyModal extends Component {
 
     // Hits API with body of carve
     sendMessage() {
-
-        if(this.props.type === 'buddyAccept')
+        alert("BR reply " + this.props.type);
+        if (this.props.type == 'buddyAccept')
         {
             axios.post('http://localhost:8000/follows/buddies', {
                 user1: this.state.sender,
@@ -69,7 +69,7 @@ export default class BRReplyModal extends Component {
                    onHide={this.props.handleClose}
                    style = {{}}>
                 <Modal.Header closeButton style = {{color: "lightgrey",backgroundColor:"darkslategrey"}}>
-                    <Modal.Title id="contained-modal-title-vcenter">Reply Message</Modal.Title>
+                    <Modal.Title id="contained-modal-title-vcenter">Buddy Request Reply</Modal.Title>
                 </Modal.Header>
 
 

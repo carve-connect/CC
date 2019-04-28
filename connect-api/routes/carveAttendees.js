@@ -17,12 +17,13 @@ router.get('/', (req,res) => {
 
 // Creates a new carve_attendee
 router.post('/', (req,res) => {
-    const {carve,user,userType} = req.body;
+    const {carve, user, type} = req.body;
     // The carve_attendeesname wasn't found in the database
     // Create insert query for new carve_attendees
+    console.log(carve + " " + user + " " + type);
     new_carve_attendees = "CALL add_carve_attendee(?,?,?)";
     // Execute the query to insert into the database
-    con.query(new_carve_attendees,[carve,user,userType[0]], (err, results) => {
+    con.query(new_carve_attendees, [carve, user, type[0]], (err, results) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })

@@ -45,7 +45,7 @@ class NotificationsPageOutbox extends Component {
                 return (
                     <tr>
                         <th>{message.message_subject}</th>
-                        <td>{message.rec_Id}</td>
+                        <td>{message.rec_id}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
                         <td>{message.message_body}</td>

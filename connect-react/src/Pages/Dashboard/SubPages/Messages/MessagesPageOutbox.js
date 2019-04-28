@@ -47,7 +47,7 @@ class MessagesPageOutbox extends Component {
                 return (
                     <tr key={index}>
                         <th>{message.message_subject}</th>
-                        <td>{message.sender_Id}</td>
+                        <td>{message.rec_id}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
                         <td>{message.message_body}</td>
@@ -76,7 +76,7 @@ class MessagesPageOutbox extends Component {
                                 <thead>
                                 <tr>
                                     <th scope="col" style={{width:"6%"}}>Subject</th>
-                                    <th scope="col" style={{width:"6%"}}>Sender</th>
+                                    <th scope="col" style={{width: "6%"}}>Recipient</th>
                                     <th scope="col" style={{width:"4%"}}>Timestamp</th>
                                     <th scope="col" style={{width:"4%"}}>Type</th>
                                     <th scope="col">Body</th>

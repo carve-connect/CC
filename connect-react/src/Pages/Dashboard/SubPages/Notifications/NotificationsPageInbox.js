@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import NotificationsSidebar from "./NotificationsSidebar";
 import BRReplyModal from "../../../../components/BRReplyModal";
 import CIReplyModal from "../../../../components/CIReplyModal";
+import CAReplyModal from "../../../../components/CAReplyModal";
 
 
 class NotificationsPageInbox extends Component {
@@ -25,13 +26,16 @@ class NotificationsPageInbox extends Component {
             show: false,
             show2: false,
             show3:false,
+            show4: false,
             typ: [],
             rep: 0,
             replier: 0,
-            carI:0
+            carI: 0,
+            ty: ['athlete']
         };
         this.handleClose2 = this.handleClose2.bind(this);
         this.handleClose3 = this.handleClose3.bind(this);
+        this.handleClose4 = this.handleClose4.bind(this);
     }
     componentWillMount()
     {
@@ -64,6 +68,10 @@ class NotificationsPageInbox extends Component {
     handleClose3() {
         this.setState({ show3: false });
     };
+
+    handleClose4() {
+        this.setState({show4: false});
+    };
     br = (e,e1,e2,e3) => {
         this.setState({
             rep: e,
@@ -86,12 +94,13 @@ class NotificationsPageInbox extends Component {
         axios.delete(`http://localhost:8000/messages/${e3}`)
     };
 
-    ca = (e,e1,e2,e3) => {
+    ca = (e, e1, e2, e3, e4) => {
         this.setState({
             rep: e,
             replier: e1,
             typ: e2,
-            show2: !this.state.show2
+            carI: e4,
+            show4: !this.state.show4
         });
         axios.delete(`http://localhost:8000/messages/${e3}`)
     };
@@ -106,22 +115,31 @@ class NotificationsPageInbox extends Component {
             messageRows = this.state.messages.map((message, index) => {
 
                 if(message.type === 'buddyRequest') {
-                    but1 = <i className="fa fa-thumbs-o-up text-success" onClick={() =>  this.br(message.message_id,message.sender_Id,'buddyAccept',message.message_id)}/>;
-                    but2 = <i className ="fa fa-thumbs-o-down text-danger" onClick={() =>  this.br(message.message_id,message.sender_Id,'buddyDecline',message.message_id)} />;
+                    but1 = <i className="fa fa-thumbs-o-up text-success"
+                              onClick={() => this.br(message.message_id, message.sender_id, 'buddyAccept', message.message_id)}/>;
+                    but2 = <i className="fa fa-thumbs-o-down text-danger"
+                              onClick={() => this.br(message.message_id, message.sender_id, 'buddyDecline', message.message_id)}/>;
                 }
                 else if(message.type === 'invite') {
-                    but1 = <i className="fa fa-thumbs-o-up text-success" onClick={() =>  this.ci(message.message_id,message.sender_Id,'inviteAccept',message.message_id,message.carve)}/>;
-                    but2 = <i className ="fa fa-thumbs-o-down text-danger"onClick={() =>  this.ci(message.message_id,message.sender_Id,'inviteDeny',message.message_id,message.carve)}/>;
+                    but1 = <i className="fa fa-thumbs-o-up text-success"
+                              onClick={() => this.ci(message.message_id, message.sender_id, 'inviteAccept', message.message_id, message.carve)}/>;
+                    but2 = <i className="fa fa-thumbs-o-down text-danger"
+                              onClick={() => this.ci(message.message_id, message.sender_id, 'inviteDeny', message.message_id, message.carve)}/>;
                 }
                 else if(message.type === 'attendRequest') {
-                    but1 = <i className="fa fa-thumbs-o-up text-success"/>;
-                    but2 = <i className ="fa fa-thumbs-o-down text-danger" />;
+                    but1 = <i className="fa fa-thumbs-o-up text-success"
+                              onClick={() => this.ca(message.message_id, message.sender_id, 'attendAccept', message.message_id, message.carve)}/>;
+                    but2 = <i className="fa fa-thumbs-o-down text-danger"
+                              onClick={() => this.ca(message.message_id, message.sender_id, 'attendDeny', message.message_id, message.carve)}/>;
+                } else {
+                    but1 = <i/>;
+                    but2 = <i/>;
                 }
 
                 return (
                     <tr>
                         <th>{message.message_subject}</th>
-                        <td>{message.sender_Id}</td>
+                        <td>{message.sender_id}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
                         <td>{message.message_body}</td>
@@ -137,7 +155,12 @@ class NotificationsPageInbox extends Component {
 
             <>
                 <BRReplyModal replier={this.state.replier} replyId={this.state.rep} type ={[this.state.typ]} show={this.state.show2} handleClose={this.handleClose2}/>
-                <CIReplyModal carve = {this.state.carI} replier={this.state.replier} replyId={this.state.rep} type ={[this.state.typ]} show={this.state.show3} handleClose={this.handleClose3}/>
+                <CIReplyModal carve={this.state.carI} replier={this.state.replier} replyId={this.state.rep}
+                              type={[this.state.typ]} ty={[this.state.ty]} show={this.state.show3}
+                              handleClose={this.handleClose3}/>
+                <CAReplyModal carve={this.state.carI} replier={this.state.replier} replyId={this.state.rep}
+                              type={[this.state.typ]} ty={[this.state.ty]} show={this.state.show4}
+                              handleClose={this.handleClose4}/>
                 <Row className="justify-content-md-center" style={{ paddingLeft: '0px',backgroundColor: "lightgray", height: "100%"}}>
 
                     <NotificationsSidebar  style = {{paddingRight: '0px'}} />
