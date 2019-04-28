@@ -41,7 +41,6 @@ class NotificationsPageOutbox extends Component {
     onClick2 = (e) => {
         console.log(" delete:" + e);
         axios.delete(`http://localhost:8000/messages/${e}`);
-        window.location.reload();
 
 
     };
