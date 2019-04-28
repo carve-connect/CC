@@ -145,12 +145,12 @@ export default class FeedPage extends Component {
 		return (
 			<>
 				<CreateCarveModal handleClose={this.handleClick} show={this.state.show}/>
-				<Row>
+                <Row style={{backgroundColor: "cadetblue", paddingLeft: "10%", width: "200%"}}>
 
 					<h1>User's Feed</h1>
 					<Button onClick={this.handleClick} variant="success" style={{margin: '5px',}}>Create Carve</Button>
 				</Row>
-				<Row>
+                <Row style={{backgroundColor: "grey", paddingLeft: "35%", width: "200%"}}>
 					<ToggleButtonGroup
 						name={"Carves"}
 
@@ -164,7 +164,7 @@ export default class FeedPage extends Component {
 					</ToggleButtonGroup>
 
 				</Row>
-				<Row>
+                <Row style={{backgroundColor: "darkgrey", paddingLeft: "40%", width: "200%"}}>
 					<ToggleButtonGroup name={"media"}
 
 					>
@@ -175,7 +175,7 @@ export default class FeedPage extends Component {
 							Media</ToggleButton>
 					</ToggleButtonGroup>
 				</Row>
-				<Row>
+                <Row style={{backgroundColor: "gainsboro"}}>
 					{content}
 				</Row>
 				</>

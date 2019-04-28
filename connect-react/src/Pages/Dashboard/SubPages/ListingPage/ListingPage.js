@@ -2,12 +2,16 @@ import React, {Component} from 'react'
 import Button from "react-bootstrap/Button";
 import CreateCarveModal from "../../../../components/CreateCarveModal";
 import CarveCard from "../../../../components/CarveCard";
+import Row from "react-bootstrap/Row";
 
 export default class ListingPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			show: false
+            show: false,
+            completed: 0,
+            athlete: true,
+            photographer: true
 		}
 	}
 
@@ -21,14 +25,18 @@ export default class ListingPage extends Component {
         return (
 			<div>
 				<CreateCarveModal handleClose={this.handleClick} show={this.state.show}/>
-				<div style={{ display: 'flex', marginTop: '8px' }}>
-					<h2 style={{ width: '80%' }}>Listing Page</h2>
+                <Row style={{width: "200%", height: "100%", backgroundColor: "cadetblue"}}>
+                    <h2 style={{width: '80%'}}>Listings Page</h2>
 					<Button onClick={this.handleClick} style={{ margin: '5px' }}>Create Carve</Button>
-				</div>
-				<div>
+                </Row>
+                <Row style={{width: "200%", backgroundColor: "grey"}}>
 					<h1>Carves open for attendance request</h1>
-					<CarveCard/>
-				</div>
+
+                </Row>
+                <Row style={{width: "100%", backgroundColor: "gainsboro"}}>
+                    <CarveCard completed={this.state.completed} athlete={this.state.athlete}
+                               photographer={this.state.photographer}/>
+                </Row>
 			</div>
 		);
 	}

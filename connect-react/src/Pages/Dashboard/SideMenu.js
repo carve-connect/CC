@@ -79,7 +79,7 @@ class SideMenu extends Component {
 				return (
 					<ListGroup.Item key={index} action href={`/dashboard/profile/${this.state.buddies[index].user_id2}`} style={{
 						backgroundColor: "seashell", color: "green",
-                        paddingRight: '0px', width: "100%"
+                        paddingRight: '0px', width: "125%",
 					}}>
                         {this.state.names[0] + " " + this.state.buddies[index].username} <Image src={pic1}
                                                                                                 roundedCircle
@@ -96,19 +96,20 @@ class SideMenu extends Component {
 				{/* First column that holds the menu items */}
 				<Col xs={1} style={{paddingRight: '0px', backgroundColor: "slategrey"}}>
 					<Row>
-						<ListGroup variant="flush" defaultActiveKey="1" style={{width: "100%"}}>
+                        <ListGroup variant="flush" defaultActiveKey="1" style={{width: "90%"}}>
 							{listItems}
 						</ListGroup>
 					</Row>
 					<Row style={{paddingBottom:"0px"}}>
 						<h5 style={{
 							color: "green", paddingLeft: "10%", fontWeight: 'bold',
-							paddingTop: "10%", backgroundColor: "seashell", width: "100%", paddingBottom: "0px"
+                            paddingTop: "10%", backgroundColor: "seashell", width: "90%", paddingBottom: "0px"
 						}}>Buddies <i className="fa fa-users " style={{color: "green"}}/></h5>
 					</Row>
-					<Row style={{paddingTop: "0px"}}>
+                    <Row style={{paddingTop: "0px", width: "90%"}}>
 
-						<ListGroup variant="flush" defaultActiveKey="1" style={{paddingTop: "0px", width: "100%"}}>
+                        <ListGroup variant="flush" defaultActiveKey="1"
+                                   style={{paddingTop: "0px", width: "120%", paddingLeft: "15%"}}>
 							{buddiesList}
 						</ListGroup>
 					</Row>

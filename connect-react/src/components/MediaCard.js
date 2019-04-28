@@ -1,18 +1,9 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import FormGroup from 'react-bootstrap/FormGroup';
-import Table from 'react-bootstrap/Table';
 import Container from "react-bootstrap/Container";
-
-import CustomFormGroup from './CustomFormGroup';
-import ListGroup from 'react-bootstrap/ListGroup';
 import CommentTable from './CommentTable';
 import MediaLikes from './MediaLikes';
-
 
 
 const MediaCard = (props) => {
@@ -36,10 +27,10 @@ const MediaCard = (props) => {
                     </Container>
                 </Card.Body>
                {/* comment table would be here */}
-               <CommentTable media={props.media}/>
+                <CommentTable media={props.media} type={"media"}/>
                 <Card.Footer style = {{fontSize: '10px'}}><em>Create_Time: {props.media.time}</em></Card.Footer>
             </Card>
         </>
     );
-}
+};
 export default MediaCard;

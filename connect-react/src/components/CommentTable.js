@@ -1,13 +1,7 @@
-import React from 'react';
-import {Component} from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
-import {Form} from 'react-bootstrap';
-import {Row} from 'react-bootstrap';
-import {Col} from 'react-bootstrap';
-import {Button} from 'react-bootstrap';
-import {Table} from 'react-bootstrap';
+import {Button, Col, Form, Row, Table} from 'react-bootstrap';
 import LikeBar from './LikeBar';
-
 
 
 export default class CommentTable extends Component {
@@ -20,7 +14,7 @@ export default class CommentTable extends Component {
             carve: 0,
             media: 0,
             profile: 0
-        }
+        };
         this.handleChange = this.handleChange.bind(this);
     }
  
@@ -48,7 +42,7 @@ export default class CommentTable extends Component {
 		this.setState({
             comment: event.target.value,
             poster: localStorage.getItem('userId'),
-            carve: this.props.media.carve,
+            carve: this.props.carve.carve_id,
             media: this.props.media.media_id,
             profile: null
 		});
@@ -68,21 +62,40 @@ export default class CommentTable extends Component {
         let commentList;
 
         if(this.state.comments.length > 0){
+
             commentList = this.state.comments.map((com, index) => {
-                if(com.media == this.props.media.media_id){
-                    return (
-                        <tr>
-                            <td>{com.poster}</td>
-                            <td>{com.comment}</td>
-                            <td>
-                              <LikeBar media={this.props.media} comment={com}/>
-                            </td>
-                        </tr>
-                    );
-                } else{
-                    return(<></>)
+                if (this.props.type == "media") {
+                    if (com.media == this.props.media.media_id) {
+                        return (
+                            <tr>
+                                <td>{com.poster}</td>
+                                <td>{com.comment}</td>
+                                <td>
+                                    <LikeBar media={this.props.media} comment={com}/>
+                                </td>
+                            </tr>
+                        );
+                    } else {
+                        return (<></>)
+                    }
+                } else if (this.props.type == "carve") {
+                    if (com.carve == this.props.carve.carve_id) {
+                        return (
+                            <tr>
+                                <td>{com.poster}</td>
+                                <td>{com.comment}</td>
+                                <td>
+                                    <LikeBar media={this.props.media} comment={com}/>
+                                </td>
+                            </tr>
+                        );
+                    } else {
+                        return (<></>)
+                    }
                 }
+
             });
+
         }
 
         return (
