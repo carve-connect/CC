@@ -74,10 +74,10 @@ class CarveCardUserFollowed extends Component {
         axios.get(`http://localhost:8000/users`)
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
-                console.log("users: ", JSON.stringify(res.data.users[0][0].username));
+                //console.log("users: ", JSON.stringify(res.data.users[0][0].username));
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
-                    users: res.data.data.users[0]
+                    users: res.data.users[0]
                 });
 
             });
