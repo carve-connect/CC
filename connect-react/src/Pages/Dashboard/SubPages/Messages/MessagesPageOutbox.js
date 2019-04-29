@@ -49,6 +49,7 @@ class MessagesPageOutbox extends Component {
                     <tr key={index}>
                         <th>{message.message_subject}</th>
                         <td>{message.rec_id}</td>
+                        <td>{message.reply}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
                         <td>{message.message_body}</td>
@@ -78,6 +79,7 @@ class MessagesPageOutbox extends Component {
                                 <tr>
                                     <th scope="col" style={{width:"6%"}}>Subject</th>
                                     <th scope="col" style={{width: "6%"}}>Recipient</th>
+                                    <th scope="col" style={{width: "6%"}}>Reply Id:</th>
                                     <th scope="col" style={{width:"4%"}}>Timestamp</th>
                                     <th scope="col" style={{width:"4%"}}>Type</th>
                                     <th scope="col">Body</th>

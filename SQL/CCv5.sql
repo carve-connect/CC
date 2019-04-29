@@ -398,7 +398,9 @@ DROP procedure IF EXISTS `CCv5`.`add_user`;
 
 DELIMITER $$
 USE `CCv5`$$
-CREATE PROCEDURE `add_user`(in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40), in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100), in profileType set ('photographer', 'filmographer', 'droneOperator', 'athlete', 'proAthlete', 'fan')
+CREATE PROCEDURE `add_user`(in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40)
+                           , in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100)
+                           , in profileType set ('photographer', 'filmographer', 'droneOperator', 'athlete', 'proAthlete', 'fan')
                            , in winterSports set ('snowboard','ski','snowmobile'), in waterSports set ('surf','waterSki')
                            , in landSports set ('skateboard','BMX'), in airSports set ('skydive','hangGlide'))
 BEGIN
@@ -543,7 +545,9 @@ DROP procedure IF EXISTS `CCv5`.`update_user`;
 
 DELIMITER $$
 USE `CCv5`$$
-CREATE PROCEDURE `update_user`(in id int, in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40), in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100), in profileType set ('photographer', 'filmographer', 'droneOperator', 'athlete', 'proAthlete', 'fan')
+CREATE PROCEDURE `update_user`(in id int, in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40)
+                              , in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100)
+                              , in profileType set ('photographer', 'filmographer', 'droneOperator', 'athlete', 'proAthlete', 'fan')
                               , in snowSports set ('snowboard','ski','snowmobile'), in waterSports set ('surf','waterSki')
                               , in landSports set ('skateboard','BMX'), in airSports set ('skydive','hangGlide'))
 BEGIN
@@ -2401,6 +2405,47 @@ BEGIN
          left join (all_follows) on (all_media.poster = all_follows.user_id2)
   where (all_follows.user_id1 = id and all_follows.type = 'buddy');
 
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure add_reply
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`add_reply`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `add_reply`(in sender int, in reciever int, in subject varchar(50), in body varchar(500),
+                             in msgType SET ('normal','buddyRequest', 'buddyAccept', 'buddyDecline', 'attendRequest', 'attendAccept', 'attendDeny', 'invite', 'inviteAccept', 'inviteDeny', 'reply'),
+                             in car int,
+                             in typ SET ('photographer', 'filmographer', 'droneOperator', 'athlete', 'proAthlete', 'fan'),
+                             in rep int)
+BEGIN
+
+  insert into messages (sender_Id, rec_Id, message_subject, message_body, type, carve, typ, reply)
+  values (sender, reciever, subject, body, msgType, car, typ, rep);
+
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure complete_carve
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`complete_carve`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `complete_carve`(in id int)
+BEGIN
+  update carves
+  set completed = 1
+  where carve_id = id;
 END$$
 
 DELIMITER ;

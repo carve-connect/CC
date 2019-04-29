@@ -47,9 +47,9 @@ class MessagesPageInbox extends Component {
     };
 
     // Forget what this does
-    onClick1 =(e,e1) => {
+    onClick1 = (e, e1, e2) => {
         this.setState({
-            replyId: e,
+            reply: e,
             replier: e1,
             show1: !this.state.show1 });
 
@@ -68,6 +68,7 @@ class MessagesPageInbox extends Component {
                     <tr key={index}>
                         <th>{message.message_subject}</th>
                         <td>{message.sender_id}</td>
+                        <td>{message.reply}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
                         <td>{message.message_body}</td>
@@ -82,7 +83,8 @@ class MessagesPageInbox extends Component {
         return (
 
             <>
-                <ReplyMsgModal replyId = {this.state.replyID} replier = {this.state.replier} handleClose={this.onClick1} show={this.state.show1} />
+                <ReplyMsgModal reply={this.state.reply} replier={this.state.replier} handleClose={this.onClick1}
+                               show={this.state.show1}/>
                 <Row className="justify-content-md-center" style={{ paddingLeft: '0px',backgroundColor: "lightgray", height: "100%"}}>
 
                     <MessagesSidebar  style = {{paddingRight: '0px'}} />
@@ -98,6 +100,7 @@ class MessagesPageInbox extends Component {
                                 <tr>
                                     <th scope="col" style={{width:"6%"}}>Subject</th>
                                     <th scope="col" style={{width:"6%"}}>Sender</th>
+                                    <th scope="col" style={{width: "6%"}}>Reply Id:</th>
                                     <th scope="col" style={{width:"4%"}}>Timestamp</th>
                                     <th scope="col" style={{width:"4%"}}>Type</th>
                                     <th scope="col">Body</th>

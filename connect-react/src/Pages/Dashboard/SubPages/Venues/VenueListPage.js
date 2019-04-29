@@ -172,7 +172,7 @@ export default class VenueListPage extends Component {
                         <Row style={{width: "100%", height: "100%"}}>
                             <Carousel fade responsive={responsive} className="carousel" pauseOnHover={true}
                                       style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
-                                      autoPlay={true} autoPlayInterval={2000}>
+                                      autoPlay={true} autoPlayInterval={5000}>
                         {this.createSnowRow('')}
                             </Carousel>
                     </Row>
@@ -182,7 +182,7 @@ export default class VenueListPage extends Component {
                     <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
                         <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
                                   style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
-                                  autoPlay={true} autoPlayInterval={2000}>
+                                  autoPlay={false} autoPlayInterval={2000}>
                             {this.createWaterRow('')}
                         </Carousel>
                     </Row>
@@ -192,7 +192,7 @@ export default class VenueListPage extends Component {
                     <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
                         <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
                                   style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
-                                  autoPlay={true} autoPlayInterval={2000}>
+                                  autoPlay={false} autoPlayInterval={2000}>
                             {this.createLandRow('')}
                         </Carousel>
                     </Row>
@@ -203,7 +203,7 @@ export default class VenueListPage extends Component {
                     <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
                         <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
                                   style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
-                                  autoPlay={true} autoPlayInterval={2000}>
+                                  autoPlay={false} autoPlayInterval={2000}>
                             {this.createAirRow('')}
                         </Carousel>
                     </Row>

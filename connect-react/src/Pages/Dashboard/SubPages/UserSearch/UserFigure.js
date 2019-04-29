@@ -16,7 +16,11 @@ const UserFigure = (props) => {
             </a>
 
             <Figure.Caption style = {{textAlign: 'center'}}>
-                <a href= {props.href}>{props.name}</a>
+                <a href={props.href}>{props.name} </a>
+                <i className="fa fa-camera fa-spin"
+                   style={{color: "skyblue"}}/>
+                <i className="fa fa-shield fa-spin"
+                   style={{color: "skyblue"}}/>
             </Figure.Caption>
         </Figure>
     );
