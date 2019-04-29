@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
-import ListGroup from 'react-bootstrap/ListGroup';
-import { Container } from 'react-bootstrap';
 import MediaCard from './MediaCard';
-
 
 
 export default class MediaGroup extends Component {

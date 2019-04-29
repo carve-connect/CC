@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
-import CarveCardUserAttend from "../../../../components/CarveCardUserAttend";
-import CreateCarveModal from "../../../../components/CreateCarveModal";
+import CarveCardUserAttend from "../../../../components/CarveComponents/CarveCardUserAttend";
+import CreateCarveModal from "../../../../components/CarveComponents/CreateCarveModal";
 import Button from "react-bootstrap/Button";
 
 import Container from 'react-bootstrap/Container';
-import MediaGroupFeed from "../../../../components/MediaGroupFeed";
+import MediaGroupFeed from "../../../../components/MediaComponents/MediaGroupFeed";
 import Row from "react-bootstrap/Row";
-import CarveCardUserFollowed from "../../../../components/CarveCardUserFollowed.js";
-import CarveCardBuddies from "../../../../components/CarveCardBuddies.js";
-import CarveCardVenuesFollowed from '../../../../components/CarveCardVenuesFollowed.js';
+import CarveCardUserFollowed from "../../../../components/CarveComponents/CarveCardUserFollowed.js";
+import CarveCardBuddies from "../../../../components/CarveComponents/CarveCardBuddies.js";
+import CarveCardVenuesFollowed from '../../../../components/CarveComponents/CarveCardVenuesFollowed.js';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 

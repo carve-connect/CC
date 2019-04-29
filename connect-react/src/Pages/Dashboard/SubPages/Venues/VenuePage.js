@@ -7,19 +7,19 @@ import Mount_Snow from '../../../../images/mount_snow_bg.png'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import axios from 'axios';
-import MediaGroup from '../../../../components/MediaGroup';
+import MediaGroup from '../../../../components/MediaComponents/MediaGroup';
 import VenueApi from "../../../../api/VenueApi";
 import UserApi from "../../../../api/UserApi";
-import VenueCarveCard from '../../../../components/VenueCarveCard'
-import Map from "../../../../components/Map";
-import WeatherForecast from "../../../../components/WeatherForecast";
+import VenueCarveCard from '../../../../components/CarveComponents/VenueCarveCard'
+import Map from "../../../../components/VenueComponents/Map";
+import WeatherForecast from "../../../../components/VenueComponents/WeatherForecast";
 import beach from "../../../../images/beach.jpeg";
 import mountain from "../../../../images/mountain.jpeg";
 import skatedude from "../../../../images/skatedude.jpeg";
 import MB from "../../../../images/MB.jpeg";
 import para from "../../../../images/para.jpeg";
 import skydive from "../../../../images/skydive.jpeg";
-import WeatherForecast1 from "../../../../components/WeatherForecast1";
+import WeatherForecast1 from "../../../../components/VenueComponents/WeatherForecast1";
 
 
 export default class VenuePage extends Component {

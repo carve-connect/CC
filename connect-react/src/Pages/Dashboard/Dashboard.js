@@ -2,7 +2,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Container from "./Container";
 import SideMenu from "./SideMenu";
-import Navbar from "../../components/Navbar";
+import Navbar from "./Navbar";
 
 const Dashboard = () => {
 	return (

@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
-import CarveInviteModal from "./CarveInviteModal";
-import CarveAttendRequestModal from "./CarveAttendRequestModal";
+import Button from 'react-bootstrap/Button';
+import CarveInviteModal from "../NotificationComponents/CarveInviteModal";
+import CarveAttendRequestModal from "../NotificationComponents/CarveAttendRequestModal";
 import CarveLikes from "./CarveLikes";
-import CommentTable from "./CommentTable";
-import MediaGroup from "./MediaGroup";
+import CommentTable from "../WallComponents/CommentTable";
+import MediaGroup from "../MediaComponents/MediaGroup";
 import CreateCarveMediaModal from "./CreateCarveMediaModal";
 import Pagination from 'react-bootstrap/Pagination';
 
-export default class VenueCarveCard extends Component {
+export default class CarveCardUserAttend extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -39,9 +39,9 @@ export default class VenueCarveCard extends Component {
             show5: false,
             show6: false,
             currentCid: 0,
-            curCr:0,
-            cId:0,
-            cRe:0,
+            curCr: 0,
+            cId: 0,
+            cRe: 0,
             items: [],
             active: 5,
             users: []
@@ -50,16 +50,17 @@ export default class VenueCarveCard extends Component {
     }
 
     componentWillMount() {
-        axios.get(`http://localhost:8000/venues/${this.props.venue_id}/carves`)
+        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/carveAttendees`)
             .then(res => {
-                // console.log("results: ", res.data.results[0]);
+                //alert(JSON.stringify(res.data.results[0]));
+                console.log("results: ", res.data.results[0]);
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveInfo: res.data.results[0]
                 });
 
             });
-//currently =dynamic per carve
+        //currently =dynamic per carve
         axios.get(`http://localhost:8000/carveAt`)
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
@@ -131,7 +132,7 @@ export default class VenueCarveCard extends Component {
 
     handleClick6 = () => {
 
-        this.setState({ show6: !this.state.show6});
+        this.setState({show6: !this.state.show6});
     };
 
 
@@ -230,10 +231,10 @@ export default class VenueCarveCard extends Component {
                     att = <div></div>;
                 } else {
                     color = "grey";
-                    act = "Request to Attend";
+                    act = "Invite Buddy";
                     no = "Upcoming";
                     att = <Button variant="success" style={{paddingTop: "10px"}}
-                                  onClick={() => this.handleClick5(carve.carve_id, carve.creator)}>{act}</Button>;
+                                  onClick={() => this.handleClick6(carve.carve_id, carve.creator)}>{act}</Button>;
 
                 }
 
@@ -269,7 +270,7 @@ export default class VenueCarveCard extends Component {
                                 <Row>
                                     <Col>
 
-                                        <Card.Text style={{}}>
+                                        <Card.Text style = {{}}>
                                             <Row>
                                                 Carve is {no}
                                             </Row>
@@ -335,6 +336,15 @@ export default class VenueCarveCard extends Component {
 
                             </Card.Footer>
                         </Card>
+
+
+
+
+
+
+
+
+
 
 
                     </ListGroup.Item>

@@ -5,17 +5,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
+import CarveInviteModal from "../NotificationComponents/CarveInviteModal";
+import CarveAttendRequestModal from "../NotificationComponents/CarveAttendRequestModal";
+import CarveLikes from "./CarveLikes";
+import CommentTable from "../WallComponents/CommentTable";
+import MediaGroup from "../MediaComponents/MediaGroup";
+import CreateCarveMediaModal from "./CreateCarveMediaModal";
 import Pagination from 'react-bootstrap/Pagination';
 
-import CarveInviteModal from "./CarveInviteModal";
-import CarveAttendRequestModal from "./CarveAttendRequestModal";
-import CarveLikes from "./CarveLikes";
-import CommentTable from "./CommentTable";
-import MediaGroup from "./MediaGroup";
-import CreateCarveMediaModal from "./CreateCarveMediaModal";
-
-
-export default class CarveCard extends Component {
+class CarveCardUserFollowed extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -41,22 +39,20 @@ export default class CarveCard extends Component {
             show5: false,
             show6: false,
             currentCid: 0,
-            curCr:0,
-            cId:0,
+            curCr: 0,
+            cId: 0,
             cRe: 0,
             items: [],
             active: 5,
             users: []
 
         };
-
-
     }
 
     componentWillMount() {
-        axios.get(`http://localhost:8000/carves/open`)
+        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/carves/`)
             .then(res => {
-                console.log("carve: ", res.data.results[0]);
+                console.log("results us fol carv: ", res.data.results[0]);
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveInfo: res.data.results[0]
@@ -88,14 +84,14 @@ export default class CarveCard extends Component {
 
     }
 
-    like(e){
+    like(e) {
         this.preventDefault(e);
         //currently only gets attendees for carve1. not dynamic per carve
         axios.post(`http://localhost:8000/carves/${1}/likes`,
-        {
-            poster: localStorage.getItem('userId'),
-            carve : e
-        })
+            {
+                poster: localStorage.getItem('userId'),
+                carve: e
+            })
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
                 console.log("results: ", res.data.results[0]);
@@ -103,38 +99,37 @@ export default class CarveCard extends Component {
 
 
             });
-}
+    }
 
-    dislike = (e) =>{
+    dislike = (e) => {
         this.preventDefault(e);
         //currently only gets attendees for carve1. not dynamic per carve
         axios.post(`http://localhost:8000/carves/${1}/likes/dislikes`,
             {
                 poster: localStorage.getItem('userId'),
-                carve : e
+                carve: e
             })
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
 
                 //alert(JSON.stringify(res.data.results[0]));
-                this.setState({
-
-                });
+                this.setState({});
 
             });
     };
 
-    handleClick5 = (e,e2) => {
+    handleClick5 = (e, e2) => {
 
-        this.setState({ show5: !this.state.show5,
-        cId : e,
-           cRe:e2
+        this.setState({
+            show5: !this.state.show5,
+            cId: e,
+            cRe: e2
         });
     };
 
     handleClick6 = () => {
 
-        this.setState({ show6: !this.state.show6});
+        this.setState({show6: !this.state.show6});
     };
 
 
@@ -257,55 +252,56 @@ export default class CarveCard extends Component {
                     }}>
                         <CarveAttendRequestModal cid={carve.carve_id} cre={this.state.cRe}
                                                  handleClose={this.handleClick5} show={this.state.show5}/>
-                        <CarveInviteModal cid ={this.state.currentCid} handleClose={this.handleClick6} show={this.state.show6} />
-                        <Card style = {{width: '100%', backgroundColor: [color]}}>
-                            <Card.Header style = {{color:"navy"}}>
-                                <Row style = {{justify: 'space-between'}}>
+                        <CarveInviteModal cid={this.state.currentCid} handleClose={this.handleClick6}
+                                          show={this.state.show6}/>
+                        <Card style={{width: '100%', backgroundColor: [color]}}>
+                            <Card.Header style={{color: "navy"}}>
+                                <Row style={{justify: 'space-between'}}>
                                     <Card.Title>Name: {carve.name}</Card.Title>
-                                    <div style = {{margin: '15px', marginLeft: '20%'}}>Date: {carve.date}</div>
-                                    <h6 style = {{margin: '15px', marginLeft: '20%'}}>Type: {carve.type}</h6>
+                                    <div style={{margin: '15px', marginLeft: '20%'}}>Date: {carve.date}</div>
+                                    <h6 style={{margin: '15px', marginLeft: '20%'}}>Type: {carve.type}</h6>
 
                                 </Row>
                             </Card.Header>
                             <Card.Body>
                                 <Row>
-                                <Col>
+                                    <Col>
 
-                                <Card.Text style = {{}}>
-                                    <Row>
-                                        Carve is {no}
-                                    </Row>
+                                        <Card.Text style={{}}>
+                                            <Row>
+                                                Carve is {no}
+                                            </Row>
 
-                                    <Row style={{position: 'left'}}>
-                                        <h5>Location: {carve.venue_name} </h5>
+                                            <Row style={{position: 'left'}}>
+                                                <h5>Location: {carve.venue_name} </h5>
 
-                                    </Row>
-                                    <Row>
-                                        <h5>{carve.city},{carve.state}</h5>
-                                    </Row>
-                                    <Row><p>Creator: {creatorName} id {carve.creator} </p></Row>
-                                    <Row>
-                                        Description: {carve.description}
-                                    </Row>
+                                            </Row>
+                                            <Row>
+                                                <h5>{carve.city},{carve.state}</h5>
+                                            </Row>
+                                            <Row><p>Creator: {creatorName} id {carve.creator} </p></Row>
+                                            <Row>
+                                                Description: {carve.description}
+                                            </Row>
 
-                                    <Row>
-                                        Sports: {carve.sports} {/*can't do sports by itself */}
-                                    </Row>
-                                    <Row>
-                                        Max Athletes: {carve.max_athletes}
-                                    </Row>
-                                    <Row>
-                                        Max Film: {carve.max_photo}
-                                    </Row>
-                                    <Row>
+                                            <Row>
+                                                Sports: {carve.sports} {/*can't do sports by itself */}
+                                            </Row>
+                                            <Row>
+                                                Max Athletes: {carve.max_athletes}
+                                            </Row>
+                                            <Row>
+                                                Max Film: {carve.max_photo}
+                                            </Row>
+                                            <Row>
 
-                                    </Row>
-                                    <Row>
+                                            </Row>
+                                            <Row>
 
-                                    </Row>
+                                            </Row>
 
-                                </Card.Text>
-                                </Col>
+                                        </Card.Text>
+                                    </Col>
                                     <Col>
                                         <h3>Attendees:</h3>
                                         {carveAttendList}</Col></Row>
@@ -325,27 +321,18 @@ export default class CarveCard extends Component {
                                 </Row>
                             </Card.Body>
                             <Card.Footer className="text-primary text-info">
-                            <Row>
-                                <Col>
-                                    <CommentTable carve={carve} type={"carve"} media={media_id}/>
-                                </Col>
-                                <Col>
+                                <Row>
+                                    <Col>
+                                        <CommentTable carve={carve} type={"carve"} media={media_id}/>
+                                    </Col>
+                                    <Col>
 
-                                    <MediaGroup type="carve" content_id={carve.carve_id}/>
-                                </Col>
-                            </Row>
+                                        <MediaGroup type="carve" content_id={carve.carve_id}/>
+                                    </Col>
+                                </Row>
 
                             </Card.Footer>
                         </Card>
-
-
-
-
-
-
-
-
-
 
 
                     </ListGroup.Item>
@@ -385,7 +372,9 @@ export default class CarveCard extends Component {
 
                 </ListGroup>
 
-                </>
+            </>
         )
     };
 }
+
+export default CarveCardUserFollowed;

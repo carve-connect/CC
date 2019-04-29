@@ -2,7 +2,7 @@ import React from 'react'
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
-import Avatar from '../images/avatar-man.png'
+import Avatar from '../../images/avatar-man.png'
 
 const UserProfileCard = (props) => {
 	return (

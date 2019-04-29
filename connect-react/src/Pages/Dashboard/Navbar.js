@@ -5,14 +5,14 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 import {Link} from 'react-router-dom'
-import UserApi from "../api/UserApi";
+import UserApi from "../../api/UserApi";
 import axios from 'axios';
-import CustomFormGroup from "./CustomFormGroup";
+import CustomFormGroup from "../../components/CustomFormGroup";
 import NavbarBrand from "react-bootstrap/NavbarBrand";
-import Settings from './settings';
-import Help from './help';
-import Privacy from './privacy';
-import Contact from './contact';
+import Settings from '../../components/SettingsComponents/settings';
+import Help from '../../components/SettingsComponents/help';
+import Privacy from '../../components/SettingsComponents/privacy';
+import Contact from '../../components/SettingsComponents/contact';
 
 class TopNav extends Component {
 	constructor(props){

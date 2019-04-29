@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import helpers from '../util'
+import helpers from '../../util'
 import UserProfileCard from "./UserProfileCard";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";

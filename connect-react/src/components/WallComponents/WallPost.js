@@ -1,18 +1,16 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Button, Col, Form, Row, Table} from 'react-bootstrap';
-import LikeBar from './LikeBar';
+import LikeBar from '../LikeBar';
 
 
-export default class CommentTable extends Component {
+export default class WallPost extends Component {
     constructor(props){
         super(props);
         this.state = {
             comments: [], 
             comment: [],
             poster: 0,
-            carve: 0,
-            media: 0,
             profile: 0
         };
         this.handleChange = this.handleChange.bind(this);
@@ -32,8 +30,6 @@ export default class CommentTable extends Component {
         axios.post("http://localhost:8000/comments", {
             comment: this.state.comment,
             poster: this.state.poster,
-            carve: this.state.carve,
-            media: this.state.media,
             profile: this.state.profile
         })
     };
@@ -42,9 +38,7 @@ export default class CommentTable extends Component {
 		this.setState({
             comment: event.target.value,
             poster: localStorage.getItem('userId'),
-            carve: this.props.carve.carve_id,
-            media: this.props.media.media_id,
-            profile: null
+            profile: this.props.profile
 		});
     };
     
@@ -62,44 +56,30 @@ export default class CommentTable extends Component {
         let commentList;
 
         if(this.state.comments.length > 0){
-
             commentList = this.state.comments.map((com, index) => {
-                if (this.props.type == "media") {
-                    if (com.media == this.props.media.media_id) {
-                        return (
-                            <tr>
-                                <td>{com.poster}</td>
-                                <td>{com.comment}</td>
-                                <td>
-                                    <LikeBar media={this.props.media} comment={com}/>
-                                </td>
-                            </tr>
-                        );
-                    } else {
-                        return (<></>)
-                    }
-                } else if (this.props.type == "carve") {
-                    if (com.carve == this.props.carve.carve_id) {
-                        return (
-                            <tr>
-                                <td>{com.poster}</td>
-                                <td>{com.comment}</td>
-                                <td>
-                                    <LikeBar media={this.props.media} comment={com}/>
-                                </td>
-                            </tr>
-                        );
-                    } else {
-                        return (<></>)
-                    }
+                if(com.profile == this.props.profile){
+                    return (
+                        <tr>
+                            <td>{com.poster}</td>
+                            <td>{com.comment}</td>
+                            <td>
+                              <LikeBar comment={com}/>
+                            </td>
+                        </tr>
+                    );
+                } else{
+                    return(<></>)
                 }
-
             });
-
         }
 
         return (
             <>
+                <Row>
+                    <h4>
+                        Wall post
+                    </h4>
+                </Row>
                 <form onSubmit={this.handleSubmit}>
                     <Form.Row>
                         <Row>
@@ -112,6 +92,7 @@ export default class CommentTable extends Component {
                         </Row>
                     </Form.Row>
                 </form>
+
                 <Table striped borderless hover size = "sm">
                         <thead>
                             <th>

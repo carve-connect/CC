@@ -3,7 +3,7 @@ import axios from 'axios'
 import MessagesSidebar from "./MessagesSidebar";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import ReplyMsgModal from "../../../../components/ReplyMsgModal";
+import ReplyMsgModal from "../../../../components/MessageComponents/ReplyMsgModal";
 import UserApi from "../../../../api/UserApi";
 
 

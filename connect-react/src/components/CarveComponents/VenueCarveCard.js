@@ -5,15 +5,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
-import CarveInviteModal from "./CarveInviteModal";
-import CarveAttendRequestModal from "./CarveAttendRequestModal";
+import CarveInviteModal from "../NotificationComponents/CarveInviteModal";
+import CarveAttendRequestModal from "../NotificationComponents/CarveAttendRequestModal";
 import CarveLikes from "./CarveLikes";
-import CommentTable from "./CommentTable";
-import MediaGroup from "./MediaGroup";
+import CommentTable from "../WallComponents/CommentTable";
+import MediaGroup from "../MediaComponents/MediaGroup";
 import CreateCarveMediaModal from "./CreateCarveMediaModal";
 import Pagination from 'react-bootstrap/Pagination';
 
-class CarveCardUserFollowed extends Component {
+export default class VenueCarveCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -39,9 +39,9 @@ class CarveCardUserFollowed extends Component {
             show5: false,
             show6: false,
             currentCid: 0,
-            curCr: 0,
-            cId: 0,
-            cRe: 0,
+            curCr:0,
+            cId:0,
+            cRe:0,
             items: [],
             active: 5,
             users: []
@@ -50,16 +50,16 @@ class CarveCardUserFollowed extends Component {
     }
 
     componentWillMount() {
-        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/carves/`)
+        axios.get(`http://localhost:8000/venues/${this.props.venue_id}/carves`)
             .then(res => {
-                console.log("results us fol carv: ", res.data.results[0]);
+                // console.log("results: ", res.data.results[0]);
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
                     carveInfo: res.data.results[0]
                 });
 
             });
-        //currently =dynamic per carve
+//currently =dynamic per carve
         axios.get(`http://localhost:8000/carveAt`)
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
@@ -84,13 +84,13 @@ class CarveCardUserFollowed extends Component {
 
     }
 
-    like(e) {
+    like(e){
         this.preventDefault(e);
         //currently only gets attendees for carve1. not dynamic per carve
         axios.post(`http://localhost:8000/carves/${1}/likes`,
             {
                 poster: localStorage.getItem('userId'),
-                carve: e
+                carve : e
             })
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
@@ -101,19 +101,21 @@ class CarveCardUserFollowed extends Component {
             });
     }
 
-    dislike = (e) => {
+    dislike = (e) =>{
         this.preventDefault(e);
         //currently only gets attendees for carve1. not dynamic per carve
         axios.post(`http://localhost:8000/carves/${1}/likes/dislikes`,
             {
                 poster: localStorage.getItem('userId'),
-                carve: e
+                carve : e
             })
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
 
                 //alert(JSON.stringify(res.data.results[0]));
-                this.setState({});
+                this.setState({
+
+                });
 
             });
     };
@@ -129,7 +131,7 @@ class CarveCardUserFollowed extends Component {
 
     handleClick6 = () => {
 
-        this.setState({show6: !this.state.show6});
+        this.setState({ show6: !this.state.show6});
     };
 
 
@@ -254,12 +256,12 @@ class CarveCardUserFollowed extends Component {
                                                  handleClose={this.handleClick5} show={this.state.show5}/>
                         <CarveInviteModal cid={this.state.currentCid} handleClose={this.handleClick6}
                                           show={this.state.show6}/>
-                        <Card style={{width: '100%', backgroundColor: [color]}}>
-                            <Card.Header style={{color: "navy"}}>
-                                <Row style={{justify: 'space-between'}}>
+                        <Card style = {{width: '100%', backgroundColor: [color]}}>
+                            <Card.Header style = {{color:"navy"}}>
+                                <Row style = {{justify: 'space-between'}}>
                                     <Card.Title>Name: {carve.name}</Card.Title>
-                                    <div style={{margin: '15px', marginLeft: '20%'}}>Date: {carve.date}</div>
-                                    <h6 style={{margin: '15px', marginLeft: '20%'}}>Type: {carve.type}</h6>
+                                    <div style = {{margin: '15px', marginLeft: '20%'}}>Date: {carve.date}</div>
+                                    <h6 style = {{margin: '15px', marginLeft: '20%'}}>Type: {carve.type}</h6>
 
                                 </Row>
                             </Card.Header>
@@ -376,5 +378,3 @@ class CarveCardUserFollowed extends Component {
         )
     };
 }
-
-export default CarveCardUserFollowed;

@@ -3,9 +3,9 @@ import axios from 'axios'
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import NotificationsSidebar from "./NotificationsSidebar";
-import BRReplyModal from "../../../../components/BRReplyModal";
-import CIReplyModal from "../../../../components/CIReplyModal";
-import CAReplyModal from "../../../../components/CAReplyModal";
+import BRReplyModal from "../../../../components/NotificationComponents/BRReplyModal";
+import CIReplyModal from "../../../../components/NotificationComponents/CIReplyModal";
+import CAReplyModal from "../../../../components/NotificationComponents/CAReplyModal";
 
 
 class NotificationsPageInbox extends Component {
