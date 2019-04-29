@@ -82,7 +82,7 @@ router.get('/profile/:userId', (req,res) => {
     })
 });
 
-router.get('/carves/:carveId', (req,res) => {
+router.get('/carve/:carveId', (req, res) => {
     const carveId = req.params.carveId;
 
     get_media  = "call get_carve_media(?)";

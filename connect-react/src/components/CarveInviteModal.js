@@ -39,10 +39,12 @@ export default class CarveInviteModal extends Component {
             subject: 'Carve Invite ',
             body: this.state.body,
             msgType: 'invite',
-            carve: this.props.cId
+            carve: this.props.cid,
+            type: ['']
 
         });
         this.props.handleClose();
+        // alert(this.props.cid);
     }
 
 
@@ -52,7 +54,7 @@ export default class CarveInviteModal extends Component {
         return (
             body.length > 0&&
                 to.length >0 &&
-                to.length <39
+            to.length < 200
         );
     }
 
@@ -73,12 +75,13 @@ export default class CarveInviteModal extends Component {
                     <Container>
 
                         <Row>Subject {this.state.subject}</Row>
+                        <Row>sending to {this.state.sender} for carve {this.props.cid} made by {this.props.cre}</Row>
                         {/* Location */}
                         <Form.Group controlId="to">
                             <Form.Label>Sending to:</Form.Label>
                             <Form.Control value={this.state.to} onChange={this.handleChange} type="text" placeholder="Enter userId" />
                             <Form.Text className="text-white">
-                                Use userId to send. valid range 1-38 should be buddies only.
+                                Use userId to send. valid range 1-200 should be buddies only.
                             </Form.Text>
                         </Form.Group>
 

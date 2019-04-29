@@ -36,8 +36,8 @@ export default class WeatherHistory extends Component {
             <>
 
                 <div>
-                    <h2 style={{}}>Previous Weather: </h2>
-                    <h2>Previous Temperature: </h2>
+                    <h2 style={{}}>Previous Weather: {this.state.current.summary}</h2>
+                    <h2>Previous Temperature:{this.state.current.temperature} </h2>
                 </div>
 
             </>

@@ -31,12 +31,13 @@ export default class CIReplyModal extends Component {
     // Hits API with body of carve
     sendMessage() {
 
-        if(this.props.type === 'inviteAccept')
+        if (this.props.type == 'inviteAccept')
         {
-            axios.post('http://localhost:8000/carveAttendees', {
-                user: this.state.sender,
-                carve:this.props.carI
+            axios.post('http://localhost:8000/carveAt', {
+                carve: this.props.carve,
+                user: this.props.replier,
 
+                type: this.props.ty
             });}
         console.log('Message created');
         axios.post('http://localhost:8000/messages', {
@@ -46,7 +47,7 @@ export default class CIReplyModal extends Component {
             body: this.state.body,
             msgType: this.props.type,
             reply_id: this.props.replyId,
-            carve: this.props.cId
+            carve: this.props.carve
 
         });
         this.props.handleClose();
@@ -77,7 +78,7 @@ export default class CIReplyModal extends Component {
                 <Modal.Body style = {{color: "lightgrey",backgroundColor:"slategrey"}}>
                     <Container>
 
-                        <Row>Subject {this.state.subject}</Row>
+                        <Row>Subject {this.state.subject} attending carve {this.props.carve}</Row>
                         <Row>Replying to {this.props.replier}</Row>
                         <Row>Status is {this.props.type}</Row>
 

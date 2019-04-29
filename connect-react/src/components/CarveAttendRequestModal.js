@@ -16,7 +16,7 @@ export default class CarveAttendRequestModal extends Component {
             type: 'attendRequest',
             body: '',
             sender: localStorage.getItem('userId'),
-            carve: 0
+            carve: 1
         };
 
         this.sendMessage = this.sendMessage.bind(this);
@@ -40,7 +40,8 @@ export default class CarveAttendRequestModal extends Component {
             subject: 'Attend Carve Request ',
             body: this.state.body,
             msgType: 'attendRequest',
-            carve: this.props.cid
+            carve: this.props.cid,
+            type: ['athlete']
         });
         this.props.handleClose();
     }

@@ -4,13 +4,13 @@ import MessagesSidebar from "./MessagesSidebar";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ReplyMsgModal from "../../../../components/ReplyMsgModal";
+import UserApi from "../../../../api/UserApi";
 
 
 class MessagesPageInbox extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userId: props.match.params.number,
             isUserLoggedIn: props.match.params.number === localStorage.getItem('userId'),
             message_id: "",
             message_subject: "",
@@ -25,34 +25,34 @@ class MessagesPageInbox extends Component {
             replyId: 0,
             replier: 0
         };
-
     }
+
+    // Fetches data before component will mount to the dom
     componentWillMount() {
-        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages`)
-            .then(res => {
-                console.log("results: ", res.data.results[0]);
-                this.setState({
-                    messages: res.data.results[0]
-                });
-                alert("you have "+this.state.messages.length+" messages");
-                //alert(JSON.stringify(res.data.users[0][0]))
-            });
-
+        UserApi.getUsersInbox(localStorage.getItem('userId'))
+          .then(messages => {
+              //alert("messages " + JSON.stringify(messages.data));
+              this.setState({messages: messages.data[0]});
+        }).catch(err => {
+            console.log('API error', err);
+            //alert("error " );
+        });
     }
-//onClick={this.onClick(message.message_id)}
+
+    // No clue who named this
     onClick2 = (e) =>{
         console.log(" delete:" +e);
-        axios.delete(`http://localhost:8000/messages/${e}`)
-
-
+        axios.delete(`http://localhost:8000/messages/${e}`);
 
     };
-//show: false
-    onClick1 =(e,e1) => {
+
+    // Forget what this does
+    onClick1 = (e, e1, e2) => {
         this.setState({
-            replyId: e,
+            reply: e,
             replier: e1,
             show1: !this.state.show1 });
+
 
     };
 
@@ -65,13 +65,15 @@ class MessagesPageInbox extends Component {
             messageRows = this.state.messages.map((message, index) => {
 
                 return (
-                    <tr>
+                    <tr key={index}>
                         <th>{message.message_subject}</th>
-                        <td>{message.sender_Id}</td>
+                        <td>{message.sender_id}</td>
+                        <td>{message.reply}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
                         <td>{message.message_body}</td>
-                        <td><i onClick={() => this.onClick1(message.message_id,message.sender_Id)} className ="fa fa-inbox text-white"> </i></td>
+                        <td><i onClick={() => this.onClick1(message.message_id, message.sender_id)}
+                               className="fa fa-inbox text-white"> </i></td>
                         <td > <i  className ="fa fa-trash-o text-white" onClick={ () => { this.onClick2(message.message_id) } }> </i></td>
                     </tr>
                 )
@@ -81,7 +83,8 @@ class MessagesPageInbox extends Component {
         return (
 
             <>
-                <ReplyMsgModal replyId = {this.state.replyID} replier = {this.state.replier} handleClose={this.onClick1} show={this.state.show1} />
+                <ReplyMsgModal reply={this.state.reply} replier={this.state.replier} handleClose={this.onClick1}
+                               show={this.state.show1}/>
                 <Row className="justify-content-md-center" style={{ paddingLeft: '0px',backgroundColor: "lightgray", height: "100%"}}>
 
                     <MessagesSidebar  style = {{paddingRight: '0px'}} />
@@ -97,6 +100,7 @@ class MessagesPageInbox extends Component {
                                 <tr>
                                     <th scope="col" style={{width:"6%"}}>Subject</th>
                                     <th scope="col" style={{width:"6%"}}>Sender</th>
+                                    <th scope="col" style={{width: "6%"}}>Reply Id:</th>
                                     <th scope="col" style={{width:"4%"}}>Timestamp</th>
                                     <th scope="col" style={{width:"4%"}}>Type</th>
                                     <th scope="col">Body</th>

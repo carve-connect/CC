@@ -1,15 +1,8 @@
 import React, {Component} from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Form from 'react-bootstrap/Form';
-import CustomFormGroup from "./CustomFormGroup";
-import FormGroup from 'react-bootstrap/FormGroup';
-import Table from 'react-bootstrap/Table';
-import CardColumns from 'react-bootstrap/CardColumns'
 import { Container } from 'react-bootstrap';
 import MediaCard from './MediaCard';
 
@@ -29,7 +22,7 @@ export default class MediaGroup extends Component {
             mediaComments: {},
             description: "", 
             time: "",
-            comment: "",
+            comment: ""
         };
     }
 
@@ -43,6 +36,7 @@ export default class MediaGroup extends Component {
                 });
             });
         }
+
 
 
     render() {

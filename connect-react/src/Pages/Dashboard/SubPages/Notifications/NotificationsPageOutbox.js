@@ -37,6 +37,13 @@ class NotificationsPageOutbox extends Component {
             });
 
     }
+
+    onClick2 = (e) => {
+        console.log(" delete:" + e);
+        axios.delete(`http://localhost:8000/messages/${e}`);
+
+
+    };
     render() {
         let messageRows;
 
@@ -45,11 +52,14 @@ class NotificationsPageOutbox extends Component {
                 return (
                     <tr>
                         <th>{message.message_subject}</th>
-                        <td>{message.rec_Id}</td>
+                        <td>{message.rec_id}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
+                        <td>{message.carve}</td>
                         <td>{message.message_body}</td>
-                        <td><i className ="fa fa-trash-o text-white" /></td>
+                        <td><i className="fa fa-trash-o text-white" onClick={() => {
+                            this.onClick2(message.message_id)
+                        }}> </i></td>
                     </tr>
                 )
             });
@@ -76,6 +86,7 @@ class NotificationsPageOutbox extends Component {
                                     <th scope="col" style={{width:"6%"}}>To</th>
                                     <th scope="col" style={{width:"4%"}}>Timestamp</th>
                                     <th scope="col" style={{width:"4%"}}>Type</th>
+                                    <th scope="col" style={{width: "4%"}}>Carve</th>
                                     <th scope="col">Body</th>
                                     <th scope="col" style={{width:"1%"}}>Delete</th>
                                 </tr>

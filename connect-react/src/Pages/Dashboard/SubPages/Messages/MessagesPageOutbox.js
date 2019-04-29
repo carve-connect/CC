@@ -3,6 +3,7 @@ import axios from 'axios'
 import MessagesSidebar from "./MessagesSidebar";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import UserApi from "../../../../api/UserApi";
 
 
 class MessagesPageOutbox extends Component {
@@ -24,25 +25,16 @@ class MessagesPageOutbox extends Component {
         };
 
     }
-    componentWillMount()
-    {
-        axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/sent`)
-            .then(res => {
-                console.log("results: ", res.data.results[0]);
-                this.setState({
-                    messages: res.data.results[0]
-                });
-
-                //alert(JSON.stringify(res.data.users[0][0]))
-            });
-
+    componentWillMount() {
+        UserApi.getUsersSents(localStorage.getItem('userId')).then(messages => {
+            this.setState({ messages });
+        });
     }
+
     //onClick={this.onClick(message.message_id)}
     onClick2 = (e) =>{
         console.log(" delete:" +e);
-        axios.delete(`http://localhost:8000/messages/${e}`)
-
-
+        axios.delete(`http://localhost:8000/messages/${e}`);
 
     };
 
@@ -54,14 +46,15 @@ class MessagesPageOutbox extends Component {
             messageRows = this.state.messages.map((message, index) => {
 
                 return (
-                    <tr>
+                    <tr key={index}>
                         <th>{message.message_subject}</th>
-                        <td>{message.sender_Id}</td>
+                        <td>{message.rec_id}</td>
+                        <td>{message.reply}</td>
                         <td>{message.create_time}</td>
                         <td>{message.type}</td>
                         <td>{message.message_body}</td>
 
-                        <td > <i  className ="fa fa-trash-o text-white" onClick={ () => { this.onClick2(message.message_id) } }> </i></td>
+                        <td><i className ="fa fa-trash-o text-white" onClick={ () => { this.onClick2(message.message_id) } }></i></td>
                     </tr>
                 )
             });
@@ -85,7 +78,8 @@ class MessagesPageOutbox extends Component {
                                 <thead>
                                 <tr>
                                     <th scope="col" style={{width:"6%"}}>Subject</th>
-                                    <th scope="col" style={{width:"6%"}}>Sender</th>
+                                    <th scope="col" style={{width: "6%"}}>Recipient</th>
+                                    <th scope="col" style={{width: "6%"}}>Reply Id:</th>
                                     <th scope="col" style={{width:"4%"}}>Timestamp</th>
                                     <th scope="col" style={{width:"4%"}}>Type</th>
                                     <th scope="col">Body</th>

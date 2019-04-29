@@ -38,13 +38,15 @@ export default class ReplyMsgModal extends Component {
             subject: 'RE: ',
             body: this.state.body,
             msgType: 'reply',
-            reply: this.props.replyId
+            reply: this.props.reply
         };
 
+        console.log(message);
+
         // Post message body to api
-        axios.post('http://localhost:8000/messages', message)
+        axios.post('http://localhost:8000/messages/reply', message)
           .then(() => {
-              this.props.refresh();
+              //this.props.refresh;
               this.props.handleClose();
           });
     }
@@ -76,7 +78,7 @@ export default class ReplyMsgModal extends Component {
 
                         <Row>Subject {this.state.subject}</Row>
                         <Row>Replying to {this.props.replier}</Row>
-
+                        <Row>Message id {this.props.replyId}</Row>
                         {/* Description */}
                         <Form.Group controlId="body">
                             <Form.Label>Message:</Form.Label>

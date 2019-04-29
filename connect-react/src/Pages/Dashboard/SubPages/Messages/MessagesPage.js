@@ -4,6 +4,7 @@ import MessagesSidebar from "./MessagesSidebar";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ReplyMsgModal from "../../../../components/ReplyMsgModal";
+import UserApi from "../../../../api/UserApi";
 
 
 class MessagesPage extends Component {
@@ -38,21 +39,16 @@ class MessagesPage extends Component {
 
     // Fetches messages from API
     fetchMessages() {
-      axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/inbox`)
-        .then(res => {
-          console.log("Messages from inbox: ", res.data.messages);
-          this.setState({
-            messages: res.data.messages
-          });
-            alert("you have "+this.state.messages.length+" messages");
-        });
-
+      UserApi.getUsersInbox(localStorage.getItem('userId')).then(messages => {
+        this.setState({ messages });
+      })
     }
 
     // Deletes a specific message when the trash can icon is clicked
     deleteMessage = (e) =>{
         console.log(" delete:" +e);
-        axios.delete(`http://localhost:8000/messages/${e}`)
+        axios.delete(`http://localhost:8000/messages/${e}`);
+
     };
 
     // This function passes the data to the Reply Message Modal
@@ -71,6 +67,7 @@ class MessagesPage extends Component {
     handleModalClose() {
       this.setState({replyModalShow: false});
       this.fetchMessages();
+
     }
 
     render() {

@@ -6,11 +6,11 @@ import Container from "react-bootstrap/Container";
 import axios from 'axios'
 import "react-datepicker/dist/react-datepicker.css";
 
-export default class BRReplyModal extends Component {
+export default class CAReplyModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            subject: 'RE: Buddy Request',
+            subject: 'RE: Carve Attend Request',
             to: '',
             type: '',
             body: ' ',
@@ -30,22 +30,24 @@ export default class BRReplyModal extends Component {
 
     // Hits API with body of carve
     sendMessage() {
-        //alert("BR reply " + this.props.type);
-        if (this.props.type == 'buddyAccept')
-        {
-            axios.post('http://localhost:8000/follows/buddies', {
-                user1: this.state.sender,
-                user2: this.props.replier
 
-            });}
+        if (this.props.type == 'attendAccept') {
+            axios.post('http://localhost:8000/carveAt', {
+
+                carve: this.props.carve,
+                user: this.props.replier,
+                type: this.props.ty
+            });
+        }
         console.log('Message created');
         axios.post('http://localhost:8000/messages', {
             sender: this.state.sender,
             reciever: this.props.replier,
-            subject: 'RE:Buddy Request ',
+            subject: 'RE:carveInvite ',
             body: this.state.body,
             msgType: this.props.type,
-            reply_id: this.props.replyId
+            reply_id: this.props.replyId,
+            carve: this.props.carve
 
         });
         this.props.handleClose();
@@ -54,7 +56,7 @@ export default class BRReplyModal extends Component {
 
     // Make sure that all fields are filled in
     validateForm() {
-        const {  body } = this.state;
+        const {body} = this.state;
         return (
             body.length > 0
         );
@@ -67,16 +69,16 @@ export default class BRReplyModal extends Component {
                    centered
                    show={this.props.show}
                    onHide={this.props.handleClose}
-                   style = {{}}>
-                <Modal.Header closeButton style = {{color: "lightgrey",backgroundColor:"darkslategrey"}}>
-                    <Modal.Title id="contained-modal-title-vcenter">Buddy Request Reply</Modal.Title>
+                   style={{}}>
+                <Modal.Header closeButton style={{color: "lightgrey", backgroundColor: "darkslategrey"}}>
+                    <Modal.Title id="contained-modal-title-vcenter">Reply Message</Modal.Title>
                 </Modal.Header>
 
 
-                <Modal.Body style = {{color: "lightgrey",backgroundColor:"slategrey"}}>
+                <Modal.Body style={{color: "lightgrey", backgroundColor: "slategrey"}}>
                     <Container>
 
-                        <Row>Subject {this.state.subject}</Row>
+                        <Row>Subject {this.state.subject} attending carve {this.props.carve}</Row>
                         <Row>Replying to {this.props.replier}</Row>
                         <Row>Status is {this.props.type}</Row>
 
@@ -87,8 +89,7 @@ export default class BRReplyModal extends Component {
                     </Container>
                 </Modal.Body>
 
-
-                <Modal.Footer style = {{color: "lightgrey",backgroundColor:"midnightblue"}}>
+                <Modal.Footer style={{color: "lightgrey", backgroundColor: "midnightblue"}}>
                     <Button variant="secondary" onClick={this.props.handleClose}>
                         Cancel
                     </Button>

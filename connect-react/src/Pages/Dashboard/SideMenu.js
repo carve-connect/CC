@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from "react-bootstrap/Row";
-import axios from "axios";
 import pic1 from "../../images/snow.jpeg"
 import Image from 'react-bootstrap/Image'
+import axios from 'axios';
 
 class SideMenu extends Component {
 	constructor(props) {
@@ -41,21 +41,19 @@ class SideMenu extends Component {
 
                 }
                 alert(JSON.stringify(this.state.names))*/
+
 	}
 
 
 	render() {
-
-
-
 		const menuItems = {
-			'My Profile': {href: `/dashboard/profile/${localStorage.getItem('userId')}`},
-			'My Messages': {href: '/dashboard/inbox/ '},
-			'Venues': {href: '/dashboard/venues'},
-			'Users': {href: '/dashboard/users'},
-			'Explore': {href: '/dashboard/explore'},
-			'My Feed': {href: '/dashboard/feed'},
-			'Listings': {href: '/dashboard/listings'}
+			'My Profile ': {href: `/dashboard/profile/${localStorage.getItem('userId')}`, icon: "fa fa-id-card"},
+			'My Messages ': {href: '/dashboard/inbox/ ', icon: "fa fa-envelope-open"},
+			'Venues ': {href: '/dashboard/venues', icon: "fa fa-globe"},
+			'Users ': {href: '/dashboard/users', icon: "fa fa-user-circle"},
+			'Explore ': {href: '/dashboard/explore', icon: "fa fa-compass"},
+			'My Feed ': {href: '/dashboard/feed', icon: "fa fa-rss-square"},
+			'Listings ': {href: '/dashboard/listings', icon: "fa fa-list-alt"}
 		};
 
 		let listItems;
@@ -68,7 +66,7 @@ class SideMenu extends Component {
 					backgroundColor: "slategrey", color: "white", fontWeight: 'bold',
 					paddingRight: '0px', width: "100%"
 				}}>
-					{name}
+					{name}<i className={menuItems[name].icon} style={{color: "white"}}/>
 				</ListGroup.Item>
 			)
 		});
@@ -81,7 +79,7 @@ class SideMenu extends Component {
 				return (
 					<ListGroup.Item key={index} action href={`/dashboard/profile/${this.state.buddies[index].user_id2}`} style={{
 						backgroundColor: "seashell", color: "green",
-                        paddingRight: '0px', width: "100%"
+                        paddingRight: '0px', width: "125%",
 					}}>
                         {this.state.names[0] + " " + this.state.buddies[index].username} <Image src={pic1}
                                                                                                 roundedCircle
@@ -98,19 +96,20 @@ class SideMenu extends Component {
 				{/* First column that holds the menu items */}
 				<Col xs={1} style={{paddingRight: '0px', backgroundColor: "slategrey"}}>
 					<Row>
-						<ListGroup variant="flush" defaultActiveKey="1" style={{width: "100%"}}>
+                        <ListGroup variant="flush" defaultActiveKey="1" style={{width: "90%"}}>
 							{listItems}
 						</ListGroup>
 					</Row>
 					<Row style={{paddingBottom:"0px"}}>
 						<h5 style={{
 							color: "green", paddingLeft: "10%", fontWeight: 'bold',
-							paddingTop: "10%", backgroundColor: "seashell", width: "100%", paddingBottom: "0px"
+                            paddingTop: "10%", backgroundColor: "seashell", width: "90%", paddingBottom: "0px"
 						}}>Buddies <i className="fa fa-users " style={{color: "green"}}/></h5>
 					</Row>
-					<Row style={{paddingTop: "0px"}}>
+                    <Row style={{paddingTop: "0px", width: "90%"}}>
 
-						<ListGroup variant="flush" defaultActiveKey="1" style={{paddingTop: "0px", width: "100%"}}>
+                        <ListGroup variant="flush" defaultActiveKey="1"
+                                   style={{paddingTop: "0px", width: "120%", paddingLeft: "15%"}}>
 							{buddiesList}
 						</ListGroup>
 					</Row>

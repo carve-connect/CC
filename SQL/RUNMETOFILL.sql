@@ -233,9 +233,39 @@ INSERT INTO USERS(username,email,password,first_name,last_name,description,photo
 INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('VPVXPGG83','eu.odio.tristique@dictumPhasellus.ca','PHM86MYD2JM','Samantha','Dotson','Something about the user goes here',NULL,('athlete'),('snowboard'),('waterSki'),('BMX,skateboard'),(NULL));
 INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('MHWEOGQ85','vitae.orci.Phasellus@quismassa.edu','OFK60JCK6JJ','Christopher','Vargas','Something about the user goes here',NULL,('photographer'),('ski'),('surf'),(NULL),(NULL));
 
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 2, 'normal', 'hello there', 'normal', NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (2,1,'reply','im getting back to you','reply',1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 2, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (2, 1, 'reply', 'im getting back to you', 'reply', 3);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (2, 1, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 2, 'reply', 'im getting back to you', 'reply', 5);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (2, 1, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 2, 'reply', 'im getting back to you', 'reply', 7);
 
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (2,1,'reply','im getting back to you','reply',1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 3, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (3, 1, 'reply', 'im getting back to you', 'reply', 9);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (2, 3, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (3, 2, 'reply', 'im getting back to you', 'reply', 11);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (3, 1, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (1, 3, 'reply', 'im getting back to you', 'reply', 13);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (3, 2, 'normal', 'hello there', 'normal', NULL);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply)
+VALUES (2, 3, 'reply', 'im getting back to you', 'reply', 15);
+
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (1,2,'normal','hello there','normal',NULL);
 
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (1,6,'normal','hello there','normal',NULL);
@@ -266,6 +296,8 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (54,48,'normal','hello there','normal',NULL);
 
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (95,26,'normal','hello there','normal',NULL);
+
+
 
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (7,47,'normal','hello there','normal',NULL);
 
@@ -1376,11 +1408,8 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (2,5,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (3,7,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (3,1,'buddyAccept','sure ill be your bud','buddyAccept',2);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (1,4,'attendRequest','can I attend your carve?','attendRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (2,6,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (1,20,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (2,44,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (3,45,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (4,46,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (5,47,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (6,48,'buddyRequest','be my buddy','buddyRequest',NULL);
@@ -1388,28 +1417,20 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (8,50,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (9,51,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (10,52,'buddyAccept','sure ill be your bud','buddyAccept',2);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (11,53,'attendRequest','can I attend your carve?','attendRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (12,54,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (13,55,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (14,56,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (15,57,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (16,58,'attendRequest','can I attend your carve?','attendRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (17,59,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (18,60,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (19,61,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (20,62,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (21,63,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (22,64,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (23,65,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (24,66,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (25,67,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (26,68,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (27,69,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (28,70,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (29,71,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (30,72,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (31,73,'attendRequest','can I attend your carve?','attendRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (32,74,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (33,75,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (34,76,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (35,77,'buddyRequest','be my buddy','buddyRequest',NULL);
@@ -1418,7 +1439,6 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (38,80,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (39,81,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (40,82,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (41,83,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (42,84,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (43,85,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (44,2,'buddyAccept','sure ill be your bud','buddyAccept',NULL);
@@ -1430,31 +1450,19 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (50,92,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (51,93,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (52,94,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (53,95,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (54,1,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (55,2,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (56,3,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (57,15,'buddyAccept','lets be buds!','buddyAccept',2);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (58,5,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (59,6,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (60,7,'attendRequest','can I attend your carve?','attendRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (61,8,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (62,20,'buddyAccept','lets be buds!','buddyAccept',2);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (63,10,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (64,11,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (65,12,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (66,13,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (101,122,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (102,123,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (103,124,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (104,125,'attendRequest','can I attend your carve?','attendRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (105,126,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (106,127,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (107,128,'attendRequest','can I attend your carve?','attendRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (108,129,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (109,130,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (110,131,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (111,132,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (112,133,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (113,134,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (114,135,'buddyRequest','be my buddy','buddyRequest',NULL);
@@ -1467,17 +1475,15 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (124,145,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (125,146,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (126,147,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (90,37,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (91,38,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (92,39,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (93,40,'attendRequest','can I attend your carve?','attendRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (94,41,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (95,42,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (96,43,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (97,118,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (98,119,'buddyRequest','be my buddy','buddyRequest',NULL);
 INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (99,120,'buddyRequest','be my buddy','buddyRequest',NULL);
-INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) VALUES (100,121,'attendRequest','can I attend your carve?','attendRequest',NULL);
+
 
 
 INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Catamount','Hillsdale','NY',NULL,'mountain','snowboard,ski',NULL,NULL,NULL,'42.10','-73.28','https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort.html');
@@ -2549,195 +2555,6 @@ INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',3);
 
 INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',4);
 
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,carve) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',NULL);
 
 INSERT INTO LIKES(poster,type,comment) VALUES (1,'like',1);
 
@@ -2785,49 +2602,7 @@ INSERT INTO LIKES(poster,type,comment) VALUES (2,'dislike',4);
 
 INSERT INTO LIKES(poster,type,comment) VALUES (2,'like',5);
 
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'like',NULL);
 
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (1,'like',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'dislike',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'like',NULL);
-
-INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'dislike',NULL);
 
 INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'like',5);
 
@@ -2927,8 +2702,59 @@ INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'like',NULL);
 
 INSERT INTO LIKES(poster,type,MEDIA) VALUES (2,'like',NULL);
 
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 3, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 4, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 5, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 6, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 7, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 8, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 9, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 10, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (2, 1, 'invite', 'carve with me bro', 'invite', NULL, 3);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (2, 1, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 3);
 
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'invite', 'can i carve with you', 'attendRequest', NULL, 2);
 
-
-
-
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 3, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 4, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 5, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 6, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 7, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 8, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 9, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 10, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (2, 1, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 4);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (2, 1, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 4);

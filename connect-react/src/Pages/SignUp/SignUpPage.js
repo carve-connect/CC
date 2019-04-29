@@ -9,7 +9,6 @@ import axios from "axios";
 export default class SignUpPage extends Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			username: '',
 			email: '',
@@ -93,6 +92,17 @@ export default class SignUpPage extends Component {
 		});
 
 	};
+
+    athlete = event => {
+
+
+    };
+
+    athlete = event => {
+
+
+    };
+
 
 	handleSubmit = e => {
 		e.preventDefault();
@@ -218,7 +228,8 @@ export default class SignUpPage extends Component {
 						</Form.Control>
 					</Form.Group>
 
-					<Button style={{ marginTop: '20px' }}	block disabled={!this.validateForm()} type="submit">Create Account!</Button>
+
+                    <Button style={{ marginTop: '20px' }}	block disabled={!this.validateForm()} type="submit">Create Account!</Button>
 				</form>
 			</div>
 		);

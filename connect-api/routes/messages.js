@@ -21,13 +21,30 @@ router.get('/', (req,res) => {
 // Creates a new message
 router.post('/', (req,res) => {
 
-    const {sender,reciever,subject,body, msgType} = req.body;
+    const {sender, reciever, subject, body, msgType, carve, type} = req.body;
     // The messagename wasn't found in the database
     // Create insert query for new message
     // Added a comment
-    new_message = "CALL add_message(?,?,?,?,?)";
+    console.log(body);
+    new_message = "CALL add_message(?,?,?,?,?,?,?)";
     // Execute the query to insert into the database
-    con.query(new_message,[sender,reciever,subject,body, msgType], (err, results) => {
+    con.query(new_message, [sender, reciever, subject, body, msgType, carve, type], (err, results) => {
+        if (err) throw err;
+        res.status(201).jsonp({results}).end;
+    })
+});
+
+// Creates a new message
+router.post('/reply', (req, res) => {
+
+    const {sender, reciever, subject, body, msgType, carve, type, reply} = req.body;
+    // The messagename wasn't found in the database
+    // Create insert query for new message
+    // Added a comment
+    console.log(body);
+    new_message = "CALL add_reply(?,?,?,?,?,?,?,?)";
+    // Execute the query to insert into the database
+    con.query(new_message, [sender, reciever, subject, body, msgType, carve, type, reply], (err, results) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
