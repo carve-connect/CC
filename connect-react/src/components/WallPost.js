@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Button, Col, Form, Row, Table} from 'react-bootstrap';
+import LikeBar from './LikeBar';
 
 
 export default class WallPost extends Component {
@@ -62,7 +63,7 @@ export default class WallPost extends Component {
                             <td>{com.poster}</td>
                             <td>{com.comment}</td>
                             <td>
-                              {/* <LikeBar media={this.props.media} comment={com}/> */}
+                              <LikeBar comment={com}/>
                             </td>
                         </tr>
                     );
