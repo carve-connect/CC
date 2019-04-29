@@ -72,7 +72,7 @@ class TopNav extends Component {
 
 	validateForm() {
 		const { search } = this.state;
-		return parseInt(search) > 0;
+		return search.length > 0;
 	}
 
 	// Searches the database for usernames, first names and last names LIKE the search term
@@ -139,11 +139,11 @@ class TopNav extends Component {
 
 									<NavDropdown className ="fa fa-envelope text-white"  id="collapsible-nav-dropdown">
 										<NavDropdown.Item
-											href="/dashboard/messages/inbox">Messages: {this.state.messages.length}</NavDropdown.Item>
+											href="/dashboard/inbox">Messages: {this.state.messages.length}</NavDropdown.Item>
 										<NavDropdown.Divider/>
-										<NavDropdown.Item href="/dashboard/messages/inbox">Inbox</NavDropdown.Item>
+										<NavDropdown.Item href="/dashboard/inbox">Inbox</NavDropdown.Item>
 										<NavDropdown.Divider/>
-										<NavDropdown.Item href="/dashboard/messages/outbox">Sent</NavDropdown.Item>
+										<NavDropdown.Item href="/dashboard/outbox">Sent</NavDropdown.Item>
 										<NavDropdown.Divider />
 										<NavDropdown.Item onClick={this.handleClick1}>Send Message</NavDropdown.Item>
 
