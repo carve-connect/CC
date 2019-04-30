@@ -16,6 +16,8 @@ export default class CreateCarveModal extends Component {
 			sport: {},
 			type: {},
 			venue: {},
+			photo: 0,
+			athlete: 1,
 			startDate: new Date(),
 			description: 'Shred the gnar!'
 		};
@@ -45,8 +47,8 @@ export default class CreateCarveModal extends Component {
 			creatorId: localStorage.getItem('userId'),
 			venueId: this.state.venue,
 			carveType: [this.state.type],
-			athlete: 5,
-			photo: 5,
+			athlete: this.state.athlete,
+			photo: this.state.photo,
 			sports: [this.state.sport]
 
 		});
@@ -64,10 +66,11 @@ export default class CreateCarveModal extends Component {
 
 	// Make sure that all fields are filled in
 	validateForm() {
-		const { name, description} = this.state;
+		const {name, description, athlete} = this.state;
 		return (
 				name.length > 0 &&
-				description.length > 0
+				description.length > 0 &&
+				athlete > 0
 		);
 	}
 
@@ -131,11 +134,67 @@ export default class CreateCarveModal extends Component {
 							<Form.Control value={this.state.venue} placeholder="Select Location..."  onChange={this.handleChange} as="select" >
 								<option disabled value={-1}>Select an option...</option>
 								<option value = '0'> </option>
-							<option value = '1'>Mountain 1</option>
-							<option value = '11'>Beach 1</option>
-							<option value = '16'>Lake 1</option>
-							<option value = '18'>Skatepark 1</option>
-							<option value = '28'>Airfield 1</option>
+								<option value='1'>Catamount: Hillsdale, NY (Mountain)</option>
+								<option value='2'>Bristol Mt: Canandaigua, NY (Mountain)</option>
+								<option value='3'>Holiday Valley: Ellicotville, NY (Mountain)</option>
+								<option value='4'>Whiteface Mt: Wilmington, NY (Mountain)</option>
+								<option value='5'>Belleayre Mt: Highmount, NY (Mountain)</option>
+								<option value='6'>Windham Mt: Windham, NY (Mountain)</option>
+								<option value='7'>Hunter Mt: Hunter, NY (Mountain)</option>
+								<option value='8'>Gore Mt: North Creek, NY (Mountain)</option>
+								<option value='9'>Mt Peter (Mountain)</option>
+								<option value='10'>Jack Frost (Mountain)</option>
+								<option value='11'>Camelback Mt (Mountain)</option>
+								<option value='12'>Campgaw (Mountain)</option>
+								<option value='13'>Mt Creek Resort (Mountain)</option>
+								<option value='14'>Mt Snow (Mountain)</option>
+								<option value='15'>Killington Resort (Mountain)</option>
+								<option value='16'>Shawnee Peak (Mountain)</option>
+								<option value='17'>Sundance Resort (Mountain)</option>
+								<option value='18'>Powder Mt (Mountain)</option>
+								<option value='19'>Keystone (Mountain)</option>
+								<option value='20'>Aspen/Snowmass (Mountain)</option>
+								<option value='21'>Spring Lake Beach (Beach)</option>
+								<option value='22'>Belmar Beach (Beach)</option>
+								<option value='23'>Avon Beach (Beach)</option>
+								<option value='24'>Manasquan Beach (Beach)</option>
+								<option value='25'>Manasquan Inlet (Beach)</option>
+								<option value='26'>Seagirt Beach (Beach)</option>
+								<option value='27'>Asburry Beach (Beach)</option>
+								<option value='28'>Waikiki Beach (Beach)</option>
+								<option value='29'>Sunset Beach (Beach)</option>
+								<option value='30'>Waimea Bay (Beach)</option>
+								<option value='31'>Ehukai Beach (Beach)</option>
+								<option value='32'>Haleiwa Alli Beach (Beach)</option>
+								<option value='33'>Haleiwa Beach (Beach)</option>
+								<option value='34'>Chun's Reef (Beach)</option>
+								<option value='35'>Ke Waena Beach (Beach)</option>
+								<option value='36'>Turtle Bay (Beach)</option>
+								<option value='37'>Black's Beach (Beach)</option>
+								<option value='38'>Ocean City Beach (Beach)</option>
+								<option value='39'>Windansea Beach (Beach)</option>
+								<option value='40'>Cocoa Beach (Beach)</option>
+								<option value='41'>Lake Buena Vista (Lake)</option>
+								<option value='42'>Lake Carnegie (Lake)</option>
+								<option value='43'>Greenwood Lake (Lake)</option>
+								<option value='44'>Lake Mowhawk (Lake)</option>
+								<option value='45'>Union Lake (Lake)</option>
+								<option value='46'>Burnside Skate Park (Skate park)</option>
+								<option value='47'>Skate Lab (Skate park)</option>
+								<option value='48'>Denver Skate Park (Skate park)</option>
+								<option value='49'>David Armstrong Extreme Park (Skate park)</option>
+								<option value='50'>Lincoln City Skare Park (Skate park)</option>
+								<option value='51'>Ray's MTB Park (BMX course)</option>
+								<option value='52'>Chula Vista (BMX course)</option>
+								<option value='53'>The Unit (BMX course)</option>
+								<option value='54'>Mesh (BMX course)</option>
+								<option value='55'>The Flow (BMX course)</option>
+								<option value='56'>Pensylvania Skidiving Center (skydiving airfield)</option>
+								<option value='57'>Sky Dive Key West (skydiving airfield)</option>
+								<option value='58'>Alaska SkyDive Center (skydiving airfield)</option>
+								<option value='59'>Skydive Hawaii (skydiving airfield)</option>
+								<option value='60'>Skydive Zion (skydiving airfield))</option>
+
 							</Form.Control>
 						</Form.Group>
 
@@ -154,21 +213,20 @@ export default class CreateCarveModal extends Component {
 							<Form.Control value={this.state.description} onChange={this.handleChange} as="textarea" rows="2" placeholder="Enter description here..." />
 						</Form.Group>
 
+						<Form.Group controlId="photo">
+							<Form.Label>PhotoSlots</Form.Label>
+							<Form.Control value={this.state.photo} onChange={this.handleChange} as="textarea" rows="2"
+										  placeholder="Enter number here..."/>
+						</Form.Group>
+
+						<Form.Group controlId="athlete">
+							<Form.Label>AthleteSlots</Form.Label>
+							<Form.Control value={this.state.athlete} onChange={this.handleChange} as="textarea" rows="2"
+										  placeholder="Enter number here..."/>
+						</Form.Group>
+
 						{/* Horizontal rule */}
 						<hr/>
-						<h6 style={{textAlign: 'center'}}>Looking for...</h6>
-
-						{/* Rider's switch */}
-						<div className="custom-control custom-switch">
-							<input type="checkbox" className="custom-control-input" id="customSwitches" />
-							<label className="custom-control-label" htmlFor="customSwitches">Riders</label>
-						</div>
-
-						{/* Filmer's switch */}
-						<div className="custom-control custom-switch">
-							<input type="checkbox" className="custom-control-input" id="custSwitches"/>
-							<label className="custom-control-label" htmlFor="custSwitches">Filmers</label>
-						</div>
 
 					</Container>
 				</Modal.Body>

@@ -18,6 +18,10 @@ class ExplorePage extends Component {
 
             <>
                 <h1 style={{color: "blue"}}>EXPLORE CARVE CONNECT</h1>
+                <h1 className='border-bottom' style={{
+                    borderBottomColor: 'black',
+                    borderBottomWidth: "10px", width: '150%', borderThickness: "5px"
+                }}></h1>
                 {/* Featured User Cards */}
                 <Container>
                     <Row>
