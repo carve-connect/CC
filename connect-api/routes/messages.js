@@ -37,16 +37,17 @@ router.post('/', (req,res) => {
 // Creates a new message
 router.post('/reply', (req, res) => {
 
-    const {sender, reciever, subject, body, msgType, carve, type, reply} = req.body;
+    const {sender, receiver, subject, body, msgType, carve, type, reply} = req.body;
+    let recipient = receiver;
     // The messagename wasn't found in the database
     // Create insert query for new message
     // Added a comment
     console.log(body);
     new_message = "CALL add_reply(?,?,?,?,?,?,?,?)";
     // Execute the query to insert into the database
-    con.query(new_message, [sender, reciever, subject, body, msgType, carve, type, reply], (err, results) => {
+    con.query(new_message, [sender, receiver, subject, body, msgType, carve, type, reply], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}, recipient).end;
     })
 });
 
