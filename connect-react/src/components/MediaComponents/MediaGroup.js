@@ -16,6 +16,7 @@ export default class MediaGroup extends Component {
             media: 0,
             mediaInfo: {},
             mediaComments: {},
+            users: [],
             description: "", 
             time: "",
             comment: ""
@@ -31,6 +32,18 @@ export default class MediaGroup extends Component {
                     mediaInfo: res.data.results[0],
                 });
             });
+
+
+        axios.get(`http://localhost:8000/users`)
+            .then(res1 => {
+                //alert("carve:" + JSON.stringify(res.data.results));
+                //console.log("users: ", JSON.stringify(res.data.users[0][0].username));
+                //alert(JSON.stringify(res.data.results[0]));
+                this.setState({
+                    users: res1.data.users[0]
+                });
+
+            });
         }
 
 
@@ -42,7 +55,8 @@ export default class MediaGroup extends Component {
             mediaList = this.state.mediaInfo.map((media, index) => {
                 return (
                     <Col className="col-sm">
-                            <MediaCard type={this.props.type} id={this.props.content_id} media={media}/>
+                        <MediaCard type={this.props.type} id={this.props.content_id} media={media}
+                                   users={this.state.users}/>
                     </Col>
                 )
             });
