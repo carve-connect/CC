@@ -1486,112 +1486,248 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 
 
 
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Catamount','Hillsdale','NY',NULL,'mountain','snowboard,ski',NULL,NULL,NULL,'42.10','-73.28','https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Bristol Mountain','Canandaigua','NY',NULL,'mount_snow','snowboard,ski',NULL,NULL,NULL,'42.44','-77.24','https://www.onthesnow.com/new-york/bristol-mountain/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Holiday Valley','Ellicotville','NY',NULL,'mountain','snowboard,ski',NULL,NULL,NULL,'42.15','-78.40','https://www.onthesnow.com/new-york/holiday-valley/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Whiteface Mountain','WIlmington','NY',NULL,'mount_snow','snowboard,ski',NULL,NULL,NULL,'42.15','-78.40','https://www.onthesnow.com/new-york/whiteface-mountain-resort/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Belleayre Mountain','Highmount','NY',NULL,'mountain','snowboard,ski',NULL,NULL,NULL,'42.07','-74.30','https://www.onthesnow.com/new-york/belleayre/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Windham Mountain','Windham','NY',NULL,'mount_snow','snowboard,ski',NULL,NULL,NULL,'42.17','-74.15','https://www.onthesnow.com/new-york/windham-mountain/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Hunter Mountain','Hunter','NY',NULL,'mountain','snowboard,ski',NULL,NULL,NULL,'42.10','-74.13','https://www.onthesnow.com/new-york/hunter-mountain/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Gore Mountain','North Creek','NY',NULL,'mount_snow','snowboard,ski',NULL,NULL,NULL,'43.40','-74.00','https://www.onthesnow.com/new-york/gore-mountain/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Mount Peter','Warwick','NY',NULL,'mountain','snowboard,ski',NULL,NULL,NULL,'41.14','-74.17','https://www.onthesnow.com/new-york/mount-peter-ski-area/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Jack Frost','White Haven','PA',NULL,'mount_snow','snowboard,ski',NULL,NULL,NULL,'41.06','-75.39','https://www.onthesnow.com/pennsylvania/jack-frost/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Camelback Mountain','Tannersville','PA',NULL,'mountain','snowboard,ski',NULL,NULL,NULL,'41.03','-75.21','https://www.onthesnow.com/pennsylvania/camelback-mountain-resort/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Campgaw Mountain','Mahwah','NJ',NULL,'mount_snow','snowboard,ski,snowmobile',NULL,NULL,NULL,'41.03','-74.11','https://www.onthesnow.com/new-jersey/campgaw-mountain/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Mountain Creek Resort','Vernon','NJ',NULL,'mountain','snowboard,ski,snowmobile',NULL,'mountainBiking',NULL,'41.11','-74.30','https://www.onthesnow.com/new-jersey/mountain-creek-resort/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Mount Snow','West Dover','VT',NULL,'mount_snow','snowboard,ski,snowmobile',NULL,NULL,NULL,'42.58','-72.53','https://www.onthesnow.com/vermont/mount-snow/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Killington Resort','Killington','VT',NULL,'mountain','snowboard,ski',NULL,NULL,NULL,'43.37','-72.48','https://www.onthesnow.com/vermont/killington-resort/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Shawnee Peak','Bridgton','ME',NULL,'mount_snow','snowboard,ski',NULL,'mountainBiking',NULL,'44.03','-70.48','https://www.onthesnow.com/maine/shawnee-peak/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Sundance Resort','Sundance','UT',NULL,'mountain','snowboard,ski',NULL,'mountainBiking','hangGlide','40.23','-111.35','https://www.onthesnow.com/utah/sundance/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Powder Mountain','Eden','UT',NULL,'mount_snow','snowboard,ski',NULL,'mountainBiking','hangGlide','41.22','-111.46','https://www.onthesnow.com/utah/powder-mountain/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Keystone','Keystone','CO',NULL,'mountain','snowboard,ski',NULL,'mountainBiking',NULL,'39.36','-105.56','https://www.onthesnow.com/colorado/keystone/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Aspen/ SNOWMASS','ASPEN','CO',NULL,'mount_snow','snowboard,ski',NULL,'mountainBiking',NULL,'39.12','-106.56','https://www.onthesnow.com/colorado/aspen-snowmass/ski-resort.html');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Spring Lake Beach','Spring Lake','NJ',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Belmar Beach','Belmar','NJ',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Avon Beach','Avon','NJ',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Manasquan Beach','Manasquan','NJ',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Manasquan inlet','Manasquan','NJ',NULL,'beach',NULL,'waterski',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Seagirt Beach','Seagirt','NJ',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Asburry Beach','Asburry','NJ',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Waikiki Beach','Waikiki','HI',NULL,'beach',NULL,'surf,waterski',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Sunset beach','Oahu','HI',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Waimea Bay','Oahu','HI',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Ehukai Beach','Oahu','HI',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Haleiwa Alii Beach','Oahu','HI',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Haleiwa Beach','Oahu','HI',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Chun''s Reef','Oahu','HI',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Ke Waena Beach','Oahu','HI',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Turtle Bay','Oahu','HI',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Black''s Beach','San Diego','CA',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,NULL);
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Ocean City Beach','Ocean City','MD',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,NULL);
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Windansea Beach','San Diego','CA',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,NULL);
-INSERT INTO VENUES(venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url) VALUES ('Cocoa Beach','Cape Canaveral','FL',NULL,'beach',NULL,'surf',NULL,NULL,NULL,NULL,NULL);
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Lake Buena Vista', 'Orlando', 'FL', NULL, 'para', NULL, 'waterski', NULL, NULL, NULL, NULL, NULL);
+VALUES ('Catamount', 'Hillsdale', 'NY', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL, '42.10',
+        '-73.28', 'https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Lake Carnegie', 'Princeton', 'NJ', NULL, 'para', NULL, 'waterski', NULL, NULL, NULL, NULL, NULL);
+VALUES ('Bristol Mountain', 'Canandaigua', 'NY', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+        '42.44', '-77.24', 'https://www.onthesnow.com/new-york/bristol-mountain/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Greenwood Lake', 'Greenwood Lake', 'NY', NULL, 'para', NULL, 'waterski', NULL, NULL, NULL, NULL, NULL);
+VALUES ('Holiday Valley', 'Ellicotville', 'NY', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL,
+        '42.15', '-78.40', 'https://www.onthesnow.com/new-york/holiday-valley/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Lake Mohawk', 'Byram Township', 'NJ', NULL, 'para', NULL, 'waterski', NULL, NULL, NULL, NULL, NULL);
+VALUES ('Whiteface Mountain', 'WIlmington', 'NY', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+        '42.15', '-78.40', 'https://www.onthesnow.com/new-york/whiteface-mountain-resort/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Union Lake', 'Millville', 'NJ', NULL, 'para', NULL, 'waterski', NULL, NULL, NULL, NULL, NULL);
+VALUES ('Belleayre Mountain', 'Highmount', 'NY', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL,
+        '42.07', '-74.30', 'https://www.onthesnow.com/new-york/belleayre/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Burnside Skate Park', 'Portland', 'OR', NULL, 'skatedude', NULL, NULL, 'skateboard', NULL, NULL, NULL, NULL);
+VALUES ('Windham Mountain', 'Windham', 'NY', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+        '42.17', '-74.15', 'https://www.onthesnow.com/new-york/windham-mountain/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Skate Lab', 'Atlantic Beach', 'FL', NULL, 'skatedude', NULL, NULL, 'skateboard', NULL, NULL, NULL, NULL);
+VALUES ('Hunter Mountain', 'Hunter', 'NY', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL, '42.10',
+        '-74.13', 'https://www.onthesnow.com/new-york/hunter-mountain/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Denver Skate Park', 'Denver', 'CO', NULL, 'skatedude', NULL, NULL, 'skateboard', NULL, NULL, NULL, NULL);
+VALUES ('Gore Mountain', 'North Creek', 'NY', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+        '43.40', '-74.00', 'https://www.onthesnow.com/new-york/gore-mountain/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('David Armstrong Extreme Park', 'Lousiville', 'KY', NULL, 'skatedude', NULL, NULL, 'skateboard', NULL, NULL,
+VALUES ('Mount Peter', 'Warwick', 'NY', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL, '41.14',
+        '-74.17', 'https://www.onthesnow.com/new-york/mount-peter-ski-area/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Jack Frost', 'White Haven', 'PA', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+        '41.06', '-75.39', 'https://www.onthesnow.com/pennsylvania/jack-frost/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Camelback Mountain', 'Tannersville', 'PA', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL,
+        '41.03', '-75.21', 'https://www.onthesnow.com/pennsylvania/camelback-mountain-resort/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Campgaw Mountain', 'Mahwah', 'NJ', 'Awesome ski resort', 'mount_snow', 'snowboard,ski,snowmobile', NULL, NULL,
+        NULL, '41.03', '-74.11', 'https://www.onthesnow.com/new-jersey/campgaw-mountain/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Mountain Creek Resort', 'Vernon', 'NJ', 'Awesome ski resort', 'mountain', 'snowboard,ski,snowmobile', NULL,
+        'mountainBiking', NULL, '41.11', '-74.30',
+        'https://www.onthesnow.com/new-jersey/mountain-creek-resort/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Mount Snow', 'West Dover', 'VT', 'Awesome ski resort', 'mount_snow', 'snowboard,ski,snowmobile', NULL, NULL,
+        NULL, '42.58', '-72.53', 'https://www.onthesnow.com/vermont/mount-snow/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Killington Resort', 'Killington', 'VT', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL,
+        '43.37', '-72.48', 'https://www.onthesnow.com/vermont/killington-resort/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Shawnee Peak', 'Bridgton', 'ME', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, 'mountainBiking',
+        NULL, '44.03', '-70.48', 'https://www.onthesnow.com/maine/shawnee-peak/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Sundance Resort', 'Sundance', 'UT', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, 'mountainBiking',
+        'hangGlide', '40.23', '-111.35', 'https://www.onthesnow.com/utah/sundance/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Powder Mountain', 'Eden', 'UT', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, 'mountainBiking',
+        'hangGlide', '41.22', '-111.46', 'https://www.onthesnow.com/utah/powder-mountain/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Keystone', 'Keystone', 'CO', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, 'mountainBiking', NULL,
+        '39.36', '-105.56', 'https://www.onthesnow.com/colorado/keystone/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Aspen/ SNOWMASS', 'ASPEN', 'CO', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, 'mountainBiking',
+        NULL, '39.12', '-106.56', 'https://www.onthesnow.com/colorado/aspen-snowmass/ski-resort.html');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Spring Lake Beach', 'Spring Lake', 'NJ', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL,
+        NULL, NULL, NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Belmar Beach', 'Belmar', 'NJ', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL,
+        NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Avon Beach', 'Avon', 'NJ', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL, NULL,
+        'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Manasquan Beach', 'Manasquan', 'NJ', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL,
+        NULL, NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Manasquan inlet', 'Manasquan', 'NJ', 'Awesome beach, great place to surf', 'beach', NULL, 'waterski', NULL,
+        NULL, NULL, NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Seagirt Beach', 'Seagirt', 'NJ', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL,
+        NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Asburry Beach', 'Asburry', 'NJ', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL,
+        NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Waikiki Beach', 'Waikiki', 'HI', 'Awesome beach, great place to surf', 'beach', NULL, 'surf,waterski', NULL,
+        NULL, NULL, NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Sunset beach', 'Oahu', 'HI', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL,
+        NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Waimea Bay', 'Oahu', 'HI', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL, NULL,
+        'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Ehukai Beach', 'Oahu', 'HI', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL,
+        NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Haleiwa Alii Beach', 'Oahu', 'HI', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL,
+        NULL, NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Haleiwa Beach', 'Oahu', 'HI', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL,
+        NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Chun''s Reef', 'Oahu', 'HI', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL,
+        NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Ke Waena Beach', 'Oahu', 'HI', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL,
+        NULL, 'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Turtle Bay', 'Oahu', 'HI', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL, NULL, NULL,
+        'https://www.surfline.com/surf-forecasts/new-jersey/58581a836630e24c44878fda');
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Black''s Beach', 'San Diego', 'CA', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL,
+        NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Ocean City Beach', 'Ocean City', 'MD', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL,
+        NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Windansea Beach', 'San Diego', 'CA', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL,
+        NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Cocoa Beach', 'Cape Canaveral', 'FL', 'Awesome beach, great place to surf', 'beach', NULL, 'surf', NULL, NULL,
+        NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Lake Buena Vista', 'Orlando', 'FL', 'Cool lake, lots of fun on the water', 'para', NULL, 'waterski', NULL,
+        NULL, NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Lake Carnegie', 'Princeton', 'NJ', 'Cool lake, lots of fun on the water', 'para', NULL, 'waterski', NULL, NULL,
+        NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Greenwood Lake', 'Greenwood Lake', 'NY', 'Cool lake, lots of fun on the water', 'para', NULL, 'waterski', NULL,
+        NULL, NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Lake Mohawk', 'Byram Township', 'NJ', 'Cool lake, lots of fun on the water', 'para', NULL, 'waterski', NULL,
+        NULL, NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Union Lake', 'Millville', 'NJ', 'Cool lake, lots of fun on the water', 'para', NULL, 'waterski', NULL, NULL,
+        NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Burnside Skate Park', 'Portland', 'OR', 'Amazing place to skate', 'skatedude', NULL, NULL, 'skateboard', NULL,
+        NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Skate Lab', 'Atlantic Beach', 'FL', 'Amazing place to skate', 'skatedude', NULL, NULL, 'skateboard', NULL,
+        NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('Denver Skate Park', 'Denver', 'CO', 'Amazing place to skate', 'skatedude', NULL, NULL, 'skateboard', NULL,
+        NULL, NULL, NULL);
+INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
+                   lattitude, longitude, url)
+VALUES ('David Armstrong Extreme Park', 'Lousiville', 'KY', 'Amazing place to skate', 'skatedude', NULL, NULL,
+        'skateboard', NULL, NULL,
         NULL, NULL);
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Lincoln City Skate Park', 'Lincoln City', 'OR', NULL, 'skatedude', NULL, NULL, 'skateboard', NULL, NULL, NULL,
+VALUES ('Lincoln City Skate Park', 'Lincoln City', 'OR', 'Amazing place to skate', 'skatedude', NULL, NULL,
+        'skateboard', NULL, NULL, NULL,
         NULL);
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Ray''s MTB Park', 'Cleveland', 'OH', NULL, 'MB', NULL, NULL, 'BMX', NULL, NULL, NULL, NULL);
+VALUES ('Ray''s MTB Park', 'Cleveland', 'OH', 'Awesome BMX track', 'MB', NULL, NULL, 'BMX', NULL, NULL, NULL, NULL);
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Chula Vista', 'San Diego', 'CA', NULL, 'MB', NULL, NULL, 'BMX', NULL, NULL, NULL, NULL);
+VALUES ('Chula Vista', 'San Diego', 'CA', 'Awesome BMX track', 'MB', NULL, NULL, 'BMX', NULL, NULL, NULL, NULL);
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('The Unit', 'Greenville', 'NC', NULL, 'MB', NULL, NULL, 'BMX', NULL, NULL, NULL, NULL);
+VALUES ('The Unit', 'Greenville', 'NC', 'Awesome BMX track', 'MB', NULL, NULL, 'BMX', NULL, NULL, NULL, NULL);
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Mesh', 'Longwood', 'FL', NULL, 'MB', NULL, NULL, 'BMX', NULL, NULL, NULL, NULL);
+VALUES ('Mesh', 'Longwood', 'FL', 'Awesome BMX track', 'MB', NULL, NULL, 'BMX', NULL, NULL, NULL, NULL);
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('The Flow', 'Colombus', 'OH', NULL, 'MB', NULL, NULL, 'BMX', NULL, NULL, NULL, NULL);
+VALUES ('The Flow', 'Colombus', 'OH', 'Awesome BMX track', 'MB', NULL, NULL, 'BMX', NULL, NULL, NULL, NULL);
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Pensylvania Skydiving Center', 'Hazleton', 'PA', NULL, 'skydive', NULL, NULL, NULL, 'Skydive', NULL, NULL,
+VALUES ('Pensylvania Skydiving Center', 'Hazleton', 'PA', 'Spectacular skydiving venue', 'skydive', NULL, NULL, NULL,
+        'Skydive', NULL, NULL,
         'http://paskydive.com/');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Sky Dive Key West', 'Summerland Key', 'FL', NULL, 'skydive', NULL, NULL, NULL, 'Skydive', NULL, NULL,
+VALUES ('Sky Dive Key West', 'Summerland Key', 'FL', 'Spectacular skydiving venue', 'skydive', NULL, NULL, NULL,
+        'Skydive', NULL, NULL,
         'https://skydivekeywest.com/');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Alaska SkyDive Center', 'Palmer', 'AK', NULL, 'skydive', NULL, NULL, NULL, 'Skydive', NULL, NULL,
+VALUES ('Alaska SkyDive Center', 'Palmer', 'AK', 'Spectacular skydiving venue', 'skydive', NULL, NULL, NULL, 'Skydive',
+        NULL, NULL,
         'http://alaskaskydivecenter.com/');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Skydive Hawaii', 'Waialua', 'HI', NULL, 'skydive', NULL, NULL, NULL, 'Skydive', NULL, NULL,
+VALUES ('Skydive Hawaii', 'Waialua', 'HI', 'Spectacular skydiving venue', 'skydive', NULL, NULL, NULL, 'Skydive', NULL,
+        NULL,
         'http://www.skydivehawaii.com/');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Skydive Zion', 'Hurricane', 'UT', NULL, 'skydive', NULL, NULL, NULL, 'Skydive', NULL, NULL,
+VALUES ('Skydive Zion', 'Hurricane', 'UT', 'Spectacular skydiving venue', 'skydive', NULL, NULL, NULL, 'Skydive', NULL,
+        NULL,
         'http://www.skydivezion.com/');
 
 

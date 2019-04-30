@@ -79,7 +79,7 @@ class UserApi {
 
     static getFollowingUsers(userId) {
         return new Promise((resolve, reject) => {
-            axios.get(`${baseUrl}/users/${userId}/follows/followers`)
+			axios.get(`${baseUrl}/users/${userId}/follows/`)
                 .then((res) => {
                     (res.data.results[0]) ? resolve(res.data.results[0]) : reject(Error("API Error"))
                 });
