@@ -7,6 +7,15 @@ import MediaLikes from './MediaLikes';
 
 
 const MediaCard = (props) => {
+    let creatorName = "";
+    /*
+    if (props.users.length > 0) {
+        for (var c = 0; c < props.users.length; c++) {
+            if (props.users[c].user_id == props.media.poster)
+                creatorName = this.state.users[c].username;
+        }
+    }
+*/
     return (
         <>
         
@@ -18,7 +27,7 @@ const MediaCard = (props) => {
                 <Card.Body>
                     <Container>
                         <Row style = {{marginTop: '-1rem', borderBottom:'1px dashed lightgrey'}}>
-                            <Card.Link href = "#">{props.media.poster}</Card.Link>
+                            <Card.Link href="#">{props.media.poster} {creatorName}</Card.Link>
                             :{props.media.description}
                         </Row>
                         <Row>

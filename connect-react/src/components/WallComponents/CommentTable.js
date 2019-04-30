@@ -10,6 +10,7 @@ export default class CommentTable extends Component {
         this.state = {
             comments: [], 
             comment: [],
+            users: [],
             poster: 0,
             carve: 0,
             media: 0,
@@ -55,6 +56,16 @@ export default class CommentTable extends Component {
                 comments: res.data.results[0]
             });
         });
+        axios.get(`http://localhost:8000/users`)
+            .then(res => {
+                //alert("carve:" + JSON.stringify(res.data.results));
+                //console.log("users: ", JSON.stringify(res.data.users[0][0].username));
+                //alert(JSON.stringify(res.data.results[0]));
+                this.setState({
+                    users: res.data.users[0]
+                });
+
+            });
     }
 
     render() {
@@ -63,12 +74,21 @@ export default class CommentTable extends Component {
 
         if(this.state.comments.length > 0){
 
+
             commentList = this.state.comments.map((com, index) => {
+                let poster = "";
+                if (this.state.users.length > 0) {
+                    for (var c = 0; c < this.state.users.length; c++) {
+                        if (this.state.users[c].user_id == com.poster)
+                            poster = this.state.users[c].username;
+                    }
+                }
+
                 if (this.props.type == "media") {
                     if (com.media == this.props.media.media_id) {
                         return (
                             <tr>
-                                <td>{com.poster}</td>
+                                <td>{poster}</td>
                                 <td>{com.comment}</td>
                                 <td>
                                     <LikeBar media={this.props.media} comment={com}/>
@@ -82,7 +102,7 @@ export default class CommentTable extends Component {
                     if (com.carve == this.props.carve.carve_id) {
                         return (
                             <tr>
-                                <td>{com.poster}</td>
+                                <td>{poster}</td>
                                 <td>{com.comment}</td>
                                 <td>
                                     <LikeBar media={this.props.media} comment={com}/>

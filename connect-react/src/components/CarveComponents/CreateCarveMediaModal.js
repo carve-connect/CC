@@ -41,7 +41,7 @@ export default class CreateCarveMediaModal extends Component {
 
         axios.post('http://localhost:8000/media', {
             poster: localStorage.getItem('userId'),
-            carve: this.props.carve.carveId,
+            carve: this.props.carve.carve_id,
             profile: null,
             venue: null,
             url: this.state.url,

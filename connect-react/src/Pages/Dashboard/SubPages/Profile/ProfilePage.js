@@ -23,6 +23,7 @@ import helmPhoto from '../../../../images/helmPhoto.jpeg';
 import upsidedown_snow from '../../../../images/upsidedown_snow.jpeg';
 import photosnow from '../../../../images/photosnow.jpeg';
 import droneguy from '../../../../images/drone guy.jpeg'
+import UserApi from "../../../../api/UserApi";
 
 
 export default class ProfilePage extends Component {
@@ -33,18 +34,20 @@ export default class ProfilePage extends Component {
 			userInfo: {},
 			userInfoLength: 0,
 			isUserLoggedIn: props.match.params.number === localStorage.getItem('userId'),
-			pic : SnowProfilePic,
+			pic: SnowProfilePic,
 			check: true,
 			show: false,
 			show1: false,
 			show2: false,
 			buddies: 0,
-            followers: 0,
+			followers: 0,
 			carve: true,
 			media: false,
 			posts: false,
 			content: "carves",
-			createMedia: false
+			createMedia: false,
+			followsUser: false,
+			buddy: false
 		};
 
 		this.handleShow = this.handleShow.bind(this);
@@ -66,7 +69,7 @@ export default class ProfilePage extends Component {
 	}
 
 	handleClick = () => {
-		this.setState({ show1: !this.state.show1 });
+		this.setState({show1: !this.state.show1});
 	};
 
 	handleCreateMedia = () => {
@@ -74,14 +77,14 @@ export default class ProfilePage extends Component {
 	};
 
 	handleClick2 = () => {
-		this.setState({ show2: !this.state.show2 });
+		this.setState({show2: !this.state.show2});
 	};
 
 
-	onClick1 = () =>{
-        alert("Follow " + this.state.userId + " by " + localStorage.getItem('userId'));
+	onClick1 = () => {
+		alert("Follow " + this.state.userId + " by " + localStorage.getItem('userId'));
 		axios.post('http://localhost:8000/follows', {
-            user1: localStorage.getItem('userId'),
+			user1: localStorage.getItem('userId'),
 			user2: this.state.userId
 
 		});
@@ -104,9 +107,10 @@ export default class ProfilePage extends Component {
 			content: "posts"
 		});
 	};
+
 	// We need to conditionally render things based on the user in relation to who is logged in
 	render() {
-		if(this.state.userInfoLength > 0) {
+		if (this.state.userInfoLength > 0) {
 			const {userInfo, isUserLoggedIn} = this.state;
 			const profilePrefix = isUserLoggedIn ? 'My ' : `${this.state.userInfo.username}'s `;
 
@@ -144,40 +148,36 @@ export default class ProfilePage extends Component {
 
 
 					</Row>
-            } else {
-                let budCheck = 0;
-                let followCheck = 0;
+			} else {
+				let budCheck = 0;
+				let followCheck = 0;
 
-                for (var c = 0; c < this.state.buddies.length; c++) {
-                    if (this.state.buddies[0][c].user_Id2 === localStorage.getItem('userId'))
-                        budCheck = 1;
-                }
+				if (this.state.buddy) {
+					options = <div>
 
-                if (budCheck === 1) {
-                    options = <div>
+					</div>;
+				} else if (this.state.followsUser) {
+					options = <div>
+						<Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
+					</div>;
+				} else {
 
-                    </div>;
-                } else if (followCheck === 1) {
-                    options = <div>
-                        <Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
-                    </div>;
-                } else {
-
-                    options =
-                        <div style={{display: 'flex'}}>
-                            <Button style={{margin: '5px'}} variant="info" onClick={this.onClick1}>Follow</Button>
-                            <Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
-                        </div>;
+					options =
+						<div style={{display: 'flex'}}>
+							<Button style={{margin: '5px'}} variant="info" onClick={this.onClick1}>Follow</Button>
+							<Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add
+								Buddy</Button>
+						</div>;
 
 
-                }
-            }
+				}
+			}
 
 			if (this.state.content === "media") {
 				content =
 
 
-                    <Container show={this.state.media} style={{paddingLeft: "15%", width: "150%", paddingTop: "1%"}}>
+					<Container show={this.state.media} style={{paddingLeft: "15%", width: "150%", paddingTop: "1%"}}>
 						<Row style={{paddingLeft: "50%", height: "2%"}}>
 							<h2 style={{margin: '3rem'}}>My Media</h2>
 							<CreateMediaModal show={this.state.createMedia} handleClose={this.handleCreateMedia}/>
@@ -213,7 +213,7 @@ export default class ProfilePage extends Component {
 			} else {
 				content =
 
-                    <Container style={{marginTop: '20px'}} show={this.state.posts}>
+					<Container style={{marginTop: '20px'}} show={this.state.posts}>
 						<h2>Wall Posts</h2>
 						<div style={{borderBottom: '1px solid lightgray'}}></div>
 						<WallPost profile={this.state.userId}/>
@@ -221,22 +221,23 @@ export default class ProfilePage extends Component {
 			}
 
 
-            return (
+			return (
 				<>
 					<CreateCarveModal handleClose={this.handleClick} show={this.state.show1}/>
-					<BuddyRequestModal id ={this.state.userInfo.user_id} show={this.state.show2} handleClose={this.handleClose2}/>
+					<BuddyRequestModal id={this.state.userInfo.user_id} show={this.state.show2}
+									   handleClose={this.handleClose2}/>
 
 					<Row style={{backgroundColor: "gainsboro", height: "1%", width: "200%"}}>
-                        <div style={{marginLeft: "3%", marginTop: '2%', marginBottom: '2%'}}>
-                            <h1>{profilePrefix} Profile</h1>
+						<div style={{marginLeft: "3%", marginTop: '2%', marginBottom: '2%'}}>
+							<h1>{profilePrefix} Profile</h1>
 						</div>
-						<div >
+						<div>
 							{options}
 						</div>
 					</Row>
 
-					
-				{/* This is the row that will hold the profile picture and the information */}
+
+					{/* This is the row that will hold the profile picture and the information */}
 					<Row style={{
 						width: "200%",
 						backgroundColor: "gainsboro",
@@ -253,34 +254,34 @@ export default class ProfilePage extends Component {
 
 						<Col style={{backgroundColor: "gainsboro", width: "75%"}}>
 						</Col>
-                    </Row>
+					</Row>
 
-                    <Row style={{
+					<Row style={{
 						paddingLeft: "50%",
-                        paddingBottom: "1%",
-                        paddingTop: "1%",
-                        width: "200%",
-                        backgroundColor: "silver",
-                        color: "black"
-                    }}>
+						paddingBottom: "1%",
+						paddingTop: "1%",
+						width: "200%",
+						backgroundColor: "silver",
+						color: "black"
+					}}>
 						<h3>Content
 
 						</h3>
 					</Row>
 					<Row style={{paddingLeft: "47%", width: "200%", backgroundColor: "silver", paddingBottom: "1%"}}>
 
-                        <Button variant={"dark"} onClick={this.handleCarves}>Carves</Button>
+						<Button variant={"dark"} onClick={this.handleCarves}>Carves</Button>
 
 
-                        <Button variant={"dark"} onClick={this.handleMedia}>Media</Button>
+						<Button variant={"dark"} onClick={this.handleMedia}>Media</Button>
 
 
-                        <Button variant={"dark"} onClick={this.handlePosts}>Wall Posts</Button>
+						<Button variant={"dark"} onClick={this.handlePosts}>Wall Posts</Button>
 
 					</Row>
 					<Row style={{backgroundColor: "lightsteelblue", width: "200%", justifyContent: "center"}}>
 						<Col style={{paddingRight: "60%", width: "100%"}}>
-						{content}
+							{content}
 						</Col>
 					</Row>
 				</>
@@ -288,7 +289,8 @@ export default class ProfilePage extends Component {
 		} else {
 			return (
 				<div>
-					<h1 className="fa fa-spinner fa-spin" style={{position: 'absolute', left: '50%', top: '50%'}}>Loading! </h1>
+					<h1 className="fa fa-spinner fa-spin"
+						style={{position: 'absolute', left: '50%', top: '50%'}}>Loading! </h1>
 				</div>
 
 			);
@@ -296,55 +298,35 @@ export default class ProfilePage extends Component {
 	}
 
 	handleClose() {
-		this.setState({ show: false });
+		this.setState({show: false});
 	}
+
 	handleClose2() {
-		this.setState({ show2: false });
+		this.setState({show2: false});
 	}
+
 	handleShow() {
-		this.setState({ show: true });
+		this.setState({show: true});
 	}
 
 	getUserInfo() {
 		// Getting the user id from the url param
 
-        if (this.state.userId > 0) {
+		if (this.state.userId > 0) {
 			axios.get(`http://localhost:8000/users/${this.state.userId}`)
 				.then(res => {
 					this.setState({
-                            userInfo: res.data.users[0][0],
-                            userInfoLength: Object.keys(res.data.users[0][0]).length,
+						userInfo: res.data.users[0][0],
+						userInfoLength: Object.keys(res.data.users[0][0]).length,
 
 						}
-                    )
+					)
 
 				});
 
-
-            axios.get(`http://localhost:8000/users/${this.state.userId}/follows/buddies`)
-                .then(res1 => {
-                    this.setState({
-                        buddies: res1.data.results[0].length,
-
-                    });
-
-                    // alert("bud " + JSON.stringify(res1.data.results));
-                });
-
-
-            axios.get(`http://localhost:8000/users/${this.state.userId}/follows/followers`)
-                .then(res2 => {
-                    this.setState({
-                        followers: res2.data.results[0].length
-
-                    });
-                    //alert("fol " + JSON.stringify(res2.data.results));
-                });
-
-
-		}
-
-		else {
+			this.getBuddy();
+			this.getFollowingUsers();
+		} else {
 
 			axios.get(`http://localhost:8000/users/${0}`)
 				.then(res => {
@@ -382,8 +364,37 @@ export default class ProfilePage extends Component {
 		// Getting the user id from the url param
 
 
-			//window.location.reload();
+		//window.location.reload();
 
+	}
+
+
+	getBuddy() {
+		UserApi.getBuddies(localStorage.getItem('userId'))
+			.then(buddies => {
+				let buddy = false;
+				buddies.forEach((bud) => {
+					if (bud.user_id2 == this.state.userId) {
+						buddy = true;
+					}
+				});
+				this.setState({buddy});
+			});
+	}
+
+	getFollowingUsers() {
+		UserApi.getFollowingUsers(localStorage.getItem('userId'))
+			.then(users => {
+				let followsUsers = false;
+				users.forEach((user) => {
+					if (user.user_id2 == this.state.userId) {
+						followsUsers = true;
+					}
+				});
+				this.setState({
+					followsUsers
+				});
+			});
 	}
 
 }

@@ -3,8 +3,7 @@ import {Button, Form} from "react-bootstrap";
 import CustomFormGroup from "../../components/CustomFormGroup";
 import Redirect from "react-router/Redirect";
 import axios from "axios";
-//import Row from 'react-bootstrap/Row';
-//import Col from 'react-bootstrap/Col';
+import hangGlide from '../../images/ski.jpeg'
 
 export default class SignUpPage extends Component {
 	constructor(props) {
@@ -16,11 +15,18 @@ export default class SignUpPage extends Component {
 			firstName: '',
 			lastName: '',
 			description: '',
-			profileType: ('',''),
-			snowSports: ('','',''),
-			landSports: ('','',''),
-            waterSports: ('','',''),
-            airSports: ('','',''),
+			profileType: [],
+			snowSports: [''],
+			landSports: [''],
+			waterSports: [''],
+			airSports: [''],
+			typ: false,
+			typA: false,
+			typB: false,
+			sno: false,
+			wat: false,
+			lan: false,
+			air: false,
 			redirect: false
 		}
 	}
@@ -93,15 +99,80 @@ export default class SignUpPage extends Component {
 
 	};
 
-    athlete = event => {
+
+	handleTypeA = event => {
+		let e = 'athlete';
+		var array = [...this.state.profileType];
+		if (this.state.profileType.length > 0) {
+			// make a separate copy of the array
+			var index = array.indexOf('athlete');
+			if (index !== -1) {
+				array.splice(index, 1);
+				this.setState({profileType: array});
+
+			} else {
+				this.setState(previousState => ({
+					profileType: [...previousState.profileType, 'athlete']
+				}));
+			}
+		} else {
+			this.setState(previousState => ({
+				profileType: [...previousState.profileType, 'athlete']
+			}));
+		}
+		this.setState({
+
+			typA: !this.state.typA
+
+		});
+		alert(this.state.profileType);
+
+	};
+	handleTypeP = event => {
+		let e = 'photographer';
+		var array = [...this.state.profileType];
+		if (this.state.profileType.length > 0) {
+			// make a separate copy of the array
+			var index = array.indexOf('photographer');
+			if (index !== -1) {
+				array.splice(index, 1);
+				this.setState({profileType: array});
+
+			} else {
+				this.setState(previousState => ({
+					profileType: [...previousState.profileType, 'photographer']
+				}));
+			}
+		} else {
+			this.setState(previousState => ({
+				profileType: [...previousState.profileType, 'photographer']
+			}));
+		}
+		this.setState({
+
+			typP: !this.state.typP
+
+		});
+		alert(this.state.profileType);
+	};
 
 
-    };
+	handleType = e => {
+		var array = [...this.state.profileType]; // make a separate copy of the array
+		var index = array.indexOf(e.target.value);
+		if (index !== -1) {
+			array.splice(index, 1);
+			this.setState({people: array});
 
-    athlete = event => {
+		}
 
+		this.setState({
 
-    };
+			typP: !this.state.typP
+
+		});
+
+	};
 
 
 	handleSubmit = e => {
@@ -115,7 +186,7 @@ export default class SignUpPage extends Component {
 			first_name: this.state.firstName,
 			last_name: this.state.lastName,
 			description: this.state.description,
-			type: [this.state.profileType],
+			type: this.state.profileType,
 			snow_sports: [this.state.snowSports],
 			water_sports: [this.state.waterSports],
 			land_sports: [this.state.landSports],
@@ -127,7 +198,7 @@ export default class SignUpPage extends Component {
 				this.setState( {userId : results.data.check })	;
 
 				if(this.state.userId > 0) {
-					alert("created profile userId: " + this.state.userId);
+					alert("created profile userId: " + this.state.userId + " " + this.state.type);
 					localStorage.setItem('userId', this.state.userId);
 					this.setState({redirect: true});
 
@@ -153,9 +224,9 @@ export default class SignUpPage extends Component {
         const { valueWater } = this.state;
         const { valueAir } = this.state;
 		return (
-
-			<div className="Login" style={{ height: '100%', top: '42%' }}>
-				<h3 style={{ textAlign: 'center', marginTop: '5%' }}>Sign Up</h3>
+			<div style={{height: "100%", width: "200%", backgroundImage: `url(${hangGlide})`}}>
+				<div className="Login" style={{height: '100%', top: '42%', backgroundColor: "grey"}}>
+					<h3 style={{textAlign: 'center', marginTop: '5%'}}>Sign Up</h3>
 				<form onSubmit={this.handleSubmit}>
 
 					<CustomFormGroup value={this.state.username} label="Username"	controlId="username"
@@ -185,6 +256,10 @@ export default class SignUpPage extends Component {
 							<option value ='snowboard'>Snowboard</option>
 							<option value = 'ski'>Ski</option>
 							<option value = 'snowmobile'>Snowmobile</option>
+							<option value='snowboard,ski'>Snowboard & Ski</option>
+							<option value='snowboard,snowmobile'>Snowboard & Snowmobile</option>
+							<option value='ski,snowmobile'>Ski & Snowmobile</option>
+							<option value='snowboard,ski,snowmobile'>Snowboard & Ski & Snowmobile</option>
 						</Form.Control>
 					</Form.Group>
 
@@ -195,6 +270,11 @@ export default class SignUpPage extends Component {
 							<option> </option>
 							<option value = 'skateboard'>Skateboard</option>
 							<option value = 'BMX'>BMX</option>
+							<option value='mountainBiking'>Mountain Biking</option>
+							<option value='skateboard,BMX'>Skateboard & BMX</option>
+							<option value='skateboard,mountainBiking'>Skateboard & Mountain biking</option>
+							<option value='BMX,mountainBiking'> BMX & Mountain Biking</option>
+							<option value='skateboard,BMX,mountainBiking'>Skateboard & BMX & Mountain biking</option>
 						</Form.Control>
 					</Form.Group>
                     <Form.Group controlId="water sport type">
@@ -204,7 +284,8 @@ export default class SignUpPage extends Component {
                             <option disabled value={-1}>Select an option...</option>
                             <option> </option>
                             <option value ='surf'>Surf</option>
-                            <option value = 'waterski'>water Ski</option>
+							<option value='waterski'>Water Ski</option>
+							<option value='surf,waterski'>Surf & Water Ski</option>
                         </Form.Control>
                     </Form.Group>
 
@@ -213,24 +294,54 @@ export default class SignUpPage extends Component {
                         <Form.Control value={valueAir} placeholder="Select a Sport" onChange={this.handleChange5} as="select">
                             <option disabled value={-1}>Select an option...</option>
                             <option> </option>
-                            <option value = 'skydive'>Sky Dive</option>
-                            <option value = 'hangglide'>Hang Glide</option>
+							<option value='skyDive'>Skydive</option>
+							<option value='hangGlide'>Hang Glide</option>
+							<option value='skyDive,hangGlide'>Skydive & Hang Glide</option>
                         </Form.Control>
                     </Form.Group>
 
+
 					<Form.Group controlId="profileType">
+
 						<Form.Label>Profile Type (required)</Form.Label>
+
 						<Form.Control value={valueType} placeholder="Select type of profile..." onChange={this.handleChange3} as="select">
+
 							<option disabled value={-1}>Select an option...</option>
+
 							<option> </option>
+
 							<option value = 'athlete'>Athlete</option>
+							<option value='proAthlete'>Pro Athlete</option>
+							<option value='athlete,proAthlete'>Athlete & Pro Athlete</option>
 							<option value = 'photographer'>Photographer</option>
+							<option value='filmographer'>Filmographer</option>
+							<option value='droneOperator'>Drone Operator</option>
+							<option value='athlete,photographer'>Athlete & Photographer</option>
+							<option value='photographer,filmographer'>Photographer & Filmographer</option>
+							<option value='photographer,droneOperator'>Photographer & Drone Operator</option>
+							<option value='photographer,filmographer,droneOperator'>Photographer & Filmographer & Drone
+								Operator
+							</option>
+							<option value='athlete,photographer'>Athlete & Photographer</option>
+							<option value='athlete,photographer,filmographer'>Athlete & Photographer & Filmographer
+							</option>
+							<option value='athlete,photographer,droneOperator'>Athlete & Photographer & Drone Operator
+							</option>
+							<option value='athlete,photographer,filmographer,droneOperator'>Athlete & Photographer &
+								Filmographer & Drone Operator
+							</option>
+							<option value='fan'>Fan</option>
+
+
 						</Form.Control>
+
 					</Form.Group>
 
 
                     <Button style={{ marginTop: '20px' }}	block disabled={!this.validateForm()} type="submit">Create Account!</Button>
 				</form>
+			</div>
 			</div>
 		);
 	}

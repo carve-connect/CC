@@ -13,6 +13,7 @@ import Settings from '../../components/SettingsComponents/settings';
 import Help from '../../components/SettingsComponents/help';
 import Privacy from '../../components/SettingsComponents/privacy';
 import Contact from '../../components/SettingsComponents/contact';
+import Alert from 'react-bootstrap/Alert'
 
 class TopNav extends Component {
 	constructor(props){
@@ -28,6 +29,7 @@ class TopNav extends Component {
 				contact: false,
 				privacy: false,
 				help: false,
+				messageAlert: true,
 				notifications: []};
 
 		this.handleSettings = this.handleSettings.bind(this);
@@ -88,6 +90,9 @@ class TopNav extends Component {
 			});
 	};
 
+	handleAlertClose = () => {
+		this.setState({messageAlert: !this.state.messageAlert});
+	};
 
 	componentWillMount()
 	{
@@ -182,6 +187,10 @@ class TopNav extends Component {
 						</li>
 
 						</Nav>
+					<Alert dismissible variant="danger" show={this.state.messageAlert} onClose={this.handleAlertClose}>
+						<Alert.Heading>You have {this.state.messages.length} messages</Alert.Heading>
+						<Alert.Heading>You have {this.state.notifications.length} notifications</Alert.Heading>
+					</Alert>
 					</>
 	)}
 

@@ -45,7 +45,8 @@ export default class CarveCardBuddies extends Component {
             cRe: 0,
             items: [],
             active: 5,
-            users: []
+            users: [],
+            at: 0
 
         };
 
@@ -130,9 +131,12 @@ export default class CarveCardBuddies extends Component {
         });
     };
 
-    handleClick6 = () => {
+    handleClick6 = (e) => {
 
-        this.setState({show6: !this.state.show6});
+        this.setState({
+            show6: !this.state.show6,
+            cId: e
+        });
     };
 
 
@@ -156,6 +160,8 @@ export default class CarveCardBuddies extends Component {
                 let lik = 0;
                 let dlik = 0;
                 let media_id = 0;
+                let at = 0;
+
                 for (let number = 1; number <= this.state.carveInfo.length / 5; number++) {
 
                     this.state.items.push(
@@ -166,23 +172,38 @@ export default class CarveCardBuddies extends Component {
                 }
 
                 if (this.state.carveAt1.length > 0) {
-                    carveAttendList = this.state.carveAt1.map((attender, index1) => {
 
-                        if (attender.carve === carve.carve_id)
+                    carveAttendList = this.state.carveAt1.map((attender, index1) => {
+                        /*if(attender.user == localStorage.getItem('userId'))
+                        {
+                           at = 1;
+
+                        }*/
+                        let atName = "";
+                        if (attender.carve === carve.carve_id) {
+
+                            if (this.state.users.length > 0) {
+                                for (var c = 0; c < this.state.users.length; c++) {
+                                    if (this.state.users[c].user_id == attender.user)
+                                        atName = this.state.users[c].username;
+                                }
+                            }
+
                             return (
 
                                 <ListGroup.Item key={index1} style={{
 
                                     backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
                                 }}>
-                                    {attender.user} {attender.type}
+                                    {atName} {attender.type}
 
                                 </ListGroup.Item>
-                            );
-                        else
+                            )
+                        } else
                             return (<></>)
                     });
                 }
+
 
                 if (this.state.carveComm.length > 0) {
                     carveComments = this.state.carveComm.map((com, index) => {
@@ -229,13 +250,25 @@ export default class CarveCardBuddies extends Component {
                     act = "Carve Completed";
                     no = "Completed";
                     att = <div></div>;
+                } else if (carve.creator == localStorage.getItem('userId')) {
+                    color = "grey";
+                    act = "Invite Buddy";
+                    no = "Upcoming";
+                    att = <Button variant="success" style={{paddingTop: "10px"}}
+                                  onClick={() => this.handleClick6(carve.carve_id, carve.creator)}>{act}</Button>;
+
                 } else {
                     color = "grey";
                     act = "Request to Attend";
                     no = "Upcoming";
-                    att = <Button variant="success" style={{paddingTop: "10px"}}
-                                  onClick={() => this.handleClick5(carve.carve_id, carve.creator)}>{act}</Button>;
 
+                    if (at === 1) {
+                        att = <div></div>;
+                        at = 0;
+                    } else {
+                        att = <Button variant="success" style={{paddingTop: "10px"}}
+                                      onClick={() => this.handleClick5(carve.carve_id, carve.creator)}>{act}</Button>;
+                    }
                 }
 
                 let creatorName = "";
@@ -253,10 +286,9 @@ export default class CarveCardBuddies extends Component {
 
                         paddingRight: '0px', paddingLeft: '0px', paddingTop: '0px', paddingBottom: '10px', width: "100%"
                     }}>
-                        <CarveAttendRequestModal cid={carve.carve_id} cre={this.state.cRe}
+                        <CarveAttendRequestModal cid={this.state.cId} cre={this.state.cRe}
                                                  handleClose={this.handleClick5} show={this.state.show5}/>
-                        <CarveInviteModal cid={this.state.currentCid} handleClose={this.handleClick6}
-                                          show={this.state.show6}/>
+                        <CarveInviteModal cid={this.state.cId} handleClose={this.handleClick6} show={this.state.show6}/>
                         <Card style={{width: '100%', backgroundColor: [color]}}>
                             <Card.Header style={{color: "navy"}}>
                                 <Row style={{justify: 'space-between'}}>
@@ -282,7 +314,7 @@ export default class CarveCardBuddies extends Component {
                                             <Row>
                                                 <h5>{carve.city},{carve.state}</h5>
                                             </Row>
-                                            <Row><p>Creator: {creatorName} id {carve.creator} </p></Row>
+                                            <Row><p>Creator: {creatorName}  </p></Row>
                                             <Row>
                                                 Description: {carve.description}
                                             </Row>
@@ -330,7 +362,7 @@ export default class CarveCardBuddies extends Component {
                                     </Col>
                                     <Col>
 
-                                        <MediaGroup type="carve" content_id={carve.carve_id}/>
+                                        <MediaGroup type="carve" users={this.state.users} content_id={carve.carve_id}/>
                                     </Col>
                                 </Row>
 
