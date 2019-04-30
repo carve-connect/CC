@@ -39,7 +39,7 @@ router.get('/logout', (req,res) => {
 router.post('/', (req,res) => {
 	const {username, email, password, first_name, last_name, description, type, snow_sports, water_sports, land_sports, air_sports} = req.body;
 	usrCheck = "Call username_check(?)";
-
+    //console.log(type+snow_sports+water_sports+land_sports+air_sports);
     con.query(usrCheck,[username], (err,results)=> {
         if (results[0][0][0] != 0)
         {
@@ -54,7 +54,7 @@ router.post('/', (req,res) => {
             // Added a comment
             new_user = "CALL add_user(?,?,?,?,?,?,?,?,?,?,?)";
             // Execute the query to insert into the database
-            con.query(new_user,[username, email, password, first_name, last_name, description, type[0], snow_sports[0], water_sports[0], land_sports[0], air_sports[0]], (err, results1) => {
+            con.query(new_user, [username, email, password, first_name, last_name, description, type, snow_sports[0], water_sports[0], land_sports[0], air_sports[0]], (err, results1) => {
                 if (err) throw err;
                 con.query(usrCheck,[username], (err,results3)=> {
                     if (err) throw err;
@@ -108,7 +108,7 @@ router.delete('/', (req,res) => {
 
 // Grab specific user by their id
 router.get('/:userId', (req,res) => {
-    console.log('We are in here!')
+    console.log('We are in here!');
 	const userId = req.params.userId;
 
 	get_user  = "call get_user(?)";
@@ -139,7 +139,7 @@ router.put('/:userId', (req,res) => {
 
     update_user = "CALL update_user(?,?,?,?,?,?,?,?,?,?,?,?)";
 
-    con.query(update_user,[userId,username, email, password, first_name, last_name, description, type[0], snow_sports[0], water_sports[0], land_sports[0], air_sports[0]],(err, results) => {
+    con.query(update_user, [userId, username, email, password, first_name, last_name, description, type, snow_sports[0], water_sports[0], land_sports[0], air_sports[0]], (err, results) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
@@ -152,7 +152,7 @@ router.patch('/:userId', (req,res) => {
 
     update_user = "CALL update_user(?,?,?,?,?,?,?,?,?,?,?,?)";
 
-    con.query(update_user,[userId,username, email, password, first_name, last_name, description, type[0], snow_sports[0], water_sports[0], land_sports[0], air_sports[0]],(err, results) => {
+    con.query(update_user, [userId, username, email, password, first_name, last_name, description, type, snow_sports[0], water_sports[0], land_sports[0], air_sports[0]], (err, results) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })

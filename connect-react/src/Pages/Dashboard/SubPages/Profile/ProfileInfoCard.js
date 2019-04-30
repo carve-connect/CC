@@ -24,7 +24,7 @@ const ProfileInfoCard = (props) => {
             <Container  
                 style= {{
                     width: '150%',
-                    height: '90%',
+                    height: '120%',
                     border: 'solid 1px #555',
                     backgroundColor: "darkgrey",
                     boxShadow:  '0 0 10px 5px rgba(0,0,0,0.6)',
@@ -56,8 +56,11 @@ const ProfileInfoCard = (props) => {
                                     <td>{props.user.water_sports}</td>
                                 </tr>
                                 <tr>
-                                    <td>{props.land_sports}</td>
+                                    <td>{props.user.land_sports}</td>
                                 </tr>
+                            <tr>
+                                <td>{props.user.air_sports}</td>
+                            </tr>
                                 <tr>
                                     <td><h3>About me:</h3> {props.user.description}</td>
                                 </tr>
