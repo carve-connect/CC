@@ -20,7 +20,7 @@ const ProfileInfoCard = (props) => {
     }
     return (
         <>
-        <EditProfileModal handleRefresh={props.refresh} id={props.id} user={props.user} show={props.show} handleClose={props.close} />
+            <EditProfileModal handleRefresh={props.refresh} id={props.id} user={props.user} show={props.show} handleClose={props.close} />
             <Container  
                 style= {{
                     width: '150%',
@@ -74,11 +74,8 @@ const ProfileInfoCard = (props) => {
 
                     </Col>
                     {editButton}
-
-                    
                 </Row>
             </Container>
-
         </>
     );
 };

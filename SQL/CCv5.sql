@@ -1762,7 +1762,23 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_user_followers` (in id int )
 BEGIN
-  select user_Id1 from follows where user_Id2 = id and type = 'follow' and user_Id1 > 0;
+  select user_Id1 from follows where user_Id2 = id and type='follow';
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure get_followers_of_user
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`get_user_followings`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `get_user_followings` (in id int)
+BEGIN
+    select user_Id2 from follows where user_Id1 = id and type='follow' and user_Id2 is not null;
 END$$
 
 DELIMITER ;

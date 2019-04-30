@@ -94,7 +94,7 @@ class SideMenu extends Component {
 		return (
 			<>
 				{/* First column that holds the menu items */}
-				<Col xs={1} style={{paddingRight: '0px', backgroundColor: "slategrey"}}>
+				<Col xs={2} style={{paddingRight: '0px', backgroundColor: "slategrey"}}>
 					<Row>
 						<ListGroup variant="flush" defaultActiveKey="1" style={{width: "100%"}}>
 							{listItems}

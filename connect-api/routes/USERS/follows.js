@@ -158,11 +158,23 @@ router.get('/venues', (req,res) => {
 
 
 // Grabs all follows from db; needs get_all_user_follows procedure
+
 router.get('/followers', (req,res) => {
 	// Find all follows from database
 	userId = req.params.userId;
 	follow_list = "CALL get_user_followers(?)";
 	con.query(follow_list, [userId], (err, results) => {
+		if (err) throw err;
+		res.status(200).jsonp({results}).end();
+	})
+});
+
+// Grabs all follows from db; needs get_all_user_follows procedure
+router.get('/following', (req,res) => {
+	// Find all follows from database
+	userId = req.params.userId;
+	following_list = "CALL get_user_followings(?)";
+	con.query(following_list, [userId], (err, results) => {
 		if (err) throw err;
 		res.status(200).jsonp({results}).end();
 	})

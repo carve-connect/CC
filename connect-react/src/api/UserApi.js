@@ -66,6 +66,27 @@ class UserApi {
 		})
 	}
 
+	// Returns all people user is following
+	static getFollowingUsers(userId) {
+	 	return new Promise((resolve, reject) => {
+	 		axios.get(`${baseUrl}/users/${userId}/follows/following`)
+				.then(res => {
+					(res.data.results) ? resolve(res.data.results[0]) : reject(Error("API Error"));
+				})
+		})
+	}
+
+	// Retrieves the users that follow a specific user
+	static getUsersFollowers(userId) {
+	 	return new Promise((resolve, reject) => {
+	 		axios.get(`${baseUrl}/users/${userId}/follows/followers`)
+				.then(res => {
+					(res.data.results) ? resolve(res.data.results[0]) : reject(Error("API Error"));
+				})
+		})
+	}
+
+
 
 	// Returns all venues that a user follows
 	static getFollowingVenues(userId) {

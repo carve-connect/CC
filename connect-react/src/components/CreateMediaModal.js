@@ -5,40 +5,28 @@ import axios from 'axios';
 export default class CreateMediaModal extends Component {
     constructor(props){
         super(props);
+        console.log('Props', props);
 
         this.state = {
-            show: false,
             url: "",
             description: ""
         };
         this.createMedia = this.createMedia.bind(this);
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
     }
 
     validateForm(){
         const {url, description} = this.state;
-
         return (url.length > 0 && description.length > 0);
     }
 
     handleChange = event => {
         this.setState({
-			[event.target.id]: event.target.value
-		});
+          [event.target.id]: event.target.value
+        });
     };
-
-    handleClose() {
-        this.setState({ show: false });
-      }
-    
-      handleShow() {
-        this.setState({ show: true });
-      }
 
     createMedia(e){
         e.preventDefault();
-
         axios.post('http://localhost:8000/media', {
             poster: localStorage.getItem('userId'),
             carve: null, 
@@ -46,17 +34,13 @@ export default class CreateMediaModal extends Component {
             venue: null, 
             url: this.state.url, 
             description: this.state.description
-        });
-        this.handleClose();
+        }).then(() => {this.props.handleClose()});
     }
 
     render(){
-
         return (
             <>
-                <Button onClick={this.handleShow} style={{height: "30%"}} size="sm" variant="info">Add Media</Button>
-
-                <Modal centered show={this.state.show} onHide={this.handleClose}>
+                <Modal centered show={this.props.show} onHide={this.props.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Show off what you've done!</Modal.Title>
                     </Modal.Header>
@@ -74,7 +58,7 @@ export default class CreateMediaModal extends Component {
                         </Container>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={this.handleClose}>
+                        <Button variant="secondary" onClick={this.props.handleClose}>
                             Exit
                         </Button>
                         <Button type = "submit" variant="primary" disabled={!this.validateForm()} onClick={this.createMedia}>
