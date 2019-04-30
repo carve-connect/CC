@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Button from "react-bootstrap/Button";
-import CreateCarveModal from "../../../../components/CreateCarveModal";
-import CarveCard from "../../../../components/CarveCard";
+import CreateCarveModal from "../../../../components/CarveComponents/CreateCarveModal";
+import CarveCard from "../../../../components/CarveComponents/CarveCard";
 import Row from "react-bootstrap/Row";
 
 export default class ListingPage extends Component {

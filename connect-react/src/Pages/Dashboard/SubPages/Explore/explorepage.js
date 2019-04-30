@@ -10,7 +10,7 @@ import mountain from "../../../../images/mountain.jpeg";
 import beach from "../../../../images/beach.jpeg";
 import skate from "../../../../images/skatedude.jpeg";
 import React, {Component} from "react";
-import FeaturedUserCard from '../../../../components/FeaturedUserCard';
+import FeaturedUserCard from '../../../../components/ProfileComponents/FeaturedUserCard';
 
 class ExplorePage extends Component {
     render() {

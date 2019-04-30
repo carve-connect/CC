@@ -1,9 +1,6 @@
-import React from 'react';
-import {Component} from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
-import {Row} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
-import {Col} from 'react-bootstrap';
 
 export default class MediaLikes extends Component {
     constructor(props){
@@ -12,8 +9,8 @@ export default class MediaLikes extends Component {
             likes: [],
             dislikes: [],
             poster: 0, 
-            media: 0 , 
-        }
+            media: 0 ,
+        };
         this.handleLike=this.handleLike.bind(this);
     }
 
@@ -43,7 +40,7 @@ export default class MediaLikes extends Component {
             likeordislike: like, 
             media: this.props.media.media_id
         })
-    }
+    };
 
 
     handleDislike= e => {
@@ -55,7 +52,7 @@ export default class MediaLikes extends Component {
             likeordislike: dislike, 
             media: this.props.media.media_id
         })
-    }
+    };
 
     render() {
         let likeList;

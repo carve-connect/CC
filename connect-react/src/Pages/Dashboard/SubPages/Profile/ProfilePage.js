@@ -4,14 +4,14 @@ import Button from "react-bootstrap/Button";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import CreateCarveModal from "../../../../components/CreateCarveModal";
-import BuddyRequestModal from "../../../../components/BuddyRequestModal";
-import MediaGroup from "../../../../components/MediaGroup";
+import CreateCarveModal from "../../../../components/CarveComponents/CreateCarveModal";
+import BuddyRequestModal from "../../../../components/NotificationComponents/BuddyRequestModal";
+import MediaGroup from "../../../../components/MediaComponents/MediaGroup";
 import ProfileInfoCard from './ProfileInfoCard';
 import Container from 'react-bootstrap/Container';
-import CarveCardUserCreate from '../../../../components/CarveCardUserCreate';
-import WallPost from '../../../../components/WallPost';
-import CreateMediaModal from "../../../../components/CreateMediaModal";
+import CarveCardUserCreate from '../../../../components/CarveComponents/CarveCardUserCreate';
+import WallPost from '../../../../components/WallComponents/WallPost';
+import CreateMediaModal from "../../../../components/MediaComponents/CreateMediaModal";
 //photos
 import dogskate from '../../../../images/dogskate.jpeg';
 import dogphoto from '../../../../images/dogphoto.jpeg';

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup'
 
-import MessageModal from "../../../../components/MessageModal";
+import MessageModal from "../../../../components/MessageComponents/MessageModal";
 
 const menuItems = {
 	'Compose  ': {href: '/dashboard/notifications '},

@@ -6,11 +6,11 @@ import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-import CarveInviteModal from "./CarveInviteModal";
-import CarveAttendRequestModal from "./CarveAttendRequestModal";
+import CarveInviteModal from "../NotificationComponents/CarveInviteModal";
+import CarveAttendRequestModal from "../NotificationComponents/CarveAttendRequestModal";
 import CarveLikes from "./CarveLikes";
-import CommentTable from "./CommentTable";
-import MediaGroup from "./MediaGroup";
+import CommentTable from "../WallComponents/CommentTable";
+import MediaGroup from "../MediaComponents/MediaGroup";
 import CreateCarveMediaModal from "./CreateCarveMediaModal";
 import Pagination from 'react-bootstrap/Pagination';
 

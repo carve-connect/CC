@@ -2,7 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Container from "react-bootstrap/Container";
-import CommentTable from './CommentTable';
+import CommentTable from '../WallComponents/CommentTable';
 import MediaLikes from './MediaLikes';
 
 
@@ -27,7 +27,7 @@ const MediaCard = (props) => {
                     </Container>
                 </Card.Body>
                {/* comment table would be here */}
-                <CommentTable media={props.media} type={"media"}/>
+                <CommentTable media={props.media} carve={""} type={"media"}/>
                 <Card.Footer style = {{fontSize: '10px'}}><em>Create_Time: {props.media.time}</em></Card.Footer>
             </Card>
         </>
