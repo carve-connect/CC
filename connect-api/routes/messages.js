@@ -31,7 +31,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_message, [sender, reciever, subject, body, msgType, carve, type], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}, recipient).end;
     })
 });
 
