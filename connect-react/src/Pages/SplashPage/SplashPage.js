@@ -157,28 +157,39 @@ class SplashPage extends Component {
                 </Carousel.Item>
             </Carousel>
 
-            
-            {/* Featured User Cards */}
-            <Container>
-              <Row>
-                <Col>
-                  <h1 style = {{textAlign: 'left', marginTop: '30px'}}>Featured Users</h1>
-                    <h1 className = 'border-bottom' style = {{ borderBottomColor: 'black',
-                        borderBottomWidth: "10px", width: '150%', borderThickness:"5px" }}> </h1>
-                </Col>
-              </Row>
-              <Row style = {{marginLeft: '75px', marginTop: '20px'}}>
-                <Col>
-                    <FeaturedUserCard title = "Featured User 1" img = {dogskate} text = "I love Carve Connect!"/>
-                </Col>
-                <Col>
-                    <FeaturedUserCard title = "Featured User 2" img = {dogphoto} text = "Filming is an art and it's my passion."/>
-                </Col>
-                <Col>
-                    <FeaturedUserCard title = "Featured User 3" img = {dogsurf} text = "Sports are cool."/>
-                </Col>
-              </Row>
-            </Container>
+
+              <h1 style={{color: "blue"}}>EXPLORE CARVE CONNECT</h1><h1 className='border-bottom' style={{
+              borderBottomColor: 'black',
+              borderBottomWidth: "10px", width: '150%', borderThickness: "5px"
+          }}></h1>
+              {/* Featured User Cards */}
+              <Container>
+                  <Row>
+                      <Col>
+                          <h1 style={{textAlign: 'left', marginTop: '30px'}}>Featured Users</h1>
+                          <h1 className='border-bottom' style={{
+                              borderBottomColor: 'black',
+                              borderBottomWidth: "10px", width: '150%', borderThickness: "5px"
+                          }}></h1>
+                      </Col>
+                  </Row>
+                  <Row style={{marginLeft: '75px', marginTop: '20px'}}>
+                      <Col>
+                          <FeaturedUserCard title="JRider" img={dogskate} text="Shredding is my life."/>
+
+                      </Col>
+                      <Col>
+                          <FeaturedUserCard title="Frosty" img={dogphoto}
+                                            text="Filming is an art and it's my passion."/>
+
+                      </Col>
+                      <Col>
+                          <FeaturedUserCard title="balthazar" img={dogsurf}
+                                            text="Shred the gnar man, shred the gnar."/>
+
+                      </Col>
+                  </Row>
+              </Container>
 
               <Container>
                   <Row>
@@ -192,13 +203,16 @@ class SplashPage extends Component {
                   </Row>
                   <Row style={{marginLeft: '75px', marginTop: '20px'}}>
                       <Col>
-                          <FeaturedUserCard title="Featured Venue 1" img={mountain} text="Great place to shred."/>
+                          <FeaturedUserCard title="Mt Snow" img={mountain} text="Great place to shred."/>
+
                       </Col>
                       <Col>
-                          <FeaturedUserCard title="Featured Venue 2" img={beach} text="Totally Tubular"/>
+                          <FeaturedUserCard title="Waikiki Beach" img={beach} text="Totally Tubular"/>
+
                       </Col>
                       <Col>
-                          <FeaturedUserCard title="Featured Venue 3" img={skate} text="Great place to skate."/>
+                          <FeaturedUserCard title="Burnside Skate Park" img={skate} text="Great place to skate."/>
+
                       </Col>
                   </Row>
               </Container>
@@ -228,8 +242,10 @@ class SplashPage extends Component {
                   <h1>Tour</h1>
                   <div className = "text-center" >
                       <div className="embed-responsive embed-responsive-16by9">
-                          <iframe Title="Tour Video" className="embed-responsive-item"
-                                  src="https://www.youtube.com/embed/wmALu6zdaTg" allowFullScreen> </iframe>
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/tBqGrY_qTRA"
+                                  frameBorder="0"
+                                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen></iframe>
                       </div>
                   </div>
                 </Col>
