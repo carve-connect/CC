@@ -134,7 +134,7 @@ router.get('/:like_info', (req, res) => {
 
     con.query(get_carve_like_info ,(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();;
     })
 });
 
@@ -143,7 +143,7 @@ router.get('/:all', (req, res) =>{
 
     con.query(get_carve_info_all,(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();;
     })
 });
 

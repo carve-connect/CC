@@ -13,7 +13,7 @@ router.get('/', (req,res) => {
     // Execute the query
     con.query(comment_list, (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -26,7 +26,7 @@ router.post('/', (req,res) => {
         // Execute the query to insert into the database
         con.query(new_comment,[poster,carve,media,profile,comment], (err, results) => {
             if (err) throw err;
-            res.status(201).jsonp({results}).end;
+            res.status(201).jsonp({results}).end();
         })
 });
 
@@ -37,7 +37,7 @@ router.delete('/', (req,res) => {
     // Execute the delete query
     con.query(delete_comments, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -49,7 +49,7 @@ router.get('/:commentId', (req,res) => {
     // Execute the get query
     con.query(get_comment, [commentId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -62,7 +62,7 @@ router.get('/:commentId', (req,res) => {
     // Execute update query
     con.query(update_comment,[commentId,poster,carve,media,profile,comment],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -75,7 +75,7 @@ router.patch('/:commentId', (req,res) => {
     // Execute update query
     con.query(update_comment,[commentId,poster,carve,media,profile,comment],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -87,7 +87,7 @@ router.delete('/:commentId', (req,res) => {
     // Execute the delete query
     con.query(delete_comments, [commentId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'comment deleted'}).end;
+        res.status(201).jsonp({msg:'comment deleted'}).end();
     })
 });
 

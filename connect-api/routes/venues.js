@@ -12,7 +12,7 @@ router.get('/', (req,res) => {
     venue_list = "CALL get_venues()";
     con.query(venue_list, (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({venues: results}).end;
+        res.status(200).jsonp({venues: results}).end();
     })
 });
 
@@ -27,7 +27,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_venue,[vname,cityNear,st,snowSports[0],waterSports[0],landSports[0],airSports[0],description], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -40,7 +40,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_venue,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -53,7 +53,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_venue,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -62,7 +62,7 @@ router.delete('/', (req,res) => {
     delete_venues = "CALL delete_venues()";
     con.query(delete_venues, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -72,7 +72,7 @@ router.get('/:venueId', (req,res) => {
     get_venue  = "call get_venue(?)";
     con.query(get_venue, [venueId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({venues:results}).end;
+        res.status(200).jsonp({venues:results}).end();
     })
 });
 
@@ -84,7 +84,7 @@ router.put('/:venueId', (req,res) => {
 
     con.query(update_venue,[venueId,vname,cityNear,st,snowSports[0],waterSports[0],landSports[0],airSports[0],description],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -96,7 +96,7 @@ router.patch('/:venueId', (req,res) => {
 
     con.query(update_venue,[venueId,vname,cityNear,st,snowSports[0],waterSports[0],landSports[0],airSports[0],description],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -106,7 +106,7 @@ router.delete('/:venueId', (req,res) => {
     delete_venues = "CALL delete_venue(?)";
     con.query(delete_venues, [venueId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'venue deleted'}).end;
+        res.status(201).jsonp({msg:'venue deleted'}).end();
     })
 });
 

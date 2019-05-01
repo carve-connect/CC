@@ -108,5 +108,21 @@ router.delete('/:carveId', (req,res) => {
     })
 });
 
+router.get('/names', (req,res) => {
+    get_carves_named_attendees = "CALL get_carves_named_attendees(?)";
+    con.query(get_carves_named_attendees, (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end();
+    })
+});
+
+router.get('/comment_info', (req,res) => {
+    get_carve_comment_info = "CALL get_carve_comment_info(?)";
+    con.query(get_carve_comment_info, (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end();
+    })
+});
+
 
 module.exports = router;
