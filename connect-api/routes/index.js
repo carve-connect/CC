@@ -31,7 +31,6 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 }
 
-...
 router.post('/signup', passport.authenticate('local-signup', {
     successRedirect: '/profile',
     failureRedirect: '/signup',
