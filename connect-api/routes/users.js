@@ -203,6 +203,16 @@ router.get('/:userId/carves/involved', (req,res) => {
         if (err) throw err;
         console.log(results[0][0]);
         res.status(200).jsonp({users: results}).end;
+      
+router.get('/:userId/follows/named', (req,res) => {
+    const userId = req.params.userId;
+
+    get_named_followed = "CALL get_named_followed(?)";
+
+    con.query(get_named_followed, [userId],(err, results) => {
+        if (err) throw err;
+        res.status(201).jsonp({msg:'user returned'}).end;
+
     })
 });
 
