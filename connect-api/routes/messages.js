@@ -14,7 +14,7 @@ router.get('/', (req,res) => {
 
     con.query(message_list, (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -31,7 +31,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_message, [sender, reciever, subject, body, msgType, carve, type], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results, recipient}).end;
+        res.status(201).jsonp({results, recipient}).end();
     })
 });
 
@@ -47,7 +47,7 @@ router.post('/reply', (req, res) => {
     // Execute the query to insert into the database
     con.query(new_message, [sender, reciever, subject, body, msgType, carve, type, reply], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -60,7 +60,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_message,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -73,7 +73,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_message,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -84,7 +84,7 @@ router.delete('/', (req,res) => {
 
     con.query(delete_messages, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -96,7 +96,7 @@ router.get('/:messageId', (req,res) => {
 
     con.query(get_message, [messageId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -109,7 +109,7 @@ router.put('/:messageId', (req,res) => {
 
     con.query(update_message,[messageId,sender,reciever,subject,body, msgType[0]],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -122,7 +122,7 @@ router.patch('/:messageId', (req,res) => {
 
     con.query(update_message,[messageId,sender,reciever,subject,body, msgType[0]],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -134,7 +134,7 @@ router.delete('/:messageId', (req,res) => {
 
     con.query(delete_messages, [messageId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'message deleted'}).end;
+        res.status(201).jsonp({msg:'message deleted'}).end();
     })
 });
 
