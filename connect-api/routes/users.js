@@ -170,5 +170,52 @@ router.delete('/:userId', (req,res) => {
     })
 });
 
+router.get('/:userId/follows/followers/named ', (req,res) => {
+    const userId = req.params.userId;
+
+    get_named_followers  = "call get_named_followers(?)";
+
+    con.query(get_named_followers, [userId],(err, results) => {
+        if (err) throw err;
+        console.log(results[0][0]);
+        res.status(200).jsonp({users: results}).end;
+    })
+});
+
+router.get('/:userId/follows/venues/named ', (req,res) => {
+    const userId = req.params.userId;
+
+    get_named_vFollowed  = "call get_named_vFollowed(?)";
+
+    con.query(get_named_vFollowed, [userId],(err, results) => {
+        if (err) throw err;
+        console.log(results[0][0]);
+        res.status(200).jsonp({users: results}).end;
+    })
+});
+
+router.get('/:userId/carves/involved', (req,res) => {
+    const userId = req.params.userId;
+
+    get_users_involved_carves = "call get_users_involved_carves(?)";
+
+    con.query(get_users_involved_carves, [userId], (err, results) => {
+        if (err) throw err;
+        console.log(results[0][0]);
+        res.status(200).jsonp({users: results}).end;
+    })
+});
+      
+router.get('/:userId/follows/named', (req,res) => {
+    const userId = req.params.userId;
+
+    get_named_followed = "CALL get_named_followed(?)";
+
+    con.query(get_named_followed, [userId],(err, results) => {
+        if (err) throw err;
+        res.status(201).jsonp({msg:'user returned'}).end;
+
+    })
+});
 
 module.exports = router;
