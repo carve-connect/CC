@@ -24,7 +24,8 @@ class NotificationsPageOutbox extends Component {
         };
 
     }
-    componentWillMount()
+
+    componentDidMount()
     {
         axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/notifications/sent`)
             .then(res => {

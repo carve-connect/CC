@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import pic1 from "../../images/snow.jpeg"
 import Image from 'react-bootstrap/Image'
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 class SideMenu extends Component {
 	constructor(props) {
@@ -19,8 +20,7 @@ class SideMenu extends Component {
 	}
 
 
-
-	componentWillMount() {
+	componentDidMount() {
 		axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/buddies`)
 			.then(res => {
 				// console.log("results: ", res.data.results[0]);
@@ -62,11 +62,12 @@ class SideMenu extends Component {
 		listItems = Object.keys(menuItems).map((name, index) => {
 			// Make a list group item that when clicked, changes the sel field in state
 			return (
-				<ListGroup.Item key={index} action href={menuItems[name].href} style={{
+				<ListGroup.Item key={index} style={{
 					backgroundColor: "slategrey", color: "white", fontWeight: 'bold',
 					paddingRight: '0px', width: "100%"
 				}}>
-					{name}<i className={menuItems[name].icon} style={{color: "white"}}/>
+					<Link to={menuItems[name].href}><h4>{name}<i className={menuItems[name].icon}
+																 style={{color: "white"}}/></h4></Link>
 				</ListGroup.Item>
 			)
 		});
@@ -94,7 +95,7 @@ class SideMenu extends Component {
 		return (
 			<>
 				{/* First column that holds the menu items */}
-				<Col xs={1} style={{paddingRight: '0px', backgroundColor: "slategrey"}}>
+				<Col xs={1} style={{paddingRight: '5px', backgroundColor: "slategrey"}}>
 					<Row>
                         <ListGroup variant="flush" defaultActiveKey="1" style={{width: "90%"}}>
 							{listItems}

@@ -37,7 +37,8 @@ class NotificationsPageInbox extends Component {
         this.handleClose3 = this.handleClose3.bind(this);
         this.handleClose4 = this.handleClose4.bind(this);
     }
-    componentWillMount()
+
+    componentDidMount()
     {
         axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/messages/notifications`)
             .then(res => {

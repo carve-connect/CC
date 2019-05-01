@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Col from "react-bootstrap/Col";
-import Mount_Snow_BG from "../../../../images/mount_snow_bg.png";
-
+import Photo from "../../../../images/photo.jpeg";
+import SkiChick from "../../../../images/ski chick.jpeg";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -74,9 +74,12 @@ class UsersPage extends Component {
         let row = [];
 
         for(let k =0 ; k < length; k++){
+            let img = Photo;
+            if ((k % 2 === 0))
+                img = SkiChick;
             row.push(
                 <Col key={k}>
-                    <UserFigure name={users[k].username} img={Mount_Snow_BG} href={'/dashboard/profile/' + users[k].user_id}/>
+                    <UserFigure name={users[k].username} img={img} href={'/dashboard/profile/' + users[k].user_id}/>
                 </Col>
             );
         }

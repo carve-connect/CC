@@ -25,7 +25,8 @@ class MessagesPageOutbox extends Component {
         };
 
     }
-    componentWillMount() {
+
+    componentDidMount() {
         UserApi.getUsersSents(localStorage.getItem('userId')).then(messages => {
             this.setState({ messages });
         });
@@ -71,7 +72,8 @@ class MessagesPageOutbox extends Component {
                     <Col style={{ paddingLeft: '0px'}}>
 
                         <h3 className = 'border-bottom' style = {{  borderBottomColor: 'black',
-                            borderBottomWidth: 5, width: '150%' }}>Messages </h3>
+                            borderBottomWidth: 5, width: '150%'
+                        }}>Sent Messages: </h3>
 
                         <div>
                             <table className="table table-dark" style = {{color: "skyblue", paddingTop: "5px",width:"101%", bordered: '0.5px solid rgba(0, 0, 0, 0.5)'}}>

@@ -29,7 +29,7 @@ export default class VenueListPage extends Component {
     }
 
 
-    componentWillMount() {
+    componentDidMount() {
 		// Getting the user id from the url param
 		axios.get(`http://localhost:8000/venues`)
 			.then(res => {

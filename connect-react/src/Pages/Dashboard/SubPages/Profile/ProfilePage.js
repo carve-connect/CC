@@ -62,7 +62,7 @@ export default class ProfilePage extends Component {
 	}
 
 	// Retrieves info before component is mounted to the DOM
-	componentWillMount() {
+	componentDidMount() {
 		this.getUserInfo();
 		//this.getUserCounts();
 		//this.setProfilePic();
@@ -387,7 +387,7 @@ export default class ProfilePage extends Component {
 			.then(users => {
 				let followsUsers = false;
 				users.forEach((user) => {
-					if (user.user_id1 == this.state.userId) {
+					if (user.user_id2 == this.state.userId) {
 						followsUsers = true;
 					}
 				});
