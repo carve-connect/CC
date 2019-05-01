@@ -23,7 +23,7 @@ export default class ListingPage extends Component {
 
 
         return (
-			<div>
+			<div style={{paddingLeft: "2%"}}>
 				<CreateCarveModal handleClose={this.handleClick} show={this.state.show}/>
                 <Row style={{width: "200%", height: "100%", backgroundColor: "cadetblue"}}>
                     <h2 style={{width: '80%'}}>Listings Page</h2>

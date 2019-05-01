@@ -28,7 +28,7 @@ class MessagesPageInbox extends Component {
     }
 
     // Fetches data before component will mount to the dom
-    componentWillMount() {
+    componentDidMount() {
         UserApi.getUsersInbox(localStorage.getItem('userId'))
           .then(messages => {
               //alert("messages " + JSON.stringify(messages.data));
@@ -92,7 +92,8 @@ class MessagesPageInbox extends Component {
                     <Col style={{ paddingLeft: '0px'}}>
 
                         <h3 className = 'border-bottom' style = {{  borderBottomColor: 'black',
-                            borderBottomWidth: 5, width: '150%' }}>Messages </h3>
+                            borderBottomWidth: 5, width: '150%'
+                        }}>Messages Inbox </h3>
 
                         <div>
                             <table className="table table-dark" style = {{color: "skyblue", paddingTop: "5px",width:"101%", bordered: '0.5px solid rgba(0, 0, 0, 0.5)'}}>

@@ -11,6 +11,7 @@ import beach from "../../../../images/beach.jpeg";
 import skate from "../../../../images/skatedude.jpeg";
 import React, {Component} from "react";
 import FeaturedUserCard from '../../../../components/ProfileComponents/FeaturedUserCard';
+import {Link} from "react-router-dom";
 
 class ExplorePage extends Component {
     render() {
@@ -36,17 +37,17 @@ class ExplorePage extends Component {
                     <Row style={{marginLeft: '75px', marginTop: '20px'}}>
                         <Col>
                             <FeaturedUserCard title="JRider" img={dogskate} text="Shredding is my life."/>
-                            <a href={'/dashboard/profile/3'}> profile</a>
+                            <Link to={'/dashboard/profile/3'}>JRider's profile</Link>
                         </Col>
                         <Col>
                             <FeaturedUserCard title="Frosty" img={dogphoto}
                                               text="Filming is an art and it's my passion."/>
-                            <a href='/dashboard/profile/1'> profile</a>
+                            <Link to={'/dashboard/profile/1'}> Frosty's profile</Link>
                         </Col>
                         <Col>
                             <FeaturedUserCard title="balthazar" img={dogsurf}
                                               text="Shred the gnar man, shred the gnar."/>
-                            <a href={'/dashboard/profile/4'}> profile</a>
+                            <Link to={'/dashboard/profile/4'}> Balthazar's Profile </Link>
                         </Col>
                     </Row>
                 </Container>
@@ -64,15 +65,15 @@ class ExplorePage extends Component {
                     <Row style={{marginLeft: '75px', marginTop: '20px'}}>
                         <Col>
                             <FeaturedUserCard title="Mt Snow" img={mountain} text="Great place to shred."/>
-                            <a href={`/dashboard/venues/14`}> page</a>
+                            <Link to={`/dashboard/venues/14`}> page</Link>
                         </Col>
                         <Col>
                             <FeaturedUserCard title="Waikiki Beach" img={beach} text="Totally Tubular"/>
-                            <a href={`/dashboard/venues/28`}> page</a>
+                            <Link to={`/dashboard/venues/28`}> page</Link>
                         </Col>
                         <Col>
                             <FeaturedUserCard title="Burnside Skate Park" img={skate} text="Great place to skate."/>
-                            <a href={`/dashboard/venues/46`}> page</a>
+                            <Link to={`/dashboard/venues/46`}> page</Link>
                         </Col>
                     </Row>
                 </Container>

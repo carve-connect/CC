@@ -48,6 +48,17 @@ router.get('/buddies/carves', (req, res) => {
 	})
 });
 
+//get /followed
+router.get('/buddies/carves/made', (req, res) => {
+    // Find all follows from database
+    userId = req.params.userId;
+    follow_list = "CALL get_buddy_carves(?)";
+    con.query(follow_list, [userId], (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end();
+    })
+});
+
 // Returns all venues followed by a specific user
 router.get('/venues/carves', (req, res) => {
 	// Find all follows from database

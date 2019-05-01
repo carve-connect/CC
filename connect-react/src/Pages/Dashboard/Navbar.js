@@ -14,6 +14,7 @@ import Help from '../../components/SettingsComponents/help';
 import Privacy from '../../components/SettingsComponents/privacy';
 import Contact from '../../components/SettingsComponents/contact';
 import Alert from 'react-bootstrap/Alert'
+import MessageModal from "../../components/MessageComponents/MessageModal";
 
 class TopNav extends Component {
 	constructor(props){
@@ -122,14 +123,15 @@ class TopNav extends Component {
 					<Help show={this.state.help} handleClose={this.handleHelp}/>
 					<Privacy show={this.state.privacy} handleClose={this.handlePrivacy}/>
 					<Contact show={this.state.contact} handleClose={this.handleContact}/>
+					<MessageModal handleClose={this.handleClick1} show={this.state.show1}/>
 					<Nav className="navbar navbar-dark bg-dark nav-fill" >
-					{/*<a className="navbar-brand" href="/">Carve Connect</a>*/}
-                        <NavbarBrand href={`/dashbaord/profie/${localStorage.getItem('userId')}`} style={{
+						{/*<a className="navbar-brand" href="/">Carve Connect</a>*/}
+						<NavbarBrand style={{
                             color: 'lightskyblue',
                             textShadowColor: 'black',
                             fontWeight: 'bold',
                             fontFamily: 'monospace'
-                        }}>Carve Connect</NavbarBrand>
+						}}><Link exact to={`/dashboard/profile/${localStorage.getItem('userId')}`}>Carve Connect</Link></NavbarBrand>
 						<li>
 							<div style={{justify:"left"}}>
 								<Form onSubmit={this.handleSearch} inline style={{justify:"left"}} >
@@ -144,11 +146,14 @@ class TopNav extends Component {
 
 									<NavDropdown className ="fa fa-envelope text-white"  id="collapsible-nav-dropdown">
 										<NavDropdown.Item
-											href="/dashboard/inbox">Messages: {this.state.messages.length}</NavDropdown.Item>
+										><Link to={"/dashboard/inbox"}><h4>Messages: {this.state.messages.length}</h4>
+										</Link></NavDropdown.Item>
 										<NavDropdown.Divider/>
-										<NavDropdown.Item href="/dashboard/inbox">Inbox</NavDropdown.Item>
+										<NavDropdown.Item><Link to={"/dashboard/inbox"}><h4>Inbox</h4>
+										</Link></NavDropdown.Item>
 										<NavDropdown.Divider/>
-										<NavDropdown.Item href="/dashboard/outbox">Sent</NavDropdown.Item>
+										<NavDropdown.Item><Link to={"/dashboard/outbox"}><h4>Sent</h4>
+										</Link></NavDropdown.Item>
 										<NavDropdown.Divider />
 										<NavDropdown.Item onClick={this.handleClick1}>Send Message</NavDropdown.Item>
 
@@ -157,11 +162,15 @@ class TopNav extends Component {
 
 									<NavDropdown className ="fa fa-bell text-danger"  id="collapsible-nav-dropdown" >
 										<NavDropdown.Item
-											href="/dashboard/notinbox">Notifications: {this.state.notifications.length}</NavDropdown.Item>
+										><Link to={"/dashboard/notinbox"}>
+											<h4>Notifications: {this.state.notifications.length}</h4>
+										</Link></NavDropdown.Item>
 										<NavDropdown.Divider/>
-										<NavDropdown.Item href="/dashboard/notinbox">Incoming</NavDropdown.Item>
+										<NavDropdown.Item><Link to={"/dashboard/notinbox"}><h4>Incoming</h4>
+										</Link></NavDropdown.Item>
 										<NavDropdown.Divider/>
-										<NavDropdown.Item href="/dashboard/notoutbox">Outgoing</NavDropdown.Item>
+										<NavDropdown.Item><Link to={'/dashboard/notoutbox'}><h4>Outgoing</h4>
+										</Link></NavDropdown.Item>
 										<NavDropdown.Divider />
 
 									</NavDropdown>

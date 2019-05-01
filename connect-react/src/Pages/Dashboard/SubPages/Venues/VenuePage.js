@@ -39,7 +39,7 @@ export default class VenuePage extends Component {
     }
 
     // Fetches Data from api before the component is rendered to the screen
-    componentWillMount() {
+    componentDidMount() {
         this.getData();
 	  }
 
