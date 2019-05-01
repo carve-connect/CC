@@ -13,7 +13,7 @@ router.get('/', (req,res) => {
     // Execute the query to pull from the database
     con.query(comment_list, (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -27,7 +27,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_comment,[poster,carve,media,profile,comment], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -38,7 +38,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_comment,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -50,7 +50,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_comment,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -61,7 +61,7 @@ router.delete('/', (req,res) => {
     // Execute the query to delete from the database
     con.query(delete_comments, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -73,7 +73,7 @@ router.get('/:commentId', (req,res) => {
     // Execute the query to pull from the database
     con.query(get_comment, [commentId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -87,7 +87,7 @@ router.put('/:commentId', (req,res) => {
     // Execute the update query
     con.query(update_comment,[commentId,poster,carve,media,profile,comment],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -101,7 +101,7 @@ router.patch('/:commentId', (req,res) => {
     // Execute the update query
     con.query(update_comment,[commentId,poster,carve,media,profile,comment],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -114,7 +114,17 @@ router.delete('/:commentId', (req,res) => {
     // Execute the delete query
     con.query(delete_comments, [commentId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'comment deleted'}).end;
+        res.status(201).jsonp({msg:'comment deleted'}).end();
+    })
+});
+
+router.get('/all', (req,res) => {
+    // Create the query to get all comments from the database
+    get_comment_info_all = "CALL get_comment_info_all()";
+    // Execute the query to pull from the database
+    con.query(get_comment_info_all, (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end();
     })
 });
 
