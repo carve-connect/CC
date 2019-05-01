@@ -130,7 +130,7 @@ router.delete('/:carveId', (req,res) => {
 });
 
 router.get('/:like_info', (req, res) => {
-    get_carve_like_info  = "CALL get_carve_like_info ";
+    get_carve_like_info = "CALL get_carve_like_info";
 
     con.query(get_carve_like_info ,(err, results) => {
         if (err) throw err;
