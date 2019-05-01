@@ -118,5 +118,13 @@ router.delete('/:commentId', (req,res) => {
     })
 });
 
+router.get('/:like_info', (req, res) =>{
+    comment_like_info = "CALL comment_like_info";
+
+    con.query(comment_like_info ,(err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end;
+    })
+});
 
 module.exports = router;
