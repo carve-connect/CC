@@ -118,5 +118,14 @@ router.delete('/:commentId', (req,res) => {
     })
 });
 
+router.get('/all', (req,res) => {
+    // Create the query to get all comments from the database
+    get_comment_info_all = "CALL get_comment_info_all()";
+    // Execute the query to pull from the database
+    con.query(get_comment_info_all, (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end;
+    })
+});
 
 module.exports = router;
