@@ -197,12 +197,14 @@ router.get('/:userId/follows/venues/named ', (req,res) => {
 router.get('/:userId/carves/involved', (req,res) => {
     const userId = req.params.userId;
 
-    get_users_involved_carves  = "call get_users_involved_carves(?)";
+    get_users_involved_carves = "call get_users_involved_carves(?)";
 
-    con.query(get_users_involved_carves, [userId],(err, results) => {
+    con.query(get_users_involved_carves, [userId], (err, results) => {
         if (err) throw err;
         console.log(results[0][0]);
         res.status(200).jsonp({users: results}).end;
+    })
+});
       
 router.get('/:userId/follows/named', (req,res) => {
     const userId = req.params.userId;
