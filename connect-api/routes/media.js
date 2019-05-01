@@ -13,7 +13,7 @@ router.get('/', (req,res) => {
 
     con.query(media_list, (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -27,7 +27,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_media,[poster,url,description,carve,venue,profile], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -41,7 +41,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_media,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -55,7 +55,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_media,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -66,7 +66,7 @@ router.delete('/', (req,res) => {
 
     con.query(delete_medias, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -78,7 +78,7 @@ router.get('/profile/:userId', (req,res) => {
     con.query(get_media, [userId],(err, results) => {
         if (err) throw err;
         //console.log("results" + JSON.stringify(results));
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -89,7 +89,7 @@ router.get('/carve/:carveId', (req, res) => {
     con.query(get_media, [carveId],(err, results) => {
         if (err) throw err;
         //console.log("results" + JSON.stringify(results));
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -101,7 +101,7 @@ router.get('/venue/:venueId', (req,res) => {
     con.query(get_media, [venueId],(err, results) => {
         if (err) throw err;
         //console.log("results" + JSON.stringify(results));
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -115,7 +115,7 @@ router.get('/:mediaId', (req,res) => {
     con.query(get_media, [mediaId],(err, results) => {
         if (err) throw err;
         //console.log("results" + JSON.stringify(results));
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -128,7 +128,7 @@ router.put('/:mediaId', (req,res) => {
 
     con.query(update_media,[mediaId,poster,url,description,carve,venue,profile],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -141,7 +141,7 @@ router.patch('/:mediaId', (req,res) => {
 
     con.query(update_media,[mediaId,poster,url,description,carve,venue,profile],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -153,7 +153,7 @@ router.delete('/:mediaId', (req,res) => {
 
     con.query(delete_medias, [mediaId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'media deleted'}).end;
+        res.status(201).jsonp({msg:'media deleted'}).end();
     })
 });
 
@@ -163,7 +163,7 @@ router.get('/:like_info', (req, res) => {
 
     con.query(get_media_like_info,(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -173,7 +173,7 @@ router.get('/:comment_info', (req, res) => {
 
     con.query(get_media_comment_info,(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -182,7 +182,7 @@ router.get(':/all', (req, res) => {
 
     con.query(get_media_all_info,(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
