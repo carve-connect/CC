@@ -170,5 +170,17 @@ router.delete('/:userId', (req,res) => {
     })
 });
 
+router.get('/:userId/follows/followers/named ', (req,res) => {
+    const userId = req.params.userId;
+
+    get_named_followers  = "call get_named_followers(?)";
+
+    con.query(get_named_followers, [userId],(err, results) => {
+        if (err) throw err;
+        console.log(results[0][0]);
+        res.status(200).jsonp({users: results}).end;
+    })
+});
+
 
 module.exports = router;
