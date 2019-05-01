@@ -195,6 +195,17 @@ router.patch('/:followId', (req,res) => {
 	})
 });
 
+
+// Delete a message given two users id's
+router.delete('/ids', (req, res) => {
+	const { userLoggedIn, followerId } = req.body;
+	const delete_follow = 'CALL delete_follow_ids(?,?)';
+	con.query(delete_follow, [userLoggedIn, followerId], (err, results) => {
+		if(err) throw err;
+		res.status(200).jsonp({ message: `Deleted follow between ${userLoggedIn} and ${followerId}` })
+	})
+});
+
 // Deletes the specific follow by its ID
 router.delete('/:followId', (req,res) => {
 	const followId = req.params.followId;

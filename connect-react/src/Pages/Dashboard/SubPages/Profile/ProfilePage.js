@@ -10,13 +10,13 @@ import BuddyRequestModal from "../../../../components/BuddyRequestModal";
 import ProfileInfoCard from './ProfileInfoCard';
 
 import { imgObj } from "images/images";
-import UserApi from "../../../../api/UserApi";
+import UserApi from "api/UserApi";
+import FollowsApi from "api/FollowsApi";
 import MediaTab from "./Tabs/MediaTab";
 import CarveTab from "./Tabs/CarveTab";
 import WallTab from "./Tabs/WallTab";
 
-const myUserId = localStorage.getItem('userId');
-
+const myUserId = Number(localStorage.getItem('userId'));
 
 export default class ProfilePage extends Component {
 	constructor(props) {
@@ -25,112 +25,150 @@ export default class ProfilePage extends Component {
 			userId: props.match.params.number,
 			userInfo: {},
 			userInfoLength: 0,
-			isUserLoggedIn: props.match.params.number === myUserId,
-			check: true,
-			show: false,
-			show1: false,
-			show2: false,
-			buddies: 0,
-			followers: 0,
+			isUserLoggedIn: Number(props.match.params.number) === myUserId,
+			profileShow: false,
+			showBuddyModal: false,
+			numBuddies: 0,
+			numFollowers: 0,
+			isBuddy: false,
+			isFollowing: false,
 			tabsKey: 'carves'
 		};
 
-		this.handleShow = this.handleShow.bind(this);
-		this.handleClose = this.handleClose.bind(this);
-		this.handleClose2 = this.handleClose2.bind(this);
+		this.handleProfileModal = this.handleProfileModal.bind(this);
 		this.getUserInfo = this.getUserInfo.bind(this);
+		this.handleBuddyModal = this.handleBuddyModal.bind(this);
+		this.unfollowUser = this.unfollowUser.bind(this);
+		this.followUser = this.followUser.bind(this);
 	}
+
+	// ----------------------------- METHODS ---------------------------------- //
+
 
 	// Retrieves info before component is mounted to the DOM
 	componentWillMount() {
 		this.getUserInfo();
 	}
 
+	handleBuddyModal() {
+		this.setState({ showBuddyModal: !this.state.showBuddyModal });
+	}
 
-	handleClick = () => {
-		this.setState({ show1: !this.state.show1 });
-	};
+	handleProfileModal() {
+		this.setState({ showProfile: !this.state.showProfile });
+	}
 
-	handleClick2 = () => {
-		this.setState({ show2: !this.state.show2 });
-	};
-
-
-	onClick1 = () =>{
-		alert("Follow " + this.state.userId + " by " + localStorage.getItem('userId'));
+	// Follows user we are looking at
+	followUser() {
+		console.log("Follow " + this.state.userId + " by " + localStorage.getItem('userId'));
 		axios.post('http://localhost:8000/follows', {
-            user1: localStorage.getItem('userId'),
+			user1: myUserId,
 			user2: this.state.userId
-
 		});
 	};
 
+	// Unfollows the user that we are currently looking at
+	unfollowUser() {
+		FollowsApi.deleteFollow(myUserId, this.state.userId)
+			.then(msg => {
+				console.log('Message returned:', msg);
+			})
+			.catch(err => {
+				console.log('Error:', err)
+			})
+	}
+
+	getUserInfo() {
+		// User info of persons profile
+		UserApi.getUserInfo(this.state.userId).then(userInfo => {
+			console.log('User info:', userInfo);
+			this.setState({userInfo, userInfoLength: Object.keys(userInfo).length});
+		});
+
+		// Gets buddies of user on profile so we can grab the count
+		UserApi.getUsersBuddies(this.state.userId)
+			.then(buddies => {
+				const isBuddy = buddies.map(buddy => buddy.user_id).filter(id => id === myUserId).length > 0;
+				console.log('Are we buddies with this person? ', isBuddy);
+				this.setState({ numBuddies: buddies.length, isBuddy });
+			});
+
+
+		// Gets the people who follow the person on the profile page so we know if person logged in follows them
+		UserApi.getUsersFollowers(this.state.userId)
+			.then(users => {
+				this.setState({ numFollowers: users.length });
+			});
+
+		/* ----- Lets see if the person logged in is following this profile ----- */
+
+		// Retrieves the number of followers the user has (Person on profile page)
+		UserApi.getFollowingUsers(myUserId)
+			.then(people => {
+				// Map over the users ids that we follow, then if the number on the page is in the list, we are following them!
+				let isFollowing = people.map(person => person.user_Id2).filter(id => id === Number(this.state.userId)).length > 0;
+				this.setState({ isFollowing: isFollowing });
+				console.log('I am following this person', isFollowing);
+			});
+
+	}
+
+
+	// ----------------------------- RENDER ---------------------------------- //
 
 	// We need to conditionally render things based on the user in relation to who is logged in
 	render() {
 		// Render user info if we have grabbed it from the api
 		if(this.state.userInfoLength > 0) {
-			const { userInfo, isUserLoggedIn } = this.state;
+			const { userInfo, isUserLoggedIn, isFollowing, isBuddy } = this.state;
 			const profilePrefix = isUserLoggedIn ? 'My ' : `${this.state.userInfo.username}'s `;
 			let pic = imgObj[userInfo.photo];
-			let options;
+			let followOptions;
+			let buddyOptions;
 
 			// Image logic
-			if(pic == 'undefined') {
+			if(pic == 'undefined' || userInfo.photo === null) {
 				pic = imgObj['snowProfilePic'];
 			}
 
-			// If the user is logged in, make the options according to follow and buddy status
-			if (isUserLoggedIn) {
-				options =	<Row classname="justify-content-end" style={{paddingTop: "15px"}}></Row>
-			} else {
+			if (!isUserLoggedIn) {
 				// We need to check if we follow them or are we buddies with them
+				buddyOptions = (isBuddy) ?
+					<Button>Remove buddy</Button> :
+					<Button onClick={this.handleBuddyModal}>Add Buddy</Button>;
 
-
-
-				let budCheck = 0;
-				let followCheck = 0;
-
-				// for (var c = 0; c < this.state.buddies.length; c++) {
-				// 	if (this.state.buddies[0][c].user_Id2 === localStorage.getItem('userId'))
-				// 		budCheck = 1;
-				// }
-				// if (budCheck === 1) {
-				// 	options = <div></div>;
-				// } else if (followCheck === 1) {
-				// 	options = <div>
-				// 		<Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
-				// 	</div>;
-				// } else {
-				// 	options =
-				// 		<div style={{display: 'flex'}}>
-				// 			<Button style={{margin: '5px'}} variant="info" onClick={this.onClick1}>Follow</Button>
-				// 			<Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
-				// 		</div>;
-				// }
+				followOptions = (isFollowing) ?
+					<Button onClick={this.unfollowUser}>Unfollow</Button> :
+					<Button onClick={this.followUser}>Follow</Button>
 			}
 
 
 			// What gets shown to the screen
 			return (
 				<>
-					<BuddyRequestModal id={this.state.userInfo.user_id} show={this.state.show2} handleClose={this.handleClose2}/>
+					<BuddyRequestModal id={this.state.userInfo.user_id} show={this.state.showBuddyModal} handleClose={this.handleBuddyModal}/>
 
-					<Row style={{backgroundColor: "gainsboro", height: "1%", width: "200%"}}>
-						<div style={{marginLeft: "3%", marginTop: '2%', marginBottom: '2%'}}>
-							<h1>{profilePrefix} Profile</h1>
+					{/* Header on the page that announces that we are on Profile Page */}
+					<Row style={{backgroundColor: "gainsboro", height: "1%", width: "100%"}}>
+						<div style={{paddingLeft: "3%", paddingTop: '1%', paddingBottom: '2%', display: 'flex', width: '100%'}}>
+							<div style={{ width: '75%' }}>
+								<h1>{profilePrefix} Profile</h1>
+							</div>
+							<div style={{ flex: 1, display: 'flex' }}>
+								<div style={{ width: '40%' }}>{followOptions}</div>
+								<div>{buddyOptions}</div>
+							</div>
 						</div>
-						<div>{options}</div>
 					</Row>
 
 					
 					{/* This is the row that will hold the profile picture and the information */}
 					<Row style={{backgroundColor: "gainsboro", padding: '1% 0 1% 2%', justify: 'flex-start',}}>
-						<ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleShow}
-										 close={this.handleClose}
-										 show={this.state.show} refresh={this.getUserInfo} user={userInfo}
-										 img={pic} id={isUserLoggedIn} bud={this.state.buddies.length}
-										 fol={this.state.followers.length}/>
+						<ProfileInfoCard loggedIn={isUserLoggedIn} handleShow={this.handleProfileModal}
+										 close={this.handleProfileModal}
+										 show={this.state.profileShow} refresh={this.getUserInfo} user={userInfo}
+										 img={pic} id={isUserLoggedIn} bud={this.state.numBuddies}
+										 fol={this.state.numFollowers}/>
 						<Col style={{backgroundColor: "gainsboro", width: "75%", marginLeft: '25px'}}></Col>
 					</Row>
 
@@ -164,47 +202,4 @@ export default class ProfilePage extends Component {
 			);
 		}
 	}
-
-	handleClose() {
-		this.setState({ show: false });
-	}
-	handleClose2() {
-		this.setState({ show2: false });
-	}
-	handleShow() {
-		this.setState({ show: true });
-	}
-
-
-	// Retrieves user information
-	getUserInfo() {
-		// User info
-		UserApi.getUserInfo(this.state.userId).then(userInfo => {
-			console.log('User info:', userInfo);
-			this.setState({userInfo, userInfoLength: Object.keys(userInfo).length});
-		});
-
-		// Gets buddies of user on profile so we can grab the count
-		UserApi.getUsersBuddies(this.state.userId)
-			.then(buddies => {
-				console.log('Buddies:', buddies);
-				console.log('My user id is:', myUserId);
-				const isBuddy = buddies.map(buddy => buddy.user_id).filter(id => id == myUserId).length > 0;
-				console.log('new list of buddies', isBuddy);
-				this.setState({buddies});
-			})
-
-		// Get people that the user follows
-		UserApi.getFollowingUsers(this.state.userId)
-			.then(following => {
-				console.log('Follows', following);
-			});
-
-		// Gets the people who follow the given user
-		UserApi.getUsersFollowers(this.state.userId)
-			.then(users => {
-				this.setState({ followers: users });
-			})
-	}
-
 }

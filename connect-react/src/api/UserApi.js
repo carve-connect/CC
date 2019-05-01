@@ -67,6 +67,7 @@ class UserApi {
 	}
 
 	// Returns all people user is following
+	// Example: Christian is following RJ, Sean and Fred
 	static getFollowingUsers(userId) {
 	 	return new Promise((resolve, reject) => {
 	 		axios.get(`${baseUrl}/users/${userId}/follows/following`)
@@ -76,7 +77,8 @@ class UserApi {
 		})
 	}
 
-	// Retrieves the users that follow a specific user
+	// Retrieves the people that follow a specific user
+	// Fred has Christian,
 	static getUsersFollowers(userId) {
 	 	return new Promise((resolve, reject) => {
 	 		axios.get(`${baseUrl}/users/${userId}/follows/followers`)

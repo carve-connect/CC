@@ -1016,6 +1016,22 @@ END$$
 DELIMITER ;
 
 -- -----------------------------------------------------
+-- procedure delete_follow_ids
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`delete_follow_ids`;
+
+DELIMITER $$
+USE `CCv5`$$
+CREATE PROCEDURE `delete_follow_ids` (in id1 int, in id2 int)
+BEGIN
+    delete from follows where user_id1 = id1 and user_id2 = id2 and type = 'follow';
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
 -- procedure delete_follows
 -- -----------------------------------------------------
 
