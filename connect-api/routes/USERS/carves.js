@@ -109,10 +109,16 @@ router.delete('/:carveId', (req,res) => {
 });
 
 router.get('/names', (req,res) => {
-    // Find all carves from database
-    userId = req.params.userId;
     get_carves_named_attendees = "CALL get_carves_named_attendees(?)";
-    con.query(get_carves_named_attendees, [userId], (err, results) => {
+    con.query(get_carves_named_attendees, (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end();
+    })
+});
+
+router.get('/comment_info', (req,res) => {
+    get_carve_comment_info = "CALL get_carve_comment_info(?)";
+    con.query(get_carve_comment_info, (err, results) => {
         if (err) throw err;
         res.status(200).jsonp({results}).end();
     })
