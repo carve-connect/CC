@@ -157,5 +157,33 @@ router.delete('/:mediaId', (req,res) => {
     })
 });
 
+router.get('/:like_info', (req, res) => {
+
+    get_media_like_info = "CALL get_media_like_info";
+
+    con.query(get_media_like_info,(err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end;
+    })
+});
+
+router.get('/:comment_info', (req, res) => {
+
+    get_media_comment_info = "CALL get_media_comment_info";
+
+    con.query(get_media_comment_info,(err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end;
+    })
+});
+
+router.get(':/all', (req, res) => {
+    get_media_all_info = 'CALL get_media_all_info'
+
+    con.query(get_media_all_info,(err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end;
+    })
+});
 
 module.exports = router;
