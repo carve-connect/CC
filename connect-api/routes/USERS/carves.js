@@ -108,5 +108,15 @@ router.delete('/:carveId', (req,res) => {
     })
 });
 
+router.get('/names', (req,res) => {
+    // Find all carves from database
+    userId = req.params.userId;
+    get_carves_named_attendees = "CALL get_carves_named_attendees(?)";
+    con.query(get_carves_named_attendees, [userId], (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end();
+    })
+});
+
 
 module.exports = router;
