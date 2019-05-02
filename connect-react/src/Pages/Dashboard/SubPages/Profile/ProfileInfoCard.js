@@ -71,7 +71,9 @@ const ProfileInfoCard = (props) => {
                         <Row>
                             <div style={{paddingTop: "50%"}}>
                                 <Row> {props.user.username} has {props.bud} Buddies</Row>
-                                <Row> and has {props.fol} Followers</Row>
+                                <Row> has {props.fol} Followers</Row>
+                                <Row> Follows {props.foll} other Users</Row>
+                                <Row> Follows {props.vfol} Venues</Row>
                             </div>
                         </Row>
 
