@@ -41,24 +41,32 @@ export default class ProfilePage extends Component {
 			show2: false,
 			buddies: 0,
 			followers: 0,
+            following: 0,
+            vFollowing: 0,
 			carve: true,
 			media: false,
 			posts: false,
 			content: "carves",
 			createMedia: false,
-			followsUser: false,
-			buddy: false
+            follows: false,
+            buddy: false,
+            followsUser: false
 		};
 
 		this.handleShow = this.handleShow.bind(this);
 		this.handleCreateMedia = this.handleCreateMedia.bind(this);
 		this.handleClose = this.handleClose.bind(this);
-		this.handleClose2 = this.handleClose2.bind(this);
+        this.addBuddy = this.addBuddy.bind(this);
 		this.getUserInfo = this.getUserInfo.bind(this);
 		this.handleCarves = this.handleCarves.bind(this);
 		this.handleMedia = this.handleMedia.bind(this);
 		this.handlePosts = this.handlePosts.bind(this);
 		this.setProfilePic = this.setProfilePic.bind(this);
+        this.followUser = this.followUser.bind(this);
+        this.unFollowUser = this.unFollowUser.bind(this);
+        this.addBuddy = this.addBuddy.bind(this);
+        this.removeBuddy = this.removeBuddy.bind(this);
+
 	}
 
 	// Retrieves info before component is mounted to the DOM
@@ -80,15 +88,37 @@ export default class ProfilePage extends Component {
 		this.setState({show2: !this.state.show2});
 	};
 
+    addBuddy() {
+        this.setState({show2: false});
+    }
 
 	onClick1 = () => {
-		alert("Follow " + this.state.userId + " by " + localStorage.getItem('userId'));
+        //alert("Follow " + this.state.userId + " by " + localStorage.getItem('userId'));
 		axios.post('http://localhost:8000/follows', {
 			user1: localStorage.getItem('userId'),
 			user2: this.state.userId
 
 		});
 	};
+
+    followUser = () => {
+        axios.post('http://localhost:8000/follows', {
+            user1: localStorage.getItem('userId'),
+            user2: this.state.userId
+        }).then(() => {
+
+        });
+
+
+    };
+
+    followsCheck = () => {
+
+
+    };
+
+    // Unfollows the venue that we are on
+
 
 	handleCarves = () => {
 		this.setState({
@@ -108,38 +138,148 @@ export default class ProfilePage extends Component {
 		});
 	};
 
+
+    handleClose() {
+        this.setState({show: false});
+    }
+
+    handleClose2() {
+        this.setState({show2: false});
+    }
+
+    handleShow() {
+        this.setState({show: true});
+    }
+
+    getUserInfo() {
+        // Getting the user id from the url param
+
+        if (this.state.userId > 0) {
+            axios.get(`http://localhost:8000/users/${this.state.userId}`)
+                .then(res => {
+                    this.setState({
+                            userInfo: res.data.users[0][0],
+                            userInfoLength: Object.keys(res.data.users[0][0]).length,
+
+                        }
+                    )
+
+                });
+
+            this.getBuddy();
+            this.getFollowingUsers();
+            this.getFollowers();
+            this.getFollowingVenues();
+        }
+    }
+
+    setProfilePic() {
+        const {userInfo} = this.state;
+        let pic;
+        if (userInfo.photo === "dogphoto")
+            pic = dogphoto;
+        else if (userInfo.photo === "big_wave")
+            pic = big_wave;
+        else if (userInfo.photo === "dogskate")
+            pic = dogskate;
+        else if (userInfo.photo === "dogsurf")
+            pic = dogsurf;
+        else if (userInfo.photo === "upsidedown_snow")
+            pic = upsidedown_snow;
+        else if (userInfo.photo === "dog")
+            pic = dog;
+        else if (userInfo.photo === "helmPhoto")
+            pic = helmPhoto;
+        else if (userInfo.photo === "photosnow")
+            pic = photosnow;
+        else if (userInfo.photo === "droneguy")
+            pic = droneguy;
+
+        else
+            pic = SnowProfilePic;
+
+        this.setState({
+            pic: pic
+        })
+    }
+
+
+    getBuddy() {
+        UserApi.getBuddies(this.state.userId)
+            .then(buddies => {
+                let buddy = false;
+                buddies.forEach((bud) => {
+                    if (bud.user_id == localStorage.getItem('userId')) {
+                        buddy = true;
+                    }
+                });
+                this.setState({buddy: buddy, buddies: buddies.length});
+            });
+    }
+
+    getFollowingUsers() {
+        UserApi.getFollowingUsers(this.state.userId)
+            .then(following => {
+
+                this.setState({
+                    following: following.length
+
+                });
+            });
+    }
+
+    getFollowingVenues() {
+        UserApi.getFollowingVenues(this.state.userId)
+            .then(venues => {
+                this.setState({
+                    vFollowing: venues.length
+
+                });
+            });
+    }
+
+    getFollowers() {
+        UserApi.getUsersFollowers(this.state.userId)
+            .then(followers => {
+                let isFollowing;
+                isFollowing = followers.includes(localStorage.getItem('userId'));
+                //let isFollowing = followers.map(person => person.user_Id2).filter(id => id === Number(localStorage.getItem('userId'))).length > 0;
+                this.setState({
+
+                    isFollowing: isFollowing, followers: followers.length
+
+                });
+                //alert("following? "+this.state.isFollowing);
+            });
+
+    }
+
+    unFollowUser() {
+        axios.delete(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/following`, {
+            data: {user_id1: localStorage.getItem('userId'), user_id2: this.state.userId}
+        })
+
+    }
+
+    removeBuddy() {
+        axios.delete(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/buddy`, {
+            data: {user_id1: localStorage.getItem('userId'), user_id2: this.state.userId}
+        })
+
+    }
+
 	// We need to conditionally render things based on the user in relation to who is logged in
 	render() {
 		if (this.state.userInfoLength > 0) {
 			const {userInfo, isUserLoggedIn} = this.state;
 			const profilePrefix = isUserLoggedIn ? 'My ' : `${this.state.userInfo.username}'s `;
 
-			let pic;
-			if (userInfo.photo === "dogphoto")
-				pic = dogphoto;
-			else if (userInfo.photo === "big_wave")
-				pic = big_wave;
-			else if (userInfo.photo === "dogskate")
-				pic = dogskate;
-			else if (userInfo.photo === "dogsurf")
-				pic = dogsurf;
-			else if (userInfo.photo === "upsidedown_snow")
-				pic = upsidedown_snow;
-			else if (userInfo.photo === "dog")
-				pic = dog;
-			else if (userInfo.photo === "helmPhoto")
-				pic = helmPhoto;
-			else if (userInfo.photo === "photosnow")
-				pic = photosnow;
-			else if (userInfo.photo === "droneguy")
-				pic = droneguy;
 
-			else
-				pic = SnowProfilePic;
 
 			// Make button options for top right corner
 			let options;
 			let content;
+            let followButton;
 
 			if (isUserLoggedIn) {
 
@@ -153,19 +293,20 @@ export default class ProfilePage extends Component {
 				let followCheck = 0;
 
 				if (this.state.buddy) {
+                    options = <div><Button style={{margin: '5px'}} variant="info" onClick={this.removeBuddy}>Remove
+                        Buddy</Button></div>;
+                } else if (this.state.followers) {
 					options = <div>
+                        <Button style={{margin: '5px'}} variant="info" onClick={this.unFollowUser}>Unfollow</Button>
+                        <Button style={{margin: '5px'}} variant="info" onClick={this.addBuddy}>Add Buddy</Button>
 
-					</div>;
-				} else if (this.state.followsUser) {
-					options = <div>
-						<Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add Buddy</Button>
 					</div>;
 				} else {
 
 					options =
 						<div style={{display: 'flex'}}>
-							<Button style={{margin: '5px'}} variant="info" onClick={this.onClick1}>Follow</Button>
-							<Button style={{margin: '5px'}} variant="info" onClick={this.handleClick2}>Add
+                            <Button style={{margin: '5px'}} variant="info" onClick={this.followUser}>Follow</Button>
+                            <Button style={{margin: '5px'}} variant="info" onClick={this.removeBuddy}>Add
 								Buddy</Button>
 						</div>;
 
@@ -228,7 +369,7 @@ export default class ProfilePage extends Component {
 									   handleClose={this.handleClose2}/>
 
 					<Row style={{backgroundColor: "gainsboro", height: "1%", width: "200%"}}>
-						<div style={{marginLeft: "3%", marginTop: '2%', marginBottom: '2%'}}>
+                        <div style={{marginLeft: "3%", marginBottom: '2%'}}>
 							<h1>{profilePrefix} Profile</h1>
 						</div>
 						<div>
@@ -247,10 +388,11 @@ export default class ProfilePage extends Component {
 					}}>
 
 						<ProfileInfoCard style={{}} loggedIn={isUserLoggedIn} handleShow={this.handleShow}
-										 close={this.handleClose}
-										 show={this.state.show} refresh={this.getUserInfo} user={userInfo}
-										 img={pic} id={isUserLoggedIn} bud={this.state.buddies}
-										 fol={this.state.followers}/>
+                                         close={this.handleClose}
+                                         show={this.state.show} refresh={this.getUserInfo} user={userInfo}
+                                         img={this.state.pic} id={isUserLoggedIn} bud={this.state.buddies}
+                                         fol={this.state.followers} foll={this.state.following}
+                                         vfol={this.state.vFollowing}/>
 
 						<Col style={{backgroundColor: "gainsboro", width: "75%"}}>
 						</Col>
@@ -297,104 +439,5 @@ export default class ProfilePage extends Component {
 		}
 	}
 
-	handleClose() {
-		this.setState({show: false});
-	}
-
-	handleClose2() {
-		this.setState({show2: false});
-	}
-
-	handleShow() {
-		this.setState({show: true});
-	}
-
-	getUserInfo() {
-		// Getting the user id from the url param
-
-		if (this.state.userId > 0) {
-			axios.get(`http://localhost:8000/users/${this.state.userId}`)
-				.then(res => {
-					this.setState({
-						userInfo: res.data.users[0][0],
-						userInfoLength: Object.keys(res.data.users[0][0]).length,
-
-						}
-					)
-
-				});
-
-			this.getBuddy();
-			this.getFollowingUsers();
-		} else {
-
-			axios.get(`http://localhost:8000/users/${0}`)
-				.then(res => {
-					this.setState({
-						userInfo: res.data.users[0][0],
-						userInfoLength: Object.keys(res.data.users[0][0]).length,
-
-					});
-				})
-			//window.location.reload();
-
-		}
-		/*
-                UserApi.getUserInfo(userId).then((userObj) => {
-                    this.setState({ userInfo: userObj, userInfoLength: Object.keys(userObj).length });
-                });*/
-	}
-
-	setProfilePic() {
-
-		if (this.state.userInfo.photo === "dogphoto") {
-			this.setState({
-				pic: dogphoto
-			});
-		} else if (this.state.userInfo.photo === 'big_wave') {
-			this.setState({
-				pic: big_wave
-			});
-		}
-
-
-	}
-
-	getUserCounts() {
-		// Getting the user id from the url param
-
-
-		//window.location.reload();
-
-	}
-
-
-	getBuddy() {
-		UserApi.getBuddies(localStorage.getItem('userId'))
-			.then(buddies => {
-				let buddy = false;
-				buddies.forEach((bud) => {
-					if (bud.user_id2 == this.state.userId) {
-						buddy = true;
-					}
-				});
-				this.setState({buddy});
-			});
-	}
-
-	getFollowingUsers() {
-		UserApi.getFollowingUsers(localStorage.getItem('userId'))
-			.then(users => {
-				let followsUsers = false;
-				users.forEach((user) => {
-					if (user.user_id2 == this.state.userId) {
-						followsUsers = true;
-					}
-				});
-				this.setState({
-					followsUsers
-				});
-			});
-	}
 
 }

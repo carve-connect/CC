@@ -90,6 +90,7 @@ router.get('/', (req,res) => {
 	con.query(follow_list, [userId], (err, results) => {
 		if (err) throw err;
 		res.status(200).jsonp({results}).end();
+        console.log(results);
 	})
 });
 
@@ -220,6 +221,28 @@ router.delete('/venues', (req, res) => {
 		res.status(200).jsonp({results}).end();
 	})
 });
+
+// Deletes venue follow
+router.delete('/buddy', (req, res) => {
+    const {user_id1, user_id2} = req.body;
+    let sql = `DELETE FROM FOLLOWS WHERE (user_id1=${user_id1} AND user_id2=${user_id2}) or (user_id1=${user_id2} AND user_id2=${user_id1}) AND type = 'buddy'`;
+    con.query(sql, (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end();
+    })
+});
+
+
+// Deletes venue follow
+router.delete('/following', (req, res) => {
+    const {user_id1, user_id2} = req.body;
+    let sql = `DELETE FROM FOLLOWS WHERE user_id1=${user_id1} AND user_id2=${user_id2} AND type = 'follow'`;
+    con.query(sql, (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end();
+    })
+});
+
 
 // deletes follow
 router.delete('/:followId', (req,res) => {
