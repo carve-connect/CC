@@ -2158,7 +2158,28 @@ INSERT INTO FOLLOWS(user_id1,venue_id,type) VALUES (3,8,'follow');
 INSERT INTO FOLLOWS(user_id1,venue_id,type) VALUES (3,9,'follow');
 
 INSERT INTO FOLLOWS(user_id1,venue_id,type) VALUES (3,10,'follow');
-
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (10, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (11, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (12, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (13, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (14, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (15, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (16, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (17, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (18, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (19, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (20, 1, 'follow');
 
 INSERT INTO CARVES(name,creator,venue,description,type,max_athletes,max_photo,date,completed,sports) VALUES ('carve1',1,1,'let''s carve bros!','open',5,1,'2019-03-24',0,'snowboard,ski');
 INSERT INTO CARVES(name,creator,venue,description,type,max_athletes,max_photo,date,completed,sports) VALUES ('carve2',1,11,'let''s carve bros!','buddy',10,2,'2019-03-25',0,'surf');

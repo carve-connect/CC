@@ -23,6 +23,7 @@ router.post('/', (req,res) => {
 	const {user1, user2,v} = req.body;
 	// The followname wasn't found in the database
 	// Create insert query for new follow
+    console.log(user1 + "following" + user2);
 	new_follow = "CALL add_follow(?,?,?,?)";
 	// Execute the query to insert into the database
 	con.query(new_follow,[user1, user2,v , 'follow'], (err, results) => {
