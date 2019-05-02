@@ -171,7 +171,7 @@ export default class ProfilePage extends Component {
 				}
     }
 
-    // Sets users profile picture
+    // Sets users profile picture after we grab the users info
     setProfilePic() {
     	const { photo } = this.state.userInfo;
     	let pic = imgObj[photo];
