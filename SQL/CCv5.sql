@@ -1817,7 +1817,7 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_users_inbox` (in id int)
 BEGIN
-    select * from all_messages where rec_id = id and (type = 'normal' or type = 'reply');
+    select * from all_messages where rec_id = id and (type = 'normal' or type = 'reply') ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -1833,7 +1833,7 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_users_sent` (in id int)
 BEGIN
-    select * from all_messages where sender_id = id and (type = 'normal' or type = 'reply');
+    select * from all_messages where sender_id = id and (type = 'normal' or type = 'reply') ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -1935,7 +1935,7 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_user_notifications` (in id int)
 BEGIN
-    select * from messages where rec_id = id and type != 'normal' and type != 'reply';
+    select * from messages where rec_id = id and type != 'normal' and type != 'reply' ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -1951,7 +1951,7 @@ DELIMITER $$
 USE `CCv5`$$
 CREATE PROCEDURE `get_user_sent_notifications` (in id int)
 BEGIN
-    select * from messages where sender_id = id and type != 'normal' and type != 'reply';
+    select * from messages where sender_id = id and type != 'normal' and type != 'reply' ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;

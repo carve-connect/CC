@@ -1,6 +1,7 @@
 #here it is...
 
 use CCv5;
+#INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('frosty','abc1@email.net','password','Sean','Klinglesmith','Chill bro whos down for anything, anywhere, anytime','dogphoto',('Photographer,Videographer,Drone Operator'),('Snowboard,Downhill Ski,Snowmobile,Cross-Country Ski'),('Surf,Water Ski,Kayak,Wakeboard,Paddleboard,Parasail,Kite Surf'),('Skateboard,BMX,Mountain Bike,Rock Climb,Cliff Dive,Parkour'),('Sky Dive,Hang Glide,Base Jump,Air Race'));
 INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('frosty','abc1@email.net','password','Sean','Klinglesmith','cool dude who likes to film using drones or otherwise','dogphoto',('photographer,filmographer,droneOperator'),('snowboard'),('surf'),('skateboard,BMX,mountainBiking'),('skydive,hangGlide'));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
