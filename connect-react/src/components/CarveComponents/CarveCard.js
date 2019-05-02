@@ -87,16 +87,38 @@ export default class CarveCard extends Component {
 
             });
 
+        axios.get(`http://localhost:8000/likes`)
+            .then(res => {
+                //alert("carve:" + JSON.stringify(res.data.results));
+                //console.log("users: ", JSON.stringify(res.data.users[0][0].username));
+                //alert(JSON.stringify(res.data.results[0]));
+                this.setState({
+                    likes: res.data.results[0]
+                });
+
+            });
+
+        axios.get(`http://localhost:8000/likes/dislikes`)
+            .then(res => {
+                //alert("carve:" + JSON.stringify(res.data.results));
+                //console.log("users: ", JSON.stringify(res.data.users[0][0].username));
+                //alert(JSON.stringify(res.data.results[0]));
+                this.setState({
+                    dislikes: res.data.results[0]
+                });
+
+            });
+
     }
 
     like(e){
         this.preventDefault(e);
         //currently only gets attendees for carve1. not dynamic per carve
         axios.post(`http://localhost:8000/carves/${1}/likes`,
-        {
-            poster: localStorage.getItem('userId'),
-            carve : e
-        })
+            {
+                poster: localStorage.getItem('userId'),
+                carve: e
+            })
             .then(res => {
                 //alert("carve:" + JSON.stringify(res.data.results));
                 console.log("results: ", res.data.results[0]);
@@ -104,7 +126,7 @@ export default class CarveCard extends Component {
 
 
             });
-}
+    }
 
     dislike = (e) =>{
         this.preventDefault(e);
@@ -128,8 +150,8 @@ export default class CarveCard extends Component {
     handleClick5 = (e,e2) => {
 
         this.setState({ show5: !this.state.show5,
-        cId : e,
-           cRe:e2
+            cId: e,
+            cRe: e2
         });
     };
 
@@ -360,11 +382,13 @@ export default class CarveCard extends Component {
                             <Card.Footer className="text-primary text-info">
                             <Row>
                                 <Col>
-                                    <CommentTable carve={carve} type={"carve"} media={media_id}/>
+                                    <CommentTable carve={carve} type={"carve"} media={media_id} likes={this.state.likes}
+                                                  dislikes={this.state.dislikes}/>
                                 </Col>
                                 <Col>
 
-                                    <MediaGroup type="carve" users={this.state.users} content_id={carve.carve_id}/>
+                                    <MediaGroup type="carve" users={this.state.users} content_id={carve.carve_id}
+                                                likes={this.state.likes} dislikes={this.state.dislikes}/>
                                 </Col>
                             </Row>
 
