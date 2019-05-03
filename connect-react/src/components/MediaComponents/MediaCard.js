@@ -24,6 +24,7 @@ export default class MediaCard extends Component {
         };
         this.editMedia = this.editMedia.bind(this);
         this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     validateForm(){
@@ -76,7 +77,7 @@ export default class MediaCard extends Component {
                             </FormGroup>
                         </Container>
                         <Modal.Footer>
-                            <Button variant="secondary" onClick={() => this.handleClose}>
+                            <Button variant="secondary" onClick={this.handleClose}>
                             Exit
                             </Button>
                             <Button onClick={this.editMedia} disabled={!this.validateForm()} type = "submit" variant="primary">
