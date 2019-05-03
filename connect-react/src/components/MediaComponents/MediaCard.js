@@ -19,6 +19,9 @@ const MediaCard = (props) => {
         }
     }
 */
+
+
+
     return (
 
 
@@ -37,7 +40,7 @@ const MediaCard = (props) => {
                                     <i class="fa fa-edit fa-2x"></i>
                                 </OverlayTrigger>
                             </Dropdown.Item>
-                            <Dropdown.Item href="#/action-1">
+                            <Dropdown.Item onClick={props.delete} href="#/action-1">
                                 <OverlayTrigger overlay = {
                                     <Tooltip>Delete</Tooltip>
                                 }>
