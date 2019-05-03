@@ -95,6 +95,7 @@ router.patch('/', (req,res) => {
     })
 });
 
+
 // deletes all users
 router.delete('/', (req,res) => {
 
@@ -108,16 +109,18 @@ router.delete('/', (req,res) => {
 
 // Grab specific user by their id
 router.get('/:userId', (req,res) => {
+    const userId = req.params.userId;
     console.log('We are in here!');
-	const userId = req.params.userId;
 
-	get_user  = "call get_user(?)";
+    get_user  = "call get_user(?)";
 
-	con.query(get_user, [userId],(err, results) => {
-		if (err) throw err;
-		console.log(results[0][0]);
-        res.status(200).jsonp({users: results}).end();
-	})
+
+    con.query(get_user, [userId],(err, results) => {
+        if (err) throw err;
+        console.log(results[0][0]);
+        res.status(200).jsonp({users: results}).end;
+    })
+
 });
 
 // Log out the current user

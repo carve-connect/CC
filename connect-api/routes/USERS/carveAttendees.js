@@ -3,16 +3,15 @@ var router = express.Router({mergeParams: true});
 const con = require('../../db');
 
 
-
 // Grabs all carve_attendees from db
 router.get('/', (req,res) => {
     // Find all carve_attendees from database
     console.log(req.params);
     userId = req.params.userId;
     carve_attendees_list = "CALL get_user_attended(?)";
-    con.query(carve_attendees_list, [userId], (err, results) => {
+    con.query(carve_attendees_list, [userId], (err, c) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end();
+        res.status(200).jsonp({c}).end();
     })
 });
 
@@ -88,7 +87,7 @@ router.put('/:carve_attendeesId', (req,res) => {
 });
 
 // updates all carve_attendeess
-router.patch('/:carve_attendeesId', (req,res) => {
+router.patch('/:carve_attendeesId', (req, res) => {
     const carve_attendeesId = req.params.carve_attendeesId;
     const {carve,user,userType} = req.body;
     update_carve_attendees = "CALL update_carve_attendee(?,?,?,?)";

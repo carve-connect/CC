@@ -55,6 +55,7 @@ export default class MediaGroup extends Component {
             mediaList = this.state.mediaInfo.map((media, index) => {
                 return (
                     <Col className="col-sm">
+                        <h2>Media for {this.props.type} {this.props.content_id}</h2>
                         <MediaCard type={this.props.type} id={this.props.content_id} media={media}
                                    users={this.state.users}/>
                     </Col>
