@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
-import MediaCard from './MediaCard';
+import MediaCard2 from './MediaCard2';
 
 
-export default class MediaGroup extends Component {
+export default class MediaCollector extends Component {
     constructor(props) {
         super(props);
         this.state = {
             poster: 0,
-            carve: 0, 
+            carve: 0,
             profile: 0,
             venue: 0,
             url: "",
@@ -17,12 +17,11 @@ export default class MediaGroup extends Component {
             mediaInfo: {},
             mediaComments: {},
             users: [],
-            description: "", 
+            description: "",
             time: "",
             comment: ""
         };
     }
-
 
 
     componentWillMount() {
@@ -44,20 +43,18 @@ export default class MediaGroup extends Component {
                 });
 
             });
-        }
-
+    }
 
 
     render() {
         let mediaList;
-        
-        if(this.state.mediaInfo.length > 0){
+
+        if (this.state.mediaInfo.length > 0) {
             mediaList = this.state.mediaInfo.map((media, index) => {
                 return (
                     <Col className="col-sm">
-                        <h2>Media for {this.props.type} {this.props.content_id}</h2>
-                        <MediaCard type={this.props.type} id={this.props.content_id} media={media}
-                                   users={this.state.users}/>
+                        <MediaCard2 type={this.props.type} id={this.props.content_id} media={media}
+                                    users={this.state.users}/>
                     </Col>
                 )
             });
@@ -68,5 +65,5 @@ export default class MediaGroup extends Component {
             </>
         )
     }
-    
+
 }

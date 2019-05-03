@@ -1,9 +1,6 @@
-import React from 'react';
-import {Component} from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
-import {Row} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
-import {Col} from 'react-bootstrap';
 
 export default class LikeBar extends Component {
     constructor(props){
@@ -14,8 +11,8 @@ export default class LikeBar extends Component {
             poster: 0,
             carve: 0, 
             comment: 0,
-            media: 0 , 
-        }
+            media: 0 ,
+        };
         this.handleLike=this.handleLike.bind(this);
     }
 
@@ -23,18 +20,12 @@ export default class LikeBar extends Component {
         axios.get(`http://localhost:8000/likes`)
         .then(res => {
             this.setState({
-                likes: res.data.results[0]
+                likes: res.data.likes[0],
+                dislikes: res.data.dislikes[0]
             });
 
         });
 
-        axios.get(`http://localhost:8000/likes/dislikes`)
-        .then(res => {
-            this.setState({
-                dislikes: res.data.results[0]
-            });
-
-        });
     }
     handleLike = e => {
         e.preventDefault();
@@ -52,7 +43,7 @@ export default class LikeBar extends Component {
             comment: this.props.comment.comment_id,
             media: null,
         })
-    }
+    };
 
 
     handleDislike= e => {
@@ -71,7 +62,7 @@ export default class LikeBar extends Component {
             comment: this.props.comment.comment_id,
             media: null,
         })
-    }
+    };
 
     render() {
         let likeList;

@@ -7,10 +7,10 @@ const con = require('../../db');
 router.get('/', (req,res) => {
     // Find all carve_attendees from database
     carveId = req.params.carveId;
-    carve_attendees_list = "CALL get_carves_attendees(?)";
-    con.query(carve_attendees_list, [carveId], (err, results) => {
+    carve_attendees_list = "SELECT * from all_carve_attendees left join all_users on all_carve_attendees.user = all_users.user_id where all_carve_attendees.carve = (?)";
+    con.query(carve_attendees_list, [carveId], (err, attend) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end();
+        res.status(200).jsonp({attend}).end();
     })
 });
 

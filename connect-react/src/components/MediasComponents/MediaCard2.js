@@ -2,11 +2,9 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Container from "react-bootstrap/Container";
-import CommentTable from '../WallComponents/CommentTable';
-import MediaLikes from './MediaLikes';
 
 
-const MediaCard = (props) => {
+const MediaCard2 = (props) => {
     let creatorName = "";
     /*
     if (props.users.length > 0) {
@@ -17,29 +15,36 @@ const MediaCard = (props) => {
     }
 */
     return (
+        <>
 
-
-        <Card style={{width: '30rem', marginBottom: '2rem'}}>
+            <Card style={{width: '30rem', marginBottom: '2rem'}}>
                 <container className="embed-responsive embed-responsive-16by9">
-                    <iframe title="User Media" className="embed-responsive-item" src= {props.media.url} allowFullScreen > </iframe>
+                    <div className="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src={props.media.url}
+                                frameBorder="0"
+                                allow=""
+                                allowFullScreen></iframe>
+                    </div>
+
+
                 </container>
 
                 <Card.Body>
                     <Container>
-                        <Row style = {{marginTop: '-1rem', borderBottom:'1px dashed lightgrey'}}>
+                        <Row style={{marginTop: '-1rem', borderBottom: '1px dashed lightgrey'}}>
                             <Card.Link href="#">{props.media.poster} {creatorName}</Card.Link>
                             :{props.media.description}
                         </Row>
                         <Row>
-                            <MediaLikes media={props.media}/>
+
                         </Row>
                     </Container>
                 </Card.Body>
-               {/* comment table would be here */}
-                <CommentTable media={props.media} carve={""} type={"media"}/>
-                <Card.Footer style = {{fontSize: '10px'}}><em>Create_Time: {props.media.time}</em></Card.Footer>
-            </Card>
+                {/* comment table would be here */}
 
+                <Card.Footer style={{fontSize: '10px'}}><em>Create_Time: {props.media.time}</em></Card.Footer>
+            </Card>
+        </>
     );
 };
-export default MediaCard;
+export default MediaCard2;

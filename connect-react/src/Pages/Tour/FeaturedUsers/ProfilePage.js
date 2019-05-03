@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import SnowProfilePic from '../../../../images/snowboard-profile-pic.jpg';
 import CreateCarveModal from "../../../../components/CreateCarveModal";
 import BuddyRequestModal from "../../../../components/BuddyRequestModal";
-import MediaGroup from "../../../../components/MediaGroup";
+import MediaGroup from "../../../../components/MediaCollector";
 import ProfileInfoCard from './ProfileInfoCard';
 import Container from 'react-bootstrap/Container';
 import CarveCardUserCreate from '../../../../components/CarveCardUserCreate';
