@@ -26,14 +26,6 @@ module.exports = {
     },
     userGet: function (userId)
     {
-        console.log('We are in here!');
 
-        get_user  = "call get_user(?)";
-
-        con.query(get_user, [userId],(err, results) => {
-            if (err) throw err;
-            console.log(results[0][0]);
-            res.status(200).jsonp({users: results}).end;
-        })
     }
 };
