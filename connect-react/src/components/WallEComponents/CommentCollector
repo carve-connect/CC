@@ -1,0 +1,160 @@
+import React, {Component} from 'react';
+
+import axios from "axios";
+import {Button, Col, Form, Row, Table} from 'react-bootstrap';
+import CommentCard from "./CommentCard";
+
+export default class CommentCollector extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            carves: [],
+            comments: [],
+            media: [],
+            c: [],
+            users: [],
+            atten: [],
+            name: "",
+            likes: props.likes,
+            dislikes: props.dislikes
+        };
+
+
+    }
+
+    componentDidMount() {
+        if (this.props.type === 'open') {
+            axios.get(`http://localhost:8000/comments`)
+                .then(res => {
+                    this.setState({
+                        c: res.data.results[0]
+                    });
+                });
+
+        } else if (this.props.type === 'buddy') {
+
+        } else if (this.props.type === 'buddyAttend') {
+
+        } else if (this.props.type === 'userAttend') {
+
+        } else if (this.props.type === 'userCreate') {
+
+        } else if (this.props.type === 'userFollow') {
+
+        } else if (this.props.type === 'venueFollow') {
+
+        } else if (this.props.type === 'venue') {
+
+        }
+
+        axios.get(`http://localhost:8000/likes`)
+            .then(res => {
+                this.setState({
+                    likes: res.data.likes[0],
+                    dislikes: res.data.dislikes[0]
+                });
+
+            });
+
+        axios.get(`http://localhost:8000/users`)
+            .then(res => {
+                //alert("carve:" + JSON.stringify(res.data.results));
+                //console.log("users: ", JSON.stringify(res.data.users[0][0].username));
+                //alert(JSON.stringify(res.data.results[0]));
+                this.setState({
+                    users: res.data.users[0]
+                });
+
+            });
+
+
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+
+    }
+
+    render() {
+        let comments;
+        let current;
+
+        comments = this.state.c.map((com, index) => {
+            let poster = "";
+            if (this.state.users.length > 0) {
+                for (var c = 0; c < this.state.users.length; c++) {
+                    if (this.state.users[c].user_id == com.poster)
+                        poster = this.state.users[c].username;
+                }
+            }
+
+            if (this.props.type == "media") {
+                if (com.media == this.props.media.media_id) {
+                    return (
+                        <CommentCard poster={poster} comment={com} likes={} dislikes={}/>
+                    );
+                } else {
+                    return (<></>)
+                }
+            } else if (this.props.type == "carve") {
+                if (com.carve == this.props.carve.carve_id) {
+                    return (
+                        <CommentCard poster={poster} comment={com} likes={} dislikes={}/>
+                    );
+                } else {
+                    return (<></>)
+                }
+            } else if (com.profile == this.props.profile) {
+                return (
+                    <CommentCard poster={poster} comment={com} likes={} dislikes={}/>
+                );
+            } else {
+                return (<></>)
+            }
+
+        });
+
+
+        return (
+
+
+            <div style={{
+                display: "flex",
+                justifyContent: "space-between", flexWrap: "wrap"
+            }}>
+                <form onSubmit={this.handleSubmit}>
+                    <Form.Row>
+                        <Row>
+                            <Col className="col-sm-auto" style={{marginLeft: '1rem', marginRight: '-1.5rem'}}>
+                                <Form.Control onChange={this.handleChange} size="sm" placeholder="Add comment..."
+                                              type="text" value={comment}/>
+                            </Col>
+                            <Col>
+                                <Button type="submit" size="sm" block disabled={!this.validateForm()}>Enter</Button>
+                            </Col>
+                        </Row>
+                    </Form.Row>
+                </form>
+                <Table striped borderless hover size="sm">
+                    <thead>
+                    <th>
+                        Username
+                    </th>
+                    <th>
+                        Comment
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                    </thead>
+                    <tbody>
+                    {commentList}
+                    </tbody>
+                </Table>
+                <h2>List of {this.props.type} </h2>
+                {comments}
+            </div>
+
+
+        )
+    };
+}
