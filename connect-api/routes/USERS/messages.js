@@ -43,7 +43,7 @@ function hasReplyInObj(id) {
 // Returns all messages that need to be responded to
 function findReplyMessages(messages, userId) {
     let inbox = [];
-    let msgId;
+
 
     // Loop over individual messages and fill obj table with keys
     messages.forEach((message) => {

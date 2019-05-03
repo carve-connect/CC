@@ -9,9 +9,9 @@ router.get('/', (req,res) => {
     // Find all carves from database
     userId = req.params.userId;
     carve_list = "CALL get_users_created_carves(?)";
-    con.query(carve_list, [userId], (err, results) => {
+    con.query(carve_list, [userId], (err, c) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end();
+        res.status(200).jsonp({c}).end();
     })
 });
 

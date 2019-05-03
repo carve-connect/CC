@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import axios from 'axios';
 import VenueCarveCard from "../../../../components/VenueCarveCard";
-import MediaGroup from '../../../../components/MediaGroup';
+import MediaGroup from '../../../../components/MediaCollector';
 
 
 export default class VenuePage extends Component {
