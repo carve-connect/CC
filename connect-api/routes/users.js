@@ -20,7 +20,7 @@ router.get('/', (req,res) => {
 
 	con.query(sql, (err, results) => {
 		if (err) throw err;
-		res.status(200).jsonp({users: results}).end;
+		res.status(200).jsonp({users: results}).end();
 
 	})
 });
@@ -31,7 +31,7 @@ router.get('/logout', (req,res) => {
     get_user  = "call logout_all()";
     con.query(get_user,(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({users: results}).end;
+        res.status(200).jsonp({users: results}).end();
     })
 });
 
@@ -44,7 +44,7 @@ router.post('/', (req,res) => {
         if (results[0][0][0] != 0)
         {
             check = 0;
-            res.status(202).jsonp({check}).end;
+            res.status(202).jsonp({check}).end();
             console.log('duplicate username cant add ');
         }
         else {
@@ -59,7 +59,7 @@ router.post('/', (req,res) => {
                 con.query(usrCheck,[username], (err,results3)=> {
                     if (err) throw err;
                     check = results3[0][0].user_Id;
-                    res.status(201).jsonp({check}).end;
+                    res.status(201).jsonp({check}).end();
                     console.log(check);
                 })
             })
@@ -77,7 +77,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_user,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -91,7 +91,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_user,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -103,7 +103,7 @@ router.delete('/', (req,res) => {
 
     con.query(delete_users, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -114,11 +114,13 @@ router.get('/:userId', (req,res) => {
 
     get_user  = "call get_user(?)";
 
+
     con.query(get_user, [userId],(err, results) => {
         if (err) throw err;
         console.log(results[0][0]);
         res.status(200).jsonp({users: results}).end;
     })
+
 });
 
 // Log out the current user
@@ -129,7 +131,7 @@ router.get('/:userId/logout', (req,res) => {
 
     con.query(get_user, [userId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({users: results}).end;
+        res.status(200).jsonp({users: results}).end();
     })
 });
 
@@ -142,7 +144,7 @@ router.put('/:userId', (req,res) => {
 
     con.query(update_user, [userId, username, email, password, first_name, last_name, description, type, snow_sports[0], water_sports[0], land_sports[0], air_sports[0]], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -155,7 +157,7 @@ router.patch('/:userId', (req,res) => {
 
     con.query(update_user, [userId, username, email, password, first_name, last_name, description, type, snow_sports[0], water_sports[0], land_sports[0], air_sports[0]], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -167,7 +169,7 @@ router.delete('/:userId', (req,res) => {
 
     con.query(delete_users, [userId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'user deleted'}).end;
+        res.status(201).jsonp({msg:'user deleted'}).end();
     })
 });
 
@@ -179,7 +181,7 @@ router.get('/:userId/follows/followers/named ', (req,res) => {
     con.query(get_named_followers, [userId],(err, results) => {
         if (err) throw err;
         console.log(results[0][0]);
-        res.status(200).jsonp({users: results}).end;
+        res.status(200).jsonp({users: results}).end();
     })
 });
 
@@ -191,7 +193,7 @@ router.get('/:userId/follows/venues/named ', (req,res) => {
     con.query(get_named_vFollowed, [userId],(err, results) => {
         if (err) throw err;
         console.log(results[0][0]);
-        res.status(200).jsonp({users: results}).end;
+        res.status(200).jsonp({users: results}).end();
     })
 });
 
@@ -203,7 +205,7 @@ router.get('/:userId/carves/involved', (req,res) => {
     con.query(get_users_involved_carves, [userId], (err, results) => {
         if (err) throw err;
         console.log(results[0][0]);
-        res.status(200).jsonp({users: results}).end;
+        res.status(200).jsonp({users: results}).end();
     })
 });
       
@@ -214,7 +216,7 @@ router.get('/:userId/follows/named', (req,res) => {
 
     con.query(get_named_followed, [userId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'user returned'}).end;
+        res.status(201).jsonp({msg:'user returned'}).end();
 
     })
 });
