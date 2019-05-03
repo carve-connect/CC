@@ -10,10 +10,15 @@ const con = require('../db');
 router.get('/', (req,res) => {
     // Find all likes from database
     like_list = "CALL get_all_likes()";
+    dislike_list = "CALL get_dislikes()";
 
-    con.query(like_list, (err, results) => {
-        if (err) throw err;
-        res.status(200).jsonp({results}).end;
+
+    con.query(like_list, (err, likes) => {
+        con.query(dislike_list, (err, dislikes) => {
+            if (err) throw err;
+            if (err) throw err;
+            res.status(200).jsonp({likes, dislikes}).end;
+        })
     })
 });
 

@@ -9,7 +9,6 @@ import BuddyRequestModal from "../../../../components/NotificationComponents/Bud
 import MediaGroup from "../../../../components/MediaComponents/MediaGroup";
 import ProfileInfoCard from './ProfileInfoCard';
 import Container from 'react-bootstrap/Container';
-import CarveCardUserCreate from '../../../../components/CarveComponents/CarveCardUserCreate';
 import WallPost from '../../../../components/WallComponents/WallPost';
 import CreateMediaModal from "../../../../components/MediaComponents/CreateMediaModal";
 //photos
@@ -24,6 +23,7 @@ import upsidedown_snow from '../../../../images/upsidedown_snow.jpeg';
 import photosnow from '../../../../images/photosnow.jpeg';
 import droneguy from '../../../../images/drone guy.jpeg'
 import UserApi from "../../../../api/UserApi";
+import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
 
 
 export default class ProfilePage extends Component {
@@ -347,7 +347,7 @@ export default class ProfilePage extends Component {
 									Carve</Button>
 							</Row>
 							<Row>
-								<CarveCardUserCreate id={this.state.userId}/>
+								<CarveCollector type={"userCreate"} id={this.state.userId}/>
 							</Row>
 						</Col>
 					</Container>;
@@ -368,8 +368,8 @@ export default class ProfilePage extends Component {
 					<BuddyRequestModal id={this.state.userInfo.user_id} show={this.state.show2}
 									   handleClose={this.handleClose2}/>
 
-					<Row style={{backgroundColor: "gainsboro", height: "1%", width: "200%"}}>
-                        <div style={{marginLeft: "3%", marginBottom: '2%'}}>
+					<Row style={{backgroundColor: "gainsboro", height: ".1%", width: "150%"}}>
+						<div style={{marginLeft: "3%", marginBottom: '2%', height: ".1%"}}>
 							<h1>{profilePrefix} Profile</h1>
 						</div>
 						<div>
@@ -380,21 +380,19 @@ export default class ProfilePage extends Component {
 
 					{/* This is the row that will hold the profile picture and the information */}
 					<Row style={{
-						width: "200%",
+						width: "120%",
 						backgroundColor: "gainsboro",
-						paddingTop: "1%",
-						justify: 'flex-start',
-						paddingLeft: "2%"
-					}}>
 
-						<ProfileInfoCard style={{}} loggedIn={isUserLoggedIn} handleShow={this.handleShow}
+					}}>
+						<Col style={{width: "100%"}}>
+							<ProfileInfoCard style={{width: "100%"}} loggedIn={isUserLoggedIn}
+											 handleShow={this.handleShow}
                                          close={this.handleClose}
                                          show={this.state.show} refresh={this.getUserInfo} user={userInfo}
                                          img={this.state.pic} id={isUserLoggedIn} bud={this.state.buddies}
                                          fol={this.state.followers} foll={this.state.following}
                                          vfol={this.state.vFollowing}/>
 
-						<Col style={{backgroundColor: "gainsboro", width: "75%"}}>
 						</Col>
 					</Row>
 

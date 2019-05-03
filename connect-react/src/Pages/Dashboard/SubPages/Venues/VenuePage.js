@@ -10,7 +10,6 @@ import axios from 'axios';
 import MediaGroup from '../../../../components/MediaComponents/MediaGroup';
 import VenueApi from "../../../../api/VenueApi";
 import UserApi from "../../../../api/UserApi";
-import VenueCarveCard from '../../../../components/CarveComponents/VenueCarveCard'
 import Map from "../../../../components/VenueComponents/Map";
 import WeatherForecast from "../../../../components/VenueComponents/WeatherForecast";
 import beach from "../../../../images/beach.jpeg";
@@ -20,6 +19,7 @@ import MB from "../../../../images/MB.jpeg";
 import para from "../../../../images/para.jpeg";
 import skydive from "../../../../images/skydive.jpeg";
 import WeatherForecast1 from "../../../../components/VenueComponents/WeatherForecast1";
+import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
 
 
 export default class VenuePage extends Component {
@@ -42,6 +42,33 @@ export default class VenuePage extends Component {
     componentDidMount() {
         this.getData();
 	  }
+
+    getVenueInfo() {
+        VenueApi.getVenueInfo(this.state.venueId)
+            .then(venue => {
+                this.setState({venueInfo: venue, venueInfoLength: Object.keys(venue).length});
+            })
+
+    }
+
+    getFollowingVenues() {
+        UserApi.getFollowingVenues(localStorage.getItem('userId'))
+            .then(venues => {
+                let followsVenue = false;
+                venues.forEach((venue) => {
+                    if (venue.venue_Id === this.state.venueId) {
+                        followsVenue = true;
+                    }
+                });
+                this.setState({followsVenue, venueLoading: false});
+            });
+    }
+
+    getData() {
+        this.getVenueInfo();
+        this.getFollowingVenues();
+        console.log(this.state);
+    }
 
 	  // Allows the user to follow the venue that they are on.
     followVenue = () => {
@@ -133,7 +160,7 @@ export default class VenuePage extends Component {
                                 <Row><h2>Carves at {this.state.venueInfo.venue_name}</h2></Row>
                             </Row>
                             <Row style={{borderTop: "5px solid black", width: "200%"}}>
-                                <VenueCarveCard venue_id={this.state.venueId}/>
+                                <CarveCollector type={"venue"} venue_id={this.state.venueId}/>
                             </Row>
                         </Col>
                     </Container>
@@ -146,28 +173,31 @@ export default class VenuePage extends Component {
                         </Row>
                     </Container>
             } else if (this.state.content === "info") {
+
+
 //<WeatherHistory id={this.state.venueId}/>
                 content =
                     <Container>
                         <Row style={{width: "180%"}}>
                             <Col style={{backgroundColor: "cadetblue"}}>
-                                <h2>Map of area around Venue <i className="fa fa-globe fa-spin"
-                                                                style={{color: "white"}}/></h2>
+                                <h2>Map of area around Venue</h2><h4><i className="fa fa-globe fa-spin"
+                                                                        style={{color: "blue"}}/></h4>
                                 <Map latitude={this.state.venueInfo.lattitude}
                                      longitude={this.state.venueInfo.longitude}/>
                             </Col>
-                            <Col style={{backgroundColor: "grey", width: "50%"}}>
+                            <Col style={{backgroundColor: "grey", width: "30%"}}>
 
                                 <WeatherForecast id={this.state.venueId}/>
 
                             </Col>
-                            <Col style={{backgroundColor: "slate", width: "50%"}}>
+                            <Col style={{backgroundColor: "slate", width: "30%"}}>
                                 <Container>
                                     <WeatherForecast1 id={this.state.venueId}/>
                                 </Container>
                             </Col>
                         </Row>
                     </Container>
+                //alert(JSON.stringify(this.state.venueInfo));
             }
             return (
                 <>
@@ -199,7 +229,7 @@ export default class VenuePage extends Component {
                     </Row>
 
                     {/* Row of buttons for navigation */}
-                    <Row style={{backgroundColor: "gainsboro", width: "150%"}}>
+                    <Row style={{backgroundColor: "gainsboro", width: "100%", paddingLeft: "25%"}}>
                         <ButtonGroup size='lg' aria-label="Venue button group"
                                      style={{width: "80%", paddingBottom: "0px"}}>
                             <Button variant="secondary" onClick={this.handleInfo}>Information</Button>
@@ -209,8 +239,8 @@ export default class VenuePage extends Component {
                     </Row>
 
                     {/* Carves at the venue */}
-                    <Row style={{backgroundColor: "gainsboro", width: "150%"}}>
-                        <div>
+                    <Row style={{backgroundColor: "gainsboro", width: "100%"}}>
+                        <div style={{paddingLeft: "2%"}}>
                         {content}
                         </div>
                     </Row>
@@ -241,31 +271,6 @@ export default class VenuePage extends Component {
         }
     }
 
-    getVenueInfo() {
-        VenueApi.getVenueInfo(this.state.venueId)
-          .then(venue => {
-              this.setState({ venueInfo: venue, venueInfoLength: Object.keys(venue).length });
-          })
 
-    }
-
-    getFollowingVenues() {
-        UserApi.getFollowingVenues(localStorage.getItem('userId'))
-          .then(venues => {
-              let followsVenue = false;
-              venues.forEach((venue) => {
-                  if(venue.venue_Id === this.state.venueId) {
-                      followsVenue = true;
-                  }
-              });
-              this.setState({followsVenue, venueLoading: false});
-            });
-    }
-
-    getData() {
-        this.getVenueInfo();
-        this.getFollowingVenues();
-        console.log(this.state);
-    }
 
 }

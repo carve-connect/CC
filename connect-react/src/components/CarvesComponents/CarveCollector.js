@@ -18,12 +18,10 @@ export default class CarveCollector extends Component {
 
     }
 
-    componentWillMount() {
+    componentDidMount() {
         if (this.props.type === 'open') {
             axios.get(`http://localhost:8000/carves/open`)
                 .then(res => {
-                    console.log("carve: ", res.data);
-                    //alert(JSON.stringify(res.data.results[0]));
                     this.setState({
                         c: res.data.c[0],
                         carves: res.data.carves,
@@ -33,10 +31,109 @@ export default class CarveCollector extends Component {
                         atten: res.data.atten
                     });
                     //alert(JSON.stringify(res.data.carves));
+                })
+        } else if (this.props.type === 'buddy') {
+            axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/buddies/carves/made`)
+                .then(res => {
+                    this.setState({
+                        c: res.data.c[0],
+                        carves: res.data.carves,
+                        comments: res.data.comments,
+                        media: res.data.media,
+                        creator: res.data.user,
+                        atten: res.data.atten
+                    });
+
                 });
+        } else if (this.props.type === 'buddyAttend') {
+            axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/buddies/carves`)
+                .then(res => {
+                    this.setState({
+                        c: res.data.c[0],
+                        carves: res.data.carves,
+                        comments: res.data.comments,
+                        media: res.data.media,
+                        creator: res.data.user,
+                        atten: res.data.atten
+                    });
 
+                });
+        } else if (this.props.type === 'userAttend') {
+            axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/carveAttendees`)
+                .then(res => {
+                    this.setState({
+                        c: res.data.c[0],
+                        carves: res.data.carves,
+                        comments: res.data.comments,
+                        media: res.data.media,
+                        creator: res.data.user,
+                        atten: res.data.atten
+                    });
 
+                });
+        } else if (this.props.type === 'userCreate') {
+            axios.get(`http://localhost:8000/users/${this.props.id}/carves/`)
+                .then(res => {
+                    // console.log("results: ", res.data.results[0]);
+                    // alert(JSON.stringify(res.data.results[0]));
+                    this.setState({
+                        c: res.data.c[0],
+                        carves: res.data.carves,
+                        comments: res.data.comments,
+                        media: res.data.media,
+                        creator: res.data.user,
+                        atten: res.data.atten
+                    });
+
+                });
+        } else if (this.props.type === 'userFollow') {
+            axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/carves/`)
+                .then(res => {
+
+                    //alert(JSON.stringify(res.data.results[0]));
+                    this.setState({
+                        c: res.data.c[0],
+                        carves: res.data.carves,
+                        comments: res.data.comments,
+                        media: res.data.media,
+                        creator: res.data.user,
+                        atten: res.data.atten
+                    });
+
+                });
+        } else if (this.props.type === 'venueFollow') {
+            axios.get(`http://localhost:8000/users/${localStorage.getItem('userId')}/follows/venues/carves/`)
+                .then(res => {
+
+                    //alert(JSON.stringify(res.data.results[0]));
+                    this.setState({
+                        c: res.data.c[0],
+                        carves: res.data.carves,
+                        comments: res.data.comments,
+                        media: res.data.media,
+                        creator: res.data.user,
+                        atten: res.data.atten
+                    });
+
+                });
+        } else if (this.props.type === 'venue') {
+            axios.get(`http://localhost:8000/venues/${this.props.venue_id}/carves`)
+                .then(res => {
+                    // console.log("results: ", res.data.results[0]);
+                    //alert(JSON.stringify(res.data.results[0]));
+                    this.setState({
+                        c: res.data.c[0],
+                        carves: res.data.carves,
+                        comments: res.data.comments,
+                        media: res.data.media,
+                        creator: res.data.user,
+                        atten: res.data.atten
+                    });
+
+                });
         }
+
+
 
         axios.get(`http://localhost:8000/users`)
             .then(res => {
@@ -52,6 +149,9 @@ export default class CarveCollector extends Component {
 
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+
+    }
 
     render() {
         let carves;
@@ -86,7 +186,7 @@ export default class CarveCollector extends Component {
                 display: "flex",
                 justifyContent: "space-between", flexWrap: "wrap"
             }}>
-
+                <h2>List of {this.props.type} </h2>
                 {carves}
             </div>
 

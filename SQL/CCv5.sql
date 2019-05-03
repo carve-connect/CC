@@ -2303,6 +2303,29 @@ BEGIN
 
 END$$
 
+
+DELIMITER ;
+
+
+-- -----------------------------------------------------
+-- procedure get_buddy_made_carves
+-- -----------------------------------------------------
+
+USE `CCv5`;
+DROP procedure IF EXISTS `CCv5`.`get_buddy_made_carves`;
+
+DELIMITER $$
+USE `CCv5`$$
+
+CREATE PROCEDURE `get_buddy_made_carves`(in id int)
+BEGIN
+    select distinct all_carves.*, all_venues.*
+    from all_carves
+             left join (all_carve_attendees, all_follows, all_venues)
+                       on (all_carves.carve_id = all_carve_attendees.carve and
+                           all_carve_attendees.user = all_follows.user_id2 and all_carves.venue = all_venues.venue_id)
+    where (all_follows.user_id1 = id and all_follows.type = 'buddy' and all_carves.creator = all_follows.user_id2);
+END
 DELIMITER ;
 
 -- -----------------------------------------------------

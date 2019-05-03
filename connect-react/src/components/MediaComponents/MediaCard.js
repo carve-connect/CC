@@ -17,9 +17,9 @@ const MediaCard = (props) => {
     }
 */
     return (
-        <>
-        
-            <Card style={{width: '30rem', marginBottom: '2rem'}}>
+
+
+        <Card style={{width: '30rem', marginBottom: '2rem'}}>
                 <container className="embed-responsive embed-responsive-16by9">
                     <iframe title="User Media" className="embed-responsive-item" src= {props.media.url} allowFullScreen > </iframe>
                 </container>
@@ -39,7 +39,7 @@ const MediaCard = (props) => {
                 <CommentTable media={props.media} carve={""} type={"media"}/>
                 <Card.Footer style = {{fontSize: '10px'}}><em>Create_Time: {props.media.time}</em></Card.Footer>
             </Card>
-        </>
+
     );
 };
 export default MediaCard;

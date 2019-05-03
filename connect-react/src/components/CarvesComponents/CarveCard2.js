@@ -45,7 +45,7 @@ export default class CarveCard2 extends Component {
             cRe: 0,
             items: [],
             active: 5,
-            users: [],
+            users: props.users,
             at: 0
 
         };
@@ -61,10 +61,16 @@ export default class CarveCard2 extends Component {
                 //alert("carve:" + JSON.stringify(res.data.results));
                 //alert(JSON.stringify(res.data.results[0]));
                 this.setState({
-                    att: res.data.attend
+                    att: res.data.attend,
+
                 });
 
             });
+        this.setState({
+            users: this.props.users
+
+        });
+
 
     }
 
@@ -139,6 +145,7 @@ export default class CarveCard2 extends Component {
         let no = "not";
         let att = <div></div>;
         let at = 0;
+        let addMedia = <div></div>;
 
         let CarveAttend;
 
@@ -231,6 +238,10 @@ export default class CarveCard2 extends Component {
             act = "Carve Completed";
             no = "Completed";
             att = <div></div>;
+            if (at === 1)
+                addMedia = <CreateCarveMediaModal carve={carve}/>;
+            if (carve.creator == localStorage.getItem('userId'))
+                addMedia = <CreateCarveMediaModal carve={carve}/>;
         } else if (carve.creator == localStorage.getItem('userId')) {
             color = "grey";
             act = "Invite Buddy";
@@ -252,15 +263,42 @@ export default class CarveCard2 extends Component {
             }
         }
 
-        let creatorN = "";
-        let users;
-        if (this.state.users.length > 0) {
-            for (var c = 0; c < this.state.users.length; c++) {
-                if (this.state.users[c].user_id == maker)
-                    creatorN = this.state.users[c].username;
-            }
-        }
+        let creator;
+        let creatorN;
+        creator = this.props.users.map((users, index1) => {
+            if (users.user_id === carve.creator) {
+                creatorN = users.username;
 
+            }
+        });
+
+        let cdd = carve.create_time;
+        let cddd;
+        let cadd = carve.date;
+        let caddd;
+
+        // Split timestamp into [ Y, M, D, h, m, s ]
+        cddd = cdd.split(/[- :]/);
+
+// Apply each element to the Date function
+        var cd = cddd[2][1] + "-" + cddd[1] + "-" + cddd[0];
+
+        console.log(cd);
+
+        caddd = cadd.split(/[- :]/);
+        var cad = caddd[2][1] + "-" + caddd[1] + "-" + caddd[0];
+        /*
+// -> Wed Jun 09 2010 14:12:01 GMT+0100 (BST)
+
+        // Split timestamp into [ Y, M, D, h, m, s ]
+        caddd = cadd.split(/[- :]/);
+
+// Apply each element to the Date function
+        var cad = new Date(Date.UTC(caddd[0], caddd[1]-1, caddd[2], caddd[3], caddd[4], caddd[5]));
+
+        console.log(cad);
+// -> Wed Jun 09 2010 14:12:01 GMT+0100 (BST)
+*/
         return (
 
             <Card style={{width: '100%', backgroundColor: [color]}}>
@@ -270,7 +308,7 @@ export default class CarveCard2 extends Component {
                 <Card.Header style={{color: "navy"}}>
                     <Row style={{justify: 'space-between'}}>
                         <Card.Title>Name: {carve.name}</Card.Title>
-                        <div style={{margin: '15px', marginLeft: '20%'}}>Date: {carve.date}</div>
+                        <div style={{margin: '15px', marginLeft: '20%'}}>Created on: {cd}</div>
                         <h6 style={{margin: '15px', marginLeft: '20%'}}>Type: {carve.type}</h6>
 
                     </Row>
@@ -291,7 +329,7 @@ export default class CarveCard2 extends Component {
                                 <Row>
                                     <h5>{carve.city},{carve.state}</h5>
                                 </Row>
-                                <Row><p>Creator: {creatorN} {maker} </p></Row>
+                                <Row><p>Creator: {creatorN} </p></Row>
                                 <Row>
                                     Description: {carve.description}
                                 </Row>
@@ -315,8 +353,12 @@ export default class CarveCard2 extends Component {
                             </Card.Text>
                         </Col>
                         <Col>
-                            <h3>Attendees:</h3>
-                            {CarveAttend}</Col></Row>
+                            <Row>
+                                Carve Date: {cad}
+                            </Row>
+                            <Row>
+                                <h3>Attendees:</h3>
+                                {CarveAttend}</Row></Col></Row>
                     <Row style={{paddingTop: "5%", bordered: "5px solid black", height: "50%"}}>
                         <Col>
                             {att}
@@ -327,7 +369,7 @@ export default class CarveCard2 extends Component {
 
                         </Col>
                         <Col>
-                            <CreateCarveMediaModal carve={carve}/>
+                            {addMedia}
                         </Col>
 
                     </Row>

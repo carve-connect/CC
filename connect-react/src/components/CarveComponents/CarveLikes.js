@@ -18,18 +18,13 @@ export default class CarveLikes extends Component {
         axios.get(`http://localhost:8000/likes`)
             .then(res => {
                 this.setState({
-                    likes: res.data.results[0]
+                    likes: res.data.likes[0],
+                    dislikes: res.data.dislikes[0]
                 });
 
             });
 
-        axios.get(`http://localhost:8000/likes/dislikes`)
-            .then(res => {
-                this.setState({
-                    dislikes: res.data.results[0]
-                });
 
-            });
     }
 
     handleLike = e => {

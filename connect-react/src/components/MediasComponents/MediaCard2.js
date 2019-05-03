@@ -19,8 +19,14 @@ const MediaCard2 = (props) => {
 
             <Card style={{width: '30rem', marginBottom: '2rem'}}>
                 <container className="embed-responsive embed-responsive-16by9">
-                    <iframe title="User Media" className="embed-responsive-item" src={props.media.url}
-                            allowFullScreen></iframe>
+                    <div className="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src={props.media.url}
+                                frameBorder="0"
+                                allow=""
+                                allowFullScreen></iframe>
+                    </div>
+
+
                 </container>
 
                 <Card.Body>
