@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
 import MediaCard from './MediaCard';
+import EditMediaModal from './EditMediaModal';
 
 
 export default class MediaGroup extends Component {
@@ -63,6 +64,7 @@ export default class MediaGroup extends Component {
 
     render() {
         let mediaList;
+        let editModal = <EditMediaModal/>
         
         if(this.state.mediaInfo.length > 0){
             mediaList = this.state.mediaInfo.map((media) => {
