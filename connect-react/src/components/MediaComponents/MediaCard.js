@@ -9,6 +9,9 @@ import {Tooltip} from 'react-bootstrap';
 import {OverlayTrigger} from 'react-bootstrap';
 import {Modal} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
+import {FormGroup} from 'react-bootstrap';
+import {Form} from 'react-bootstrap';
+import axios from 'axios';
 
 
 
@@ -19,9 +22,16 @@ export default class MediaCard extends Component {
             show: false,
             description: ""
         };
+        this.editMedia = this.editMedia.bind(this);
         this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
     }
+
+    validateForm(){
+        const {description} = this.state;
+
+        return (description.length > 0);
+    }
+
     handleClose() {
         this.setState({ show: false });
     }
@@ -30,24 +40,47 @@ export default class MediaCard extends Component {
         this.setState({ show: true });
     }
 
+    handleChange = event => {
+        this.setState({
+			[event.target.id]: event.target.value
+		});
+    };
+
+    editMedia(e){
+        e.preventDefault();
+
+        axios.patch(`http://localhost:8000/media/${this.props.media.media_id}`, {
+            poster: this.props.media.poster,
+            carve: this.props.media.carve,
+            profile: this.props.media.profile,
+            venue: this.props.media.venue, 
+            url: this.props.media.url, 
+            description: this.state.description
+        });
+        this.handleClose();
+    }
+
 
     render(){
 
         let editModal =
                     <div>
-                        <Modal centered show={this.state.show}>
+                        <Modal centered show={this.state.show} onHide={this.handleClose}>
                         <Modal.Header>
                             Edit Media
                         </Modal.Header>
-                        <Modal.Body>
-
-                        </Modal.Body>
+                        <Container>
+                            <FormGroup controlId="description">
+                                <Form.Label>Description</Form.Label>
+                                <Form.Control value={this.state.description} onChange={this.handleChange} type="text" placeholder="Enter Description..." />
+                            </FormGroup>
+                        </Container>
                         <Modal.Footer>
-                            <Button variant="secondary" onClick={this.handleClose}>
+                            <Button variant="secondary" onClick={() => this.handleClose}>
                             Exit
                             </Button>
-                            <Button type = "submit" variant="primary">
-                            Create
+                            <Button onClick={this.editMedia} disabled={!this.validateForm()} type = "submit" variant="primary">
+                            Edit
                             </Button>
                         </Modal.Footer>
                         </Modal>
@@ -70,11 +103,12 @@ export default class MediaCard extends Component {
 
         <Card style={{width: '30rem', marginBottom: '2rem'}}>
         <Card.Header style={{padding: 0}}>
+        {editModal}
                     <Dropdown >
                         <Dropdown.Toggle size="sm"  variant="link" style={{color: 'black', float: 'right', border: 'none'}}>
                             <i class="fa fa-ellipsis-h fa-10x"></i>
                         </Dropdown.Toggle>
-
+                        
                         <Dropdown.Menu style={{minWidth: '5rem'}}>
                             <Dropdown.Item onClick={this.handleShow}>
                                 <OverlayTrigger overlay = {
@@ -82,8 +116,9 @@ export default class MediaCard extends Component {
                                 }>
                                     <i class="fa fa-edit fa-2x"></i>
                                 </OverlayTrigger>
-                                {editModal}
+                                
                             </Dropdown.Item>
+                           
                             <Dropdown.Item onClick={this.props.delete} >
                                 <OverlayTrigger overlay = {
                                     <Tooltip>Delete</Tooltip>
