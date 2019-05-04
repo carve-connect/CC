@@ -62,36 +62,36 @@ carve60,27,29,,buddy,5,3,6/4/2018,1,"Surf, Water Ski"
 carve61,28,42,,open,7,3,8/8/2019,0,Water Ski
 carve62,29,23,,buddy,5,3,6/4/2018,1,"Surf, Wakeboard"
 carve63,30,26,,open,7,3,8/8/2019,0,Surf
-carve64,1,,land,buddy,3,3,5/22/2019,0,"Skateboard,BMX"
-carve65,2,,land,open,5,2,4/4/2019,1,Skateboard
-carve66,3,,land,buddy,3,3,5/22/2019,0,BMX
-carve67,4,,land,open,5,2,4/4/2019,1,Parkour
-carve68,6,,land,buddy,5,2,4/4/2019,1,"Skateboard,BMX"
-carve69,7,,land,open,3,3,5/22/2019,0,Skateboard
-carve70,7,,land,buddy,8,4,3/12/2019,1,Skateboard
-carve71,8,,land,open,5,2,4/4/2019,1,BMX
-carve72,10,,land,buddy,6,2,2/15/2019,1,"BMX, Skateboard"
-carve73,10,,land,open,5,2,4/4/2019,1,"BMX, Skateboard"
-carve74,11,,land,buddy,3,3,5/22/2019,0,Parkour
-carve75,12,,land,open,6,2,2/15/2019,1,Mountain Bike
-carve76,12,,land,buddy,5,2,4/4/2019,1,Skateboard
-carve77,13,,land,open,3,3,5/22/2019,0,Skateboard
-carve78,14,,land,buddy,5,2,4/4/2019,1,BMX
-carve79,15,,land,open,3,3,5/22/2019,0,"Mountain Bike, Cliff Dive"
-carve80,16,,land,buddy,5,2,4/4/2019,1,Parkour
-carve81,17,,land,open,3,3,5/22/2019,0,",BMX"
-carve82,18,,land,buddy,5,2,4/4/2019,1,Skateboard
-carve83,19,,land,open,3,3,5/22/2019,0,BMX
-carve84,20,,land,buddy,5,2,4/4/2019,1,Rock Climb
-carve85,21,,land,open,3,3,5/22/2019,0,"BMX, Skateboard"
-carve86,22,,land,buddy,5,2,4/4/2019,1,Cliff Dive
-carve87,23,,land,open,3,3,5/22/2019,0,"Skateboard,BMX,Mountain Bike"
-carve88,24,,land,buddy,5,2,4/4/2019,1,Skateboard
-carve89,25,,land,open,3,3,5/22/2019,0,BMX
-carve90,26,,land,buddy,5,2,4/4/2019,1,Mountain Bike
-carve91,28,,land,open,5,2,4/4/2019,1,Mountain Bike
-carve92,29,,land,buddy,3,3,5/22/2019,0,Skateboard
-carve93,30,,land,open,5,2,4/4/2019,1,BMX
+carve64,1,46,,buddy,3,3,5/22/2019,0,"Skateboard,BMX"
+carve65,2,46,,open,5,2,4/4/2019,1,Skateboard
+carve66,3,47,,buddy,3,3,5/22/2019,0,BMX
+carve67,4,47,,open,5,2,4/4/2019,1,Parkour
+carve68,6,48,,buddy,5,2,4/4/2019,1,"Skateboard,BMX"
+carve69,7,48,,open,3,3,5/22/2019,0,Skateboard
+carve70,7,49,,buddy,8,4,3/12/2019,1,Skateboard
+carve71,8,49,,open,5,2,4/4/2019,1,BMX
+carve72,10,50,,buddy,6,2,2/15/2019,1,"BMX, Skateboard"
+carve73,10,50,,open,5,2,4/4/2019,1,"BMX, Skateboard"
+carve74,11,46,,buddy,3,3,5/22/2019,0,Parkour
+carve75,12,9,,open,6,2,2/15/2019,1,Mountain Bike
+carve76,12,47,,buddy,5,2,4/4/2019,1,Skateboard
+carve77,13,48,,open,3,3,5/22/2019,0,Skateboard
+carve78,14,49,,buddy,5,2,4/4/2019,1,BMX
+carve79,15,32,,open,3,3,5/22/2019,0,Cliff Dive
+carve80,16,46,,buddy,5,2,4/4/2019,1,Parkour
+carve81,17,51,,open,3,3,5/22/2019,0,BMX
+carve82,18,47,,buddy,5,2,4/4/2019,1,Skateboard
+carve83,19,47,,open,3,3,5/22/2019,0,BMX
+carve84,20,42,,buddy,5,2,4/4/2019,1,Rock Climb
+carve85,21,46,,open,3,3,5/22/2019,0,"BMX, Skateboard"
+carve86,22,32,,buddy,5,2,4/4/2019,1,Cliff Dive
+carve87,23,46,,open,3,3,5/22/2019,0,"Skateboard,BMX"
+carve88,24,46,,buddy,5,2,4/4/2019,1,Skateboard
+carve89,25,47,,open,3,3,5/22/2019,0,BMX
+carve90,26,9,,buddy,5,2,4/4/2019,1,Mountain Bike
+carve91,28,9,,open,5,2,4/4/2019,1,Mountain Bike
+carve92,29,48,,buddy,3,3,5/22/2019,0,Skateboard
+carve93,30,48,,open,5,2,4/4/2019,1,BMX
 carve94,1,,air,buddy,8,4,3/12/2019,1,"Sky Dive,Hang Glide"
 carve95,2,,air,open,8,2,8/19/2019,0,Hang Glide
 carve96,3,,air,buddy,8,4,3/12/2019,1,"Sky Dive,Hang Glide"
