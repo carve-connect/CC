@@ -12,6 +12,8 @@ import Container from 'react-bootstrap/Container';
 import WallPost from '../../../../components/WallComponents/WallPost';
 import CreateMediaModal from "../../../../components/MediaComponents/CreateMediaModal";
 //photos
+
+//import { imgObj } from "images/images";
 import dogskate from '../../../../images/dogskate.jpeg';
 import SEAN from '../../../../images/SEAN.jpeg';
 import DHRUV from '../../../../images/DHRUV.jpg';
@@ -37,11 +39,11 @@ export default class ProfilePage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			userId: props.match.params.number,
+			userId: Number(props.match.params.number),
 			userInfo: {},
 			userInfoLength: 0,
 			isUserLoggedIn: props.match.params.number === localStorage.getItem('userId'),
-			pic: SnowProfilePic,
+			pic: null,
 			check: true,
 			show: false,
 			show1: false,
@@ -63,24 +65,22 @@ export default class ProfilePage extends Component {
 		this.handleShow = this.handleShow.bind(this);
 		this.handleCreateMedia = this.handleCreateMedia.bind(this);
 		this.handleClose = this.handleClose.bind(this);
-        this.addBuddy = this.addBuddy.bind(this);
+		this.addBuddy = this.addBuddy.bind(this);
 		this.getUserInfo = this.getUserInfo.bind(this);
 		this.handleCarves = this.handleCarves.bind(this);
 		this.handleMedia = this.handleMedia.bind(this);
 		this.handlePosts = this.handlePosts.bind(this);
 		this.setProfilePic = this.setProfilePic.bind(this);
-        this.followUser = this.followUser.bind(this);
-        this.unFollowUser = this.unFollowUser.bind(this);
-        this.addBuddy = this.addBuddy.bind(this);
-        this.removeBuddy = this.removeBuddy.bind(this);
-
+		this.followUser = this.followUser.bind(this);
+		this.unFollowUser = this.unFollowUser.bind(this);
+		this.addBuddy = this.addBuddy.bind(this);
+		this.removeBuddy = this.removeBuddy.bind(this);
 	}
 
 	// Retrieves info before component is mounted to the DOM
 	componentDidMount() {
 		this.getUserInfo();
 		//this.getUserCounts();
-		//this.setProfilePic();
 	}
 
 	handleClick = () => {
@@ -160,8 +160,26 @@ export default class ProfilePage extends Component {
 
     getUserInfo() {
         // Getting the user id from the url param
-
         if (this.state.userId > 0) {
+
+          /*
+        	axios.get(`http://localhost:8000/users/${this.state.userId}`)
+						.then(res => {
+							console.log('USER INFO RESULTS:', res);
+							this.setState({
+									userInfo: res.data.users[0][0],
+									userInfoLength: Object.keys(res.data.users[0][0]).length,
+							});
+						})
+						.then(() => {
+							this.getBuddy();
+							this.getFollowingUsers();
+							this.getFollowers();
+							this.getFollowingVenues();
+							this.setProfilePic();
+						});
+				}*/
+
             axios.get(`http://localhost:8000/users/${this.state.userId}`)
                 .then(res => {
                     this.setState({
@@ -181,9 +199,21 @@ export default class ProfilePage extends Component {
         }
     }
 
+    // Sets users profile picture after we grab the users info
     setProfilePic() {
 
+      /*
+    	const { photo } = this.state.userInfo;
+    	let pic = imgObj[photo];
 
+    	// Case: We do not find a photo from the user's profile info
+    	if(pic == 'undefined' || photo === null) {
+    		pic = imgObj['snowboard-profile-pic'];
+			}
+
+    	// Sets profile pic to pic we found
+    	this.setState({pic});
+      */
     }
 
 
@@ -294,7 +324,7 @@ export default class ProfilePage extends Component {
 			// Make button options for top right corner
 			let options;
 			let content;
-            let followButton;
+			let followButton;
 
 			if (isUserLoggedIn) {
 
@@ -331,8 +361,6 @@ export default class ProfilePage extends Component {
 
 			if (this.state.content === "media") {
 				content =
-
-
 					<Container show={this.state.media} style={{paddingLeft: "15%", width: "150%", paddingTop: "1%"}}>
 						<Row style={{paddingLeft: "50%", height: "2%"}}>
 							<h2 style={{margin: '3rem'}}>My Media</h2>
@@ -353,7 +381,6 @@ export default class ProfilePage extends Component {
 					</Container>;
 			} else if (this.state.content === "carves") {
 				content =
-
 					<Container style={{paddingTop: "1%", width: "200%"}} show={this.state.carves}>
 						<Col>
 							<Row style={{paddingLeft: "53%"}}>
