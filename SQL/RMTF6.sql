@@ -413,6 +413,8 @@ INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_s
 VALUES ('Skydive Zion', 'Hurricane', 'UT', 'Wow... Awesome time.', 'SkyDive1', NULL, NULL, NULL, 'Sky Dive,Air Race',
         37.141208, -113.304019, 'http://www.skydivezion.com/');
 
+#CARVES
+
 INSERT INTO CARVES(name, creator, venue, description, type, max_athletes, max_photo, date, completed, sports)
 VALUES ('carve1', 1, 1, 'trying to get a good snowboarding sesh in', 'open', 6, 2, '2019-07-03', 0,
         'Snowboard,Downhill Ski');
@@ -492,7 +494,7 @@ VALUES ('carve36', 5, 41, 'who''s down for some water skiing?', 'buddy', 3, 3, '
 INSERT INTO CARVES(name, creator, venue, description, type, max_athletes, max_photo, date, completed, sports)
 VALUES ('carve37', 6, 42, 'who''s down for some water skiing?', 'open', 7, 3, '2019-08-08', 0, 'Water Ski');
 INSERT INTO CARVES(name, creator, venue, description, type, max_athletes, max_photo, date, completed, sports)
-VALUES ('carve38', 7, 43, 'got a lot planned for this one', 'buddy', 5, 3, '2018-06-04', 1, 'Surf, Paddleboard');
+VALUES ('carve38', 7, 43, 'got a lot planned for this one', 'buddy', 5, 3, '2018-06-04', 1, 'Surf,Paddleboard');
 INSERT INTO CARVES(name, creator, venue, description, type, max_athletes, max_photo, date, completed, sports)
 VALUES ('carve39', 8, 42, 'who''s down for some water skiing?', 'open', 7, 3, '2019-08-08', 0, 'Water Ski');
 INSERT INTO CARVES(name, creator, venue, description, type, max_athletes, max_photo, date, completed, sports)
@@ -745,7 +747,7 @@ VALUES ('carve156', 5, 41, 'who''s down for some water skiing?', 'buddy', 3, 3, 
 INSERT INTO CARVES(name, creator, venue, description, type, max_athletes, max_photo, date, completed, sports)
 VALUES ('carve157', 6, 42, 'who''s down for some water skiing?', 'open', 7, 3, '2019-08-08', 0, 'Water Ski');
 INSERT INTO CARVES(name, creator, venue, description, type, max_athletes, max_photo, date, completed, sports)
-VALUES ('carve158', 7, 43, 'got a lot planned for this one', 'buddy', 5, 3, '2018-06-04', 1, 'Surf, Paddleboard');
+VALUES ('carve158', 7, 43, 'got a lot planned for this one', 'buddy', 5, 3, '2018-06-04', 1, 'Surf,Paddleboard');
 INSERT INTO CARVES(name, creator, venue, description, type, max_athletes, max_photo, date, completed, sports)
 VALUES ('carve159', 8, 42, 'who''s down for some water skiing?', 'open', 7, 3, '2019-08-08', 0, 'Water Ski');
 INSERT INTO CARVES(name, creator, venue, description, type, max_athletes, max_photo, date, completed, sports)
