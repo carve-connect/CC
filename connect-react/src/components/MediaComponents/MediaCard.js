@@ -1,18 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Container from "react-bootstrap/Container";
 import CommentTable from '../WallComponents/CommentTable';
 import MediaLikes from './MediaLikes';
-import {Dropdown} from 'react-bootstrap';
-import {Tooltip} from 'react-bootstrap';
-import {OverlayTrigger} from 'react-bootstrap';
-import {Modal} from 'react-bootstrap';
-import {Button} from 'react-bootstrap';
-import {FormGroup} from 'react-bootstrap';
-import {Form} from 'react-bootstrap';
+import {Button, Dropdown, Form, FormGroup, Modal, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import axios from 'axios';
-
 
 
 export default class MediaCard extends Component {
@@ -25,6 +18,7 @@ export default class MediaCard extends Component {
         this.editMedia = this.editMedia.bind(this);
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.deleteMedia = this.deleteMedia.bind(this);
     }
 
     validateForm(){
@@ -61,9 +55,15 @@ export default class MediaCard extends Component {
         this.handleClose();
     }
 
+    deleteMedia(e) {
+        e.preventDefault();
+
+        axios.delete(`http://localhost:8000/media/${this.props.media.media_id}`, {});
+
+    }
 
     render(){
-
+        let med = this.props.media;
         let editModal =
                     <div>
                         <Modal centered show={this.state.show} onHide={this.handleClose}>
@@ -98,6 +98,11 @@ export default class MediaCard extends Component {
     }
 */
     let show = false;
+        let ed = <div></div>;
+        if (med.creator === localStorage.getItem('userId')) {
+            ed = <></>
+
+        }
 
     return (
 
@@ -105,32 +110,35 @@ export default class MediaCard extends Component {
         <Card style={{width: '30rem', marginBottom: '2rem'}}>
         <Card.Header style={{padding: 0}}>
         {editModal}
-                    <Dropdown >
-                        <Dropdown.Toggle size="sm"  variant="link" style={{color: 'black', float: 'right', border: 'none'}}>
-                            <i class="fa fa-ellipsis-h fa-10x"></i>
-                        </Dropdown.Toggle>
-                        
-                        <Dropdown.Menu style={{minWidth: '5rem'}}>
-                            <Dropdown.Item onClick={this.handleShow}>
-                                <OverlayTrigger overlay = {
-                                    <Tooltip>Edit</Tooltip>
-                                }>
-                                    <i class="fa fa-edit fa-2x"></i>
-                                </OverlayTrigger>
-                                
-                            </Dropdown.Item>
-                           
-                            <Dropdown.Item onClick={this.props.delete} >
-                                <OverlayTrigger overlay = {
-                                    <Tooltip>Delete</Tooltip>
-                                }>
-                                <i class="fa fa-trash fa-2x"></i>
-                                </OverlayTrigger>
-                            </Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Card.Header>
 
+                </Card.Header>
+            <Row style={{paddingLeft: "40%"}}>
+                Media {this.props.media.media_id} {ed}
+                <Dropdown>
+                    <Dropdown.Toggle size="sm" variant="link" style={{color: 'black', float: 'right', border: 'none'}}>
+                        <i class="fa fa-ellipsis-h fa-10x"></i>
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu style={{minWidth: '5rem'}}>
+                        <Dropdown.Item onClick={this.handleShow}>
+                            <OverlayTrigger overlay={
+                                <Tooltip>Edit</Tooltip>
+                            }>
+                                <i class="fa fa-edit fa-2x"></i>
+                            </OverlayTrigger>
+
+                        </Dropdown.Item>
+
+                        <Dropdown.Item onClick={this.deleteMedia}>
+                            <OverlayTrigger overlay={
+                                <Tooltip>Delete</Tooltip>
+                            }>
+                                <i class="fa fa-trash fa-2x"></i>
+                            </OverlayTrigger>
+                        </Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Row>
                 <container className="embed-responsive embed-responsive-16by9">
                     <iframe title="User Media" className="embed-responsive-item" src= {this.props.media.url} allowFullScreen > </iframe>
                 </container>
