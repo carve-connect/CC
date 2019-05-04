@@ -1,6 +1,9 @@
+var express = require('express');
+var router = express.Router({mergeParams: true});
+const con = require('../../../db');
+
 module.exports = {
-    getStuff: function(userRequest)
-    {
+    getStuff: function (userRequest, res) {
         if(userRequest == 'patch') {
             router.patch('/:carve_attendeesId', (req, res) => {
                 const carve_attendeesId = req.params.carve_attendeesId;
@@ -11,8 +14,7 @@ module.exports = {
                     res.status(201).jsonp({results}).end();
                 })
             });
-        }
-        else{
+        } else{
             router.put('/:carve_attendeesId', (req, res) => {
                 const carve_attendeesId = req.params.carve_attendeesId;
                 const {carve, user, userType} = req.body;
@@ -24,8 +26,9 @@ module.exports = {
             });
         }
     },
-    userGet: function (userId)
-    {
+
+
+    userGet: function (userId, res) {
         console.log('We are in here!');
 
         get_user  = "call get_user(?)";

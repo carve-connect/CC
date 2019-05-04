@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 const con = require('../db');
-var functions = require('../functions');
+var functions = require('./middleware/users/userFunctions');
 
 /*
  * Endpoint for all user related requests
@@ -111,7 +111,7 @@ router.delete('/', (req,res) => {
 // Grab specific user by their id
 router.get('/:userId', (req,res) => {
     const userId = req.params.userId;
-    functions.userGet(userId);
+    functions.userGet(userId, res);
 });
 
 // Log out the current user
