@@ -45,892 +45,892 @@ VALUES ('ProfMan', 'abc8@email.net', 'password', 'Dr.', 'Baliga', 'Awesome Profe
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dgoodman10', 'user10@email.net', 'password', 'Daniel', 'Goodman', 'Up for anything, lets carve!',
-        'SkyDive2.jpeg', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HockeyMask11', 'abc11@email.net', 'password', 'Jason', 'Vorhees',
-        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1.jpeg', 'Photographer', NULL, 'Kayak',
+        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1', 'Photographer', NULL, 'Kayak',
         'Parkour', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('IronMan12', 'abc12@email.net', 'password', 'Tony', 'Stark',
-        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3.jpeg', 'Athlete', NULL,
+        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3', 'Athlete', NULL,
         'Surf,Water Ski', 'Skateboard,BMX,Mountain Bike', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('EddieRox13', 'abc13@email.net', 'password', 'Bruce', 'Dickenson',
-        'I was born to rock and to fly through the sky!', 'Ph2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'I was born to rock and to fly through the sky!', 'Ph2', 'Photographer', 'Snowboard', 'Water Ski',
         'Skateboard', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('TFranks14', 'abc14@email.net', 'password', 'Thomas', 'Franklin',
-        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3.jpeg', 'Athlete',
+        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3', 'Athlete',
         'Downhill Ski', 'Surf', 'BMX', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('GoldHand15', 'abc15@email.net', 'password', 'Jamie', 'Lannister',
-        'I love two things in this world, my family and my extreme sports', 'Ph3.jpeg', 'Photographer',
+        'I love two things in this world, my family and my extreme sports', 'Ph3', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'Mountain Bike,Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HammerMan16', 'abc16@email.net', 'password', 'Robert', 'Baratheon',
-        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1.jpeg', 'Athlete',
+        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1', 'Athlete',
         'Snowboard', 'Water Ski', 'Parkour', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Reaper17', 'abc17@email.net', 'password', 'Jaxon', 'Teller',
-        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2.jpeg', 'Photographer',
+        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2', 'Photographer',
         'Downhill Ski', 'Surf,Paddleboard', 'Skateboard,BMX,Mountain Bike', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BestCaptain18', 'abc18@email.net', 'password', 'Jean-luc', 'Picard',
-        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1.jpeg', 'Athlete', 'snowmobile',
+        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1', 'Athlete', 'snowmobile',
         'Surf,Water Ski', 'Skateboard', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Favabeans19', 'user19@email.net', 'password', 'Hannibal', 'Lecter',
-        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Xwing20', 'user20@email.net', 'password', 'Luke', 'Skywalker', 'I use the force to shred the gnar!',
-        'Su3.jpeg', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
+        'Su3', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('LoveMyDog21', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3.jpeg',
+VALUES ('LoveMyDog21', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3',
         'Photographer', 'Downhill Ski', 'Surf,Water Ski', 'BMX,Skateboard', 'BAse Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Terminator22', 'abc22@email.net', 'password', 'Sarah', 'Connor', 'would travel time for some good waves',
-        'Hg1.jpeg', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
+        'Hg1', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('DarkTower23', 'abc23@email.net', 'password', 'Roland', 'Deschain',
-        'I must find the dark tower, but first, let''s carve!', 'Ph1.jpeg', 'Photographer', 'Cross-Country Ski', 'Surf',
+        'I must find the dark tower, but first, let''s carve!', 'Ph1', 'Photographer', 'Cross-Country Ski', 'Surf',
         'Skateboard,BMX,Mountain Bike', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('MotleyCrue24', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home',
-        'SkyDive2.jpeg', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('CaptMarvel25', 'abc25@email.net', 'password', 'Carol', 'Danvers',
-        'former airforce test pilot,Current Sky Diver', 'SkyDive2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'former airforce test pilot,Current Sky Diver', 'SkyDive2', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BlackWidow26', 'abc26@email.net', 'password', 'Natasha', 'Romanov',
-        'freerunning is my life outside of the avengers', 'SkPh2.jpeg', 'Athlete', 'Downhill Ski', 'Surf',
+        'freerunning is my life outside of the avengers', 'SkPh2', 'Athlete', 'Downhill Ski', 'Surf',
         'Mountain Bike', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('InvisibleWoman27', 'abc27@email.net', 'password', 'Susan', 'Storm',
-        'Im not always invisible, thatts why i need people to film me', 'Ph2.jpeg', 'Photographer',
+        'Im not always invisible, thatts why i need people to film me', 'Ph2', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', NULL, 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('NoOne28', 'abc28@email.net', 'password', 'Arya', 'Stark', 'A girl is noone, except for a great snowborder',
-        'Sn1.jpeg', 'Athlete', 'Snowboard', 'Water Ski', 'Skateboard,BMX,Mountain Bike', NULL);
+        'Sn1', 'Athlete', 'Snowboard', 'Water Ski', 'Skateboard,BMX,Mountain Bike', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Rescue29', 'user29@email.net', 'password', 'Pepper', 'Potts', 'catch me skydiving with my husband', 'Ph2.jpeg',
+VALUES ('Rescue29', 'user29@email.net', 'password', 'Pepper', 'Potts', 'catch me skydiving with my husband', 'Ph2',
         'Photographer', 'Downhill Ski', 'Surf', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dishonored30', 'user30@email.net', 'password', 'Corvo', 'Attano', 'love to run around and jump off of things',
-        'Su3.jpeg', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
+        'Su3', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dgoodman11', 'user10@email.net', 'password', 'Daniel', 'Goodman', 'Up for anything, lets carve!',
-        'SkyDive2.jpeg', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HockeyMask12', 'abc11@email.net', 'password', 'Jason', 'Vorhees',
-        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1.jpeg', 'Photographer', NULL, 'Kayak',
+        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1', 'Photographer', NULL, 'Kayak',
         'Parkour', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('IronMan13', 'abc12@email.net', 'password', 'Tony', 'Stark',
-        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3.jpeg', 'Athlete', NULL,
+        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3', 'Athlete', NULL,
         'Surf,Water Ski', 'Skateboard,BMX,Mountain Bike', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('EddieRox14', 'abc13@email.net', 'password', 'Bruce', 'Dickenson',
-        'I was born to rock and to fly through the sky!', 'Ph2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'I was born to rock and to fly through the sky!', 'Ph2', 'Photographer', 'Snowboard', 'Water Ski',
         'Skateboard', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('TFranks15', 'abc14@email.net', 'password', 'Thomas', 'Franklin',
-        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3.jpeg', 'Athlete',
+        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3', 'Athlete',
         'Downhill Ski', 'Surf', 'BMX', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('GoldHand16', 'abc15@email.net', 'password', 'Jamie', 'Lannister',
-        'I love two things in this world, my family and my extreme sports', 'Ph3.jpeg', 'Photographer',
+        'I love two things in this world, my family and my extreme sports', 'Ph3', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'Mountain Bike,Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HammerMan17', 'abc16@email.net', 'password', 'Robert', 'Baratheon',
-        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1.jpeg', 'Athlete',
+        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1', 'Athlete',
         'Snowboard', 'Water Ski', 'Parkour', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Reaper18', 'abc17@email.net', 'password', 'Jaxon', 'Teller',
-        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2.jpeg', 'Photographer',
+        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2', 'Photographer',
         'Downhill Ski', 'Surf,Paddleboard', 'Skateboard,BMX,Mountain Bike', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BestCaptain19', 'abc18@email.net', 'password', 'Jean-luc', 'Picard',
-        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1.jpeg', 'Athlete', 'snowmobile',
+        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1', 'Athlete', 'snowmobile',
         'Surf,Water Ski', 'Skateboard', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Favabeans20', 'user19@email.net', 'password', 'Hannibal', 'Lecter',
-        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Xwing21', 'user20@email.net', 'password', 'Luke', 'Skywalker', 'I use the force to shred the gnar!',
-        'Su3.jpeg', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
+        'Su3', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('LoveMyDog22', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3.jpeg',
+VALUES ('LoveMyDog22', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3',
         'Photographer', 'Downhill Ski', 'Surf,Water Ski', 'BMX,Skateboard', 'BAse Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Terminator23', 'abc22@email.net', 'password', 'Sarah', 'Connor', 'would travel time for some good waves',
-        'Hg1.jpeg', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
+        'Hg1', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('DarkTower24', 'abc23@email.net', 'password', 'Roland', 'Deschain',
-        'I must find the dark tower, but first, let''s carve!', 'Ph1.jpeg', 'Photographer', 'Cross-Country Ski', 'Surf',
+        'I must find the dark tower, but first, let''s carve!', 'Ph1', 'Photographer', 'Cross-Country Ski', 'Surf',
         'Skateboard,BMX,Mountain Bike', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('MotleyCrue25', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home',
-        'SkyDive2.jpeg', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('CaptMarvel26', 'abc25@email.net', 'password', 'Carol', 'Danvers',
-        'former airforce test pilot,Current Sky Diver', 'SkyDive2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'former airforce test pilot,Current Sky Diver', 'SkyDive2', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BlackWidow27', 'abc26@email.net', 'password', 'Natasha', 'Romanov',
-        'freerunning is my life outside of the avengers', 'SkPh2.jpeg', 'Athlete', 'Downhill Ski', 'Surf',
+        'freerunning is my life outside of the avengers', 'SkPh2', 'Athlete', 'Downhill Ski', 'Surf',
         'Mountain Bike', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('InvisibleWoman28', 'abc27@email.net', 'password', 'Susan', 'Storm',
-        'Im not always invisible, thatts why i need people to film me', 'Ph2.jpeg', 'Photographer',
+        'Im not always invisible, thatts why i need people to film me', 'Ph2', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', NULL, 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('NoOne29', 'abc28@email.net', 'password', 'Arya', 'Stark', 'A girl is noone, except for a great snowborder',
-        'Sn1.jpeg', 'Athlete', 'Snowboard', 'Water Ski', 'Skateboard,BMX,Mountain Bike', NULL);
+        'Sn1', 'Athlete', 'Snowboard', 'Water Ski', 'Skateboard,BMX,Mountain Bike', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Rescue30', 'user10@email.net', 'password', 'Daniel', 'Goodman', 'Up for anything, lets carve!',
-        'SkyDive2.jpeg', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dishonored31', 'abc11@email.net', 'password', 'Jason', 'Vorhees',
-        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1.jpeg', 'Photographer', NULL, 'Kayak',
+        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1', 'Photographer', NULL, 'Kayak',
         'Parkour', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dgoodman12', 'abc12@email.net', 'password', 'Tony', 'Stark',
-        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3.jpeg', 'Athlete', NULL,
+        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3', 'Athlete', NULL,
         'Surf,Water Ski', 'Skateboard,BMX,Mountain Bike', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HockeyMask13', 'abc13@email.net', 'password', 'Bruce', 'Dickenson',
-        'I was born to rock and to fly through the sky!', 'Ph2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'I was born to rock and to fly through the sky!', 'Ph2', 'Photographer', 'Snowboard', 'Water Ski',
         'Skateboard', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('IronMan14', 'abc14@email.net', 'password', 'Thomas', 'Franklin',
-        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3.jpeg', 'Athlete',
+        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3', 'Athlete',
         'Downhill Ski', 'Surf', 'BMX', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('EddieRox15', 'abc15@email.net', 'password', 'Jamie', 'Lannister',
-        'I love two things in this world, my family and my extreme sports', 'Ph3.jpeg', 'Photographer',
+        'I love two things in this world, my family and my extreme sports', 'Ph3', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'Mountain Bike,Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('TFranks16', 'abc16@email.net', 'password', 'Robert', 'Baratheon',
-        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1.jpeg', 'Athlete',
+        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1', 'Athlete',
         'Snowboard', 'Water Ski', 'Parkour', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('GoldHand17', 'abc17@email.net', 'password', 'Jaxon', 'Teller',
-        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2.jpeg', 'Photographer',
+        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2', 'Photographer',
         'Downhill Ski', 'Surf,Paddleboard', 'Skateboard,BMX,Mountain Bike', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HammerMan18', 'abc18@email.net', 'password', 'Jean-luc', 'Picard',
-        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1.jpeg', 'Athlete', 'snowmobile',
+        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1', 'Athlete', 'snowmobile',
         'Surf,Water Ski', 'Skateboard', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Reaper19', 'user19@email.net', 'password', 'Hannibal', 'Lecter',
-        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BestCaptain20', 'user20@email.net', 'password', 'Luke', 'Skywalker', 'I use the force to shred the gnar!',
-        'Su3.jpeg', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
+        'Su3', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Favabeans21', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3.jpeg',
+VALUES ('Favabeans21', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3',
         'Photographer', 'Downhill Ski', 'Surf,Water Ski', 'BMX,Skateboard', 'BAse Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Xwing22', 'abc22@email.net', 'password', 'Sarah', 'Connor', 'would travel time for some good waves',
-        'Hg1.jpeg', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
+        'Hg1', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('LoveMyDog23', 'abc23@email.net', 'password', 'Roland', 'Deschain',
-        'I must find the dark tower, but first, let''s carve!', 'Ph1.jpeg', 'Photographer', 'Cross-Country Ski', 'Surf',
+        'I must find the dark tower, but first, let''s carve!', 'Ph1', 'Photographer', 'Cross-Country Ski', 'Surf',
         'Skateboard,BMX,Mountain Bike', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Terminator24', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home',
-        'SkyDive2.jpeg', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('DarkTower25', 'abc25@email.net', 'password', 'Carol', 'Danvers',
-        'former airforce test pilot,Current Sky Diver', 'SkyDive2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'former airforce test pilot,Current Sky Diver', 'SkyDive2', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('MotleyCrue26', 'abc26@email.net', 'password', 'Natasha', 'Romanov',
-        'freerunning is my life outside of the avengers', 'SkPh2.jpeg', 'Athlete', 'Downhill Ski', 'Surf',
+        'freerunning is my life outside of the avengers', 'SkPh2', 'Athlete', 'Downhill Ski', 'Surf',
         'Mountain Bike', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('CaptMarvel27', 'abc27@email.net', 'password', 'Susan', 'Storm',
-        'Im not always invisible, thatts why i need people to film me', 'Ph2.jpeg', 'Photographer',
+        'Im not always invisible, thatts why i need people to film me', 'Ph2', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', NULL, 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BlackWidow28', 'abc28@email.net', 'password', 'Arya', 'Stark',
-        'A girl is noone, except for a great snowborder', 'Sn1.jpeg', 'Athlete', 'Snowboard', 'Water Ski',
+        'A girl is noone, except for a great snowborder', 'Sn1', 'Athlete', 'Snowboard', 'Water Ski',
         'Skateboard,BMX,Mountain Bike', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('InvisibleWoman29', 'user29@email.net', 'password', 'Pepper', 'Potts', 'catch me skydiving with my husband',
-        'Ph2.jpeg', 'Photographer', 'Downhill Ski', 'Surf', 'Skateboard', 'Sky Dive,Hang Glide');
+        'Ph2', 'Photographer', 'Downhill Ski', 'Surf', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('NoOne30', 'user30@email.net', 'password', 'Corvo', 'Attano', 'love to run around and jump off of things',
-        'Su3.jpeg', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
+        'Su3', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Rescue31', 'user10@email.net', 'password', 'Daniel', 'Goodman', 'Up for anything, lets carve!',
-        'SkyDive2.jpeg', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dishonored32', 'abc11@email.net', 'password', 'Jason', 'Vorhees',
-        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1.jpeg', 'Photographer', NULL, 'Kayak',
+        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1', 'Photographer', NULL, 'Kayak',
         'Parkour', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dgoodman13', 'abc12@email.net', 'password', 'Tony', 'Stark',
-        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3.jpeg', 'Athlete', NULL,
+        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3', 'Athlete', NULL,
         'Surf,Water Ski', 'Skateboard,BMX,Mountain Bike', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HockeyMask14', 'abc13@email.net', 'password', 'Bruce', 'Dickenson',
-        'I was born to rock and to fly through the sky!', 'Ph2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'I was born to rock and to fly through the sky!', 'Ph2', 'Photographer', 'Snowboard', 'Water Ski',
         'Skateboard', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('IronMan15', 'abc14@email.net', 'password', 'Thomas', 'Franklin',
-        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3.jpeg', 'Athlete',
+        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3', 'Athlete',
         'Downhill Ski', 'Surf', 'BMX', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('EddieRox16', 'abc15@email.net', 'password', 'Jamie', 'Lannister',
-        'I love two things in this world, my family and my extreme sports', 'Ph3.jpeg', 'Photographer',
+        'I love two things in this world, my family and my extreme sports', 'Ph3', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'Mountain Bike,Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('TFranks17', 'abc16@email.net', 'password', 'Robert', 'Baratheon',
-        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1.jpeg', 'Athlete',
+        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1', 'Athlete',
         'Snowboard', 'Water Ski', 'Parkour', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('GoldHand18', 'abc17@email.net', 'password', 'Jaxon', 'Teller',
-        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2.jpeg', 'Photographer',
+        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2', 'Photographer',
         'Downhill Ski', 'Surf,Paddleboard', 'Skateboard,BMX,Mountain Bike', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HammerMan19', 'abc18@email.net', 'password', 'Jean-luc', 'Picard',
-        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1.jpeg', 'Athlete', 'snowmobile',
+        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1', 'Athlete', 'snowmobile',
         'Surf,Water Ski', 'Skateboard', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Reaper20', 'user19@email.net', 'password', 'Hannibal', 'Lecter',
-        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BestCaptain21', 'user20@email.net', 'password', 'Luke', 'Skywalker', 'I use the force to shred the gnar!',
-        'Su3.jpeg', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
+        'Su3', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Favabeans22', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3.jpeg',
+VALUES ('Favabeans22', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3',
         'Photographer', 'Downhill Ski', 'Surf,Water Ski', 'BMX,Skateboard', 'BAse Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Xwing23', 'abc22@email.net', 'password', 'Sarah', 'Connor', 'would travel time for some good waves',
-        'Hg1.jpeg', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
+        'Hg1', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('LoveMyDog24', 'abc23@email.net', 'password', 'Roland', 'Deschain',
-        'I must find the dark tower, but first, let''s carve!', 'Ph1.jpeg', 'Photographer', 'Cross-Country Ski', 'Surf',
+        'I must find the dark tower, but first, let''s carve!', 'Ph1', 'Photographer', 'Cross-Country Ski', 'Surf',
         'Skateboard,BMX,Mountain Bike', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Terminator25', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home',
-        'SkyDive2.jpeg', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('DarkTower26', 'abc25@email.net', 'password', 'Carol', 'Danvers',
-        'former airforce test pilot,Current Sky Diver', 'SkyDive2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'former airforce test pilot,Current Sky Diver', 'SkyDive2', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('MotleyCrue27', 'abc26@email.net', 'password', 'Natasha', 'Romanov',
-        'freerunning is my life outside of the avengers', 'SkPh2.jpeg', 'Athlete', 'Downhill Ski', 'Surf',
+        'freerunning is my life outside of the avengers', 'SkPh2', 'Athlete', 'Downhill Ski', 'Surf',
         'Mountain Bike', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('CaptMarvel28', 'abc27@email.net', 'password', 'Susan', 'Storm',
-        'Im not always invisible, thatts why i need people to film me', 'Ph2.jpeg', 'Photographer',
+        'Im not always invisible, thatts why i need people to film me', 'Ph2', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', NULL, 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BlackWidow29', 'abc28@email.net', 'password', 'Arya', 'Stark',
-        'A girl is noone, except for a great snowborder', 'Sn1.jpeg', 'Athlete', 'Snowboard', 'Water Ski',
+        'A girl is noone, except for a great snowborder', 'Sn1', 'Athlete', 'Snowboard', 'Water Ski',
         'Skateboard,BMX,Mountain Bike', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('InvisibleWoman30', 'user10@email.net', 'password', 'Daniel', 'Goodman', 'Up for anything, lets carve!',
-        'SkyDive2.jpeg', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('NoOne31', 'abc11@email.net', 'password', 'Jason', 'Vorhees',
-        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1.jpeg', 'Photographer', NULL, 'Kayak',
+        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1', 'Photographer', NULL, 'Kayak',
         'Parkour', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Rescue32', 'abc12@email.net', 'password', 'Tony', 'Stark',
-        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3.jpeg', 'Athlete', NULL,
+        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3', 'Athlete', NULL,
         'Surf,Water Ski', 'Skateboard,BMX,Mountain Bike', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dishonored33', 'abc13@email.net', 'password', 'Bruce', 'Dickenson',
-        'I was born to rock and to fly through the sky!', 'Ph2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'I was born to rock and to fly through the sky!', 'Ph2', 'Photographer', 'Snowboard', 'Water Ski',
         'Skateboard', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dgoodman14', 'abc14@email.net', 'password', 'Thomas', 'Franklin',
-        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3.jpeg', 'Athlete',
+        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3', 'Athlete',
         'Downhill Ski', 'Surf', 'BMX', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HockeyMask15', 'abc15@email.net', 'password', 'Jamie', 'Lannister',
-        'I love two things in this world, my family and my extreme sports', 'Ph3.jpeg', 'Photographer',
+        'I love two things in this world, my family and my extreme sports', 'Ph3', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'Mountain Bike,Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('IronMan16', 'abc16@email.net', 'password', 'Robert', 'Baratheon',
-        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1.jpeg', 'Athlete',
+        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1', 'Athlete',
         'Snowboard', 'Water Ski', 'Parkour', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('EddieRox17', 'abc17@email.net', 'password', 'Jaxon', 'Teller',
-        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2.jpeg', 'Photographer',
+        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2', 'Photographer',
         'Downhill Ski', 'Surf,Paddleboard', 'Skateboard,BMX,Mountain Bike', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('TFranks18', 'abc18@email.net', 'password', 'Jean-luc', 'Picard',
-        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1.jpeg', 'Athlete', 'snowmobile',
+        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1', 'Athlete', 'snowmobile',
         'Surf,Water Ski', 'Skateboard', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('GoldHand19', 'user19@email.net', 'password', 'Hannibal', 'Lecter',
-        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HammerMan20', 'user20@email.net', 'password', 'Luke', 'Skywalker', 'I use the force to shred the gnar!',
-        'Su3.jpeg', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
+        'Su3', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Reaper21', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3.jpeg',
+VALUES ('Reaper21', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3',
         'Photographer', 'Downhill Ski', 'Surf,Water Ski', 'BMX,Skateboard', 'BAse Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BestCaptain22', 'abc22@email.net', 'password', 'Sarah', 'Connor', 'would travel time for some good waves',
-        'Hg1.jpeg', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
+        'Hg1', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Favabeans23', 'abc23@email.net', 'password', 'Roland', 'Deschain',
-        'I must find the dark tower, but first, let''s carve!', 'Ph1.jpeg', 'Photographer', 'Cross-Country Ski', 'Surf',
+        'I must find the dark tower, but first, let''s carve!', 'Ph1', 'Photographer', 'Cross-Country Ski', 'Surf',
         'Skateboard,BMX,Mountain Bike', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Xwing24', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home', 'SkyDive2.jpeg',
+VALUES ('Xwing24', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home', 'SkyDive2',
         'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('LoveMyDog25', 'abc25@email.net', 'password', 'Carol', 'Danvers',
-        'former airforce test pilot,Current Sky Diver', 'SkyDive2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'former airforce test pilot,Current Sky Diver', 'SkyDive2', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Terminator26', 'abc26@email.net', 'password', 'Natasha', 'Romanov',
-        'freerunning is my life outside of the avengers', 'SkPh2.jpeg', 'Athlete', 'Downhill Ski', 'Surf',
+        'freerunning is my life outside of the avengers', 'SkPh2', 'Athlete', 'Downhill Ski', 'Surf',
         'Mountain Bike', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('DarkTower27', 'abc27@email.net', 'password', 'Susan', 'Storm',
-        'Im not always invisible, thatts why i need people to film me', 'Ph2.jpeg', 'Photographer',
+        'Im not always invisible, thatts why i need people to film me', 'Ph2', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', NULL, 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('MotleyCrue28', 'abc28@email.net', 'password', 'Arya', 'Stark',
-        'A girl is noone, except for a great snowborder', 'Sn1.jpeg', 'Athlete', 'Snowboard', 'Water Ski',
+        'A girl is noone, except for a great snowborder', 'Sn1', 'Athlete', 'Snowboard', 'Water Ski',
         'Skateboard,BMX,Mountain Bike', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('CaptMarvel29', 'user29@email.net', 'password', 'Pepper', 'Potts', 'catch me skydiving with my husband',
-        'Ph2.jpeg', 'Photographer', 'Downhill Ski', 'Surf', 'Skateboard', 'Sky Dive,Hang Glide');
+        'Ph2', 'Photographer', 'Downhill Ski', 'Surf', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BlackWidow30', 'user30@email.net', 'password', 'Corvo', 'Attano', 'love to run around and jump off of things',
-        'Su3.jpeg', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
+        'Su3', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('InvisibleWoman31', 'user10@email.net', 'password', 'Daniel', 'Goodman', 'Up for anything, lets carve!',
-        'SkyDive2.jpeg', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('NoOne32', 'abc11@email.net', 'password', 'Jason', 'Vorhees',
-        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1.jpeg', 'Photographer', NULL, 'Kayak',
+        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1', 'Photographer', NULL, 'Kayak',
         'Parkour', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Rescue33', 'abc12@email.net', 'password', 'Tony', 'Stark',
-        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3.jpeg', 'Athlete', NULL,
+        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3', 'Athlete', NULL,
         'Surf,Water Ski', 'Skateboard,BMX,Mountain Bike', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dishonored34', 'abc13@email.net', 'password', 'Bruce', 'Dickenson',
-        'I was born to rock and to fly through the sky!', 'Ph2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'I was born to rock and to fly through the sky!', 'Ph2', 'Photographer', 'Snowboard', 'Water Ski',
         'Skateboard', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dgoodman15', 'abc14@email.net', 'password', 'Thomas', 'Franklin',
-        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3.jpeg', 'Athlete',
+        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3', 'Athlete',
         'Downhill Ski', 'Surf', 'BMX', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HockeyMask16', 'abc15@email.net', 'password', 'Jamie', 'Lannister',
-        'I love two things in this world, my family and my extreme sports', 'Ph3.jpeg', 'Photographer',
+        'I love two things in this world, my family and my extreme sports', 'Ph3', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'Mountain Bike,Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('IronMan17', 'abc16@email.net', 'password', 'Robert', 'Baratheon',
-        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1.jpeg', 'Athlete',
+        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1', 'Athlete',
         'Snowboard', 'Water Ski', 'Parkour', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('EddieRox18', 'abc17@email.net', 'password', 'Jaxon', 'Teller',
-        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2.jpeg', 'Photographer',
+        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2', 'Photographer',
         'Downhill Ski', 'Surf,Paddleboard', 'Skateboard,BMX,Mountain Bike', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('TFranks19', 'abc18@email.net', 'password', 'Jean-luc', 'Picard',
-        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1.jpeg', 'Athlete', 'snowmobile',
+        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1', 'Athlete', 'snowmobile',
         'Surf,Water Ski', 'Skateboard', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('GoldHand20', 'user19@email.net', 'password', 'Hannibal', 'Lecter',
-        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HammerMan21', 'user20@email.net', 'password', 'Luke', 'Skywalker', 'I use the force to shred the gnar!',
-        'Su3.jpeg', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
+        'Su3', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Reaper22', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3.jpeg',
+VALUES ('Reaper22', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3',
         'Photographer', 'Downhill Ski', 'Surf,Water Ski', 'BMX,Skateboard', 'BAse Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BestCaptain23', 'abc22@email.net', 'password', 'Sarah', 'Connor', 'would travel time for some good waves',
-        'Hg1.jpeg', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
+        'Hg1', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Favabeans24', 'abc23@email.net', 'password', 'Roland', 'Deschain',
-        'I must find the dark tower, but first, let''s carve!', 'Ph1.jpeg', 'Photographer', 'Cross-Country Ski', 'Surf',
+        'I must find the dark tower, but first, let''s carve!', 'Ph1', 'Photographer', 'Cross-Country Ski', 'Surf',
         'Skateboard,BMX,Mountain Bike', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Xwing25', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home', 'SkyDive2.jpeg',
+VALUES ('Xwing25', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home', 'SkyDive2',
         'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('LoveMyDog26', 'abc25@email.net', 'password', 'Carol', 'Danvers',
-        'former airforce test pilot,Current Sky Diver', 'SkyDive2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'former airforce test pilot,Current Sky Diver', 'SkyDive2', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Terminator27', 'abc26@email.net', 'password', 'Natasha', 'Romanov',
-        'freerunning is my life outside of the avengers', 'SkPh2.jpeg', 'Athlete', 'Downhill Ski', 'Surf',
+        'freerunning is my life outside of the avengers', 'SkPh2', 'Athlete', 'Downhill Ski', 'Surf',
         'Mountain Bike', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('DarkTower28', 'abc27@email.net', 'password', 'Susan', 'Storm',
-        'Im not always invisible, thatts why i need people to film me', 'Ph2.jpeg', 'Photographer',
+        'Im not always invisible, thatts why i need people to film me', 'Ph2', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', NULL, 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('MotleyCrue29', 'abc28@email.net', 'password', 'Arya', 'Stark',
-        'A girl is noone, except for a great snowborder', 'Sn1.jpeg', 'Athlete', 'Snowboard', 'Water Ski',
+        'A girl is noone, except for a great snowborder', 'Sn1', 'Athlete', 'Snowboard', 'Water Ski',
         'Skateboard,BMX,Mountain Bike', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('CaptMarvel30', 'user10@email.net', 'password', 'Daniel', 'Goodman', 'Up for anything, lets carve!',
-        'SkyDive2.jpeg', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BlackWidow31', 'abc11@email.net', 'password', 'Jason', 'Vorhees',
-        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1.jpeg', 'Photographer', NULL, 'Kayak',
+        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1', 'Photographer', NULL, 'Kayak',
         'Parkour', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('InvisibleWoman32', 'abc12@email.net', 'password', 'Tony', 'Stark',
-        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3.jpeg', 'Athlete', NULL,
+        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3', 'Athlete', NULL,
         'Surf,Water Ski', 'Skateboard,BMX,Mountain Bike', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('NoOne33', 'abc13@email.net', 'password', 'Bruce', 'Dickenson',
-        'I was born to rock and to fly through the sky!', 'Ph2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'I was born to rock and to fly through the sky!', 'Ph2', 'Photographer', 'Snowboard', 'Water Ski',
         'Skateboard', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Rescue34', 'abc14@email.net', 'password', 'Thomas', 'Franklin',
-        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3.jpeg', 'Athlete',
+        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3', 'Athlete',
         'Downhill Ski', 'Surf', 'BMX', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dishonored35', 'abc15@email.net', 'password', 'Jamie', 'Lannister',
-        'I love two things in this world, my family and my extreme sports', 'Ph3.jpeg', 'Photographer',
+        'I love two things in this world, my family and my extreme sports', 'Ph3', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'Mountain Bike,Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dgoodman16', 'abc16@email.net', 'password', 'Robert', 'Baratheon',
-        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1.jpeg', 'Athlete',
+        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1', 'Athlete',
         'Snowboard', 'Water Ski', 'Parkour', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HockeyMask17', 'abc17@email.net', 'password', 'Jaxon', 'Teller',
-        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2.jpeg', 'Photographer',
+        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2', 'Photographer',
         'Downhill Ski', 'Surf,Paddleboard', 'Skateboard,BMX,Mountain Bike', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('IronMan18', 'abc18@email.net', 'password', 'Jean-luc', 'Picard',
-        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1.jpeg', 'Athlete', 'snowmobile',
+        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1', 'Athlete', 'snowmobile',
         'Surf,Water Ski', 'Skateboard', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('EddieRox19', 'user19@email.net', 'password', 'Hannibal', 'Lecter',
-        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('TFranks20', 'user20@email.net', 'password', 'Luke', 'Skywalker', 'I use the force to shred the gnar!',
-        'Su3.jpeg', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
+        'Su3', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('GoldHand21', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3.jpeg',
+VALUES ('GoldHand21', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3',
         'Photographer', 'Downhill Ski', 'Surf,Water Ski', 'BMX,Skateboard', 'BAse Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HammerMan22', 'abc22@email.net', 'password', 'Sarah', 'Connor', 'would travel time for some good waves',
-        'Hg1.jpeg', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
+        'Hg1', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Reaper23', 'abc23@email.net', 'password', 'Roland', 'Deschain',
-        'I must find the dark tower, but first, let''s carve!', 'Ph1.jpeg', 'Photographer', 'Cross-Country Ski', 'Surf',
+        'I must find the dark tower, but first, let''s carve!', 'Ph1', 'Photographer', 'Cross-Country Ski', 'Surf',
         'Skateboard,BMX,Mountain Bike', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BestCaptain24', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home',
-        'SkyDive2.jpeg', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Favabeans25', 'abc25@email.net', 'password', 'Carol', 'Danvers',
-        'former airforce test pilot,Current Sky Diver', 'SkyDive2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'former airforce test pilot,Current Sky Diver', 'SkyDive2', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Xwing26', 'abc26@email.net', 'password', 'Natasha', 'Romanov',
-        'freerunning is my life outside of the avengers', 'SkPh2.jpeg', 'Athlete', 'Downhill Ski', 'Surf',
+        'freerunning is my life outside of the avengers', 'SkPh2', 'Athlete', 'Downhill Ski', 'Surf',
         'Mountain Bike', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('LoveMyDog27', 'abc27@email.net', 'password', 'Susan', 'Storm',
-        'Im not always invisible, thatts why i need people to film me', 'Ph2.jpeg', 'Photographer',
+        'Im not always invisible, thatts why i need people to film me', 'Ph2', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', NULL, 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Terminator28', 'abc28@email.net', 'password', 'Arya', 'Stark',
-        'A girl is noone, except for a great snowborder', 'Sn1.jpeg', 'Athlete', 'Snowboard', 'Water Ski',
+        'A girl is noone, except for a great snowborder', 'Sn1', 'Athlete', 'Snowboard', 'Water Ski',
         'Skateboard,BMX,Mountain Bike', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('DarkTower29', 'user29@email.net', 'password', 'Pepper', 'Potts', 'catch me skydiving with my husband',
-        'Ph2.jpeg', 'Photographer', 'Downhill Ski', 'Surf', 'Skateboard', 'Sky Dive,Hang Glide');
+        'Ph2', 'Photographer', 'Downhill Ski', 'Surf', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('MotleyCrue30', 'user30@email.net', 'password', 'Corvo', 'Attano', 'love to run around and jump off of things',
-        'Su3.jpeg', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
+        'Su3', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('CaptMarvel31', 'user10@email.net', 'password', 'Daniel', 'Goodman', 'Up for anything, lets carve!',
-        'SkyDive2.jpeg', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BlackWidow32', 'abc11@email.net', 'password', 'Jason', 'Vorhees',
-        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1.jpeg', 'Photographer', NULL, 'Kayak',
+        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1', 'Photographer', NULL, 'Kayak',
         'Parkour', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('InvisibleWoman33', 'abc12@email.net', 'password', 'Tony', 'Stark',
-        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3.jpeg', 'Athlete', NULL,
+        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3', 'Athlete', NULL,
         'Surf,Water Ski', 'Skateboard,BMX,Mountain Bike', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('NoOne34', 'abc13@email.net', 'password', 'Bruce', 'Dickenson',
-        'I was born to rock and to fly through the sky!', 'Ph2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'I was born to rock and to fly through the sky!', 'Ph2', 'Photographer', 'Snowboard', 'Water Ski',
         'Skateboard', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Rescue35', 'abc14@email.net', 'password', 'Thomas', 'Franklin',
-        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3.jpeg', 'Athlete',
+        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3', 'Athlete',
         'Downhill Ski', 'Surf', 'BMX', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dishonored36', 'abc15@email.net', 'password', 'Jamie', 'Lannister',
-        'I love two things in this world, my family and my extreme sports', 'Ph3.jpeg', 'Photographer',
+        'I love two things in this world, my family and my extreme sports', 'Ph3', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'Mountain Bike,Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dgoodman17', 'abc16@email.net', 'password', 'Robert', 'Baratheon',
-        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1.jpeg', 'Athlete',
+        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1', 'Athlete',
         'Snowboard', 'Water Ski', 'Parkour', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HockeyMask18', 'abc17@email.net', 'password', 'Jaxon', 'Teller',
-        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2.jpeg', 'Photographer',
+        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2', 'Photographer',
         'Downhill Ski', 'Surf,Paddleboard', 'Skateboard,BMX,Mountain Bike', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('IronMan19', 'abc18@email.net', 'password', 'Jean-luc', 'Picard',
-        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1.jpeg', 'Athlete', 'snowmobile',
+        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1', 'Athlete', 'snowmobile',
         'Surf,Water Ski', 'Skateboard', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('EddieRox20', 'user19@email.net', 'password', 'Hannibal', 'Lecter',
-        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('TFranks21', 'user20@email.net', 'password', 'Luke', 'Skywalker', 'I use the force to shred the gnar!',
-        'Su3.jpeg', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
+        'Su3', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('GoldHand22', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3.jpeg',
+VALUES ('GoldHand22', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3',
         'Photographer', 'Downhill Ski', 'Surf,Water Ski', 'BMX,Skateboard', 'BAse Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HammerMan23', 'abc22@email.net', 'password', 'Sarah', 'Connor', 'would travel time for some good waves',
-        'Hg1.jpeg', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
+        'Hg1', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Reaper24', 'abc23@email.net', 'password', 'Roland', 'Deschain',
-        'I must find the dark tower, but first, let''s carve!', 'Ph1.jpeg', 'Photographer', 'Cross-Country Ski', 'Surf',
+        'I must find the dark tower, but first, let''s carve!', 'Ph1', 'Photographer', 'Cross-Country Ski', 'Surf',
         'Skateboard,BMX,Mountain Bike', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BestCaptain25', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home',
-        'SkyDive2.jpeg', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Favabeans26', 'abc25@email.net', 'password', 'Carol', 'Danvers',
-        'former airforce test pilot,Current Sky Diver', 'SkyDive2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'former airforce test pilot,Current Sky Diver', 'SkyDive2', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Xwing27', 'abc26@email.net', 'password', 'Natasha', 'Romanov',
-        'freerunning is my life outside of the avengers', 'SkPh2.jpeg', 'Athlete', 'Downhill Ski', 'Surf',
+        'freerunning is my life outside of the avengers', 'SkPh2', 'Athlete', 'Downhill Ski', 'Surf',
         'Mountain Bike', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('LoveMyDog28', 'abc27@email.net', 'password', 'Susan', 'Storm',
-        'Im not always invisible, thatts why i need people to film me', 'Ph2.jpeg', 'Photographer',
+        'Im not always invisible, thatts why i need people to film me', 'Ph2', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', NULL, 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Terminator29', 'abc28@email.net', 'password', 'Arya', 'Stark',
-        'A girl is noone, except for a great snowborder', 'Sn1.jpeg', 'Athlete', 'Snowboard', 'Water Ski',
+        'A girl is noone, except for a great snowborder', 'Sn1', 'Athlete', 'Snowboard', 'Water Ski',
         'Skateboard,BMX,Mountain Bike', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('DarkTower30', 'user10@email.net', 'password', 'Daniel', 'Goodman', 'Up for anything, lets carve!',
-        'SkyDive2.jpeg', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('MotleyCrue31', 'abc11@email.net', 'password', 'Jason', 'Vorhees',
-        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1.jpeg', 'Photographer', NULL, 'Kayak',
+        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1', 'Photographer', NULL, 'Kayak',
         'Parkour', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('CaptMarvel32', 'abc12@email.net', 'password', 'Tony', 'Stark',
-        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3.jpeg', 'Athlete', NULL,
+        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3', 'Athlete', NULL,
         'Surf,Water Ski', 'Skateboard,BMX,Mountain Bike', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BlackWidow33', 'abc13@email.net', 'password', 'Bruce', 'Dickenson',
-        'I was born to rock and to fly through the sky!', 'Ph2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'I was born to rock and to fly through the sky!', 'Ph2', 'Photographer', 'Snowboard', 'Water Ski',
         'Skateboard', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('InvisibleWoman34', 'abc14@email.net', 'password', 'Thomas', 'Franklin',
-        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3.jpeg', 'Athlete',
+        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3', 'Athlete',
         'Downhill Ski', 'Surf', 'BMX', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('NoOne35', 'abc15@email.net', 'password', 'Jamie', 'Lannister',
-        'I love two things in this world, my family and my extreme sports', 'Ph3.jpeg', 'Photographer',
+        'I love two things in this world, my family and my extreme sports', 'Ph3', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'Mountain Bike,Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Rescue36', 'abc16@email.net', 'password', 'Robert', 'Baratheon',
-        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1.jpeg', 'Athlete',
+        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1', 'Athlete',
         'Snowboard', 'Water Ski', 'Parkour', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dishonored37', 'abc17@email.net', 'password', 'Jaxon', 'Teller',
-        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2.jpeg', 'Photographer',
+        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2', 'Photographer',
         'Downhill Ski', 'Surf,Paddleboard', 'Skateboard,BMX,Mountain Bike', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dgoodman18', 'abc18@email.net', 'password', 'Jean-luc', 'Picard',
-        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1.jpeg', 'Athlete', 'snowmobile',
+        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1', 'Athlete', 'snowmobile',
         'Surf,Water Ski', 'Skateboard', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HockeyMask19', 'user19@email.net', 'password', 'Hannibal', 'Lecter',
-        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'Doctor,Phsychologist,Chef,People person, lets hang out!', 'Ph3', 'Photographer', 'Snowboard', 'Water Ski',
         'BMX', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('IronMan20', 'user20@email.net', 'password', 'Luke', 'Skywalker', 'I use the force to shred the gnar!',
-        'Su3.jpeg', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
+        'Su3', 'Athlete', 'Downhill Ski', 'Surf', 'Rock Climb', 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('EddieRox21', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3.jpeg',
+VALUES ('EddieRox21', 'abc21@email.net', 'password', 'John', 'Wick', 'my dog and I love to Surf together', 'Ph3',
         'Photographer', 'Downhill Ski', 'Surf,Water Ski', 'BMX,Skateboard', 'BAse Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('TFranks22', 'abc22@email.net', 'password', 'Sarah', 'Connor', 'would travel time for some good waves',
-        'Hg1.jpeg', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
+        'Hg1', 'Athlete', 'Cross-Country Ski', 'Water Ski', 'Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('GoldHand23', 'abc23@email.net', 'password', 'Roland', 'Deschain',
-        'I must find the dark tower, but first, let''s carve!', 'Ph1.jpeg', 'Photographer', 'Cross-Country Ski', 'Surf',
+        'I must find the dark tower, but first, let''s carve!', 'Ph1', 'Photographer', 'Cross-Country Ski', 'Surf',
         'Skateboard,BMX,Mountain Bike', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('HammerMan24', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home',
-        'SkyDive2.jpeg', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Reaper25', 'abc25@email.net', 'password', 'Carol', 'Danvers', 'former airforce test pilot,Current Sky Diver',
-        'SkyDive2.jpeg', 'Photographer', 'Snowboard', 'Water Ski', 'BMX', 'Sky Dive');
+        'SkyDive2', 'Photographer', 'Snowboard', 'Water Ski', 'BMX', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BestCaptain26', 'abc26@email.net', 'password', 'Natasha', 'Romanov',
-        'freerunning is my life outside of the avengers', 'SkPh2.jpeg', 'Athlete', 'Downhill Ski', 'Surf',
+        'freerunning is my life outside of the avengers', 'SkPh2', 'Athlete', 'Downhill Ski', 'Surf',
         'Mountain Bike', 'Base Jump');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Favabeans27', 'abc27@email.net', 'password', 'Susan', 'Storm',
-        'Im not always invisible, thatts why i need people to film me', 'Ph2.jpeg', 'Photographer',
+        'Im not always invisible, thatts why i need people to film me', 'Ph2', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', NULL, 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Xwing28', 'abc28@email.net', 'password', 'Arya', 'Stark', 'A girl is noone, except for a great snowborder',
-        'Sn1.jpeg', 'Athlete', 'Snowboard', 'Water Ski', 'Skateboard,BMX,Mountain Bike', NULL);
+        'Sn1', 'Athlete', 'Snowboard', 'Water Ski', 'Skateboard,BMX,Mountain Bike', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('LoveMyDog29', 'user29@email.net', 'password', 'Pepper', 'Potts', 'catch me skydiving with my husband',
-        'Ph2.jpeg', 'Photographer', 'Downhill Ski', 'Surf', 'Skateboard', 'Sky Dive,Hang Glide');
+        'Ph2', 'Photographer', 'Downhill Ski', 'Surf', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Terminator30', 'user30@email.net', 'password', 'Corvo', 'Attano', 'love to run around and jump off of things',
-        'Su3.jpeg', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
+        'Su3', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('DarkTower31', 'user10@email.net', 'password', 'Daniel', 'Goodman', 'Up for anything, lets carve!',
-        'SkyDive2.jpeg', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
+        'SkyDive2', 'Athlete', NULL, 'Surf,Water Ski', 'BMX,Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('MotleyCrue32', 'abc11@email.net', 'password', 'Jason', 'Vorhees',
-        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1.jpeg', 'Photographer', NULL, 'Kayak',
+        'Not a big Fan of water sports, but lets hit the snow some time!', 'Ph1', 'Photographer', NULL, 'Kayak',
         'Parkour', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('CaptMarvel33', 'abc12@email.net', 'password', 'Tony', 'Stark',
-        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3.jpeg', 'Athlete', NULL,
+        'genius, billionaire,Playboy philanthropist,What else do you need?', 'Su3', 'Athlete', NULL,
         'Surf,Water Ski', 'Skateboard,BMX,Mountain Bike', 'Sky Dive');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('BlackWidow34', 'abc13@email.net', 'password', 'Bruce', 'Dickenson',
-        'I was born to rock and to fly through the sky!', 'Ph2.jpeg', 'Photographer', 'Snowboard', 'Water Ski',
+        'I was born to rock and to fly through the sky!', 'Ph2', 'Photographer', 'Snowboard', 'Water Ski',
         'Skateboard', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('InvisibleWoman35', 'abc14@email.net', 'password', 'Thomas', 'Franklin',
-        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3.jpeg', 'Athlete',
+        'Here for a good time, not a long time, into all kinds of extreme sports!', 'Su3', 'Athlete',
         'Downhill Ski', 'Surf', 'BMX', NULL);
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('NoOne36', 'abc15@email.net', 'password', 'Jamie', 'Lannister',
-        'I love two things in this world, my family and my extreme sports', 'Ph3.jpeg', 'Photographer',
+        'I love two things in this world, my family and my extreme sports', 'Ph3', 'Photographer',
         'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'Mountain Bike,Cliff Dive', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Rescue37', 'abc16@email.net', 'password', 'Robert', 'Baratheon',
-        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1.jpeg', 'Athlete',
+        'The only thing I love more than agood hunt is a good carve! lets do it up!', 'Hg1', 'Athlete',
         'Snowboard', 'Water Ski', 'Parkour', 'Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dishonored38', 'abc17@email.net', 'password', 'Jaxon', 'Teller',
-        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2.jpeg', 'Photographer',
+        'When I''m not riding my motorcycle, you can find me on the mountain!', 'Ph2', 'Photographer',
         'Downhill Ski', 'Surf,Paddleboard', 'Skateboard,BMX,Mountain Bike', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dgoodman19', 'abc18@email.net', 'password', 'Jean-luc', 'Picard',
-        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1.jpeg', 'Athlete', 'snowmobile',
+        'I''m te best captain, better than kirk,Way more extreme', 'SkyDive1', 'Athlete', 'snowmobile',
         'Surf,Water Ski', 'Skateboard', 'Sky Dive');
 
 # VENUES
