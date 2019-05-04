@@ -4,6 +4,8 @@ var router = express.Router({mergeParams: true});
 
 const con = require('../db');
 
+var functions = require('./middleware/users/userFunctions');
+
 
 /*
 
@@ -217,24 +219,8 @@ router.delete('/', (req,res) => {
 router.get('/:userId', (req,res) => {
 
     const userId = req.params.userId;
+    functions.userGet(userId, res);
 
-
-    console.log('We are in here!');
-
-
-    get_user = "call get_user(?)";
-
-
-    con.query(get_user, [userId], (err, results) => {
-
-
-        if (err) throw err;
-
-        console.log(results[0][0]);
-
-        res.status(200).jsonp({users: results}).end;
-
-    });
 });
 
 
