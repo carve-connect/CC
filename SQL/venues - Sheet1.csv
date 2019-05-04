@@ -1,20 +1,20 @@
 venue_name,city,state,about,picture,snow_sports,water_sports,land_sports,air_sports,lattitude,longitude,url
 Catamount,Hillsdale,NY,"Catamount, nestled in a picturesque bowl in the Berkshire Mountains, is a mountain for the entire family.  There is an extensive trail network for all abilities and spectacular views can be seen from many turns.",SkRs1,"Snowboard,Downhill Ski,Cross-Country Ski",,Mountain Bike,,41.176399,-74.09256,https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort.html
-Holiday Valley,Ellicotville,NY,"Holiday Valley has 53 trails marked 35 percent for beginners, 27 percent intermediates, and 38 percent advanced skiers.",SkRs2,"Snowboard,Downhill Ski,Cross-Country Ski,Snowmobile",,,,42.264314,-78.664821,https://www.onthesnow.com/new-york/holiday-valley/ski-resort.html
+Holiday Valley,Ellicotville,NY,"Holiday Valley has 53 trails marked 35 percent for beginners, 27 percent intermediates, and 38 percent advanced skiers.",SkRs2,"Snowboard,Downhill Ski,Snowmobile,Cross-Country Ski",,,,42.264314,-78.664821,https://www.onthesnow.com/new-york/holiday-valley/ski-resort.html
 Whiteface Mountain,WIlmington,NY,"With the biggest vertical drop of the eastern ski resorts (3,429 feet), Whiteface, NY, offers 288 skiable acres serviced by 11 lifts, including one gondola.",SkRs3,"Snowboard,Downhill Ski,Cross-Country Ski",,,Hang Glide,44.366984,-73.904448,https://www.onthesnow.com/new-york/whiteface-mountain-resort/ski-resort.html
-Belleayre Mountain,Highmount,NY,"Belleayre offers something for everybody, from skiing to snowboarding to cross-country skiing.",SkRs4,"Snowboard,Downhill Ski,Cross-Country Ski,Snowmobile",,,,42.132086,-74.50558,https://www.onthesnow.com/new-york/belleayre/ski-resort.html
+Belleayre Mountain,Highmount,NY,"Belleayre offers something for everybody, from skiing to snowboarding to cross-country skiing.",SkRs4,"Snowboard,Downhill Ski,Snowmobile,Cross-Country Ski",,,,42.132086,-74.50558,https://www.onthesnow.com/new-york/belleayre/ski-resort.html
 Gore Mountain ,North Creek,NY,"Located in the Adirondacks, Gore Mountain is New York State’s largest ski and ride resort. Boasting a vertical drop of 2,537 feet and 446 accessible acres",SkRs5,"Snowboard,Downhill Ski,Cross-Country Ski",,,,43.67327,-74.007092,https://www.onthesnow.com/new-york/gore-mountain/ski-resort.html
 Jack Frost,White Haven,PA,Cool resort in PA. ,SkRs6,"Snowboard,Downhill Ski",,,,41.108388,-75.6515,https://www.onthesnow.com/pennsylvania/jack-frost/ski-resort.html
-Camelback Mountain,Tannersville,PA,Awesome ski resort in PA.,SkRs7,"Snowboard,Downhill Ski, Cross-Country Ski,Snowmobile",,,,41.051092,-75.356211,https://www.onthesnow.com/pennsylvania/camelback-mountain-resort/ski-resort.html
+Camelback Mountain,Tannersville,PA,Awesome ski resort in PA.,SkRs7,"Snowboard,Downhill Ski,Snowmobile,Cross-Country Ski",,,,41.051092,-75.356211,https://www.onthesnow.com/pennsylvania/camelback-mountain-resort/ski-resort.html
 Campgaw Mountain,Mahwah,NJ,"NJ ski resort, yes they exist.",SkRs8,"Snowboard,Downhill Ski",,"
 ",,41.05656,-74.197295,https://www.onthesnow.com/new-jersey/campgaw-mountain/ski-resort.html
-Mountain Creek Resort,Vernon,NJ,"Another NJ ski resort, who knew.",SkRs6,"Snowboard,Downhill Ski, Cross-Country Ski,Snowmobile",,Mountain Bike,,41.189767,74.505371,https://www.onthesnow.com/new-jersey/mountain-creek-resort/ski-resort.html
+Mountain Creek Resort,Vernon,NJ,"Another NJ ski resort, who knew.",SkRs6,"Snowboard,Downhill Ski,Snowmobile,Cross-Country Ski",,Mountain Bike,,41.189767,74.505371,https://www.onthesnow.com/new-jersey/mountain-creek-resort/ski-resort.html
 Mount Snow,West Dover,VT,RJs favorite resort. ,SkRs4,"Snowboard,Downhill Ski",,,,42.959741,-72.919972,https://www.onthesnow.com/vermont/mount-snow/ski-resort.html
-Killington Resort,Killington,VT,Ski resort in vermont.,SkRs1,"Snowboard,Downhill Ski, Cross-Country Ski,Snowmobile",,,,43.617347,-72.799372,https://www.onthesnow.com/vermont/killington-resort/ski-resort.html
+Killington Resort,Killington,VT,Ski resort in vermont.,SkRs1,"Snowboard,Downhill Ski,Snowmobile,Cross-Country Ski",,,,43.617347,-72.799372,https://www.onthesnow.com/vermont/killington-resort/ski-resort.html
 Sundance Resort,Sundance,UT,"Amazing ski resort in utah, Sean has been there. ",SkRs2,"Snowboard,Downhill Ski",,Rock Climb,"Hang Glide, Base Jump",40.393257,-111.586968,https://www.onthesnow.com/utah/sundance/ski-resort.html
-Powder Mountain,Eden,UT,"Amazing ski resort in utah, Sean has been there. ",SkRs8,"Snowboard,Downhill Ski, Cross-Country Ski,Snowmobile",,,Hang Glide,41.37759,-111.779676,https://www.onthesnow.com/utah/powder-mountain/ski-resort.html
+Powder Mountain,Eden,UT,"Amazing ski resort in utah, Sean has been there. ",SkRs8,"Snowboard,Downhill Ski,Snowmobile,Cross-Country Ski",,,Hang Glide,41.37759,-111.779676,https://www.onthesnow.com/utah/powder-mountain/ski-resort.html
 Keystone,Keystone,CO,Ridiculous Ski Resort in Colorado.,SkRs5,"Snowboard,Downhill Ski",,,,39.608136,-105.943562,https://www.onthesnow.com/colorado/keystone/ski-resort.html
-Aspen/ SNOWMASS,ASPEN,CO,High end ski resort that everyone knows of but cant afford. ,SkRs1,"Snowboard,Downhill Ski, Cross-Country Ski,Snowmobile",,,,39.205417,-106.947842,https://www.onthesnow.com/colorado/aspen-snowmass/ski-resort.html
+Aspen/ SNOWMASS,ASPEN,CO,High end ski resort that everyone knows of but cant afford. ,SkRs1,"Snowboard,Downhill Ski,Snowmobile,Cross-Country Ski",,,,39.205417,-106.947842,https://www.onthesnow.com/colorado/aspen-snowmass/ski-resort.html
 Devil's Tower,Devils Tower,WY,Universally known landmark.,DT,,,Rock Climb,Base Jump,44.588426,-104.698349,https://www.mountainproject.com/area/105714267/devils-tower
 Grand Teton,Alta,WY,Amazing mountain to climb. Beautiful scenery.,GT,,,Mountain Climb,Base Jump,43.742851,-110.796967,https://www.mountainproject.com/area/105802912/grand-teton-national-park
 Mount Rainier,Mt Rainier,WA,"Stands alone, majestically.",MR,,,Mountain Climb,Base Jump,46.852101,-121.760366,https://www.mountainproject.com/area/105877031/mount-rainier
@@ -42,10 +42,10 @@ Ocean City Beach,Ocean City,MD,Who goes to maryland to surf?,Be1,,"Surf,Wakeboar
 Windansea Beach,San Diego,CA,Another Cali Beach. ,Be2,,"Surf,Wakeboard",,,32.829889,-117.280952,
 Cocoa Beach,Cape Canaveral,FL,Intergalactically famous beach in florida. ,Be3,,"Surf,Wakeboard,Parasail",,,28.319259,-80.607689,
 Lake Buena Vista,Orlando,FL,Disney famous lake.,Lk1,,"Water Ski,Kayak,Paddleboard,Parasail,Kite Surf",,,28.399563,-81.545967,
-Lake Powell,Lake Powell,UT,Just how big is this thing. Great place to party.,Ka1,,"Water Ski,Kayak,Paddleboard,Parasail,Kite Surf","Rock Climb,Cliff Dive",Air Race,37.029312,-111.326004,
+Lake Powell,Lake Powell,UT,Just how big is this thing. Great place to party.,Ka1,Snowmobile,"Water Ski,Kayak,Paddleboard,Parasail,Kite Surf","Rock Climb,Cliff Dive",Air Race,37.029312,-111.326004,
 Greenwood Lake,Greenwood Lake,NY,Some lake in New York. ,Lk2,,"Water Ski,Kayak,Paddleboard,Parasail,Kite Surf","Rock Climb,Cliff Dive",Air Race,41.213795,-74.301314,
-Lake Mead,Lake Mead,NV,"Party central, not as big as powell though. Hoover dam anyone?",Lk3,,"Water Ski,Kayak,Paddleboard,Parasail,Kite Surf","Rock Climb,Cliff Dive",Air Race,36.14439,-114.427312,
-Union Lake,Millville,NJ,"NJ lake, good times to be had. ",Lk4,,"Water Ski,Kayak,Paddleboard,Parasail,Kite Surf",,,39.412838,-75.060835,
+Lake Mead,Lake Mead,NV,"Party central, not as big as powell though. Hoover dam anyone?",Lk3,Snowmobile,"Water Ski,Kayak,Paddleboard,Parasail,Kite Surf","Rock Climb,Cliff Dive",Air Race,36.14439,-114.427312,
+Union Lake,Millville,NJ,"NJ lake, good times to be had. ",Lk4,Snowmobile,"Water Ski,Kayak,Paddleboard,Parasail,Kite Surf",,,39.412838,-75.060835,
 Burnside Skate Park ,Portland,OR,Bob's Playgorund,Ska2,,,"Skateboard,BMX,Parkour",,45.522946,-122.663655,
 Skate Lab ,Atlantic Beach,FL,Indoor jam sessions for days. ,Ska1,,,"Skateboard,BMX,Parkour",,30.331846,-81.403374,
 Denver Skate Park ,Denver,CO,Fun in the sun. ,SkPk1,,,"Skateboard,BMX,Parkour",,39.759566,-105.002511,
