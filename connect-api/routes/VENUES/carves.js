@@ -14,7 +14,9 @@ router.get('/', (req,res) => {
     // Execute the query
     con.query(carve_list, [venueId], (err, c) => {
         if (err) throw err;
+
         res.status(200).jsonp({c}).end;
+
     })
 });
 
@@ -27,7 +29,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_carve,[carveName,creatorId,venueId,carveType[0],athlete,photo,date, sports[0]], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -38,7 +40,7 @@ router.delete('/', (req,res) => {
     //Execute the delete query
     con.query(delete_carves, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -50,7 +52,7 @@ router.get('/:carveId', (req,res) => {
     // Execute the query
     con.query(get_carve, [carveId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -64,7 +66,7 @@ router.put('/:carveId', (req,res) => {
     // Execute the update query
     con.query(update_carve,[carveId,carveName,creatorId,venueId,carveType[0],athlete,photo,date,completed, sports[0]],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -78,7 +80,7 @@ router.patch('/:carveId', (req,res) => {
     // Execute the update query
     con.query(update_carve,[carveId,carveName,creatorId,venueId,carveType[0],athlete,photo,date,completed,sports[0]],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -91,7 +93,7 @@ router.delete('/:carveId', (req,res) => {
     // Execute the delete query
     con.query(delete_carves, [carveId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'carve deleted'}).end;
+        res.status(201).jsonp({msg:'carve deleted'}).end();
     })
 });
 

@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
     con.query(carve_attendees_list, (err, results) => {
         if (err) throw err;
 
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -25,7 +25,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_carve_attendees, [carve, user, type[0]], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -37,7 +37,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_carve_attendees,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -50,7 +50,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_carve_attendees,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -61,7 +61,7 @@ router.delete('/', (req,res) => {
     // Execute the query to delete from the database
     con.query(delete_carve_attendeess, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -73,7 +73,7 @@ router.get('/:carve_attendeesId', (req,res) => {
     // Execute query to pull from the database
     con.query(get_carve_attendees, [carve_attendeesId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -86,7 +86,7 @@ router.put('/:carve_attendeesId', (req,res) => {
     // Execute query to update the specific resource in the database
     con.query(update_carve_attendees,[carve_attendeesId,carve,user,userType[0]],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -100,7 +100,7 @@ router.patch('/:carve_attendeesId', (req,res) => {
     // Execute query to update the specific resource in the database
     con.query(update_carve_attendees,[carve_attendeesId,carve,user,userType[0]],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -112,7 +112,7 @@ router.delete('/:carve_attendeesId', (req,res) => {
     // Execute query to delete from the database
     con.query(delete_carve_attendeess, [carve_attendeesId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'carve_attendees deleted'}).end;
+        res.status(201).jsonp({msg:'carve_attendees deleted'}).end();
     })
 });
 

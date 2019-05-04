@@ -36,10 +36,7 @@ router.delete('/', (req,res) => {
     // Create query to delete all carves from the database
     delete_carves = "CALL delete_carves()";
     //Execute the delete query
-    con.query(delete_carves, (err, results) => {
-        if (err) throw err;
-        res.status(201).jsonp({results}).end;
-    })
+    eleteCarve(delete_carves);
 });
 
 // Grab specific carve by its id
@@ -83,10 +80,7 @@ router.delete('/:carveId', (req,res) => {
     // Create a query to delete the specified carve from the database
     delete_carves = "CALL delete_carve(?)";
     // Execute the delete query
-    con.query(delete_carves, [carveId],(err, results) => {
-        if (err) throw err;
-        res.status(201).jsonp({msg:'carve deleted'}).end;
-    })
+    deleteCarve(delete_carves, carveId);
 });
 
 
@@ -95,6 +89,21 @@ function updateCarve(carveId, update_carve, venueId){
         if (err) throw err;
         res.status(201).jsonp({results}).end;
     })
+}
+
+function deleteCarve(delete_carves, carveId){
+    if(carveId == undefined){
+        con.query(delete_carves, (err, results) => {
+            if (err) throw err;
+            res.status(201).jsonp({results}).end;
+        })
+    }
+    else{
+        con.query(delete_carves, [carveId],(err, results) => {
+            if (err) throw err;
+            res.status(201).jsonp({msg:'carve deleted'}).end;
+        })
+    }
 }
 
 module.exports = router;

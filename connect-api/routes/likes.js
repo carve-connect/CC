@@ -12,13 +12,13 @@ router.get('/', (req,res) => {
     like_list = "CALL get_all_likes()";
     dislike_list = "CALL get_dislikes()";
 
-
     con.query(like_list, (err, likes) => {
         con.query(dislike_list, (err, dislikes) => {
             if (err) throw err;
             if (err) throw err;
             res.status(200).jsonp({likes, dislikes}).end;
         })
+
     })
 });
 
@@ -29,7 +29,7 @@ router.get('/dislikes', (req,res) => {
 
     con.query(like_list, (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -44,7 +44,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_like,[poster,likeordislike[0],carve,media,comment], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -57,7 +57,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_like,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -70,7 +70,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_like,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -81,7 +81,7 @@ router.delete('/', (req,res) => {
 
     con.query(delete_likes, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -93,7 +93,7 @@ router.get('/:likeId', (req,res) => {
 
     con.query(get_like, [likeId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -106,7 +106,7 @@ router.put('/:likeId', (req,res) => {
 
     con.query(update_like,[likeId,poster,likeordislike[0],carve,media,comment],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -119,7 +119,7 @@ router.patch('/:likeId', (req,res) => {
 
     con.query(update_like,[likeId,poster,likeordislike[0],carve,media,comment],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -131,7 +131,7 @@ router.delete('/:likeId', (req,res) => {
 
     con.query(delete_likes, [likeId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'like deleted'}).end;
+        res.status(201).jsonp({msg:'like deleted'}).end();
     })
 
 

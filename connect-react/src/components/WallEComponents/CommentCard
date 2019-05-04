@@ -1,0 +1,21 @@
+import React from "react";
+import LikeBar2 from "../LikeBar2";
+
+const CommentCard = (props) => {
+
+    return (
+
+
+        <tr>
+            <td>{this.props.poster}</td>
+            <td>{this.props.com.comment}</td>
+            <td>
+                <LikeBar2 media={this.props.media} comment={com} likes={this.props.likes}
+                          dislikes={this.props.dislikes}/>
+            </td>
+        </tr>
+
+    );
+};
+export default CommentCard;
+

@@ -30,6 +30,7 @@ router.get('/', (req,res) => {
 
         sql = `select * from USERS where username like \'%${searchTerm}%\' or first_name like \'%${searchTerm}%\' or last_name like \'%${searchTerm}%\'`;
 
+
     }
 
 
@@ -41,6 +42,7 @@ router.get('/', (req,res) => {
 
 
     })
+
 
 });
 
@@ -56,6 +58,7 @@ router.get('/logout', (req,res) => {
     con.query(get_user,(err, results) => {
 
         if (err) throw err;
+
 
         res.status(200).jsonp({users: results}).end();
 
@@ -85,6 +88,7 @@ router.post('/', (req,res) => {
 
             res.status(202).jsonp({check}).end();
 
+
             console.log('duplicate username cant add ');
 
         }
@@ -113,6 +117,7 @@ router.post('/', (req,res) => {
                     check = results3[0][0].user_Id;
 
                     res.status(201).jsonp({check}).end();
+
 
                     console.log(check);
 
@@ -147,6 +152,7 @@ router.put('/', (req,res) => {
 
         if (err) throw err;
 
+
         res.status(201).jsonp({results}).end();
 
     })
@@ -174,6 +180,7 @@ router.patch('/', (req,res) => {
 
         if (err) throw err;
 
+
         res.status(201).jsonp({results}).end();
 
     })
@@ -196,6 +203,7 @@ router.delete('/', (req,res) => {
 
         if (err) throw err;
 
+
         res.status(201).jsonp({results}).end();
 
     })
@@ -210,6 +218,7 @@ router.get('/:userId', (req,res) => {
 
     const userId = req.params.userId;
 
+
     console.log('We are in here!');
 
 
@@ -217,6 +226,7 @@ router.get('/:userId', (req,res) => {
 
 
     con.query(get_user, [userId],(err, results) => {
+
 
         if (err) throw err;
 
@@ -227,7 +237,6 @@ router.get('/:userId', (req,res) => {
     })
 
 
-});
 
 
 
@@ -245,7 +254,9 @@ router.get('/:userId/logout', (req,res) => {
 
         if (err) throw err;
 
+
         res.status(200).jsonp({users: results}).end();
+
 
     })
 
@@ -268,6 +279,7 @@ router.put('/:userId', (req,res) => {
     con.query(update_user, [userId, username, email, password, first_name, last_name, description, type, snow_sports[0], water_sports[0], land_sports[0], air_sports[0]], (err, results) => {
 
         if (err) throw err;
+
 
         res.status(201).jsonp({results}).end();
 
@@ -293,7 +305,9 @@ router.patch('/:userId', (req,res) => {
 
         if (err) throw err;
 
+
         res.status(201).jsonp({results}).end();
+
 
     })
 
@@ -315,7 +329,9 @@ router.delete('/:userId', (req,res) => {
 
         if (err) throw err;
 
+
         res.status(201).jsonp({msg: 'user deleted'}).end();
+
 
     })
 
@@ -337,7 +353,9 @@ router.get('/:userId/follows/followers/named ', (req,res) => {
 
         console.log(results[0][0]);
 
+
         res.status(200).jsonp({users: results}).end();
+
 
     })
 
@@ -359,7 +377,9 @@ router.get('/:userId/follows/venues/named ', (req,res) => {
 
         console.log(results[0][0]);
 
+
         res.status(200).jsonp({users: results}).end();
+
 
     })
 
@@ -381,7 +401,9 @@ router.get('/:userId/carves/involved', (req,res) => {
 
         console.log(results[0][0]);
 
+
         res.status(200).jsonp({users: results}).end();
+
 
     })
 
@@ -401,7 +423,9 @@ router.get('/:userId/follows/named', (req,res) => {
 
         if (err) throw err;
 
+
         res.status(201).jsonp({msg: 'user returned'}).end();
+
 
 
 
