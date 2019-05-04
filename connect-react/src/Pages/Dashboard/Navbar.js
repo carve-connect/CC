@@ -156,19 +156,6 @@ class TopNav extends Component {
 								<Row>
 									<Col>
 										<Badge variant="success">{this.state.messages.length}</Badge>
-										{/* <NavDropdown className ="fa fa-envelope text-white fa-2x"  id="collapsible-nav-dropdown">
-										<i class="fa fa-envelope text-white fa-2x"></i>
-											<NavDropdown.Item style={{displayafter:'none'}}>
-												<Link to={"/dashboard/inbox"}><h6>Inbox</h6></Link>
-											</NavDropdown.Item>
-											<NavDropdown.Divider/>
-											<NavDropdown.Item>
-												<Link to={"/dashboard/outbox"}><h6>Sent</h6></Link>
-											</NavDropdown.Item>
-											<NavDropdown.Divider />
-											<NavDropdown.Item onClick={this.handleClick1}><h6>Compose Message</h6></NavDropdown.Item>
-										</NavDropdown> */}
-
 										<Dropdown>
 											<Dropdown.Toggle style={{padding: '0'}}>
 												<i class="fa fa-envelope text-white fa-2x"></i>
@@ -178,34 +165,46 @@ class TopNav extends Component {
 												<Dropdown.Item>
 													<Link to={"/dashboard/inbox"}><h6>Inbox</h6></Link>
 												</Dropdown.Item>
-												<NavDropdown.Item>
+												<Dropdown.Item>
 													<Link to={"/dashboard/outbox"}><h6>Sent</h6></Link>
-												</NavDropdown.Item>
-												<NavDropdown.Divider/>
-												<NavDropdown.Item onClick={this.handleClick1}><h6>Compose Message</h6></NavDropdown.Item>
+												</Dropdown.Item>
+												<Dropdown.Divider/>
+												<Dropdown.Item onClick={this.handleClick1}>
+													<h6>Compose Message</h6>
+												</Dropdown.Item>
 											</Dropdown.Menu>
 										</Dropdown>
 									</Col>
 									<Col>
-										<Badge variant="success">{this.state.notifications.length}</Badge>
-										<NavDropdown className ="fa fa-bell text-danger fa-2x"  id="collapsible-nav-dropdown" >
-											<NavDropdown.Item><Link to={"/dashboard/notinbox"}><h6>Incoming</h6>
-											</Link></NavDropdown.Item>
-											<NavDropdown.Divider/>
-											<NavDropdown.Item><Link to={'/dashboard/notoutbox'}><h6>Outgoing</h6>
-											</Link></NavDropdown.Item>
-										</NavDropdown>
+									<Badge variant="success">{this.state.notifications.length}</Badge>
+										<Dropdown>
+											<Dropdown.Toggle style={{padding: '0'}}>
+												<i class="fa fa-bell text-danger fa-2x"></i>
+											</Dropdown.Toggle>
+
+											<Dropdown.Menu>
+												<Dropdown.Item>
+													<Link to={"/dashboard/notinbox"}><h6>Incoming</h6></Link>
+												</Dropdown.Item>
+												<Dropdown.Item>
+													<Link to={'/dashboard/notoutbox'}><h6>Outgoing</h6></Link>
+												</Dropdown.Item>
+											</Dropdown.Menu>
+										</Dropdown>
 									</Col>
 									<Col style={{marginTop: '1.4rem'}}>
-										<NavDropdown className="fa fa-cogs text-secondary fa-2x "  id="collapsible-nav-dropdown" >
-										<NavDropdown.Item onClick={this.handleSettings}>Settings</NavDropdown.Item>
-										<NavDropdown.Divider/>
-										<NavDropdown.Item onClick={this.handlePrivacy}>Privacy</NavDropdown.Item>
-										<NavDropdown.Divider/>
-										<NavDropdown.Item onClick={this.handleHelp}>Help</NavDropdown.Item>
-										<NavDropdown.Divider />
-										<NavDropdown.Item onClick={this.handleContact}>Contact Us</NavDropdown.Item>
-										</NavDropdown>
+									<Dropdown>
+											<Dropdown.Toggle style={{padding: '0'}}>
+												<i class="fa fa-cogs text-secondary fa-2x "></i>
+											</Dropdown.Toggle>
+
+											<Dropdown.Menu>
+											<Dropdown.Item onClick={this.handleSettings}>Settings</Dropdown.Item>
+											<Dropdown.Item onClick={this.handlePrivacy}>Privacy</Dropdown.Item>
+											<Dropdown.Item onClick={this.handleHelp}>Help</Dropdown.Item>
+											<Dropdown.Item onClick={this.handleContact}>Contact Us</Dropdown.Item>
+											</Dropdown.Menu>
+									</Dropdown>
 									</Col>
 								</Row>
 							<div>
