@@ -13,15 +13,15 @@ import WallPost from '../../../../components/WallComponents/WallPost';
 import CreateMediaModal from "../../../../components/MediaComponents/CreateMediaModal";
 //photos
 import dogskate from '../../../../images/dogskate.jpeg';
-import dogphoto from '../../../../images/dogphoto.jpeg';
+import dogphoto from '../../../../images/SEAN.jpeg';
 import dogsurf from '../../../../images/dogsurf.jpeg';
 import dog from '../../../../images/dog.jpg';
-import big_wave from "../../../../images/big_wave.jpeg";
-import SnowProfilePic from '../../../../images/snowboard-profile-pic.jpg';
-import helmPhoto from '../../../../images/helmPhoto.jpeg';
-import upsidedown_snow from '../../../../images/upsidedown_snow.jpeg';
-import photosnow from '../../../../images/photosnow.jpeg';
-import droneguy from '../../../../images/drone guy.jpeg'
+import big_wave from "../../../../images/Su1.jpeg";
+import SnowProfilePic from '../../../../images/Sn1.jpeg';
+import helmPhoto from '../../../../images/Ph1.jpeg';
+import upsidedown_snow from '../../../../images/Sn4.jpeg';
+import photosnow from '../../../../images/Ph2.jpeg';
+import droneguy from '../../../../images/Dr1.jpeg'
 import UserApi from "../../../../api/UserApi";
 import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
 
@@ -170,37 +170,13 @@ export default class ProfilePage extends Component {
             this.getFollowingUsers();
             this.getFollowers();
             this.getFollowingVenues();
+
         }
     }
 
     setProfilePic() {
-        const {userInfo} = this.state;
-        let pic;
-        if (userInfo.photo === "dogphoto")
-            pic = dogphoto;
-        else if (userInfo.photo === "big_wave")
-            pic = big_wave;
-        else if (userInfo.photo === "dogskate")
-            pic = dogskate;
-        else if (userInfo.photo === "dogsurf")
-            pic = dogsurf;
-        else if (userInfo.photo === "upsidedown_snow")
-            pic = upsidedown_snow;
-        else if (userInfo.photo === "dog")
-            pic = dog;
-        else if (userInfo.photo === "helmPhoto")
-            pic = helmPhoto;
-        else if (userInfo.photo === "photosnow")
-            pic = photosnow;
-        else if (userInfo.photo === "droneguy")
-            pic = droneguy;
 
-        else
-            pic = SnowProfilePic;
 
-        this.setState({
-            pic: pic
-        })
     }
 
 
@@ -274,7 +250,27 @@ export default class ProfilePage extends Component {
 			const {userInfo, isUserLoggedIn} = this.state;
 			const profilePrefix = isUserLoggedIn ? 'My ' : `${this.state.userInfo.username}'s `;
 
-
+            let pic;
+            if (userInfo.photo === "dogphoto")
+                pic = dogphoto;
+            else if (userInfo.photo === "big_wave")
+                pic = big_wave;
+            else if (userInfo.photo === "dogskate")
+                pic = dogskate;
+            else if (userInfo.photo === "dogsurf")
+                pic = dogsurf;
+            else if (userInfo.photo === "upsidedown_snow")
+                pic = upsidedown_snow;
+            else if (userInfo.photo === "dog")
+                pic = dog;
+            else if (userInfo.photo === "helmPhoto")
+                pic = helmPhoto;
+            else if (userInfo.photo === "photosnow")
+                pic = photosnow;
+            else if (userInfo.photo === "droneguy")
+                pic = droneguy;
+            else
+                pic = SnowProfilePic;
 
 			// Make button options for top right corner
 			let options;
@@ -386,12 +382,12 @@ export default class ProfilePage extends Component {
 					}}>
 						<Col style={{width: "100%"}}>
 							<ProfileInfoCard style={{width: "100%"}} loggedIn={isUserLoggedIn}
-											 handleShow={this.handleShow}
-                                         close={this.handleClose}
-                                         show={this.state.show} refresh={this.getUserInfo} user={userInfo}
-                                         img={this.state.pic} id={isUserLoggedIn} bud={this.state.buddies}
-                                         fol={this.state.followers} foll={this.state.following}
-                                         vfol={this.state.vFollowing}/>
+                                             handleShow={this.handleShow}
+                                             close={this.handleClose}
+                                             show={this.state.show} refresh={this.getUserInfo} user={userInfo}
+                                             img={pic} id={isUserLoggedIn} bud={this.state.buddies}
+                                             fol={this.state.followers} foll={this.state.following}
+                                             vfol={this.state.vFollowing}/>
 
 						</Col>
 					</Row>

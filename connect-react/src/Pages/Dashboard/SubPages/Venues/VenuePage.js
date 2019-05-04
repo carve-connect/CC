@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Figure from 'react-bootstrap/Figure';
-import Mount_Snow from '../../../../images/mount_snow_bg.png'
+import Mount_Snow from '../../../../images/SkRs2.jpeg'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import axios from 'axios';
@@ -12,12 +12,12 @@ import VenueApi from "../../../../api/VenueApi";
 import UserApi from "../../../../api/UserApi";
 import Map from "../../../../components/VenueComponents/Map";
 import WeatherForecast from "../../../../components/VenueComponents/WeatherForecast";
-import beach from "../../../../images/beach.jpeg";
-import mountain from "../../../../images/mountain.jpeg";
-import skatedude from "../../../../images/skatedude.jpeg";
-import MB from "../../../../images/MB.jpeg";
+import beach from "../../../../images/Be1.jpeg";
+import mountain from "../../../../images/SkRs8.jpeg";
+import skatedude from "../../../../images/Ska2.jpeg";
+import MB from "../../../../images/MB1.jpeg";
 import para from "../../../../images/para.jpeg";
-import skydive from "../../../../images/skydive.jpeg";
+import skydive from "../../../../images/SkyDive1.jpeg";
 import WeatherForecast1 from "../../../../components/VenueComponents/WeatherForecast1";
 import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
 

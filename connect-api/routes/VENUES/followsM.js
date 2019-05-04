@@ -37,6 +37,7 @@ router.delete('/', (req,res) => {
 	delete_follows = "CALL delete_follows()";
 	// Execute the delete query
 	deleteFollows(delete_follows);
+
 });
 
 // Grab a specific follow by its ID
@@ -59,7 +60,9 @@ router.put('/:followId', (req,res) => {
 	// Create the query to update the specified follow
     update_follow = "CALL update_follow_venue(?,?,?)";
 	// Execute the update query
+
 	updateFollows(update_follow, followId);
+
 });
 
 // Update a specific follow by the given follow ID
@@ -71,6 +74,7 @@ router.patch('/:followId', (req,res) => {
 	update_follow = "CALL update_follow_venue(?,?,?)";
 	// Execute the update query
 	updateFollows(update_follow, followId);
+
 });
 
 // Deletes a specific follow by the given follow ID
@@ -79,10 +83,18 @@ router.delete('/:followId', (req,res) => {
 	// Create the query to delete the specified follow from the database
 	delete_follows = "CALL delete_follow(?)";
 	// Execute the delete query
-	deleteFollows(delete_follows, followId);
+
+	deleteFollow(delete_follows, followId);
 });
 
-function deleteFollows(delete_follows, followId){
+function updateFollow(update_follow, followId){
+	con.query(update_follow_venue,[followId, usr, ven],(err, results) => {
+		if (err) throw err;
+		res.status(201).jsonp({results}).end;
+	})
+}
+
+function deleteFollow(delete_follow, followId){
 	if(followId == undefined){
 		con.query(delete_follows, (err, results) => {
 			if (err) throw err;
@@ -103,5 +115,4 @@ function updateFollows(update_follow, followId){
 		res.status(201).jsonp({results}).end;
 	})
 }
-
 module.exports = router;

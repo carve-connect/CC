@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
-import Snow from '../../images/snow1.jpg';
+import Snow from '../../images/Sn4.jpeg';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
