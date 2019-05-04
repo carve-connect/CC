@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import beach from "../../../../images/Be1.jpeg";
 import mountain from "../../../../images/SkRs8.jpeg";
 import skatedude from "../../../../images/SkPk1.jpeg";
-import para from "../../../../images/Ka1.jpeg";
+import para from "../../../../images/AF1.jpeg";
 
 
 export default class VenueListPage extends Component {

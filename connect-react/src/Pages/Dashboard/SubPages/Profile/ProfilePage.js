@@ -170,37 +170,13 @@ export default class ProfilePage extends Component {
             this.getFollowingUsers();
             this.getFollowers();
             this.getFollowingVenues();
+
         }
     }
 
     setProfilePic() {
-        const {userInfo} = this.state;
-        let pic;
-        if (userInfo.photo === "dogphoto")
-            pic = dogphoto;
-        else if (userInfo.photo === "big_wave")
-            pic = big_wave;
-        else if (userInfo.photo === "dogskate")
-            pic = dogskate;
-        else if (userInfo.photo === "dogsurf")
-            pic = dogsurf;
-        else if (userInfo.photo === "upsidedown_snow")
-            pic = upsidedown_snow;
-        else if (userInfo.photo === "dog")
-            pic = dog;
-        else if (userInfo.photo === "helmPhoto")
-            pic = helmPhoto;
-        else if (userInfo.photo === "photosnow")
-            pic = photosnow;
-        else if (userInfo.photo === "droneguy")
-            pic = droneguy;
 
-        else
-            pic = SnowProfilePic;
 
-        this.setState({
-            pic: pic
-        })
     }
 
 
@@ -274,7 +250,27 @@ export default class ProfilePage extends Component {
 			const {userInfo, isUserLoggedIn} = this.state;
 			const profilePrefix = isUserLoggedIn ? 'My ' : `${this.state.userInfo.username}'s `;
 
-
+            let pic;
+            if (userInfo.photo === "dogphoto")
+                pic = dogphoto;
+            else if (userInfo.photo === "big_wave")
+                pic = big_wave;
+            else if (userInfo.photo === "dogskate")
+                pic = dogskate;
+            else if (userInfo.photo === "dogsurf")
+                pic = dogsurf;
+            else if (userInfo.photo === "upsidedown_snow")
+                pic = upsidedown_snow;
+            else if (userInfo.photo === "dog")
+                pic = dog;
+            else if (userInfo.photo === "helmPhoto")
+                pic = helmPhoto;
+            else if (userInfo.photo === "photosnow")
+                pic = photosnow;
+            else if (userInfo.photo === "droneguy")
+                pic = droneguy;
+            else
+                pic = SnowProfilePic;
 
 			// Make button options for top right corner
 			let options;
@@ -386,12 +382,12 @@ export default class ProfilePage extends Component {
 					}}>
 						<Col style={{width: "100%"}}>
 							<ProfileInfoCard style={{width: "100%"}} loggedIn={isUserLoggedIn}
-											 handleShow={this.handleShow}
-                                         close={this.handleClose}
-                                         show={this.state.show} refresh={this.getUserInfo} user={userInfo}
-                                         img={this.state.pic} id={isUserLoggedIn} bud={this.state.buddies}
-                                         fol={this.state.followers} foll={this.state.following}
-                                         vfol={this.state.vFollowing}/>
+                                             handleShow={this.handleShow}
+                                             close={this.handleClose}
+                                             show={this.state.show} refresh={this.getUserInfo} user={userInfo}
+                                             img={pic} id={isUserLoggedIn} bud={this.state.buddies}
+                                             fol={this.state.followers} foll={this.state.following}
+                                             vfol={this.state.vFollowing}/>
 
 						</Col>
 					</Row>
