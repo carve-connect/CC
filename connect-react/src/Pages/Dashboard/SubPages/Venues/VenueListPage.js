@@ -8,10 +8,10 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import VenueFigure from './VenueFigure';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import beach from "../../../../images/beach.jpeg";
-import mountain from "../../../../images/mountain.jpeg";
-import skatedude from "../../../../images/skatedude.jpeg";
-import para from "../../../../images/para.jpeg";
+import beach from "../../../../images/Be1.jpeg";
+import mountain from "../../../../images/SkRs8.jpeg";
+import skatedude from "../../../../images/SkPk1.jpeg";
+import para from "../../../../images/Ka1.jpeg";
 
 
 export default class VenueListPage extends Component {

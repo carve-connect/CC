@@ -222,10 +222,10 @@ router.get('/:userId', (req,res) => {
     console.log('We are in here!');
 
 
-    get_user  = "call get_user(?)";
+    get_user = "call get_user(?)";
 
 
-    con.query(get_user, [userId],(err, results) => {
+    con.query(get_user, [userId], (err, results) => {
 
 
         if (err) throw err;
@@ -234,7 +234,8 @@ router.get('/:userId', (req,res) => {
 
         res.status(200).jsonp({users: results}).end;
 
-    })
+    });
+});
 
 
 

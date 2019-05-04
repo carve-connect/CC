@@ -11,6 +11,7 @@ import axios from "axios";
 import jwt from "jsonwebtoken";
 import {Cookies, withCookies} from 'react-cookie';
 import {instanceOf} from 'prop-types';
+import hangGlide from "../../images/SkRs8.jpeg";
 
 class LoginPage extends Component {
 
@@ -118,35 +119,37 @@ class LoginPage extends Component {
 		}
 
 		return (
-			<div className="Login">
-				<h3 style={{ textAlign: 'center', marginTop: '5%' }}>Sign In</h3>
-				<form onSubmit={this.handleSubmit}>
-					<FormGroup controlId="username">
-						<Form.Label>Username</Form.Label>
-						<FormControl
-							autoFocus
-							type="text"
-							value={this.state.username}
-							onChange={this.handleChange}
-						/>
-					</FormGroup>
-					<FormGroup controlId="password">
-						<Form.Label>Password</Form.Label>
-						<FormControl
-							value={this.state.password}
-							onChange={this.handleChange}
-							type="password"
-						/>
-					</FormGroup>
-					<Button
-						block
-						disabled={!this.validateForm()}
-						type="submit"
-					>
-						Sign In
-					</Button>
-				</form>
-				<p style={{ textAlign: 'center', marginTop: '25px' }}>Forgot your password?</p>
+			<div style={{height: "100%", width: "200%", backgroundImage: `url(${hangGlide})`}}>
+				<div className="Login">
+					<h3 style={{ textAlign: 'center', marginTop: '5%' }}>Sign In</h3>
+					<form onSubmit={this.handleSubmit}>
+						<FormGroup controlId="username">
+							<Form.Label>Username</Form.Label>
+							<FormControl
+								autoFocus
+								type="text"
+								value={this.state.username}
+								onChange={this.handleChange}
+							/>
+						</FormGroup>
+						<FormGroup controlId="password">
+							<Form.Label>Password</Form.Label>
+							<FormControl
+								value={this.state.password}
+								onChange={this.handleChange}
+								type="password"
+							/>
+						</FormGroup>
+						<Button
+							block
+							disabled={!this.validateForm()}
+							type="submit"
+						>
+							Sign In
+						</Button>
+					</form>
+					<p style={{ textAlign: 'center', marginTop: '25px' }}>Forgot your password?</p>
+				</div>
 			</div>
 		);
 	}

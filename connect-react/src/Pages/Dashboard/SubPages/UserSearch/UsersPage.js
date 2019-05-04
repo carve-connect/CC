@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Col from "react-bootstrap/Col";
-import Photo from "../../../../images/photo.jpeg";
-import SkiChick from "../../../../images/ski chick.jpeg";
+import Photo from "../../../../images/Ph1.jpeg";
+import SkiChick from "../../../../images/Sk2.jpeg";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';

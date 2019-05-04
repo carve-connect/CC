@@ -13,15 +13,15 @@ import WallPost from '../../../../components/WallComponents/WallPost';
 import CreateMediaModal from "../../../../components/MediaComponents/CreateMediaModal";
 //photos
 import dogskate from '../../../../images/dogskate.jpeg';
-import dogphoto from '../../../../images/dogphoto.jpeg';
+import dogphoto from '../../../../images/SEAN.jpeg';
 import dogsurf from '../../../../images/dogsurf.jpeg';
 import dog from '../../../../images/dog.jpg';
-import big_wave from "../../../../images/big_wave.jpeg";
-import SnowProfilePic from '../../../../images/snowboard-profile-pic.jpg';
-import helmPhoto from '../../../../images/helmPhoto.jpeg';
-import upsidedown_snow from '../../../../images/upsidedown_snow.jpeg';
-import photosnow from '../../../../images/photosnow.jpeg';
-import droneguy from '../../../../images/drone guy.jpeg'
+import big_wave from "../../../../images/Su1.jpeg";
+import SnowProfilePic from '../../../../images/Sn1.jpeg';
+import helmPhoto from '../../../../images/Ph1.jpeg';
+import upsidedown_snow from '../../../../images/Sn4.jpeg';
+import photosnow from '../../../../images/Ph2.jpeg';
+import droneguy from '../../../../images/Dr1.jpeg'
 import UserApi from "../../../../api/UserApi";
 import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
 
