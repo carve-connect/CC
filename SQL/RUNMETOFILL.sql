@@ -1496,19 +1496,27 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Catamount', 'Hillsdale', 'NY', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL, '42.10',
+VALUES ('Catamount', 'Hillsdale', 'NY',
+        'Catamount is a mountain for the entire family.  There is an extensive trail network for all abilities and spectacular views can be seen from many turns.',
+        'mountain', 'snowboard,ski', NULL, NULL, NULL, '42.10',
         '-73.28', 'https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Bristol Mountain', 'Canandaigua', 'NY', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+VALUES ('Bristol Mountain', 'Canandaigua', 'NY',
+        'Bristol Mountain provides skiers and snowboarders 138 acres of skiable terrain spread out over 34 trails and a 1200’ vertical drop.',
+        'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
         '42.44', '-77.24', 'https://www.onthesnow.com/new-york/bristol-mountain/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Holiday Valley', 'Ellicotville', 'NY', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL,
+VALUES ('Holiday Valley', 'Ellicotville', 'NY',
+        'Holiday Valley has 53 trails marked 35 percent for beginners, 27 percent intermediates, and 38 percent advanced skiers.',
+        'mountain', 'snowboard,ski', NULL, NULL, NULL,
         '42.15', '-78.40', 'https://www.onthesnow.com/new-york/holiday-valley/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Whiteface Mountain', 'WIlmington', 'NY', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+VALUES ('Whiteface Mountain', 'WIlmington', 'NY',
+        'With the biggest vertical drop of the eastern ski resorts (3,429 feet), Whiteface, NY, offers 288 skiable acres serviced by 11 lifts, including one gondola.',
+        'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
         '42.15', '-78.40', 'https://www.onthesnow.com/new-york/whiteface-mountain-resort/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
@@ -1524,7 +1532,9 @@ VALUES ('Hunter Mountain', 'Hunter', 'NY', 'Awesome ski resort', 'mountain', 'sn
         '-74.13', 'https://www.onthesnow.com/new-york/hunter-mountain/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Gore Mountain', 'North Creek', 'NY', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+VALUES ('Gore Mountain', 'North Creek', 'NY',
+        'Located in the Adirondacks, Gore Mountain is New York State’s largest ski and ride resort. Boasting a vertical drop of 2,537 feet and 446 accessible acres',
+        'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
         '43.40', '-74.00', 'https://www.onthesnow.com/new-york/gore-mountain/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
@@ -1532,7 +1542,9 @@ VALUES ('Mount Peter', 'Warwick', 'NY', 'Awesome ski resort', 'mountain', 'snowb
         '-74.17', 'https://www.onthesnow.com/new-york/mount-peter-ski-area/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Jack Frost', 'White Haven', 'PA', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+VALUES ('Jack Frost', 'White Haven', 'PA',
+        'Jack Frost Mountain, located in the Pocono Mountains of Northeastern Pennsylvania and sister mountain of nearby Big Boulder, has 30 slopes and trails',
+        'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
         '41.06', '-75.39', 'https://www.onthesnow.com/pennsylvania/jack-frost/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
