@@ -13,16 +13,23 @@ import WallPost from '../../../../components/WallComponents/WallPost';
 import CreateMediaModal from "../../../../components/MediaComponents/CreateMediaModal";
 //photos
 import dogskate from '../../../../images/dogskate.jpeg';
-import dogphoto from '../../../../images/SEAN.jpeg';
+import SEAN from '../../../../images/SEAN.jpeg';
+import DHRUV from '../../../../images/DHRUV.jpg';
+import FRED from '../../../../images/FRED.jpeg';
+import BALIGA from '../../../../images/BALIGA.png';
+import SnMb1 from '../../../../images/SnMb1.jpeg'
 import dogsurf from '../../../../images/dogsurf.jpeg';
 import dog from '../../../../images/dog.jpg';
-import big_wave from "../../../../images/Su1.jpeg";
-import SnowProfilePic from '../../../../images/Sn1.jpeg';
-import helmPhoto from '../../../../images/Ph1.jpeg';
-import upsidedown_snow from '../../../../images/Sn4.jpeg';
-import photosnow from '../../../../images/Ph2.jpeg';
-import droneguy from '../../../../images/Dr1.jpeg'
+import SkyDive1 from '../../../../images/SkyDive1.jpeg';
+import Su1 from "../../../../images/Su1.jpeg";
+import Sn1 from '../../../../images/Sn1.jpeg';
+import Ph1 from '../../../../images/Ph1.jpeg';
+import Sn4 from '../../../../images/Sn4.jpeg';
+import Ph2 from '../../../../images/Ph2.jpeg';
+import Dr1 from '../../../../images/Dr1.jpeg';
+import SnowProfilePic from '../../../../images/Sn3.jpeg';
 import UserApi from "../../../../api/UserApi";
+
 import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
 
 
@@ -251,24 +258,36 @@ export default class ProfilePage extends Component {
 			const profilePrefix = isUserLoggedIn ? 'My ' : `${this.state.userInfo.username}'s `;
 
             let pic;
-            if (userInfo.photo === "dogphoto")
-                pic = dogphoto;
-            else if (userInfo.photo === "big_wave")
-                pic = big_wave;
+			if (userInfo.photo === "SEAN")
+				pic = SEAN;
+			else if (userInfo.photo === "DHRUV")
+				pic = DHRUV;
+			else if (userInfo.photo === "BALIGA")
+				pic = BALIGA;
             else if (userInfo.photo === "dogskate")
                 pic = dogskate;
             else if (userInfo.photo === "dogsurf")
                 pic = dogsurf;
-            else if (userInfo.photo === "upsidedown_snow")
-                pic = upsidedown_snow;
+			else if (userInfo.photo === "FRED")
+				pic = FRED;
             else if (userInfo.photo === "dog")
                 pic = dog;
-            else if (userInfo.photo === "helmPhoto")
-                pic = helmPhoto;
-            else if (userInfo.photo === "photosnow")
-                pic = photosnow;
-            else if (userInfo.photo === "droneguy")
-                pic = droneguy;
+			else if (userInfo.photo === "Su1")
+				pic = Su1;
+			else if (userInfo.photo === "Sn1")
+				pic = Sn1;
+			else if (userInfo.photo === "Sn4")
+				pic = Sn4;
+			else if (userInfo.photo === "Ph1")
+				pic = Ph1;
+			else if (userInfo.photo === "Ph2")
+				pic = Ph2;
+			else if (userInfo.photo === "SnMb1")
+				pic = SnMb1;
+			else if (userInfo.photo === "SkyDive1")
+				pic = SkyDive1;
+			else if (userInfo.photo === "Dr1")
+				pic = Dr1;
             else
                 pic = SnowProfilePic;
 

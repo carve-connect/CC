@@ -2,36 +2,43 @@
 
 use CCv5;
 #INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('frosty','abc1@email.net','password','Sean','Klinglesmith','Chill bro whos down for anything, anywhere, anytime','dogphoto',('Photographer,Videographer,Drone Operator'),('Snowboard,Downhill Ski,Snowmobile,Cross-Country Ski'),('Surf,Water Ski,Kayak,Wakeboard,Paddleboard,Parasail,Kite Surf'),('Skateboard,BMX,Mountain Bike,Rock Climb,Cliff Dive,Parkour'),('Sky Dive,Hang Glide,Base Jump,Air Race'));
-INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('frosty','abc1@email.net','password','Sean','Klinglesmith','cool dude who likes to film using drones or otherwise','dogphoto',('photographer,filmographer,droneOperator'),('snowboard'),('surf'),('skateboard,BMX,mountainBiking'),('skydive,hangGlide'));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Cmart', 'abc2@email.net', 'password', 'Christian', 'Marcy', 'rad man who loves to shred', 'dogskate',
+VALUES ('frosty', 'abc1@email.net', 'password', 'Sean', 'Klinglesmith',
+        'cool dude who likes to film using drones or otherwise', 'SEAN', ('photographer,filmographer,droneOperator'),
+        ('snowboard'), ('surf'), ('skateboard,BMX,mountainBiking'), ('skydive,hangGlide'));
+INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
+                  land_sports, air_sports)
+VALUES ('Cmart', 'abc2@email.net', 'password', 'Christian', 'Marcy', 'rad man who loves to shred', 'SnMb1',
         ('athlete'), ('ski'), ('waterSki'), ('skateboard'), ('hangGlide'));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('JRider', 'abc3@email.net', 'password', 'RJ', 'Boucher', 'pro dude who knows how to carve', 'dog',
+VALUES ('JRider', 'abc3@email.net', 'password', 'RJ', 'Boucher', 'pro dude who knows how to carve', 'Sn4',
         ('athlete,proAthlete'), ('snowboard,ski,snowmobile'), ('surf,waterSki'), ('BMX'), ('skydive,hangGlide'));
-INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('balthazar','abc4@email.net','password','Brandon','Wheeler','awesome bro who loves to shred the gnar','big_wave',('athlete'),('snowboard'),('surf'),('mountainBiking'),('skydive'));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Shred', 'abc5@email.net', 'password', 'Fred', 'Budde', 'fan of sports and loves to take pictures', 'helmPhoto',
+VALUES ('balthazar', 'abc4@email.net', 'password', 'Brandon', 'Wheeler', 'awesome bro who loves to shred the gnar',
+        'Su1', ('athlete'), ('snowboard'), ('surf'), ('mountainBiking'), ('skydive'));
+INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
+                  land_sports, air_sports)
+VALUES ('Shred', 'abc5@email.net', 'password', 'Fred', 'Budde', 'fan of sports and loves to take pictures', 'FRED',
         ('photographer,fan'), ('ski'), ('waterSki'), (NULL), (NULL));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Iceman', 'abc6@email.net', 'password', 'Md', 'Monir', 'loves to film action sequences', 'photosnow',
+VALUES ('Iceman', 'abc6@email.net', 'password', 'Md', 'Monir', 'loves to film action sequences', 'Ph2',
         ('filmographer'), ('snowmobile'), ('surf,waterSki'), ('skateboard,BMX,mountainBiking'), (NULL));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Moneyman', 'abc7@email.net', 'password', 'Dhruv', 'Patel',
-        'cool dude who likes to film using drones or otherwise', 'droneguy',
+        'cool dude who likes to film using drones or otherwise', 'DHRUV',
         ('photographer,filmographer,droneOperator'), ('snowboard'), ('surf'), ('skateboard'), (NULL));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Andez', 'abc8@email.net', 'password', 'Dylan', 'Anderson', 'rad man who loves to shred', 'upsidedown_snow',
+VALUES ('Andez', 'abc8@email.net', 'password', 'Dylan', 'Anderson', 'rad man who loves to shred', 'SkyDive1',
         ('athlete,proAthlete,droneOperator'), ('ski'), ('waterSki'), ('BMX'), ('skydive,hangGlide'));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('ProfMan', 'abc8@email.net', 'password', 'Dr.', 'Baliga', 'Awesome Professor', 'dogsurf',
+VALUES ('ProfMan', 'abc8@email.net', 'password', 'Dr.', 'Baliga', 'Awesome Professor', 'BALIGA',
         ('athlete,proAthlete,droneOperator'), ('ski'), ('waterSki'), (NULL), ('hangGlide'));
 INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('TQILZAW29','blandit.at.nisi@liberoat.co.uk','BSM87JYI0FH','Daquan','Lambert','Something about the user goes here',NULL,('athlete'),(NULL),('surf,waterski'),('BMX,skateboard'),('skydive,hangGlide'));
 INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('RWSVKCU60','Aliquam.erat.volutpat@anteblandit.edu','OJN77YWI2AS','Dominic','Hebert','Something about the user goes here',NULL,('photographer'),(NULL),('waterSki'),(NULL),('skydive'));
