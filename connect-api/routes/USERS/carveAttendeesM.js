@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 const con = require('../../db');
+var functions = require('./middleware/users/userFunctions');
 
 
 // Grabs all carve_attendees from db
