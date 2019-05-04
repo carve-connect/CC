@@ -1,6 +1,8 @@
 #here it is...
 use CCv6;
 
+#Users
+
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('frosty', 'abc1@email.net', 'password', 'Sean', 'Klinglesmith',
@@ -137,6 +139,8 @@ INSERT INTO USERS(username, email, password, first_name, last_name, description,
                   land_sports, air_sports)
 VALUES ('Dishonored30', 'user30@email.net', 'password', 'Corvo', 'Attano', 'love to run around and jump off of things',
         'Su3', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
+
+# VENUES
 
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
