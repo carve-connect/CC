@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 const con = require('../../db');
+var functions = require('./middleware/carves/mediaFunctions');
 
 
 
 // Grabs all medias from db
 router.get('/', (req,res) => {
     carveId = req.params.carveId;
+    functions.carveAllMediaGet(carveId, res);
 
 });
 

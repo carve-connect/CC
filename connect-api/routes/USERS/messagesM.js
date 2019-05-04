@@ -107,6 +107,7 @@ router.get('/sent', (req,res) => {
 router.get('/notifications', (req,res) => {
     userId = req.params.userId;
 
+});
 
 
 // Grabs all messages from db

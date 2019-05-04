@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 const con = require('../../db');
+var functions = require('./middleware/carves/userFunctions');
 
 
 
@@ -8,6 +9,7 @@ const con = require('../../db');
 router.get('/', (req,res) => {
     // Find all users from database
     carveId = req.params.carveId;
+    functions.carveUsersGet(carveId, res);
 
 });
 

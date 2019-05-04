@@ -6,6 +6,7 @@ var functions = require('./middleware/users/userFunctions');
 
 // Grabs all comments from db
 router.get('/', (req,res) => {
+    functions.userCommentsGet(res);
 
 });
 
