@@ -109,7 +109,7 @@ VALUES ('DarkTower23', 'abc23@email.net', 'password', 'Roland', 'Deschain',
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('MotleyCrue24', 'abc24@email.net', 'password', 'Nikki', 'Sixx', 'The beach is my home sweet home', 'SkyDive2 ',
-        'Athlete', 'Cross-Country Ski', 'Surf, Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
+        'Athlete', 'Cross-Country Ski', 'Surf,Water Ski', 'Skateboard', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('CaptMarvel25', 'abc25@email.net', 'password', 'Carol', 'Danvers',
@@ -124,7 +124,7 @@ INSERT INTO USERS(username, email, password, first_name, last_name, description,
                   land_sports, air_sports)
 VALUES ('InvisibleWoman27', 'abc27@email.net', 'password', 'Susan', 'Storm',
         'Im not always invisible, thatts why i need people to film me', 'Ph2 ', 'Photographer',
-        'Snowboard,Downhill Ski,snowmobile', 'Surf, Water Ski', NULL, 'Air Race');
+        'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', NULL, 'Air Race');
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('NoOne28', 'abc28@email.net', 'password', 'Arya', 'Stark', 'A girl is noone, except for a great snowborder',
@@ -136,5 +136,5 @@ VALUES ('Rescue29', 'user29@email.net', 'password', 'Pepper', 'Potts', 'catch me
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Dishonored30', 'user30@email.net', 'password', 'Corvo', 'Attano', 'love to run around and jump off of things',
-        'Su3 ', 'Athlete', 'snowmobile', 'Surf, Water Ski', 'BMX', 'Hang Glide');
+        'Su3 ', 'Athlete', 'snowmobile', 'Surf,Water Ski', 'BMX', 'Hang Glide');
 
