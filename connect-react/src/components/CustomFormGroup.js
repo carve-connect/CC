@@ -9,6 +9,7 @@ const CustomFormGroup = (props) => {
 				value={props.value}
 				onChange={props.onChange}
 				type={props.type}
+				placeholder={props.placeholder}
 			/>
 		</FormGroup>
 	);

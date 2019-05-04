@@ -4,11 +4,11 @@ import Col from 'react-bootstrap/Col';
 
 
 import dogskate from "../../../../images/dogskate.jpeg";
-import dogphoto from "../../../../images/dogphoto.jpeg";
+import dogphoto from "../../../../images/SEAN.jpeg";
 import dogsurf from "../../../../images/dogsurf.jpeg";
-import mountain from "../../../../images/mountain.jpeg";
-import beach from "../../../../images/beach.jpeg";
-import skate from "../../../../images/skatedude.jpeg";
+import mountain from "../../../../images/SkRs8.jpeg";
+import beach from "../../../../images/Be1.jpeg";
+import skate from "../../../../images/Ska3.jpeg";
 import React, {Component} from "react";
 import FeaturedUserCard from '../../../../components/ProfileComponents/FeaturedUserCard';
 import {Link} from "react-router-dom";

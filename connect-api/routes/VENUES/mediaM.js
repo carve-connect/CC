@@ -38,7 +38,9 @@ router.delete('/', (req,res) => {
     // Create the delete query
     delete_medias = "CALL delete_media()";
     // Execute the delete query
-    deleteMedia(delete_medias);
+
+    deleteMedia(deleteMedia, mediaId)
+
 });
 
 // Grab specific media resource by its id
@@ -79,7 +81,9 @@ router.delete('/:mediaId', (req,res) => {
     // Create the delete query
     delete_medias = "CALL delete_medi(?)";
     // Execute the delete query
-    deleteMedia(delete_medias, mediaId);
+
+    deleteMedia(deleteMedia, mediaId)
+
 });
 
 function deleteMedia(delete_medias, mediaId){
