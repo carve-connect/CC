@@ -17,7 +17,7 @@ export default class Container extends Component {
 	render() {
 		return (
 
-            <div style={{width: "90%"}}>
+            <div style={{width: "85%"}}>
                 {routes}
             </div>
 		);

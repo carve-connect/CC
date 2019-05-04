@@ -42,9 +42,9 @@ router.get('/buddies/carves', (req, res) => {
 	// Find all follows from database
 	userId = req.params.userId;
 	follow_list = "CALL get_buddy_carves(?)";
-	con.query(follow_list, [userId], (err, results) => {
+    con.query(follow_list, [userId], (err, c) => {
 		if (err) throw err;
-		res.status(200).jsonp({results}).end();
+        res.status(200).jsonp({c}).end();
 	})
 });
 
@@ -53,9 +53,9 @@ router.get('/buddies/carves/made', (req, res) => {
     // Find all follows from database
     userId = req.params.userId;
     follow_list = "CALL get_buddy_carves(?)";
-    con.query(follow_list, [userId], (err, results) => {
+    con.query(follow_list, [userId], (err, c) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end();
+        res.status(200).jsonp({c}).end();
     })
 });
 
@@ -64,9 +64,9 @@ router.get('/venues/carves', (req, res) => {
 	// Find all follows from database
 	userId = req.params.userId;
 	follow_list = "CALL get_venue_followed_carves(?)";
-	con.query(follow_list, [userId], (err, results) => {
+    con.query(follow_list, [userId], (err, c) => {
 		if (err) throw err;
-		res.status(200).jsonp({results}).end();
+        res.status(200).jsonp({c}).end();
 	})
 });
 
@@ -76,9 +76,9 @@ router.get('/carves', (req, res) => {
 	// Find all follows from database
 	userId = req.params.userId;
 	follow_list = "CALL get_followed_carves(?)";
-	con.query(follow_list, [userId], (err, results) => {
+    con.query(follow_list, [userId], (err, c) => {
 		if (err) throw err;
-		res.status(200).jsonp({results}).end();
+        res.status(200).jsonp({c}).end();
 	})
 });
 

@@ -33,7 +33,7 @@ class NotificationsPage extends Component {
                 this.setState({
                     messages: res.data.results[0]
                 });
-                alert("you have "+this.state.messages.length+" notifications");
+               
                 //alert(JSON.stringify(res.data.users[0][0]))
             });
 

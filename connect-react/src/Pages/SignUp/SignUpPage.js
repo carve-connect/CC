@@ -3,7 +3,7 @@ import {Button, Form} from "react-bootstrap";
 import CustomFormGroup from "../../components/CustomFormGroup";
 import Redirect from "react-router/Redirect";
 import axios from "axios";
-import hangGlide from '../../images/ski.jpeg'
+import hangGlide from '../../images/SkRs8.jpeg'
 
 export default class SignUpPage extends Component {
 	constructor(props) {

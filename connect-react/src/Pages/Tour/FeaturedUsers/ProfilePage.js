@@ -3,15 +3,15 @@ import axios from 'axios'
 import Button from "react-bootstrap/Button";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import SnowProfilePic from '../../../../images/snowboard-profile-pic.jpg';
-import CreateCarveModal from "../../../../components/CreateCarveModal";
-import BuddyRequestModal from "../../../../components/BuddyRequestModal";
-import MediaGroup from "../../../../components/MediaGroup";
-import ProfileInfoCard from './ProfileInfoCard';
+import SnowProfilePic from '../../../images/Sn1.jpeg';
+import CreateCarveModal from "../../../components/CarveComponents/CreateCarveModal";
+import BuddyRequestModal from "../../../components/NotificationComponents/BuddyRequestModal";
+import MediaGroup from "../../../components/MediasComponents/MediaCollector";
+import ProfileInfoCard from '../../../Pages/Dashboard/SubPages/Profile/ProfileInfoCard';
 import Container from 'react-bootstrap/Container';
-import CarveCardUserCreate from '../../../../components/CarveCardUserCreate';
-import WallPost from '../../../../components/WallPost';
-import CreateMediaModal from "../../../../components/CreateMediaModal";
+import CarveCardUserCreate from '../../../components/CarveComponents/CarveCardUserCreate';
+import WallPost from '../../../components/WallComponents/WallPost';
+import CreateMediaModal from "../../../components/MediaComponents/CreateMediaModal";
 
 
 export default class ProfilePage extends Component {

@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
     userId = req.params.userId;
     con.query(message_list, [userId], (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -43,7 +43,7 @@ function hasReplyInObj(id) {
 // Returns all messages that need to be responded to
 function findReplyMessages(messages, userId) {
     let inbox = [];
-    let msgId;
+
 
     // Loop over individual messages and fill obj table with keys
     messages.forEach((message) => {
@@ -122,7 +122,7 @@ router.get('/sent', (req,res) => {
     userId = req.params.userId;
     con.query(message_list, [userId], (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -134,7 +134,7 @@ router.get('/notifications', (req,res) => {
     userId = req.params.userId;
     con.query(message_list, [userId], (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -146,7 +146,7 @@ router.get('/notifications/sent', (req,res) => {
     userId = req.params.userId;
     con.query(message_list, [userId], (err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -161,7 +161,7 @@ router.post('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_message,[sender,reciever,subject,body, msgType[0]], (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -175,7 +175,7 @@ router.put('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_message,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -189,7 +189,7 @@ router.patch('/', (req,res) => {
     // Execute the query to insert into the database
     con.query(new_message,(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -199,7 +199,7 @@ router.delete('/', (req,res) => {
     delete_messages = "CALL delete_messages()";
     con.query(delete_messages, (err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -210,7 +210,7 @@ router.get('/:messageId', (req,res) => {
     get_message  = "call get_message(?)";
     con.query(get_message, [messageId],(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -222,7 +222,7 @@ router.put('/:messageId', (req,res) => {
     update_message = "CALL update_message(?,?,?,?,?,?)";
     con.query(update_message,[messageId,sender,reciever,subject,body, msgType[0]],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -234,7 +234,7 @@ router.patch('/:messageId', (req,res) => {
     update_message = "CALL update_message(?,?,?,?,?,?)";
     con.query(update_message,[messageId,sender,reciever,subject,body, msgType[0]],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -245,7 +245,7 @@ router.delete('/:messageId', (req,res) => {
     delete_messages = "CALL delete_message(?)";
     con.query(delete_messages, [messageId],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({msg:'message deleted'}).end;
+        res.status(201).jsonp({msg:'message deleted'}).end();
     })
 });
 

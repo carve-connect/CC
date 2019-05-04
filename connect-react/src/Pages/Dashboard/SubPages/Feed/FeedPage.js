@@ -1,16 +1,13 @@
 import React, {Component} from 'react'
-import CarveCardUserAttend from "../../../../components/CarveComponents/CarveCardUserAttend";
 import CreateCarveModal from "../../../../components/CarveComponents/CreateCarveModal";
 import Button from "react-bootstrap/Button";
 
 import Container from 'react-bootstrap/Container';
 import MediaGroupFeed from "../../../../components/MediaComponents/MediaGroupFeed";
 import Row from "react-bootstrap/Row";
-import CarveCardUserFollowed from "../../../../components/CarveComponents/CarveCardUserFollowed.js";
-import CarveCardBuddies from "../../../../components/CarveComponents/CarveCardBuddies.js";
-import CarveCardVenuesFollowed from '../../../../components/CarveComponents/CarveCardVenuesFollowed.js';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
 
 
 export default class FeedPage extends Component {
@@ -24,13 +21,7 @@ export default class FeedPage extends Component {
 			pending: true
 		};
 
-		this.handleBuddies = this.handleBuddies.bind(this);
-		this.handleUserAttend = this.handleUserAttend.bind(this);
-		this.handleVenuesFollowed = this.handleVenuesFollowed.bind(this);
-		this.handleUsersFollowed = this.handleUsersFollowed.bind(this);
-		this.handleBuddiesMedia = this.handleBuddiesMedia.bind(this);
-		this.handleVenuesFollowedMedia = this.handleVenuesFollowedMedia.bind(this);
-		this.handleUsersFollowedMedia = this.handleUsersFollowedMedia.bind(this);
+
 
 	}
 
@@ -40,34 +31,46 @@ export default class FeedPage extends Component {
 
 	handleUserAttend = () => {
 		this.setState({content: "carveAttend"});
+
 	};
 
 	handleBuddies = () => {
-		this.setState({content: "buddiesCarves"});
+		this.setState({content: "buddiesMadeCarves"});
+
+	};
+
+	handleBuddiesAt = () => {
+		this.setState({content: "buddiesAttendedCarves"});
+
 	};
 
 	handleVenuesFollowed = () => {
 		this.setState({content: "venuesFollowedCarves"});
+
 	};
 
 	handleUsersFollowed = () => {
 		this.setState({content: "usersFollowedCarves"});
+
 	};
 
 	handleBuddiesMedia = () => {
 		this.setState({content: "buddiesMedia"});
+
 	};
 
 	handleVenuesFollowedMedia = () => {
 		this.setState({content: "venuesFollowedMedia"});
+
 	};
 
 	handleUsersFollowedMedia = () => {
 		this.setState({content: "usersFollowedMedia"});
+
 	};
 
 	render() {
-		let content;
+		let content = <div></div>;
 		/*
 
 
@@ -83,15 +86,23 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Carves where user is an attendee </h2>
 					<Row>
-						<CarveCardUserAttend>Carves:</CarveCardUserAttend>
+						<CarveCollector type={"userAttend"}/>
 					</Row>
 				</Container>;
-		} else if (this.state.content === "buddiesCarves") {
+		} else if (this.state.content === "buddiesAttendedCarves") {
+			content =
+				<Container style={{}}>
+					<h2>Buddies' Attended Carves </h2>
+					<Row>
+						<CarveCollector type={"buddyAttend"}/>
+					</Row>
+				</Container>;
+		} else if (this.state.content === "buddiesMadeCarves") {
 			content =
 				<Container style={{}}>
 					<h2>Buddies' Carves </h2>
 					<Row>
-						<CarveCardBuddies id={localStorage.getItem('userID')}/>
+						<CarveCollector type={"buddy"}/>
 					</Row>
 				</Container>;
 		} else if (this.state.content === "venuesFollowedCarves") {
@@ -99,7 +110,7 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Followed Venues' Carves </h2>
 					<Row>
-						<CarveCardVenuesFollowed id={localStorage.getItem('userID')}/>
+						<CarveCollector type={"venueFollow"}/>
 					</Row>
 				</Container>;
 		} else if (this.state.content === "usersFollowedCarves") {
@@ -108,7 +119,7 @@ export default class FeedPage extends Component {
 					<h2>Followed Users' Carves </h2>
 					<Row>
 						<div>
-							<CarveCardUserFollowed></CarveCardUserFollowed>
+							<CarveCollector type={"userFollow"}/>
 						</div>
 					</Row>
 				</Container>;
@@ -117,7 +128,7 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Buddies' Media </h2>
 					<Row>
-						<MediaGroupFeed med="buddy" type="profile" content_id={1}/>
+						<MediaGroupFeed med="buddy" type="profile" content_id={localStorage.getItem('userId')}/>
 					</Row>
 				</Container>;
 		} else if (this.state.content === "venuesFollowedMedia") {
@@ -125,7 +136,7 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Followed Venues' Media </h2>
 					<Row>
-						<MediaGroupFeed med="venue" type="venue" content_id={1}/>
+						<MediaGroupFeed med="venue" type="venue" content_id={localStorage.getItem('userId')}/>
 					</Row>
 				</Container>;
 		} else if (this.state.content === "usersFollowedMedia") {
@@ -133,7 +144,7 @@ export default class FeedPage extends Component {
 				<Container style={{}}>
 					<h2>Followed Users' Media </h2>
 					<Row>
-						<MediaGroupFeed med="user" type="profile" content_id={1}/>
+						<MediaGroupFeed med="user" type="profile" content_id={localStorage.getItem('userId')}/>
 					</Row>
 				</Container>;
 		} else {
@@ -157,6 +168,8 @@ export default class FeedPage extends Component {
 					>
 						<ToggleButton variant="secondary" onClick={this.handleUserAttend}>Carves Attended</ToggleButton>
 						<ToggleButton variant="secondary" onClick={this.handleBuddies}>Buddies' Carves</ToggleButton>
+						<ToggleButton variant="secondary" onClick={this.handleBuddiesAt}>Buddies' Attended
+							Carves</ToggleButton>
 						<ToggleButton variant="secondary" onClick={this.handleVenuesFollowed}>Venues' Followed
 							Carves</ToggleButton>
 						<ToggleButton variant="secondary" onClick={this.handleUsersFollowed}>Users' Followed
