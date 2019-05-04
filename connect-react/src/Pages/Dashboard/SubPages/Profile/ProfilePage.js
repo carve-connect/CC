@@ -26,7 +26,8 @@ import Sn1 from '../../../../images/Sn1.jpeg';
 import Ph1 from '../../../../images/Ph1.jpeg';
 import Sn4 from '../../../../images/Sn4.jpeg';
 import Ph2 from '../../../../images/Ph2.jpeg';
-import Dr1 from '../../../../images/Dr1.jpeg'
+import Dr1 from '../../../../images/Dr1.jpeg';
+import SnowProfilePic from '../../../../images/Sn3.jpeg';
 import UserApi from "../../../../api/UserApi";
 
 import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
