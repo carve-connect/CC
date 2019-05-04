@@ -29,39 +29,39 @@ carve27,27,5,,open,3,3,5/22/2019,0,"Snowboard,Downhill Ski"
 carve28,28,5,,buddy,6,2,2/15/2019,1,Snowboard
 carve29,29,15,,open,6,2,7/3/2019,0,Downhill Ski
 carve30,30,15,,buddy,6,2,2/15/2019,1,snowmobile
-carve31,1,,water,open,5,3,6/4/2018,1,Surf
-carve32,2,,water,buddy,7,3,8/8/2019,0,Water Ski
-carve33,3,,water,open,5,3,6/4/2018,1,"Surf,Water Ski"
-carve34,4,,water,buddy,7,3,8/8/2019,0,"Surf,Paddleboard"
-carve35,5,,water,open,5,3,6/4/2018,1,Water Ski
-carve36,5,,water,buddy,3,3,5/22/2019,0,Water Ski
-carve37,6,,water,open,7,3,8/8/2019,0,"Surf,Water Ski"
-carve38,7,,water,buddy,5,3,6/4/2018,1,"Surf, Paddleboard"
-carve39,8,,water,open,7,3,8/8/2019,0,Water Ski
-carve40,9,,water,buddy,5,3,6/4/2018,1,Water Ski
-carve41,10,,water,open,7,3,8/8/2019,0,"Surf, Water Ski"
-carve42,11,,water,buddy,6,2,7/3/2019,0,Kayak
-carve43,11,,water,open,5,3,6/4/2018,1,Kayak
-carve44,12,,water,buddy,7,3,8/8/2019,0,"Surf, Water Ski"
-carve45,13,,water,open,5,3,6/4/2018,1,Water Ski
-carve46,14,,water,buddy,7,3,8/8/2019,0,Surf
-carve47,14,,water,open,8,2,8/19/2019,0,Surf
-carve48,15,,water,buddy,5,3,6/4/2018,1,"Surf, Water Ski"
-carve49,16,,water,open,7,3,8/8/2019,0,Water Ski
-carve50,17,,water,buddy,5,3,6/4/2018,1,"Surf, Paddleboard"
-carve51,18,,water,open,7,3,8/8/2019,0,"Surf, Water Ski"
-carve52,19,,water,buddy,5,3,6/4/2018,1,Water Ski
-carve53,20,,water,open,7,3,8/8/2019,0,Surf
-carve54,21,,water,buddy,5,3,6/4/2018,1,"Surf, Water Ski"
-carve55,22,,water,open,7,3,8/8/2019,0,Water Ski
-carve56,23,,water,buddy,5,3,6/4/2018,1,Surf
-carve57,24,,water,open,7,3,8/8/2019,0,"Surf, Water Ski"
-carve58,25,,water,buddy,5,3,6/4/2018,1,Water Ski
-carve59,26,,water,open,7,3,8/8/2019,0,Surf
-carve60,27,,water,buddy,5,3,6/4/2018,1,"Surf, Water Ski"
-carve61,28,,water,open,7,3,8/8/2019,0,Water Ski
-carve62,29,,water,buddy,5,3,6/4/2018,1,Surf
-carve63,30,,water,open,7,3,8/8/2019,0,"Surf, Water Ski"
+carve31,1,21,,open,5,3,6/4/2018,1,Surf
+carve32,2,41,,buddy,7,3,8/8/2019,0,Water Ski
+carve33,3,26,,open,5,3,6/4/2018,1,Surf
+carve34,4,21,,buddy,7,3,8/8/2019,0,"Surf,Paddleboard"
+carve35,5,25,,open,5,3,6/4/2018,1,Water Ski
+carve36,5,41,,buddy,3,3,5/22/2019,0,Water Ski
+carve37,6,42,,open,7,3,8/8/2019,0,Water Ski
+carve38,7,43,,buddy,5,3,6/4/2018,1,"Surf, Paddleboard"
+carve39,8,42,,open,7,3,8/8/2019,0,Water Ski
+carve40,9,43,,buddy,5,3,6/4/2018,1,Water Ski
+carve41,10,27,,open,7,3,8/8/2019,0,"Surf, Water Ski"
+carve42,11,41,,buddy,6,2,7/3/2019,0,Kayak
+carve43,11,41,,open,5,3,6/4/2018,1,Kayak
+carve44,12,24,,buddy,7,3,8/8/2019,0,Surf
+carve45,13,25,,open,5,3,6/4/2018,1,Water Ski
+carve46,14,22,,buddy,7,3,8/8/2019,0,"Surf, Parasail"
+carve47,14,21,,open,8,2,8/19/2019,0,Surf
+carve48,15,27,,buddy,5,3,6/4/2018,1,"Surf, Water Ski"
+carve49,16,27,,open,7,3,8/8/2019,0,Water Ski
+carve50,17,26,,buddy,5,3,6/4/2018,1,"Surf, Paddleboard"
+carve51,18,28,,open,7,3,8/8/2019,0,"Surf, Water Ski"
+carve52,19,28,,buddy,5,3,6/4/2018,1,Water Ski
+carve53,20,22,,open,7,3,8/8/2019,0,Surf
+carve54,21,29,,buddy,5,3,6/4/2018,1,Surf
+carve55,22,41,,open,7,3,8/8/2019,0,Water Ski
+carve56,23,23,,buddy,5,3,6/4/2018,1,Surf
+carve57,24,27,,open,7,3,8/8/2019,0,"Surf, Water Ski"
+carve58,25,41,,buddy,5,3,6/4/2018,1,Water Ski
+carve59,26,24,,open,7,3,8/8/2019,0,Surf
+carve60,27,29,,buddy,5,3,6/4/2018,1,"Surf, Water Ski"
+carve61,28,42,,open,7,3,8/8/2019,0,Water Ski
+carve62,29,23,,buddy,5,3,6/4/2018,1,"Surf, Wakeboard"
+carve63,30,26,,open,7,3,8/8/2019,0,Surf
 carve64,1,,land,buddy,3,3,5/22/2019,0,"Skateboard,BMX"
 carve65,2,,land,open,5,2,4/4/2019,1,Skateboard
 carve66,3,,land,buddy,3,3,5/22/2019,0,BMX
