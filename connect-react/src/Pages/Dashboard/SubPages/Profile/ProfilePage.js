@@ -51,6 +51,7 @@ import Ska3 from "../../../../images/Ska3.jpeg";
 import Ska4 from "../../../../images/Ska4.jpeg";
 import SkPh1 from "../../../../images/SkPh1.jpeg";
 import SkPh2 from "../../../../images/SkPh2.jpeg";
+import JRIDER from "../../../../images/JRIDER.png";
 //photos
 
 
@@ -314,7 +315,9 @@ export default class ProfilePage extends Component {
 			else if (userInfo.photo === "BALIGA")
 				pic = BALIGA;
             else if (userInfo.photo === "dogskate")
-                pic = dogskate;
+				pic = dogskate;
+			else if (userInfo.photo === "JRIDER")
+				pic = JRIDER;
             else if (userInfo.photo === "dogsurf")
                 pic = dogsurf;
 			else if (userInfo.photo === "FRED")
