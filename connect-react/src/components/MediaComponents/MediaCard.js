@@ -12,12 +12,15 @@ export default class MediaCard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            show: false,
+            editShow: false,
+            deleteConfirmationShow: false,
             description: ""
         };
         this.editMedia = this.editMedia.bind(this);
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
+        this.handleEditShow = this.handleEditShow.bind(this);
+        this.handleEditClose = this.handleEditClose.bind(this);
+        this.handleDeleteConfirmationShow = this.handleDeleteConfirmationShow.bind(this);
+        this.handleDeleteConfirmationClose = this.handleDeleteConfirmationClose.bind(this);
         this.deleteMedia = this.deleteMedia.bind(this);
     }
 
@@ -27,12 +30,20 @@ export default class MediaCard extends Component {
         return (description.length > 0);
     }
 
-    handleClose() {
-        this.setState({ show: false });
+    handleEditClose() {
+        this.setState({ editShow: false });
     }
     
-    handleShow() {
-        this.setState({ show: true });
+    handleEditShow() {
+        this.setState({ editShow: true });
+    }
+
+    handleDeleteConfirmationClose() {
+        this.setState({ deleteShow: false });
+    }
+    
+    handleDeleteConfirmationShow() {
+        this.setState({ deleteShow: true });
     }
 
     handleChange = event => {
@@ -52,20 +63,20 @@ export default class MediaCard extends Component {
             url: this.props.media.url, 
             description: this.state.description
         });
-        this.handleClose();
+        this.handleEditClose();
     }
 
     deleteMedia(e) {
-
         axios.delete(`http://localhost:8000/media/${e}`, {});
 
+        this.handleDeleteConfirmationClose()
     }
 
     render(){
         let med = this.props.media;
         let editModal =
                     <div>
-                        <Modal centered show={this.state.show} onHide={this.handleClose}>
+                        <Modal centered show={this.state.editShow} onHide={this.handleEditClose}>
                         <Modal.Header>
                             Edit Media
                         </Modal.Header>
@@ -76,7 +87,7 @@ export default class MediaCard extends Component {
                             </FormGroup>
                         </Container>
                         <Modal.Footer>
-                            <Button variant="secondary" onClick={this.handleClose}>
+                            <Button variant="secondary" onClick={this.handleEditClose}>
                             Exit
                             </Button>
                             <Button onClick={this.editMedia} disabled={!this.validateForm()} type = "submit" variant="primary">
@@ -94,7 +105,7 @@ export default class MediaCard extends Component {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu style={{minWidth: '5rem'}}>
-                                <Dropdown.Item onClick={this.handleShow}>
+                                <Dropdown.Item onClick={this.handleEditShow}>
                                     <OverlayTrigger overlay={
                                         <Tooltip>Edit</Tooltip>
                                     }>
@@ -103,7 +114,7 @@ export default class MediaCard extends Component {
 
                                 </Dropdown.Item>
 
-                                <Dropdown.Item onClick={() => this.deleteMedia(med.media_id)}>
+                                <Dropdown.Item onClick={this.handleDeleteConfirmationShow}>
                                     <OverlayTrigger overlay={
                                         <Tooltip>Delete</Tooltip>
                                     }>
@@ -116,6 +127,26 @@ export default class MediaCard extends Component {
         else{
             dropdown = <></>
         }
+        let deleteConfirmationModal =   
+            <div>
+                <Modal centered show={this.state.deleteShow} onHide={this.handleDeleteConfirmationClose}>
+                <Container style={{marginLeft: '1rem'}}>
+                    <Row>
+                     <h3>Are you sure?</h3>
+                    </Row>
+                    <Row>
+                        <FormGroup >
+                            <Button variant="secondary" onClick={this.handleDeleteConfirmationClose}>
+                            Nevermind
+                            </Button>
+                            <Button style={{marginLeft: '1rem'}} onClick={() => this.deleteMedia(med.media_id)} type = "submit" variant="primary">
+                            Yes
+                            </Button>
+                        </FormGroup>
+                    </Row>
+                </Container>
+                </Modal>
+            </div>;
     let creatorName = "";
     /*
     if (props.users.length > 0) {
@@ -132,6 +163,7 @@ export default class MediaCard extends Component {
 
         <Card style={{width: '30rem', marginBottom: '2rem'}}>
         {editModal}
+        {deleteConfirmationModal}
         <Card.Header style={{padding: 0}}>
         Media {this.props.media.media_id} 
         {dropdown}
