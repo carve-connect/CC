@@ -38,12 +38,6 @@ render() {
 			<Col xs={1} style={{ paddingLeft: "0px",paddingRight: '0px', backgroundColor: "grey",bordered: '0.5px solid rgba(0, 0, 0, 0.5)'}}>
 				<ListGroup variant="flush" defaultActiveKey="1"  style={{ paddingRight: '0px'}}>
 
-					<ListGroup.Item key={menuItems[1]}   style={{backgroundColor: "grey", color: "white"	,fontWeight:'bold',
-						fontFamily: 'monospace', paddingRight: '0px',bordered: '0.5px solid rgba(0, 0, 0, 0.5)'}} onClick={this.handleClick0}>
-						{"Compose   "}
-						<i className ="fa fa-pencil text-white" />
-					</ListGroup.Item>
-
 					<ListGroup.Item key={menuItems[2]} action style={{
 						backgroundColor: "grey", color: "white", fontWeight: 'bold',
 						fontFamily: 'monospace', paddingTop: '5px',bordered: '0.5px solid rgba(0, 0, 0, 0.5)'}}>
