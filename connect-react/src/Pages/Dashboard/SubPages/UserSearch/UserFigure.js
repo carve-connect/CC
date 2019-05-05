@@ -17,7 +17,7 @@ const UserFigure = (props) => {
 
 
             <Figure.Caption style = {{textAlign: 'center'}}>
-                <NameDropdown link={props.href} name={props.name}/>
+                <NameDropdown id={props.id} link={props.href} name={props.name}/>
             </Figure.Caption>
         </Figure>
     );

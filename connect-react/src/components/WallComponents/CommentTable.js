@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {Button, Col, Form, Row, Table} from 'react-bootstrap';
 import LikeBar from '../LikeBar';
-
+import NameDropdown from '../NameDropdown'
 
 export default class CommentTable extends Component {
     constructor(props){
@@ -82,7 +82,7 @@ export default class CommentTable extends Component {
                     if (com.media == this.props.media.media_id) {
                         return (
                             <tr>
-                                <td>{poster}</td>
+                                <td><NameDropdown id={com.poster} link={`/dashboard/profile/${com.poster}`} name={poster}/></td>
                                 <td>{com.comment}</td>
                                 <td>
                                     <LikeBar media={this.props.media} comment={com}/>
@@ -96,7 +96,7 @@ export default class CommentTable extends Component {
                     if (com.carve == this.props.carve.carve_id) {
                         return (
                             <tr>
-                                <td>{poster}</td>
+                                <td><NameDropdown id={com.poster} link={`/dashboard/profile/${com.poster}`} name={poster}/></td>
                                 <td>{com.comment}</td>
                                 <td>
                                     <LikeBar media={this.props.media} comment={com}/>

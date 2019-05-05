@@ -192,7 +192,7 @@ class UsersPage extends Component {
 
             row.push(
                 <Col key={k}>
-                    <UserFigure name={users[k].username} img={pic} href={'/dashboard/profile/' + users[k].user_id}/>
+                    <UserFigure id={users[k].user_id} name={users[k].username} img={pic} href={'/dashboard/profile/' + users[k].user_id}/>
                 </Col>
             );
         }

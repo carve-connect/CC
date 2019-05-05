@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {Button, Col, Form, Row, Table} from 'react-bootstrap';
 import LikeBar from '../LikeBar';
+import NameDropdown from '../NameDropdown';
 
 
 export default class WallPost extends Component {
@@ -55,12 +56,15 @@ export default class WallPost extends Component {
         const {comment} = this.state;
         let commentList;
 
+        
+
         if(this.state.comments.length > 0){
             commentList = this.state.comments.map((com, index) => {
+
                 if(com.profile == this.props.profile){
                     return (
                         <tr>
-                            <td>{com.poster}</td>
+                            <td><NameDropdown link={`/dashboard/profile/${com.poster}`} id={com.poster} name={com.poster}/></td>
                             <td>{com.comment}</td>
                             <td>
                               <LikeBar comment={com}/>

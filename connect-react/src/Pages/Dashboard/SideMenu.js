@@ -84,8 +84,11 @@ class SideMenu extends Component {
 						backgroundColor: "seashell", color: "green",
                         paddingRight: '0px', width: "125%",
 					}}>
-                        <NameDropdown link={`/dashboard/profile/${this.state.buddies[index].user_id2}`} name= {this.state.buddies[index].username} />
-						<Image src={pic1}roundedCircle style={{ width: "20px", height: "20px"}}/>
+					<Row>
+						<NameDropdown id={this.state.buddies[index].user_id2} link={`/dashboard/profile/${this.state.buddies[index].user_id2}`} name= {this.state.buddies[index].username} />
+						<Image src={pic1} roundedCircle style={{ width: "20px", height: "20px"}}/>
+					</Row>
+                        
 					</ListGroup.Item>
 				)
 			});

@@ -6,6 +6,7 @@ import CommentTable from '../WallComponents/CommentTable';
 import MediaLikes from './MediaLikes';
 import {Button, Dropdown, Form, FormGroup, Modal, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import axios from 'axios';
+import NameDropdown from '../NameDropdown'
 
 
 export default class MediaCard extends Component {
@@ -195,7 +196,8 @@ export default class MediaCard extends Component {
                 <Card.Body>
                     <Container>
                         <Row style = {{marginTop: '-1rem', borderBottom:'1px dashed lightgrey'}}>
-                            <Card.Link href="#">{this.props.media.poster} {creatorName}</Card.Link>
+                            <NameDropdown id={this.props.media.poster} link={`/dashboard/profile/${this.props.media.poster}`} name={creatorName}/>
+                           
                             :{this.props.media.description}
                         </Row>
                         <Row>
