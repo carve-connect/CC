@@ -16,28 +16,31 @@ router.get('/', (req,res) => {
 // Creates a new carve_attendees
 router.post('/', (req,res) => {
     const {carve,user,userType} = req.body;
-
+    functions.carveAttendeesPost([carve,user,userType], res);
 });
 
 // updates all carve_attendeess
 router.put('/', (req,res) => {
+    functions.carveAttendeesPut(res);
 
 });
 
 // updates all carve_attendeess
 router.patch('/', (req,res) => {
+    functions.carveAttendeesPatch(res);
 
 });
 
 // deletes all carve_attendees
 router.delete('/', (req,res) => {
+    functions.carveAttendeesDelete(res);
 
 });
 
 // Grab specific carve_attendees by their id
 router.get('/:carve_attendeesId', (req,res) => {
     const carve_attendeesId = req.params.carve_attendeesId;
-
+    functions.carveAttendeesDelete(carve_attendeesId, res);
 });
 
 // updates carve_attendee
@@ -49,7 +52,7 @@ router.get('/:carve_attendeesId', (req,res) => {
 // deletes carve_attendee
 router.delete('/:carve_attendeesId', (req,res) => {
     const carve_attendeesId = req.params.carve_attendeesId;
-
+    functions.carveAttendeesDelete(carve_attendeesId, res);
 });
 
 
