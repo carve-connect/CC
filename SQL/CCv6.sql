@@ -436,6 +436,14 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`view1`
 );
 
 -- -----------------------------------------------------
+-- Placeholder table for view `CCv6`.`view2`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CCv6`.`view2`
+(
+    `id` INT
+);
+
+-- -----------------------------------------------------
 -- procedure add_user
 -- -----------------------------------------------------
 
@@ -2856,6 +2864,14 @@ USE `CCv6`;
 CREATE OR REPLACE VIEW `view1` AS
 select type
 from likes;
+
+-- -----------------------------------------------------
+-- View `CCv6`.`view2`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `CCv6`.`view2`;
+DROP VIEW IF EXISTS `CCv6`.`view2`;
+USE `CCv6`;
+
 SET SQL_MODE = '';
 DROP USER IF EXISTS nodeuser;
 SET SQL_MODE =
