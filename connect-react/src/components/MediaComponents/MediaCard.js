@@ -13,7 +13,8 @@ export default class MediaCard extends Component {
         super(props);
         this.state = {
             show: false,
-            description: ""
+            description: "",
+            users: []
         };
         this.editMedia = this.editMedia.bind(this);
         this.handleShow = this.handleShow.bind(this);
@@ -40,6 +41,19 @@ export default class MediaCard extends Component {
 			[event.target.id]: event.target.value
 		});
     };
+
+    componentDidMount() {
+        axios.get(`http://localhost:8000/users`)
+            .then(res => {
+                //alert("carve:" + JSON.stringify(res.data.results));
+                //console.log("users: ", JSON.stringify(res.data.users[0][0].username));
+                //alert(JSON.stringify(res.data.results[0]));
+                this.setState({
+                    users: res.data.users[0]
+                });
+
+            });
+    }
 
     editMedia(e){
         e.preventDefault();
@@ -89,14 +103,14 @@ export default class MediaCard extends Component {
         
 
     let creatorName = "";
-    /*
-    if (props.users.length > 0) {
-        for (var c = 0; c < props.users.length; c++) {
-            if (props.users[c].user_id == props.media.poster)
+
+        if (this.state.users.length > 0) {
+            for (var c = 0; c < this.state.users.length; c++) {
+                if (this.state.users[c].user_id == this.props.media.poster)
                 creatorName = this.state.users[c].username;
         }
     }
-*/
+
     let show = false;
         let ed = <div></div>;
         if (med.creator === localStorage.getItem('userId')) {
@@ -155,7 +169,7 @@ export default class MediaCard extends Component {
                     </Container>
                 </Card.Body>
                {/* comment table would be here */}
-                <CommentTable media={this.props.media} carve={""} type={"media"}/>
+            <CommentTable media={this.props.media} carve={""} type={"media"} users={this.state.users}/>
                 <Card.Footer style = {{fontSize: '10px'}}><em>Create_Time: {this.props.media.time}</em></Card.Footer>
             </Card>
 

@@ -6,7 +6,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Container from "react-bootstrap/Container";
 import CarveAttendRequestModal from "../NotificationComponents/CarveAttendRequestModal";
 import CarveInviteModal from "../NotificationComponents/CarveInviteModal";
-import CarveLikes from "../CarveComponents/CarveLikes";
+import CarveLikes from "./CarveLikes";
 import CreateCarveMediaModal from "../CarveComponents/CreateCarveMediaModal";
 import CommentTable from '../WallComponents/CommentTable';
 import MediaGroup from "../MediaComponents/MediaGroup";
