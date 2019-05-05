@@ -13,7 +13,8 @@ import mountain from "../../../../images/SkRs8.jpeg";
 import skatedude from "../../../../images/SkPk1.jpeg";
 import para from "../../../../images/AF1.jpeg";
 import {Nav} from 'react-bootstrap';
-import {Container} from 'react-bootstrap'
+import {Container} from 'react-bootstrap';
+import UserApi from "../../../../api/UserApi";
 
 
 export default class VenueListPage extends Component {
@@ -25,10 +26,21 @@ export default class VenueListPage extends Component {
             venues: {},
             venuesLength: 0,
             content: "all",
+            followList: [],
         };
         this.createSnowRow = this.createSnowRow.bind(this);
         this.handleAllVenues = this.handleAllVenues.bind(this);
         this.handleFollowingVenues = this.handleFollowingVenues.bind(this);
+    }
+
+    getFollowingVenues() {
+        UserApi.getFollowingVenues(localStorage.getItem('userId'))
+            .then(venues => {
+                this.setState({
+                    followList: venues
+
+                });
+            });
     }
 
     handleAllVenues(){
@@ -214,6 +226,17 @@ export default class VenueListPage extends Component {
 
                 </div>;
         }
+        //i'll keep working on this
+        else if(this.state.content == "following"){
+            let followList;
+             followList = this.state.followList.map((venue) =>{
+                return (
+                    <div>
+                        {venue.venue_id}
+                    </div>
+                )
+            });
+        }
 
         if(this.state.venuesLength > 0){
 
@@ -228,7 +251,7 @@ export default class VenueListPage extends Component {
                             <Button onClick={this.handleAllVenues} eventKey="all" variant="outline-primary">All Venues</Button>
                         </Nav.Item>
                         <Nav.Item style = {{marginTop: '1rem'}} >
-                            <Button onClick={this.handleFollowingVenues} eventKey="following" variant="outline-primary">Following</Button>
+                            <Button disabled onClick={this.handleFollowingVenues} eventKey="following" variant="outline-primary">Following</Button>
                         </Nav.Item>
                     </Nav>
                 <div style = {{marginTop: '20px', borderBottom: '2px solid lightgray'}}> </div>
