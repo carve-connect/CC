@@ -56,9 +56,8 @@ export default class MediaCard extends Component {
     }
 
     deleteMedia(e) {
-        e.preventDefault();
 
-        axios.delete(`http://localhost:8000/media/${this.props.media.media_id}`, {});
+        axios.delete(`http://localhost:8000/media/${e}`, {});
 
     }
 
@@ -104,7 +103,7 @@ export default class MediaCard extends Component {
 
                                 </Dropdown.Item>
 
-                                <Dropdown.Item onClick={this.deleteMedia}>
+                                <Dropdown.Item onClick={() => this.deleteMedia(med.media_id)}>
                                     <OverlayTrigger overlay={
                                         <Tooltip>Delete</Tooltip>
                                     }>
