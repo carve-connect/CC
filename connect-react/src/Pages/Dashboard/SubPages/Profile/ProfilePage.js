@@ -9,32 +9,41 @@ import BuddyRequestModal from "../../../../components/NotificationComponents/Bud
 import MediaGroup from "../../../../components/MediaComponents/MediaGroup";
 import ProfileInfoCard from './ProfileInfoCard';
 import Container from 'react-bootstrap/Container';
-import CarveCardUserCreate from '../../../../components/CarveComponents/CarveCardUserCreate';
 import WallPost from '../../../../components/WallComponents/WallPost';
 import CreateMediaModal from "../../../../components/MediaComponents/CreateMediaModal";
 //photos
+
+//import { imgObj } from "images/images";
 import dogskate from '../../../../images/dogskate.jpeg';
-import dogphoto from '../../../../images/dogphoto.jpeg';
+import SEAN from '../../../../images/SEAN.jpeg';
+import DHRUV from '../../../../images/DHRUV.jpg';
+import FRED from '../../../../images/FRED.jpeg';
+import BALIGA from '../../../../images/BALIGA.png';
+import SnMb1 from '../../../../images/SnMb1.jpeg'
 import dogsurf from '../../../../images/dogsurf.jpeg';
 import dog from '../../../../images/dog.jpg';
-import big_wave from "../../../../images/big_wave.jpeg";
-import SnowProfilePic from '../../../../images/snowboard-profile-pic.jpg';
-import helmPhoto from '../../../../images/helmPhoto.jpeg';
-import upsidedown_snow from '../../../../images/upsidedown_snow.jpeg';
-import photosnow from '../../../../images/photosnow.jpeg';
-import droneguy from '../../../../images/drone guy.jpeg'
+import SkyDive1 from '../../../../images/SkyDive1.jpeg';
+import Su1 from "../../../../images/Su1.jpeg";
+import Sn1 from '../../../../images/Sn1.jpeg';
+import Ph1 from '../../../../images/Ph1.jpeg';
+import Sn4 from '../../../../images/Sn4.jpeg';
+import Ph2 from '../../../../images/Ph2.jpeg';
+import Dr1 from '../../../../images/Dr1.jpeg';
+import SnowProfilePic from '../../../../images/Sn3.jpeg';
 import UserApi from "../../../../api/UserApi";
+
+import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
 
 
 export default class ProfilePage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			userId: props.match.params.number,
+			userId: Number(props.match.params.number),
 			userInfo: {},
 			userInfoLength: 0,
 			isUserLoggedIn: props.match.params.number === localStorage.getItem('userId'),
-			pic: SnowProfilePic,
+			pic: null,
 			check: true,
 			show: false,
 			show1: false,
@@ -56,24 +65,22 @@ export default class ProfilePage extends Component {
 		this.handleShow = this.handleShow.bind(this);
 		this.handleCreateMedia = this.handleCreateMedia.bind(this);
 		this.handleClose = this.handleClose.bind(this);
-        this.addBuddy = this.addBuddy.bind(this);
+		this.addBuddy = this.addBuddy.bind(this);
 		this.getUserInfo = this.getUserInfo.bind(this);
 		this.handleCarves = this.handleCarves.bind(this);
 		this.handleMedia = this.handleMedia.bind(this);
 		this.handlePosts = this.handlePosts.bind(this);
 		this.setProfilePic = this.setProfilePic.bind(this);
-        this.followUser = this.followUser.bind(this);
-        this.unFollowUser = this.unFollowUser.bind(this);
-        this.addBuddy = this.addBuddy.bind(this);
-        this.removeBuddy = this.removeBuddy.bind(this);
-
+		this.followUser = this.followUser.bind(this);
+		this.unFollowUser = this.unFollowUser.bind(this);
+		this.addBuddy = this.addBuddy.bind(this);
+		this.removeBuddy = this.removeBuddy.bind(this);
 	}
 
 	// Retrieves info before component is mounted to the DOM
 	componentDidMount() {
 		this.getUserInfo();
 		//this.getUserCounts();
-		//this.setProfilePic();
 	}
 
 	handleClick = () => {
@@ -153,8 +160,26 @@ export default class ProfilePage extends Component {
 
     getUserInfo() {
         // Getting the user id from the url param
-
         if (this.state.userId > 0) {
+
+          /*
+        	axios.get(`http://localhost:8000/users/${this.state.userId}`)
+						.then(res => {
+							console.log('USER INFO RESULTS:', res);
+							this.setState({
+									userInfo: res.data.users[0][0],
+									userInfoLength: Object.keys(res.data.users[0][0]).length,
+							});
+						})
+						.then(() => {
+							this.getBuddy();
+							this.getFollowingUsers();
+							this.getFollowers();
+							this.getFollowingVenues();
+							this.setProfilePic();
+						});
+				}*/
+
             axios.get(`http://localhost:8000/users/${this.state.userId}`)
                 .then(res => {
                     this.setState({
@@ -170,37 +195,25 @@ export default class ProfilePage extends Component {
             this.getFollowingUsers();
             this.getFollowers();
             this.getFollowingVenues();
+
         }
     }
 
+    // Sets users profile picture after we grab the users info
     setProfilePic() {
-        const {userInfo} = this.state;
-        let pic;
-        if (userInfo.photo === "dogphoto")
-            pic = dogphoto;
-        else if (userInfo.photo === "big_wave")
-            pic = big_wave;
-        else if (userInfo.photo === "dogskate")
-            pic = dogskate;
-        else if (userInfo.photo === "dogsurf")
-            pic = dogsurf;
-        else if (userInfo.photo === "upsidedown_snow")
-            pic = upsidedown_snow;
-        else if (userInfo.photo === "dog")
-            pic = dog;
-        else if (userInfo.photo === "helmPhoto")
-            pic = helmPhoto;
-        else if (userInfo.photo === "photosnow")
-            pic = photosnow;
-        else if (userInfo.photo === "droneguy")
-            pic = droneguy;
 
-        else
-            pic = SnowProfilePic;
+      /*
+    	const { photo } = this.state.userInfo;
+    	let pic = imgObj[photo];
 
-        this.setState({
-            pic: pic
-        })
+    	// Case: We do not find a photo from the user's profile info
+    	if(pic == 'undefined' || photo === null) {
+    		pic = imgObj['snowboard-profile-pic'];
+			}
+
+    	// Sets profile pic to pic we found
+    	this.setState({pic});
+      */
     }
 
 
@@ -274,12 +287,44 @@ export default class ProfilePage extends Component {
 			const {userInfo, isUserLoggedIn} = this.state;
 			const profilePrefix = isUserLoggedIn ? 'My ' : `${this.state.userInfo.username}'s `;
 
-
+            let pic;
+			if (userInfo.photo === "SEAN")
+				pic = SEAN;
+			else if (userInfo.photo === "DHRUV")
+				pic = DHRUV;
+			else if (userInfo.photo === "BALIGA")
+				pic = BALIGA;
+            else if (userInfo.photo === "dogskate")
+                pic = dogskate;
+            else if (userInfo.photo === "dogsurf")
+                pic = dogsurf;
+			else if (userInfo.photo === "FRED")
+				pic = FRED;
+            else if (userInfo.photo === "dog")
+                pic = dog;
+			else if (userInfo.photo === "Su1")
+				pic = Su1;
+			else if (userInfo.photo === "Sn1")
+				pic = Sn1;
+			else if (userInfo.photo === "Sn4")
+				pic = Sn4;
+			else if (userInfo.photo === "Ph1")
+				pic = Ph1;
+			else if (userInfo.photo === "Ph2")
+				pic = Ph2;
+			else if (userInfo.photo === "SnMb1")
+				pic = SnMb1;
+			else if (userInfo.photo === "SkyDive1")
+				pic = SkyDive1;
+			else if (userInfo.photo === "Dr1")
+				pic = Dr1;
+            else
+                pic = SnowProfilePic;
 
 			// Make button options for top right corner
 			let options;
 			let content;
-            let followButton;
+			let followButton;
 
 			if (isUserLoggedIn) {
 
@@ -316,8 +361,6 @@ export default class ProfilePage extends Component {
 
 			if (this.state.content === "media") {
 				content =
-
-
 					<Container show={this.state.media} style={{paddingLeft: "15%", width: "150%", paddingTop: "1%"}}>
 						<Row style={{paddingLeft: "50%", height: "2%"}}>
 							<h2 style={{margin: '3rem'}}>My Media</h2>
@@ -338,7 +381,6 @@ export default class ProfilePage extends Component {
 					</Container>;
 			} else if (this.state.content === "carves") {
 				content =
-
 					<Container style={{paddingTop: "1%", width: "200%"}} show={this.state.carves}>
 						<Col>
 							<Row style={{paddingLeft: "53%"}}>
@@ -347,7 +389,7 @@ export default class ProfilePage extends Component {
 									Carve</Button>
 							</Row>
 							<Row>
-								<CarveCardUserCreate id={this.state.userId}/>
+								<CarveCollector type={"userCreate"} id={this.state.userId}/>
 							</Row>
 						</Col>
 					</Container>;
@@ -368,8 +410,8 @@ export default class ProfilePage extends Component {
 					<BuddyRequestModal id={this.state.userInfo.user_id} show={this.state.show2}
 									   handleClose={this.handleClose2}/>
 
-					<Row style={{backgroundColor: "gainsboro", height: "1%", width: "200%"}}>
-                        <div style={{marginLeft: "3%", marginBottom: '2%'}}>
+					<Row style={{backgroundColor: "gainsboro", height: ".1%", width: "150%"}}>
+						<div style={{marginLeft: "3%", marginBottom: '2%', height: ".1%"}}>
 							<h1>{profilePrefix} Profile</h1>
 						</div>
 						<div>
@@ -380,21 +422,19 @@ export default class ProfilePage extends Component {
 
 					{/* This is the row that will hold the profile picture and the information */}
 					<Row style={{
-						width: "200%",
+						width: "120%",
 						backgroundColor: "gainsboro",
-						paddingTop: "1%",
-						justify: 'flex-start',
-						paddingLeft: "2%"
+
 					}}>
+						<Col style={{width: "100%"}}>
+							<ProfileInfoCard style={{width: "100%"}} loggedIn={isUserLoggedIn}
+                                             handleShow={this.handleShow}
+                                             close={this.handleClose}
+                                             show={this.state.show} refresh={this.getUserInfo} user={userInfo}
+                                             img={pic} id={isUserLoggedIn} bud={this.state.buddies}
+                                             fol={this.state.followers} foll={this.state.following}
+                                             vfol={this.state.vFollowing}/>
 
-						<ProfileInfoCard style={{}} loggedIn={isUserLoggedIn} handleShow={this.handleShow}
-                                         close={this.handleClose}
-                                         show={this.state.show} refresh={this.getUserInfo} user={userInfo}
-                                         img={this.state.pic} id={isUserLoggedIn} bud={this.state.buddies}
-                                         fol={this.state.followers} foll={this.state.following}
-                                         vfol={this.state.vFollowing}/>
-
-						<Col style={{backgroundColor: "gainsboro", width: "75%"}}>
 						</Col>
 					</Row>
 

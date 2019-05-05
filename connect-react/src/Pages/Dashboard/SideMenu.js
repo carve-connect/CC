@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from "react-bootstrap/Row";
-import pic1 from "../../images/snow.jpeg"
+import pic1 from "../../images/Sn1.jpeg"
 import Image from 'react-bootstrap/Image'
 import axios from 'axios';
 import {Link} from "react-router-dom";
@@ -76,6 +76,7 @@ class SideMenu extends Component {
 
 		if(this.state.buddies.length > 0) {
 			buddiesList = this.state.buddies.map((buddy, index) => {
+
 
 				return (
 					<ListGroup.Item key={index} action href={`/dashboard/profile/${this.state.buddies[index].user_id2}`} style={{

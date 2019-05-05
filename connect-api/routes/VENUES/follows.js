@@ -13,7 +13,7 @@ router.get('/', (req,res) => {
 	// Execute the query
 	con.query(follow_list, (err, results) => {
 		if (err) throw err;
-		res.status(200).jsonp({results}).end;
+		res.status(200).jsonp({results}).end();
 	})
 });
 
@@ -27,7 +27,7 @@ router.post('/', (req,res) => {
 	// Execute the query to insert into the database
 	con.query(new_follow,[usr, ven, ty[0]], (err, results) => {
 		if (err) throw err;
-		res.status(201).jsonp({results}).end;
+		res.status(201).jsonp({results}).end();
 	})
 });
 
@@ -38,7 +38,7 @@ router.delete('/', (req,res) => {
 	// Execute the delete query
 	con.query(delete_follows, (err, results) => {
 		if (err) throw err;
-		res.status(201).jsonp({results}).end;
+		res.status(201).jsonp({results}).end();
 	})
 });
 
@@ -50,7 +50,7 @@ router.get('/:followId', (req,res) => {
 	// Execute the get query
 	con.query(get_follow, [followId],(err, results) => {
 		if (err) throw err;
-		res.status(200).jsonp({results}).end;
+		res.status(200).jsonp({results}).end();
 	})
 });
 
@@ -64,7 +64,7 @@ router.put('/:followId', (req,res) => {
 	// Execute the update query
     con.query(update_follow_venue,[followId, ven, usr],(err, results) => {
         if (err) throw err;
-        res.status(201).jsonp({results}).end;
+        res.status(201).jsonp({results}).end();
     })
 });
 
@@ -78,7 +78,7 @@ router.patch('/:followId', (req,res) => {
 	// Execute the update query
 	con.query(update_follow_venue,[followId, usr, ven],(err, results) => {
 		if (err) throw err;
-		res.status(201).jsonp({results}).end;
+		res.status(201).jsonp({results}).end();
 	})
 });
 
@@ -90,7 +90,7 @@ router.delete('/:followId', (req,res) => {
 	// Execute the delete query
 	con.query(delete_follows, [followId],(err, results) => {
 		if (err) throw err;
-		res.status(201).jsonp({msg:'follow deleted'}).end;
+		res.status(201).jsonp({msg:'follow deleted'}).end();
 	})
 });
 

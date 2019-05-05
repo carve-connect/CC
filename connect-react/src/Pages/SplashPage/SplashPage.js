@@ -3,23 +3,23 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
-import Snow from '../../images/winter.jpeg';
-import Skate from '../../images/skater1.jpeg';
-import Surf from '../../images/surf1.jpg';
-import dirt from '../../images/mountain bike1.jpeg';
-import drone from '../../images/drone guy1.jpeg';
+import Snow from '../../images/SkRs5.jpeg';
+import Skate from '../../images/Ska3.jpeg';
+import Surf from '../../images/Su2.jpg';
+import dirt from '../../images/MB3.jpeg';
+import drone from '../../images/Dr2.jpeg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import dogskate from '../../images/dogskate.jpeg';
-import dogphoto from '../../images/dogphoto.jpeg';
+import dogphoto from '../../images/SEAN.jpeg';
 import dogsurf from '../../images/dogsurf.jpeg';
 import FeaturedUserCard from '../../components/ProfileComponents/FeaturedUserCard';
 import CarouselCaption from 'react-bootstrap/CarouselCaption';
 import TopNav1 from "./Navbarsplash";
-import beach from '../../images/beach.jpeg';
-import mountain from '../../images/mountain.jpeg';
-import skate from '../../images/skatedude.jpeg';
+import beach from '../../images/Be1.jpeg';
+import mountain from '../../images/SkRs8.jpeg';
+import skate from '../../images/Ska4.jpeg';
 
 class SplashPage extends Component {
     render() {
@@ -244,7 +244,7 @@ class SplashPage extends Component {
                       <div className="embed-responsive embed-responsive-16by9">
                           <iframe width="560" height="315" src="https://www.youtube.com/embed/tBqGrY_qTRA"
                                   frameBorder="0"
-                                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                  allow=""
                                   allowFullScreen></iframe>
                       </div>
                   </div>

@@ -60,6 +60,7 @@ export default class MediaGroup extends Component {
                 mediaListB = this.state.mediaInfoB.map((media, index) => {
                     return (
                         <Col className="col-sm">
+
                             <MediaCard type={this.props.type} id={this.props.content_id} media={media}/>
                         </Col>
                     )
@@ -92,16 +93,16 @@ export default class MediaGroup extends Component {
             if (this.state.mediaInfoUF.length > 0) {
                 mediaListUF = this.state.mediaInfoUF.map((media, index) => {
                     return (
-                        <Col className="col-sm">
+
                             <MediaCard type={this.props.type} id={this.props.content_id} media={media}/>
-                        </Col>
+
                     )
                 });
             }
             return (
-                <>
+                <div>
                     {mediaListUF}
-                </>
+                </div>
             )
         }
 

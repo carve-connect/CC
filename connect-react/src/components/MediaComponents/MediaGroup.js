@@ -14,6 +14,7 @@ export default class MediaGroup extends Component {
             venue: 0,
             url: "",
             media: 0,
+            media_id: 0,
             mediaInfo: {},
             mediaComments: {},
             users: [],
@@ -21,11 +22,12 @@ export default class MediaGroup extends Component {
             time: "",
             comment: ""
         };
+        this.deleteMedia = this.deleteMedia.bind(this);
     }
 
 
 
-    componentWillMount() {
+    componentDidMount() {
         axios.get(`http://localhost:8000/media/${this.props.type}/${this.props.content_id}/`)
             .then(res => {
                 this.setState({
@@ -45,6 +47,17 @@ export default class MediaGroup extends Component {
 
             });
         }
+        
+
+
+        deleteMedia(id){
+            const type = this.props.type;
+            axios.delete(`http://localhost:8000/media/${type}/${id}`)
+            .then(res => {
+                console.log(res);
+                console.log(res.data)
+            })
+        }
 
 
 
@@ -52,11 +65,12 @@ export default class MediaGroup extends Component {
         let mediaList;
         
         if(this.state.mediaInfo.length > 0){
-            mediaList = this.state.mediaInfo.map((media, index) => {
+            mediaList = this.state.mediaInfo.map((media) => {
+
                 return (
                     <Col className="col-sm">
-                        <MediaCard type={this.props.type} id={this.props.content_id} media={media}
-                                   users={this.state.users}/>
+                        <h2>Media for {this.props.type} {this.props.content_id}</h2>
+                        <MediaCard delete={this.deleteMedia} media={media} users={this.state.users}/>
                     </Col>
                 )
             });

@@ -20,11 +20,31 @@ router.get('/', (req,res) => {
 // Grabs all open carves from db
 router.get('/open', (req,res) => {
     // Create query to get all open carves from the database
-    carve_list = "CALL get_open_carves()";
+    carv = "CALL get_open_carves";
+    user = "select username from all_carves left join all_users on all_carves.creator = all_users.user_id where all_carves.type = 'open';";
+    carves_list = "select * from all_carves left join all_carve_attendees on all_carves.carve_id = all_carve_attendees.carve left join all_users on all_carve_attendees.user = all_users.user_id where all_carves.type = 'open';";
+    carves_comments = "select * from all_carves left join all_comments on all_carves.carve_id = all_comments.carve left join  all_likes on all_comments.comment_id = all_likes.comment where all_carves.type = 'open';";
+    carves_media = "select * from all_carves left join all_media on all_carves.carve_id = all_media.carve left join all_likes on all_media.media_id = all_likes.media left join all_comments on all_media.media_id = all_comments.media left join LIKES on all_comments.comment_id = LIKES.comment where all_carves.type = 'open';";
+    carve_attendees_list = "SELECT * from all_carve_attendees left join all_users on all_carve_attendees.user = all_users.user_id";
     // Execute the query to pull from the database
-    con.query(carve_list, (err, results) => {
+    con.query(carve_attendees_list, (err, atten) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end();
+        con.query(user, (err, users) => {
+            if (err) throw err;
+            con.query(carv, (err, c) => {
+                if (err) throw err;
+                con.query(carves_list, (err, carves) => {
+        if (err) throw err;
+                    con.query(carves_comments, (err, comments) => {
+                        if (err) throw err;
+                        con.query(carves_media, (err, media) => {
+                            if (err) throw err;
+                            res.status(200).jsonp({c, carves, comments, media, users, atten}).end();
+                        })
+                    })
+                })
+            })
+        })
     })
 });
 
@@ -38,6 +58,18 @@ router.post('/', (req,res) => {
     con.query(new_carve,[carveName,creatorId,venueId,carveType[0],athlete,photo,date, sports[0]], (err, results) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end();
+    })
+});
+
+// Grab specific carve by its id
+router.post('/complete/:carveId', (req, res) => {
+    const carveId = req.params.carveId;
+    // Create query to get the specified carve from the database
+    complete_carve = "call complete_carve(?)";
+    // Execute the query to pull from the database
+    con.query(complete_carve, [carveId], (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -134,16 +166,16 @@ router.get('/:like_info', (req, res) => {
 
     con.query(get_carve_like_info ,(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
 router.get('/:all', (req, res) =>{
-    get_carve_info_all = 'CALL get_carve_info_all'
+    get_carve_info_all = 'CALL get_carve_info_all';
 
     con.query(get_carve_info_all,(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end;
+        res.status(200).jsonp({results}).end();
     })
 });
 
