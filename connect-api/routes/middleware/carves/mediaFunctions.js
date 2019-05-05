@@ -20,16 +20,7 @@ module.exports = {
         })
     },
 
-    carveAllMediaPut: function (res){
-        new_media = "CALL update_media()";
-        // Execute the query to insert into the database
-        con.query(new_media,(err, results) => {
-            if (err) throw err;
-            res.status(201).jsonp({results}).end();
-        })
-    },
-
-    carveAllMediaPatch: function (res){
+    carveAllMediaUpdate: function (res){
         new_media = "CALL update_media()";
         // Execute the query to insert into the database
         con.query(new_media,(err, results) => {
@@ -54,15 +45,7 @@ module.exports = {
         })
     },
 
-    carveMediaPut: function (mediaId, [poster,url,description,carve,venue,profile], res){
-        update_media = "CALL update_medi(?,?,?,?,?,?,?)";
-        con.query(update_media,[mediaId,poster,url,description,carve,venue,profile],(err, results) => {
-            if (err) throw err;
-            res.status(201).jsonp({results}).end();
-        })
-    },
-
-    carveMediaPatch: function (mediaId, [poster,url,description,carve,venue,profile], res){
+    carveMediaUpdate: function (mediaId, [poster,url,description,carve,venue,profile], res){
         update_media = "CALL update_medi(?,?,?,?,?,?,?)";
         con.query(update_media,[mediaId,poster,url,description,carve,venue,profile],(err, results) => {
             if (err) throw err;
@@ -76,8 +59,6 @@ module.exports = {
             if (err) throw err;
             res.status(201).jsonp({msg:'media deleted'}).end();
         })
-
-    },
-
+    }
 
 };

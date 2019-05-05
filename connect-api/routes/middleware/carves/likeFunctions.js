@@ -59,5 +59,5 @@ module.exports = {
             if (err) throw err;
             res.status(201).jsonp({msg:'like deleted'}).end();
         })
-    },
+    }
 };

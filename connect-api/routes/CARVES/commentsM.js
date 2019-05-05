@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 const con = require('../../db');
-var functions = require('./middleware/carves/commentFunctions');
+var functions = require('../middleware/carves/commentFunctions');
 
 
 

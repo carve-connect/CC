@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 const con = require('../../db');
-var functions = require('./middleware/carves/carveAttendeeFuntions');
+var functions = require('../middleware/carves/carveAttendeeFunctions');
 
 
 // Grabs all carve_attendees from db
