@@ -4836,3 +4836,2331 @@ INSERT INTO COMMENTS(poster, carve, comment)
 VALUES (50, 239, 'Really cool place to carve');
 INSERT INTO COMMENTS(poster, carve, comment)
 VALUES (51, 240, 'Really cool place to carve');
+
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 32, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 2, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 3, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 6, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 7, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 8, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 9, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 10, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 10, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 12, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 13, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 14, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 15, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 22, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 3, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 6, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 7, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 8, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 9, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 10, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 12, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 13, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 14, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 15, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 22, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 3, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 6, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 7, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 8, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 9, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 10, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 12, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 13, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 14, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 15, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 18, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 2, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 1, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 21, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 6, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 30, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 8, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 9, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 10, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 12, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (5, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (5, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (5, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (5, 3, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (6, 2, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (7, 3, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (8, 2, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (8, 20, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (9, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (10, 13, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (10, 25, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (11, 8, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (12, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (12, 19, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (12, 6, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (13, 19, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (13, 16, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (13, 12, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (14, 1, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (14, 5, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (14, 3, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (15, 29, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (15, 26, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (15, 24, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (16, 30, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (16, 29, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (16, 7, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (16, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (17, 29, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (17, 26, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (17, 23, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (17, 29, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (17, 16, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (18, 20, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (18, 21, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (19, 14, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (20, 12, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (21, 8, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (21, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (21, 5, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (22, 9, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (23, 11, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (24, 25, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (24, 28, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (24, 29, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (25, 12, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (25, 6, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (25, 3, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (26, 9, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (26, 5, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (26, 23, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (26, 28, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (27, 21, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (27, 22, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (28, 25, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (28, 27, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (28, 21, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (29, 28, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (29, 14, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (29, 7, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (29, 5, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (30, 3, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (30, 16, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (30, 18, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (30, 28, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (31, 10, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (31, 20, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (31, 30, 'block');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (31, 25, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (32, 12, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (32, 24, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (32, 30, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (32, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (33, 199, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (34, 198, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (35, 197, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (36, 196, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (37, 195, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (38, 194, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (39, 193, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (40, 192, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (41, 191, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (42, 190, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (43, 189, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (44, 188, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (45, 187, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (46, 186, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (47, 185, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (48, 184, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (49, 183, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (50, 182, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (51, 181, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (52, 180, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (53, 179, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (54, 178, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (55, 177, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (56, 176, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (57, 175, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (58, 174, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (59, 173, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (60, 172, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (61, 171, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (62, 170, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (63, 169, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (64, 168, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (65, 167, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (66, 166, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (67, 165, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (68, 164, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (69, 163, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (70, 162, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (71, 161, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (72, 160, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (73, 159, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (74, 158, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (75, 157, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (76, 156, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (77, 155, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (78, 154, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (79, 153, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (80, 152, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (81, 151, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (82, 150, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (83, 149, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (84, 148, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (85, 147, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (86, 146, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (87, 145, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (88, 144, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (89, 143, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (90, 142, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (91, 141, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (92, 140, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (93, 139, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (94, 138, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (95, 137, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (96, 136, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (97, 135, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (98, 134, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (99, 133, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (100, 132, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (101, 131, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (102, 130, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (103, 129, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (104, 128, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (105, 127, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (106, 126, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (107, 125, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (108, 124, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (109, 123, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (110, 122, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (111, 121, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (112, 120, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (113, 119, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (114, 118, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (115, 117, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (116, 116, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (117, 115, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (118, 114, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (119, 113, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (120, 112, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (121, 111, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (122, 110, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (123, 109, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (124, 108, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (125, 107, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (126, 106, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (127, 105, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (128, 104, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (129, 103, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (130, 102, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (131, 101, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (132, 100, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (133, 99, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (134, 98, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (135, 97, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (136, 96, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (137, 95, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (138, 94, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (139, 93, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (140, 92, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (141, 91, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (142, 90, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (143, 89, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (144, 88, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (145, 87, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (146, 86, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (147, 85, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (148, 84, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (149, 83, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (150, 82, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (151, 81, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (152, 80, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (153, 79, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (154, 78, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (155, 77, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (156, 76, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (157, 75, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (158, 74, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (159, 73, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (160, 72, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (161, 71, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (162, 70, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (163, 69, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (164, 68, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (165, 67, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (166, 66, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (167, 65, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (168, 64, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (169, 63, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (170, 62, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (171, 61, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (172, 60, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (173, 59, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (174, 58, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (175, 57, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (176, 56, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (177, 55, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (178, 54, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (179, 53, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (180, 52, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (181, 51, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (182, 50, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (183, 49, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (184, 48, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (185, 47, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (186, 46, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (187, 45, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (188, 44, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (189, 43, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (190, 42, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (191, 41, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (192, 40, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (193, 39, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (194, 38, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (195, 37, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (196, 36, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (197, 35, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (198, 34, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (199, 33, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 32, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 199, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 198, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 197, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 196, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 195, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 194, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 193, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 192, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 191, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 190, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 189, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 188, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 187, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (1, 186, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 185, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 184, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 183, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 182, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 181, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 180, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 179, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 178, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 177, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 176, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 175, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 174, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 173, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (2, 172, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 171, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 170, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 169, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 168, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 167, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 166, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 165, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 164, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 163, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 162, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 161, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 160, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 159, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (3, 158, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 157, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 156, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 155, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 154, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 153, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 152, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 151, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 150, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 149, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 148, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (4, 147, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (5, 146, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (5, 145, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (5, 144, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (5, 143, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (6, 142, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (7, 141, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (8, 140, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (8, 139, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (9, 138, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (10, 137, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (10, 136, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (11, 135, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (12, 134, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (12, 133, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (12, 132, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (13, 131, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (13, 130, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (13, 129, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (14, 128, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (14, 127, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (14, 126, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (15, 125, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (15, 124, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (15, 123, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (16, 122, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (16, 121, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (16, 120, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (16, 119, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (17, 118, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (17, 117, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (17, 116, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (17, 115, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (17, 114, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (18, 113, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (18, 112, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (19, 111, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (20, 110, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (21, 109, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (21, 108, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (21, 107, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (22, 106, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (23, 105, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (24, 104, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (24, 103, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (24, 102, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (25, 101, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (25, 100, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (25, 99, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (26, 98, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (26, 97, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (26, 96, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (26, 95, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (27, 94, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (27, 93, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (28, 92, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (28, 91, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (28, 90, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (29, 89, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (29, 88, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (29, 87, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (29, 86, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (30, 85, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (30, 84, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (30, 83, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (30, 82, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (31, 81, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (31, 80, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (31, 79, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (31, 78, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (32, 77, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (32, 76, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (32, 75, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (32, 74, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (33, 73, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (34, 72, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (35, 71, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (36, 70, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (37, 69, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (38, 68, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (39, 67, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (40, 66, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (41, 65, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (42, 64, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (43, 63, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (44, 62, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (45, 61, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (46, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (47, 59, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (48, 58, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (49, 57, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (50, 56, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (51, 55, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (52, 54, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (53, 53, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (54, 52, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (55, 51, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (56, 50, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (57, 49, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (58, 48, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (59, 47, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (60, 46, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (61, 45, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (62, 44, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (63, 43, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (64, 42, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (65, 41, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (66, 40, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (67, 39, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (68, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (69, 37, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (70, 36, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (71, 35, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (72, 34, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (73, 33, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (74, 32, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (75, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (76, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (77, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (78, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (79, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (80, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (81, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (82, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (83, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (84, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (85, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (86, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (87, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (88, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (89, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (90, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (91, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (92, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (93, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (94, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (95, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (96, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (97, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (98, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (99, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (100, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (101, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (102, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (103, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (104, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (105, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (106, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (107, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (108, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (109, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (110, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (111, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (112, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (113, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (114, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (115, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (116, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (117, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (118, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (119, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (120, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (121, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (122, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (123, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (124, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (125, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (126, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (127, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (128, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (129, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (130, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (131, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (132, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (133, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (134, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (135, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (136, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (137, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (138, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (139, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (140, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (141, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (142, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (143, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (144, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (145, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (146, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (147, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (148, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (149, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (150, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (151, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (152, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (153, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (154, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (155, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (156, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (157, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (158, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (159, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (160, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (161, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (162, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (163, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (164, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (165, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (166, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (167, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (168, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (169, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (170, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (171, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (172, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (173, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (174, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (175, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (176, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (177, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (178, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (179, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (180, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (181, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (182, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (183, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (184, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (185, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (186, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (187, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (188, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (189, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (190, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (191, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (192, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (193, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (194, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (195, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (196, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (197, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (198, 4, 'buddy');
+INSERT INTO FOLLOWS(user_id1, user_id2, type)
+VALUES (199, 4, 'buddy');
+
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 7, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 8, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 9, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 10, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 7, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 8, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 9, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 10, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 7, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 8, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 9, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 10, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (4, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (4, 8, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (4, 10, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (5, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (5, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (5, 55, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (6, 58, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (6, 41, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (6, 26, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (7, 25, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (7, 15, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (7, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (7, 30, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (8, 40, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (8, 48, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (8, 42, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (8, 37, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (9, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (9, 14, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (9, 29, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (9, 58, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (10, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (10, 15, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (11, 17, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (11, 19, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (11, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (11, 46, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (12, 57, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (12, 16, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (12, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (12, 14, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (13, 26, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (13, 28, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (13, 30, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (13, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (14, 21, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (14, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (14, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (15, 56, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (15, 48, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (15, 24, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (16, 43, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (16, 47, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (16, 49, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (17, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (17, 13, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (17, 15, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (18, 18, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (18, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (18, 27, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (19, 29, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (19, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (19, 33, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (20, 44, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (20, 55, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (20, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (20, 49, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (21, 51, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (21, 53, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (21, 55, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (21, 57, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 59, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 23, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 25, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (23, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (23, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (24, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (24, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (24, 7, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (24, 8, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (25, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (25, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (25, 12, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (26, 32, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (26, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (26, 35, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (26, 59, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 17, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 18, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 19, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 32, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 42, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (28, 44, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (28, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (29, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (29, 39, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (29, 31, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (29, 41, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 7, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 9, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 24, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 26, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 29, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 33, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 36, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (31, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (31, 41, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (32, 44, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (32, 46, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (32, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (32, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (32, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 11, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 12, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 13, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 14, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 15, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 16, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 17, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 18, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 19, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 20, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 11, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 12, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 13, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 14, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 15, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 16, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 17, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 18, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 19, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 20, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 11, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 12, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 13, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 14, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 15, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 16, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 17, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 18, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 19, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 20, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 21, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 22, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 23, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 24, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 25, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 26, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 27, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 28, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 29, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 30, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 21, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 22, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 23, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 24, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 25, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 26, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 27, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 28, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 29, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 30, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 21, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 22, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 23, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 24, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 25, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 26, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 27, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 28, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 29, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 30, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 31, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 32, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 33, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 34, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 35, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 36, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 37, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 38, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 39, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 40, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 31, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 32, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 33, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 34, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 35, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 36, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 37, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 38, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 39, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 40, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 31, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 32, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 33, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 34, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 35, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 36, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 37, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 38, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 39, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 40, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 41, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 42, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 43, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 44, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 45, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 46, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 47, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 48, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 49, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 50, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 41, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 42, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 43, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 44, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 45, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 46, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 47, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 48, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 49, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 50, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 41, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 42, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 43, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 44, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 45, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 46, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 47, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 48, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 49, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 50, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 51, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 52, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 53, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 54, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 55, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 56, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 57, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 58, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 59, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 60, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 51, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 52, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 53, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 54, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 55, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 56, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 57, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 58, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 59, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 60, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 51, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 52, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 53, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 54, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 55, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 56, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 57, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 58, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 59, NULL);
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 60, NULL);
+
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 7, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 8, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 9, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 10, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 7, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 8, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 9, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 10, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 7, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 8, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 9, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 10, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (4, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (4, 8, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (4, 10, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (5, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (5, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (5, 55, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (6, 58, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (6, 41, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (6, 26, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (7, 25, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (7, 15, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (7, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (7, 30, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (8, 40, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (8, 48, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (8, 42, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (8, 37, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (9, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (9, 14, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (9, 29, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (9, 58, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (10, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (10, 15, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (11, 17, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (11, 19, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (11, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (11, 46, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (12, 57, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (12, 16, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (12, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (12, 14, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (13, 26, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (13, 28, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (13, 30, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (13, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (14, 21, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (14, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (14, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (15, 56, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (15, 48, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (15, 24, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (16, 43, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (16, 47, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (16, 49, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (17, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (17, 13, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (17, 15, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (18, 18, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (18, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (18, 27, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (19, 29, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (19, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (19, 33, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (20, 44, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (20, 55, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (20, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (20, 49, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (21, 51, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (21, 53, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (21, 55, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (21, 57, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 59, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 23, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 25, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (22, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (23, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (23, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (24, 5, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (24, 6, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (24, 7, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (24, 8, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (25, 2, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (25, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (25, 12, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (26, 32, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (26, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (26, 35, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (26, 59, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 17, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 18, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 19, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 32, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (27, 42, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (28, 44, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (28, 4, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (29, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (29, 39, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (29, 31, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (29, 41, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 7, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 9, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 24, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 26, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 29, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 33, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (30, 36, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (31, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (31, 41, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (32, 44, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (32, 46, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (32, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (32, 1, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (32, 3, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 12, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 13, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 14, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 15, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 16, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 17, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 18, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 19, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 20, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 12, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 13, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 14, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 15, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 16, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 17, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 18, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 19, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 20, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 11, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 12, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 13, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 14, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 15, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 16, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 17, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 18, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 19, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 20, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 21, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 23, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 24, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 25, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 26, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 27, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 28, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 29, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 30, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 21, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 23, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 24, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 25, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 26, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 27, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 28, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 29, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 30, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 21, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 22, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 23, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 24, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 25, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 26, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 27, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 28, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 29, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 30, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 31, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 32, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 33, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 34, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 35, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 36, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 37, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 39, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 40, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 31, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 32, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 33, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 34, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 35, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 36, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 37, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 39, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 40, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 31, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 32, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 33, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 34, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 35, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 36, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 37, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 38, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 39, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 40, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 41, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 42, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 43, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 44, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 45, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 46, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 47, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 48, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 49, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 50, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 41, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 42, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 43, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 44, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 45, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 46, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 47, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 48, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 49, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 50, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 41, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 42, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 43, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 44, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 45, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 46, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 47, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 48, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 49, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 50, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 51, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 52, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 53, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 54, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 55, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 56, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 57, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 58, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 59, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (1, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 51, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 52, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 53, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 54, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 55, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 56, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 57, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 58, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 59, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (2, 60, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 51, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 52, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 53, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 54, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 55, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 56, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 57, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 58, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 59, 'follow');
+INSERT INTO FOLLOWS(user_id1, venue_id, type)
+VALUES (3, 60, 'follow');
+
