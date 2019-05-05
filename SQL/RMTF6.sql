@@ -7164,3 +7164,243 @@ VALUES (3, 59, 'follow');
 INSERT INTO FOLLOWS(user_id1, venue_id, type)
 VALUES (3, 60, 'follow');
 
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (1, 3, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (1, 5, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (2, 6, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (2, 10, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (3, 15, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (3, 11, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (4, 4, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (4, 17, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (5, 19, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (5, 21, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (6, 11, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (6, 24, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (7, 22, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (7, 9, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (8, 13, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (8, 25, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (9, 16, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (9, 6, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (10, 22, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (10, 4, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (11, 20, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (11, 19, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (12, 14, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (12, 3, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (13, 8, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (13, 25, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (14, 26, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (14, 12, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (15, 7, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (15, 26, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (16, 27, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (16, 27, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (17, 13, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (17, 28, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (18, 7, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (18, 16, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (19, 10, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (19, 20, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (20, 5, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (20, 23, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (21, 24, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (21, 12, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (22, 8, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (22, 29, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (23, 4, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (23, 15, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (24, 21, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (24, 7, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (25, 18, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (25, 28, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (26, 30, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (26, 2, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (27, 23, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (27, 14, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (28, 3, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (28, 9, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (29, 18, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (29, 30, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (30, 29, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (30, 17, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (1, 52, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (1, 32, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (2, 1, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (2, 2, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (3, 3, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (3, 4, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (4, 5, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (4, 6, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (5, 7, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (5, 8, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (6, 9, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (6, 10, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (7, 11, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (7, 12, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (8, 13, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (8, 14, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (9, 15, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (9, 16, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (10, 17, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (10, 18, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (11, 19, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (11, 20, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (12, 21, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (12, 22, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (13, 23, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (13, 24, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (14, 25, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (14, 26, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (15, 27, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (15, 28, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (16, 29, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (16, 30, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (17, 31, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (17, 32, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (18, 33, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (18, 1, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (19, 2, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (19, 3, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (20, 4, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (20, 5, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (21, 6, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (21, 7, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (22, 8, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (22, 9, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (23, 10, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (23, 11, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (24, 12, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (24, 13, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (25, 14, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (25, 15, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (26, 16, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (26, 17, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (27, 18, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (27, 19, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (28, 20, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (28, 21, 'hey!', 'Hey, how''s it going?', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (29, 22, 'cool trick!', 'Man, that was a really cool trick you did at the carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (29, 23, 'did you see?', 'Did you see that cool trick I did at teh carve!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (30, 24, 'Awesome!', 'Dude, that was some gnarley stuff yesterday!', 'normal');
+INSERT INTO MESSAGES(sender_Id, rec_Id, subject, body, type)
+VALUES (30, 25, 'that was fun!', 'had a lot of fun, let''s carve again some tiem!', 'normal');
