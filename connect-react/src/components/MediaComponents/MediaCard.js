@@ -12,12 +12,18 @@ export default class MediaCard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            show: false,
-            description: ""
+
+            editShow: false,
+            deleteConfirmationShow: false,
+            description: "",
+            users: []
+
         };
         this.editMedia = this.editMedia.bind(this);
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
+        this.handleEditShow = this.handleEditShow.bind(this);
+        this.handleEditClose = this.handleEditClose.bind(this);
+        this.handleDeleteConfirmationShow = this.handleDeleteConfirmationShow.bind(this);
+        this.handleDeleteConfirmationClose = this.handleDeleteConfirmationClose.bind(this);
         this.deleteMedia = this.deleteMedia.bind(this);
     }
 
@@ -27,12 +33,20 @@ export default class MediaCard extends Component {
         return (description.length > 0);
     }
 
-    handleClose() {
-        this.setState({ show: false });
+    handleEditClose() {
+        this.setState({ editShow: false });
     }
     
-    handleShow() {
-        this.setState({ show: true });
+    handleEditShow() {
+        this.setState({ editShow: true });
+    }
+
+    handleDeleteConfirmationClose() {
+        this.setState({ deleteShow: false });
+    }
+    
+    handleDeleteConfirmationShow() {
+        this.setState({ deleteShow: true });
     }
 
     handleChange = event => {
@@ -40,6 +54,19 @@ export default class MediaCard extends Component {
 			[event.target.id]: event.target.value
 		});
     };
+
+    componentDidMount() {
+        axios.get(`http://localhost:8000/users`)
+            .then(res => {
+                //alert("carve:" + JSON.stringify(res.data.results));
+                //console.log("users: ", JSON.stringify(res.data.users[0][0].username));
+                //alert(JSON.stringify(res.data.results[0]));
+                this.setState({
+                    users: res.data.users[0]
+                });
+
+            });
+    }
 
     editMedia(e){
         e.preventDefault();
@@ -52,21 +79,20 @@ export default class MediaCard extends Component {
             url: this.props.media.url, 
             description: this.state.description
         });
-        this.handleClose();
+        this.handleEditClose();
     }
 
     deleteMedia(e) {
-        e.preventDefault();
+        axios.delete(`http://localhost:8000/media/${e}`, {});
 
-        axios.delete(`http://localhost:8000/media/${this.props.media.media_id}`, {});
-
+        this.handleDeleteConfirmationClose()
     }
 
     render(){
         let med = this.props.media;
         let editModal =
                     <div>
-                        <Modal centered show={this.state.show} onHide={this.handleClose}>
+                        <Modal centered show={this.state.editShow} onHide={this.handleEditClose}>
                         <Modal.Header>
                             Edit Media
                         </Modal.Header>
@@ -77,7 +103,7 @@ export default class MediaCard extends Component {
                             </FormGroup>
                         </Container>
                         <Modal.Footer>
-                            <Button variant="secondary" onClick={this.handleClose}>
+                            <Button variant="secondary" onClick={this.handleEditClose}>
                             Exit
                             </Button>
                             <Button onClick={this.editMedia} disabled={!this.validateForm()} type = "submit" variant="primary">
@@ -87,62 +113,85 @@ export default class MediaCard extends Component {
                         </Modal>
                     </div>;
         
+        let dropdown;
+        if(med.poster == localStorage.getItem("userId")){
+            dropdown = <Dropdown>
+                            <Dropdown.Toggle size="sm" variant="link" style={{color: 'black', float: 'right', border: 'none'}}>
+                                <i class="fa fa-ellipsis-h fa-10x"></i>
+                            </Dropdown.Toggle>
 
+                            <Dropdown.Menu style={{minWidth: '5rem'}}>
+                                <Dropdown.Item onClick={this.handleEditShow}>
+                                    <OverlayTrigger overlay={
+                                        <Tooltip>Edit</Tooltip>
+                                    }>
+                                        <i class="fa fa-edit fa-2x"></i>
+                                    </OverlayTrigger>
+
+                                </Dropdown.Item>
+
+                                <Dropdown.Item onClick={this.handleDeleteConfirmationShow}>
+                                    <OverlayTrigger overlay={
+                                        <Tooltip>Delete</Tooltip>
+                                    }>
+                                        <i class="fa fa-trash fa-2x"></i>
+                                    </OverlayTrigger>
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+        }
+        else{
+            dropdown = <></>
+        }
+        let deleteConfirmationModal =   
+            <div>
+                <Modal centered show={this.state.deleteShow} onHide={this.handleDeleteConfirmationClose}>
+                <Container style={{marginLeft: '1rem'}}>
+                    <Row>
+                     <h3>Are you sure?</h3>
+                    </Row>
+                    <Row>
+                        <FormGroup >
+                            <Button variant="secondary" onClick={this.handleDeleteConfirmationClose}>
+                            Nevermind
+                            </Button>
+                            <Button style={{marginLeft: '1rem'}} onClick={() => this.deleteMedia(med.media_id)} type = "submit" variant="primary">
+                            Yes
+                            </Button>
+                        </FormGroup>
+                    </Row>
+                </Container>
+                </Modal>
+            </div>;
     let creatorName = "";
-    /*
-    if (props.users.length > 0) {
-        for (var c = 0; c < props.users.length; c++) {
-            if (props.users[c].user_id == props.media.poster)
+
+        if (this.state.users.length > 0) {
+            for (var c = 0; c < this.state.users.length; c++) {
+                if (this.state.users[c].user_id == this.props.media.poster)
                 creatorName = this.state.users[c].username;
         }
     }
-*/
-    let show = false;
-        let ed = <div></div>;
-        if (med.creator === localStorage.getItem('userId')) {
-            ed = <></>
 
-        }
 
     return (
 
 
         <Card style={{width: '30rem', marginBottom: '2rem'}}>
-        <Card.Header style={{padding: 0}}>
         {editModal}
+        {deleteConfirmationModal}
+        <Card.Header style={{padding: 0}}>
+        Media {this.props.media.media_id} 
+        {dropdown}
 
-                </Card.Header>
+        </Card.Header>
             <Row style={{paddingLeft: "40%"}}>
-                Media {this.props.media.media_id} {ed}
-                <Dropdown>
-                    <Dropdown.Toggle size="sm" variant="link" style={{color: 'black', float: 'right', border: 'none'}}>
-                        <i class="fa fa-ellipsis-h fa-10x"></i>
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu style={{minWidth: '5rem'}}>
-                        <Dropdown.Item onClick={this.handleShow}>
-                            <OverlayTrigger overlay={
-                                <Tooltip>Edit</Tooltip>
-                            }>
-                                <i class="fa fa-edit fa-2x"></i>
-                            </OverlayTrigger>
-
-                        </Dropdown.Item>
-
-                        <Dropdown.Item onClick={this.deleteMedia}>
-                            <OverlayTrigger overlay={
-                                <Tooltip>Delete</Tooltip>
-                            }>
-                                <i class="fa fa-trash fa-2x"></i>
-                            </OverlayTrigger>
-                        </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                
+                
             </Row>
                 <container className="embed-responsive embed-responsive-16by9">
                     <iframe title="User Media" className="embed-responsive-item" src= {this.props.media.url} allowFullScreen > </iframe>
                 </container>
-
+                    
                 <Card.Body>
                     <Container>
                         <Row style = {{marginTop: '-1rem', borderBottom:'1px dashed lightgrey'}}>
@@ -155,7 +204,7 @@ export default class MediaCard extends Component {
                     </Container>
                 </Card.Body>
                {/* comment table would be here */}
-                <CommentTable media={this.props.media} carve={""} type={"media"}/>
+            <CommentTable media={this.props.media} carve={""} type={"media"} users={this.state.users}/>
                 <Card.Footer style = {{fontSize: '10px'}}><em>Create_Time: {this.props.media.time}</em></Card.Footer>
             </Card>
 

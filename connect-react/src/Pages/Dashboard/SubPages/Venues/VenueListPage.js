@@ -6,12 +6,13 @@ import Carousel from 'react-alice-carousel';
 //import "react-multi-carousel/lib/styles.css";
 import "react-alice-carousel/lib/alice-carousel.css";
 import VenueFigure from './VenueFigure';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import beach from "../../../../images/Be1.jpeg";
 import mountain from "../../../../images/SkRs8.jpeg";
 import skatedude from "../../../../images/SkPk1.jpeg";
 import para from "../../../../images/AF1.jpeg";
+import {Container, Nav} from 'react-bootstrap';
+import UserApi from "../../../../api/UserApi";
 
 
 export default class VenueListPage extends Component {
@@ -21,11 +22,35 @@ export default class VenueListPage extends Component {
         console.log('Props in VenueListPage component', props);
         this.state = {
             venues: {},
-            venuesLength: 0
+            venuesLength: 0,
+            content: "all",
+            followList: [],
         };
         this.createSnowRow = this.createSnowRow.bind(this);
+        this.handleAllVenues = this.handleAllVenues.bind(this);
+        this.handleFollowingVenues = this.handleFollowingVenues.bind(this);
+    }
 
+    getFollowingVenues() {
+        UserApi.getFollowingVenues(localStorage.getItem('userId'))
+            .then(venues => {
+                this.setState({
+                    followList: venues
 
+                });
+            });
+    }
+
+    handleAllVenues(){
+        this.setState({
+            content: 'all'
+        })
+    }
+
+    handleFollowingVenues(){
+        this.setState({
+            content: 'following'
+        })
     }
 
 
@@ -133,7 +158,11 @@ export default class VenueListPage extends Component {
         let snowList;
         let airList;
         const {venues} = this.state;
-        if(this.state.venuesLength > 0){
+
+        let content;
+
+
+        if(this.state.content == "all"){
             const responsive = {
                 0: {
                     items: 1
@@ -148,67 +177,90 @@ export default class VenueListPage extends Component {
                     items: 5
                 }
             };
+            content = 
+                <div>
+                <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-snowflake-o fa-spin"
+                                                            style={{color: "skyblue"}}/>Snow Venues <i
+                        className="fa fa-snowflake-o fa-spin"
+                        style={{color: "skyblue"}}/></u></h4>
+                    <Row style={{width: "100%", height: "100%"}}>
+                        <Carousel fade responsive={responsive} className="carousel" pauseOnHover={true}
+                                  style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
+                                  autoPlay={false} autoPlayInterval={5000}>
+                    {this.createSnowRow('')}
+                        </Carousel>
+                </Row>
+
+                    <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-anchor " style={{color: "navy"}}/> Water
+                        Venues <i className="fa fa-anchor " style={{color: "navy"}}/></u></h4>
+                <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
+                    <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
+                                style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
+                                autoPlay={false} autoPlayInterval={2000}>
+                        {this.createWaterRow('')}
+                    </Carousel>
+                </Row>
+
+                    <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-bicycle " style={{color: "navy"}}/> Land
+                        Venues <i className="fa fa-bicycle " style={{color: "navy"}}/></u></h4>
+                <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
+                    <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
+                                style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
+                                autoPlay={false} autoPlayInterval={2000}>
+                        {this.createLandRow('')}
+                    </Carousel>
+                </Row>
+
+                    <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-fighter-jet "
+                                                            style={{color: "navy"}}/> Air Venues <i
+                        className="fa fa-fighter-jet " style={{color: "navy"}}/></u></h4>
+                <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
+                    <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
+                                style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
+                                autoPlay={false} autoPlayInterval={2000}>
+                        {this.createAirRow('')}
+                    </Carousel>
+                </Row>
+
+                </div>;
+        }
+        //i'll keep working on this
+        else if(this.state.content == "following"){
+            let followList;
+             followList = this.state.followList.map((venue) =>{
+                return (
+                    <div>
+                        {venue.venue_id}
+                    </div>
+                )
+            });
+        }
+
+        if(this.state.venuesLength > 0){
+
+
+
+        
 
             return (
-                <>
-                    <Col style={{backgroundColor: "gainsboro", width: "220%"}}>
-                        <Row style={{width: "150%"}}>
-                        <h1>Venues</h1>
-                    </Row>
-                        <Row style={{marginTop: '45px', width: "150%"}}>
-                        <Col md={{ span: 6, offset: 1 }}>
-                            <Form.Control type="text" placeholder="Search" />
-                        </Col>
-                        <Button variant="link">+Filters</Button>
-                    </Row>
+            <Col style={{backgroundColor: "gainsboro", width: "220%"}}>
+                    <Nav  variant="pills" defaultActiveKey="all">
+                        <Nav.Item style = {{marginTop: '1rem'}} >
+                            <Button onClick={this.handleAllVenues} eventKey="all" variant="outline-primary">All Venues</Button>
+                        </Nav.Item>
+                        <Nav.Item style = {{marginTop: '1rem'}} >
+                            <Button disabled onClick={this.handleFollowingVenues} eventKey="following" variant="outline-primary">Following</Button>
+                        </Nav.Item>
+                    </Nav>
+                <div style = {{marginTop: '20px', borderBottom: '2px solid lightgray'}}> </div>
+                <Container>
+                {content}
+                </Container>
+                
 
-                    <div style = {{marginTop: '20px', borderBottom: '1px solid lightgray'}}> </div>
-
-
-                        <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-snowflake-o fa-spin"
-                                                              style={{color: "skyblue"}}/>Snow Venues <i
-                            className="fa fa-snowflake-o fa-spin"
-                            style={{color: "skyblue"}}/></u></h4>
-                        <Row style={{width: "100%", height: "100%"}}>
-                            <Carousel fade responsive={responsive} className="carousel" pauseOnHover={true}
-                                      style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
-                                      autoPlay={true} autoPlayInterval={5000}>
-                        {this.createSnowRow('')}
-                            </Carousel>
-                    </Row>
-
-                        <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-anchor " style={{color: "navy"}}/> Water
-                            Venues <i className="fa fa-anchor " style={{color: "navy"}}/></u></h4>
-                    <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
-                        <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
-                                  style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
-                                  autoPlay={false} autoPlayInterval={2000}>
-                            {this.createWaterRow('')}
-                        </Carousel>
-                    </Row>
-
-                        <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-bicycle " style={{color: "navy"}}/> Land
-                            Venues <i className="fa fa-bicycle " style={{color: "navy"}}/></u></h4>
-                    <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
-                        <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
-                                  style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
-                                  autoPlay={false} autoPlayInterval={2000}>
-                            {this.createLandRow('')}
-                        </Carousel>
-                    </Row>
-
-                        <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-fighter-jet "
-                                                              style={{color: "navy"}}/> Air Venues <i
-                            className="fa fa-fighter-jet " style={{color: "navy"}}/></u></h4>
-                    <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
-                        <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
-                                  style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
-                                  autoPlay={false} autoPlayInterval={2000}>
-                            {this.createAirRow('')}
-                        </Carousel>
-                    </Row>
-                    </Col>
-                </>
+                    
+            </Col>
+                
             );
         }else{
             return (

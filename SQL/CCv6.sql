@@ -1,3 +1,4 @@
+
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS = @@UNIQUE_CHECKS, UNIQUE_CHECKS = 0;
@@ -432,6 +433,14 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`all_comments`
 CREATE TABLE IF NOT EXISTS `CCv6`.`view1`
 (
     `type` INT
+);
+
+-- -----------------------------------------------------
+-- Placeholder table for view `CCv6`.`view2`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CCv6`.`view2`
+(
+    `id` INT
 );
 
 -- -----------------------------------------------------
@@ -2855,6 +2864,14 @@ USE `CCv6`;
 CREATE OR REPLACE VIEW `view1` AS
 select type
 from likes;
+
+-- -----------------------------------------------------
+-- View `CCv6`.`view2`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `CCv6`.`view2`;
+DROP VIEW IF EXISTS `CCv6`.`view2`;
+USE `CCv6`;
+
 SET SQL_MODE = '';
 DROP USER IF EXISTS nodeuser;
 SET SQL_MODE =
@@ -2869,3 +2886,4 @@ SET UNIQUE_CHECKS = @OLD_UNIQUE_CHECKS;
 -- begin attached script 'script'
 ALTER USER 'nodeuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Nodeuser@1234';
 -- end attached script 'script'
+

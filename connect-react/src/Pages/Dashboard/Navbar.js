@@ -168,10 +168,6 @@ class TopNav extends Component {
 												<Dropdown.Item>
 													<Link to={"/dashboard/outbox"}><h6>Sent</h6></Link>
 												</Dropdown.Item>
-												<Dropdown.Divider/>
-												<Dropdown.Item onClick={this.handleClick1}>
-													<h6>Compose Message</h6>
-												</Dropdown.Item>
 											</Dropdown.Menu>
 										</Dropdown>
 									</Col>
