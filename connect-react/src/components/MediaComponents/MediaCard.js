@@ -87,7 +87,36 @@ export default class MediaCard extends Component {
                         </Modal>
                     </div>;
         
+        let dropdown;
+        if(med.poster == localStorage.getItem("userId")){
+            dropdown = <Dropdown>
+                            <Dropdown.Toggle size="sm" variant="link" style={{color: 'black', float: 'right', border: 'none'}}>
+                                <i class="fa fa-ellipsis-h fa-10x"></i>
+                            </Dropdown.Toggle>
 
+                            <Dropdown.Menu style={{minWidth: '5rem'}}>
+                                <Dropdown.Item onClick={this.handleShow}>
+                                    <OverlayTrigger overlay={
+                                        <Tooltip>Edit</Tooltip>
+                                    }>
+                                        <i class="fa fa-edit fa-2x"></i>
+                                    </OverlayTrigger>
+
+                                </Dropdown.Item>
+
+                                <Dropdown.Item onClick={this.deleteMedia}>
+                                    <OverlayTrigger overlay={
+                                        <Tooltip>Delete</Tooltip>
+                                    }>
+                                        <i class="fa fa-trash fa-2x"></i>
+                                    </OverlayTrigger>
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+        }
+        else{
+            dropdown = <></>
+        }
     let creatorName = "";
     /*
     if (props.users.length > 0) {
@@ -97,52 +126,26 @@ export default class MediaCard extends Component {
         }
     }
 */
-    let show = false;
-        let ed = <div></div>;
-        if (med.creator === localStorage.getItem('userId')) {
-            ed = <></>
 
-        }
 
     return (
 
 
         <Card style={{width: '30rem', marginBottom: '2rem'}}>
-        <Card.Header style={{padding: 0}}>
         {editModal}
+        <Card.Header style={{padding: 0}}>
+        Media {this.props.media.media_id} 
+        {dropdown}
 
-                </Card.Header>
+        </Card.Header>
             <Row style={{paddingLeft: "40%"}}>
-                Media {this.props.media.media_id} {ed}
-                <Dropdown>
-                    <Dropdown.Toggle size="sm" variant="link" style={{color: 'black', float: 'right', border: 'none'}}>
-                        <i class="fa fa-ellipsis-h fa-10x"></i>
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu style={{minWidth: '5rem'}}>
-                        <Dropdown.Item onClick={this.handleShow}>
-                            <OverlayTrigger overlay={
-                                <Tooltip>Edit</Tooltip>
-                            }>
-                                <i class="fa fa-edit fa-2x"></i>
-                            </OverlayTrigger>
-
-                        </Dropdown.Item>
-
-                        <Dropdown.Item onClick={this.deleteMedia}>
-                            <OverlayTrigger overlay={
-                                <Tooltip>Delete</Tooltip>
-                            }>
-                                <i class="fa fa-trash fa-2x"></i>
-                            </OverlayTrigger>
-                        </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                
+                
             </Row>
                 <container className="embed-responsive embed-responsive-16by9">
                     <iframe title="User Media" className="embed-responsive-item" src= {this.props.media.url} allowFullScreen > </iframe>
                 </container>
-
+                    
                 <Card.Body>
                     <Container>
                         <Row style = {{marginTop: '-1rem', borderBottom:'1px dashed lightgrey'}}>
