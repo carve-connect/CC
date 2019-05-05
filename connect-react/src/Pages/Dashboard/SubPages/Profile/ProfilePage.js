@@ -11,8 +11,6 @@ import ProfileInfoCard from './ProfileInfoCard';
 import Container from 'react-bootstrap/Container';
 import WallPost from '../../../../components/WallComponents/WallPost';
 import CreateMediaModal from "../../../../components/MediaComponents/CreateMediaModal";
-//photos
-
 //import { imgObj } from "images/images";
 import dogskate from '../../../../images/dogskate.jpeg';
 import SEAN from '../../../../images/SEAN.jpeg';
@@ -30,9 +28,30 @@ import Sn4 from '../../../../images/Sn4.jpeg';
 import Ph2 from '../../../../images/Ph2.jpeg';
 import Dr1 from '../../../../images/Dr1.jpeg';
 import SnowProfilePic from '../../../../images/Sn3.jpeg';
+import Sn3 from '../../../../images/Sn3.jpeg';
 import UserApi from "../../../../api/UserApi";
 
 import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
+import Sn2 from "../../../../images/Sn2.jpg";
+import Sn5 from "../../../../images/Sn5.jpeg";
+import Su2 from "../../../../images/Su2.jpg";
+import SkyDive2 from "../../../../images/SkyDive2.jpeg";
+import Dr2 from "../../../../images/Dr2.jpeg";
+import Ph3 from "../../../../images/Ph3.jpeg";
+import MB1 from "../../../../images/MB1.jpeg";
+import MB2 from "../../../../images/MB2.jpeg";
+import MB3 from "../../../../images/MB3.jpeg";
+import MB4 from "../../../../images/MB4.jpeg";
+import Par1 from "../../../../images/Par1.jpeg";
+import Sk1 from "../../../../images/Sk1.jpeg";
+import Sk2 from "../../../../images/Sk2.jpeg";
+import Ska1 from "../../../../images/Ska1.jpeg";
+import Ska2 from "../../../../images/Ska2.jpeg";
+import Ska3 from "../../../../images/Ska3.jpeg";
+import Ska4 from "../../../../images/Ska4.jpeg";
+import SkPh1 from "../../../../images/SkPh1.jpeg";
+import SkPh2 from "../../../../images/SkPh2.jpeg";
+//photos
 
 
 export default class ProfilePage extends Component {
@@ -318,8 +337,52 @@ export default class ProfilePage extends Component {
 				pic = SkyDive1;
 			else if (userInfo.photo === "Dr1")
 				pic = Dr1;
-            else
-                pic = SnowProfilePic;
+			else if (userInfo.photo === "Sn2")
+				pic = Sn2;
+			else if (userInfo.photo === "Sn3")
+				pic = Sn3;
+			else if (userInfo.photo === "Sn5")
+				pic = Sn5;
+			else if (userInfo.photo === "Su2")
+				pic = Su2;
+			else if (userInfo.photo === "Su3")
+				pic = SnMb1;
+			else if (userInfo.photo === "SkyDive2")
+				pic = SkyDive2;
+			else if (userInfo.photo === "Dr2")
+				pic = Dr2;
+			else if (userInfo.photo === "Ph3")
+				pic = Ph3;
+			else if (userInfo.photo === "MB1")
+				pic = MB1;
+			else if (userInfo.photo === "MB2")
+				pic = MB2;
+			else if (userInfo.photo === "MB3")
+				pic = MB3;
+			else if (userInfo.photo === "MB4")
+				pic = MB4;
+			else if (userInfo.photo === "Par1")
+				pic = Par1;
+			else if (userInfo.photo === "Sk1")
+				pic = Sk1;
+			else if (userInfo.photo === "Sk2")
+				pic = Sk2;
+			else if (userInfo.photo === "Ska1")
+				pic = Ska1;
+			else if (userInfo.photo === "Ska2")
+				pic = Ska2;
+			else if (userInfo.photo === "Ska3")
+				pic = Ska3;
+			else if (userInfo.photo === "Ska4")
+				pic = Ska4;
+			else if (userInfo.photo === "SkPh1")
+				pic = SkPh1;
+			else if (userInfo.photo === "SkPh2")
+				pic = SkPh2;
+
+
+			else
+				pic = SnowProfilePic;
 
 			// Make button options for top right corner
 			let options;

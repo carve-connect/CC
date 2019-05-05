@@ -15,7 +15,8 @@ export default class MediaCard extends Component {
 
             editShow: false,
             deleteConfirmationShow: false,
-            description: ""
+            description: "",
+            users: []
 
         };
         this.editMedia = this.editMedia.bind(this);

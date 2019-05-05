@@ -6,14 +6,12 @@ import Carousel from 'react-alice-carousel';
 //import "react-multi-carousel/lib/styles.css";
 import "react-alice-carousel/lib/alice-carousel.css";
 import VenueFigure from './VenueFigure';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import beach from "../../../../images/Be1.jpeg";
 import mountain from "../../../../images/SkRs8.jpeg";
 import skatedude from "../../../../images/SkPk1.jpeg";
 import para from "../../../../images/AF1.jpeg";
-import {Nav} from 'react-bootstrap';
-import {Container} from 'react-bootstrap';
+import {Container, Nav} from 'react-bootstrap';
 import UserApi from "../../../../api/UserApi";
 
 
@@ -187,8 +185,8 @@ export default class VenueListPage extends Component {
                         style={{color: "skyblue"}}/></u></h4>
                     <Row style={{width: "100%", height: "100%"}}>
                         <Carousel fade responsive={responsive} className="carousel" pauseOnHover={true}
-                                    style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
-                                    autoPlay={true} autoPlayInterval={5000}>
+                                  style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
+                                  autoPlay={false} autoPlayInterval={5000}>
                     {this.createSnowRow('')}
                         </Carousel>
                 </Row>
