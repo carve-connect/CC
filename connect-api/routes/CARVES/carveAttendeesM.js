@@ -40,7 +40,7 @@ router.delete('/', (req,res) => {
 // Grab specific carve_attendees by their id
 router.get('/:carve_attendeesId', (req,res) => {
     const carve_attendeesId = req.params.carve_attendeesId;
-    functions.carveAttendeesDelete(carve_attendeesId, res);
+    functions.carveAttendeeGet(carve_attendeesId, res);
 });
 
 // updates carve_attendee
@@ -52,7 +52,7 @@ router.get('/:carve_attendeesId', (req,res) => {
 // deletes carve_attendee
 router.delete('/:carve_attendeesId', (req,res) => {
     const carve_attendeesId = req.params.carve_attendeesId;
-    functions.carveAttendeesDelete(carve_attendeesId, res);
+    functions.carveAttendeeDelete(carve_attendeesId, res);
 });
 
 
