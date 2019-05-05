@@ -10,7 +10,7 @@ export default class CommentTable extends Component {
         this.state = {
             comments: [], 
             comment: [],
-            users: [],
+            users: props.users,
             poster: 0,
             carve: 0,
             media: 0,
@@ -56,16 +56,10 @@ export default class CommentTable extends Component {
                 comments: res.data.results[0]
             });
         });
-        axios.get(`http://localhost:8000/users`)
-            .then(res => {
-                //alert("carve:" + JSON.stringify(res.data.results));
-                //console.log("users: ", JSON.stringify(res.data.users[0][0].username));
-                //alert(JSON.stringify(res.data.results[0]));
-                this.setState({
-                    users: res.data.users[0]
-                });
 
-            });
+        this.setState({
+            users: this.props.users
+        })
     }
 
     render() {
@@ -77,10 +71,10 @@ export default class CommentTable extends Component {
 
             commentList = this.state.comments.map((com, index) => {
                 let poster = "";
-                if (this.state.users.length > 0) {
-                    for (var c = 0; c < this.state.users.length; c++) {
-                        if (this.state.users[c].user_id == com.poster)
-                            poster = this.state.users[c].username;
+                if (this.props.users.length > 0) {
+                    for (var c = 0; c < this.props.users.length; c++) {
+                        if (this.props.users[c].user_id == com.poster)
+                            poster = this.props.users[c].username;
                     }
                 }
 
