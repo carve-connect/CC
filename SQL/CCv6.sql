@@ -56,10 +56,10 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`VENUES` (
                                                `city`         VARCHAR(45)                                                                                  NULL,
                                                `state`        VARCHAR(2)                                                                                   NULL,
                                                `about`        VARCHAR(200)                                                                                 NULL,
-                                               `snow_sports`  SET('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ')                      NULL,
+                                               `snow_sports`  SET ('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ')                     NULL,
                                                `water_sports` SET ('Surf', 'Water Ski ', 'Kayak ', 'Wakeboard ', 'Paddleboard ', 'Parasail', 'Kite Surf ') NULL,
-                                               `land_sports`  SET('Skateboard ', 'BMX ', 'Mountain Bike ', 'Rock Climb ', 'Cliff Dive', 'Parkour')         NULL,
-                                               `air_sports`   SET('Sky Dive ', 'Hang Glide ', 'Base Jump ', 'Air Race ')                                   NULL,
+                                               `land_sports`  SET ('Skateboard ', 'BMX ', 'Mountain Bike ', 'Rock Climb ', 'Cliff Dive', 'Parkour')        NULL,
+                                               `air_sports`   SET ('Sky Dive ', 'Hang Glide ', 'Base Jump ', 'Air Race ')                                  NULL,
                                                `lattitude`    VARCHAR(45)                                                                                  NULL,
                                                `longitude`    VARCHAR(45)                                                                                  NULL,
                                                `url`          VARCHAR(100)                                                                                 NULL,
@@ -67,7 +67,8 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`VENUES` (
                                                `create_time`  TIMESTAMP                                                                                    NULL DEFAULT CURRENT_TIMESTAMP,
                                                PRIMARY KEY (`venue_id`),
                                                UNIQUE INDEX `venue_id_UNIQUE` (`venue_id` ASC) VISIBLE,
-                                               UNIQUE INDEX `venue_name_UNIQUE` (`venue_name` ASC) VISIBLE)
+                                               UNIQUE INDEX `venue_name_UNIQUE` (`venue_name` ASC) VISIBLE
+)
 ENGINE = InnoDB;
 
 
@@ -81,14 +82,14 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`CARVES` (
                                                `name`         VARCHAR(45)                                                                                                                                                                                                                                                                                     NOT NULL,
                                                `creator`      INT                                                                                                                                                                                                                                                                                             NOT NULL,
                                                `venue`        INT                                                                                                                                                                                                                                                                                             NULL,
-                                               `type`         SET('open', 'buddy')                                                                                                                                                                                                                                                                            NOT NULL DEFAULT 'open',
+                                               `type`         SET ('open', 'buddy')                                                                                                                                                                                                                                                                           NOT NULL DEFAULT 'open',
                                                `max_athletes` INT                                                                                                                                                                                                                                                                                             NULL,
                                                `max_photo`    INT                                                                                                                                                                                                                                                                                             NULL,
                                                `description`  VARCHAR(200)                                                                                                                                                                                                                                                                                    NULL,
                                                `date`         DATE                                                                                                                                                                                                                                                                                            NULL,
                                                `completed`    TINYINT                                                                                                                                                                                                                                                                                         NULL,
                                                `sports`       SET ('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ', 'Surf ', 'Water Ski ', 'Kayak ', 'Wakeboard ', 'Paddleboard ', 'Parasail  ', 'Skateboard ', 'BMX ', 'Mountain Bike ', 'Rock Climb ', 'Cliff Dive ', 'Parkour ', 'Sky Dive ', 'Hang Glide ', 'Base Jump ', 'Air Race ') NULL,
-                                               `create_time`  TIMESTAMP                                                                                                                                                                                                                                                                                       NULL DEFAULT CURRENT_TIMESTAMP,
+                                               `create_time`  TIMESTAMP                                                                                                                                                                                                                                                                                       NULL     DEFAULT CURRENT_TIMESTAMP,
                                                UNIQUE INDEX `carve_id_UNIQUE` (`carve_id` ASC) VISIBLE,
                                                PRIMARY KEY (`carve_id`),
                                                CONSTRAINT `creator`
