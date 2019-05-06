@@ -275,7 +275,7 @@ export default class CarveCard extends Component {
                     no = "Completed";
                     att = <div></div>;
                 } else if (carve.creator == localStorage.getItem('userId')) {
-                    color = "grey";
+                    color = "white";
                     act = "Invite Buddy";
                     no = "Upcoming";
                     att = <Button variant="success" style={{paddingTop: "10px"}}
@@ -379,7 +379,7 @@ export default class CarveCard extends Component {
 
                                 </Row>
                             </Card.Body>
-                            <Card.Footer className="text-primary text-info">
+                            <Card.Footer className="text-primary text-info" style={{backgroundColor: "white"}}>
                             <Row>
                                 <Col>
                                     <CommentTable carve={carve} type={"carve"} media={media_id} likes={this.state.likes}
