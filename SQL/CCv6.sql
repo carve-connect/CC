@@ -531,7 +531,7 @@ DROP procedure IF EXISTS `CCv6`.`update_user`;
 DELIMITER $$
 USE `CCv6`$$
 CREATE PROCEDURE `update_user` (in id int, in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40), in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100), in profileType set ('photographer', 'videographer', 'droneoperator', 'athlete', 'proathlete', 'fan')
-,in snowSports set ('snowboard','ski','snowmobile'), in waterSports set ('surf','waterSki', 'kayak', 'parasail', 'paddleboard'),in landSports set ('skateboard','BMX', 'rockclimb', 'mountainbike'), in airSports set ('skydive','hanggglide'))
+,in snowSports set ('snowboard','ski','snowmobile'), in waterSports set ('surf','waterSki', 'kayak', 'parasail', 'paddleboard'),in landSports set ('skateboard','bmx', 'rockclimb', 'mountainbike'), in airSports set ('skydive','hangglide'))
 BEGIN
 update users set 
 username = uname,

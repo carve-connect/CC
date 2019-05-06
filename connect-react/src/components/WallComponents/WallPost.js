@@ -80,9 +80,6 @@ export default class WallPost extends Component {
         return (
             <>
                 <Row>
-                    <h4>
-                        Wall post
-                    </h4>
                 </Row>
                 <form onSubmit={this.handleSubmit}>
                     <Form.Row>
