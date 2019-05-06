@@ -271,7 +271,7 @@ export default class SignUpPage extends Component {
                             <option value='skateboard'>Skateboard</option>
 							<option value='bmx'>BMX</option>
                             <option value='mountainbike'>Mountain Biking</option>
-                            <option value='rockrlimb'>Rock Climb</option>
+                            <option value='rockclimb'>Rock Climb</option>
                             <option value='skateboard,bmx'>Skateboard & BMX</option>
                             <option value='skateboard,mountainbike'>Skateboard & Mountain biking</option>
                             <option value='bmx,mountainbike'> BMX & Mountain Biking</option>
