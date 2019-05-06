@@ -7,13 +7,17 @@ import Carousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import VenueFigure from './VenueFigure';
 import Button from 'react-bootstrap/Button';
-import beach from "../../../../images/Be1.jpeg";
-import mountain from "../../../../images/SkRs8.jpeg";
-import skatedude from "../../../../images/SkPk1.jpeg";
 import para from "../../../../images/AF1.jpeg";
 import {Container, Nav} from 'react-bootstrap';
 import UserApi from "../../../../api/UserApi";
-
+//images
+import beach from "../../../../images/Be1.jpeg";
+import dt from "../../../../images/DT.jpeg";
+import gt from "../../../../images/GT.jpeg";
+import mk from "../../../../images/MK.jpeg";
+import pp from "../../../../images/PP.jpeg";
+import mountain from "../../../../images/SkRs1.jpeg";
+import skatedude from "../../../../images/Ska1.jpeg";
 
 export default class VenueListPage extends Component {
     //I think i'll need the state information based on the future filtering options
@@ -72,8 +76,8 @@ export default class VenueListPage extends Component {
         let div = [];
             let row = [];
 
-            for(let k =0 ; k < length; k++){
-                if(venues[k].water_sports == null && venues[k].air_sports == null && venues[k].land_sports == null){
+        for (let k = 0; k < 16; k++) {
+
                     row.push(
                         <Col key={k} style={{}}>
                             <VenueFigure name={venues[k].venue_name} img={mountain} style={{}}
@@ -81,14 +85,14 @@ export default class VenueListPage extends Component {
                         </Col>
 
                     );
-                }
+
             }
 
 
         return row;
     };
 
-    createWaterRow = () => {
+    createBeachRow = () => {
         const venues = this.state.venues;
         const length = this.state.venuesLength;
 
@@ -106,6 +110,58 @@ export default class VenueListPage extends Component {
             }
         }
 
+
+        return row;
+    };
+
+    createLakeRow = () => {
+        const venues = this.state.venues;
+        const length = this.state.venuesLength;
+
+        let div = [];
+        let row = [];
+
+        for (let k = 0; k < length; k++) {
+            if (venues[k].snow_sports == null && venues[k].air_sports == null && venues[k].land_sports == null) {
+                row.push(
+                    <Col key={k}>
+                        <VenueFigure name={venues[k].venue_name} img={beach}
+                                     href={'/dashboard/venues/' + venues[k].venue_id}/>
+                    </Col>
+                );
+            }
+        }
+
+
+        return row;
+    };
+
+    createMountainRow = () => {
+        const venues = this.state.venues;
+        const length = this.state.venuesLength;
+
+        let div = [];
+        let row = [];
+        let pic;
+        for (let k = 15; k < 21; k++) {
+
+            if (venues[k].picture === "DT")
+                pic = dt;
+            if (venues[k].picture === "MK")
+                pic = mk;
+            if (venues[k].picture === "GT")
+                pic = gt;
+            if (venues[k].picture === "PP")
+                pic = pp;
+
+            row.push(
+                <Col key={k}>
+                    <VenueFigure name={venues[k].venue_name} img={pic}
+                                 href={'/dashboard/venues/' + venues[k].venue_id}/>
+                </Col>
+            );
+
+        }
 
         return row;
     };
@@ -187,19 +243,40 @@ export default class VenueListPage extends Component {
                         <Carousel fade responsive={responsive} className="carousel" pauseOnHover={true}
                                   style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
                                   autoPlay={false} autoPlayInterval={5000}>
-                    {this.createSnowRow('')}
+                            {this.createSnowRow}
                         </Carousel>
                 </Row>
+                    <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-snowflake-o fa-spin"
+                                                          style={{color: "skyblue"}}/>Mountain Venues <i
+                        className="fa fa-snowflake-o fa-spin"
+                        style={{color: "skyblue"}}/></u></h4>
+                    <Row style={{width: "100%", height: "100%"}}>
+                        <Carousel fade responsive={responsive} className="carousel" pauseOnHover={true}
+                                  style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
+                                  autoPlay={false} autoPlayInterval={5000}>
+                            {this.createMountainRow}
+                        </Carousel>
+                    </Row>
 
-                    <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-anchor " style={{color: "navy"}}/> Water
+                    <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-anchor " style={{color: "navy"}}/> Beach
                         Venues <i className="fa fa-anchor " style={{color: "navy"}}/></u></h4>
                 <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
                     <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
                                 style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
                                 autoPlay={false} autoPlayInterval={2000}>
-                        {this.createWaterRow('')}
+                        {this.createBeachRow('')}
                     </Carousel>
                 </Row>
+
+                    <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-anchor " style={{color: "navy"}}/> Lake
+                        Venues <i className="fa fa-anchor " style={{color: "navy"}}/></u></h4>
+                    <Row style={{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
+                        <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
+                                  style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
+                                  autoPlay={false} autoPlayInterval={2000}>
+                            {this.createBeachRow('')}
+                        </Carousel>
+                    </Row>
 
                     <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-bicycle " style={{color: "navy"}}/> Land
                         Venues <i className="fa fa-bicycle " style={{color: "navy"}}/></u></h4>
