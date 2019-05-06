@@ -1140,12 +1140,12 @@ VALUES ('Greenwood Lake', 'Greenwood Lake', 'NY', 'Some lake in New York.', 'Lk2
 INSERT INTO VENUES(venue_name, City, State, about, Picture, Snow_sports, Water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
 VALUES ('Lake Mead', 'Lake Mead', 'NV', 'Party central, not as big as powell though. Hoover dam anyone?', 'Lk3',
-        'Snowmobile', 'Water Ski,Kayak,Paddleboard,Parasail,Kite Surf', 'Rock Climb,Cliff Dive', 'Air Race', 36.14439,
+        'Snowmobile', 'Water Ski,Kayak,Paddleboard,Parasail', 'Rock Climb,Cliff Dive', 'Air Race', 36.14439,
         -114.427312, NULL);
 INSERT INTO VENUES(venue_name, City, State, about, Picture, Snow_sports, Water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
 VALUES ('Union Lake', 'Millville', 'NJ', 'NJ lake, good times to be had.', 'Lk4', 'Snowmobile',
-        'Water Ski,Kayak,Paddleboard,Parasail,Kite Surf', NULL, NULL, 39.412838, -75.060835, NULL);
+        'Water Ski,Kayak,Paddleboard,Parasail', NULL, NULL, 39.412838, -75.060835, NULL);
 INSERT INTO VENUES(venue_name, City, State, about, Picture, Snow_sports, Water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
 VALUES ('Burnside Skate Park', 'Portland', 'OR', 'Bob''s Playgorund', 'Ska2', NULL, NULL, 'Skateboard,BMX,Parkour',
