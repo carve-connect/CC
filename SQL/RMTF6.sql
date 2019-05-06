@@ -4899,8 +4899,6 @@ VALUES (2, 15, 'buddy');
 INSERT INTO FOLLOWS(user_id1, user_id2, type)
 VALUES (3, 22, 'buddy');
 INSERT INTO FOLLOWS(user_id1, user_id2, type)
-VALUES (3, 3, 'buddy');
-INSERT INTO FOLLOWS(user_id1, user_id2, type)
 VALUES (3, 4, 'follow');
 INSERT INTO FOLLOWS(user_id1, user_id2, type)
 VALUES (3, 5, 'follow');
@@ -7164,6 +7162,183 @@ INSERT INTO FOLLOWS(user_id1, venue_id, type)
 VALUES (3, 59, 'follow');
 INSERT INTO FOLLOWS(user_id1, venue_id, type)
 VALUES (3, 60, 'follow');
+
+
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (1, 'https://www.youtube.com/embed/UGdif-dwu-8', 'Redbull Snowboarding Movie', 2);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (1, 'https://www.youtube.com/embed/1TJ08caetkw', 'Gopro Snow boarding at Alaskan Playground', 4);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (1, 'https://www.youtube.com/embed/C-y70ZOSzE0', 'Gopro Mountain Snowboarding', 6);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (8, 'https://www.youtube.com/embed/rva_24_X_0Y', 'Snowboarding in Slopes in Switzerland', 8);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (2, 'https://www.youtube.com/embed/vBFQ9mDXEmQ', 'Skiing In Magical Verbier, Swiss Alps', 10);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (3, 'https://www.youtube.com/embed/_iLnGNNrViA', 'Summer Skiing in Zermatt, Switzerland', 12);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (4, 'https://www.youtube.com/embed/CnJfIONbJF4', 'GoPro: Skiing the Austrian Alps', 14);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (5, 'https://www.youtube.com/embed/esEMipaUHwk', 'Skydiving In The Swiss Alps', 16);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (6, 'https://www.youtube.com/embed/xFEN7BQ7Zus', 'Skydive on Palm Jumeriah, Dubai', 18);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (7, 'https://www.youtube.com/embed/u-JQIEvHhMQ', 'Skydiving in Sicily, Italy', 20);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (9, 'https://www.youtube.com/embed/j54R3P76aS4', 'Skydiving over the Bahamas', 22);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (10, 'https://www.youtube.com/embed/gm7eT0MGt2Y', 'Surfing with Gopro Endless Barrels Winter', 24);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (11, 'https://www.youtube.com/embed/4LdnySqs1Ks', 'Surfing Mentawai Islands', 26);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (12, 'https://www.youtube.com/embed/l9m4cW2yxy0', 'Bungee Jumping in New Zealand', 28);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (5, 'https://www.youtube.com/embed/vGN7djGWtpQ', 'Bungee Jump Verzacsa, Switzerland', 30);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (8, 'https://www.youtube.com/embed/4D1HkgI6UOI', 'PARAGLIDING INTERLAKEN, SWITZERLAND!!', 32);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (3, 'https://www.youtube.com/embed/OVcwcvwzRPs', 'Switzerland Mountain Coaster', 34);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (2, 'https://www.youtube.com/embed/hNvrK2vQsOQ', 'GoPro: Lake Powell Wakeboarding Adventures', 36);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (3, 'https://www.youtube.com/embed/6dZX6CzS8QM', 'Wakeboard Regular Tricks', 38);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (23, 'https://www.youtube.com/embed/uXUVGhqwywE', 'Kayaking Iceland', 40);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (7, 'https://www.youtube.com/embed/RtbutcpWG0A', 'Return to the Ditch - Tandem Kayak', 1);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (29, 'https://www.youtube.com/embed/iKm2JEwe-BI', 'Parasailing in Key West Florida', 3);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (30, 'https://www.youtube.com/embed/TZDPbflCWGI', 'PARASAILING IN CANCUN MEXICO', 5);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (27, 'https://www.youtube.com/embed/HY3pDs3iKfk', 'Rock Climbing China’s White Mountain', 7);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (11, 'https://www.youtube.com/embed/Ssjp6Wiu3TA', 'Rock Climbing World’s Highest Wall', 9);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (13, 'https://www.youtube.com/embed/Vaq4pHxM5P4', 'PaddleBoarding With GoPro', 11);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (15, 'https://www.youtube.com/embed/og1tAqf3g-4', 'PaddleBoarding Freestyle Tricks', 13);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (3, 'https://www.youtube.com/embed/ZSLCeKfOwq8', 'Air Race Red Bull Cannes, France', 15);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (5, 'https://www.youtube.com/embed/fObqACgLhqM', 'Air Race Best HD', 17);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (6, 'https://www.youtube.com/embed/uNwms85M648', 'BMX Bike Riding in NYC', 19);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (7, 'https://www.youtube.com/embed/zOIk-Ddg1E8', 'BMX Revenge at Red Bull Rampage 2016', 21);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (8, 'https://www.youtube.com/embed/Hv_DRJZZ2qI', 'Mountain Biking Red Bull Start to Finish', 23);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (8, 'https://www.youtube.com/embed/l6DPb0szIXM', 'Mountain Biking in Whistler Mountain Bike Park', 25);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (2, 'https://www.youtube.com/embed/0ytfmfn76qA', 'Hang Gliding Wilson Arch', 27);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (2, 'https://www.youtube.com/embed/gwuLVLwMjuA', 'Hang Gliding though Buildings', 29);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (2, 'https://www.youtube.com/embed/tpKEmBQieVo', 'Base Jumping Alone', 31);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (3, 'https://www.youtube.com/embed/-C_jPcUkVrM', 'Base Jumping  though 2 meter cave', 33);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (5, 'https://www.youtube.com/embed/2f9AYloQlFs', 'Cliff Diving World Series', 35);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (5, 'https://www.youtube.com/embed/Ed4QWB0z6f8', 'Cliff Diving Italy', 37);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (5, 'https://www.youtube.com/embed/eE_j5TAhxeg', 'Skate Boarding streets of Tokyo', 39);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (6, 'https://www.youtube.com/embed/bgxCKo5O_CA', 'Skate Boarding Games', 41);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (7, 'https://www.youtube.com/embed/g0FMrjsYAzc', 'Downhill Skiing GoPro', 43);
+INSERT INTO MEDIA(poster, url, description, carve)
+VALUES (8, 'https://www.youtube.com/embed/0gogZ6T1sPU', 'Downhill Skiing From Eyes of Ted Ligety', 45);
+
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (1, 'https://www.youtube.com/embed/UGdif-dwu-8', 'Redbull Snowboarding Movie', 15);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (1, 'https://www.youtube.com/embed/1TJ08caetkw', 'Gopro Snow boarding at Alaskan Playground', 2);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (1, 'https://www.youtube.com/embed/C-y70ZOSzE0', 'Gopro Mountain Snowboarding', 3);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (8, 'https://www.youtube.com/embed/rva_24_X_0Y', 'Snowboarding in Slopes in Switzerland', 7);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (2, 'https://www.youtube.com/embed/vBFQ9mDXEmQ', 'Skiing In Magical Verbier, Swiss Alps', 8);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (3, 'https://www.youtube.com/embed/_iLnGNNrViA', 'Summer Skiing in Zermatt, Switzerland', 8);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (4, 'https://www.youtube.com/embed/CnJfIONbJF4', 'GoPro: Skiing the Austrian Alps', 9);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (5, 'https://www.youtube.com/embed/esEMipaUHwk', 'Skydiving In The Swiss Alps', 11);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (6, 'https://www.youtube.com/embed/xFEN7BQ7Zus', 'Skydive on Palm Jumeriah, Dubai', 12);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (7, 'https://www.youtube.com/embed/u-JQIEvHhMQ', 'Skydiving in Sicily, Italy', 13);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (9, 'https://www.youtube.com/embed/j54R3P76aS4', 'Skydiving over the Bahamas', 14);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (10, 'https://www.youtube.com/embed/gm7eT0MGt2Y', 'Surfing with Gopro Endless Barrels Winter', 15);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (11, 'https://www.youtube.com/embed/4LdnySqs1Ks', 'Surfing Mentawai Islands', 16);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (12, 'https://www.youtube.com/embed/l9m4cW2yxy0', 'Bungee Jumping in New Zealand', 17);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (5, 'https://www.youtube.com/embed/vGN7djGWtpQ', 'Bungee Jump Verzacsa, Switzerland', 18);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (8, 'https://www.youtube.com/embed/4D1HkgI6UOI', 'PARAGLIDING INTERLAKEN, SWITZERLAND!!', 19);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (3, 'https://www.youtube.com/embed/OVcwcvwzRPs', 'Switzerland Mountain Coaster', 20);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (2, 'https://www.youtube.com/embed/hNvrK2vQsOQ', 'GoPro: Lake Powell Wakeboarding Adventures', 21);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (3, 'https://www.youtube.com/embed/6dZX6CzS8QM', 'Wakeboard Regular Tricks', 22);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (23, 'https://www.youtube.com/embed/uXUVGhqwywE', 'Kayaking Iceland', 23);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (7, 'https://www.youtube.com/embed/RtbutcpWG0A', 'Return to the Ditch - Tandem Kayak', 24);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (29, 'https://www.youtube.com/embed/iKm2JEwe-BI', 'Parasailing in Key West Florida', 25);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (30, 'https://www.youtube.com/embed/TZDPbflCWGI', 'PARASAILING IN CANCUN MEXICO', 26);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (27, 'https://www.youtube.com/embed/HY3pDs3iKfk', 'Rock Climbing China’s White Mountain', 27);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (11, 'https://www.youtube.com/embed/Ssjp6Wiu3TA', 'Rock Climbing World’s Highest Wall', 28);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (13, 'https://www.youtube.com/embed/Vaq4pHxM5P4', 'PaddleBoarding With GoPro', 29);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (15, 'https://www.youtube.com/embed/og1tAqf3g-4', 'PaddleBoarding Freestyle Tricks', 31);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (3, 'https://www.youtube.com/embed/ZSLCeKfOwq8', 'Air Race Red Bull Cannes, France', 35);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (5, 'https://www.youtube.com/embed/fObqACgLhqM', 'Air Race Best HD', 36);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (6, 'https://www.youtube.com/embed/uNwms85M648', 'BMX Bike Riding in NYC', 37);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (7, 'https://www.youtube.com/embed/zOIk-Ddg1E8', 'BMX Revenge at Red Bull Rampage 2016', 38);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (8, 'https://www.youtube.com/embed/Hv_DRJZZ2qI', 'Mountain Biking Red Bull Start to Finish', 39);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (8, 'https://www.youtube.com/embed/l6DPb0szIXM', 'Mountain Biking in Whistler Mountain Bike Park', 40);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (2, 'https://www.youtube.com/embed/0ytfmfn76qA', 'Hang Gliding Wilson Arch', 31);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (2, 'https://www.youtube.com/embed/gwuLVLwMjuA', 'Hang Gliding though Buildings', 41);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (2, 'https://www.youtube.com/embed/tpKEmBQieVo', 'Base Jumping Alone', 21);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (3, 'https://www.youtube.com/embed/-C_jPcUkVrM', 'Base Jumping  though 2 meter cave', 23);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (5, 'https://www.youtube.com/embed/2f9AYloQlFs', 'Cliff Diving World Series', 22);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (5, 'https://www.youtube.com/embed/Ed4QWB0z6f8', 'Cliff Diving Italy', 21);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (5, 'https://www.youtube.com/embed/eE_j5TAhxeg', 'Skate Boarding streets of Tokyo', 14);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (6, 'https://www.youtube.com/embed/bgxCKo5O_CA', 'Skate Boarding Games', 18);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (7, 'https://www.youtube.com/embed/g0FMrjsYAzc', 'Downhill Skiing GoPro', 21);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (8, 'https://www.youtube.com/embed/0gogZ6T1sPU', 'Downhill Skiing From Eyes of Ted Ligety', 2);
+
+
 
 INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type)
 VALUES (1, 3, 'hey!', 'Hey, how''s it going?', 'normal');
