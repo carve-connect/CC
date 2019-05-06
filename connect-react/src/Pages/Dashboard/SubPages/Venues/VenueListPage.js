@@ -18,6 +18,13 @@ import mk from "../../../../images/MK.jpeg";
 import pp from "../../../../images/PP.jpeg";
 import mountain from "../../../../images/SkRs1.jpeg";
 import skatedude from "../../../../images/Ska1.jpeg";
+import mountain2 from "../../../../images/SkRs2.jpeg";
+import mountain3 from "../../../../images/SkRs3.JPG";
+import mountain4 from "../../../../images/SkRs4.JPG";
+import mountain5 from "../../../../images/SkRs5.jpeg";
+import mountain6 from "../../../../images/SkRs6.JPG";
+import mountain7 from "../../../../images/SkRs7.JPG";
+import mountain8 from "../../../../images/SkRs8.jpeg";
 
 export default class VenueListPage extends Component {
     //I think i'll need the state information based on the future filtering options
@@ -75,16 +82,34 @@ export default class VenueListPage extends Component {
 
         let div = [];
             let row = [];
+        let pic;
 
-        for (let k = 0; k < 16; k++) {
+        if (length > 0)
+            for (let k = 0; k < 16; k++) {
 
-                    row.push(
-                        <Col key={k} style={{}}>
-                            <VenueFigure name={venues[k].venue_name} img={mountain} style={{}}
-                                         href={'/dashboard/venues/' + venues[k].venue_id}/>
-                        </Col>
+                if (venues[k].picture === "SkRs1")
+                    pic = mountain;
+                else if (venues[k].picture === "SkRs2")
+                    pic = mountain2;
+                else if (venues[k].picture === "SkRs3")
+                    pic = mountain3;
+                else if (venues[k].picture === "SkRs4")
+                    pic = mountain4;
+                else if (venues[k].picture === "SkRs5")
+                    pic = mountain5;
+                else if (venues[k].picture === "SkRs6")
+                    pic = mountain6;
+                else if (venues[k].picture === "SkRs7")
+                    pic = mountain7;
+                else if (venues[k].picture === "SkRs8")
+                    pic = mountain8;
 
-                    );
+                row.push(
+                    <Col key={k} style={{}}>
+                        <VenueFigure name={venues[k].venue_name} img={mountain} style={{}}
+                                     href={'/dashboard/venues/' + venues[k].venue_id}/>
+                    </Col>
+                );
 
             }
 
@@ -143,25 +168,27 @@ export default class VenueListPage extends Component {
         let div = [];
         let row = [];
         let pic;
-        for (let k = 15; k < 21; k++) {
 
-            if (venues[k].picture === "DT")
-                pic = dt;
-            if (venues[k].picture === "MK")
-                pic = mk;
-            if (venues[k].picture === "GT")
-                pic = gt;
-            if (venues[k].picture === "PP")
-                pic = pp;
+        if (length > 0)
+            for (let k = 15; k < 21; k++) {
 
-            row.push(
-                <Col key={k}>
-                    <VenueFigure name={venues[k].venue_name} img={pic}
-                                 href={'/dashboard/venues/' + venues[k].venue_id}/>
-                </Col>
-            );
+                if (venues[k].picture === "DT")
+                    pic = dt;
+                if (venues[k].picture === "MK")
+                    pic = mk;
+                if (venues[k].picture === "GT")
+                    pic = gt;
+                if (venues[k].picture === "PP")
+                    pic = pp;
 
-        }
+                row.push(
+                    <Col key={k}>
+                        <VenueFigure name={venues[k].venue_name} img={pic}
+                                     href={'/dashboard/venues/' + venues[k].venue_id}/>
+                    </Col>
+                );
+
+            }
 
         return row;
     };
@@ -243,7 +270,7 @@ export default class VenueListPage extends Component {
                         <Carousel fade responsive={responsive} className="carousel" pauseOnHover={true}
                                   style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
                                   autoPlay={false} autoPlayInterval={5000}>
-                            {this.createSnowRow}
+                            {this.createSnowRow('')}
                         </Carousel>
                 </Row>
                     <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-snowflake-o fa-spin"
@@ -254,7 +281,7 @@ export default class VenueListPage extends Component {
                         <Carousel fade responsive={responsive} className="carousel" pauseOnHover={true}
                                   style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
                                   autoPlay={false} autoPlayInterval={5000}>
-                            {this.createMountainRow}
+                            {this.createMountainRow('')}
                         </Carousel>
                     </Row>
 
