@@ -12895,3 +12895,61 @@ INSERT INTO COMMENTS(poster, media, comment)
 VALUES (198, 111, 'looks awesome!');
 INSERT INTO COMMENTS(poster, media, comment)
 VALUES (199, 78, 'Nice job!');
+
+
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 3, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 4, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 5, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 6, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 7, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 8, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 9, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 10, 'invite', 'carve with me bro', 'invite', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (2, 1, 'invite', 'carve with me bro', 'invite', NULL, 3);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (2, 1, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 1);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 3);
+
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'invite', 'can i carve with you', 'attendRequest', NULL, 2);
+
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 3, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 4, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 5, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 6, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 7, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 8, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 9, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 10, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (2, 1, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 4);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (2, 1, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 2);
+INSERT INTO MESSAGES(sender_Id, rec_Id, message_subject, message_body, type, reply, carve)
+VALUES (1, 2, 'attendRequest', 'can i carve with you', 'attendRequest', NULL, 4);
