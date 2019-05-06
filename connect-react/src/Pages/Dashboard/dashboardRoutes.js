@@ -1,4 +1,4 @@
-import {Route, Switch} from "react-router-dom";
+import {Route, Switch, withRouter} from "react-router-dom";
 import ProfilePage from "./SubPages/Profile/ProfilePage";
 import VenuePage from "./SubPages/Venues/VenuePage";
 import VenueListPage from "./SubPages/Venues/VenueListPage";
@@ -15,11 +15,12 @@ import ExplorePage from "./SubPages/Explore/explorepage";
 import React from "react";
 
 const routes = (
+
     <Switch>
 
         {/* Remember to parse integer because the number is returned a string */}
         {/* Can be accessed by props.match.params.number in Profile Page.... */}
-        <Route path="/dashboard/profile/:number" component={ProfilePage}/>
+            <Route path="/dashboard/profile/:number" render={withRouter(ProfilePage)}/>
         <Route path="/dashboard/venues/:number" component={VenuePage}/>
         <Route path="/dashboard/venues" component={VenueListPage}/>
         <Route path="/dashboard/messages" component={MessagesPage}/>
@@ -34,6 +35,7 @@ const routes = (
         <Route path="/dashboard/explore" component={ExplorePage}/>
 
     </Switch>
+
 );
 
 export default routes;
