@@ -6,7 +6,6 @@ const con = require('../../db');
 // Grabs all carve_attendees from db
 router.get('/', (req,res) => {
     // Find all carve_attendees from database
-    console.log(req.params);
     userId = req.params.userId;
     carve_attendees_list = "CALL get_user_attended(?)";
     con.query(carve_attendees_list, [userId], (err, c) => {
@@ -109,7 +108,6 @@ router.delete('/:carve_attendeesId', (req,res) => {
 
 router.get('/named', (req,res) => {
     // Find all carve_attendees from database
-    console.log(req.params);
     get_named_carveAttendees = "CALL get_named_carveAttendees(?)";
     con.query(get_named_carveAttendees, (err, results) => {
         if (err) throw err;

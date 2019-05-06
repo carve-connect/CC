@@ -9,5 +9,53 @@ module.exports = {
             if (err) throw err;
             res.status(200).jsonp({attend}).end();
         })
+    },
+
+    carveAttendeesPost: function ([carve, user, userType], res){
+        new_carve_attendees = "CALL add_carve_attendee(?,?,?)";
+        con.query(new_carve_attendees,[carve,user,userType[0]], (err, results) => {
+            if (err) throw err;
+            res.status(201).jsonp({results}).end();
+        })
+    },
+
+    carveAttendeesPut: function (res){
+        new_carve_attendees = "CALL add_carve_attendee(?,?,?)";
+        con.query(new_carve_attendees, (err, results) => {
+            if (err) throw err;
+            res.status(201).jsonp({results}).end();
+        })
+    },
+
+    carveAttendeesPatch: function (res){
+        new_carve_attendees = "CALL add_carve_attendee(?,?,?)";
+        con.query(new_carve_attendees, (err, results) => {
+            if (err) throw err;
+            res.status(201).jsonp({results}).end();
+        })
+    },
+
+    carveAttendeesDelete: function (carveId, res){
+        delete_carve_attendeess = "CALL delete_carve_attendees()";
+        con.query(delete_carve_attendeess, (err, results) => {
+            if (err) throw err;
+            res.status(201).jsonp({results}).end();
+        })
+    },
+
+    carveAttendeeGet: function (carve_attendeesId, res){
+        get_carve_attendees  = "call get_carve_attendee(?)";
+        con.query(get_carve_attendees, carve_attendeesId, (err, results) => {
+            if (err) throw err;
+            res.status(200).jsonp({results}).end();
+        })
+    },
+
+    carveAttendeeDelete: function (carve_attendeesId, res){
+        delete_carve_attendeess = "CALL delete_carve_attendee(?)";
+        con.query(delete_carve_attendeess, carve_attendeesId, (err, results) => {
+            if (err) throw err;
+            res.status(201).jsonp({msg:'carve_attendees deleted'}).end();
+        })
     }
 };

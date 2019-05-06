@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router({mergeParams: true});
 const con = require('../../db');
-var functions = require('./middleware/users/userFunctions');
+var functions = require('../middleware/users/messageFunctions');
 
 
 // Grabs all messages for a specific user from the db
 router.get('/', (req,res) => {
     userId = req.params.userId;
-
+    functions.usersMessagesGet(userId, res);
 });
 
 // Strips json obj given back by the db and returns only the rows so that we can manipulate the data
@@ -99,53 +99,53 @@ router.get('/inbox', (req,res) => {
 // Grabs all messages from db
 router.get('/sent', (req,res) => {
     userId = req.params.userId;
-
+    functions.usersMessagesGet(userId, res);
 });
 
 
 // Grabs all messages from db
 router.get('/notifications', (req,res) => {
     userId = req.params.userId;
-
+    functions.usersMessagesGet(userId, res);
 });
 
 
 // Grabs all messages from db
 router.get('/notifications/sent', (req,res) => {
     userId = req.params.userId;
-
+    functions.usersMessagesGet(userId, res);
 });
 
 
 // Creates a new message
 router.post('/', (req,res) => {
     const {sender,reciever,subject,body, msgType} = req.body;
-
+    functions.usersMessagesGet([sender, reciever, subject, body, msgType], res);
 });
 
 
 // updates all messages
 router.put('/', (req,res) => {
-
+    functions.usersMessagesGet(res);
 });
 
 
 // updates all messages
 router.patch('/', (req,res) => {
-
+    functions.usersMessagesGet(res);
 });
 
 
 // deletes all messages
 router.delete('/', (req,res) => {
-
+    functions.usersMessagesDelete(res);
 });
 
 
 // Grab specific message by their id
 router.get('/:messageId', (req,res) => {
     const messageId = req.params.messageId;
-
+    functions.usersMessageGet(messageId, res);
 });
 
 
@@ -153,7 +153,7 @@ router.get('/:messageId', (req,res) => {
 router.put('/:messageId', (req,res) => {
     const messageId = req.params.messageId;
     const {sender,reciever,subject,body, msgType} = req.body;
-
+    functions.usersMessageUpdate(messageId, [sender,reciever,subject,body, msgType], res);
 });
 
 
@@ -161,14 +161,14 @@ router.put('/:messageId', (req,res) => {
 router.patch('/:messageId', (req,res) => {
     const messageId = req.params.messageId;
     const {sender,reciever,subject,body, msgType} = req.body;
-
+    functions.usersMessageUpdate(messageId, [sender,reciever,subject,body, msgType], res);
 });
 
 
 // deletes message
 router.delete('/:messageId', (req,res) => {
     const messageId = req.params.messageId;
-
+    functions.usersMessageDelete(messageId, res);
 });
 
 

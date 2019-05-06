@@ -36,7 +36,7 @@ module.exports = {
         con.query(get_user, [userId],(err, results) => {
             if (err) throw err;
             console.log(results[0][0]);
-            res.status(200).jsonp({users: results}).end;
+            res.status(200).jsonp({users: results}).end();
         })
     }
 };
