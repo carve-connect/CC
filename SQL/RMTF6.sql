@@ -7252,13 +7252,26 @@ INSERT INTO MEDIA(poster, url, description, carve)
 VALUES (8, 'https://www.youtube.com/embed/0gogZ6T1sPU', 'Downhill Skiing From Eyes of Ted Ligety', 45);
 
 INSERT INTO MEDIA(poster, url, description, profile)
-VALUES (1, 'https://www.youtube.com/embed/UGdif-dwu-8', 'Redbull Snowboarding Movie', 15);
+VALUES (1, 'https://www.youtube.com/embed/UGdif-dwu-8', 'Redbull Snowboarding Movie', 1);
 INSERT INTO MEDIA(poster, url, description, profile)
-VALUES (1, 'https://www.youtube.com/embed/1TJ08caetkw', 'Gopro Snow boarding at Alaskan Playground', 2);
+VALUES (1, 'https://www.youtube.com/embed/1TJ08caetkw', 'Gopro Snow boarding at Alaskan Playground', 1);
 INSERT INTO MEDIA(poster, url, description, profile)
-VALUES (1, 'https://www.youtube.com/embed/C-y70ZOSzE0', 'Gopro Mountain Snowboarding', 3);
+VALUES (1, 'https://www.youtube.com/embed/C-y70ZOSzE0', 'Gopro Mountain Snowboarding', 1);
 INSERT INTO MEDIA(poster, url, description, profile)
-VALUES (8, 'https://www.youtube.com/embed/rva_24_X_0Y', 'Snowboarding in Slopes in Switzerland', 7);
+VALUES (1, 'https://www.youtube.com/embed/rva_24_X_0Y', 'Snowboarding in Slopes in Switzerland', 1);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (1, 'https://www.youtube.com/embed/vBFQ9mDXEmQ', 'Skiing In Magical Verbier, Swiss Alps', 1);
+
+
+
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (15, 'https://www.youtube.com/embed/UGdif-dwu-8', 'Redbull Snowboarding Movie', 15);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (2, 'https://www.youtube.com/embed/1TJ08caetkw', 'Gopro Snow boarding at Alaskan Playground', 2);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (3, 'https://www.youtube.com/embed/C-y70ZOSzE0', 'Gopro Mountain Snowboarding', 3);
+INSERT INTO MEDIA(poster, url, description, profile)
+VALUES (7, 'https://www.youtube.com/embed/rva_24_X_0Y', 'Snowboarding in Slopes in Switzerland', 7);
 INSERT INTO MEDIA(poster, url, description, profile)
 VALUES (2, 'https://www.youtube.com/embed/vBFQ9mDXEmQ', 'Skiing In Magical Verbier, Swiss Alps', 8);
 INSERT INTO MEDIA(poster, url, description, profile)
