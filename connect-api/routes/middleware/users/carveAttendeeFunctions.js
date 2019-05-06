@@ -3,7 +3,7 @@ var router = express.Router({mergeParams: true});
 const con = require('../../../db');
 
 module.exports = {
-    carveAttendeesGet: function(userId, res){
+    usersCarveAttendeesGet: function(userId, res){
         carve_attendees_list = "CALL get_user_attended(?)";
         con.query(carve_attendees_list, [userId], (err, attend) => {
             if (err) throw err;
@@ -11,7 +11,7 @@ module.exports = {
         })
     },
 
-    carveAttendeesPost: function ([carve, user, userType], res){
+    usersCarveAttendeesPost: function ([carve, user, userType], res){
         new_carve_attendees = "CALL add_carve_attendee(?,?,?)";
         con.query(new_carve_attendees,[carve,user,userType[0]], (err, results) => {
             if (err) throw err;
@@ -19,7 +19,7 @@ module.exports = {
         })
     },
 
-    carveAttendeesUpdate: function (res){
+    usersCarveAttendeesUpdate: function (res){
         new_carve_attendees = "CALL add_carve_attendee(?,?,?)";
         con.query(new_carve_attendees, (err, results) => {
             if (err) throw err;
@@ -27,7 +27,7 @@ module.exports = {
         })
     },
 
-    carveAttendeesDelete: function (res){
+    usersCarveAttendeesDelete: function (res){
         delete_carve_attendeess = "CALL delete_carve_attendees()";
         con.query(delete_carve_attendeess, (err, results) => {
             if (err) throw err;
@@ -35,7 +35,7 @@ module.exports = {
         })
     },
 
-    carveAttendeeGet: function (carve_attendeesId, res){
+    usersCarveAttendeeGet: function (carve_attendeesId, res){
         get_carve_attendees  = "call get_carve_attendee(?)";
         con.query(get_carve_attendees, carve_attendeesId, (err, results) => {
             if (err) throw err;
@@ -43,7 +43,7 @@ module.exports = {
         })
     },
 
-    carveAttendeeUpdate: function (carve_attendeesId, [carve,user,userType], res){
+    usersCarveAttendeeUpdate: function (carve_attendeesId, [carve,user,userType], res){
         update_carve_attendees = "CALL update_carve_attendee(?,?,?,?)";
         con.query(update_carve_attendees,[carve_attendeesId,carve,user,userType[0]],(err, results) => {
             if (err) throw err;
@@ -51,7 +51,7 @@ module.exports = {
         })
     },
 
-    carveAttendeeDelete: function (carve_attendeesId, res) {
+    usersCarveAttendeeDelete: function (carve_attendeesId, res) {
         delete_carve_attendeess = "CALL delete_carve_attendee(?)";
         con.query(delete_carve_attendeess, carve_attendeesId, (err, results) => {
             if (err) throw err;
@@ -59,7 +59,7 @@ module.exports = {
         })
     },
 
-    carveAttendeesGetNamed: function (carve_attendeesId, res) {
+    usersCarveAttendeesGetNamed: function (carve_attendeesId, res) {
         // Find all carve_attendees from database
         get_named_carveAttendees = "CALL get_named_carveAttendees(?)";
         con.query(get_named_carveAttendees, (err, results) => {
