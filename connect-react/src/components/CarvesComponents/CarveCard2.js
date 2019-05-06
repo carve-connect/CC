@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
-
+import Container from "react-bootstrap/Container";
 import CarveAttendRequestModal from "../NotificationComponents/CarveAttendRequestModal";
 import CarveInviteModal from "../NotificationComponents/CarveInviteModal";
-import CarveLikes from "../CarveComponents/CarveLikes";
+import CarveLikes from "./CarveLikes";
 import CreateCarveMediaModal from "../CarveComponents/CreateCarveMediaModal";
 import CommentTable from '../WallComponents/CommentTable';
 import MediaGroup from "../MediaComponents/MediaGroup";
+import {Button, Dropdown, Form, FormGroup, Modal, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import axios from "axios";
+import NameDropdown from '../NameDropdown'
 
 export default class CarveCard2 extends Component {
 
@@ -25,7 +26,7 @@ export default class CarveCard2 extends Component {
             type: "",
             max_athletes: 0,
             max_photo: 0,
-            description: null,
+            description: "",
             date: "",
             carveInfo: {},
             att: [],
@@ -46,11 +47,15 @@ export default class CarveCard2 extends Component {
             items: [],
             active: 5,
             users: props.users,
-            at: 0
+            at: 0,
+            show: false
 
         };
 
-
+        this.editCarve = this.editCarve.bind(this);
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.deleteCarve = this.deleteCarve.bind(this);
     }
 
     componentDidMount() {
@@ -125,8 +130,43 @@ export default class CarveCard2 extends Component {
         });
     };
 
+    validateForm() {
+        const {description} = this.state;
+
+        return (description.length > 0);
+    }
+
+    handleClose() {
+        this.setState({show: false});
+    }
+
+    handleShow() {
+        this.setState({show: true});
+    }
+
+    handleChange = event => {
+        this.setState({
+            [event.target.id]: event.target.value
+        });
+    };
+
+    editCarve(e) {
+        e.preventDefault();
+
+        this.handleClose();
+    }
+
+    deleteCarve(e) {
+        axios.delete(`http://localhost:8000/carves/${e}`);
+    }
+
+    comp(e) {
+        axios.post(`http://localhost:8000/carves/complete/${e}`);
+    }
 
     render() {
+
+        let editModal;
 
         let carveList;
         let carveAttendList;
@@ -149,6 +189,33 @@ export default class CarveCard2 extends Component {
 
         let CarveAttend;
 
+
+        editModal =
+            <div>
+                <Modal centered show={this.state.show} onHide={this.handleClose}>
+                    <Modal.Header>
+                        Edit Media
+                    </Modal.Header>
+                    <Container>
+                        <FormGroup controlId="description">
+                            <Form.Label>Description</Form.Label>
+                            <Form.Control value={this.state.description} onChange={this.handleChange} type="text"
+                                          placeholder="Enter Description..."/>
+                        </FormGroup>
+                    </Container>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={this.handleClose}>
+                            Exit
+                        </Button>
+                        <Button onClick={this.editMedia} disabled={!this.validateForm()} type="submit"
+                                variant="primary">
+                            Edit
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>;
+
+
         if (this.state.att.length > 0) {
             CarveAttend = this.state.att.map((attender, index1) => {
                 if (attender.user == localStorage.getItem('userId')) {
@@ -163,7 +230,8 @@ export default class CarveCard2 extends Component {
 
                         backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
                     }}>
-                        {attender.username} {attender.type}
+                        <NameDropdown id={attender.user_id} link={`/dashboard/profile/${attender.user_id}`} name={attender.username}/> {attender.type}
+                        
 
                     </ListGroup.Item>
                 )
@@ -299,9 +367,53 @@ export default class CarveCard2 extends Component {
         console.log(cad);
 // -> Wed Jun 09 2010 14:12:01 GMT+0100 (BST)
 */
+        let complete;
+        if (carve.completed === 0) {
+            complete =
+                <Dropdown.Item onClick={() => this.comp(carve.carve_id)}>
+                    <OverlayTrigger overlay={
+                        <Tooltip>Complete</Tooltip>
+                    }>
+                        <i class="fa fa-eject fa-2x"></i>
+                    </OverlayTrigger>
+
+                </Dropdown.Item>
+        }
+
+        let edit = <div></div>;
+        if (carve.creator == localStorage.getItem('userId')) {
+            edit = <Dropdown>
+                <Dropdown.Toggle size="sm" variant="link" style={{color: 'black', float: 'right', border: 'none'}}>
+                    <i class="fa fa-ellipsis-h fa-10x"></i>
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu style={{minWidth: '5rem'}}>
+                    <Dropdown.Item onClick={this.handleShow}>
+                        <OverlayTrigger overlay={
+                            <Tooltip>Edit</Tooltip>
+                        }>
+                            <i class="fa fa-edit fa-2x"></i>
+                        </OverlayTrigger>
+
+                    </Dropdown.Item>
+
+                    {complete}
+
+                    <Dropdown.Item onClick={() => this.deleteCarve(carve.carve_id)}>
+                        <OverlayTrigger overlay={
+                            <Tooltip>Delete</Tooltip>
+                        }>
+                            <i class="fa fa-trash fa-2x"></i>
+                        </OverlayTrigger>
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+        }
+
         return (
 
             <Card style={{width: '100%', backgroundColor: [color]}}>
+                {editModal}
                 <CarveAttendRequestModal cid={this.state.cId} cre={this.state.cRe}
                                          handleClose={this.handleClick5} show={this.state.show5}/>
                 <CarveInviteModal cid={this.state.cId} handleClose={this.handleClick6} show={this.state.show6}/>
@@ -310,7 +422,7 @@ export default class CarveCard2 extends Component {
                         <Card.Title>Name: {carve.name}</Card.Title>
                         <div style={{margin: '15px', marginLeft: '20%'}}>Created on: {cd}</div>
                         <h6 style={{margin: '15px', marginLeft: '20%'}}>Type: {carve.type}</h6>
-
+                        {edit}
                     </Row>
                 </Card.Header>
                 <Card.Body>

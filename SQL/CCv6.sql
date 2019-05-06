@@ -1,3 +1,4 @@
+
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS = @@UNIQUE_CHECKS, UNIQUE_CHECKS = 0;
@@ -35,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`USERS`
     `description`  VARCHAR(100)                                                                                 NULL,
     `type`         SET ('Photographer ', 'Videographer ', 'Drone Operator ', 'Athlete ', 'Pro Athlete ', 'fan') NOT NULL DEFAULT 'athlete',
     `snow_sports`  SET ('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ')                     NULL,
-    `water_sports` SET ('Surf', 'Water Ski ', 'Kayak ', 'Wakeboard ', 'Paddleboard ', 'Parasail')               NULL,
+    `water_sports` SET ('Surf', 'Water Ski ', 'Kayak ', 'Wakeboard ', 'Paddleboard ', 'Parasail', 'Kite Surf ') NULL,
     `land_sports`  SET ('Skateboard ', 'BMX ', 'Mountain Bike ', 'Rock Climb ', 'Cliff Dive', 'Parkour')        NULL,
     `air_sports`   SET ('Sky Dive ', 'Hang Glide ', 'Base Jump ', 'Air Race ')                                  NULL,
     `logged_in`    TINYINT                                                                                      NULL     DEFAULT 0,
@@ -55,20 +56,20 @@ DROP TABLE IF EXISTS `CCv6`.`VENUES`;
 
 CREATE TABLE IF NOT EXISTS `CCv6`.`VENUES`
 (
-    `venue_id`     INT                                         NOT NULL AUTO_INCREMENT,
-    `venue_name`   VARCHAR(45)                                 NOT NULL,
-    `city`         VARCHAR(45)                                 NULL,
-    `state`        VARCHAR(2)                                  NULL,
-    `about`        VARCHAR(200)                                NULL,
-    `snow_sports`  SET ('snowboard', 'ski', 'snowmobile')      NULL,
-    `water_sports` SET ('surf', 'waterski')                    NULL,
-    `land_sports`  SET ('skateboard', 'BMX', 'mountainBiking') NULL,
-    `air_sports`   SET ('skyDive', 'hangGlide')                NULL,
-    `lattitude`    VARCHAR(45)                                 NULL,
-    `longitude`    VARCHAR(45)                                 NULL,
-    `url`          VARCHAR(100)                                NULL,
-    `picture`      VARCHAR(45)                                 NULL,
-    `create_time`  TIMESTAMP                                   NULL DEFAULT CURRENT_TIMESTAMP,
+    `venue_id`     INT                                                                                          NOT NULL AUTO_INCREMENT,
+    `venue_name`   VARCHAR(45)                                                                                  NOT NULL,
+    `city`         VARCHAR(45)                                                                                  NULL,
+    `state`        VARCHAR(2)                                                                                   NULL,
+    `about`        VARCHAR(200)                                                                                 NULL,
+    `snow_sports`  SET ('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ')                     NULL,
+    `water_sports` SET ('Surf', 'Water Ski ', 'Kayak ', 'Wakeboard ', 'Paddleboard ', 'Parasail', 'Kite Surf ') NULL,
+    `land_sports`  SET ('Skateboard ', 'BMX ', 'Mountain Bike ', 'Rock Climb ', 'Cliff Dive', 'Parkour')        NULL,
+    `air_sports`   SET ('Sky Dive ', 'Hang Glide ', 'Base Jump ', 'Air Race ')                                  NULL,
+    `lattitude`    VARCHAR(45)                                                                                  NULL,
+    `longitude`    VARCHAR(45)                                                                                  NULL,
+    `url`          VARCHAR(100)                                                                                 NULL,
+    `picture`      VARCHAR(45)                                                                                  NULL,
+    `create_time`  TIMESTAMP                                                                                    NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`venue_id`),
     UNIQUE INDEX `venue_id_UNIQUE` (`venue_id` ASC) VISIBLE,
     UNIQUE INDEX `venue_name_UNIQUE` (`venue_name` ASC) VISIBLE
@@ -83,18 +84,18 @@ DROP TABLE IF EXISTS `CCv6`.`CARVES`;
 
 CREATE TABLE IF NOT EXISTS `CCv6`.`CARVES`
 (
-    `carve_id`     INT                                                                                                                     NOT NULL AUTO_INCREMENT,
-    `name`         VARCHAR(45)                                                                                                             NOT NULL,
-    `creator`      INT                                                                                                                     NOT NULL,
-    `venue`        INT                                                                                                                     NULL,
-    `type`         SET ('open', 'buddy')                                                                                                   NOT NULL DEFAULT 'open',
-    `max_athletes` INT                                                                                                                     NULL,
-    `max_photo`    INT                                                                                                                     NULL,
-    `description`  VARCHAR(200)                                                                                                            NULL,
-    `date`         DATE                                                                                                                    NULL,
-    `completed`    TINYINT                                                                                                                 NULL,
-    `sports`       SET ('snowboard', 'ski', 'snowmobile', 'surf', 'waterski', 'skyDive', 'hangGlide', 'skateboard', 'BMX', 'mountainBike') NULL,
-    `create_time`  TIMESTAMP                                                                                                               NULL     DEFAULT CURRENT_TIMESTAMP,
+    `carve_id`     INT                                                                                                                                                                                                                                                                                             NOT NULL AUTO_INCREMENT,
+    `name`         VARCHAR(45)                                                                                                                                                                                                                                                                                     NOT NULL,
+    `creator`      INT                                                                                                                                                                                                                                                                                             NOT NULL,
+    `venue`        INT                                                                                                                                                                                                                                                                                             NULL,
+    `type`         SET ('open', 'buddy')                                                                                                                                                                                                                                                                           NOT NULL DEFAULT 'open',
+    `max_athletes` INT                                                                                                                                                                                                                                                                                             NULL,
+    `max_photo`    INT                                                                                                                                                                                                                                                                                             NULL,
+    `description`  VARCHAR(200)                                                                                                                                                                                                                                                                                    NULL,
+    `date`         DATE                                                                                                                                                                                                                                                                                            NULL,
+    `completed`    TINYINT                                                                                                                                                                                                                                                                                         NULL,
+    `sports`       SET ('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ', 'Surf ', 'Water Ski ', 'Kayak ', 'Wakeboard ', 'Paddleboard ', 'Parasail  ', 'Skateboard ', 'BMX ', 'Mountain Bike ', 'Rock Climb ', 'Cliff Dive ', 'Parkour ', 'Sky Dive ', 'Hang Glide ', 'Base Jump ', 'Air Race ') NULL,
+    `create_time`  TIMESTAMP                                                                                                                                                                                                                                                                                       NULL     DEFAULT CURRENT_TIMESTAMP,
     UNIQUE INDEX `carve_id_UNIQUE` (`carve_id` ASC) VISIBLE,
     PRIMARY KEY (`carve_id`),
     CONSTRAINT `creator`
@@ -287,8 +288,8 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`MEDIA`
     CONSTRAINT `carve4`
         FOREIGN KEY (`carve`)
             REFERENCES `CCv6`.`CARVES` (`carve_id`)
-            ON DELETE NO ACTION
-            ON UPDATE NO ACTION
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
 )
     ENGINE = InnoDB;
 
@@ -432,6 +433,14 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`all_comments`
 CREATE TABLE IF NOT EXISTS `CCv6`.`view1`
 (
     `type` INT
+);
+
+-- -----------------------------------------------------
+-- Placeholder table for view `CCv6`.`view2`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CCv6`.`view2`
+(
+    `id` INT
 );
 
 -- -----------------------------------------------------
@@ -1860,7 +1869,7 @@ DELIMITER $$
 USE `CCv6`$$
 CREATE PROCEDURE `get_users_messages`(in id int)
 BEGIN
-    select * from all_messages where sender_id = id or rec_id = id;
+    select * from all_messages where sender_id = id or rec_id = id ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -1876,7 +1885,7 @@ DELIMITER $$
 USE `CCv6`$$
 CREATE PROCEDURE `get_users_inbox`(in id int)
 BEGIN
-    select * from all_messages where rec_id = id and (type = 'normal' or type = 'reply');
+    select * from all_messages where rec_id = id and (type = 'normal' or type = 'reply') ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -1892,7 +1901,7 @@ DELIMITER $$
 USE `CCv6`$$
 CREATE PROCEDURE `get_users_sent`(in id int)
 BEGIN
-    select * from all_messages where sender_id = id and (type = 'normal' or type = 'reply');
+    select * from all_messages where sender_id = id and (type = 'normal' or type = 'reply') ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -1927,7 +1936,7 @@ DELIMITER $$
 USE `CCv6`$$
 CREATE PROCEDURE `get_user_messages`(in id int)
 BEGIN
-    select * from messages where rec_Id = id ;
+    select * from messages where rec_Id = id ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -1994,7 +2003,7 @@ DELIMITER $$
 USE `CCv6`$$
 CREATE PROCEDURE `get_user_notifications`(in id int)
 BEGIN
-    select * from messages where rec_id = id and type != 'normal' and type != 'reply';
+    select * from messages where rec_id = id and type != 'normal' and type != 'reply' ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -2010,7 +2019,7 @@ DELIMITER $$
 USE `CCv6`$$
 CREATE PROCEDURE `get_user_sent_notifications`(in id int)
 BEGIN
-    select * from messages where sender_id = id and type != 'normal' and type != 'reply';
+    select * from messages where sender_id = id and type != 'normal' and type != 'reply' ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -2282,7 +2291,10 @@ USE `CCv6`$$
 CREATE
     DEFINER =`root`@`localhost` PROCEDURE `get_users_inbox_Unread`(in id int)
 BEGIN
-    select * from all_messages where rec_id = id and (type = 'normal' or type = 'reply') and ('read' = 0);
+    select *
+    from all_messages
+    where rec_id = id and (type = 'normal' or type = 'reply') and ('read' = 0)
+    ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -2299,7 +2311,10 @@ USE `CCv6`$$
 CREATE
     DEFINER =`root`@`localhost` PROCEDURE `get_users_inbox_read`(in id int)
 BEGIN
-    select * from all_messages where rec_id = id and (type = 'normal' or type = 'reply') and ('read' = 1);
+    select *
+    from all_messages
+    where rec_id = id and (type = 'normal' or type = 'reply') and ('read' = 1)
+    ORDER BY create_time DESC;
 END$$
 
 DELIMITER ;
@@ -2578,7 +2593,7 @@ BEGIN
     from venues
              join follows on venues.venue_id = follows.venue_id
     where venue_id = id;
-
+ 
 -- join venue(all_venues) name onto follows for venue_id
 END$$
 
@@ -2653,7 +2668,7 @@ BEGIN
              join media
                   on likes.media = media_id
     where media_id = id;
-
+ 
 END
 -- join likes to media where media = media_id$$
 
@@ -2727,6 +2742,25 @@ BEGIN
     where carve_id = c_id;
 -- join likes to carve where carve = carve_id
 
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure get_buddy_made_carves
+-- -----------------------------------------------------
+
+USE `CCv6`;
+DROP procedure IF EXISTS `CCv6`.`get_buddy_made_carves`;
+
+DELIMITER $$
+USE `CCv6`$$
+CREATE PROCEDURE `get_buddy_made_carves`(in id int)
+BEGIN
+    select distinct all_carves.*, all_venues.*
+    from all_carves
+             left join ( all_follows, all_venues) on (all_carves.creator = all_follows.user_id2)
+    where (all_follows.user_id1 = 1 and all_follows.type = 'buddy');
 END$$
 
 DELIMITER ;
@@ -2830,6 +2864,14 @@ USE `CCv6`;
 CREATE OR REPLACE VIEW `view1` AS
 select type
 from likes;
+
+-- -----------------------------------------------------
+-- View `CCv6`.`view2`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `CCv6`.`view2`;
+DROP VIEW IF EXISTS `CCv6`.`view2`;
+USE `CCv6`;
+
 SET SQL_MODE = '';
 DROP USER IF EXISTS nodeuser;
 SET SQL_MODE =
@@ -2844,3 +2886,4 @@ SET UNIQUE_CHECKS = @OLD_UNIQUE_CHECKS;
 -- begin attached script 'script'
 ALTER USER 'nodeuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Nodeuser@1234';
 -- end attached script 'script'
+

@@ -2,36 +2,43 @@
 
 use CCv5;
 #INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('frosty','abc1@email.net','password','Sean','Klinglesmith','Chill bro whos down for anything, anywhere, anytime','dogphoto',('Photographer,Videographer,Drone Operator'),('Snowboard,Downhill Ski,Snowmobile,Cross-Country Ski'),('Surf,Water Ski,Kayak,Wakeboard,Paddleboard,Parasail,Kite Surf'),('Skateboard,BMX,Mountain Bike,Rock Climb,Cliff Dive,Parkour'),('Sky Dive,Hang Glide,Base Jump,Air Race'));
-INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('frosty','abc1@email.net','password','Sean','Klinglesmith','cool dude who likes to film using drones or otherwise','dogphoto',('photographer,filmographer,droneOperator'),('snowboard'),('surf'),('skateboard,BMX,mountainBiking'),('skydive,hangGlide'));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Cmart', 'abc2@email.net', 'password', 'Christian', 'Marcy', 'rad man who loves to shred', 'dogskate',
+VALUES ('frosty', 'abc1@email.net', 'password', 'Sean', 'Klinglesmith',
+        'cool dude who likes to film using drones or otherwise', 'SEAN', ('photographer,filmographer,droneOperator'),
+        ('snowboard'), ('surf'), ('skateboard,BMX,mountainBiking'), ('skydive,hangGlide'));
+INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
+                  land_sports, air_sports)
+VALUES ('Cmart', 'abc2@email.net', 'password', 'Christian', 'Marcy', 'rad man who loves to shred', 'SnMb1',
         ('athlete'), ('ski'), ('waterSki'), ('skateboard'), ('hangGlide'));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('JRider', 'abc3@email.net', 'password', 'RJ', 'Boucher', 'pro dude who knows how to carve', 'dog',
+VALUES ('JRider', 'abc3@email.net', 'password', 'RJ', 'Boucher', 'pro dude who knows how to carve', 'Sn4',
         ('athlete,proAthlete'), ('snowboard,ski,snowmobile'), ('surf,waterSki'), ('BMX'), ('skydive,hangGlide'));
-INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('balthazar','abc4@email.net','password','Brandon','Wheeler','awesome bro who loves to shred the gnar','big_wave',('athlete'),('snowboard'),('surf'),('mountainBiking'),('skydive'));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Shred', 'abc5@email.net', 'password', 'Fred', 'Budde', 'fan of sports and loves to take pictures', 'helmPhoto',
+VALUES ('balthazar', 'abc4@email.net', 'password', 'Brandon', 'Wheeler', 'awesome bro who loves to shred the gnar',
+        'Su1', ('athlete'), ('snowboard'), ('surf'), ('mountainBiking'), ('skydive'));
+INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
+                  land_sports, air_sports)
+VALUES ('Shred', 'abc5@email.net', 'password', 'Fred', 'Budde', 'fan of sports and loves to take pictures', 'FRED',
         ('photographer,fan'), ('ski'), ('waterSki'), (NULL), (NULL));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Iceman', 'abc6@email.net', 'password', 'Md', 'Monir', 'loves to film action sequences', 'photosnow',
+VALUES ('Iceman', 'abc6@email.net', 'password', 'Md', 'Monir', 'loves to film action sequences', 'Ph2',
         ('filmographer'), ('snowmobile'), ('surf,waterSki'), ('skateboard,BMX,mountainBiking'), (NULL));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
 VALUES ('Moneyman', 'abc7@email.net', 'password', 'Dhruv', 'Patel',
-        'cool dude who likes to film using drones or otherwise', 'droneguy',
+        'cool dude who likes to film using drones or otherwise', 'DHRUV',
         ('photographer,filmographer,droneOperator'), ('snowboard'), ('surf'), ('skateboard'), (NULL));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('Andez', 'abc8@email.net', 'password', 'Dylan', 'Anderson', 'rad man who loves to shred', 'upsidedown_snow',
+VALUES ('Andez', 'abc8@email.net', 'password', 'Dylan', 'Anderson', 'rad man who loves to shred', 'SkyDive1',
         ('athlete,proAthlete,droneOperator'), ('ski'), ('waterSki'), ('BMX'), ('skydive,hangGlide'));
 INSERT INTO USERS(username, email, password, first_name, last_name, description, photo, type, snow_sports, water_sports,
                   land_sports, air_sports)
-VALUES ('ProfMan', 'abc8@email.net', 'password', 'Dr.', 'Baliga', 'Awesome Professor', 'dogsurf',
+VALUES ('ProfMan', 'abc8@email.net', 'password', 'Dr.', 'Baliga', 'Awesome Professor', 'BALIGA',
         ('athlete,proAthlete,droneOperator'), ('ski'), ('waterSki'), (NULL), ('hangGlide'));
 INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('TQILZAW29','blandit.at.nisi@liberoat.co.uk','BSM87JYI0FH','Daquan','Lambert','Something about the user goes here',NULL,('athlete'),(NULL),('surf,waterski'),('BMX,skateboard'),('skydive,hangGlide'));
 INSERT INTO USERS(username,email,password,first_name,last_name,description,photo,type,snow_sports,water_sports,land_sports,air_sports) VALUES ('RWSVKCU60','Aliquam.erat.volutpat@anteblandit.edu','OJN77YWI2AS','Dominic','Hebert','Something about the user goes here',NULL,('photographer'),(NULL),('waterSki'),(NULL),('skydive'));
@@ -1489,19 +1496,27 @@ INSERT INTO MESSAGES(sender_Id,rec_Id,message_subject,message_body,type,reply) V
 
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Catamount', 'Hillsdale', 'NY', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL, '42.10',
+VALUES ('Catamount', 'Hillsdale', 'NY',
+        'Catamount is a mountain for the entire family.  There is an extensive trail network for all abilities and spectacular views can be seen from many turns.',
+        'mountain', 'snowboard,ski', NULL, NULL, NULL, '42.10',
         '-73.28', 'https://www.onthesnow.com/new-york/catamount-ski-ride-area/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Bristol Mountain', 'Canandaigua', 'NY', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+VALUES ('Bristol Mountain', 'Canandaigua', 'NY',
+        'Bristol Mountain provides skiers and snowboarders 138 acres of skiable terrain spread out over 34 trails and a 1200’ vertical drop.',
+        'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
         '42.44', '-77.24', 'https://www.onthesnow.com/new-york/bristol-mountain/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Holiday Valley', 'Ellicotville', 'NY', 'Awesome ski resort', 'mountain', 'snowboard,ski', NULL, NULL, NULL,
+VALUES ('Holiday Valley', 'Ellicotville', 'NY',
+        'Holiday Valley has 53 trails marked 35 percent for beginners, 27 percent intermediates, and 38 percent advanced skiers.',
+        'mountain', 'snowboard,ski', NULL, NULL, NULL,
         '42.15', '-78.40', 'https://www.onthesnow.com/new-york/holiday-valley/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Whiteface Mountain', 'WIlmington', 'NY', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+VALUES ('Whiteface Mountain', 'WIlmington', 'NY',
+        'With the biggest vertical drop of the eastern ski resorts (3,429 feet), Whiteface, NY, offers 288 skiable acres serviced by 11 lifts, including one gondola.',
+        'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
         '42.15', '-78.40', 'https://www.onthesnow.com/new-york/whiteface-mountain-resort/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
@@ -1517,7 +1532,9 @@ VALUES ('Hunter Mountain', 'Hunter', 'NY', 'Awesome ski resort', 'mountain', 'sn
         '-74.13', 'https://www.onthesnow.com/new-york/hunter-mountain/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Gore Mountain', 'North Creek', 'NY', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+VALUES ('Gore Mountain', 'North Creek', 'NY',
+        'Located in the Adirondacks, Gore Mountain is New York State’s largest ski and ride resort. Boasting a vertical drop of 2,537 feet and 446 accessible acres',
+        'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
         '43.40', '-74.00', 'https://www.onthesnow.com/new-york/gore-mountain/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
@@ -1525,7 +1542,9 @@ VALUES ('Mount Peter', 'Warwick', 'NY', 'Awesome ski resort', 'mountain', 'snowb
         '-74.17', 'https://www.onthesnow.com/new-york/mount-peter-ski-area/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)
-VALUES ('Jack Frost', 'White Haven', 'PA', 'Awesome ski resort', 'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
+VALUES ('Jack Frost', 'White Haven', 'PA',
+        'Jack Frost Mountain, located in the Pocono Mountains of Northeastern Pennsylvania and sister mountain of nearby Big Boulder, has 30 slopes and trails',
+        'mount_snow', 'snowboard,ski', NULL, NULL, NULL,
         '41.06', '-75.39', 'https://www.onthesnow.com/pennsylvania/jack-frost/ski-resort.html');
 INSERT INTO VENUES(venue_name, city, state, about, picture, snow_sports, water_sports, land_sports, air_sports,
                    lattitude, longitude, url)

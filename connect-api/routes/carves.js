@@ -61,6 +61,18 @@ router.post('/', (req,res) => {
     })
 });
 
+// Grab specific carve by its id
+router.post('/complete/:carveId', (req, res) => {
+    const carveId = req.params.carveId;
+    // Create query to get the specified carve from the database
+    complete_carve = "call complete_carve(?)";
+    // Execute the query to pull from the database
+    con.query(complete_carve, [carveId], (err, results) => {
+        if (err) throw err;
+        res.status(200).jsonp({results}).end();
+    })
+});
+
 // updates all carves
 router.put('/', (req,res) => {
     // The carvename wasn't found in the database
@@ -154,7 +166,7 @@ router.get('/:like_info', (req, res) => {
 
     con.query(get_carve_like_info ,(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end();;
+        res.status(200).jsonp({results}).end();
     })
 });
 
@@ -163,7 +175,7 @@ router.get('/:all', (req, res) =>{
 
     con.query(get_carve_info_all,(err, results) => {
         if (err) throw err;
-        res.status(200).jsonp({results}).end();;
+        res.status(200).jsonp({results}).end();
     })
 });
 

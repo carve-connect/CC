@@ -15,6 +15,12 @@ import Privacy from '../../components/SettingsComponents/privacy';
 import Contact from '../../components/SettingsComponents/contact';
 import Alert from 'react-bootstrap/Alert'
 import MessageModal from "../../components/MessageComponents/MessageModal";
+import {Badge, Dropdown} from 'react-bootstrap';
+import Logo from "../../images/logo.png";
+import {Col} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
+import DropdownToggle from 'react-bootstrap/DropdownToggle';
+import DropdownMenu from 'react-bootstrap/DropdownMenu';
 
 class TopNav extends Component {
 	constructor(props){
@@ -91,10 +97,6 @@ class TopNav extends Component {
 			});
 	};
 
-	handleAlertClose = () => {
-		this.setState({messageAlert: !this.state.messageAlert});
-	};
-
 	componentWillMount()
 	{
 
@@ -116,6 +118,24 @@ class TopNav extends Component {
 
 
 	render(){
+		let messagesBadge;
+		let notificationsBadge;
+
+		if(this.state.messages.length > 0){
+			messagesBadge = <Badge variant="success">{this.state.messages.length}</Badge>
+		}
+		else{
+			messagesBadge = <div style={{marginTop: '1.4rem'}}></div>
+		}
+
+		if(this.state.notifications.length > 0){
+			notificationsBadge = <Badge variant="success">{this.state.notifications.length}</Badge>
+		}
+		else{
+			notificationsBadge = <div style={{marginTop: '1.4rem'}}></div>
+		}
+
+
 
 		return (
 				<>
@@ -124,68 +144,83 @@ class TopNav extends Component {
 					<Privacy show={this.state.privacy} handleClose={this.handlePrivacy}/>
 					<Contact show={this.state.contact} handleClose={this.handleContact}/>
 					<MessageModal handleClose={this.handleClick1} show={this.state.show1}/>
-					<Nav className="navbar navbar-dark bg-dark nav-fill" >
+
+					<Nav style={{padding: '0', height: '6rem'}} className="navbar navbar-dark bg-dark nav-fill" >
 						{/*<a className="navbar-brand" href="/">Carve Connect</a>*/}
 						<NavbarBrand style={{
                             color: 'lightskyblue',
                             textShadowColor: 'black',
                             fontWeight: 'bold',
                             fontFamily: 'monospace'
-						}}><Link exact to={`/dashboard/profile/${localStorage.getItem('userId')}`}>Carve Connect</Link></NavbarBrand>
+						}}>
+							<Link exact to={`/dashboard/profile/${localStorage.getItem('userId')}`}>
+							<img 
+								style={{marginRight: '1rem'}}
+								alt=""
+								height="40px"
+								width="60px"
+								src = {Logo}
+								className="rounded"/>
+							Carve Connect</Link>
+						</NavbarBrand>
 						<li>
-							<div style={{justify:"left"}}>
-								<Form onSubmit={this.handleSearch} inline style={{justify:"left"}} >
-									<CustomFormGroup value={this.state.search} type="text" placeholder="User Search" className="mr-sm-2" controlId="search" onChange={this.handleChange}  />
-									<Link to={`/dashboard/users?search=${this.state.search}`}><Button type="submit" block style={{width: 50, color: "white"}}>Find</Button></Link>
-								</Form>
-							</div>
+							<Form onSubmit={this.handleSearch} inline>
+								<CustomFormGroup value={this.state.search} type="text" placeholder="Search for buddies"  controlId="search" onChange={this.handleChange}  />
+								<Link to={`/dashboard/users?search=${this.state.search}`}><Button type="submit"  style={{width: 50, color: "white"}}>Find</Button></Link>
+							</Form>
 						</li>
 						<li>
 							<ul className="navbar justify-content-end">
-								<div>
+								<Row>
+									<Col>
+										{messagesBadge}
+										<Dropdown>
+											<Dropdown.Toggle style={{padding: '0'}}>
+												<i class="fa fa-envelope text-white fa-2x"></i>
+											</Dropdown.Toggle>
 
-									<NavDropdown className ="fa fa-envelope text-white"  id="collapsible-nav-dropdown">
-										<NavDropdown.Item
-										><Link to={"/dashboard/inbox"}><h4>Messages: {this.state.messages.length}</h4>
-										</Link></NavDropdown.Item>
-										<NavDropdown.Divider/>
-										<NavDropdown.Item><Link to={"/dashboard/inbox"}><h4>Inbox</h4>
-										</Link></NavDropdown.Item>
-										<NavDropdown.Divider/>
-										<NavDropdown.Item><Link to={"/dashboard/outbox"}><h4>Sent</h4>
-										</Link></NavDropdown.Item>
-										<NavDropdown.Divider />
-										<NavDropdown.Item onClick={this.handleClick1}>Send Message</NavDropdown.Item>
+											<Dropdown.Menu>
+												<Dropdown.Item>
+													<Link to={"/dashboard/inbox"}><h6>Inbox</h6></Link>
+												</Dropdown.Item>
+												<Dropdown.Item>
+													<Link to={"/dashboard/outbox"}><h6>Sent</h6></Link>
+												</Dropdown.Item>
+											</Dropdown.Menu>
+										</Dropdown>
+									</Col>
+									<Col>
+									{notificationsBadge}
+										<Dropdown>
+											<Dropdown.Toggle style={{padding: '0'}}>
+												<i class="fa fa-bell text-danger fa-2x"></i>
+											</Dropdown.Toggle>
 
-									</NavDropdown>
+											<Dropdown.Menu>
+												<Dropdown.Item>
+													<Link to={"/dashboard/notinbox"}><h6>Incoming</h6></Link>
+												</Dropdown.Item>
+												<Dropdown.Item>
+													<Link to={'/dashboard/notoutbox'}><h6>Outgoing</h6></Link>
+												</Dropdown.Item>
+											</Dropdown.Menu>
+										</Dropdown>
+									</Col>
+									<Col style={{marginTop: '1.4rem'}}>
+									<Dropdown>
+											<Dropdown.Toggle style={{padding: '0'}}>
+												<i class="fa fa-cogs text-secondary fa-2x "></i>
+											</Dropdown.Toggle>
 
-
-									<NavDropdown className ="fa fa-bell text-danger"  id="collapsible-nav-dropdown" >
-										<NavDropdown.Item
-										><Link to={"/dashboard/notinbox"}>
-											<h4>Notifications: {this.state.notifications.length}</h4>
-										</Link></NavDropdown.Item>
-										<NavDropdown.Divider/>
-										<NavDropdown.Item><Link to={"/dashboard/notinbox"}><h4>Incoming</h4>
-										</Link></NavDropdown.Item>
-										<NavDropdown.Divider/>
-										<NavDropdown.Item><Link to={'/dashboard/notoutbox'}><h4>Outgoing</h4>
-										</Link></NavDropdown.Item>
-										<NavDropdown.Divider />
-
-									</NavDropdown>
-
-									<NavDropdown className="fa fa-cogs text-secondary"  id="collapsible-nav-dropdown" >
-
-										<NavDropdown.Item onClick={this.handleSettings}>Settings</NavDropdown.Item>
-										<NavDropdown.Divider/>
-										<NavDropdown.Item onClick={this.handlePrivacy}>Privacy</NavDropdown.Item>
-										<NavDropdown.Divider/>
-										<NavDropdown.Item onClick={this.handleHelp}>Help</NavDropdown.Item>
-										<NavDropdown.Divider />
-										<NavDropdown.Item onClick={this.handleContact}>Contact Us</NavDropdown.Item>
-									</NavDropdown>
-								</div>
+											<Dropdown.Menu>
+											<Dropdown.Item onClick={this.handleSettings}>Settings</Dropdown.Item>
+											<Dropdown.Item onClick={this.handlePrivacy}>Privacy</Dropdown.Item>
+											<Dropdown.Item onClick={this.handleHelp}>Help</Dropdown.Item>
+											<Dropdown.Item onClick={this.handleContact}>Contact Us</Dropdown.Item>
+											</Dropdown.Menu>
+									</Dropdown>
+									</Col>
+								</Row>
 							<div>
 							<li className="nav-item">
 									<a className="nav-link active" href={'/logout'}>Logout</a>
@@ -196,10 +231,7 @@ class TopNav extends Component {
 						</li>
 
 						</Nav>
-					<Alert dismissible variant="danger" show={this.state.messageAlert} onClose={this.handleAlertClose}>
-						<Alert.Heading>You have {this.state.messages.length} messages</Alert.Heading>
-						<Alert.Heading>You have {this.state.notifications.length} notifications</Alert.Heading>
-					</Alert>
+
 					</>
 	)}
 
