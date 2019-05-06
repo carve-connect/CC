@@ -12,6 +12,7 @@ import CommentTable from '../WallComponents/CommentTable';
 import MediaGroup from "../MediaComponents/MediaGroup";
 import {Button, Dropdown, Form, FormGroup, Modal, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import axios from "axios";
+import NameDropdown from '../NameDropdown'
 
 export default class CarveCard2 extends Component {
 
@@ -229,7 +230,8 @@ export default class CarveCard2 extends Component {
 
                         backgroundColor: "lightgrey", paddingRight: '0px', width: "100%"
                     }}>
-                        {attender.username} {attender.type}
+                        <NameDropdown id={attender.user_id} link={`/dashboard/profile/${attender.user_id}`} name={attender.username}/> {attender.type}
+                        
 
                     </ListGroup.Item>
                 )
