@@ -1,1 +1,80 @@
 #Current issues project has
+-------------------------------------------------------------------------------------------------------------------
+Where did you run into the bug?: When signing up as a new user or trying to log into an existing user.
+Summarize the bug: Our website does not work on *SAFARI* lol
+Steps to reproduce.
+List the steps that occurred before the bug happened:
+1a. Click sign in
+2a. fill out user name and password
+3a. click submit
+1b. Click sign up
+2b. fill out details
+3b. click submit
+Expected Result: User is logged in and presented with their dashboard
+Actual Result:OPTIONS /users 200  is the only thing that appears
+Anything else you want to add(if nothing put N/A):
+Just stay away from safari
+-------------------------------------------------------------------------------------------------------------------
+Where did you run into the bug?:  feed page
+Summarize the bug: content tabs randomly choose to switch or to not switch
+Steps to reproduce.
+List the steps that occurred before the bug happened:
+1. go to my feed
+2. click on a carve tab
+3.click on a different carve tab
+Expected Result: the carve list re renders with the appropriate list.
+Actual Result: the page stays the same and does not reload
+Anything else you want to add(if nothing put N/A):
+-------------------------------------------------------------------------------------------------------------------
+Where did you run into the bug?: listings page
+Summarize the bug: media doesn't update when changing carve pages
+Steps to reproduce.
+List the steps that occurred before the bug happened:
+1. go to listings page
+2. change page of results
+Expected Result: media for each carve changes properly
+Actual Result: media is the same as the first page
+Anything else you want to add(if nothing put N/A):
+-------------------------------------------------------------------------------------------------------------------
+Where did you run into the bug?: listings page
+Summarize the bug: carve attendee list doesn't update especially when shifting pages
+Steps to reproduce.
+List the steps that occurred before the bug happened:
+1. go to listings page
+2. change page
+Expected Result: carve attendee list updates to match current carve
+Actual Result: carve attendee list is static
+Anything else you want to add(if nothing put N/A):
+-------------------------------------------------------------------------------------------------------------------
+Where did you run into the bug?: map page. information
+Summarize the bug: map doesn't go to venue's location
+Steps to reproduce.
+List the steps that occurred before the bug happened:
+1. go to a venue page
+2. click on information
+Expected Result: map takes you to the location
+Actual Result: map goes to mt snows location
+Anything else you want to add(if nothing put N/A): known issue, if coordinates are used you end up in the ocean near Africa...
+-------------------------------------------------------------------------------------------------------------------
+Where did you run into the bug?: users page
+Summarize the bug: when searching by the bar on the users page, the results go away before you can do anything.
+Steps to reproduce.
+List the steps that occurred before the bug happened:
+1. click on users page
+2. enter a searc term
+3. hit enter
+4. wait for results
+Expected Result: results show up and stay
+Actual Result: results go away almost instantly
+Anything else you want to add(if nothing put N/A): known issue. has to deal with the search term state and container refresh I think
+-------------------------------------------------------------------------------------------------------------------
+Where did you run into the bug?: profile page
+Summarize the bug: not all profile pictures are active. some use the default
+Steps to reproduce.
+List the steps that occurred before the bug happened:
+1. search for users with something generic like 1
+2. look at results
+Expected Result: every profile has its corresponding picture
+Actual Result: the default of the snowboarder going over the jump is used more than it is in the database.
+Anything else you want to add(if nothing put N/A): known issue, just need to figure out what images are missing
+-------------------------------------------------------------------------------------------------------------------
