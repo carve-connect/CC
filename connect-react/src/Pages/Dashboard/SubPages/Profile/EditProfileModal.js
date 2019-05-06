@@ -154,58 +154,62 @@ export default class EditProfileModal extends Component {
 						<Form.Group controlId="winter sport type">
 
 							<Form.Label>Winter Sport Type</Form.Label>
-							<Form.Control value={snowSports} placeholder="Select a Sport" onChange={this.handleChange1}
-										  as="select">
+                            <Form.Control value={snowSports} placeholder="Select a Sport" onChange={this.handleChange1}
+                                          as="select">
 								<option disabled value={-1}>Select an option...</option>
-								<option></option>
-								<option value='snowboard'>Snowboard</option>
-								<option value='ski'>Ski</option>
-								<option value='snowmobile'>Snowmobile</option>
-								<option value='snowboard,ski'>Snowboard & Ski</option>
-								<option value='snowboard,snowmobile'>Snowboard & Snowmobile</option>
-								<option value='ski,snowmobile'>Ski & Snowmobile</option>
-								<option value='snowboard,ski,snowmobile'>Snowboard & Ski & Snowmobile</option>
+                                <option></option>
+                                <option value='Snowboard'>Snowboard</option>
+                                <option value='Downhill Ski'>Downhill Ski</option>
+                                <option value='Snowmobile'>Snowmobile</option>
+                                <option value='Snowboard,Downhill Ski'>Snowboard & Downhill Ski</option>
+                                <option value='Snowboard,Snowmobile'>Snowboard & Snowmobile</option>
+                                <option value='Downhill Ski,Snowmobile'>Downhill Ski & Snowmobile</option>
+                                <option value='Snowboard,Downhill Ski,Snowmobile'>Snowboard & DH Ski & Snowmobile
+                                </option>
 							</Form.Control>
 						</Form.Group>
 
 						<Form.Group controlId="land sport type">
 							<Form.Label>Land Sport Type</Form.Label>
-							<Form.Control value={landSports} placeholder="Select a Sport" onChange={this.handleChange2}
-										  as="select">
+                            <Form.Control value={landSports} placeholder="Select a Sport" onChange={this.handleChange2}
+                                          as="select">
 								<option disabled value={-1}>Select an option...</option>
-								<option></option>
-								<option value='skateboard'>Skateboard</option>
-								<option value='BMX'>BMX</option>
-								<option value='mountainBiking'>Mountain Biking</option>
-								<option value='skateboard,BMX'>Skateboard & BMX</option>
-								<option value='skateboard,mountainBiking'>Skateboard & Mountain biking</option>
-								<option value='BMX,mountainBiking'> BMX & Mountain Biking</option>
-								<option value='skateboard,BMX,mountainBiking'>Skateboard & BMX & Mountain biking
-								</option>
+                                <option></option>
+                                <option value='Skateboard'>Skateboard</option>
+                                <option value='BMX'>BMX</option>
+                                <option value='Mountain Bike'>Mountain Biking</option>
+                                <option value='Rock Climb'>Rock Climb</option>
+                                <option value='Skateboard,BMX'>Skateboard & BMX</option>
+                                <option value='Skateboard,Mountain Bike'>Skateboard & Mountain biking</option>
+                                <option value='BMX,Mountain Bike'> BMX & Mountain Biking</option>
+                                <option value='Skateboard,BMX,Mountain Bike'>Skateboard & BMX & Mountain biking</option>
 							</Form.Control>
 						</Form.Group>
 						<Form.Group controlId="water sport type">
 
 							<Form.Label>Water Sport Type</Form.Label>
-							<Form.Control value={waterSports} placeholder="Select a Sport" onChange={this.handleChange4}
-										  as="select">
+                            <Form.Control value={waterSports} placeholder="Select a Sport" onChange={this.handleChange4}
+                                          as="select">
 								<option disabled value={-1}>Select an option...</option>
-								<option></option>
-								<option value='surf'>Surf</option>
-								<option value='waterski'>Water Ski</option>
-								<option value='surf,waterski'>Surf & Water Ski</option>
+                                <option></option>
+                                <option value='Surf'>Surf</option>
+                                <option value='Paddleboard'>Paddleboard</option>
+                                <option value='Parasail'>Parasail</option>
+                                <option value='Kayak'>Surf</option>
+                                <option value='Water Ski'>Water Ski</option>
+                                <option value='Surf,Water Ski'>Surf & Water Ski</option>
 							</Form.Control>
 						</Form.Group>
 
 						<Form.Group controlId="air sport type">
 							<Form.Label>Air Sport Type</Form.Label>
-							<Form.Control value={airSports} placeholder="Select a Sport" onChange={this.handleChange5}
-										  as="select">
+                            <Form.Control value={airSports} placeholder="Select a Sport" onChange={this.handleChange5}
+                                          as="select">
 								<option disabled value={-1}>Select an option...</option>
-								<option></option>
-								<option value='skyDive'>Skydive</option>
-								<option value='hangGlide'>Hang Glide</option>
-								<option value='skyDive,hangGlide'>Skydive & Hang Glide</option>
+                                <option></option>
+                                <option value='Sky Dive'>Sky Dive</option>
+                                <option value='Hang Glide'>Hang Glide</option>
+                                <option value='Sky Dive,Hang Glide'>Skydive & Hang Glide</option>
 							</Form.Control>
 						</Form.Group>
 
@@ -214,33 +218,33 @@ export default class EditProfileModal extends Component {
 
 							<Form.Label>Profile Type (required)</Form.Label>
 
-							<Form.Control value={profileType} placeholder="Select type of profile..."
-										  onChange={this.handleChange3} as="select">
+                            <Form.Control value={profileType} placeholder="Select type of profile..."
+                                          onChange={this.handleChange3} as="select">
 
 								<option disabled value={-1}>Select an option...</option>
 
-								<option></option>
+                                <option></option>
 
-								<option value='athlete'>Athlete</option>
-								<option value='proAthlete'>Pro Athlete</option>
-								<option value='athlete,proAthlete'>Athlete & Pro Athlete</option>
-								<option value='photographer'>Photographer</option>
-								<option value='filmographer'>Filmographer</option>
-								<option value='droneOperator'>Drone Operator</option>
-								<option value='athlete,photographer'>Athlete & Photographer</option>
-								<option value='photographer,filmographer'>Photographer & Filmographer</option>
-								<option value='photographer,droneOperator'>Photographer & Drone Operator</option>
-								<option value='photographer,filmographer,droneOperator'>Photographer & Filmographer &
-									Drone Operator
+                                <option value='Athlete'>Athlete</option>
+                                <option value='Pro Athlete'>Pro Athlete</option>
+                                <option value='Athlete,Pro Athlete'>Athlete & Pro Athlete</option>
+                                <option value='Photographer'>Photographer</option>
+                                <option value='Videographer'>Videographer</option>
+                                <option value='Drone Operator'>Drone Operator</option>
+                                <option value='Athlete,Photographer'>Athlete & Photographer</option>
+                                <option value='Photographer,Videographer'>Photographer & Filmographer</option>
+                                <option value='Photographer,Drone Operator'>Photographer & Drone Operator</option>
+                                <option value='Photographer,Videographer,Drone Operator'>Photographer & Filmographer &
+                                    Drone
+                                    Operator
 								</option>
-								<option value='athlete,photographer'>Athlete & Photographer</option>
-								<option value='athlete,photographer,filmographer'>Athlete & Photographer &
-									Filmographer
+                                <option value='Athlete,Photographer'>Athlete & Photographer</option>
+                                <option value='Athlete,Photographer,Videographer'>Athlete & Photographer & Filmographer
 								</option>
-								<option value='athlete,photographer,droneOperator'>Athlete & Photographer & Drone
-									Operator
+                                <option value='Athlete,Photographer,Drone Operator'>Athlete & Photographer & Drone
+                                    Operator
 								</option>
-								<option value='athlete,photographer,filmographer,droneOperator'>Athlete & Photographer &
+                                <option value='Athlete,Photographer,Videgrapher,Drone Operator'>Athlete & Photographer &
 									Filmographer & Drone Operator
 								</option>
 								<option value='fan'>Fan</option>

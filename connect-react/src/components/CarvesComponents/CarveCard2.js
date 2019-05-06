@@ -302,7 +302,7 @@ export default class CarveCard2 extends Component {
         let maker = carve.creator;
 
         if (carve.completed > 0) {
-            color = "seagreen";
+            color = "palegreen";
             act = "Carve Completed";
             no = "Completed";
             att = <div></div>;
@@ -311,14 +311,14 @@ export default class CarveCard2 extends Component {
             if (carve.creator == localStorage.getItem('userId'))
                 addMedia = <CreateCarveMediaModal carve={carve}/>;
         } else if (carve.creator == localStorage.getItem('userId')) {
-            color = "grey";
+            color = "snow";
             act = "Invite Buddy";
             no = "Upcoming";
             att = <Button variant="success" style={{paddingTop: "10px"}}
                           onClick={() => this.handleClick6(carve.carve_id, carve.creator)}>{act}</Button>;
 
         } else {
-            color = "grey";
+            color = "snow";
             act = "Request to Attend";
             no = "Upcoming";
 

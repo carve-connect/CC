@@ -3,8 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Figure from 'react-bootstrap/Figure';
-import Mount_Snow from '../../../../images/SkRs2.jpeg'
-import mountain2 from '../../../../images/SkRs2.jpeg'
+import Mount_Snow from '../../../../images/SkRs2.jpeg';
+import mountain2 from '../../../../images/SkRs2.jpeg';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import axios from 'axios';
@@ -31,8 +31,8 @@ import pp from "../../../../images/PP.jpeg";
 import mountain from "../../../../images/SkRs1.jpeg";
 import mountain3 from "../../../../images/SkRs3.JPG";
 import mountain4 from "../../../../images/SkRs4.JPG";
+import mountain6 from "../../../../images/SkRs4.JPG";
 import mountain5 from "../../../../images/SkRs5.jpeg";
-import mountain6 from "../../../../images/SkRs6.JPG";
 import mountain7 from "../../../../images/SkRs7.JPG";
 import mountain8 from "../../../../images/SkRs8.jpeg";
 import skatedude from "../../../../images/Ska1.jpeg";
@@ -95,6 +95,7 @@ export default class VenuePage extends Component {
     getData() {
         this.getVenueInfo();
         this.getFollowingVenues();
+        this.getFollowingUsers();
         console.log(this.state);
     }
 
@@ -137,6 +138,17 @@ export default class VenuePage extends Component {
             content: "media"
         });
     };
+
+    getFollowingUsers() {
+        axios.get(`http://localhost:8000/venues/${this.state.venueId}/follows`)
+            .then(res => {
+                this.setState({
+                    followers: res.data.venues[0],
+                    fc: res.data.venues[0].length
+                });
+            })
+    }
+
     render() {
         //<WeatherHistory id ={this.state.venueId}/>
 
@@ -295,13 +307,14 @@ export default class VenuePage extends Component {
                                         {/*<Button style={{margin:'5px'}} variant="info" onClick={this.onClick1}>Follow</Button>*/}
                                         {followButton}
 
-                                        <Figure.Image rounded src={pic}/>
+                                        <Figure.Image style={{maxHeight: "75%", maxWidth: "75%"}} rounded src={pic}/>
 
                                     </Figure>
                                 <div style={{backgroundColor: "cadetblue", paddingTop: "0px"}}>
                                     <h3><em>{venueInfo.city}, {venueInfo.state}</em></h3>
                                     <h3>About {venueInfo.venue_name}: {venueInfo.about}</h3>
                                     <h3>Sports: {venueInfo.snow_sports} {venueInfo.water_sports} {venueInfo.land_sports} {venueInfo.air_sports}</h3>
+                                    <h2>Venue has {this.state.fc} followers</h2>
                                     <h3>Website with info for venue: <a href={venueInfo.url}>{venueInfo.url}</a></h3>
                                 </div>
                                 </Col>

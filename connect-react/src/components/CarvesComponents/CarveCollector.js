@@ -27,7 +27,7 @@ export default class CarveCollector extends Component {
         this.set5 = this.set5.bind(this);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         if (this.props.type === 'open') {
             axios.get(`http://localhost:8000/carves/open`)
                 .then(res => {

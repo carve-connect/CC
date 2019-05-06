@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
@@ -13,14 +12,9 @@ import Settings from '../../components/SettingsComponents/settings';
 import Help from '../../components/SettingsComponents/help';
 import Privacy from '../../components/SettingsComponents/privacy';
 import Contact from '../../components/SettingsComponents/contact';
-import Alert from 'react-bootstrap/Alert'
 import MessageModal from "../../components/MessageComponents/MessageModal";
-import {Badge, Dropdown} from 'react-bootstrap';
+import {Badge, Col, Dropdown, Row} from 'react-bootstrap';
 import Logo from "../../images/logo.png";
-import {Col} from 'react-bootstrap';
-import {Row} from 'react-bootstrap';
-import DropdownToggle from 'react-bootstrap/DropdownToggle';
-import DropdownMenu from 'react-bootstrap/DropdownMenu';
 
 class TopNav extends Component {
 	constructor(props){
@@ -165,7 +159,9 @@ class TopNav extends Component {
 						</NavbarBrand>
 						<li>
 							<Form onSubmit={this.handleSearch} inline>
-								<CustomFormGroup value={this.state.search} type="text" placeholder="Search for buddies"  controlId="search" onChange={this.handleChange}  />
+								<CustomFormGroup value={this.state.search} type="text"
+												 placeholder="Search for other users" controlId="search"
+												 onChange={this.handleChange}/>
 								<Link to={`/dashboard/users?search=${this.state.search}`}><Button type="submit"  style={{width: 50, color: "white"}}>Find</Button></Link>
 							</Form>
 						</li>

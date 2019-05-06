@@ -50,11 +50,14 @@ class SideMenu extends Component {
 		const menuItems = {
 			'My Profile ': {href: `/dashboard/profile/${localStorage.getItem('userId')}`, icon: "fa fa-id-card"},
 			'My Messages ': {href: '/dashboard/inbox/ ', icon: "fa fa-envelope-open"},
+			'My Feed ': {href: '/dashboard/feed', icon: "fa fa-rss-square"},
 			'Venues ': {href: '/dashboard/venues', icon: "fa fa-globe"},
 			'Users ': {href: '/dashboard/users', icon: "fa fa-user-circle"},
+			'Listings ': {href: '/dashboard/listings', icon: "fa fa-list-alt"},
+			'Showcase ': {href: '/dashboard/showcase', icon: "fa fa-simplybuilt"},
 			'Explore ': {href: '/dashboard/explore', icon: "fa fa-compass"},
-			'My Feed ': {href: '/dashboard/feed', icon: "fa fa-rss-square"},
-			'Listings ': {href: '/dashboard/listings', icon: "fa fa-list-alt"}
+
+
 		};
 
 		let listItems;

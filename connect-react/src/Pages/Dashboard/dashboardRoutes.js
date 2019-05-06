@@ -13,6 +13,7 @@ import UsersPage from "./SubPages/UserSearch/UsersPage";
 import ListingPage from "./SubPages/ListingPage/ListingPage";
 import ExplorePage from "./SubPages/Explore/explorepage";
 import React from "react";
+import Showcase from "./SubPages/SHOWCASE/Showcase";
 
 const routes = (
 
@@ -33,7 +34,7 @@ const routes = (
         <Route path="/dashboard/users" component={UsersPage}/>
         <Route path="/dashboard/listings" component={ListingPage}/>
         <Route path="/dashboard/explore" component={ExplorePage}/>
-
+            <Route path="/dashboard/showcase" component={Showcase}/>
     </Switch>
 
 );

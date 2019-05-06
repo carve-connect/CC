@@ -5,12 +5,12 @@ import MediaCard from './MediaCard';
 import Pagination from "react-bootstrap/Pagination";
 
 
-export default class MediaGroup extends Component {
+export default class MediaGroupAll extends Component {
     constructor(props) {
         super(props);
         this.state = {
             poster: 0,
-            carve: 0, 
+            carve: 0,
             profile: 0,
             venue: 0,
             url: "",
@@ -24,7 +24,7 @@ export default class MediaGroup extends Component {
             mi5: [],
             mediaComments: {},
             users: [],
-            description: "", 
+            description: "",
             time: "",
             comment: ""
         };
@@ -37,17 +37,16 @@ export default class MediaGroup extends Component {
     }
 
 
-
     componentDidMount() {
-        axios.get(`http://localhost:8000/media/${this.props.type}/${this.props.content_id}/`)
+        axios.get(`http://localhost:8000/media/`)
             .then(res => {
                 this.setState({
-                    mediaInfo: res.data.results[0].slice(0, 3),
-                    mi1: res.data.results[0].slice(3, 8),
-                    mi2: res.data.results[0].slice(9, 12),
-                    mi3: res.data.results[0].slice(13, 16),
-                    mi4: res.data.results[0].slice(17, 20),
-                    mi5: res.data.results[0].slice(21, 24),
+                    mediaInfo: res.data.results[0].slice(0, 8),
+                    mi2: res.data.results[0].slice(9, 16),
+                    mi3: res.data.results[0].slice(17, 24),
+                    mi4: res.data.results[0].slice(25, 32),
+                    mi5: res.data.results[0].slice(33, 40),
+                    mi1: res.data.results[0].slice(0, 8),
                 });
             });
 
@@ -62,7 +61,7 @@ export default class MediaGroup extends Component {
                 });
 
             });
-        }
+    }
 
     set1() {
 
@@ -99,21 +98,20 @@ export default class MediaGroup extends Component {
         })
     }
 
-        deleteMedia(id){
-            const type = this.props.type;
-            axios.delete(`http://localhost:8000/media/${type}/${id}`)
+    deleteMedia(id) {
+        const type = this.props.type;
+        axios.delete(`http://localhost:8000/media/${type}/${id}`)
             .then(res => {
                 console.log(res);
                 console.log(res.data)
             })
-        }
-
+    }
 
 
     render() {
         let mediaList;
-        
-        if(this.state.mediaInfo.length > 0){
+
+        if (this.state.mediaInfo.length > 0) {
             mediaList = this.state.mediaInfo.map((media) => {
 
                 return (
@@ -139,5 +137,5 @@ export default class MediaGroup extends Component {
             </>
         )
     }
-    
+
 }
