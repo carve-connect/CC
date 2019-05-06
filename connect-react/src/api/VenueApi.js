@@ -1,4 +1,4 @@
-import { baseUrl } from './config';
+import {baseUrl} from './config';
 import axios from "axios";
 
 class VenueApi {
@@ -15,6 +15,7 @@ class VenueApi {
 				});
 		});
 	}
+
 
 }
 

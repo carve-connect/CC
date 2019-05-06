@@ -9,11 +9,12 @@ const con = require('../../db');
 // Grabs all follows from db
 router.get('/', (req,res) => {
 	// Create the query to get all follows from the database
-	follow_list = "CALL get_follows()";
+    ven = req.params.venueId;
+    follow_list = "CALL get_venue_followers(?)";
 	// Execute the query
-	con.query(follow_list, (err, results) => {
+    con.query(follow_list, [ven], (err, venues) => {
 		if (err) throw err;
-		res.status(200).jsonp({results}).end();
+        res.status(200).jsonp({venues}).end();
 	})
 });
 

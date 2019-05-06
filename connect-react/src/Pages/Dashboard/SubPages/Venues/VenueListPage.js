@@ -7,24 +7,43 @@ import Carousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import VenueFigure from './VenueFigure';
 import Button from 'react-bootstrap/Button';
-import para from "../../../../images/AF1.jpeg";
+import af from "../../../../images/AF1.jpeg";
 import {Container, Nav} from 'react-bootstrap';
 import UserApi from "../../../../api/UserApi";
 //images
 import beach from "../../../../images/Be1.jpeg";
+import beach2 from "../../../../images/Be2.jpeg";
+import beach3 from "../../../../images/Be3.jpg";
+import beach4 from "../../../../images/Be4.jpg";
+import beach5 from "../../../../images/Be5.jpg";
+import lake from "../../../../images/Lk1.jpg";
+import lake2 from "../../../../images/Lk2.JPG";
+import lake3 from "../../../../images/Lk3.JPG";
+import lake4 from "../../../../images/Lk4.jpg";
+import lake5 from "../../../../images/Lk5.jpg";
 import dt from "../../../../images/DT.jpeg";
+import mr from "../../../../images/MtRainier.jpeg";
 import gt from "../../../../images/GT.jpeg";
 import mk from "../../../../images/MK.jpeg";
 import pp from "../../../../images/PP.jpeg";
 import mountain from "../../../../images/SkRs1.jpeg";
-import skatedude from "../../../../images/Ska1.jpeg";
 import mountain2 from "../../../../images/SkRs2.jpeg";
 import mountain3 from "../../../../images/SkRs3.JPG";
 import mountain4 from "../../../../images/SkRs4.JPG";
+import mountain6 from "../../../../images/SkRs4.JPG";
 import mountain5 from "../../../../images/SkRs5.jpeg";
-import mountain6 from "../../../../images/SkRs6.JPG";
 import mountain7 from "../../../../images/SkRs7.JPG";
 import mountain8 from "../../../../images/SkRs8.jpeg";
+import skatedude from "../../../../images/Ska1.jpeg";
+import skatedude2 from "../../../../images/Ska2.jpeg";
+import skatedude3 from "../../../../images/Ska3.jpeg";
+import skatedude4 from "../../../../images/Ska4.jpeg";
+
+import bmx1 from "../../../../images/BMXT1.jpeg";
+import bmx2 from "../../../../images/BMXT2.jpeg";
+import MB from "../../../../images/MB1.jpeg";
+import skydive from "../../../../images/SkyDive1.jpeg";
+import skydive2 from "../../../../images/SkyDive2.jpeg";
 
 export default class VenueListPage extends Component {
     //I think i'll need the state information based on the future filtering options
@@ -82,7 +101,7 @@ export default class VenueListPage extends Component {
 
         let div = [];
             let row = [];
-        let pic;
+        let pic = mountain;
 
         if (length > 0)
             for (let k = 0; k < 16; k++) {
@@ -106,7 +125,7 @@ export default class VenueListPage extends Component {
 
                 row.push(
                     <Col key={k} style={{}}>
-                        <VenueFigure name={venues[k].venue_name} img={mountain} style={{}}
+                        <VenueFigure name={venues[k].venue_name} img={pic} style={{}}
                                      href={'/dashboard/venues/' + venues[k].venue_id}/>
                     </Col>
                 );
@@ -123,17 +142,29 @@ export default class VenueListPage extends Component {
 
         let div = [];
         let row = [];
+        if (length > 0)
+            for (let k = 20; k < 40; k++) {
 
-        for(let k =0 ; k < length; k++){
-            if(venues[k].snow_sports == null && venues[k].air_sports == null && venues[k].land_sports == null){
+                let pic;
+                if (venues[k].picture === "Be1")
+                    pic = beach;
+                if (venues[k].picture === "Be2")
+                    pic = beach2;
+                if (venues[k].picture === "Be3")
+                    pic = beach3;
+                if (venues[k].picture === "Be4")
+                    pic = beach4;
+                if (venues[k].picture === "Be5")
+                    pic = beach5;
+
                 row.push(
                     <Col key={k}>
-                        <VenueFigure name={venues[k].venue_name} img={beach}
+                        <VenueFigure name={venues[k].venue_name} img={pic}
                                      href={'/dashboard/venues/' + venues[k].venue_id}/>
                     </Col>
                 );
+
             }
-        }
 
 
         return row;
@@ -145,16 +176,26 @@ export default class VenueListPage extends Component {
 
         let div = [];
         let row = [];
-
-        for (let k = 0; k < length; k++) {
-            if (venues[k].snow_sports == null && venues[k].air_sports == null && venues[k].land_sports == null) {
+        let pic = lake;
+        if (length > 0)
+            for (let k = 40; k < 46; k++) {
+                if (venues[k].picture === "Lk1")
+                    pic = lake;
+                if (venues[k].picture === "Lk2")
+                    pic = lake2;
+                if (venues[k].picture === "Lk3")
+                    pic = lake3;
+                if (venues[k].picture === "Lk4")
+                    pic = lake4;
+                if (venues[k].picture === "Lk5")
+                    pic = lake5;
                 row.push(
                     <Col key={k}>
-                        <VenueFigure name={venues[k].venue_name} img={beach}
+                        <VenueFigure name={venues[k].venue_name} img={pic}
                                      href={'/dashboard/venues/' + venues[k].venue_id}/>
                     </Col>
                 );
-            }
+
         }
 
 
@@ -180,6 +221,8 @@ export default class VenueListPage extends Component {
                     pic = gt;
                 if (venues[k].picture === "PP")
                     pic = pp;
+                if (venues[k].picture === "MR")
+                    pic = mr;
 
                 row.push(
                     <Col key={k}>
@@ -193,23 +236,66 @@ export default class VenueListPage extends Component {
         return row;
     };
 
-    createLandRow = () => {
+    createSkateRow = () => {
         const venues = this.state.venues;
         const length = this.state.venuesLength;
 
         let div = [];
         let row = [];
+        if (length > 0)
+            for (let k = 45; k < 51; k++) {
+                let pic = skatedude;
+                if (venues[k].picture === "Ska1")
+                    pic = skatedude;
+                else if (venues[k].picture === "Ska2")
+                    pic = skatedude2;
+                else if (venues[k].picture === "Ska3")
+                    pic = skatedude3;
+                else if (venues[k].picture === "Ska4")
+                    pic = skatedude4;
 
-        for(let k =0 ; k < length; k++){
-            if(venues[k].snow_sports == null && venues[k].air_sports == null && venues[k].water_sports == null){
+
                 row.push(
                     <Col key={k}>
-                        <VenueFigure name={venues[k].venue_name} img={skatedude}
+                        <VenueFigure name={venues[k].venue_name} img={pic}
                                      href={'/dashboard/venues/' + venues[k].venue_id}/>
                     </Col>
                 );
+
             }
-        }
+
+        return row;
+    };
+
+    createBMXRow = () => {
+        const venues = this.state.venues;
+        const length = this.state.venuesLength;
+
+        let div = [];
+        let row = [];
+        if (length > 0)
+            for (let k = 50; k < 56; k++) {
+                let pic;
+                if (venues[k].picture === "Ska1")
+                    pic = skatedude;
+                else if (venues[k].picture === "Ska2")
+                    pic = skatedude2;
+                else if (venues[k].picture === "Ska3")
+                    pic = skatedude3;
+                else if (venues[k].picture === "Ska4")
+                    pic = skatedude4;
+                else if (venues[k].picture === "BMXT1")
+                    pic = bmx1;
+                else if (venues[k].picture === "BMXT2")
+                    pic = bmx2;
+                row.push(
+                    <Col key={k}>
+                        <VenueFigure name={venues[k].venue_name} img={pic}
+                                     href={'/dashboard/venues/' + venues[k].venue_id}/>
+                    </Col>
+                );
+
+            }
 
         return row;
     };
@@ -220,16 +306,24 @@ export default class VenueListPage extends Component {
 
         let div = [];
         let row = [];
-
-        for(let k =0 ; k < length; k++){
-            if(venues[k].snow_sports == null && venues[k].water_sports == null && venues[k].land_sports == null){
+        if (length > 0)
+            for (let k = 55; k < length; k++) {
+                let pic;
+                if (venues[k].picture === "AF1")
+                    pic = af;
+                else if (venues[k].picture === "MB1")
+                    pic = MB;
+                else if (venues[k].picture === "SkyDive1")
+                    pic = skydive;
+                else if (venues[k].picture === "SkyDive2")
+                    pic = skydive2;
                 row.push(
                     <Col key={k}>
-                        <VenueFigure name={venues[k].venue_name} img={para}
+                        <VenueFigure name={venues[k].venue_name} img={pic}
                                      href={'/dashboard/venues/' + venues[k].venue_id}/>
                     </Col>
                 );
-            }
+
         }
 
         return row;
@@ -301,19 +395,29 @@ export default class VenueListPage extends Component {
                         <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
                                   style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
                                   autoPlay={false} autoPlayInterval={2000}>
-                            {this.createBeachRow('')}
+                            {this.createLakeRow('')}
                         </Carousel>
                     </Row>
 
-                    <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-bicycle " style={{color: "navy"}}/> Land
+                    <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-bicycle " style={{color: "navy"}}/> Skate
                         Venues <i className="fa fa-bicycle " style={{color: "navy"}}/></u></h4>
                 <Row style = {{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
                     <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
                                 style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
                                 autoPlay={false} autoPlayInterval={2000}>
-                        {this.createLandRow('')}
+                        {this.createSkateRow('')}
                     </Carousel>
                 </Row>
+
+                    <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-bicycle " style={{color: "navy"}}/> BMX
+                        Venues <i className="fa fa-bicycle " style={{color: "navy"}}/></u></h4>
+                    <Row style={{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto'}}>
+                        <Carousel fade responsive={responsive} wrap={true} className="carousel" pauseOnHover={true}
+                                  style={{paddingLeft: "10%", width: "100%", color: "black"}} slidesToSlide={5}
+                                  autoPlay={false} autoPlayInterval={2000}>
+                            {this.createBMXRow('')}
+                        </Carousel>
+                    </Row>
 
                     <h4 style={{marginTop: '3rem'}}><u><i className="fa fa-fighter-jet "
                                                             style={{color: "navy"}}/> Air Venues <i
@@ -343,19 +447,22 @@ export default class VenueListPage extends Component {
         if(this.state.venuesLength > 0){
 
 
-
-        
+            /*
+            <Nav.Item style = {{marginTop: '1rem'}} >
+                                <Button disabled onClick={this.handleFollowingVenues} eventKey="following" variant="outline-primary">Following</Button>
+                            </Nav.Item>
+             */
 
             return (
             <Col style={{backgroundColor: "gainsboro", width: "220%"}}>
                     <Nav  variant="pills" defaultActiveKey="all">
                         <Nav.Item style = {{marginTop: '1rem'}} >
                             <Button onClick={this.handleAllVenues} eventKey="all" variant="outline-primary">All Venues</Button>
+
                         </Nav.Item>
-                        <Nav.Item style = {{marginTop: '1rem'}} >
-                            <Button disabled onClick={this.handleFollowingVenues} eventKey="following" variant="outline-primary">Following</Button>
-                        </Nav.Item>
+
                     </Nav>
+                <h2 style={{paddingLeft: "40%"}}>List of Venues: </h2>
                 <div style = {{marginTop: '20px', borderBottom: '2px solid lightgray'}}> </div>
                 <Container>
                 {content}
