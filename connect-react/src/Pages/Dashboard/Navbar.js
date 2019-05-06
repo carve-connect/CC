@@ -118,6 +118,24 @@ class TopNav extends Component {
 
 
 	render(){
+		let messagesBadge;
+		let notificationsBadge;
+
+		if(this.state.messages.length > 0){
+			messagesBadge = <Badge variant="success">{this.state.messages.length}</Badge>
+		}
+		else{
+			messagesBadge = <div style={{marginTop: '1.4rem'}}></div>
+		}
+
+		if(this.state.notifications.length > 0){
+			notificationsBadge = <Badge variant="success">{this.state.notifications.length}</Badge>
+		}
+		else{
+			notificationsBadge = <div style={{marginTop: '1.4rem'}}></div>
+		}
+
+
 
 		return (
 				<>
@@ -155,7 +173,7 @@ class TopNav extends Component {
 							<ul className="navbar justify-content-end">
 								<Row>
 									<Col>
-										<Badge variant="success">{this.state.messages.length}</Badge>
+										{messagesBadge}
 										<Dropdown>
 											<Dropdown.Toggle style={{padding: '0'}}>
 												<i class="fa fa-envelope text-white fa-2x"></i>
@@ -172,7 +190,7 @@ class TopNav extends Component {
 										</Dropdown>
 									</Col>
 									<Col>
-									<Badge variant="success">{this.state.notifications.length}</Badge>
+									{notificationsBadge}
 										<Dropdown>
 											<Dropdown.Toggle style={{padding: '0'}}>
 												<i class="fa fa-bell text-danger fa-2x"></i>

@@ -16,7 +16,7 @@ VALUES ('Cmart', 'abc2@email.net', 'password', 'Christian', 'Marcy', 'rad man wh
         'Downhill Ski', 'Water Ski', 'Skateboard', 'Hang Glide');
 INSERT INTO USERS(username, email, Password, first_name, last_name, description, Photo, type, Snow_sports, Water_sports,
                   land_sports, air_sports)
-VALUES ('JRider', 'abc3@email.net', 'password', 'RJ', 'Boucher', 'pro dude who knows how to carve', 'Sn4',
+VALUES ('JRider', 'abc3@email.net', 'password', 'RJ', 'Boucher', 'pro dude who knows how to carve', 'JRIDER',
         'Athlete,Pro Athlete', 'Snowboard,Downhill Ski,snowmobile', 'Surf,Water Ski', 'BMX', 'Sky Dive,Hang Glide');
 INSERT INTO USERS(username, email, Password, first_name, last_name, description, Photo, type, Snow_sports, Water_sports,
                   land_sports, air_sports)

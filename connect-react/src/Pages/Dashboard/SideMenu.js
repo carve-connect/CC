@@ -6,6 +6,7 @@ import pic1 from "../../images/Sn1.jpeg"
 import Image from 'react-bootstrap/Image'
 import axios from 'axios';
 import {Link} from "react-router-dom";
+import NameDropdown from '../../components/NameDropdown'
 
 class SideMenu extends Component {
 	constructor(props) {
@@ -79,16 +80,15 @@ class SideMenu extends Component {
 
 
 				return (
-					<ListGroup.Item key={index} action href={`/dashboard/profile/${this.state.buddies[index].user_id2}`} style={{
+					<ListGroup.Item key={index} style={{
 						backgroundColor: "seashell", color: "green",
                         paddingRight: '0px', width: "125%",
 					}}>
-                        {this.state.names[0] + " " + this.state.buddies[index].username} <Image src={pic1}
-                                                                                                roundedCircle
-                                                                                                style={{
-																										width: "20px",
-																										height: "20px"
-																									}}/>
+					<Row>
+						<NameDropdown id={this.state.buddies[index].user_id2} link={`/dashboard/profile/${this.state.buddies[index].user_id2}`} name= {this.state.buddies[index].username} />
+						<Image src={pic1} roundedCircle style={{ width: "20px", height: "20px"}}/>
+					</Row>
+                        
 					</ListGroup.Item>
 				)
 			});

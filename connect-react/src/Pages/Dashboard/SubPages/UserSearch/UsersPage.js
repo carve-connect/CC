@@ -45,6 +45,7 @@ import Ska3 from '../../../../images/Ska3.jpeg';
 import Ska4 from '../../../../images/Ska4.jpeg';
 import SkPh1 from '../../../../images/SkPh1.jpeg';
 import SkPh2 from '../../../../images/SkPh2.jpeg';
+import JRIDER from '../../../../images/JRIDER.png'
 
 class UsersPage extends Component {
 
@@ -115,6 +116,8 @@ class UsersPage extends Component {
                 pic = SEAN;
             else if (users[k].photo === "DHRUV")
                 pic = DHRUV;
+            else if (users[k].photo === "JRIDER")
+                pic = JRIDER
             else if (users[k].photo === "BALIGA")
                 pic = BALIGA;
             else if (users[k].photo === "dogskate")
@@ -189,7 +192,7 @@ class UsersPage extends Component {
 
             row.push(
                 <Col key={k}>
-                    <UserFigure name={users[k].username} img={pic} href={'/dashboard/profile/' + users[k].user_id}/>
+                    <UserFigure id={users[k].user_id} name={users[k].username} img={pic} href={'/dashboard/profile/' + users[k].user_id}/>
                 </Col>
             );
         }

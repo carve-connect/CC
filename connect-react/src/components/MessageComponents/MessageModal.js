@@ -11,10 +11,10 @@ export default class MessageModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            subject: '',
-            to: '',
-            type: 'normal',
-            body: '',
+            subject: "",
+            to: this.props.receiverId,
+            type: "normal",
+            body: "",
             sender: localStorage.getItem('userId')
         };
 
@@ -45,7 +45,7 @@ export default class MessageModal extends Component {
            body: this.state.body,
            msgType: 'normal'
          });
-         this.props.handleClose();
+         this.props.close();
        }
 
     }
@@ -56,11 +56,9 @@ export default class MessageModal extends Component {
 
     // Make sure that all fields are filled in
     validateForm() {
-        const { subject, to, body} = this.state;
+        const { subject, body} = this.state;
         return (
             subject.length > 0 &&
-            to.length > 0 &&
-            to.length < 39 &&
             body.length > 0
 
         );
@@ -83,8 +81,7 @@ export default class MessageModal extends Component {
                    aria-labelledby="contained-modal-title-vcenter"
                    centered
                    show={this.props.show}
-                   onHide={this.props.handleClose}
-                    style = {{}}>
+                   onHide={this.props.close}>
                 <Modal.Header closeButton style = {{color: "lightgrey",backgroundColor:"darkslategrey"}}>
                     <Modal.Title id="contained-modal-title-vcenter">New Message</Modal.Title>
                 </Modal.Header>
@@ -106,11 +103,7 @@ export default class MessageModal extends Component {
 
                         {/* Location */}
                         <Form.Group controlId="to">
-                            <Form.Label>Sending to:</Form.Label>
-                            <Form.Control value={this.state.to} onChange={this.handleChange} type="text" placeholder="Enter userId" />
-                            <Form.Text className="text-white">
-                                Use userId to send. valid range 1-38
-                            </Form.Text>
+                            <Form.Label>Sending to: {this.props.receiverName} </Form.Label>
                         </Form.Group>
 
                         {/* Description */}
@@ -128,7 +121,7 @@ export default class MessageModal extends Component {
 
 
                 <Modal.Footer style = {{color: "lightgrey",backgroundColor:"midnightblue"}}>
-                    <Button variant="secondary" onClick={this.props.handleClose}>
+                    <Button variant="secondary" onClick={this.props.close}>
                         Cancel
                     </Button>
                     <Button variant="primary" disabled={!this.validateForm()} onClick={this.sendMessage}>

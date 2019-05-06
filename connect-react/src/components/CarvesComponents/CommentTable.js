@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Button, Col, Form, Row, Table} from 'react-bootstrap';
+import NameDropdown from '../NameDropdown'
 
 
 export default class CommentTable extends Component {
@@ -71,7 +72,7 @@ export default class CommentTable extends Component {
 
                 return (
                     <tr>
-                        <td>{poster}</td>
+                        <td><NameDropdown id={com.poster} link={`/dashboard/profile/${com.poster}`} name={poster}/></td>
                         <td>{com.comment}</td>
                         <td>
 
