@@ -2368,7 +2368,9 @@ CREATE
 BEGIN
     select *
     from all_messages
-    where rec_id = id and (type = 'normal' or type = 'reply') and ('read' = 0)
+    where rec_id = id
+      and (type = 'normal' or type = 'reply')
+      and ('read' = 0)
     ORDER BY create_time DESC;
 END$$
 
@@ -2388,7 +2390,9 @@ CREATE
 BEGIN
     select *
     from all_messages
-    where rec_id = id and (type = 'normal' or type = 'reply') and ('read' = 1)
+    where rec_id = id
+      and (type = 'normal' or type = 'reply')
+      and ('read' = 1)
     ORDER BY create_time DESC;
 END$$
 
