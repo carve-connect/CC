@@ -78,3 +78,18 @@ Expected Result: every profile has its corresponding picture
 Actual Result: the default of the snowboarder going over the jump is used more than it is in the database.
 Anything else you want to add(if nothing put N/A): known issue, just need to figure out what images are missing
 -------------------------------------------------------------------------------------------------------------------
+Where did you run into the bug?: homepage
+
+Summarize the bug: When you try to create a carve application crashes
+
+Steps to reproduce.
+List the steps that occurred before the bug happened:
+1. go to home page
+2. Click Create Carve
+3.) Enter it all the carve information
+
+
+Expected Result: Carve should successfully be created
+
+Actual Result: As soon as you click Create after entering all the carve Information app crashes
+-------------------------------------------------------------------------------------------------------------------
