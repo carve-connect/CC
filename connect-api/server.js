@@ -111,7 +111,8 @@ const venComRoutes = require('./routes/venues/comments');
 const venMedRoutes = require('./routes/venues/media');
 const utilityRoutes = require('./routes/utilities');
 
-
+//Middleware routes
+const cCMRoutes = require('./routes/carves/commentsM');
 
 //const handshake = require('socket.io-handshake');
 
@@ -215,6 +216,9 @@ app.use('/venues/:venueId/media', venMedRoutes);
 app.use('/venues/:venueId/comments', venComRoutes);
 app.use('/venues/:venueId/carves', venCarRoutes);
 app.use('/venues/:venueId/follows', venUfRoutes);
+
+//Middleware Routes
+app.use('/carves/:carveId/commentsM', cCRoutes);
 
 // App listens on specific port or 8000 by default
 app.listen(PORT, () => {

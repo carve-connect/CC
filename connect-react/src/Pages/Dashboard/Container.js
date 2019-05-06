@@ -5,14 +5,20 @@ import routes from './dashboardRoutes'
 export default class Container extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			value: 0
+		};
 
 		this.changeSel = this.changeSel.bind(this);
 
 
     }
 
-
+	componentDidMount() {
+		this.setState({
+			value: 0
+		})
+	}
 
 	render() {
 		return (

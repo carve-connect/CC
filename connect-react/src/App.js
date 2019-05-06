@@ -49,7 +49,7 @@ class App extends Component {
           <Route path='/login' component={LoginPage} />
           <Route path='/logout' component={LogoutPage} />
           <Route path='/sign-up' component={SignUpPage} />
-          <Route path='/error' component={ErrorPage} />
+            <Route component={ErrorPage}/>
         </Switch>
         </Router>
       </div>

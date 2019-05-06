@@ -3,7 +3,6 @@ var router = express.Router({mergeParams: true});
 const con = require('../../db');
 
 
-
 // Grabs all carves from db
 router.get('/', (req,res) => {
     // Find all carves from database

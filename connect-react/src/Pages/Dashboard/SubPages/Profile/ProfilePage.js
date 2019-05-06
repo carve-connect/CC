@@ -30,7 +30,6 @@ import Dr1 from '../../../../images/Dr1.jpeg';
 import SnowProfilePic from '../../../../images/Sn3.jpeg';
 import Sn3 from '../../../../images/Sn3.jpeg';
 import UserApi from "../../../../api/UserApi";
-
 import CarveCollector from "../../../../components/CarvesComponents/CarveCollector";
 import Sn2 from "../../../../images/Sn2.jpg";
 import Sn5 from "../../../../images/Sn5.jpeg";
@@ -52,10 +51,11 @@ import Ska4 from "../../../../images/Ska4.jpeg";
 import SkPh1 from "../../../../images/SkPh1.jpeg";
 import SkPh2 from "../../../../images/SkPh2.jpeg";
 import JRIDER from "../../../../images/JRIDER.png";
+
 //photos
 
 
-export default class ProfilePage extends Component {
+class ProfilePage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -99,8 +99,22 @@ export default class ProfilePage extends Component {
 
 	// Retrieves info before component is mounted to the DOM
 	componentDidMount() {
-		this.getUserInfo();
+
+		this.setState({
+			userId: Number(this.props.match.params.number)
+		});
 		//this.getUserCounts();
+		this.getUserInfo();
+	}
+
+	componentWillReceiveProps(newProps, nextContext) {
+		this.setState({
+			userId: Number(newProps.match.params.number)
+		});
+		this.getUserInfo();
+
+		//this.getUserCounts();
+
 	}
 
 	handleClick = () => {
@@ -547,3 +561,5 @@ export default class ProfilePage extends Component {
 
 
 }
+
+export default ProfilePage;
