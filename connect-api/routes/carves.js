@@ -50,12 +50,12 @@ router.get('/open', (req,res) => {
 
 // Creates a new carve
 router.post('/', (req,res) => {
-    const {carveName,creatorId,venueId,carveType,athlete,photo,date, sports} = req.body;
+    const {carveName, creatorId, venueId, carveType, athlete, photo, startDate, sports} = req.body;
     // The carvename wasn't found in the database
     // Create insert query for new carve
     new_carve = "CALL add_carve(?,?,?,?,?,?,?,?)";
     // Execute the query to insert into the database
-    con.query(new_carve,[carveName,creatorId,venueId,carveType[0],athlete,photo,date, sports[0]], (err, results) => {
+    con.query(new_carve, [carveName, creatorId, venueId, carveType[0], athlete, photo, startDate, sports[0]], (err, results) => {
         if (err) throw err;
         res.status(201).jsonp({results}).end();
     })

@@ -1,5 +1,5 @@
 -- MySQL Workbench Forward Engineering
--- New DB for CCV6
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -24,24 +24,24 @@ USE `CCv6` ;
 DROP TABLE IF EXISTS `CCv6`.`USERS` ;
 
 CREATE TABLE IF NOT EXISTS `CCv6`.`USERS` (
-  `user_id` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NULL,
-  `password` VARCHAR(45) NULL,
-  `first_name` VARCHAR(20) NULL,
-  `last_name` VARCHAR(20) NULL,
-  `description` VARCHAR(100) NULL,
-  `type` SET('Photographer ', 'Videographer ', 'DroneOperator ', 'Athlete ', 'ProAthlete ', 'fan') NOT NULL DEFAULT 'athlete',
-  `snow_sports` SET('Snowboard ', 'Ski', 'Snowmobile ') NULL,
-  `water_sports` SET('Surf ', 'WaterSki ', 'Kayak ', 'Paddleboard ', 'Parasail') NULL,
-  `land_sports` SET('Skateboard ', 'BMX ', 'MountainBike ', 'RockClimb ') NULL,
-  `air_sports` SET('SkyDive ', 'HangGlide ') NULL,
-  `logged_in` TINYINT NULL DEFAULT 0,
-  `photo` VARCHAR(45) NULL,
-  `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`user_id`),
-  UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC) VISIBLE,
-  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
+                                              `user_id`      INT                                                                                        NOT NULL AUTO_INCREMENT,
+                                              `username`     VARCHAR(45)                                                                                NOT NULL,
+                                              `email`        VARCHAR(45)                                                                                NULL,
+                                              `password`     VARCHAR(45)                                                                                NULL,
+                                              `first_name`   VARCHAR(20)                                                                                NULL,
+                                              `last_name`    VARCHAR(20)                                                                                NULL,
+                                              `description`  VARCHAR(100)                                                                               NULL,
+                                              `type`         SET ('Photographer ', 'Videographer ', 'DroneOperator ', 'Athlete ', 'ProAthlete ', 'fan') NOT NULL DEFAULT 'athlete',
+                                              `snow_sports`  SET ('Snowboard ', 'Ski', 'Snowmobile ')                                                   NULL,
+                                              `water_sports` SET ('Surf ', 'WaterSki ', 'Kayak ', 'Paddleboard ', 'Parasail')                           NULL,
+                                              `land_sports`  SET ('Skateboard ', 'BMX ', 'MountainBike ', 'RockClimb ')                                 NULL,
+                                              `air_sports`   SET ('SkyDive ', 'HangGlide ')                                                             NULL,
+                                              `logged_in`    TINYINT                                                                                    NULL     DEFAULT 0,
+                                              `photo`        VARCHAR(45)                                                                                NULL,
+                                              `create_time`  TIMESTAMP                                                                                  NULL     DEFAULT CURRENT_TIMESTAMP,
+                                              PRIMARY KEY (`user_id`),
+                                              UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC) VISIBLE,
+                                              UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -51,24 +51,23 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `CCv6`.`VENUES` ;
 
 CREATE TABLE IF NOT EXISTS `CCv6`.`VENUES` (
-                                               `venue_id`     INT                                                                                          NOT NULL AUTO_INCREMENT,
-                                               `venue_name`   VARCHAR(45)                                                                                  NOT NULL,
-                                               `city`         VARCHAR(45)                                                                                  NULL,
-                                               `state`        VARCHAR(2)                                                                                   NULL,
-                                               `about`        VARCHAR(200)                                                                                 NULL,
-                                               `snow_sports`  SET ('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ')                     NULL,
-                                               `water_sports` SET ('Surf', 'Water Ski ', 'Kayak ', 'Wakeboard ', 'Paddleboard ', 'Parasail', 'Kite Surf ') NULL,
-                                               `land_sports`  SET ('Skateboard ', 'BMX ', 'Mountain Bike ', 'Rock Climb ', 'Cliff Dive', 'Parkour')        NULL,
-                                               `air_sports`   SET ('Sky Dive ', 'Hang Glide ', 'Base Jump ', 'Air Race ')                                  NULL,
-                                               `lattitude`    VARCHAR(45)                                                                                  NULL,
-                                               `longitude`    VARCHAR(45)                                                                                  NULL,
-                                               `url`          VARCHAR(100)                                                                                 NULL,
-                                               `picture`      VARCHAR(45)                                                                                  NULL,
-                                               `create_time`  TIMESTAMP                                                                                    NULL DEFAULT CURRENT_TIMESTAMP,
-                                               PRIMARY KEY (`venue_id`),
-                                               UNIQUE INDEX `venue_id_UNIQUE` (`venue_id` ASC) VISIBLE,
-                                               UNIQUE INDEX `venue_name_UNIQUE` (`venue_name` ASC) VISIBLE
-)
+  `venue_id` INT NOT NULL AUTO_INCREMENT,
+  `venue_name` VARCHAR(45) NOT NULL,
+  `city` VARCHAR(45) NULL,
+  `state` VARCHAR(2) NULL,
+  `about` VARCHAR(200) NULL,
+  `snow_sports` SET('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ') NULL,
+  `water_sports` SET('Surf', 'Water Ski ', 'Kayak ', 'Wakeboard ', 'Paddleboard ', 'Parasail') NULL,
+  `land_sports` SET('Skateboard ', 'BMX ', 'Mountain Bike ', 'Rock Climb ', 'Cliff Dive', 'Parkour') NULL,
+  `air_sports` SET('Sky Dive ', 'Hang Glide ', 'Base Jump ', 'Air Race ') NULL,
+  `lattitude` VARCHAR(45) NULL,
+  `longitude` VARCHAR(45) NULL,
+  `url` VARCHAR(100) NULL,
+  `picture` VARCHAR(45) NULL,
+  `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`venue_id`),
+  UNIQUE INDEX `venue_id_UNIQUE` (`venue_id` ASC) VISIBLE,
+  UNIQUE INDEX `venue_name_UNIQUE` (`venue_name` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -78,26 +77,26 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `CCv6`.`CARVES` ;
 
 CREATE TABLE IF NOT EXISTS `CCv6`.`CARVES` (
-                                               `carve_id`     INT                                                                                                                                                                                                                                                                                             NOT NULL AUTO_INCREMENT,
-                                               `name`         VARCHAR(45)                                                                                                                                                                                                                                                                                     NOT NULL,
-                                               `creator`      INT                                                                                                                                                                                                                                                                                             NOT NULL,
-                                               `venue`        INT                                                                                                                                                                                                                                                                                             NULL,
-                                               `type`         SET ('open', 'buddy')                                                                                                                                                                                                                                                                           NOT NULL DEFAULT 'open',
-                                               `max_athletes` INT                                                                                                                                                                                                                                                                                             NULL,
-                                               `max_photo`    INT                                                                                                                                                                                                                                                                                             NULL,
-                                               `description`  VARCHAR(200)                                                                                                                                                                                                                                                                                    NULL,
-                                               `date`         DATE                                                                                                                                                                                                                                                                                            NULL,
-                                               `completed`    TINYINT                                                                                                                                                                                                                                                                                         NULL,
-                                               `sports`       SET ('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ', 'Surf ', 'Water Ski ', 'Kayak ', 'Wakeboard ', 'Paddleboard ', 'Parasail  ', 'Skateboard ', 'BMX ', 'Mountain Bike ', 'Rock Climb ', 'Cliff Dive ', 'Parkour ', 'Sky Dive ', 'Hang Glide ', 'Base Jump ', 'Air Race ') NULL,
-                                               `create_time`  TIMESTAMP                                                                                                                                                                                                                                                                                       NULL     DEFAULT CURRENT_TIMESTAMP,
-                                               UNIQUE INDEX `carve_id_UNIQUE` (`carve_id` ASC) VISIBLE,
-                                               PRIMARY KEY (`carve_id`),
-                                               CONSTRAINT `creator`
+  `carve_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `creator` INT NOT NULL,
+  `venue` INT NULL,
+  `type` SET('open', 'buddy') NOT NULL DEFAULT 'open',
+  `max_athletes` INT NULL,
+  `max_photo` INT NULL,
+  `description` VARCHAR(200) NULL,
+  `date` DATE NULL,
+  `completed` TINYINT NULL,
+  `sports` SET('snowboard', 'ski', 'snowmobile', 'surf', 'waterski', 'skyDive', 'hangGlide', 'skateboard', 'BMX', 'mountainBike') NULL,
+  `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE INDEX `carve_id_UNIQUE` (`carve_id` ASC) VISIBLE,
+  PRIMARY KEY (`carve_id`),
+  CONSTRAINT `creator`
     FOREIGN KEY (`creator`)
     REFERENCES `CCv6`.`USERS` (`user_id`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION,
-                                               CONSTRAINT `venue1`
+  CONSTRAINT `venue1`
     FOREIGN KEY (`venue`)
     REFERENCES `CCv6`.`VENUES` (`venue_id`)
     ON DELETE CASCADE
@@ -272,9 +271,8 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`MEDIA` (
   CONSTRAINT `carve4`
     FOREIGN KEY (`carve`)
     REFERENCES `CCv6`.`CARVES` (`carve_id`)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
-)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -320,6 +318,84 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`MESSAGES` (
     REFERENCES `CCv6`.`MESSAGES` (`message_id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `CCv6`.`VENUES_copy1`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `CCv6`.`VENUES_copy1` ;
+
+CREATE TABLE IF NOT EXISTS `CCv6`.`VENUES_copy1` (
+  `venue_id` INT NOT NULL AUTO_INCREMENT,
+  `venue_name` VARCHAR(45) NOT NULL,
+  `city` VARCHAR(45) NULL,
+  `state` VARCHAR(2) NULL,
+  `about` VARCHAR(200) NULL,
+  `snow_sports` SET('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ') NULL,
+  `water_sports` SET('surf', 'waterski') NULL,
+  `land_sports` SET('skateboard', 'BMX', 'mountainBiking') NULL,
+  `air_sports` SET('skyDive', 'hangGlide') NULL,
+  `lattitude` VARCHAR(45) NULL,
+  `longitude` VARCHAR(45) NULL,
+  `url` VARCHAR(100) NULL,
+  `picture` VARCHAR(45) NULL,
+  `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`venue_id`),
+  UNIQUE INDEX `venue_id_UNIQUE` (`venue_id` ASC) VISIBLE,
+  UNIQUE INDEX `venue_name_UNIQUE` (`venue_name` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `CCv6`.`VENUES_copy2`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `CCv6`.`VENUES_copy2` ;
+
+CREATE TABLE IF NOT EXISTS `CCv6`.`VENUES_copy2` (
+  `venue_id` INT NOT NULL AUTO_INCREMENT,
+  `venue_name` VARCHAR(45) NOT NULL,
+  `city` VARCHAR(45) NULL,
+  `state` VARCHAR(2) NULL,
+  `about` VARCHAR(200) NULL,
+  `snow_sports` SET('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ') NULL,
+  `water_sports` SET('surf', 'waterski') NULL,
+  `land_sports` SET('skateboard', 'BMX', 'mountainBiking') NULL,
+  `air_sports` SET('skyDive', 'hangGlide') NULL,
+  `lattitude` VARCHAR(45) NULL,
+  `longitude` VARCHAR(45) NULL,
+  `url` VARCHAR(100) NULL,
+  `picture` VARCHAR(45) NULL,
+  `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`venue_id`),
+  UNIQUE INDEX `venue_id_UNIQUE` (`venue_id` ASC) VISIBLE,
+  UNIQUE INDEX `venue_name_UNIQUE` (`venue_name` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `CCv6`.`VENUES_copy3`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `CCv6`.`VENUES_copy3` ;
+
+CREATE TABLE IF NOT EXISTS `CCv6`.`VENUES_copy3` (
+  `venue_id` INT NOT NULL AUTO_INCREMENT,
+  `venue_name` VARCHAR(45) NOT NULL,
+  `city` VARCHAR(45) NULL,
+  `state` VARCHAR(2) NULL,
+  `about` VARCHAR(200) NULL,
+  `snow_sports` SET('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ') NULL,
+  `water_sports` SET('surf', 'waterski') NULL,
+  `land_sports` SET('skateboard', 'BMX', 'mountainBiking') NULL,
+  `air_sports` SET('skyDive', 'hangGlide') NULL,
+  `lattitude` VARCHAR(45) NULL,
+  `longitude` VARCHAR(45) NULL,
+  `url` VARCHAR(100) NULL,
+  `picture` VARCHAR(45) NULL,
+  `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`venue_id`),
+  UNIQUE INDEX `venue_id_UNIQUE` (`venue_id` ASC) VISIBLE,
+  UNIQUE INDEX `venue_name_UNIQUE` (`venue_name` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 USE `CCv6` ;
@@ -375,14 +451,6 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`all_comments` (`id` INT);
 CREATE TABLE IF NOT EXISTS `CCv6`.`view1` (`type` INT);
 
 -- -----------------------------------------------------
--- Placeholder table for view `CCv6`.`view2`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `CCv6`.`view2`
-(
-    `id` INT
-);
-
--- -----------------------------------------------------
 -- procedure add_user
 -- -----------------------------------------------------
 
@@ -391,8 +459,13 @@ DROP procedure IF EXISTS `CCv6`.`add_user`;
 
 DELIMITER $$
 USE `CCv6`$$
-CREATE PROCEDURE `add_user` (in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40), in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100), in profileType set ('athlete','photographer', 'videographer', 'droneoperator', 'proathlete', 'fan')
-,in winterSports set ('snowboard','ski','snowmobile'), in waterSports set ('surf','waterski', 'kayak', 'parasail', 'paddleboard'),in landSports set ('skateboard','bmx', 'rockclimb', 'mountainbike'), in airSports set ('skydive','hangglide'))
+CREATE PROCEDURE `add_user`(in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40)
+                           , in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100)
+                           , in profileType set ('athlete','photographer', 'videographer', 'droneoperator', 'proathlete', 'fan')
+                           , in winterSports set ('snowboard','ski','snowmobile')
+                           , in waterSports set ('surf','waterski', 'kayak', 'parasail', 'paddleboard')
+                           , in landSports set ('skateboard','bmx', 'rockclimb', 'mountainbike')
+                           , in airSports set ('skydive','hangglide'))
 BEGIN
 insert into users(username, email, password, first_name, last_name, description, type, snow_sports, water_sports, land_sports, air_sports)
 Values(uname, emailAddress,pass,firstName,lastName,about,profileType,winterSports,waterSports,landSports,airSports);
@@ -530,8 +603,13 @@ DROP procedure IF EXISTS `CCv6`.`update_user`;
 
 DELIMITER $$
 USE `CCv6`$$
-CREATE PROCEDURE `update_user` (in id int, in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40), in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100), in profileType set ('photographer', 'videographer', 'droneoperator', 'athlete', 'proathlete', 'fan')
-,in snowSports set ('snowboard','ski','snowmobile'), in waterSports set ('surf','waterSki', 'kayak', 'parasail', 'paddleboard'),in landSports set ('skateboard','bmx', 'rockclimb', 'mountainbike'), in airSports set ('skydive','hangglide'))
+CREATE PROCEDURE `update_user`(in id int, in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40)
+                              , in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100)
+                              , in profileType set ('photographer', 'videographer', 'droneoperator', 'athlete', 'proathlete', 'fan')
+                              , in snowSports set ('snowboard','ski','snowmobile')
+                              , in waterSports set ('surf','waterSki', 'kayak', 'parasail', 'paddleboard')
+                              , in landSports set ('skateboard','bmx', 'rockclimb', 'mountainbike')
+                              , in airSports set ('skydive','hangglide'))
 BEGIN
 update users set 
 username = uname,
@@ -2584,38 +2662,6 @@ END$$
 DELIMITER ;
 
 -- -----------------------------------------------------
--- procedure get_photographers
--- -----------------------------------------------------
-
-USE `CCv6`;
-DROP procedure IF EXISTS `CCv6`.`get_photographers`;
-
-DELIMITER $$
-USE `CCv6`$$
-CREATE PROCEDURE `get_photographers`()
-BEGIN
-    select * from all_users where type = 'Photographer' or type = 'Videographer' or type = 'Drone Operator';
-END$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure get_athletes
--- -----------------------------------------------------
-
-USE `CCv6`;
-DROP procedure IF EXISTS `CCv6`.`get_athletes`;
-
-DELIMITER $$
-USE `CCv6`$$
-CREATE PROCEDURE `get_athletes`()
-BEGIN
-    select * from all_users where type = 'Athlete' or type = 'Pro Athlete';
-END$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
 -- View `CCv6`.`all_users`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `CCv6`.`all_users`;
@@ -2704,14 +2750,6 @@ DROP VIEW IF EXISTS `CCv6`.`view1` ;
 USE `CCv6`;
 CREATE  OR REPLACE VIEW `view1` AS
 select type from likes;
-
--- -----------------------------------------------------
--- View `CCv6`.`view2`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `CCv6`.`view2`;
-DROP VIEW IF EXISTS `CCv6`.`view2`;
-USE `CCv6`;
-
 SET SQL_MODE = '';
 DROP USER IF EXISTS nodeuser;
 SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';

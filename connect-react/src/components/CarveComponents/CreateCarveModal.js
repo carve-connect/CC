@@ -49,7 +49,8 @@ export default class CreateCarveModal extends Component {
 			carveType: [this.state.type],
 			athlete: this.state.athlete,
 			photo: this.state.photo,
-			sports: [this.state.sport]
+			sports: this.state.sport,
+			startDate: this.state.startDate
 
 		});
 		this.props.handleClose();
@@ -66,7 +67,7 @@ export default class CreateCarveModal extends Component {
 
 	// Make sure that all fields are filled in
 	validateForm() {
-		const {name, description, athlete} = this.state;
+		const {name, description, athlete, date} = this.state;
 		return (
 				name.length > 0 &&
 				description.length > 0 &&
@@ -114,22 +115,22 @@ export default class CreateCarveModal extends Component {
 							<Form.Label>Sport Type</Form.Label>
 							<Form.Control value={this.state.sport} placeholder="Select a Sport" onChange={this.handleChange} as="select">
 								<option disabled value={-1}>Select an option...</option>
-                                <option value='Snowboard'>Snowboarding</option>
-                                <option value='Downhill Ski'>Downhill Skiing</option>
+								<option value="Snowboard">Snowboarding</option>
+								<option value="Downhill Ski">Downhill Skiing</option>
                                 <option value='Snowmobile'>Snowmobile</option>
-                                <option value='Snowboard,Downhill ski'>Snowboard and Ski</option>
-                                <option value='Cross-Country Ski'>Cross-Country Skiing</option>
-                                <option value='Surf'>Surfing</option>
-                                <option value='Water Ski'>Water Ski</option>
+								<option value={"Snowboard,Downhill Ski"}>Snowboard and Ski</option>
+								<option value="Cross-Country Ski">Cross-Country Skiing</option>
+								<option value="Surf">Surfing</option>
+								<option value="Water Ski">Water Ski</option>
                                 <option value='Kayak'>Kayak</option>
                                 <option value='Paddleboard'>Paddleboard</option>
                                 <option value='Skateboard'>Skateboarding</option>
 								<option value = 'BMX'>BMX</option>
-                                <option value='Mountain Bike'>Mountain Bike</option>
-                                <option value='Rock Climb'>Rock Climb</option>
-                                <option value='Sky Dive'>Sky Dive</option>
-                                <option value='Hang Glide'>Hang Glide</option>
-                                <option value='Air Race'>Air Race</option>
+								<option value="Mountain Bike">Mountain Bike</option>
+								<option value="Rock Climb">Rock Climb</option>
+								<option value="Sky Dive">Sky Dive</option>
+								<option value="Hang Glide">Hang Glide</option>
+								<option value="Air Race">Air Race</option>
 							</Form.Control>
 						</Form.Group>
 

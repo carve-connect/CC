@@ -342,19 +342,26 @@ export default class CarveCard2 extends Component {
 
         let cdd = carve.create_time;
         let cddd;
-        let cadd = carve.date;
+
         let caddd;
+        if (cdd.length > 0) {
 
-        // Split timestamp into [ Y, M, D, h, m, s ]
-        cddd = cdd.split(/[- :]/);
+            // Split timestamp into [ Y, M, D, h, m, s ]
 
+
+            cddd = cdd.split(/[- :]/);
+            var cd = cddd[2][1] + "-" + cddd[1] + "-" + cddd[0];
+            if (carve.date) {
+                let cadd = carve.date;
 // Apply each element to the Date function
-        var cd = cddd[2][1] + "-" + cddd[1] + "-" + cddd[0];
 
-        console.log(cd);
 
-        caddd = cadd.split(/[- :]/);
-        var cad = caddd[2][1] + "-" + caddd[1] + "-" + caddd[0];
+                console.log(cd);
+
+                caddd = cadd.split(/[- :]/);
+                var cad = caddd[2][1] + "-" + caddd[1] + "-" + caddd[0];
+            }
+        }
         /*
 // -> Wed Jun 09 2010 14:12:01 GMT+0100 (BST)
 
