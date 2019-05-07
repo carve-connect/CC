@@ -125,7 +125,7 @@ export default class SignUpPage extends Component {
 			typA: !this.state.typA
 
 		});
-		alert(this.state.profileType);
+		//alert(this.state.profileType);
 
 	};
 	handleTypeP = event => {
@@ -153,7 +153,7 @@ export default class SignUpPage extends Component {
 			typP: !this.state.typP
 
 		});
-		alert(this.state.profileType);
+		//alert(this.state.profileType);
 	};
 
 
@@ -198,13 +198,13 @@ export default class SignUpPage extends Component {
 				this.setState( {userId : results.data.check })	;
 
 				if(this.state.userId > 0) {
-					alert("created profile userId: " + this.state.userId + " " + this.state.type);
+					//alert("created profile userId: " + this.state.userId + " " + this.state.type);
 					localStorage.setItem('userId', this.state.userId);
 					this.setState({redirect: true});
 
 				}
 				else {
-					alert("failed username is already taken");
+					//alert("failed username is already taken");
 
 					this.setState({redirect: false});
 				}
@@ -253,13 +253,13 @@ export default class SignUpPage extends Component {
 						<Form.Control value={valueSnow} placeholder="Select a Sport" onChange={this.handleChange1} as="select">
 							<option disabled value={-1}>Select an option...</option>
 							<option> </option>
-                            <option value='Snowboard'>Snowboard</option>
-                            <option value='Downhill Ski'>Downhill Ski</option>
-                            <option value='Snowmobile'>Snowmobile</option>
-                            <option value='Snowboard,Downhill Ski'>Snowboard & Downhill Ski</option>
-                            <option value='Snowboard,Snowmobile'>Snowboard & Snowmobile</option>
-                            <option value='Downhill Ski,Snowmobile'>Downhill Ski & Snowmobile</option>
-                            <option value='Snowboard,Downhill Ski,Snowmobile'>Snowboard & DH Ski & Snowmobile</option>
+                            <option value='snowboard'>Snowboard</option>
+                            <option value='ski'>Ski</option>
+                            <option value='snowmobile'>Snowmobile</option>
+                            <option value='snowboard,ski'>Snowboard & Ski</option>
+                            <option value='snowboard,snowmobile'>Snowboard & Snowmobile</option>
+                            <option value='ski,snowmobile'>Ski & Snowmobile</option>
+                            <option value='snowboard,ski,snowmobile'>Snowboard & Ski & Snowmobile</option>
 						</Form.Control>
 					</Form.Group>
 
@@ -268,14 +268,14 @@ export default class SignUpPage extends Component {
 						<Form.Control value={valueLand} placeholder="Select a Sport" onChange={this.handleChange2} as="select">
 							<option disabled value={-1}>Select an option...</option>
 							<option> </option>
-                            <option value='Skateboard'>Skateboard</option>
-							<option value = 'BMX'>BMX</option>
-                            <option value='Mountain Bike'>Mountain Biking</option>
-                            <option value='Rock Climb'>Rock Climb</option>
-                            <option value='Skateboard,BMX'>Skateboard & BMX</option>
-                            <option value='Skateboard,Mountain Bike'>Skateboard & Mountain biking</option>
-                            <option value='BMX,Mountain Bike'> BMX & Mountain Biking</option>
-                            <option value='Skateboard,BMX,Mountain Bike'>Skateboard & BMX & Mountain biking</option>
+                            <option value='skateboard'>Skateboard</option>
+							<option value='bmx'>BMX</option>
+                            <option value='mountainbike'>Mountain Biking</option>
+                            <option value='rockclimb'>Rock Climb</option>
+                            <option value='skateboard,bmx'>Skateboard & BMX</option>
+                            <option value='skateboard,mountainbike'>Skateboard & Mountain biking</option>
+                            <option value='bmx,mountainbike'> BMX & Mountain Biking</option>
+                            <option value='skateboard,bmx,mountainbike'>Skateboard & BMX & Mountain biking</option>
 						</Form.Control>
 					</Form.Group>
                     <Form.Group controlId="water sport type">
@@ -284,12 +284,12 @@ export default class SignUpPage extends Component {
                         <Form.Control value={valueWater} placeholder="Select a Sport" onChange={this.handleChange4} as="select">
                             <option disabled value={-1}>Select an option...</option>
                             <option> </option>
-                            <option value='Surf'>Surf</option>
-                            <option value='Paddleboard'>Paddleboard</option>
-                            <option value='Parasail'>Parasail</option>
-                            <option value='Kayak'>Surf</option>
-                            <option value='Water Ski'>Water Ski</option>
-                            <option value='Surf,Water Ski'>Surf & Water Ski</option>
+                            <option value='surf'>Surf</option>
+                            <option value='paddleboard'>Paddleboard</option>
+                            <option value='parasail'>Parasail</option>
+                            <option value='kayak'>Kayak</option>
+                            <option value='waterski'>Water Ski</option>
+                            <option value='surf,waterski'>Surf & Water Ski</option>
                         </Form.Control>
                     </Form.Group>
 
@@ -298,9 +298,9 @@ export default class SignUpPage extends Component {
                         <Form.Control value={valueAir} placeholder="Select a Sport" onChange={this.handleChange5} as="select">
                             <option disabled value={-1}>Select an option...</option>
                             <option> </option>
-                            <option value='Sky Dive'>Sky Dive</option>
-                            <option value='Hang Glide'>Hang Glide</option>
-                            <option value='Sky Dive,Hang Glide'>Skydive & Hang Glide</option>
+                            <option value='skydive'>Sky Dive</option>
+                            <option value='hangglide'>Hang Glide</option>
+                            <option value='skyDive,hangglide'>Skydive & Hang Glide</option>
                         </Form.Control>
                     </Form.Group>
 
@@ -315,24 +315,24 @@ export default class SignUpPage extends Component {
 
 							<option> </option>
 
-                            <option value='Athlete'>Athlete</option>
-                            <option value='Pro Athlete'>Pro Athlete</option>
-                            <option value='Athlete,Pro Athlete'>Athlete & Pro Athlete</option>
-                            <option value='Photographer'>Photographer</option>
-                            <option value='Videographer'>Videographer</option>
-                            <option value='Drone Operator'>Drone Operator</option>
-                            <option value='Athlete,Photographer'>Athlete & Photographer</option>
-                            <option value='Photographer,Videographer'>Photographer & Filmographer</option>
-                            <option value='Photographer,Drone Operator'>Photographer & Drone Operator</option>
-                            <option value='Photographer,Videographer,Drone Operator'>Photographer & Filmographer & Drone
+                            <option value='athlete'>Athlete</option>
+                            <option value='proathlete'>Pro Athlete</option>
+                            <option value='athlete,proathlete'>Athlete & Pro Athlete</option>
+                            <option value='photographer'>Photographer</option>
+                            <option value='videographer'>Videographer</option>
+                            <option value='droneoperator'>Drone Operator</option>
+                            <option value='athlete,photographer'>Athlete & Photographer</option>
+                            <option value='photographer,videographer'>Photographer & Filmographer</option>
+                            <option value='photographer,droneoperator'>Photographer & Drone Operator</option>
+                            <option value='photographer,videographer,droneoperator'>Photographer & Filmographer & Drone
 								Operator
 							</option>
-                            <option value='Athlete,Photographer'>Athlete & Photographer</option>
-                            <option value='Athlete,Photographer,Videographer'>Athlete & Photographer & Filmographer
+                            <option value='athlete,photographer'>Athlete & Photographer</option>
+                            <option value='athlete,photographer,videographer'>Athlete & Photographer & Filmographer
 							</option>
-                            <option value='Athlete,Photographer,Drone Operator'>Athlete & Photographer & Drone Operator
+                            <option value='athlete,photographer,droneoperator'>Athlete & Photographer & Drone Operator
 							</option>
-                            <option value='Athlete,Photographer,Videgrapher,Drone Operator'>Athlete & Photographer &
+                            <option value='athlete,photographer,videographer,droneoperator'>Athlete & Photographer &
 								Filmographer & Drone Operator
 							</option>
 							<option value='fan'>Fan</option>
