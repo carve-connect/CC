@@ -77,7 +77,7 @@ const con = require('./db');
 
 con.connect( function(err) {
   if (err) throw err;
-  console.log("Connected to Carve Connect database version 5");
+    console.log("Connected to Carve Connect database version 6");
 });
 
 // Define routes ahead of time
