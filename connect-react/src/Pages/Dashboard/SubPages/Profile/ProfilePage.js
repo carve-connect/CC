@@ -438,13 +438,26 @@ class ProfilePage extends Component {
 
 				}
 			}
+			let createMedia;
+			let pagePrefix = (isUserLoggedIn) ? "My " : "Their ";
+			if(isUserLoggedIn){
+				createMedia = 
+				<CreateMediaModal show={this.state.createMedia} handleClose={this.handleCreateMedia}/>
+			}
+
+			let createCarve;
+			if(isUserLoggedIn){
+				createCarve = 
+				<Button onClick={this.handleClick} style={{marginLeft: '50px', marginTop: '-7px'}}>Create Carve</Button>
+			}
 
 			if (this.state.content === "media") {
 				content =
 					<Container show={this.state.media} style={{paddingLeft: "15%", width: "150%", paddingTop: "1%"}}>
 						<Row style={{paddingLeft: "50%", height: "2%"}}>
-							<h2 style={{margin: '3rem'}}>My Media</h2>
-							<CreateMediaModal show={this.state.createMedia} handleClose={this.handleCreateMedia}/>
+							<h2 style={{margin: '3rem'}}>{pagePrefix} Media</h2>
+							{createMedia}
+							
 						</Row>
 						{/* Row will hold all of the media and such that we grab from the api */}
 						<Container style={{
@@ -464,9 +477,8 @@ class ProfilePage extends Component {
 					<Container style={{paddingTop: "1%", width: "200%"}} show={this.state.carves}>
 						<Col>
 							<Row style={{paddingLeft: "53%"}}>
-								<h2>Carves created by user</h2>
-								<Button onClick={this.handleClick} style={{marginLeft: '50px', marginTop: '-7px'}}>Create
-									Carve</Button>
+								<h2>{pagePrefix} Carves</h2>
+								{createCarve}
 							</Row>
 							<Row>
 								<CarveCollector type={"userCreate"} id={this.state.userId}/>
