@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS `CCv6`.`USERS` (
                                               `create_time`  TIMESTAMP                                                                                  NULL     DEFAULT CURRENT_TIMESTAMP,
                                               PRIMARY KEY (`user_id`),
                                               UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC) VISIBLE,
-                                              UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
+                                              UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE
+)
 ENGINE = InnoDB;
 
 
