@@ -502,7 +502,7 @@ class ProfilePage extends Component {
 					<BuddyRequestModal id={this.state.userInfo.user_id} show={this.state.show2}
 									   handleClose={this.handleClose2}/>
 
-					<Row style={{backgroundColor: "gainsboro", height: ".1%", width: "150%"}}>
+                    <Row style={{backgroundColor: "gainsboro", height: ".6%", width: "150%"}}>
 						<div style={{marginLeft: "3%", marginBottom: '2%', height: ".1%"}}>
 							<h1>{profilePrefix} Profile</h1>
 						</div>
