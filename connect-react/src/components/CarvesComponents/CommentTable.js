@@ -1,3 +1,7 @@
+/*
+Comment table specifically for Carves
+*/
+
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Button, Col, Form, Row, Table} from 'react-bootstrap';
