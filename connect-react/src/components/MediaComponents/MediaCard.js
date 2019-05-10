@@ -1,3 +1,11 @@
+/*
+The generic look and feel of an indivdual Media piece. 
+The content (i.e. the fields) are passed in as props
+and edit/delete functionality is here.
+
+*/
+
+
 import React, {Component} from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
