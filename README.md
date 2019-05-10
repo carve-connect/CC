@@ -45,12 +45,11 @@
   <li>Node.js</li>
   <li>Express.js</li>
   <li>MySQL</li>
-<ul>
+</ul>
 
 <h4>Instructions for local deployment:</h4>
 <ul>
-  <li> React Front End
-  </li>
+  <li> React Front End</li>
     <ol>
       <li>cd into connect-react</li>
       <li>run npm start</li>
