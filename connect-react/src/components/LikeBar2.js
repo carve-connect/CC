@@ -1,3 +1,10 @@
+/*
+
+The likes/dislikes are passed in from the parent component so there are less calls overall,
+and speeds up the application tremendously. 
+
+*/
+
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Button} from 'react-bootstrap';
