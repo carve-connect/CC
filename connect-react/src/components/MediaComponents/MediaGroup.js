@@ -1,3 +1,11 @@
+/*
+Similar to the all-in-one CarveCollector, MediaGroup functions the same concept.
+We reduce the backend calls and switch the call based on the the props it is passed. 
+Pagination is also handled here.
+
+/*
+
+
 import React, {Component} from 'react';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
