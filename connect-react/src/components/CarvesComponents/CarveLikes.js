@@ -1,3 +1,8 @@
+/*
+Like bar look and functionality specifically for Carves.
+
+*/
+
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Button} from 'react-bootstrap';
