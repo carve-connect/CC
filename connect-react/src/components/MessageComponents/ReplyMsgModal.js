@@ -1,3 +1,9 @@
+/*
+Popup for replying to a message in a user's messages inbox
+*/
+
+
+
 import React, {Component} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
