@@ -93,3 +93,39 @@ Expected Result: Carve should successfully be created
 
 Actual Result: As soon as you click Create after entering all the carve Information app crashes
 -------------------------------------------------------------------------------------------------------------------
+Where did you run into the bug?: Another user's profile page/my notifications
+
+Summarize the bug: Unable to add a new buddy
+
+Steps to reproduce.
+List the steps that occurred before the bug happened:
+1. Logged in
+2. Searched for another user
+3. Went to that user's profile
+4. Clicked Add Buddy button
+5. Went to sent notifications
+6. Logged out and logged in as the other user
+7. Went to incoming notifications
+
+Expected Result: Sent buddy request in my sent notifications and a buddy request in other user's incoming notifications
+
+Actual Result: Nothing
+
+Anything else you want to add(if nothing put N/A): N/A
+-------------------------------------------------------------------------------------------------------------------
+Where did you run into the bug?: Venue information page
+
+Summarize the bug: Venue weather information doesn't fit on the some screens
+
+Steps to reproduce.
+List the steps that occurred before the bug happened:
+1. Logged in
+2. Went to a venue page
+3. Clicked on the information tab
+
+Expected Result: The information for the selected venue appears on the screen
+
+Actual Result: The weather information is not all visible.
+
+Anything else you want to add(if nothing put N/A): Zooming out brings everything into view at the expense of being able to read anything
+-------------------------------------------------------------------------------------------------------------------
