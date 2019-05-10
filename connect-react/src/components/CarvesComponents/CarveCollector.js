@@ -1,3 +1,11 @@
+/*
+This is the Carve Manager. We funnel all backend calls
+here so we do it once and then pass the individual data where it needs to go.
+This is the real way to utilizing react; all those individual components 
+in the folder CarveComponents consolidated into one class. 
+
+*/
+
 import React, {Component} from 'react';
 import CarveCard2 from './CarveCard2';
 import axios from "axios";
