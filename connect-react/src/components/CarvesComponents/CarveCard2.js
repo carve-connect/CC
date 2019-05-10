@@ -1,3 +1,9 @@
+/*
+The generic carve card used by the CarveCollector(parent class). This functions as
+a graphical representation of each carve on the site.
+
+*/
+
 import React, {Component} from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
