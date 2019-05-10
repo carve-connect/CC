@@ -169,6 +169,7 @@ router.delete('/:userId', (req, res) => {
     })
 });
 
+// get the name of the followers for the user
 router.get('/:userId/follows/followers/named ', (req, res) => {
     const userId = req.params.userId;
 
@@ -181,6 +182,7 @@ router.get('/:userId/follows/followers/named ', (req, res) => {
     })
 });
 
+// get the name of the venues the user follows
 router.get('/:userId/follows/venues/named ', (req, res) => {
     const userId = req.params.userId;
 
@@ -193,6 +195,7 @@ router.get('/:userId/follows/venues/named ', (req, res) => {
     })
 });
 
+// get the carves that the user is involved with
 router.get('/:userId/carves/involved', (req, res) => {
     const userId = req.params.userId;
 
@@ -205,6 +208,7 @@ router.get('/:userId/carves/involved', (req, res) => {
     })
 });
 
+// get the names of the followed info for the user
 router.get('/:userId/follows/named', (req, res) => {
     const userId = req.params.userId;
 

@@ -29,6 +29,7 @@ router.get('/darkSky/:venueId', (req, res) => {
     });
 });
 
+// API call that gets our weather information
 router.get('/darkSky/past/:venueId', (req, res) => {
 
     const venueId = req.params.venueId;
@@ -39,7 +40,7 @@ router.get('/darkSky/past/:venueId', (req, res) => {
 
         let lat = venue[0][0].lattitude;
         let long = venue[0][0].longitude;
-
+        // Go to the API site to get the information
         console.log("https://api.darksy.net/forecast/" + process.env.DS_API + "/" + lat + "/" + long + "/" + time);
 
         axios.get(`https://api.darksky.net/forecast/${process.env.DS_API}/${lat},${long},${time}?`)

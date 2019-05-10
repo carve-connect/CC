@@ -197,7 +197,7 @@ router.patch('/', (req,res) => {
 
 router.delete('/', (req,res) => {
 
-
+    // save the SQL call in a variable
     delete_users = "CALL delete_users()";
 
 

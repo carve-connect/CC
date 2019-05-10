@@ -82,6 +82,7 @@ router.get('/profile/:userId', (req,res) => {
     })
 });
 
+// get a specific carve with its carveId passed in
 router.get('/carve/:carveId', (req, res) => {
     const carveId = req.params.carveId;
 
@@ -106,7 +107,6 @@ router.get('/venue/:venueId', (req,res) => {
 });
 
 // Grab specific media by their id
-
 router.get('/:mediaId', (req,res) => {
     const mediaId = req.params.mediaId;
 
@@ -157,6 +157,7 @@ router.delete('/:mediaId', (req,res) => {
     })
 });
 
+//get the likes for the meida
 router.get('/:like_info', (req, res) => {
 
     get_media_like_info = "CALL get_media_like_info";
@@ -167,6 +168,7 @@ router.get('/:like_info', (req, res) => {
     })
 });
 
+// get the comments for the media
 router.get('/:comment_info', (req, res) => {
 
     get_media_comment_info = "CALL get_media_comment_info";
@@ -177,6 +179,7 @@ router.get('/:comment_info', (req, res) => {
     })
 });
 
+// get all of the media that is in the database
 router.get(':/all', (req, res) => {
     get_media_all_info = 'CALL get_media_all_info'
 

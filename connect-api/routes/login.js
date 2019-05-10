@@ -78,7 +78,7 @@ router.post('/', (req, res) => {
 });
 */
 
-
+// function to check if the username and password are valid
 router.post('/', async function(req, res, next) {
 
     const { username, password } = req.body;
@@ -115,7 +115,7 @@ router.post('/', async function(req, res, next) {
                     {
                         userId = -2;
                     }
-
+                        // checked to see if the username exists
                         const session = ({us: userId, username: username});
                         const payload = {session};
                         const token = jwt.sign(payload, jwtOptions.secretOrKey);
@@ -135,6 +135,7 @@ router.post('/', async function(req, res, next) {
                     done(null, user.id);
                 });
 
+                //authenticator to give the User authentication and log them into the site
                 passport.authenticate('local', (err, user, info) => {
                     console.log('Inside passport.authenticate() callback');
                     console.log(`req.session.passport: ${JSON.stringify(req.session.passport)}`);
