@@ -1,3 +1,11 @@
+/*
+
+Inital attempt at like functionality. Was making too many calls per page so we moved to LikeBar2
+
+
+*/
+
+
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Button} from 'react-bootstrap';
