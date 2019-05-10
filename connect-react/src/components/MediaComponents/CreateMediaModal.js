@@ -1,3 +1,10 @@
+/*
+Renders the button that user can click and a popup appears.
+This is where they can enter an embedded url and description
+where the data is sent to the db.
+
+*/
+
 import React, {Component} from 'react';
 import {Button, Container, Form, FormGroup, Modal} from 'react-bootstrap';
 import axios from 'axios';
