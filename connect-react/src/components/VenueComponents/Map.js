@@ -1,3 +1,9 @@
+/*
+Renders the interactive map on venue pages utlizing MapBox
+
+*/
+
+
 import React, {Component} from 'react';
 import MapGL from 'react-map-gl';
 
