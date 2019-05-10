@@ -1,3 +1,7 @@
+/*
+Popup for composing a message. Called from NameDropdown on a user's username
+*/
+
 import React, {Component} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
