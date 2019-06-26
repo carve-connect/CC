@@ -24,25 +24,24 @@ USE `CCv6` ;
 DROP TABLE IF EXISTS `CCv6`.`USERS` ;
 
 CREATE TABLE IF NOT EXISTS `CCv6`.`USERS` (
-                                              `user_id`      INT                                                                                        NOT NULL AUTO_INCREMENT,
-                                              `username`     VARCHAR(45)                                                                                NOT NULL,
-                                              `email`        VARCHAR(45)                                                                                NULL,
-                                              `password`     VARCHAR(45)                                                                                NULL,
-                                              `first_name`   VARCHAR(20)                                                                                NULL,
-                                              `last_name`    VARCHAR(20)                                                                                NULL,
-                                              `description`  VARCHAR(100)                                                                               NULL,
-                                              `type`         SET ('Photographer ', 'Videographer ', 'DroneOperator ', 'Athlete ', 'ProAthlete ', 'fan') NOT NULL DEFAULT 'athlete',
-                                              `snow_sports`  SET ('Snowboard ', 'Ski', 'Snowmobile ')                                                   NULL,
-                                              `water_sports` SET ('Surf ', 'WaterSki ', 'Kayak ', 'Paddleboard ', 'Parasail')                           NULL,
-                                              `land_sports`  SET ('Skateboard ', 'BMX ', 'MountainBike ', 'RockClimb ')                                 NULL,
-                                              `air_sports`   SET ('SkyDive ', 'HangGlide ')                                                             NULL,
-                                              `logged_in`    TINYINT                                                                                    NULL     DEFAULT 0,
-                                              `photo`        VARCHAR(45)                                                                                NULL,
-                                              `create_time`  TIMESTAMP                                                                                  NULL     DEFAULT CURRENT_TIMESTAMP,
-                                              PRIMARY KEY (`user_id`),
-                                              UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC) VISIBLE,
-                                              UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE
-)
+  `user_id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `first_name` VARCHAR(20) NULL,
+  `last_name` VARCHAR(20) NULL,
+  `description` VARCHAR(100) NULL,
+  `type` SET('Photographer ', 'Videographer ', 'Drone Operator ', 'Athlete ', 'Pro Athlete ', 'fan') NOT NULL DEFAULT 'athlete',
+  `snow_sports` SET('Snowboard ', 'Downhill Ski ', 'Snowmobile ', 'Cross-Country Ski ') NULL,
+  `water_sports` SET('Surf', 'Water Ski ', 'Kayak ', 'Wakeboard ', 'Paddleboard ', 'Parasail', 'Kite Surf ') NULL,
+  `land_sports` SET('Skateboard ', 'BMX ', 'Mountain Bike ', 'Rock Climb ', 'Cliff Dive', 'Parkour') NULL,
+  `air_sports` SET('Sky Dive ', 'Hang Glide ', 'Base Jump ', 'Air Race ') NULL,
+  `logged_in` TINYINT NULL DEFAULT 0,
+  `photo` VARCHAR(45) NULL,
+  `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`),
+  UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC) VISIBLE,
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -460,13 +459,8 @@ DROP procedure IF EXISTS `CCv6`.`add_user`;
 
 DELIMITER $$
 USE `CCv6`$$
-CREATE PROCEDURE `add_user`(in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40)
-                           , in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100)
-                           , in profileType set ('athlete','photographer', 'videographer', 'droneoperator', 'proathlete', 'fan')
-                           , in winterSports set ('snowboard','ski','snowmobile')
-                           , in waterSports set ('surf','waterski', 'kayak', 'parasail', 'paddleboard')
-                           , in landSports set ('skateboard','bmx', 'rockclimb', 'mountainbike')
-                           , in airSports set ('skydive','hangglide'))
+CREATE PROCEDURE `add_user` (in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40), in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100), in profileType set ('photographer', 'filmographer', 'droneOperator', 'athlete', 'proAthlete', 'fan')
+,in winterSports set ('snowboard','ski','snowmobile'), in waterSports set ('surf','waterSki'),in landSports set ('skateboard','BMX'), in airSports set ('skydive','hangGlide'))
 BEGIN
 insert into users(username, email, password, first_name, last_name, description, type, snow_sports, water_sports, land_sports, air_sports)
 Values(uname, emailAddress,pass,firstName,lastName,about,profileType,winterSports,waterSports,landSports,airSports);
@@ -604,13 +598,8 @@ DROP procedure IF EXISTS `CCv6`.`update_user`;
 
 DELIMITER $$
 USE `CCv6`$$
-CREATE PROCEDURE `update_user`(in id int, in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40)
-                              , in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100)
-                              , in profileType set ('photographer', 'videographer', 'droneoperator', 'athlete', 'proathlete', 'fan')
-                              , in snowSports set ('snowboard','ski','snowmobile')
-                              , in waterSports set ('surf','waterSki', 'kayak', 'parasail', 'paddleboard')
-                              , in landSports set ('skateboard','bmx', 'rockclimb', 'mountainbike')
-                              , in airSports set ('skydive','hangglide'))
+CREATE PROCEDURE `update_user` (in id int, in uname VARCHAR(40), in emailAddress VARCHAR(40), in pass VARCHAR(40), in firstName VARCHAR(20), in lastName VARCHAR(20), in about VARCHAR(100), in profileType set ('photographer', 'filmographer', 'droneOperator', 'athlete', 'proAthlete', 'fan')
+,in snowSports set ('snowboard','ski','snowmobile'), in waterSports set ('surf','waterSki'),in landSports set ('skateboard','BMX'), in airSports set ('skydive','hangGlide'))
 BEGIN
 update users set 
 username = uname,
