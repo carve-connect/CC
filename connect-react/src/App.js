@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Route from "react-router-dom/Route";
+import Switch from "react-router-dom/Switch"
 // Styles at app level
 import './App.css';
 // Pages and components
@@ -53,6 +55,7 @@ class App extends Component {
         </Switch>
         </Router>
       </div>
+
 
     );
   }

@@ -1,4 +1,4 @@
-import {Route, Switch, withRouter} from "react-router-dom";
+import withRouter from "react-router-dom/withRouter";
 import ProfilePage from "./SubPages/Profile/ProfilePage";
 import VenuePage from "./SubPages/Venues/VenuePage";
 import VenueListPage from "./SubPages/Venues/VenueListPage";
@@ -14,7 +14,8 @@ import ListingPage from "./SubPages/ListingPage/ListingPage";
 import ExplorePage from "./SubPages/Explore/explorepage";
 import React from "react";
 import Showcase from "./SubPages/SHOWCASE/Showcase";
-
+import Route from "react-router-dom/Route";
+import Switch from "react-router-dom/Switch"
 const routes = (
 
     <Switch>
